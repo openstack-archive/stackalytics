@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {% if issue_type %}
+        {{ issue_type }}s
+    {% else %}
+        Commits
+    {% endif %}
+{% endblock %}
+
+{% block left_frame %}
+
+    <script type="text/javascript">
+        loadTimeline()
+    </script>
+
+    {% for rec in issues %}
+
+        {% set issue = rec['issue_id'] %}
+        {% set items = rec['items'] %}
+
+        <h3>{{ issue }}
+            {% if issue_type %}
+                ({{ link('/modules/' + items[0].module, items[0].module) }})
+            {% endif %}
+        </h3>
+
+        {% for rec in items %}
+
+        <div style="padding-bottom: 1em;">
+            <div style='float: left; '>
+                <img src="{{ rec.email|gravatar(size=32) }}">
+            </div>
+            <div style="margin-left: 4em;">
+                <div>
+                {%  if rec.launchpad_id %}
+                    {{ link('/engineers/' + rec.launchpad_id, rec.author) }}
+                {% else %}
+                    {{ rec.author }}
+                {% endif %}
+                {% if rec.company %}
+                    (
+                    {{ link('/companies/' + rec.company, rec.company) }}
+                    )
+                {% endif %}
+                <em>{{ rec.date|datetimeformat }}</em>
+                ({{ link('/modules/' + rec.module, rec.module) }})
+                </div>
+
+                <div class="message">{{ rec.message|safe }}</div>
+            </div>
+        </div>
+
+        {% endfor %}
+    {% endfor %}
+
+{% endblock %}
+
+{% block right_frame %}
+{% endblock %}

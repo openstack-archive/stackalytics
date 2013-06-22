@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ -z $STACKALYTICS_HOME ]]; then
+    echo "Variable STACKALYTICS_HOME must be specified"
+    exit
+fi
+
+echo "Analytics home is $STACKALYTICS_HOME"
+
+CONF="$STACKALYTICS_HOME/conf/analytics.conf"
+
+TOP_DIR=$(cd $(dirname "$0") && pwd)
+cd $TOP_DIR/../scripts/
+./pull-repos.sh
+
+echo "Updating data"
+cd $TOP_DIR/../
+./bin/stackalytics --config-file $CONF --db-database $STACKALYTICS_HOME/data/stackalyticss.sqlite --verbose

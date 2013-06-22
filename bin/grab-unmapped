@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TOP_DIR=$(cd $(dirname "$0") && pwd)
+
+./tools/with_venv.sh python scripts/launchpad/grab-unmapped-launchpad-ids.py

@@ -1,0 +1,284 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
+
+<script type="text/javascript">
+    // load table data
+    function loadTable(table_id, source, options) {
+        $(document).ready(function () {
+            $("#"+table_id).dataTable({
+                "aLengthMenu": [[25, 50, -1], [25, 50, "All"]],
+                "aaSorting": [[ 2, "desc" ]],
+                "bProcessing": true,
+                "sAjaxSource": make_uri(source, options),
+                "sPaginationType": "full_numbers",
+                "iDisplayLength": 25,
+                "aoColumns": [
+                    { "mData": "index" },
+                    { "mData": "link" },
+                    { "mData": "rank" }
+                ]
+            });
+        });
+    }
+
+    // load chart
+    function loadChart(chart_id, source, options) {
+        $(document).ready(function () {
+            // Our ajax data renderer which here retrieves a text file.
+            // it could contact any source and pull data, however.
+            // The options argument isn't used in this renderer.
+            var ajaxDataRenderer = function (url, plot, options) {
+                var ret = null;
+                $.ajax({
+                    // have to use synchronous here, else the function
+                    // will return before the data is fetched
+                    async: false,
+                    url: url,
+                    dataType: "json",
+                    success: function (data) {
+                        var array = [];
+                        for(i = 0; i < data['aaData'].length; i++) {
+                            array.push([data['aaData'][i].name, data['aaData'][i].rank]);
+                        }
+                        ret = [array]
+                    }
+                });
+                return ret;
+            };
+
+            // passing in the url string as the jqPlot data argument is a handy
+            // shortcut for our renderer.  You could also have used the
+            // "dataRendererOptions" option to pass in the url.
+            var plot = $.jqplot(chart_id, make_uri(source, options), {
+                dataRenderer: ajaxDataRenderer,
+                seriesDefaults: {
+                    // Make this a pie chart.
+                    renderer: jQuery.jqplot.PieRenderer,
+                    rendererOptions: {
+                        // Put data labels on the pie slices.
+                        // By default, labels show the percentage of the slice.
+                        showDataLabels: true
+                    }
+                },
+                legend: { show: true, location: 'e' }
+            });
+        });
+    }
+
+    // load timeline
+    function loadTimeline(options) {
+        $(document).ready(function () {
+            var ajaxDataRenderer = function (url, plot, options) {
+                var ret = null;
+                $.ajax({
+                    // have to use synchronous here, else the function
+                    // will return before the data is fetched
+                    async: false,
+                    url: url,
+                    dataType: "json",
+                    success: function (data) {
+                        ret = data;
+                    }
+                });
+                return ret;
+            };
+
+            var jsonurl = make_uri("/data/timeline", options);
+
+            var plot = $.jqplot('timeline', jsonurl, {
+                dataRenderer: ajaxDataRenderer,
+                dataRendererOptions: {
+                    unusedOptionalUrl: jsonurl
+                },
+                gridPadding: {right: 35},
+                cursor: {
+                    show: false
+                },
+                highlighter: {
+                    show: true,
+                    sizeAdjust: 6
+                },
+                axes: {
+                    xaxis: {
+                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                        tickOptions: {
+                            fontSize: '8pt',
+                            angle: -90,
+                            formatString: '%b \'%y'
+                        },
+                        renderer: $.jqplot.DateAxisRenderer,
+                        tickInterval: '1 month'
+                    },
+                    yaxis: {
+                        min: 0,
+                        label: ''
+                    },
+                    y2axis: {
+                        min: 0,
+                        label: ''
+                    }
+                },
+                series: [
+                    {
+                        shadow: false,
+                        fill: true,
+                        fillColor: '#4bb2c5',
+                        fillAlpha: 0.3
+                    },
+                    {
+                        shadow: false,
+                        fill: true,
+                        color: '#4bb2c5',
+                        fillColor: '#4bb2c5'
+                    },
+                    {
+                        shadow: false,
+                        lineWidth: 1.5,
+                        showMarker: true,
+                        markerOptions: { size: 5 },
+                        yaxis: 'y2axis'
+                    }
+                ]
+            });
+        });
+    }
+
+    $(document).ready(function () {
+        $('#metric').val('{{ metric }}');
+        $('#period').val('{{ period }}');
+        $('#project_type').val('{{ project_type }}');
+    });
+
+    function make_uri(uri, options) {
+        var ops = {};
+        if (options != null) {
+            $.extend(ops, options);
+        }
+        $.extend(ops, make_std_options());
+        var str = $.map(ops,function (val, index) {
+            return index + "=" + val;
+        }).join("&");
+
+        return uri + "?" + str;
+    }
+
+    function make_std_options() {
+        var options = {};
+        if (getPeriod() != 'havana') {
+            options['period'] = getPeriod();
+        }
+        if (getMetric() != 'loc') {
+            options['metric'] = getMetric();
+        }
+        if (getProjectType() != 'incubation') {
+            options['project_type'] = getProjectType();
+        }
+
+        return options;
+    }
+
+    function reload() {
+        window.location.search = $.map(make_std_options(),function (val, index) {
+            return index + "=" + val;
+        }).join("&")
+    }
+
+    $(document).on('change', '#metric', function (evt) {
+        reload();
+    });
+
+    $(document).on('change', '#period', function (evt) {
+        reload();
+    });
+
+    $(document).on('change', '#project_type', function (evt) {
+        reload();
+    });
+
+    function getPeriod() {
+        return $('#period').val()
+    }
+
+    function getMetric() {
+        return $('#metric').val()
+    }
+
+    function getProjectType() {
+        return $('#project_type').val()
+    }
+
+</script>
+
+{% endblock %}
+
+{% block body %}
+<div class="Xpage">
+    <div class="Xaheader">
+        <div class="drops" style='margin: 0.8em; height: 2em;'>
+            <span class="drop_metric" style="float: right;">
+            <label for="project_type">Projects&nbsp;</label><select id="project_type" name="project_type">
+                <option value="core">Core</option>
+                <option value="incubation">Core+Incubation</option>
+                <option value="all">All</option>
+            </select>
+            </span>
+            <span class="drop_metric" style="float: right;">
+            <label for="metric">Metric&nbsp;</label><select id="metric" name="metric">
+                <option value="commits">Commits</option>
+                <option value="loc">Lines of code</option>
+            </select>
+            </span>
+            <span class="drop_period" style="float: right;">
+            <label for="period">Period&nbsp;</label><select id="period" name="period">
+                <option value="all">All times</option>
+                <option value="six_months">Last 6 months</option>
+                <option value="havana">Havana</option>
+                <option value="grizzly">Grizzly</option>
+                <option value="folsom">Folsom</option>
+                <option value="essex">Essex</option>
+            </select>
+            </span>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <div id="timeline" style="width: 100%; height: 120px; margin-top: 15px;"></div>
+    </div>
+
+    <table style="width: 100%" cellspacing="0">
+        <tr>
+            <td style="width: 50%; vertical-align: top;">
+                <div class="body" style="margin-right: 2em;">
+                    {% block left_frame %}{% endblock %}
+                </div>
+            </td>
+            <td style="width: 50%; vertical-align: top;">
+                <div class="body" style="margin-left: 2em;">
+                    {% block right_frame %}{% endblock %}
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</div>
+{% endblock %}
+
+{% macro link(base, title) -%}
+    <a href="{{ base }}?metric={{ metric }}&period={{ period }}&project_type={{ project_type }}">{{ title }}</a>
+{%- endmacro %}

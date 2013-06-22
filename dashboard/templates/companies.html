@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block left_frame %}
+
+    <h2>Contribution by companies</h2>
+
+    <script type="text/javascript">
+        loadTable("left_list", "/data/companies");
+        loadChart("left_chart", "/data/companies", {limit: 10});
+        loadTimeline('')
+    </script>
+
+    <div id="left_chart" style="width: 100%; height: 350px;"></div>
+
+    <table id="left_list" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Company</th>
+                <th>{{ metric_label }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
+
+{% endblock %}
+
+{% block right_frame %}
+
+    <h2>Contribution by modules</h2>
+
+    <script type="text/javascript">
+        loadTable("right_list", "/data/modules");
+        loadChart("right_chart", "/data/modules", {limit: 10});
+    </script>
+
+    <div id="right_chart" style="width: 100%; height: 350px;"></div>
+
+    <table id="right_list" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Module</th>
+                <th>{{ metric_label }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ details.name }}
+{% endblock %}
+
+{% block left_frame %}
+
+    <script type="text/javascript">
+        loadTimeline({engineer: '{{engineer}}'})
+    </script>
+
+    <div style='float: left;'>
+        <img src="{{ details.email|gravatar(size=64) }}">
+    </div>
+    <div style='margin-left: 90px;'>
+        <h2 style='margin-bottom: 0.5em;'>{{ details.name }}</h2>
+        {% if details.company %}
+        <div>Company: {{ link('/companies/' + details.company, details.company) }}</div>
+        {% endif %}
+        <div>Launchpad: <a href="https://launchpad.net/~{{ details.launchpad_id }}">{{ details.launchpad_id }}</a></div>
+{#        <div>Email: {{ details.email }}</div>#}
+    </div>
+
+    <h3>Commits history</h3>
+
+    {% if not commits %}
+        <div>There are no commits for selected period or project type.</div>
+    {% endif %}
+
+    {% for message in commits %}
+        <div>
+            <h4>{{ message.date|datetimeformat }} to <a href="https://launchpad.net/{{ message.module }}">{{ message.module }}</a>
+                {% if message.is_code %} <span style="color: royalblue">code</span> {% endif %}
+                {% if message.is_test %} <span style="color: magenta">test</span> {% endif %}
+            </h4>
+            <div style='white-space: pre-wrap; padding-left: 2em;'>{{ message.message|safe }}</div>
+            <div style="padding-left: 2em;"><span style="color: green">+ {{ message.added_loc }}</span>
+                <span style="color: red">- {{ message.removed_loc }}</span></div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+{% block right_frame %}
+
+    {% if commits %}
+    <h2>Contribution by modules</h2>
+
+    <script type="text/javascript">
+        loadTable("right_list", "/data/modules", {engineer: "{{ engineer }}" });
+        loadChart("right_chart", "/data/modules", {limit: 10, engineer: "{{ engineer }}" });
+    </script>
+
+    <div id="right_chart" style="width: 100%; height: 350px;"></div>
+
+    <table id="right_list" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Module</th>
+                <th>{{ metric_label }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
+
+    <h3>Commit overview</h3>
+    {%  if blueprints %}
+        <div>Blueprints:
+            <ol>
+                {% for one in blueprints %}
+                    <li>
+                        <a href="https://blueprints.launchpad.net/{{ one[1] }}/+spec/{{ one[0] }}">{{ one[0] }}</a>
+                        <small>{{ one[1] }}</small>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+
+    {% if bugs %}
+        <div>Bug fixes:
+            <ol>
+                {% for one in bugs %}
+                    <li>
+                        <a href="https://bugs.launchpad.net/bugs/{{ one[0] }}">{{ one[0] }}</a>
+                        <small>
+                            {% if one[1] %} <span style="color: royalblue">C</span> {% endif %}
+                            {% if one[2] %} <span style="color: magenta">T</span> {% endif %}
+                        </small>
+                    </li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+
+    <div>Total commits: <b>{{ commits|length }}</b>, among them <b>{{ code_commits }}</b> commits in code,
+        among them <b>{{ test_only_commits }}</b> test only commits</div>
+    <div>Total LOC: <b>{{ loc }}</b></div>
+    {% endif %}
+
+{% endblock %}

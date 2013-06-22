@@ -1,4 +1,0 @@
-stackalytics
-============
-
-OpenStack analytics dashboard

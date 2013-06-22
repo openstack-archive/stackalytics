@@ -1,0 +1,474 @@
+html, body {
+    font-family: 'PT Sans', arial, sans-serif;
+    font-size: 14px;
+    background: url(../images/osstats_tile.jpg) repeat-x;
+    height: 100%;
+    color: #41454d;
+    margin: 0;
+}
+
+a {
+    color: #D32F1A;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #F00;
+}
+
+p {
+    font-size: 15px;
+    color: #41454D;
+    font-style: normal;
+    margin: 6px 0px 15px 0px;
+}
+
+div.Xpage {
+    width: 960px;
+    margin: 0 auto;
+}
+
+div.Xpage h2 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 23px;
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+input[type="text"],
+input[type="password"] {
+    background: #f8f9f9;
+    padding: 0 5px 0 5px;
+    min-height: 24px;
+    border: none;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 1px 1px 0 white;
+    -moz-box-shadow: inset 2px 2px 7px #D3D8DD;
+    -webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
+    box-shadow: inset 2px 2px 7px #D3D8DD;
+}
+
+input[type="submit"] {
+    background: #f8f9f9;
+    padding: 0 5px 0 5px;
+    min-height: 24px;
+    border: none;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 1px 1px 0 white;
+    -moz-box-shadow: inset 2px 2px 7px #D3D8DD;
+    -webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
+    box-shadow: inset 2px 2px 7px #D3D8DD;
+}
+
+div.page {
+    background: white;
+    border: 1px solid #e9eaef;
+    width: 90%;
+    margin: 10px auto;
+}
+
+div.page h1 {
+    background: white;
+    margin: 0;
+    padding: 0.1em 0.2em;
+    color: black;
+    font-weight: normal;
+}
+
+div.drops {
+    font-size: 15px;
+    height: 60px;
+}
+
+div.drops label {
+    color: #909cb5;
+}
+
+span.drop_period {
+    margin-top: 6px;
+    display: block;
+    height: 30px;
+    float: right;
+}
+
+span.drop_metric {
+    margin-top: 6px;
+    margin-right: 1em;
+    display: block;
+    height: 30px;
+    float: right;
+}
+
+select {
+    background: #f8f9f9;
+    padding: 0 5px 0 5px;
+    min-height: 24px;
+    border: none;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    text-shadow: 1px 1px 0 white;
+    -moz-box-shadow: inset 2px 2px 7px #D3D8DD;
+    -webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
+    box-shadow: inset 2px 2px 7px #D3D8DD;
+}
+
+div.aheader {
+    height: 60px;
+    background: #e0e9f2;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+div.aheader h1 {
+    font-size: 36px;
+    color: #a8b3bd;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+div.aheader h1 a {
+    font-weight: bold;
+    color: #637f99;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+div.page div.navigation {
+    text-shadow: 1px 1px 0 #fff;
+    background: #fbfafa;
+    padding: 4px 10px;
+    border-top: 1px dashed #e9eaef;
+    border-bottom: 1px dashed #e9eaef;
+    color: #909cb5;
+    font-size: 10pt;
+}
+
+div.page div.navigation a {
+    color: #444;
+    font-weight: bold;
+}
+
+div.page h2 {
+    margin: 10px 0 0 10px;
+    color: #a41200;
+}
+
+div.page div.body {
+    padding: 10px;
+}
+
+div.page div.footer {
+    background: #eee;
+    color: #888;
+    padding: 1em 1em;
+    font-size: 9pt;
+}
+
+div.page ul.messages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div.page ul.messages li {
+    margin: 10px 0;
+    padding: 5px;
+    background: #F0FAF9;
+    border: 1px solid #DBF3F1;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    min-height: 48px;
+}
+
+div.page ul.messages p {
+    margin: 0;
+}
+
+div.page ul.messages li img {
+    float: left;
+    padding: 0 10px 0 0;
+}
+
+div.page ul.messages li small {
+    font-size: 0.9em;
+    color: #888;
+}
+
+div.page div.twitbox {
+    margin: 10px 0;
+    padding: 5px;
+    background: #F0FAF9;
+    border: 1px solid #94E2DA;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+div.page div.twitbox h3 {
+    margin: 0;
+    font-size: 1em;
+    color: #2C7E76;
+}
+
+div.page div.twitbox p {
+    margin: 0;
+}
+
+div.page div.twitbox input[type="text"] {
+    width: 585px;
+}
+
+div.page div.twitbox input[type="submit"] {
+    width: 70px;
+    margin-left: 5px;
+}
+
+ul.flashes {
+    list-style: none;
+    margin: 10px 10px 0 10px;
+    padding: 0;
+}
+
+ul.flashes li {
+    background: #B9F3ED;
+    border: 1px solid #81CEC6;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 13px;
+}
+
+div.error {
+    margin: 10px 0;
+    background: #FAE4E4;
+    border: 1px solid #DD6F6F;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    padding: 4px;
+    font-size: 13px;
+}
+
+.spacer {
+    height: 20px;
+    clear: both;
+}
+
+table#left_list td {
+    font-size: 15px;
+}
+
+table#right_list td {
+    font-size: 15px;
+}
+
+div#left_list_wrapper {
+    margin-top: 20px;
+}
+
+div#right_list_wrapper {
+    margin-top: 20px;
+}
+
+.message {
+    white-space: pre-wrap;
+}
+
+a[href^="https://blueprints"]:after {
+    content: "↗";
+    opacity: 0.3;
+}
+
+a[href^="https://review"]:after {
+    content: "↗";
+    opacity: 0.3;
+}
+
+a[href^="https://bugs"]:after {
+    content: "↗";
+    opacity: 0.3;
+}
+
+a[href^="https://launchpad"]:after {
+    content: "↗";
+    opacity: 0.3;
+}
+
+#analytics_header {
+    height: 25px;
+    width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+#analytics_header h3 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    color: black;
+    padding-top: 30px;
+    text-shadow: 1px 1px 0 #fff;
+    margin: 0px;
+}
+
+#analytics_header p {
+    font-family: georgia, serif;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    color: #647280;
+    line-height: 1.1em;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+.paging_full_numbers {
+    font-size: 9pt;
+}
+
+/* MIRANTIS CSS*/
+
+#miraheader {
+    margin: 0 auto;
+    width: 960px;
+}
+
+#top-menu {
+    height: 30px;
+}
+
+#ttopmenu {
+    float: right;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#ttopmenu  a {
+    font-size: 13px;
+    font-style: italic;
+    color: #A7B6C3;
+}
+
+#ttopmenu  a:hover {
+    color: #6e8598;
+}
+
+#main-menu {
+    height: 47px;
+    margin-top: 30px;
+    text-align: right;
+    position: relative;
+}
+
+a.glink {
+    color: black;
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 19px;
+    padding: 5px 5px 5px 12px;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+a.glink:hover {
+    color: #d3301a;
+}
+
+.subglobalNav {
+    color: black;
+    position: absolute;
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 14px;
+    white-space: nowrap;
+    text-decoration: none;
+    right: 0px;
+    padding-top: 10px;
+}
+
+.subglobalNav a {
+    color: black;
+    text-decoration: none;
+    padding: 2px 7px 2px 7px;
+    margin-left: 12px;
+}
+
+.subglobalNav a:hover {
+    color: #fff;
+    background: #CB2E19;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-left: 12px;
+    text-shadow: -1px -1px 0px #7F2114;
+}
+
+a.act {
+    color: #d3301a !important;
+}
+
+a.act:hover {
+    color: #fff !important;
+    background: #CB2E19;
+}
+
+a.active {
+    color: #d3301a;
+}
+
+#dummy {
+    height: 115px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#footer {
+    height: 115px;
+    margin-top: -120px;
+    background: url(../images/footer_tile.jpg) repeat-x;
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    text-shadow: 1px 1px 0px white;
+
+}
+
+#foottable  td {
+    padding-top: 20px;
+}
+
+#footer_content {
+    width: 960px;
+    margin: 4px auto auto auto;
+    height: 110px;
+}
+
+.fgeneral {
+    color: black;
+}
+
+.fgeneralblue {
+    color: #43678a;
+}
+
+.fslogan {
+    font-family: 'PT Sans', arial, sans-serif;
+    font-style: italic;
+    color: #43678a;
+    font-size: 13px;
+}
+
+#fbox {
+    padding-left: 10px;
+    border-left: 1px solid #d5dbe1;
+}
+
+/* MIRANTIS CSS*/

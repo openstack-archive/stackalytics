@@ -1,0 +1,11 @@
+d2to1>=0.2.10,<0.3
+pbr>=0.5.16,<0.6
+#MySQL-python
+#pysqlite
+#git+git://github.com/MetricsGrimoire/RepositoryHandler.git#egg=repositoryhandler-0.5
+#git+git://github.com/SoftwareIntrospectionLab/guilty.git#egg=guilty-2.1
+launchpadlib
+Flask>=0.9
+Flask-Gravatar
+oslo.config
+pylibmc
