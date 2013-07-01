@@ -4,15 +4,16 @@
     {{ module }}
 {% endblock %}
 
+{% block scripts %}
+<script type="text/javascript">
+    chartAndTableRenderer("/data/companies", "left_list", "left_chart", "/companies/", {company: "{{ company|encode }}" });
+    timelineRenderer({company: "{{ company|encode }}" })
+</script>
+{% endblock %}
+
 {% block left_frame %}
 
     <h2>Contribution by companies</h2>
-
-    <script type="text/javascript">
-        loadTable("left_list", "/data/companies", { module: "{{ module }}" });
-        loadChart("left_chart", "/data/companies", { module: "{{ module }}", limit: 10 });
-        loadTimeline({module: '{{ module }}'})
-    </script>
 
     <div id="left_chart" style="width: 100%; height: 350px;"></div>
 
@@ -38,30 +39,25 @@
     {% for rec in commits %}
         <div style="padding-bottom: 1em;">
             <div style='float: left; '>
-                <img src="{{ rec.email|gravatar(size=32) }}">
+                <img src="{{ rec.author_email|gravatar(size=32) }}">
             </div>
             <div style="margin-left: 4em;">
                 <div>
-                {{ link('/engineers/' + rec.launchpad_id, rec.name) }}
-{#                <a href="/engineers/{{ rec.launchpad_id }}?metric={{ metric }}&period={{ period }}&project_type={{ project_type }}">{{ rec.name }}</a>#}
+                {% if rec.launchpad_id %}
+                    {{ rec.author|link('/engineers/' + rec.launchpad_id)|safe }}
+                {% else %}
+                    {{ rec.author }}
+                {% endif %}
                 {% if rec.company %}
                     (
-                    {{ link('/companies/' + rec.company, rec.company) }}
-{#                    <a href="/companies/{{ rec.company }}?metric={{ metric }}&period={{ period }}&project_type={{ project_type }}">{{ rec.company }}</a>#}
+                    {{ rec.company|link('/companies/' + rec.company)|safe }}
                     )
                 {% endif %}
                 <em>{{ rec.date|datetimeformat }}</em>
                 </div>
 
-                {% if rec.ref %}
-                    <div>{{ rec.ref|safe }}</div>
-                {% endif %}
-                <div>{{ rec.text }}</div>
-                {% if rec.change_id %}
-                    <div>Change-Id: <a
-                            href="https://review.openstack.org/#q,{{ rec.change_id }},n,z">{{ rec.change_id }}</a>
-                    </div>
-                {% endif %}
+                <div><b>{{ rec.subject }}</b></div>
+                <div style="white-space: pre-wrap;">{{ rec|commit_message|safe }}</div>
             </div>
         </div>
     {% endfor %}

@@ -1,0 +1,121 @@
+{
+    "users": [
+        {
+            "launchpad_id": "foo",
+            "user_name": "Pupkin",
+            "emails": ["a@a"],
+            "companies": [
+                {
+                    "company_name": "Uno",
+                    "end_date": "2013-Jan-01"
+                },
+                {
+                    "company_name": "Duo",
+                    "end_date": null
+                }
+            ]
+        }
+    ],
+
+    "companies": [
+        {
+            "company_name": "Mirantis",
+            "domains": ["mirantis.com"]
+        },
+        {
+            "company_name": "*independent",
+            "domains": [""]
+        },
+        {
+            "company_name": "Hewlett-Packard",
+            "domains": ["hp.com"]
+        },
+        {
+            "company_name": "Intel",
+            "domains": ["intel.com"]
+        }
+    ],
+
+    "repos": [
+        {
+            "branches": ["master"],
+            "name": "Quantum Client",
+            "type": "core",
+            "uri": "git://github.com/openstack/python-quantumclient.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "folsom-1",
+                    "tag_to": "2.1"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2.1",
+                    "tag_to": "2.2.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2.2.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "name": "Keystone",
+            "type": "core",
+            "uri": "git://github.com/openstack/keystone.git",
+            "releases": [
+                {
+                    "release_name": "Essex",
+                    "tag_from": "2011.3",
+                    "tag_to": "2012.1"
+                },
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        }
+    ],
+
+    "releases": [
+        {
+            "release_name": "ALL",
+            "start_date": "2010-May-01",
+            "end_date": "now"
+        },
+        {
+            "release_name": "Essex",
+            "start_date": "2011-Oct-01",
+            "end_date": "2012-Apr-01"
+        },
+        {
+            "release_name": "Folsom",
+            "start_date": "2012-Apr-01",
+            "end_date": "2012-Oct-01"
+        },
+        {
+            "release_name": "Grizzly",
+            "start_date": "2012-Oct-01",
+            "end_date": "2013-Apr-01"
+        },
+        {
+            "release_name": "Havana",
+            "start_date": "2013-Apr-01",
+            "end_date": "now"
+        }
+    ]
+
+}

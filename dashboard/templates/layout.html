@@ -18,159 +18,173 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
 
 <script type="text/javascript">
-    // load table data
-    function loadTable(table_id, source, options) {
+
+    function showTimeline(data) {
+        var plot = $.jqplot('timeline', data, {
+            gridPadding: {
+                right: 35
+            },
+            cursor: {
+                show: false
+            },
+            highlighter: {
+                show: true,
+                sizeAdjust: 6
+            },
+            axes: {
+                xaxis: {
+                    tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                    tickOptions: {
+                        fontSize: '8pt',
+                        angle: -90,
+                        formatString: '%b \'%y'
+                    },
+                    renderer: $.jqplot.DateAxisRenderer,
+                    tickInterval: '1 month'
+                },
+                yaxis: {
+                    min: 0,
+                    label: ''
+                },
+                y2axis: {
+                    min: 0,
+                    label: ''
+                }
+            },
+            series: [
+                {
+                    shadow: false,
+                    fill: true,
+                    fillColor: '#4bb2c5',
+                    fillAlpha: 0.3
+                },
+                {
+                    shadow: false,
+                    fill: true,
+                    color: '#4bb2c5',
+                    fillColor: '#4bb2c5'
+                },
+                {
+                    shadow: false,
+                    lineWidth: 1.5,
+                    showMarker: true,
+                    markerOptions: { size: 5 },
+                    yaxis: 'y2axis'
+                }
+            ]
+        });
+    }
+
+    function timelineRenderer(options) {
         $(document).ready(function () {
-            $("#"+table_id).dataTable({
-                "aLengthMenu": [[25, 50, -1], [25, 50, "All"]],
-                "aaSorting": [[ 2, "desc" ]],
-                "bProcessing": true,
-                "sAjaxSource": make_uri(source, options),
-                "sPaginationType": "full_numbers",
-                "iDisplayLength": 25,
-                "aoColumns": [
-                    { "mData": "index" },
-                    { "mData": "link" },
-                    { "mData": "rank" }
-                ]
+            $.ajax({
+                url: make_uri("/data/timeline", options),
+                dataType: "json",
+                success: function (data) {
+                    showTimeline(data);
+                }
             });
         });
     }
 
-    // load chart
-    function loadChart(chart_id, source, options) {
+    function chartAndTableRenderer(url, table_id, chart_id, link_prefix, options) {
+
         $(document).ready(function () {
-            // Our ajax data renderer which here retrieves a text file.
-            // it could contact any source and pull data, however.
-            // The options argument isn't used in this renderer.
-            var ajaxDataRenderer = function (url, plot, options) {
-                var ret = null;
-                $.ajax({
-                    // have to use synchronous here, else the function
-                    // will return before the data is fetched
-                    async: false,
-                    url: url,
-                    dataType: "json",
-                    success: function (data) {
-                        var array = [];
-                        for(i = 0; i < data['aaData'].length; i++) {
-                            array.push([data['aaData'][i].name, data['aaData'][i].rank]);
+
+            $.ajax({
+                url: make_uri(url, options),
+                dataType: "json",
+                success: function (data) {
+
+                    var tableData = [];
+                    var chartData = [];
+
+                    var limit = 10;
+                    var aggregate = 0;
+                    var index = 1;
+                    var i;
+
+                    for (i = 0; i < data.length; i++) {
+                        if (i < limit - 1) {
+                            chartData.push([data[i].name, data[i].metric]);
+                        } else {
+                            aggregate += data[i].metric;
                         }
-                        ret = [array]
-                    }
-                });
-                return ret;
-            };
 
-            // passing in the url string as the jqPlot data argument is a handy
-            // shortcut for our renderer.  You could also have used the
-            // "dataRendererOptions" option to pass in the url.
-            var plot = $.jqplot(chart_id, make_uri(source, options), {
-                dataRenderer: ajaxDataRenderer,
-                seriesDefaults: {
-                    // Make this a pie chart.
-                    renderer: jQuery.jqplot.PieRenderer,
-                    rendererOptions: {
-                        // Put data labels on the pie slices.
-                        // By default, labels show the percentage of the slice.
-                        showDataLabels: true
+                        var index_label = index;
+                        if (data[i].name == "*independent") {
+                            index_label = "";
+                        } else {
+                            index++;
+                        }
+                        var link = make_link(link_prefix, data[i].id, data[i].name);
+                        tableData.push({"index": index_label, "link": link, "metric": data[i].metric});
                     }
-                },
-                legend: { show: true, location: 'e' }
+
+                    if (i == limit) {
+                        chartData.push([data[i-1].name, data[i-1].metric]);
+                    } else if (i > limit) {
+                        chartData.push(["others", aggregate]);
+                    }
+
+                    $("#" + table_id).dataTable({
+                        "aLengthMenu": [
+                            [25, 50, -1],
+                            [25, 50, "All"]
+                        ],
+                        "aaSorting": [
+                            [ 2, "desc" ]
+                        ],
+                        "sPaginationType": "full_numbers",
+                        "iDisplayLength": 25,
+                        "aaData": tableData,
+                        "aoColumns": [
+                            { "mData": "index" },
+                            { "mData": "link" },
+                            { "mData": "metric" }
+                        ]
+                    });
+
+                    var plot = $.jqplot(chart_id, [chartData], {
+                        seriesDefaults: {
+                            renderer: jQuery.jqplot.PieRenderer,
+                            rendererOptions: {
+                                showDataLabels: true
+                            }
+                        },
+                        legend: { show: true, location: 'e' }
+                    });
+
+                }
             });
         });
     }
 
-    // load timeline
-    function loadTimeline(options) {
-        $(document).ready(function () {
-            var ajaxDataRenderer = function (url, plot, options) {
-                var ret = null;
-                $.ajax({
-                    // have to use synchronous here, else the function
-                    // will return before the data is fetched
-                    async: false,
-                    url: url,
-                    dataType: "json",
-                    success: function (data) {
-                        ret = data;
-                    }
-                });
-                return ret;
-            };
-
-            var jsonurl = make_uri("/data/timeline", options);
-
-            var plot = $.jqplot('timeline', jsonurl, {
-                dataRenderer: ajaxDataRenderer,
-                dataRendererOptions: {
-                    unusedOptionalUrl: jsonurl
-                },
-                gridPadding: {right: 35},
-                cursor: {
-                    show: false
-                },
-                highlighter: {
-                    show: true,
-                    sizeAdjust: 6
-                },
-                axes: {
-                    xaxis: {
-                        tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                        tickOptions: {
-                            fontSize: '8pt',
-                            angle: -90,
-                            formatString: '%b \'%y'
-                        },
-                        renderer: $.jqplot.DateAxisRenderer,
-                        tickInterval: '1 month'
-                    },
-                    yaxis: {
-                        min: 0,
-                        label: ''
-                    },
-                    y2axis: {
-                        min: 0,
-                        label: ''
-                    }
-                },
-                series: [
-                    {
-                        shadow: false,
-                        fill: true,
-                        fillColor: '#4bb2c5',
-                        fillAlpha: 0.3
-                    },
-                    {
-                        shadow: false,
-                        fill: true,
-                        color: '#4bb2c5',
-                        fillColor: '#4bb2c5'
-                    },
-                    {
-                        shadow: false,
-                        lineWidth: 1.5,
-                        showMarker: true,
-                        markerOptions: { size: 5 },
-                        yaxis: 'y2axis'
-                    }
-                ]
-            });
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+            vars[key] = value;
         });
+        return vars;
     }
 
     $(document).ready(function () {
         $('#metric').val('{{ metric }}');
-        $('#period').val('{{ period }}');
+        $('#release').val('{{ release }}');
         $('#project_type').val('{{ project_type }}');
     });
+
+    function make_link(uri_prefix, id, title, options) {
+        var link = make_uri(uri_prefix + encodeURIComponent(id).toLowerCase(), options);
+        return "<a href=\"" + link + "\">" + title + "</a>"
+    }
 
     function make_uri(uri, options) {
         var ops = {};
         if (options != null) {
             $.extend(ops, options);
         }
-        $.extend(ops, make_std_options());
+        $.extend(ops, getUrlVars());
         var str = $.map(ops,function (val, index) {
             return index + "=" + val;
         }).join("&");
@@ -180,9 +194,9 @@
 
     function make_std_options() {
         var options = {};
-        if (getPeriod() != 'havana') {
-            options['period'] = getPeriod();
-        }
+{#        if (getRelease() != 'havana') {#}
+            options['release'] = getRelease();
+{#        }#}
         if (getMetric() != 'loc') {
             options['metric'] = getMetric();
         }
@@ -203,7 +217,7 @@
         reload();
     });
 
-    $(document).on('change', '#period', function (evt) {
+    $(document).on('change', '#release', function (evt) {
         reload();
     });
 
@@ -211,8 +225,8 @@
         reload();
     });
 
-    function getPeriod() {
-        return $('#period').val()
+    function getRelease() {
+        return $('#release').val()
     }
 
     function getMetric() {
@@ -224,6 +238,8 @@
     }
 
 </script>
+
+{% block scripts %}{% endblock %}
 
 {% endblock %}
 
@@ -244,10 +260,9 @@
                 <option value="loc">Lines of code</option>
             </select>
             </span>
-            <span class="drop_period" style="float: right;">
-            <label for="period">Period&nbsp;</label><select id="period" name="period">
+            <span class="drop_release" style="float: right;">
+            <label for="release">Release&nbsp;</label><select id="release" name="release">
                 <option value="all">All times</option>
-                <option value="six_months">Last 6 months</option>
                 <option value="havana">Havana</option>
                 <option value="grizzly">Grizzly</option>
                 <option value="folsom">Folsom</option>
@@ -278,7 +293,3 @@
 
 </div>
 {% endblock %}
-
-{% macro link(base, title) -%}
-    <a href="{{ base }}?metric={{ metric }}&period={{ period }}&project_type={{ project_type }}">{{ title }}</a>
-{%- endmacro %}

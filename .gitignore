@@ -1,5 +1,6 @@
 *~
 *.pyc
+*.local
 AUTHORS
 ChangeLog
 MANIFEST

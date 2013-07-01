@@ -1,25 +1,26 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    {{ details.name }}
+    {{ user.user_name }}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    chartAndTableRenderer("/data/modules", "right_list", "right_chart", "/modules/", {launchpad_id: "{{ launchpad_id }}" });
+    timelineRenderer({launchpad_id: "{{ launchpad_id }}" })
+</script>
 {% endblock %}
 
 {% block left_frame %}
-
-    <script type="text/javascript">
-        loadTimeline({engineer: '{{engineer}}'})
-    </script>
-
     <div style='float: left;'>
-        <img src="{{ details.email|gravatar(size=64) }}">
+        <img src="{{ user.emails[0]|gravatar(size=64) }}">
     </div>
     <div style='margin-left: 90px;'>
-        <h2 style='margin-bottom: 0.5em;'>{{ details.name }}</h2>
-        {% if details.company %}
-        <div>Company: {{ link('/companies/' + details.company, details.company) }}</div>
+        <h2 style='margin-bottom: 0.5em;'>{{ user.user_name }}</h2>
+        {% if user.companies %}
+        <div>Company: {{ user.companies[-1].company_name|link('/companies/' + user.companies[-1].company_name)|safe }}</div>
         {% endif %}
-        <div>Launchpad: <a href="https://launchpad.net/~{{ details.launchpad_id }}">{{ details.launchpad_id }}</a></div>
-{#        <div>Email: {{ details.email }}</div>#}
+        <div>Launchpad: <a href="https://launchpad.net/~{{ launchpad_id }}">{{ launchpad_id }}</a></div>
     </div>
 
     <h3>Commits history</h3>
@@ -28,15 +29,13 @@
         <div>There are no commits for selected period or project type.</div>
     {% endif %}
 
-    {% for message in commits %}
+    {% for rec in commits %}
         <div>
-            <h4>{{ message.date|datetimeformat }} to <a href="https://launchpad.net/{{ message.module }}">{{ message.module }}</a>
-                {% if message.is_code %} <span style="color: royalblue">code</span> {% endif %}
-                {% if message.is_test %} <span style="color: magenta">test</span> {% endif %}
+            <h4>{{ rec.date|datetimeformat }} to <a href="https://launchpad.net/{{ rec.module }}">{{ rec.module }}</a>
             </h4>
-            <div style='white-space: pre-wrap; padding-left: 2em;'>{{ message.message|safe }}</div>
-            <div style="padding-left: 2em;"><span style="color: green">+ {{ message.added_loc }}</span>
-                <span style="color: red">- {{ message.removed_loc }}</span></div>
+            <div style='white-space: pre-wrap; padding-left: 2em;'>{{ rec|commit_message|safe }}</div>
+            <div style="padding-left: 2em;"><span style="color: green">+ {{ rec.lines_added }}</span>
+                <span style="color: red">- {{ rec.lines_deleted }}</span></div>
         </div>
     {% endfor %}
 
@@ -46,11 +45,6 @@
 
     {% if commits %}
     <h2>Contribution by modules</h2>
-
-    <script type="text/javascript">
-        loadTable("right_list", "/data/modules", {engineer: "{{ engineer }}" });
-        loadChart("right_chart", "/data/modules", {limit: 10, engineer: "{{ engineer }}" });
-    </script>
 
     <div id="right_chart" style="width: 100%; height: 350px;"></div>
 
@@ -71,10 +65,10 @@
     {%  if blueprints %}
         <div>Blueprints:
             <ol>
-                {% for one in blueprints %}
+                {% for rec in blueprints %}
                     <li>
-                        <a href="https://blueprints.launchpad.net/{{ one[1] }}/+spec/{{ one[0] }}">{{ one[0] }}</a>
-                        <small>{{ one[1] }}</small>
+                        <a href="https://blueprints.launchpad.net/{{ rec['module'] }}/+spec/{{ rec['id'] }}">{{ rec['id'] }}</a>
+                        <small>{{ rec['module'] }}</small>
                     </li>
                 {% endfor %}
             </ol>
@@ -82,23 +76,18 @@
     {% endif %}
 
     {% if bugs %}
-        <div>Bug fixes:
+        <div>Bugs:
             <ol>
-                {% for one in bugs %}
+                {% for rec in bugs %}
                     <li>
-                        <a href="https://bugs.launchpad.net/bugs/{{ one[0] }}">{{ one[0] }}</a>
-                        <small>
-                            {% if one[1] %} <span style="color: royalblue">C</span> {% endif %}
-                            {% if one[2] %} <span style="color: magenta">T</span> {% endif %}
-                        </small>
+                        <a href="https://bugs.launchpad.net/bugs/{{ rec['id'] }}">{{ rec['id'] }}</a>
                     </li>
                 {% endfor %}
             </ol>
         </div>
     {% endif %}
 
-    <div>Total commits: <b>{{ commits|length }}</b>, among them <b>{{ code_commits }}</b> commits in code,
-        among them <b>{{ test_only_commits }}</b> test only commits</div>
+    <div>Total commits: <b>{{ commits|length }}</b></div>
     <div>Total LOC: <b>{{ loc }}</b></div>
     {% endif %}
 

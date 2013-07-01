@@ -4,15 +4,18 @@
     {{ company }}
 {% endblock %}
 
+{% block scripts %}
+<script type="text/javascript">
+    chartAndTableRenderer("/data/engineers", "left_list", "left_chart", "/engineers/", {company: "{{ company|encode }}" });
+    chartAndTableRenderer("/data/modules", "right_list", "right_chart", "/modules/", {company: "{{ company|encode }}" });
+    timelineRenderer({company: "{{ company|encode }}" })
+</script>
+{% endblock %}
+
+
 {% block left_frame %}
 
     <h2>Contribution by engineers</h2>
-
-    <script type="text/javascript">
-        loadTable("left_list", "/data/companies/{{ company|encode }}");
-        loadChart("left_chart", "/data/companies/{{ company|encode }}", {limit: 10});
-        loadTimeline({company: '{{ company }}'})
-    </script>
 
     <div id="left_chart" style="width: 100%; height: 350px;"></div>
 
@@ -35,11 +38,6 @@
 
     <h2>Contribution by modules</h2>
 
-    <script type="text/javascript">
-        loadTable("right_list", "/data/modules", {company: "{{ company|encode }}" });
-        loadChart("right_chart", "/data/modules", {limit: 10, company: "{{ company|encode }}" });
-    </script>
-
     <div id="right_chart" style="width: 100%; height: 350px;"></div>
 
     <table id="right_list" class="display">
@@ -59,10 +57,10 @@
     {%  if blueprints %}
         <div>Blueprints:
             <ol>
-                {% for one in blueprints %}
+                {% for rec in blueprints %}
                     <li>
-                        <a href="https://blueprints.launchpad.net/{{ one[1] }}/+spec/{{ one[0] }}">{{ one[0] }}</a>
-                        <small>{{ one[1] }}</small>
+                        <a href="https://blueprints.launchpad.net/{{ rec['module'] }}/+spec/{{ rec['id'] }}">{{ rec['id'] }}</a>
+                        <small>{{ rec['module'] }}</small>
                     </li>
                 {% endfor %}
             </ol>
@@ -70,12 +68,18 @@
     {% endif %}
 
     {% if bugs %}
-        <div>Bug fixes: <b>{{ bugs|length }}</b>
+        <div>Bugs:
+            <ol>
+                {% for rec in bugs %}
+                    <li>
+                        <a href="https://bugs.launchpad.net/bugs/{{ rec['id'] }}">{{ rec['id'] }}</a>
+                    </li>
+                {% endfor %}
+            </ol>
         </div>
     {% endif %}
 
-    <div>Total commits: <b>{{ commits|length }}</b>, among them <b>{{ code_commits }}</b> commits in code,
-        among them <b>{{ test_only_commits }}</b> test only commits</div>
+    <div>Total commits: <b>{{ commits|length }}</b></div>
     <div>Total LOC: <b>{{ loc }}</b></div>
 
 {% endblock %}
