@@ -20,8 +20,9 @@ class CachedMemoryStorage(MemoryStorage):
         self.release_index = {}
         self.dates = []
         for record in records:
-            self.records[record['record_id']] = record
-            self.index(record)
+            if record['company_name'] != '*robots':  # ignore robots
+                self.records[record['record_id']] = record
+                self.index(record)
         self.dates = sorted(self.date_index)
         self.company_name_mapping = dict((c.lower(), c)
                                          for c in self.company_index.keys())

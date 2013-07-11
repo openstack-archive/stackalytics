@@ -1,3 +1,18 @@
+# Copyright (c) 2013 Mirantis Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import cgi
 import datetime
 import functools
@@ -41,6 +56,9 @@ def get_vault():
         releases = vault['persistent_storage'].get_releases()
         vault['releases'] = dict((r['release_name'].lower(), r)
                                  for r in releases)
+        modules = vault['persistent_storage'].get_repos()
+        vault['modules'] = dict((r['module'].lower(),
+                                 r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
     return vault
 
@@ -49,7 +67,32 @@ def get_memory_storage():
     return get_vault()['memory_storage']
 
 
-def record_filter(parameter_getter=lambda x: flask.request.args.get(x)):
+def get_default(param_name):
+    if param_name in DEFAULTS:
+        return DEFAULTS[param_name]
+    else:
+        return None
+
+
+def get_parameter(kwargs, singular_name, plural_name, use_default=True):
+    if singular_name in kwargs:
+        p = kwargs[singular_name]
+    else:
+        p = (flask.request.args.get(singular_name) or
+             flask.request.args.get(plural_name))
+    if p:
+        return p.split(',')
+    elif use_default:
+        default = get_default(singular_name)
+        return [default] if default else None
+    else:
+        return []
+
+
+def record_filter(ignore=None, use_default=True):
+    if not ignore:
+        ignore = []
+
     def decorator(f):
         @functools.wraps(f)
         def decorated_function(*args, **kwargs):
@@ -58,34 +101,42 @@ def record_filter(parameter_getter=lambda x: flask.request.args.get(x)):
             memory_storage = vault['memory_storage']
             record_ids = memory_storage.get_record_ids()
 
-            param = parameter_getter('modules')
-            if param:
-                record_ids &= memory_storage.get_record_ids_by_modules(
-                    param.split(','))
+            if 'module' not in ignore:
+                param = get_parameter(kwargs, 'module', 'modules', use_default)
+                if param:
+                    record_ids &= (
+                        memory_storage.get_record_ids_by_modules(param))
 
-            if 'launchpad_id' in kwargs:
-                param = kwargs['launchpad_id']
-            else:
-                param = (parameter_getter('launchpad_id') or
-                         parameter_getter('launchpad_ids'))
-            if param:
-                record_ids &= memory_storage.get_record_ids_by_launchpad_ids(
-                    param.split(','))
+            if 'project_type' not in ignore:
+                param = get_parameter(kwargs, 'project_type', 'project_types',
+                                      use_default)
+                if param:
+                    modules = [module for module, project_type
+                               in vault['modules'].iteritems()
+                               if project_type in param]
+                    record_ids &= (
+                        memory_storage.get_record_ids_by_modules(modules))
 
-            if 'company' in kwargs:
-                param = kwargs['company']
-            else:
-                param = (parameter_getter('company') or
-                         parameter_getter('companies'))
-            if param:
-                record_ids &= memory_storage.get_record_ids_by_companies(
-                    param.split(','))
+            if 'launchpad_id' not in ignore:
+                param = get_parameter(kwargs, 'launchpad_id', 'launchpad_ids')
+                if param:
+                    record_ids &= (
+                        memory_storage.get_record_ids_by_launchpad_ids(param))
 
-            param = parameter_getter('release') or parameter_getter('releases')
-            if param:
-                if param != 'all':
-                    record_ids &= memory_storage.get_record_ids_by_releases(
-                        c.lower() for c in param.split(','))
+            if 'company' not in ignore:
+                param = get_parameter(kwargs, 'company', 'companies')
+                if param:
+                    record_ids &= (
+                        memory_storage.get_record_ids_by_companies(param))
+
+            if 'release' not in ignore:
+                param = get_parameter(kwargs, 'release', 'releases',
+                                      use_default)
+                if param:
+                    if 'all' not in param:
+                        record_ids &= (
+                            memory_storage.get_record_ids_by_releases(
+                                c.lower() for c in param))
 
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
@@ -100,14 +151,15 @@ def aggregate_filter():
         @functools.wraps(f)
         def decorated_function(*args, **kwargs):
 
-            metric_filter = lambda r: r['loc']
-            metric_param = flask.request.args.get('metric')
-            if metric_param:
-                metric = metric_param.lower()
-                if metric == 'commits':
-                    metric_filter = lambda r: 1
-                elif metric != 'loc':
-                    raise Exception('Invalid metric %s' % metric)
+            metric_param = (flask.request.args.get('metric') or
+                            DEFAULTS['metric'])
+            metric = metric_param.lower()
+            if metric == 'commits':
+                metric_filter = lambda r: 1
+            elif metric == 'loc':
+                metric_filter = lambda r: r['loc']
+            else:
+                raise Exception('Invalid metric %s' % metric)
 
             kwargs['metric_filter'] = metric_filter
             return f(*args, **kwargs)
@@ -132,9 +184,11 @@ def exception_handler():
     return decorator
 
 
-DEFAULT_METRIC = 'loc'
-DEFAULT_RELEASE = 'havana'
-DEFAULT_PROJECT_TYPE = 'incubation'
+DEFAULTS = {
+    'metric': 'commits',
+    'release': 'havana',
+    'project_type': 'openstack',
+}
 
 INDEPENDENT = '*independent'
 
@@ -144,9 +198,8 @@ METRIC_LABELS = {
 }
 
 PROJECT_TYPES = {
-    'core': ['core'],
-    'incubation': ['core', 'incubation'],
-    'all': ['core', 'incubation', 'dev'],
+    'openstack': 'OpenStack',
+    'stackforge': 'StackForge',
 }
 
 ISSUE_TYPES = ['bug', 'blueprint']
@@ -172,8 +225,14 @@ def templated(template=None):
             metric = flask.request.args.get('metric')
             if metric not in METRIC_LABELS:
                 metric = None
-            ctx['metric'] = metric or DEFAULT_METRIC
+            ctx['metric'] = metric or DEFAULTS['metric']
             ctx['metric_label'] = METRIC_LABELS[ctx['metric']]
+
+            project_type = flask.request.args.get('project_type')
+            if project_type not in PROJECT_TYPES:
+                project_type = None
+            ctx['project_type'] = project_type or DEFAULTS['project_type']
+            ctx['project_type_label'] = PROJECT_TYPES[ctx['project_type']]
 
             release = flask.request.args.get('release')
             releases = vault['releases']
@@ -183,7 +242,7 @@ def templated(template=None):
                     release = None
                 else:
                     release = releases[release]['release_name']
-            ctx['release'] = (release or DEFAULT_RELEASE).lower()
+            ctx['release'] = (release or DEFAULTS['release']).lower()
 
             return flask.render_template(template_name, **ctx)
 
@@ -329,22 +388,16 @@ def get_engineers(records, metric_filter):
 
 @app.route('/data/timeline')
 @exception_handler()
-@record_filter(parameter_getter=lambda x: flask.request.args.get(x)
-               if (x != "release") and (x != "releases") else None)
-def timeline(records):
-
+@record_filter(ignore='release')
+def timeline(records, **kwargs):
     # find start and end dates
-    release_name = flask.request.args.get('release')
-
-    if not release_name:
-        release_name = DEFAULT_RELEASE
-    else:
-        release_name = release_name.lower()
-
+    release_names = get_parameter(kwargs, 'release', 'releases')
     releases = get_vault()['releases']
-    if release_name not in releases:
+    if not release_names:
         flask.abort(404)
-    release = releases[release_name]
+    if not (set(release_names) & set(releases.keys())):
+        flask.abort(404)
+    release = releases[release_names[0]]
 
     start_date = release_start_date = user_utils.timestamp_to_week(
         user_utils.date_to_timestamp(release['start_date']))
@@ -365,6 +418,7 @@ def timeline(records):
     weeks = range(start_date, end_date)
     week_stat_loc = dict((c, 0) for c in weeks)
     week_stat_commits = dict((c, 0) for c in weeks)
+    week_stat_commits_hl = dict((c, 0) for c in weeks)
 
     # fill stats with the data
     for record in records:
@@ -372,6 +426,8 @@ def timeline(records):
         if week in weeks:
             week_stat_loc[week] += record['loc']
             week_stat_commits[week] += 1
+            if 'all' in release_names or record['release'] in release_names:
+                week_stat_commits_hl[week] += 1
 
     # form arrays in format acceptable to timeline plugin
     array_loc = []
@@ -381,9 +437,8 @@ def timeline(records):
     for week in weeks:
         week_str = user_utils.week_to_date(week)
         array_loc.append([week_str, week_stat_loc[week]])
-        if release_start_date <= week <= release_end_date:
-            array_commits_hl.append([week_str, week_stat_commits[week]])
         array_commits.append([week_str, week_stat_commits[week]])
+        array_commits_hl.append([week_str, week_stat_commits_hl[week]])
 
     return json.dumps([array_commits, array_commits_hl, array_loc])
 
@@ -408,37 +463,35 @@ def safe_encode(s):
 
 @app.template_filter('link')
 def make_link(title, uri=None):
+    param_names = ('release', 'metric', 'project_type')
+    param_values = {}
+    for param_name in param_names:
+        v = get_parameter({}, param_name, param_name)
+        if v:
+            param_values[param_name] = ','.join(v)
+    if param_values:
+        uri += '?' + '&'.join(['%s=%s' % (n, v)
+                               for n, v in param_values.iteritems()])
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
-
-
-def clear_text(s):
-    return cgi.escape(re.sub(r'\n{2,}', '\n', s, flags=re.MULTILINE))
-
-
-def link_blueprint(s, module):
-    return re.sub(r'(blueprint\s+)([\w-]+)',
-                  r'\1<a href="https://blueprints.launchpad.net/' +
-                  module + r'/+spec/\2">\2</a>',
-                  s, flags=re.IGNORECASE)
-
-
-def link_bug(s):
-    return re.sub(r'(bug\s+)#?([\d]{5,7})',
-                  r'\1<a href="https://bugs.launchpad.net/bugs/\2">\2</a>',
-                  s, flags=re.IGNORECASE)
-
-
-def link_change_id(s):
-    return re.sub(r'\s+(I[0-9a-f]{40})',
-                  r' <a href="https://review.openstack.org/#q,\1,n,z">\1</a>',
-                  s)
 
 
 @app.template_filter('commit_message')
 def make_commit_message(record):
+    s = record['message']
+    module = record['module']
 
-    return link_change_id(link_bug(link_blueprint(clear_text(
-        record['message']), record['module'])))
+    # clear text
+    s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
+
+    # insert links
+    s = re.sub(re.compile('(blueprint\s+)([\w-]+)', flags=re.IGNORECASE),
+               r'\1<a href="https://blueprints.launchpad.net/' +
+               module + r'/+spec/\2">\2</a>', s)
+    s = re.sub(re.compile('(bug\s+)#?([\d]{5,7})', flags=re.IGNORECASE),
+               r'\1<a href="https://bugs.launchpad.net/bugs/\2">\2</a>', s)
+    s = re.sub(r'\s+(I[0-9a-f]{40})',
+               r' <a href="https://review.openstack.org/#q,\1,n,z">\1</a>', s)
+    return s
 
 
 gravatar = gravatar_ext.Gravatar(app,

@@ -5,6 +5,19 @@
 
     "users": [
         {
+            "launchpad_id": "openstack",
+            "companies": [
+                {
+                    "company_name": "*robots",
+                    "end_date": null
+                }
+            ],
+            "user_name": "OpenStack Robot",
+            "emails": [
+                "review@openstack.org", "jenkins@review.openstack.org", "jenkins@openstack.org", "hudson@openstack.org"
+            ]
+        },
+        {
             "launchpad_id": "akamyshnikova",
             "companies": [
                 {
@@ -12661,6 +12674,10 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2012-Nov-01"
+                },
+                {
+                    "company_name": "SwiftStack",
                     "end_date": null
                 }
             ],
@@ -13430,6 +13447,10 @@
             "company_name": "VexxHost"
         },
         {
+            "domains": ["vbridges.com"],
+            "company_name": "VirtualBridges"
+        },
+        {
             "domains": ["virtualtech.jp"],
             "company_name": "Virtualtech"
         },
@@ -13454,8 +13475,8 @@
     "repos": [
         {
             "branches": ["master"],
-            "name": "Neutron Client",
-            "type": "core",
+            "module": "python-neutronclient",
+            "project_type": "openstack",
             "uri": "git://github.com/openstack/python-neutronclient.git",
             "releases": [
                 {
@@ -13477,8 +13498,8 @@
         },
         {
             "branches": ["master"],
-            "name": "Keystone",
-            "type": "core",
+            "module": "keystone",
+            "project_type": "openstack",
             "uri": "git://github.com/openstack/keystone.git",
             "releases": [
                 {
@@ -13505,8 +13526,64 @@
         },
         {
             "branches": ["master"],
-            "name": "Murano API",
-            "type": "stackforge",
+            "module": "nova",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/nova.git",
+            "releases": [
+                {
+                    "release_name": "Essex",
+                    "tag_from": "2011.3",
+                    "tag_to": "2012.1"
+                },
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "neutron",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/neutron.git",
+            "releases": [
+                {
+                    "release_name": "Essex",
+                    "tag_from": "2011.3",
+                    "tag_to": "2012.1"
+                },
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "murano-api",
+            "project_type": "stackforge",
             "uri": "git://github.com/stackforge/murano-api.git",
             "releases": [
                 {

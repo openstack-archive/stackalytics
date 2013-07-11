@@ -39,7 +39,7 @@
     "repos": [
         {
             "branches": ["master"],
-            "name": "Quantum Client",
+            "module": "python-quantumclient",
             "type": "core",
             "uri": "git://github.com/openstack/python-quantumclient.git",
             "releases": [
@@ -62,7 +62,7 @@
         },
         {
             "branches": ["master"],
-            "name": "Keystone",
+            "module": "keystone",
             "type": "core",
             "uri": "git://github.com/openstack/keystone.git",
             "releases": [

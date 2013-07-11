@@ -117,7 +117,11 @@
                         } else {
                             index++;
                         }
-                        var link = make_link(link_prefix, data[i].id, data[i].name);
+                        if (data[i].id) {
+                            var link = make_link(link_prefix, data[i].id, data[i].name);
+                        } else {
+                            var link = data[i].name
+                        }
                         tableData.push({"index": index_label, "link": link, "metric": data[i].metric});
                     }
 
@@ -197,12 +201,12 @@
 {#        if (getRelease() != 'havana') {#}
             options['release'] = getRelease();
 {#        }#}
-        if (getMetric() != 'loc') {
+{#        if (getMetric() != 'loc') {#}
             options['metric'] = getMetric();
-        }
-        if (getProjectType() != 'incubation') {
+{#        }#}
+{#        if (getProjectType() != 'incubation') {#}
             options['project_type'] = getProjectType();
-        }
+{#        }#}
 
         return options;
     }
@@ -249,9 +253,8 @@
         <div class="drops" style='margin: 0.8em; height: 2em;'>
             <span class="drop_metric" style="float: right;">
             <label for="project_type">Projects&nbsp;</label><select id="project_type" name="project_type">
-                <option value="core">Core</option>
-                <option value="incubation">Core+Incubation</option>
-                <option value="all">All</option>
+                <option value="openstack">OpenStack</option>
+                <option value="stackforge">StackForge</option>
             </select>
             </span>
             <span class="drop_metric" style="float: right;">

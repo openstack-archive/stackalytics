@@ -6,8 +6,8 @@
 
 {% block scripts %}
 <script type="text/javascript">
-    chartAndTableRenderer("/data/companies", "left_list", "left_chart", "/companies/", {company: "{{ company|encode }}" });
-    timelineRenderer({company: "{{ company|encode }}" })
+    chartAndTableRenderer("/data/companies", "left_list", "left_chart", "/companies/", {module: "{{ module }}" });
+    timelineRenderer({module: "{{ module }}" })
 </script>
 {% endblock %}
 
