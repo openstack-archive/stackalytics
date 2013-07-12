@@ -154,11 +154,16 @@ class CachedProcessor(CommitProcessor):
         if not company:
             company = self._find_company(user['companies'], commit['date'])
         commit['company_name'] = company
+        if 'user_name' in user:
+            commit['author_name'] = user['user_name']
 
     def process(self, commit_iterator):
 
         for commit in commit_iterator:
             self._update_commit_with_user_data(commit)
+
+            if cfg.CONF.filter_robots and commit['company_name'] == '*robots':
+                continue
 
             yield commit
 

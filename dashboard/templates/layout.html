@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block head %}
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>{% block title %}Welcome{% endblock %} | Stackalytics</title>
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
@@ -198,15 +208,9 @@
 
     function make_std_options() {
         var options = {};
-{#        if (getRelease() != 'havana') {#}
-            options['release'] = getRelease();
-{#        }#}
-{#        if (getMetric() != 'loc') {#}
-            options['metric'] = getMetric();
-{#        }#}
-{#        if (getProjectType() != 'incubation') {#}
-            options['project_type'] = getProjectType();
-{#        }#}
+        options['release'] = getRelease();
+        options['metric'] = getMetric();
+        options['project_type'] = getProjectType();
 
         return options;
     }
@@ -248,8 +252,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="Xpage">
-    <div class="Xaheader">
+
+    <div class="page">
+    <div class="aheader">
+        <div id="analytics_header">
+            <h3>
+                <a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a>
+                | {{ self.title() }}</h3>
+            <p>Community heartbeat</p>
+        </div>
+
         <div class="drops" style='margin: 0.8em; height: 2em;'>
             <span class="drop_metric" style="float: right;">
             <label for="project_type">Projects&nbsp;</label><select id="project_type" name="project_type">

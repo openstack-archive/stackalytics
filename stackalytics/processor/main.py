@@ -21,11 +21,11 @@ from psutil import _error
 import sh
 
 from stackalytics.openstack.common import log as logging
-from stackalytics.openstack.common.timeutils import iso8601_from_timestamp
+from stackalytics.openstack.common import timeutils
 from stackalytics.processor import commit_processor
-from stackalytics.processor.persistent_storage import PersistentStorageFactory
-from stackalytics.processor.runtime_storage import RuntimeStorageFactory
-from stackalytics.processor.vcs import VcsFactory
+from stackalytics.processor import persistent_storage
+from stackalytics.processor import runtime_storage
+from stackalytics.processor import vcs
 
 
 LOG = logging.getLogger(__name__)
@@ -52,6 +52,8 @@ OPTS = [
                      'default data'),
     cfg.StrOpt('launchpad-user', default='stackalytics-bot',
                help='User to access Launchpad'),
+    cfg.BoolOpt('filter-robots', default=True,
+                help='Filter out commits from robots'),
 ]
 
 
@@ -95,19 +97,19 @@ def process_repo(repo, runtime_storage, processor):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
-    vcs = VcsFactory.get_vcs(repo)
-    vcs.fetch()
+    vcs_inst = vcs.get_vcs(repo)
+    vcs_inst.fetch()
 
     for branch in repo['branches']:
         LOG.debug('Processing repo %s, branch %s' % (uri, branch))
 
         head_commit_id = runtime_storage.get_head_commit_id(uri, branch)
 
-        commit_iterator = vcs.log(branch, head_commit_id)
+        commit_iterator = vcs_inst.log(branch, head_commit_id)
         processed_commit_iterator = processor.process(commit_iterator)
         runtime_storage.set_records(processed_commit_iterator)
 
-        head_commit_id = vcs.get_head_commit_id(branch)
+        head_commit_id = vcs_inst.get_head_commit_id(branch)
         runtime_storage.set_head_commit_id(uri, branch, head_commit_id)
 
 
@@ -117,7 +119,7 @@ def update_repos(runtime_storage, persistent_storage):
 
     if current_time < repo_update_time:
         LOG.info('The next update is scheduled at %s. Skipping' %
-                 iso8601_from_timestamp(repo_update_time))
+                 timeutils.iso8601_from_timestamp(repo_update_time))
         return
 
     repos = persistent_storage.get_repos()
@@ -142,22 +144,22 @@ def main():
     logging.setup('stackalytics')
     LOG.info('Logging enabled')
 
-    persistent_storage = PersistentStorageFactory.get_storage(
+    persistent_storage_inst = persistent_storage.get_persistent_storage(
         cfg.CONF.persistent_storage_uri)
 
     if conf.sync_default_data or conf.force_sync_default_data:
         LOG.info('Going to synchronize persistent storage with default data '
                  'from file %s' % cfg.CONF.default_data)
-        persistent_storage.sync(cfg.CONF.default_data,
-                                force=conf.force_sync_default_data)
+        persistent_storage_inst.sync(cfg.CONF.default_data,
+                                     force=conf.force_sync_default_data)
         return 0
 
-    runtime_storage = RuntimeStorageFactory.get_storage(
+    runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)
 
-    update_pids(runtime_storage)
+    update_pids(runtime_storage_inst)
 
-    update_repos(runtime_storage, persistent_storage)
+    update_repos(runtime_storage_inst, persistent_storage_inst)
 
 
 if __name__ == '__main__':

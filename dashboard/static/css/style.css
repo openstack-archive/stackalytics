@@ -1,7 +1,6 @@
 html, body {
     font-family: 'PT Sans', arial, sans-serif;
     font-size: 14px;
-    background: url(../images/osstats_tile.jpg) repeat-x;
     height: 100%;
     color: #41454d;
     margin: 0;
@@ -23,12 +22,12 @@ p {
     margin: 6px 0px 15px 0px;
 }
 
-div.Xpage {
+div.page {
     width: 960px;
     margin: 0 auto;
 }
 
-div.Xpage h2 {
+div.page h2 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
     font-size: 23px;
     font-weight: normal;
@@ -68,21 +67,6 @@ input[type="submit"] {
     -moz-box-shadow: inset 2px 2px 7px #D3D8DD;
     -webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
     box-shadow: inset 2px 2px 7px #D3D8DD;
-}
-
-div.page {
-    background: white;
-    border: 1px solid #e9eaef;
-    width: 90%;
-    margin: 10px auto;
-}
-
-div.page h1 {
-    background: white;
-    margin: 0;
-    padding: 0.1em 0.2em;
-    color: black;
-    font-weight: normal;
 }
 
 div.drops {
@@ -126,7 +110,6 @@ select {
 
 div.aheader {
     height: 60px;
-    background: #e0e9f2;
     text-shadow: 1px 1px 0 #fff;
 }
 
@@ -303,10 +286,7 @@ a[href^="https://launchpad"]:after {
 }
 
 #analytics_header {
-    height: 25px;
-    width: 960px;
-    margin: 0 auto;
-    clear: both;
+    float: left;
 }
 
 #analytics_header h3 {
@@ -315,9 +295,8 @@ a[href^="https://launchpad"]:after {
     font-style: normal;
     font-size: 24px;
     color: black;
-    padding-top: 30px;
     text-shadow: 1px 1px 0 #fff;
-    margin: 0px;
+    margin: 0;
 }
 
 #analytics_header p {

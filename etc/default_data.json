@@ -4372,11 +4372,11 @@
             "companies": [
                 {
                     "company_name": "Grid Dynamics",
-                    "end_date": null
+                    "end_date": "2013-Jun-10"
                 },
                 {
                     "company_name": "Mirantis",
-                    "end_date": "2013-Jun-10"
+                    "end_date": null
                 }
             ],
             "user_name": "Tatyana Leontovich",
@@ -13475,23 +13475,28 @@
     "repos": [
         {
             "branches": ["master"],
-            "module": "python-neutronclient",
+            "module": "nova",
             "project_type": "openstack",
-            "uri": "git://github.com/openstack/python-neutronclient.git",
+            "uri": "git://github.com/openstack/nova.git",
             "releases": [
                 {
+                    "release_name": "Essex",
+                    "tag_from": "2011.3",
+                    "tag_to": "2012.1"
+                },
+                {
                     "release_name": "Folsom",
-                    "tag_from": "folsom-1",
-                    "tag_to": "2.1"
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
                 },
                 {
                     "release_name": "Grizzly",
-                    "tag_from": "2.1",
-                    "tag_to": "2.2.1"
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
                 },
                 {
                     "release_name": "Havana",
-                    "tag_from": "2.2.1",
+                    "tag_from": "2013.1",
                     "tag_to": "HEAD"
                 }
             ]
@@ -13526,9 +13531,32 @@
         },
         {
             "branches": ["master"],
-            "module": "nova",
+            "module": "cinder",
             "project_type": "openstack",
-            "uri": "git://github.com/openstack/nova.git",
+            "uri": "git://github.com/openstack/cinder.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "c53d8e34",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "glance",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/glance.git",
             "releases": [
                 {
                     "release_name": "Essex",
@@ -13576,6 +13604,551 @@
                 {
                     "release_name": "Havana",
                     "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "horizon",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/horizon.git",
+            "releases": [
+                {
+                    "release_name": "Essex",
+                    "tag_from": "2011.3",
+                    "tag_to": "2012.1"
+                },
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "swift",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/swift.git",
+            "releases": [
+                {
+                    "release_name": "Essex",
+                    "tag_from": "1.4.3",
+                    "tag_to": "1.4.8"
+                },
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "1.4.8",
+                    "tag_to": "1.7.4"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "1.7.4",
+                    "tag_to": "1.8.0"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "1.8.0",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-keystoneclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-keystoneclient.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "0.1.0",
+                    "tag_to": "0.2.0"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "0.2.0",
+                    "tag_to": "0.2.3"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "0.2.3",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-novaclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-novaclient.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "essex-rc1",
+                    "tag_to": "2.9.0"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2.9.0",
+                    "tag_to": "2.13.0"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2.13.0",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-cinderclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-cinderclient.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "1.0.0",
+                    "tag_to": "1.0.3"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "1.0.3",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-glanceclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-glanceclient.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "0.6.0",
+                    "tag_to": "0.9.0"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "0.9.0",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-neutronclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-neutronclient.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2.1"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2.1",
+                    "tag_to": "2.2.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2.2.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-swiftclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-swiftclient.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "1.2.0",
+                    "tag_to": "1.3.0"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "1.3.0",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "heat",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/heat.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "v7.release",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-heatclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-heatclient.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "0.1.0",
+                    "tag_to": "0.2.2"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "0.2.2",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "ceilometer",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/ceilometer.git",
+            "releases": [
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "grizzly-2",
+                    "tag_to": "2013.1"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-ceilometerclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-ceilometerclient.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "1.0.0",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "oslo-incubator",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/oslo-incubator.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "oslo.config",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/oslo.config.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "fc8ca59",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "compute-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/compute-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "identity-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/identity-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "image-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/image-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "netconn-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/netconn-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "object-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/object-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "volume-api",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/volume-api.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "openstack-manuals",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/openstack-manuals.git",
+            "releases": [
+                {
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1",
+                    "tag_to": "2012.2"
+                },
+                {
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2",
+                    "tag_to": "2013.1.rc2"
+                },
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1.rc2",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "api-site",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/api-site.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+
+        {
+            "branches": ["master"],
+            "module": "devstack",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack-dev/devstack.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "896eb66",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "tempest",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/tempest.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "017e95c",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "requirements",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/requirements.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "aea036d",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+
+        {
+            "branches": ["master"],
+            "module": "requirements",
+            "project_type": "trove",
+            "uri": "git://github.com/openstack/trove.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "ca978a0f",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "trove-integration",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/trove-integration.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "bac5b1b",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "python-troveclient",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-troveclient.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "6222dea",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "ironic",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/ironic.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "8e05dbf",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+
+        {
+            "branches": ["master"],
+            "module": "savanna",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/savanna.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "0.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "designate",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/designate.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "2013.1.alpha1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "diskimage-builder",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/diskimage-builder.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "b196f1bb",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "marconi",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/marconi.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "1a15292c",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "stackalytics",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/stackalytics.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "5a1376ca",
                     "tag_to": "HEAD"
                 }
             ]

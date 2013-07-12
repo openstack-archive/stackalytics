@@ -186,11 +186,10 @@ class MemcachedStorage(RuntimeStorage):
             self.commit_id_index[record['commit_id']] = record['record_id']
 
 
-class RuntimeStorageFactory(object):
-
-    @staticmethod
-    def get_storage(uri):
-        LOG.debug('Runtime storage is requested for uri %s' % uri)
-        match = re.search(r'^memcached:\/\/', uri)
-        if match:
-            return MemcachedStorage(uri)
+def get_runtime_storage(uri):
+    LOG.debug('Runtime storage is requested for uri %s' % uri)
+    match = re.search(r'^memcached:\/\/', uri)
+    if match:
+        return MemcachedStorage(uri)
+    else:
+        raise Exception('Unknown runtime storage uri %s' % uri)

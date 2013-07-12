@@ -26,15 +26,38 @@ from flask.ext import gravatar as gravatar_ext
 import time
 
 from dashboard import memory_storage
-from stackalytics.processor.persistent_storage import PersistentStorageFactory
-from stackalytics.processor.runtime_storage import RuntimeStorageFactory
+from stackalytics.processor import persistent_storage
+from stackalytics.processor import runtime_storage
 from stackalytics.processor import user_utils
+
+
+# Constants and Parameters ---------
 
 DEBUG = True
 RUNTIME_STORAGE_URI = 'memcached://127.0.0.1:11211'
 PERSISTENT_STORAGE_URI = 'mongodb://localhost'
 
-# create our little application :)
+DEFAULTS = {
+    'metric': 'commits',
+    'release': 'havana',
+    'project_type': 'openstack',
+}
+
+METRIC_LABELS = {
+    'loc': 'Lines of code',
+    'commits': 'Commits',
+}
+
+PROJECT_TYPES = {
+    'openstack': 'OpenStack',
+    'stackforge': 'StackForge',
+}
+
+DEFAULT_RECORDS_LIMIT = 10
+
+
+# Application objects ---------
+
 app = flask.Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('DASHBOARD_CONF', silent=True)
@@ -44,14 +67,14 @@ def get_vault():
     vault = getattr(app, 'stackalytics_vault', None)
     if not vault:
         vault = {}
-        vault['runtime_storage'] = RuntimeStorageFactory.get_storage(
+        vault['runtime_storage'] = runtime_storage.get_runtime_storage(
             RUNTIME_STORAGE_URI)
-        vault['persistent_storage'] = PersistentStorageFactory.get_storage(
-            PERSISTENT_STORAGE_URI)
-        vault['memory_storage'] = (
-            memory_storage.MemoryStorageFactory.get_storage(
-                memory_storage.MEMORY_STORAGE_CACHED,
-                vault['runtime_storage'].get_update(os.getpid())))
+        vault['persistent_storage'] = (
+            persistent_storage.get_persistent_storage(
+                PERSISTENT_STORAGE_URI))
+        vault['memory_storage'] = memory_storage.get_memory_storage(
+            memory_storage.MEMORY_STORAGE_CACHED,
+            vault['runtime_storage'].get_update(os.getpid()))
 
         releases = vault['persistent_storage'].get_releases()
         vault['releases'] = dict((r['release_name'].lower(), r)
@@ -66,6 +89,8 @@ def get_vault():
 def get_memory_storage():
     return get_vault()['memory_storage']
 
+
+# Utils ---------
 
 def get_default(param_name):
     if param_name in DEFAULTS:
@@ -88,6 +113,8 @@ def get_parameter(kwargs, singular_name, plural_name, use_default=True):
     else:
         return []
 
+
+# Decorators ---------
 
 def record_filter(ignore=None, use_default=True):
     if not ignore:
@@ -152,7 +179,7 @@ def aggregate_filter():
         def decorated_function(*args, **kwargs):
 
             metric_param = (flask.request.args.get('metric') or
-                            DEFAULTS['metric'])
+                            get_default('metric'))
             metric = metric_param.lower()
             if metric == 'commits':
                 metric_filter = lambda r: 1
@@ -184,29 +211,6 @@ def exception_handler():
     return decorator
 
 
-DEFAULTS = {
-    'metric': 'commits',
-    'release': 'havana',
-    'project_type': 'openstack',
-}
-
-INDEPENDENT = '*independent'
-
-METRIC_LABELS = {
-    'loc': 'Lines of code',
-    'commits': 'Commits',
-}
-
-PROJECT_TYPES = {
-    'openstack': 'OpenStack',
-    'stackforge': 'StackForge',
-}
-
-ISSUE_TYPES = ['bug', 'blueprint']
-
-DEFAULT_RECORDS_LIMIT = 10
-
-
 def templated(template=None):
     def decorator(f):
         @functools.wraps(f)
@@ -225,13 +229,13 @@ def templated(template=None):
             metric = flask.request.args.get('metric')
             if metric not in METRIC_LABELS:
                 metric = None
-            ctx['metric'] = metric or DEFAULTS['metric']
+            ctx['metric'] = metric or get_default('metric')
             ctx['metric_label'] = METRIC_LABELS[ctx['metric']]
 
             project_type = flask.request.args.get('project_type')
             if project_type not in PROJECT_TYPES:
                 project_type = None
-            ctx['project_type'] = project_type or DEFAULTS['project_type']
+            ctx['project_type'] = project_type or get_default('project_type')
             ctx['project_type_label'] = PROJECT_TYPES[ctx['project_type']]
 
             release = flask.request.args.get('release')
@@ -242,7 +246,7 @@ def templated(template=None):
                     release = None
                 else:
                     release = releases[release]['release_name']
-            ctx['release'] = (release or DEFAULTS['release']).lower()
+            ctx['release'] = (release or get_default('release')).lower()
 
             return flask.render_template(template_name, **ctx)
 
@@ -251,10 +255,17 @@ def templated(template=None):
     return decorator
 
 
+# Handlers ---------
+
 @app.route('/')
 @templated()
 def overview():
     pass
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return flask.render_template('404.html'), 404
 
 
 def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
@@ -333,10 +344,7 @@ def engineer_details(launchpad_id, records):
     return details
 
 
-@app.errorhandler(404)
-def page_not_found(e):
-    return flask.render_template('404.html'), 404
-
+# AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
                           param_title=None):
@@ -443,7 +451,7 @@ def timeline(records, **kwargs):
     return json.dumps([array_commits, array_commits_hl, array_loc])
 
 
-# Jinja Filters
+# Jinja Filters ---------
 
 @app.template_filter('datetimeformat')
 def format_datetime(timestamp):
@@ -494,12 +502,8 @@ def make_commit_message(record):
     return s
 
 
-gravatar = gravatar_ext.Gravatar(app,
-                                 size=100,
-                                 rating='g',
-                                 default='wavatar',
-                                 force_default=False,
-                                 force_lower=False)
+gravatar = gravatar_ext.Gravatar(app, size=100, rating='g',
+                                 default='wavatar')
 
 if __name__ == '__main__':
     app.run('0.0.0.0')

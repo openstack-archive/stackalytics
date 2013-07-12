@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import logging
 
 import os
@@ -163,13 +164,11 @@ class Git(Vcs):
         return str(sh.git('rev-parse', 'HEAD')).strip()
 
 
-class VcsFactory(object):
-
-    @staticmethod
-    def get_vcs(repo):
-        uri = repo['uri']
-        LOG.debug('Factory is asked for Vcs uri %s' % uri)
-        match = re.search(r'\.git$', uri)
-        if match:
-            return Git(repo)
-            #todo others vcs to be implemented
+def get_vcs(repo):
+    uri = repo['uri']
+    LOG.debug('Factory is asked for Vcs uri %s' % uri)
+    match = re.search(r'\.git$', uri)
+    if match:
+        return Git(repo)
+    else:
+        raise Exception("Unknown Vcs uri %s" % uri)

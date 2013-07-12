@@ -1,3 +1,18 @@
+# Copyright (c) 2013 Mirantis Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 from stackalytics.processor import user_utils
 
 MEMORY_STORAGE_CACHED = 0
@@ -20,9 +35,8 @@ class CachedMemoryStorage(MemoryStorage):
         self.release_index = {}
         self.dates = []
         for record in records:
-            if record['company_name'] != '*robots':  # ignore robots
-                self.records[record['record_id']] = record
-                self.index(record)
+            self.records[record['record_id']] = record
+            self.index(record)
         self.dates = sorted(self.date_index)
         self.company_name_mapping = dict((c.lower(), c)
                                          for c in self.company_index.keys())
@@ -91,11 +105,8 @@ class CachedMemoryStorage(MemoryStorage):
         return self.launchpad_id_index.keys()
 
 
-class MemoryStorageFactory(object):
-
-    @staticmethod
-    def get_storage(memory_storage_type, records):
-        if memory_storage_type == MEMORY_STORAGE_CACHED:
-            return CachedMemoryStorage(records)
-        else:
-            raise Exception('Unknown memory storage type')
+def get_memory_storage(memory_storage_type, records):
+    if memory_storage_type == MEMORY_STORAGE_CACHED:
+        return CachedMemoryStorage(records)
+    else:
+        raise Exception('Unknown memory storage type %s' % memory_storage_type)

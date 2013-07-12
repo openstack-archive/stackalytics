@@ -19,7 +19,7 @@ import re
 
 import pymongo
 
-from stackalytics.processor.user_utils import normalize_user
+from stackalytics.processor import user_utils
 
 LOG = logging.getLogger(__name__)
 
@@ -127,10 +127,10 @@ class MongodbStorage(PersistentStorage):
         return self.mongo.users.find(criteria)
 
     def insert_user(self, user):
-        self.mongo.users.insert(normalize_user(user))
+        self.mongo.users.insert(user_utils.normalize_user(user))
 
     def update_user(self, user):
-        normalize_user(user)
+        user_utils.normalize_user(user)
         launchpad_id = user['launchpad_id']
         self.mongo.users.update({'launchpad_id': launchpad_id}, user)
 
@@ -141,10 +141,10 @@ class MongodbStorage(PersistentStorage):
         self.mongo.releases.insert(release)
 
 
-class PersistentStorageFactory(object):
-    @staticmethod
-    def get_storage(uri):
-        LOG.debug('Persistent storage is requested for uri %s' % uri)
-        match = re.search(r'^mongodb:\/\/', uri)
-        if match:
-            return MongodbStorage(uri)
+def get_persistent_storage(uri):
+    LOG.debug('Persistent storage is requested for uri %s' % uri)
+    match = re.search(r'^mongodb:\/\/', uri)
+    if match:
+        return MongodbStorage(uri)
+    else:
+        raise Exception('Unknown persistent storage uri %s' % uri)
