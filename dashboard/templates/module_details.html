@@ -48,9 +48,9 @@
                 {% else %}
                     {{ rec.author }}
                 {% endif %}
-                {% if rec.company %}
+                {% if rec.company_name %}
                     (
-                    {{ rec.company|link('/companies/' + rec.company)|safe }}
+                    {{ rec.company_name|link('/companies/' + rec.company_name)|safe }}
                     )
                 {% endif %}
                 <em>{{ rec.date|datetimeformat }}</em>
@@ -58,6 +58,8 @@
 
                 <div><b>{{ rec.subject }}</b></div>
                 <div style="white-space: pre-wrap;">{{ rec|commit_message|safe }}</div>
+                <div><span style="color: green">+ {{ rec.lines_added }}</span>
+                    <span style="color: red">- {{ rec.lines_deleted }}</span></div>
             </div>
         </div>
     {% endfor %}
