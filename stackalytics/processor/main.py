@@ -19,33 +19,13 @@ from psutil import _error
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import commit_processor
+from stackalytics.processor import config
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import vcs
 
 
 LOG = logging.getLogger(__name__)
-
-OPTS = [
-    cfg.StrOpt('default-data', default='etc/default_data.json',
-               help='Default data'),
-    cfg.StrOpt('sources-root', default=None, required=True,
-               help='The folder that holds all project sources to analyze'),
-    cfg.StrOpt('runtime-storage-uri', default='memcached://127.0.0.1:11211',
-               help='Storage URI'),
-    cfg.StrOpt('persistent-storage-uri', default='mongodb://localhost',
-               help='URI of persistent storage'),
-    cfg.BoolOpt('sync-default-data', default=False,
-                help='Update persistent storage with default data. '
-                     'Existing data is not overwritten'),
-    cfg.BoolOpt('force-sync-default-data', default=False,
-                help='Completely overwrite persistent storage with the '
-                     'default data'),
-    cfg.StrOpt('launchpad-user', default='stackalytics-bot',
-               help='User to access Launchpad'),
-    cfg.BoolOpt('filter-robots', default=True,
-                help='Filter out commits from robots'),
-]
 
 
 def get_pids():
@@ -107,8 +87,8 @@ def update_repos(runtime_storage, persistent_storage):
 def main():
     # init conf and logging
     conf = cfg.CONF
-    conf.register_cli_opts(OPTS)
-    conf.register_opts(OPTS)
+    conf.register_cli_opts(config.OPTS)
+    conf.register_opts(config.OPTS)
     conf()
 
     logging.setup('stackalytics')

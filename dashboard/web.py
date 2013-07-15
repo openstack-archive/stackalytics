@@ -23,19 +23,18 @@ import urllib
 
 import flask
 from flask.ext import gravatar as gravatar_ext
+from oslo.config import cfg
 import time
 
 from dashboard import memory_storage
+from stackalytics.openstack.common import log as logging
+from stackalytics.processor import config
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import user_utils
 
 
 # Constants and Parameters ---------
-
-DEBUG = True
-RUNTIME_STORAGE_URI = 'memcached://127.0.0.1:11211'
-PERSISTENT_STORAGE_URI = 'mongodb://localhost'
 
 DEFAULTS = {
     'metric': 'commits',
@@ -62,16 +61,33 @@ app = flask.Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('DASHBOARD_CONF', silent=True)
 
+LOG = logging.getLogger(__name__)
+
+conf = cfg.CONF
+conf.register_opts(config.OPTS)
+logging.setup('dashboard')
+LOG.info('Logging enabled')
+
+conf_file = os.getenv('STACKALYTICS_CONF')
+if (conf_file is None) or (not os.path.isfile(conf_file)):
+    conf_file = '/etc/stackalytics/stackalytics.conf'
+
+if os.path.isfile(conf_file):
+    conf(default_config_files=[conf_file])
+    app.config['DEBUG'] = cfg.CONF.debug
+else:
+    LOG.warn('Conf file is empty or not exist')
+
 
 def get_vault():
     vault = getattr(app, 'stackalytics_vault', None)
     if not vault:
         vault = {}
         vault['runtime_storage'] = runtime_storage.get_runtime_storage(
-            RUNTIME_STORAGE_URI)
+            cfg.CONF.runtime_storage_uri)
         vault['persistent_storage'] = (
             persistent_storage.get_persistent_storage(
-                PERSISTENT_STORAGE_URI))
+                cfg.CONF.persistent_storage_uri))
         vault['memory_storage'] = memory_storage.get_memory_storage(
             memory_storage.MEMORY_STORAGE_CACHED,
             vault['runtime_storage'].get_update(os.getpid()))
@@ -208,7 +224,7 @@ def exception_handler():
             try:
                 return f(*args, **kwargs)
             except Exception as e:
-                print e
+                LOG.debug(e)
                 flask.abort(404)
 
         return decorated_function
@@ -510,5 +526,9 @@ def make_commit_message(record):
 gravatar = gravatar_ext.Gravatar(app, size=100, rating='g',
                                  default='wavatar')
 
+
+def main():
+    app.run(cfg.CONF.listen_host, cfg.CONF.listen_port)
+
 if __name__ == '__main__':
-    app.run('0.0.0.0')
+    main()

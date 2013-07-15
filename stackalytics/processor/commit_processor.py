@@ -79,11 +79,11 @@ class CachedProcessor(CommitProcessor):
     def _unknown_user_email(self, email):
 
         lp_profile = None
-        if not re.match(r'[^@]+@[^@]+\.[^@]+', email):
+        if not re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email):
             LOG.debug('User email is not valid %s' % email)
         else:
             LOG.debug('Lookup user email %s at Launchpad' % email)
-            lp = launchpad.Launchpad.login_anonymously(cfg.CONF.launchpad_user)
+            lp = launchpad.Launchpad.login_anonymously('stackalytics')
             try:
                 lp_profile = lp.people.getByEmail(email=email)
             except Exception as error:
