@@ -35,14 +35,14 @@ class CachedMemoryStorage(MemoryStorage):
         self.release_index = {}
         self.dates = []
         for record in records:
-            self.records[record['record_id']] = record
-            self.index(record)
+            self._save_record(record)
         self.dates = sorted(self.date_index)
         self.company_name_mapping = dict((c.lower(), c)
                                          for c in self.company_index.keys())
 
-    def index(self, record):
+    def _save_record(self, record):
 
+        self.records[record['record_id']] = record
         self._add_to_index(self.company_index, record, 'company_name')
         self._add_to_index(self.module_index, record, 'module')
         self._add_to_index(self.launchpad_id_index, record, 'launchpad_id')
@@ -51,6 +51,14 @@ class CachedMemoryStorage(MemoryStorage):
 
         record['week'] = user_utils.timestamp_to_week(record['date'])
         record['loc'] = record['lines_added'] + record['lines_deleted']
+
+    def _remove_record_from_index(self, record):
+        self.company_index[record['company_name']].remove(record['record_id'])
+        self.module_index[record['module']].remove(record['record_id'])
+        self.launchpad_id_index[record['launchpad_id']].remove(
+            record['record_id'])
+        self.release_index[record['release']].remove(record['record_id'])
+        self.date_index[record['date']].remove(record['record_id'])
 
     def _add_to_index(self, record_index, record, key):
         record_key = record[key]
@@ -103,6 +111,12 @@ class CachedMemoryStorage(MemoryStorage):
 
     def get_launchpad_ids(self):
         return self.launchpad_id_index.keys()
+
+    def update(self, records):
+        for record in records:
+            if record['record_id'] in self.records:
+                self._remove_record_from_index(record)
+            self._save_record(record)
 
 
 def get_memory_storage(memory_storage_type, records):

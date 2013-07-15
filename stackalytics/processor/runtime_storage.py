@@ -115,10 +115,10 @@ class MemcachedStorage(RuntimeStorage):
         else:
             for update_id_set in self._make_range(last_update, update_count,
                                                   BULK_READ_SIZE):
-                update_set = self.memcached.get_multi(update_id_set,
-                                                      UPDATE_ID_PREFIX)
-                for i in self.memcached.get_multi(update_set,
-                                                  RECORD_ID_PREFIX):
+                update_set = self.memcached.get_multi(
+                    update_id_set, UPDATE_ID_PREFIX).values()
+                for i in self.memcached.get_multi(
+                        update_set, RECORD_ID_PREFIX).values():
                     yield i
 
     def active_pids(self, pids):
@@ -170,7 +170,7 @@ class MemcachedStorage(RuntimeStorage):
         self.memcached.set('pids', pids)
 
     def _get_record_name(self, record_id):
-        return RECORD_ID_PREFIX + record_id
+        return RECORD_ID_PREFIX + str(record_id)
 
     def _get_record_count(self):
         return self.memcached.get('record:count') or 0
@@ -194,7 +194,7 @@ class MemcachedStorage(RuntimeStorage):
 
     def _commit_update(self, record_id):
         count = self._get_update_count()
-        self.memcached.set(UPDATE_ID_PREFIX + count, record_id)
+        self.memcached.set(UPDATE_ID_PREFIX + str(count), record_id)
         self.memcached.set('update:count', count + 1)
 
     def _build_index(self):

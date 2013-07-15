@@ -83,6 +83,11 @@ def get_vault():
         vault['modules'] = dict((r['module'].lower(),
                                  r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
+    else:
+        memory_storage_inst = vault['memory_storage']
+        memory_storage_inst.update(
+            vault['runtime_storage'].get_update(os.getpid()))
+
     return vault
 
 
