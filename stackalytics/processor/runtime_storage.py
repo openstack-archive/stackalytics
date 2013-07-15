@@ -47,18 +47,6 @@ class RuntimeStorage(object):
     def active_pids(self, pids):
         pass
 
-    def get_pid_update_time(self, pid):
-        pass
-
-    def set_pid_update_time(self, pid, time):
-        pass
-
-    def get_repo_update_time(self):
-        pass
-
-    def set_repo_update_time(self, time):
-        pass
-
 
 class MemcachedStorage(RuntimeStorage):
 
@@ -126,7 +114,6 @@ class MemcachedStorage(RuntimeStorage):
         for pid in stored_pids:
             if pid not in pids:
                 self.memcached.delete('pid:%s' % pid)
-                self.memcached.delete('pid_update_time:%s' % pid)
 
         self.memcached.set('pids', pids)
 
@@ -146,18 +133,6 @@ class MemcachedStorage(RuntimeStorage):
             self.memcached.delete(UPDATE_ID_PREFIX + str(i))
 
         self.memcached.set('first_valid_update_id', min_update)
-
-    def get_pid_update_time(self, pid):
-        return self.memcached.get('pid_update_time:%s' % pid) or 0
-
-    def set_pid_update_time(self, pid, time):
-        self.memcached.set('pid_update_time:%s' % pid, time)
-
-    def get_repo_update_time(self):
-        return self.memcached.get('repo_update_time') or 0
-
-    def set_repo_update_time(self, time):
-        self.memcached.set('repo_update_time', time)
 
     def _get_update_count(self):
         return self.memcached.get('update:count') or 0

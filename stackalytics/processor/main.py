@@ -13,15 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import time
-
 from oslo.config import cfg
 import psutil
 from psutil import _error
-import sh
 
 from stackalytics.openstack.common import log as logging
-from stackalytics.openstack.common import timeutils
 from stackalytics.processor import commit_processor
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import runtime_storage
@@ -37,11 +33,6 @@ OPTS = [
                help='The folder that holds all project sources to analyze'),
     cfg.StrOpt('runtime-storage-uri', default='memcached://127.0.0.1:11211',
                help='Storage URI'),
-    cfg.StrOpt('frontend-update-address',
-               default='http://user:user@localhost/update/%s',
-               help='Address of update handler'),
-    cfg.StrOpt('repo-poll-period', default='300',
-               help='Repo poll period in seconds'),
     cfg.StrOpt('persistent-storage-uri', default='mongodb://localhost',
                help='URI of persistent storage'),
     cfg.BoolOpt('sync-default-data', default=False,
@@ -76,21 +67,11 @@ def get_pids():
     return result
 
 
-def update_pid(pid):
-    url = cfg.CONF.frontend_update_address % pid
-    sh.curl(url)
-
-
 def update_pids(runtime_storage):
     pids = get_pids()
     if not pids:
         return
     runtime_storage.active_pids(pids)
-    current_time = time.time()
-    for pid in pids:
-        if current_time > runtime_storage.get_pid_update_time(pid):
-            update_pid(pid)
-    return current_time
 
 
 def process_repo(repo, runtime_storage, processor):
@@ -114,14 +95,6 @@ def process_repo(repo, runtime_storage, processor):
 
 
 def update_repos(runtime_storage, persistent_storage):
-    current_time = time.time()
-    repo_update_time = runtime_storage.get_repo_update_time()
-
-    if current_time < repo_update_time:
-        LOG.info('The next update is scheduled at %s. Skipping' %
-                 timeutils.iso8601_from_timestamp(repo_update_time))
-        return
-
     repos = persistent_storage.get_repos()
     processor = commit_processor.CommitProcessorFactory.get_processor(
         commit_processor.COMMIT_PROCESSOR_CACHED,
@@ -129,9 +102,6 @@ def update_repos(runtime_storage, persistent_storage):
 
     for repo in repos:
         process_repo(repo, runtime_storage, processor)
-
-    runtime_storage.set_repo_update_time(time.time() +
-                                         int(cfg.CONF.repo_poll_period))
 
 
 def main():
