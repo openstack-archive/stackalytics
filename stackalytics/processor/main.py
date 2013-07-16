@@ -58,7 +58,7 @@ def process_repo(repo, runtime_storage, processor):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
-    vcs_inst = vcs.get_vcs(repo)
+    vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
     vcs_inst.fetch()
 
     for branch in repo['branches']:

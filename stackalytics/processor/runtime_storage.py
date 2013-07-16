@@ -19,7 +19,6 @@ import re
 import urllib
 
 import memcache
-from oslo.config import cfg
 
 LOG = logging.getLogger(__name__)
 
@@ -59,7 +58,7 @@ class MemcachedStorage(RuntimeStorage):
             self.memcached = memcache.Client(storage_uri)
             self._build_index()
         else:
-            raise Exception('Invalid storage uri %s' % cfg.CONF.storage_uri)
+            raise Exception('Invalid storage uri %s' % uri)
 
     def set_records(self, records_iterator):
         for record in records_iterator:

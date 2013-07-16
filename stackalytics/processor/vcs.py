@@ -18,7 +18,6 @@ import logging
 import os
 import re
 
-from oslo.config import cfg
 import sh
 
 
@@ -26,8 +25,15 @@ LOG = logging.getLogger(__name__)
 
 
 class Vcs(object):
-    def __init__(self, repo):
+    def __init__(self, repo, sources_root):
         self.repo = repo
+        self.sources_root = sources_root
+        if not os.path.exists(sources_root):
+            os.mkdir(sources_root)
+        else:
+            if not os.access(sources_root, os.W_OK):
+                raise Exception('Sources root folder %s is not writable' %
+                                sources_root)
 
     def fetch(self):
         pass
@@ -66,8 +72,8 @@ MESSAGE_PATTERNS = {
 
 class Git(Vcs):
 
-    def __init__(self, repo):
-        super(Git, self).__init__(repo)
+    def __init__(self, repo, sources_root):
+        super(Git, self).__init__(repo, sources_root)
         uri = self.repo['uri']
         match = re.search(r'([^\/]+)\.git$', uri)
         if match:
@@ -77,16 +83,16 @@ class Git(Vcs):
         self.release_index = {}
 
     def _chdir(self):
-        folder = os.path.normpath(cfg.CONF.sources_root + '/' + self.module)
+        folder = os.path.normpath(self.sources_root + '/' + self.module)
         os.chdir(folder)
 
     def fetch(self):
         LOG.debug('Fetching repo uri %s' % self.repo['uri'])
 
-        folder = os.path.normpath(cfg.CONF.sources_root + '/' + self.module)
+        folder = os.path.normpath(self.sources_root + '/' + self.module)
 
         if not os.path.exists(folder):
-            os.chdir(cfg.CONF.sources_root)
+            os.chdir(self.sources_root)
             sh.git('clone', '%s' % self.repo['uri'])
             os.chdir(folder)
         else:
@@ -164,11 +170,11 @@ class Git(Vcs):
         return str(sh.git('rev-parse', 'HEAD')).strip()
 
 
-def get_vcs(repo):
+def get_vcs(repo, sources_root):
     uri = repo['uri']
     LOG.debug('Factory is asked for Vcs uri %s' % uri)
     match = re.search(r'\.git$', uri)
     if match:
-        return Git(repo)
+        return Git(repo, sources_root)
     else:
         raise Exception("Unknown Vcs uri %s" % uri)

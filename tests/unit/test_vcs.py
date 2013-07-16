@@ -15,7 +15,7 @@ class TestVcsProcessor(testtools.TestCase):
             'uri': 'git://github.com/dummy.git',
             'releases': []
         }
-        self.git = vcs.Git(self.repo)
+        self.git = vcs.Git(self.repo, '/tmp')
         cfg.CONF.sources_root = ''
         os.chdir = mock.Mock()
 

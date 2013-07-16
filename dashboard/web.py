@@ -69,10 +69,7 @@ logging.setup('dashboard')
 LOG.info('Logging enabled')
 
 conf_file = os.getenv('STACKALYTICS_CONF')
-if (conf_file is None) or (not os.path.isfile(conf_file)):
-    conf_file = '/etc/stackalytics/stackalytics.conf'
-
-if os.path.isfile(conf_file):
+if conf_file and os.path.isfile(conf_file):
     conf(default_config_files=[conf_file])
     app.config['DEBUG'] = cfg.CONF.debug
 else:
@@ -100,9 +97,11 @@ def get_vault():
                                  r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
     else:
-        memory_storage_inst = vault['memory_storage']
-        memory_storage_inst.update(
-            vault['runtime_storage'].get_update(os.getpid()))
+        if not getattr(flask.request, 'stackalytics_updated', None):
+            flask.request.stackalytics_updated = True
+            memory_storage_inst = vault['memory_storage']
+            memory_storage_inst.update(
+                vault['runtime_storage'].get_update(os.getpid()))
 
     return vault
 
