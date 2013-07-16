@@ -18,7 +18,7 @@ from oslo.config import cfg
 OPTS = [
     cfg.StrOpt('default-data', default='etc/default_data.json',
                help='Default data'),
-    cfg.StrOpt('sources-root', default='/var/run/stackalytics',
+    cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
     cfg.StrOpt('runtime-storage-uri', default='memcached://127.0.0.1:11211',
                help='Storage URI'),
