@@ -80,7 +80,7 @@ class CachedMemoryStorage(MemoryStorage):
 
     def get_record_ids_by_companies(self, companies):
         return self._get_record_ids_from_index(
-            map(self._get_company_name, companies),
+            map(self.get_original_company_name, companies),
             self.company_index)
 
     def get_record_ids_by_launchpad_ids(self, launchpad_ids):
@@ -97,7 +97,7 @@ class CachedMemoryStorage(MemoryStorage):
         for i in record_ids:
             yield self.records[i]
 
-    def _get_company_name(self, company_name):
+    def get_original_company_name(self, company_name):
         normalized = company_name.lower()
         if normalized not in self.company_name_mapping:
             raise Exception('Unknown company name %s' % company_name)

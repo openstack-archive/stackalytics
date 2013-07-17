@@ -203,7 +203,7 @@
             return index + "=" + val;
         }).join("&");
 
-        return uri + "?" + str;
+        return (str == "")? uri: uri + "?" + str;
     }
 
     function make_std_options() {

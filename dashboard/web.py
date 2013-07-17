@@ -142,7 +142,7 @@ def record_filter(ignore=None, use_default=True):
 
     def decorator(f):
         @functools.wraps(f)
-        def decorated_function(*args, **kwargs):
+        def record_filter_decorated_function(*args, **kwargs):
 
             vault = get_vault()
             memory_storage = vault['memory_storage']
@@ -188,7 +188,7 @@ def record_filter(ignore=None, use_default=True):
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
 
-        return decorated_function
+        return record_filter_decorated_function
 
     return decorator
 
@@ -196,7 +196,7 @@ def record_filter(ignore=None, use_default=True):
 def aggregate_filter():
     def decorator(f):
         @functools.wraps(f)
-        def decorated_function(*args, **kwargs):
+        def aggregate_filter_decorated_function(*args, **kwargs):
 
             metric_param = (flask.request.args.get('metric') or
                             get_default('metric'))
@@ -211,7 +211,7 @@ def aggregate_filter():
             kwargs['metric_filter'] = metric_filter
             return f(*args, **kwargs)
 
-        return decorated_function
+        return aggregate_filter_decorated_function
 
     return decorator
 
@@ -219,14 +219,14 @@ def aggregate_filter():
 def exception_handler():
     def decorator(f):
         @functools.wraps(f)
-        def decorated_function(*args, **kwargs):
+        def exception_handler_decorated_function(*args, **kwargs):
             try:
                 return f(*args, **kwargs)
             except Exception as e:
                 LOG.debug(e)
                 flask.abort(404)
 
-        return decorated_function
+        return exception_handler_decorated_function
 
     return decorator
 
@@ -234,7 +234,7 @@ def exception_handler():
 def templated(template=None):
     def decorator(f):
         @functools.wraps(f)
-        def decorated_function(*args, **kwargs):
+        def templated_decorated_function(*args, **kwargs):
 
             vault = get_vault()
             template_name = template
@@ -270,7 +270,7 @@ def templated(template=None):
 
             return flask.render_template(template_name, **ctx)
 
-        return decorated_function
+        return templated_decorated_function
 
     return decorator
 
@@ -336,7 +336,8 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
 @record_filter()
 def company_details(company, records):
     details = contribution_details(records)
-    details['company'] = company
+    details['company'] = (
+        get_memory_storage().get_original_company_name(company))
     return details
 
 
@@ -486,7 +487,7 @@ def format_launchpad_module_link(module):
 
 @app.template_filter('encode')
 def safe_encode(s):
-    return urllib.quote_plus(s)
+    return urllib.quote_plus(s.encode('utf-8'))
 
 
 @app.template_filter('link')
