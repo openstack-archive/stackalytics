@@ -4945,6 +4945,11 @@
             "companies": [
                 {
                     "company_name": "Cloudscaling",
+                    "end_date": "2013-May-17"
+                },
+                {
+                    "company_name": "HP",
+                    "start_date": "2013-May-18",
                     "end_date": null
                 }
             ],
