@@ -34,6 +34,9 @@ class RuntimeStorage(object):
     def set_records(self, records_iterator):
         pass
 
+    def apply_corrections(self, corrections_iterator):
+        pass
+
     def get_head_commit_id(self, uri, branch):
         pass
 
@@ -65,12 +68,10 @@ class MemcachedStorage(RuntimeStorage):
             if record['commit_id'] in self.commit_id_index:
                 # update
                 record_id = self.commit_id_index[record['commit_id']]
-                old_record = self.memcached.get(
-                    self._get_record_name(record_id))
-                old_record['branches'] |= record['branches']
+                original = self.memcached.get(self._get_record_name(record_id))
+                original['branches'] |= record['branches']
                 LOG.debug('Update record %s' % record)
-                self.memcached.set(self._get_record_name(record_id),
-                                   old_record)
+                self.memcached.set(self._get_record_name(record_id), original)
             else:
                 # insert record
                 record_id = self._get_record_count()
@@ -80,6 +81,24 @@ class MemcachedStorage(RuntimeStorage):
                 self._set_record_count(record_id + 1)
 
             self._commit_update(record_id)
+
+    def apply_corrections(self, corrections_iterator):
+        for correction in corrections_iterator:
+            if correction['commit_id'] not in self.commit_id_index:
+                continue
+
+            record_id = self.commit_id_index[correction['commit_id']]
+            original = self.memcached.get(self._get_record_name(record_id))
+            need_update = False
+
+            for field, value in correction.iteritems():
+                if (field not in original) or (original[field] != value):
+                    need_update = True
+                    original[field] = value
+
+            if need_update:
+                self.memcached.set(self._get_record_name(record_id), original)
+                self._commit_update(record_id)
 
     def get_head_commit_id(self, uri, branch):
         key = str(urllib.quote_plus(uri) + ':' + branch)

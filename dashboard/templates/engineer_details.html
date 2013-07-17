@@ -33,6 +33,9 @@
         <div>
             <h4>{{ rec.date|datetimeformat }} to <a href="https://launchpad.net/{{ rec.module }}">{{ rec.module }}</a>
             </h4>
+            {% if rec.correction_comment %}
+                <div style='font-weight: bold; color: red; padding-left: 2em;'>Commit corrected: {{ rec.correction_comment }}</div>
+            {% endif %}
             <div style='font-weight: bold; padding-left: 2em;'>{{ rec.subject }}</div>
             <div style='white-space: pre-wrap; padding-left: 2em;'>{{ rec|commit_message|safe }}</div>
             <div style="padding-left: 2em;"><span style="color: green">+ {{ rec.lines_added }}</span>

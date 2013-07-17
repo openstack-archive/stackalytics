@@ -56,6 +56,9 @@
                 <em>{{ rec.date|datetimeformat }}</em>
                 </div>
 
+                {% if rec.correction_comment %}
+                    <div style='font-weight: bold; color: red; padding-left: 2em;'>Commit corrected: {{ rec.correction_comment }}</div>
+                {% endif %}
                 <div><b>{{ rec.subject }}</b></div>
                 <div style="white-space: pre-wrap;">{{ rec|commit_message|safe }}</div>
                 <div><span style="color: green">+ {{ rec.lines_added }}</span>

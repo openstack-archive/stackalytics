@@ -36,4 +36,8 @@ OPTS = [
                help='The address dashboard listens on'),
     cfg.IntOpt('listen-port', default=8080,
                help='The port dashboard listens on'),
+    cfg.StrOpt('corrections-uri',
+               default=('https://raw.github.com/stackforge/stackalytics/'
+                        'master/etc/corrections.json'),
+               help='The address of file with corrections data'),
 ]

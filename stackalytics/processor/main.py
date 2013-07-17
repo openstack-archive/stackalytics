@@ -12,10 +12,12 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import json
 
 from oslo.config import cfg
 import psutil
 from psutil import _error
+import urllib2
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import commit_processor
@@ -84,6 +86,13 @@ def update_repos(runtime_storage, persistent_storage):
         process_repo(repo, runtime_storage, processor)
 
 
+def apply_corrections(uri, runtime_storage_inst):
+    corrections_fd = urllib2.urlopen(uri)
+    raw = corrections_fd.read()
+    corrections_fd.close()
+    runtime_storage_inst.apply_corrections(json.loads(raw)['corrections'])
+
+
 def main():
     # init conf and logging
     conf = cfg.CONF
@@ -110,6 +119,8 @@ def main():
     update_pids(runtime_storage_inst)
 
     update_repos(runtime_storage_inst, persistent_storage_inst)
+
+    apply_corrections(cfg.CONF.corrections_uri, runtime_storage_inst)
 
 
 if __name__ == '__main__':
