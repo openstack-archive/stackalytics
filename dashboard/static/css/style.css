@@ -1,6 +1,7 @@
 html, body {
     font-family: 'PT Sans', arial, sans-serif;
     font-size: 14px;
+    background: url(../images/osstats_tile.jpg) repeat-x;
     height: 100%;
     color: #41454d;
     margin: 0;
@@ -109,7 +110,7 @@ select {
 }
 
 div.aheader {
-    height: 60px;
+    margin-top: 23px;
     text-shadow: 1px 1px 0 #fff;
 }
 
@@ -128,7 +129,6 @@ div.aheader h1 a {
 
 div.page div.navigation {
     text-shadow: 1px 1px 0 #fff;
-    background: #fbfafa;
     padding: 4px 10px;
     border-top: 1px dashed #e9eaef;
     border-bottom: 1px dashed #e9eaef;
