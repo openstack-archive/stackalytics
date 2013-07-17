@@ -223,7 +223,7 @@ def exception_handler():
             try:
                 return f(*args, **kwargs)
             except Exception as e:
-                LOG.debug(e)
+                LOG.error(e)
                 flask.abort(404)
 
         return exception_handler_decorated_function
@@ -291,6 +291,7 @@ def page_not_found(e):
 def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
     blueprints_map = {}
     bugs_map = {}
+    companies_map = {}
     commits = []
     loc = 0
 
@@ -311,6 +312,14 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
             else:
                 bugs_map[bug] = [record]
 
+        company = record['company_name']
+        if company:
+            if company in companies_map:
+                companies_map[company]['loc'] += record['loc']
+                companies_map[company]['commits'] += 1
+            else:
+                companies_map[company] = {'loc': record['loc'], 'commits': 1}
+
     blueprints = sorted([{'id': key,
                           'module': value[0]['module'],
                           'records': value}
@@ -325,6 +334,8 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
         'blueprints': blueprints,
         'bugs': bugs,
         'commits': commits[0:limit],
+        'commit_count': len(commits),
+        'companies': companies_map,
         'loc': loc,
     }
     return result

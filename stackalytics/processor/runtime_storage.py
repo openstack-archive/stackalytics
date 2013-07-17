@@ -143,14 +143,10 @@ class MemcachedStorage(RuntimeStorage):
                 if n < min_update:
                     min_update = n
 
-        first_valid_update_id = self.memcached.get('first_valid_update_id')
-        if not first_valid_update_id:
-            first_valid_update_id = 0
-
-        for i in range(first_valid_update_id, min_update):
-            self.memcached.delete(UPDATE_ID_PREFIX + str(i))
-
-        self.memcached.set('first_valid_update_id', min_update)
+        first_valid_update = self.memcached.get('first_valid_update') or 0
+        self.memcached.delete_multi(range(first_valid_update, min_update),
+                                    key_prefix=UPDATE_ID_PREFIX)
+        self.memcached.set('first_valid_update', min_update)
 
     def _get_update_count(self):
         return self.memcached.get('update:count') or 0

@@ -32,6 +32,11 @@
     {% for rec in commits %}
         <div>
             <h4>{{ rec.date|datetimeformat }} to <a href="https://launchpad.net/{{ rec.module }}">{{ rec.module }}</a>
+                {% if user.companies[-1].company_name != rec.company_name %}
+                    (
+                    {{ rec.company_name|link('/companies/' + rec.company_name)|safe }}
+                    )
+                {% endif %}
             </h4>
             {% if rec.correction_comment %}
                 <div style='font-weight: bold; color: red; padding-left: 2em;'>Commit corrected: {{ rec.correction_comment }}</div>
@@ -65,34 +70,18 @@
     </table>
     <div class="spacer"></div>
 
-    <h3>Commit overview</h3>
-    {%  if blueprints %}
-        <div>Blueprints:
-            <ol>
-                {% for rec in blueprints %}
-                    <li>
-                        <a href="https://blueprints.launchpad.net/{{ rec['module'] }}/+spec/{{ rec['id'] }}">{{ rec['id'] }}</a>
-                        <small>{{ rec['module'] }}</small>
-                    </li>
-                {% endfor %}
-            </ol>
-        </div>
-    {% endif %}
+    {% include "commits_overview.html" %}
 
-    {% if bugs %}
-        <div>Bugs:
-            <ol>
-                {% for rec in bugs %}
-                    <li>
-                        <a href="https://bugs.launchpad.net/bugs/{{ rec['id'] }}">{{ rec['id'] }}</a>
-                    </li>
-                {% endfor %}
-            </ol>
-        </div>
-    {% endif %}
+    <h4>Contribution per companies:</h4>
+        {% for company_info in user.companies %}
+            <div>
+                {% set company_name = company_info.company_name %}
+                {{ company_name|link('/companies/' + company_name)|safe }}:
+                <b>{{ companies[company_name].commits }}</b> commits and
+                <b>{{ companies[company_name].loc }}</b> LOC
+            </div>
+        {% endfor %}
 
-    <div>Total commits: <b>{{ commits|length }}</b></div>
-    <div>Total LOC: <b>{{ loc }}</b></div>
     {% endif %}
 
 {% endblock %}

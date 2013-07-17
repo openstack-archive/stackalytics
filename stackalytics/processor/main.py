@@ -35,7 +35,7 @@ def get_pids():
     for pid in psutil.get_pid_list():
         try:
             p = psutil.Process(pid)
-            if p.cmdline and p.cmdline[0].find('/uwsgi '):
+            if p.cmdline and p.cmdline[0].find('/uwsgi'):
                 uwsgi_dict[p.pid] = p.parent
         except _error.NoSuchProcess:
             # the process may disappear after get_pid_list call, ignore it

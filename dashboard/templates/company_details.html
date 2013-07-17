@@ -53,33 +53,6 @@
     </table>
     <div class="spacer"></div>
 
-    <h3>Commit overview</h3>
-    {%  if blueprints %}
-        <div>Blueprints:
-            <ol>
-                {% for rec in blueprints %}
-                    <li>
-                        <a href="https://blueprints.launchpad.net/{{ rec['module'] }}/+spec/{{ rec['id'] }}">{{ rec['id'] }}</a>
-                        <small>{{ rec['module'] }}</small>
-                    </li>
-                {% endfor %}
-            </ol>
-        </div>
-    {% endif %}
-
-    {% if bugs %}
-        <div>Bugs:
-            <ol>
-                {% for rec in bugs %}
-                    <li>
-                        <a href="https://bugs.launchpad.net/bugs/{{ rec['id'] }}">{{ rec['id'] }}</a>
-                    </li>
-                {% endfor %}
-            </ol>
-        </div>
-    {% endif %}
-
-    <div>Total commits: <b>{{ commits|length }}</b></div>
-    <div>Total LOC: <b>{{ loc }}</b></div>
+    {% include "commits_overview.html" %}
 
 {% endblock %}
