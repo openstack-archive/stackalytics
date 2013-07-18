@@ -47,11 +47,6 @@ METRIC_LABELS = {
     'commits': 'Commits',
 }
 
-PROJECT_TYPES = {
-    'openstack': 'OpenStack',
-    'stackforge': 'StackForge',
-}
-
 DEFAULT_RECORDS_LIMIT = 10
 
 
@@ -96,6 +91,8 @@ def get_vault():
         vault['modules'] = dict((r['module'].lower(),
                                  r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
+
+        init_project_types(vault)
     else:
         if not getattr(flask.request, 'stackalytics_updated', None):
             flask.request.stackalytics_updated = True
@@ -108,6 +105,63 @@ def get_vault():
 
 def get_memory_storage():
     return get_vault()['memory_storage']
+
+
+def init_project_types(vault):
+    persistent_storage_inst = vault['persistent_storage']
+    project_type_options = {}
+    project_type_group_index = {'all': set()}
+
+    for repo in persistent_storage_inst.get_repos():
+        project_type = repo['project_type'].lower()
+        project_group = None
+        if 'project_group' in repo:
+            project_group = repo['project_group'].lower()
+
+        if project_type in project_type_options:
+            if project_group:
+                project_type_options[project_type].add(project_group)
+        else:
+            if project_group:
+                project_type_options[project_type] = set([project_group])
+            else:
+                project_type_options[project_type] = set()
+
+        module = repo['module']
+        if project_type in project_type_group_index:
+            project_type_group_index[project_type].add(module)
+        else:
+            project_type_group_index[project_type] = set([module])
+
+        if project_group:
+            if project_group in project_type_group_index:
+                project_type_group_index[project_group].add(module)
+            else:
+                project_type_group_index[project_group] = set([module])
+
+        project_type_group_index['all'].add(module)
+
+    vault['project_type_options'] = project_type_options
+    vault['project_type_group_index'] = project_type_group_index
+
+
+def get_project_type_options():
+    return get_vault()['project_type_options']
+
+
+def is_project_type_valid(project_type):
+    if not project_type:
+        return False
+    project_type = project_type.lower()
+    if project_type == 'all':
+        return True
+    project_types = get_project_type_options()
+    if project_type in project_types:
+        return True
+    for p, g in project_types.iteritems():
+        if project_type in g:
+            return True
+    return False
 
 
 # Utils ---------
@@ -158,9 +212,12 @@ def record_filter(ignore=None, use_default=True):
                 param = get_parameter(kwargs, 'project_type', 'project_types',
                                       use_default)
                 if param:
-                    modules = [module for module, project_type
-                               in vault['modules'].iteritems()
-                               if project_type in param]
+                    ptgi = vault['project_type_group_index']
+                    modules = set()
+                    for project_type in param:
+                        project_type = project_type.lower()
+                        if project_type in ptgi:
+                            modules |= ptgi[project_type]
                     record_ids &= (
                         memory_storage.get_record_ids_by_modules(modules))
 
@@ -253,10 +310,9 @@ def templated(template=None):
             ctx['metric_label'] = METRIC_LABELS[ctx['metric']]
 
             project_type = flask.request.args.get('project_type')
-            if project_type not in PROJECT_TYPES:
-                project_type = None
-            ctx['project_type'] = project_type or get_default('project_type')
-            ctx['project_type_label'] = PROJECT_TYPES[ctx['project_type']]
+            if not is_project_type_valid(project_type):
+                project_type = get_default('project_type')
+            ctx['project_type'] = project_type
 
             release = flask.request.args.get('release')
             releases = vault['releases']
@@ -267,6 +323,8 @@ def templated(template=None):
                 else:
                     release = releases[release]['release_name']
             ctx['release'] = (release or get_default('release')).lower()
+
+            ctx['project_type_options'] = get_project_type_options()
 
             return flask.render_template(template_name, **ctx)
 

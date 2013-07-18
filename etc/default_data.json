@@ -13482,6 +13482,7 @@
             "branches": ["master"],
             "module": "nova",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/nova.git",
             "releases": [
                 {
@@ -13510,6 +13511,7 @@
             "branches": ["master"],
             "module": "keystone",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/keystone.git",
             "releases": [
                 {
@@ -13538,6 +13540,7 @@
             "branches": ["master"],
             "module": "cinder",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/cinder.git",
             "releases": [
                 {
@@ -13561,6 +13564,7 @@
             "branches": ["master"],
             "module": "glance",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/glance.git",
             "releases": [
                 {
@@ -13589,6 +13593,7 @@
             "branches": ["master"],
             "module": "neutron",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/neutron.git",
             "releases": [
                 {
@@ -13617,6 +13622,7 @@
             "branches": ["master"],
             "module": "horizon",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/horizon.git",
             "releases": [
                 {
@@ -13645,6 +13651,7 @@
             "branches": ["master"],
             "module": "swift",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/swift.git",
             "releases": [
                 {
@@ -13673,6 +13680,7 @@
             "branches": ["master"],
             "module": "python-keystoneclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-keystoneclient.git",
             "releases": [
                 {
@@ -13696,6 +13704,7 @@
             "branches": ["master"],
             "module": "python-novaclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-novaclient.git",
             "releases": [
                 {
@@ -13719,6 +13728,7 @@
             "branches": ["master"],
             "module": "python-cinderclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-cinderclient.git",
             "releases": [
                 {
@@ -13737,6 +13747,7 @@
             "branches": ["master"],
             "module": "python-glanceclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-glanceclient.git",
             "releases": [
                 {
@@ -13755,6 +13766,7 @@
             "branches": ["master"],
             "module": "python-neutronclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-neutronclient.git",
             "releases": [
                 {
@@ -13778,6 +13790,7 @@
             "branches": ["master"],
             "module": "python-swiftclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-swiftclient.git",
             "releases": [
                 {
@@ -13796,6 +13809,7 @@
             "branches": ["master"],
             "module": "heat",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/heat.git",
             "releases": [
                 {
@@ -13814,6 +13828,7 @@
             "branches": ["master"],
             "module": "python-heatclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-heatclient.git",
             "releases": [
                 {
@@ -13832,6 +13847,7 @@
             "branches": ["master"],
             "module": "ceilometer",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/ceilometer.git",
             "releases": [
                 {
@@ -13850,6 +13866,7 @@
             "branches": ["master"],
             "module": "python-ceilometerclient",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/python-ceilometerclient.git",
             "releases": [
                 {
@@ -13863,6 +13880,7 @@
             "branches": ["master"],
             "module": "oslo-incubator",
             "project_type": "openstack",
+            "project_group": "incubation",
             "uri": "git://github.com/openstack/oslo-incubator.git",
             "releases": [
                 {
@@ -13876,6 +13894,7 @@
             "branches": ["master"],
             "module": "oslo.config",
             "project_type": "openstack",
+            "project_group": "core",
             "uri": "git://github.com/openstack/oslo.config.git",
             "releases": [
                 {
@@ -13889,6 +13908,7 @@
             "branches": ["master"],
             "module": "compute-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/compute-api.git",
             "releases": [
                 {
@@ -13902,6 +13922,7 @@
             "branches": ["master"],
             "module": "identity-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/identity-api.git",
             "releases": [
                 {
@@ -13915,6 +13936,7 @@
             "branches": ["master"],
             "module": "image-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/image-api.git",
             "releases": [
                 {
@@ -13928,6 +13950,7 @@
             "branches": ["master"],
             "module": "netconn-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/netconn-api.git",
             "releases": [
                 {
@@ -13941,6 +13964,7 @@
             "branches": ["master"],
             "module": "object-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/object-api.git",
             "releases": [
                 {
@@ -13954,6 +13978,7 @@
             "branches": ["master"],
             "module": "volume-api",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/volume-api.git",
             "releases": [
                 {
@@ -13967,6 +13992,7 @@
             "branches": ["master"],
             "module": "openstack-manuals",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/openstack-manuals.git",
             "releases": [
                 {
@@ -13990,6 +14016,7 @@
             "branches": ["master"],
             "module": "api-site",
             "project_type": "openstack",
+            "project_group": "documentation",
             "uri": "git://github.com/openstack/api-site.git",
             "releases": [
                 {
@@ -14004,6 +14031,7 @@
             "branches": ["master"],
             "module": "devstack",
             "project_type": "openstack",
+            "project_group": "other",
             "uri": "git://github.com/openstack-dev/devstack.git",
             "releases": [
                 {
@@ -14017,6 +14045,7 @@
             "branches": ["master"],
             "module": "tempest",
             "project_type": "openstack",
+            "project_group": "other",
             "uri": "git://github.com/openstack/tempest.git",
             "releases": [
                 {
@@ -14030,6 +14059,7 @@
             "branches": ["master"],
             "module": "requirements",
             "project_type": "openstack",
+            "project_group": "other",
             "uri": "git://github.com/openstack/requirements.git",
             "releases": [
                 {
@@ -14042,8 +14072,9 @@
 
         {
             "branches": ["master"],
-            "module": "requirements",
-            "project_type": "trove",
+            "module": "trove",
+            "project_type": "openstack",
+            "project_group": "incubation",
             "uri": "git://github.com/openstack/trove.git",
             "releases": [
                 {
@@ -14057,6 +14088,7 @@
             "branches": ["master"],
             "module": "trove-integration",
             "project_type": "openstack",
+            "project_group": "incubation",
             "uri": "git://github.com/openstack/trove-integration.git",
             "releases": [
                 {
@@ -14070,6 +14102,7 @@
             "branches": ["master"],
             "module": "python-troveclient",
             "project_type": "openstack",
+            "project_group": "incubation",
             "uri": "git://github.com/openstack/python-troveclient.git",
             "releases": [
                 {
@@ -14083,6 +14116,7 @@
             "branches": ["master"],
             "module": "ironic",
             "project_type": "openstack",
+            "project_group": "incubation",
             "uri": "git://github.com/openstack/ironic.git",
             "releases": [
                 {
