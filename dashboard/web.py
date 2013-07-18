@@ -45,6 +45,8 @@ DEFAULTS = {
 METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
+    'reviews': 'Reviews',
+    'marks': 'Marks',
 }
 
 DEFAULT_RECORDS_LIMIT = 10
@@ -173,12 +175,13 @@ def get_default(param_name):
         return None
 
 
-def get_parameter(kwargs, singular_name, plural_name, use_default=True):
+def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
     if singular_name in kwargs:
         p = kwargs[singular_name]
     else:
-        p = (flask.request.args.get(singular_name) or
-             flask.request.args.get(plural_name))
+        p = flask.request.args.get(singular_name)
+        if (not p) and plural_name:
+            flask.request.args.get(plural_name)
     if p:
         return p.split(',')
     elif use_default:
@@ -200,7 +203,7 @@ def record_filter(ignore=None, use_default=True):
 
             vault = get_vault()
             memory_storage = vault['memory_storage']
-            record_ids = memory_storage.get_record_ids()
+            record_ids = set(memory_storage.get_record_ids())  # make a copy
 
             if 'module' not in ignore:
                 param = get_parameter(kwargs, 'module', 'modules', use_default)
@@ -242,6 +245,15 @@ def record_filter(ignore=None, use_default=True):
                             memory_storage.get_record_ids_by_releases(
                                 c.lower() for c in param))
 
+            if 'metric' not in ignore:
+                param = get_parameter(kwargs, 'metric')
+                if 'reviews' in param:
+                    record_ids &= memory_storage.get_review_ids()
+                elif 'marks' in param:
+                    record_ids &= memory_storage.get_mark_ids()
+                elif ('loc' in param) or ('commits' in param):
+                    record_ids &= memory_storage.get_commit_ids()
+
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
 
@@ -258,7 +270,7 @@ def aggregate_filter():
             metric_param = (flask.request.args.get('metric') or
                             get_default('metric'))
             metric = metric_param.lower()
-            if metric == 'commits':
+            if metric in ['commits', 'reviews', 'marks']:
                 metric_filter = lambda r: 1
             elif metric == 'loc':
                 metric_filter = lambda r: r['loc']
@@ -288,7 +300,7 @@ def exception_handler():
     return decorator
 
 
-def templated(template=None):
+def templated(template=None, return_code=200):
     def decorator(f):
         @functools.wraps(f)
         def templated_decorated_function(*args, **kwargs):
@@ -326,7 +338,7 @@ def templated(template=None):
 
             ctx['project_type_options'] = get_project_type_options()
 
-            return flask.render_template(template_name, **ctx)
+            return flask.render_template(template_name, **ctx), return_code
 
         return templated_decorated_function
 
@@ -342,8 +354,9 @@ def overview():
 
 
 @app.errorhandler(404)
+@templated('404.html', 404)
 def page_not_found(e):
-    return flask.render_template('404.html'), 404
+    pass
 
 
 def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
@@ -351,32 +364,37 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
     bugs_map = {}
     companies_map = {}
     commits = []
+    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
     loc = 0
 
     for record in records:
-        loc += record['loc']
-        commits.append(record)
-        blueprint = record['blueprint_id']
-        if blueprint:
-            if blueprint in blueprints_map:
-                blueprints_map[blueprint].append(record)
-            else:
-                blueprints_map[blueprint] = [record]
+        if record['record_type'] == 'commit':
+            loc += record['loc']
+            commits.append(record)
+            blueprint = record['blueprint_id']
+            if blueprint:
+                if blueprint in blueprints_map:
+                    blueprints_map[blueprint].append(record)
+                else:
+                    blueprints_map[blueprint] = [record]
 
-        bug = record['bug_id']
-        if bug:
-            if bug in bugs_map:
-                bugs_map[bug].append(record)
-            else:
-                bugs_map[bug] = [record]
+            bug = record['bug_id']
+            if bug:
+                if bug in bugs_map:
+                    bugs_map[bug].append(record)
+                else:
+                    bugs_map[bug] = [record]
 
-        company = record['company_name']
-        if company:
-            if company in companies_map:
-                companies_map[company]['loc'] += record['loc']
-                companies_map[company]['commits'] += 1
-            else:
-                companies_map[company] = {'loc': record['loc'], 'commits': 1}
+            company = record['company_name']
+            if company:
+                if company in companies_map:
+                    companies_map[company]['loc'] += record['loc']
+                    companies_map[company]['commits'] += 1
+                else:
+                    companies_map[company] = {'loc': record['loc'],
+                                              'commits': 1}
+        elif record['record_type'] == 'mark':
+            marks[int(record['value'])] += 1
 
     blueprints = sorted([{'id': key,
                           'module': value[0]['module'],
@@ -395,6 +413,7 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
         'commit_count': len(commits),
         'companies': companies_map,
         'loc': loc,
+        'marks': marks,
     }
     return result
 
@@ -423,7 +442,7 @@ def module_details(module, records):
 @app.route('/engineers/<launchpad_id>')
 @exception_handler()
 @templated()
-@record_filter()
+@record_filter(ignore='metric')
 def engineer_details(launchpad_id, records):
     persistent_storage = get_vault()['persistent_storage']
     user = list(persistent_storage.get_users(launchpad_id=launchpad_id))[0]

@@ -40,4 +40,10 @@ OPTS = [
                default=('https://raw.github.com/stackforge/stackalytics/'
                         'master/etc/corrections.json'),
                help='The address of file with corrections data'),
+    cfg.StrOpt('review-uri', default='gerrit://review.openstack.org',
+               help='URI of review system'),
+    cfg.StrOpt('ssh-key-filename', default='/home/ishakhat/.ssh/4launchpad_id',
+               help='SSH key for gerrit review system access'),
+    cfg.StrOpt('ssh-username', default='ishakhat',
+               help='SSH username for gerrit review system access'),
 ]

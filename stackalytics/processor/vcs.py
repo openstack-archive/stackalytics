@@ -13,12 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
 
 import os
 import re
 
 import sh
+
+from stackalytics.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)
@@ -41,7 +42,7 @@ class Vcs(object):
     def log(self, branch, head_commit_id):
         pass
 
-    def get_head_commit_id(self, branch):
+    def get_last_id(self, branch):
         pass
 
 
@@ -162,7 +163,7 @@ class Git(Vcs):
 
             yield commit
 
-    def get_head_commit_id(self, branch):
+    def get_last_id(self, branch):
         LOG.debug('Get head commit for repo uri %s' % self.repo['uri'])
 
         self._chdir()

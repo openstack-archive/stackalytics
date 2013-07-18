@@ -14379,11 +14379,6 @@
 
     "releases": [
         {
-            "release_name": "ALL",
-            "start_date": "2010-May-01",
-            "end_date": "now"
-        },
-        {
             "release_name": "Essex",
             "start_date": "2011-Oct-01",
             "end_date": "2012-Apr-01"

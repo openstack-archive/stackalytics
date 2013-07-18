@@ -1,10 +1,9 @@
 {
     "corrections": [
         {
-            "commit_id": "ee3fe4e836ca1c81e50a8324a9b5f982de4fa97f",
+            "primary_key": "ee3fe4e836ca1c81e50a8324a9b5f982de4fa97f",
             "correction_comment": "Reset LOC to 0",
-            "lines_added": 0,
-            "lines_deleted": 0
+            "loc": 0
         }
     ]
 }

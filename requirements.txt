@@ -3,7 +3,8 @@ Flask>=0.9
 Flask-Gravatar
 iso8601
 launchpadlib
-http://tarballs.openstack.org/oslo.config/oslo.config-1.2.0a2.tar.gz#egg=oslo.config-1.2.0a2
+oslo.config
+paramiko>=1.8.0
 pbr>=0.5.16,<0.6
 psutil
 python-memcached

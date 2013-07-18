@@ -16,7 +16,6 @@
 import logging
 
 import re
-import urllib
 
 import memcache
 
@@ -25,6 +24,7 @@ LOG = logging.getLogger(__name__)
 BULK_READ_SIZE = 64
 RECORD_ID_PREFIX = 'record:'
 UPDATE_ID_PREFIX = 'update:'
+MEMCACHED_URI_PREFIX = r'^memcached:\/\/'
 
 
 class RuntimeStorage(object):
@@ -37,10 +37,10 @@ class RuntimeStorage(object):
     def apply_corrections(self, corrections_iterator):
         pass
 
-    def get_head_commit_id(self, uri, branch):
+    def get_last_id(self, key):
         pass
 
-    def set_head_commit_id(self, uri, branch, head_commit_id):
+    def set_last_id(self, key, head_commit_id):
         pass
 
     def get_update(self, pid):
@@ -55,7 +55,7 @@ class MemcachedStorage(RuntimeStorage):
     def __init__(self, uri):
         super(MemcachedStorage, self).__init__(uri)
 
-        stripped = re.sub(r'memcached:\/\/', '', uri)
+        stripped = re.sub(MEMCACHED_URI_PREFIX, '', uri)
         if stripped:
             storage_uri = stripped.split(',')
             self.memcached = memcache.Client(storage_uri)
@@ -63,15 +63,22 @@ class MemcachedStorage(RuntimeStorage):
         else:
             raise Exception('Invalid storage uri %s' % uri)
 
-    def set_records(self, records_iterator):
+    def _build_index(self):
+        self.record_index = {}
+        for record in self._get_all_records():
+            self.record_index[record['primary_key']] = record['record_id']
+
+    def set_records(self, records_iterator, merge_handler=None):
         for record in records_iterator:
-            if record['commit_id'] in self.commit_id_index:
+            if record['primary_key'] in self.record_index:
                 # update
-                record_id = self.commit_id_index[record['commit_id']]
+                record_id = self.record_index[record['primary_key']]
                 original = self.memcached.get(self._get_record_name(record_id))
-                original['branches'] |= record['branches']
-                LOG.debug('Update record %s' % record)
-                self.memcached.set(self._get_record_name(record_id), original)
+                if merge_handler:
+                    if merge_handler(original, record):
+                        LOG.debug('Update record %s' % record)
+                        self.memcached.set(self._get_record_name(record_id),
+                                           original)
             else:
                 # insert record
                 record_id = self._get_record_count()
@@ -84,10 +91,10 @@ class MemcachedStorage(RuntimeStorage):
 
     def apply_corrections(self, corrections_iterator):
         for correction in corrections_iterator:
-            if correction['commit_id'] not in self.commit_id_index:
+            if correction['primary_key'] not in self.record_index:
                 continue
 
-            record_id = self.commit_id_index[correction['commit_id']]
+            record_id = self.record_index[correction['primary_key']]
             original = self.memcached.get(self._get_record_name(record_id))
             need_update = False
 
@@ -100,12 +107,10 @@ class MemcachedStorage(RuntimeStorage):
                 self.memcached.set(self._get_record_name(record_id), original)
                 self._commit_update(record_id)
 
-    def get_head_commit_id(self, uri, branch):
-        key = str(urllib.quote_plus(uri) + ':' + branch)
+    def get_last_id(self, key):
         return self.memcached.get(key)
 
-    def set_head_commit_id(self, uri, branch, head_commit_id):
-        key = str(urllib.quote_plus(uri) + ':' + branch)
+    def set_last_id(self, key, head_commit_id):
         self.memcached.set(key, head_commit_id)
 
     def get_update(self, pid):
@@ -186,15 +191,10 @@ class MemcachedStorage(RuntimeStorage):
         self.memcached.set(UPDATE_ID_PREFIX + str(count), record_id)
         self.memcached.set('update:count', count + 1)
 
-    def _build_index(self):
-        self.commit_id_index = {}
-        for record in self._get_all_records():
-            self.commit_id_index[record['commit_id']] = record['record_id']
-
 
 def get_runtime_storage(uri):
     LOG.debug('Runtime storage is requested for uri %s' % uri)
-    match = re.search(r'^memcached:\/\/', uri)
+    match = re.search(MEMCACHED_URI_PREFIX, uri)
     if match:
         return MemcachedStorage(uri)
     else:
