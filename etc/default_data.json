@@ -1,8 +1,4 @@
 {
-    "meta": {
-        "last_update": "09-Jul-2013"
-    },
-
     "users": [
         {
             "launchpad_id": "openstack",
@@ -2386,7 +2382,7 @@
             "launchpad_id": "nerminamiller",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
@@ -3472,7 +3468,7 @@
             "launchpad_id": "mgagne",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "iWeb",
                     "end_date": null
                 }
             ],
@@ -11721,13 +11717,15 @@
             "launchpad_id": "slicknik",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Nikhil Manchanda",
             "emails": [
-                "slicknik@gmail.com"
+                "slicknik@gmail.com",
+                "nikhil.manchanda@hp.com",
+                "nikhil@manchanda.me"
             ]
         },
         {
@@ -13128,6 +13126,19 @@
             ]
         },
         {
+            "launchpad_id": "jmaron",
+            "companies": [
+                {
+                    "company_name": "Hortonworks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonathan Maron",
+            "emails": [
+                "jmaron@hortonworks.com"
+            ]
+        },
+        {
             "launchpad_id": "zaitcev",
             "companies": [
                 {
@@ -13252,6 +13263,10 @@
             "company_name": "Gridcentric"
         },
         {
+            "domains": ["hortonworks.com"],
+            "company_name": "Hortonworks"
+        },
+        {
             "domains": ["hp.com"],
             "company_name": "HP"
         },
@@ -13290,6 +13305,10 @@
         {
             "domains": ["internap.com"],
             "company_name": "Internap"
+        },
+        {
+            "domains": ["iweb.com"],
+            "company_name": "iWeb"
         },
         {
             "domains": ["kt.com"],
@@ -13370,6 +13389,14 @@
         {
             "domains": ["nimbisservices.com"],
             "company_name": "Nimbis Services"
+        },
+        {
+            "domains": ["objectif-libre.com"],
+            "company_name": "Objectif Libre"
+        },
+        {
+            "domains": ["puppetlabs.com"],
+            "company_name": "Puppet Labs"
         },
         {
             "domains": ["pistoncloud.com"],
@@ -14148,7 +14175,7 @@
             "releases": [
                 {
                     "release_name": "Havana",
-                    "tag_from": "2013.1.alpha1",
+                    "tag_from": "411f1da0a391a25cf9a1aa3a838377a5fc186b98",
                     "tag_to": "HEAD"
                 }
             ]
@@ -14201,6 +14228,149 @@
                 {
                     "release_name": "Havana",
                     "tag_from": "0.1",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "tripleo-image-elements",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/tripleo-image-elements.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "ea57869d3e1ae899631f6d55b24f35c3d88b635d",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "tripleo-heat-templates",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/tripleo-heat-templates.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "7877d912ced0141c3b0812aa9110d7b2d9f95297",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-openstack",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-openstack.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "c95da8fc509a3a290ea052899e22123384289130",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-nova",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-nova.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "3fe4294a857bc2433543467e86e1760955f8fb71",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-keystone",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-keystone.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "d21f4282afee2c0af737204119c5a7e09cbd4a45",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-glance",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-glance.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "3ce02dbd69cc3827e80455568901e7bb030f137d",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-cinder",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-cinder.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "b0fb0456e08412adba1497ab5778291b2f665a00",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-quantum",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-quantum.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "ad2f2099251502cfbfcae00e2286e4f43863e438",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-horizon",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-horizon.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "44b2416f6e3af420f1c52681e528af0440255c66",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-swift",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-swift.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "6d88ca53095fd4a6f0ea0d2bd3446a7d0e401ac2",
+                    "tag_to": "HEAD"
+                }
+            ]
+        },
+        {
+            "branches": ["master"],
+            "module": "puppet-ceilometer",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/puppet-ceilometer.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "07c9d444ef816bba26dda86b651980a44a4da2d4",
                     "tag_to": "HEAD"
                 }
             ]
