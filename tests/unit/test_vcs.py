@@ -71,7 +71,8 @@ date:1369831203
 author_name:Mark McClain
 author_email:mark.mcclain@dreamhost.com
 subject:add readme for 2.2.2
-message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
+message:Fix bug: 1234567
+Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 
 diff_stat:
 
@@ -81,7 +82,8 @@ date:1369831203
 author_name:John Doe
 author_email:john.doe@dreamhost.com
 subject:add readme for 2.2.2
-message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
+message: bp fix-me
+Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 
 diff_stat:
 
@@ -104,6 +106,7 @@ diff_stat:
         self.assertEquals(21, commits[0]['files_changed'])
         self.assertEquals(340, commits[0]['lines_added'])
         self.assertEquals(408, commits[0]['lines_deleted'])
+        self.assertEquals('1167901', commits[0]['bug_id'])
 
         self.assertEquals(1, commits[1]['files_changed'])
         self.assertEquals(0, commits[1]['lines_added'])
@@ -112,6 +115,7 @@ diff_stat:
         self.assertEquals(1, commits[2]['files_changed'])
         self.assertEquals(8, commits[2]['lines_added'])
         self.assertEquals(0, commits[2]['lines_deleted'])
+        self.assertEquals('1234567', commits[2]['bug_id'])
 
         self.assertEquals(0, commits[3]['files_changed'])
         self.assertEquals(0, commits[3]['lines_added'])
