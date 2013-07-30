@@ -27,6 +27,7 @@ from stackalytics.processor import persistent_storage
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
+from stackalytics.processor import utils
 from stackalytics.processor import vcs
 
 
@@ -130,6 +131,46 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(corrections)
 
 
+def _read_default_persistent_storage(file_name):
+    try:
+        with open(file_name, 'r') as content_file:
+            content = content_file.read()
+            return json.loads(content)
+    except Exception as e:
+        LOG.error('Error while reading config: %s' % e)
+
+
+def process_users(users):
+    res = []
+    for user in users:
+        if ('launchpad_id' not in user) or ('emails' not in user):
+            LOG.warn('Skipping invalid user: %s', user)
+            continue
+
+        u = utils.normalize_user(user.copy())
+        u['user_id'] = user['launchpad_id'] or user['emails'][0]
+        res.append(u)
+    return res
+
+
+def process_releases(releases):
+    res = []
+    for release in releases:
+        r = utils.normalize_release(release)
+        res.append(r)
+    res.sort(key=lambda x: x['end_date'])
+    return res
+
+
+def load_default_data(persistent_storage_inst, file_name, force):
+    default_data = _read_default_persistent_storage(file_name)
+
+    default_data['users'] = process_users(default_data['users'])
+    default_data['releases'] = process_releases(default_data['releases'])
+
+    persistent_storage_inst.sync(default_data, force=force)
+
+
 def main():
     # init conf and logging
     conf = cfg.CONF
@@ -145,9 +186,9 @@ def main():
 
     if conf.sync_default_data or conf.force_sync_default_data:
         LOG.info('Going to synchronize persistent storage with default data '
-                 'from file %s' % cfg.CONF.default_data)
-        persistent_storage_inst.sync(cfg.CONF.default_data,
-                                     force=conf.force_sync_default_data)
+                 'from file %s', cfg.CONF.default_data)
+        load_default_data(persistent_storage_inst, cfg.CONF.default_data,
+                          cfg.CONF.force_sync_default_data)
         return 0
 
     runtime_storage_inst = runtime_storage.get_runtime_storage(

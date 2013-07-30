@@ -14214,7 +14214,6 @@
             "releases": [
                 {
                     "release_name": "Havana",
-                    "tag_from": "5a1376ca",
                     "tag_to": "HEAD"
                 }
             ]
@@ -14379,24 +14378,28 @@
 
     "releases": [
         {
+            "release_name": "prehistory",
+            "end_date": "2011-Apr-21"
+        },
+        {
+            "release_name": "Diablo",
+            "end_date": "2011-Sep-08"
+        },
+        {
             "release_name": "Essex",
-            "start_date": "2011-Oct-01",
-            "end_date": "2012-Apr-01"
+            "end_date": "2012-Apr-05"
         },
         {
             "release_name": "Folsom",
-            "start_date": "2012-Apr-01",
-            "end_date": "2012-Oct-01"
+            "end_date": "2012-Oct-04"
         },
         {
             "release_name": "Grizzly",
-            "start_date": "2012-Oct-01",
-            "end_date": "2013-Apr-01"
+            "end_date": "2013-Apr-04"
         },
         {
             "release_name": "Havana",
-            "start_date": "2013-Apr-01",
-            "end_date": "now"
+            "end_date": "2013-Oct-17"
         }
     ]
 

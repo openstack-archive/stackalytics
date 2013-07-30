@@ -19,7 +19,8 @@ import time
 
 def normalize_user(user):
     user['emails'] = [email.lower() for email in user['emails']]
-    user['launchpad_id'] = user['launchpad_id'].lower()
+    if user['launchpad_id']:
+        user['launchpad_id'] = user['launchpad_id'].lower()
 
     for c in user['companies']:
         end_date_numeric = 0
@@ -38,6 +39,12 @@ def normalize_user(user):
 
     user['companies'].sort(cmp=end_date_comparator)
     return user
+
+
+def normalize_release(release):
+    release['release_name'] = release['release_name'].lower()
+    release['end_date'] = date_to_timestamp(release['end_date'])
+    return release
 
 
 def date_to_timestamp(d):

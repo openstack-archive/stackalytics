@@ -19,7 +19,7 @@ import re
 
 from launchpadlib import launchpad
 from oslo.config import cfg
-from stackalytics.processor import user_utils
+from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
 
@@ -75,13 +75,14 @@ class CachedProcessor(RecordProcessor):
             break
         else:
             persistent_user = None
+
         if persistent_user:
             # user already exist, merge
             LOG.debug('User exists in persistent storage, add new email %s',
                       email)
             persistent_user_email = persistent_user['emails'][0]
             if persistent_user_email not in self.users_index:
-                raise Exception('User index is not valid')
+                return persistent_user
             user = self.users_index[persistent_user_email]
             user['emails'].append(email)
             self.persistent_storage.update_user(user)
@@ -89,8 +90,9 @@ class CachedProcessor(RecordProcessor):
             # add new user
             LOG.debug('Add new user into persistent storage')
             company = (self._get_company_by_email(email) or
-                       self.domains_index[''])
+                       self._get_independent())
             user = {
+                'user_id': launchpad_id,
                 'launchpad_id': launchpad_id,
                 'user_name': user_name,
                 'emails': [email],
@@ -103,41 +105,50 @@ class CachedProcessor(RecordProcessor):
 
         return user
 
-    def _unknown_user_email(self, email):
+    def _unknown_user_email(self, email, user_name):
 
         lp_profile = None
         if not re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email):
             LOG.debug('User email is not valid %s' % email)
         else:
             LOG.debug('Lookup user email %s at Launchpad' % email)
-            lp = launchpad.Launchpad.login_anonymously('stackalytics')
+            lp = launchpad.Launchpad.login_anonymously('stackalytics',
+                                                       'production')
             try:
                 lp_profile = lp.people.getByEmail(email=email)
             except Exception as error:
-                LOG.warn('Lookup of email %s failed %s' %
-                         (email, error.message))
+                LOG.warn('Lookup of email %s failed %s', email, error.message)
+
         if not lp_profile:
             # user is not found in Launchpad, create dummy record for commit
             # update
             LOG.debug('Email is not found at Launchpad, mapping to nobody')
             user = {
                 'launchpad_id': None,
+                'user_id': email,
+                'user_name': user_name,
+                'emails': [email],
                 'companies': [{
-                    'company_name': self.domains_index[''],
+                    'company_name': self._get_independent(),
                     'end_date': 0
                 }]
             }
+            # add new user
+            self.persistent_storage.insert_user(user)
         else:
             # get user's launchpad id from his profile
             launchpad_id = lp_profile.name
             user_name = lp_profile.display_name
-            LOG.debug('Found user %s' % launchpad_id)
+            LOG.debug('Found user %s', launchpad_id)
 
             user = self._persist_user(launchpad_id, email, user_name)
 
         # update local index
         self.users_index[email] = user
         return user
+
+    def _get_independent(self):
+        return self.domains_index['']
 
 
 class CommitProcessor(CachedProcessor):
@@ -150,12 +161,16 @@ class CommitProcessor(CachedProcessor):
         if email in self.users_index:
             user = self.users_index[email]
         else:
-            user = self._unknown_user_email(email)
+            user = self._unknown_user_email(email, commit['author'])
+
         commit['launchpad_id'] = user['launchpad_id']
+        commit['user_id'] = user['user_id']
+
         company = self._get_company_by_email(email)
         if not company:
             company = self._find_company(user['companies'], commit['date'])
         commit['company_name'] = company
+
         if 'user_name' in user:
             commit['author_name'] = user['user_name']
 
@@ -168,7 +183,7 @@ class CommitProcessor(CachedProcessor):
 
             record['record_type'] = 'commit'
             record['primary_key'] = record['commit_id']
-            record['week'] = user_utils.timestamp_to_week(record['date'])
+            record['week'] = utils.timestamp_to_week(record['date'])
             record['loc'] = record['lines_added'] + record['lines_deleted']
 
             yield record
@@ -183,14 +198,8 @@ class ReviewProcessor(CachedProcessor):
         for user in users:
             self.launchpad_to_company_index[user['launchpad_id']] = user
 
-        self.releases = []
-        for release in persistent_storage.get_releases():
-            r = release.copy()
-            r['end_date_ts'] = user_utils.date_to_timestamp(r['end_date'])
-            r['release_name'] = r['release_name'].lower()
-            self.releases.append(r)
-        self.releases.sort(key=lambda x: x['end_date_ts'])
-        self.releases_dates = [r['end_date_ts'] for r in self.releases]
+        self.releases = list(persistent_storage.get_releases())
+        self.releases_dates = [r['end_date'] for r in self.releases]
 
         LOG.debug('Review processor is instantiated')
 
@@ -208,22 +217,28 @@ class ReviewProcessor(CachedProcessor):
         company = self._get_company_by_email(email)
         if not company:
             company = self._find_company(user['companies'], date)
-        return company
+        return company, user['user_id']
 
     def _spawn_review(self, record):
         # copy everything except pathsets and flatten user data
         review = dict([(k, v) for k, v in record.iteritems()
                        if k not in ['patchSets', 'owner']])
         owner = record['owner']
-        company = self._process_user(owner['email'].lower(),
-                                     owner['username'],
-                                     owner['name'],
-                                     record['createdOn'])
+        if 'email' not in owner or 'username' not in owner:
+            return  # ignore
+
         review['record_type'] = 'review'
         review['primary_key'] = record['id']
-        review['company_name'] = company
         review['launchpad_id'] = owner['username']
+        review['author_email'] = owner['email'].lower()
         review['release'] = self._get_release(review['createdOn'])
+
+        company, user_id = self._process_user(review['author_email'],
+                                              review['launchpad_id'],
+                                              owner['name'],
+                                              record['createdOn'])
+        review['company_name'] = company
+        review['user_id'] = user_id
         yield review
 
     def _spawn_marks(self, record):
@@ -236,21 +251,24 @@ class ReviewProcessor(CachedProcessor):
                 mark = dict([(k, v) for k, v in approval.iteritems()
                              if k != 'by'])
                 reviewer = approval['by']
+
+                if 'email' not in reviewer or 'username' not in reviewer:
+                    continue  # ignore
+
                 mark['record_type'] = 'mark'
                 mark['primary_key'] = (record['id'] +
                                        str(mark['grantedOn']) +
                                        mark['type'])
                 mark['launchpad_id'] = reviewer['username']
+                mark['author_email'] = reviewer['email'].lower()
                 mark['module'] = record['module']
 
-                if 'email' not in reviewer:
-                    continue
-
-                company = self._process_user(reviewer['email'],
-                                             reviewer['username'],
-                                             reviewer['name'],
-                                             mark['grantedOn'])
+                company, user_id = self._process_user(mark['author_email'],
+                                                      mark['launchpad_id'],
+                                                      reviewer['name'],
+                                                      mark['grantedOn'])
                 mark['company_name'] = company
+                mark['user_id'] = user_id
                 mark['review_id'] = review_id
                 mark['release'] = self._get_release(mark['grantedOn'])
 

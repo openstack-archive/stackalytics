@@ -13,13 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
 import logging
 import re
 
 import pymongo
-
-from stackalytics.processor import user_utils
 
 LOG = logging.getLogger(__name__)
 
@@ -28,21 +25,20 @@ class PersistentStorage(object):
     def __init__(self, uri):
         pass
 
-    def sync(self, default_data_file_name, force=False):
+    def sync(self, default_data, force=False):
         if force:
             self.clean_all()
-
-        default_data = self._read_default_persistent_storage(
-            default_data_file_name)
 
         self._build_index(default_data['repos'], 'uri',
                           self.get_repos, self.insert_repo)
         self._build_index(default_data['companies'], 'company_name',
                           self.get_companies, self.insert_company)
-        self._build_index(default_data['users'], 'launchpad_id',
+        self._build_index(default_data['users'], 'user_id',
                           self.get_users, self.insert_user)
         self._build_index(default_data['releases'], 'release_name',
                           self.get_releases, self.insert_release)
+
+        LOG.debug('Sync completed')
 
     def _build_index(self, default_data, primary_key, getter, inserter):
         # loads all items from persistent storage
@@ -80,14 +76,6 @@ class PersistentStorage(object):
 
     def clean_all(self):
         pass
-
-    def _read_default_persistent_storage(self, file_name):
-        try:
-            with open(file_name, 'r') as content_file:
-                content = content_file.read()
-                return json.loads(content)
-        except Exception as e:
-            LOG.error('Error while reading config: %s' % e)
 
 
 class MongodbStorage(PersistentStorage):
@@ -127,10 +115,11 @@ class MongodbStorage(PersistentStorage):
         return self.mongo.users.find(criteria)
 
     def insert_user(self, user):
-        self.mongo.users.insert(user_utils.normalize_user(user))
+        LOG.debug('Insert new user: %s', user)
+        self.mongo.users.insert(user)
 
     def update_user(self, user):
-        user_utils.normalize_user(user)
+        LOG.debug('Update user: %s', user)
         launchpad_id = user['launchpad_id']
         self.mongo.users.update({'launchpad_id': launchpad_id}, user)
 

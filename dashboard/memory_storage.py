@@ -29,7 +29,7 @@ class CachedMemoryStorage(MemoryStorage):
         self.records = {}
         self.record_types_index = {}
         self.module_index = {}
-        self.launchpad_id_index = {}
+        self.user_id_index = {}
         self.company_index = {}
         self.release_index = {}
 
@@ -37,7 +37,7 @@ class CachedMemoryStorage(MemoryStorage):
             'record_type': self.record_types_index,
             'company_name': self.company_index,
             'module': self.module_index,
-            'launchpad_id': self.launchpad_id_index,
+            'user_id': self.user_id_index,
             'release': self.release_index,
         }
 
@@ -84,9 +84,9 @@ class CachedMemoryStorage(MemoryStorage):
             map(self.get_original_company_name, companies),
             self.company_index)
 
-    def get_record_ids_by_launchpad_ids(self, launchpad_ids):
+    def get_record_ids_by_user_ids(self, launchpad_ids):
         return self._get_record_ids_from_index(launchpad_ids,
-                                               self.launchpad_id_index)
+                                               self.user_id_index)
 
     def get_record_ids_by_releases(self, releases):
         return self._get_record_ids_from_index(releases, self.release_index)
@@ -119,8 +119,8 @@ class CachedMemoryStorage(MemoryStorage):
     def get_modules(self):
         return self.module_index.keys()
 
-    def get_launchpad_ids(self):
-        return self.launchpad_id_index.keys()
+    def get_user_ids(self):
+        return self.user_id_index.keys()
 
 
 def get_memory_storage(memory_storage_type, records):

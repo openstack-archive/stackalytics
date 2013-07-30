@@ -31,7 +31,7 @@ from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import runtime_storage
-from stackalytics.processor import user_utils
+from stackalytics.processor import utils
 
 
 # Constants and Parameters ---------
@@ -86,9 +86,15 @@ def get_vault():
             memory_storage.MEMORY_STORAGE_CACHED,
             vault['runtime_storage'].get_update(os.getpid()))
 
-        releases = vault['persistent_storage'].get_releases()
+        releases = list(vault['persistent_storage'].get_releases())
+        vault['start_date'] = releases[0]['end_date']
+        vault['end_date'] = releases[-1]['end_date']
+        start_date = releases[0]['end_date']
+        for r in releases[1:]:
+            r['start_date'] = start_date
+            start_date = r['end_date']
         vault['releases'] = dict((r['release_name'].lower(), r)
-                                 for r in releases)
+                                 for r in releases[1:])
         modules = vault['persistent_storage'].get_repos()
         vault['modules'] = dict((r['module'].lower(),
                                  r['project_type'].lower()) for r in modules)
@@ -224,11 +230,11 @@ def record_filter(ignore=None, use_default=True):
                     record_ids &= (
                         memory_storage.get_record_ids_by_modules(modules))
 
-            if 'launchpad_id' not in ignore:
-                param = get_parameter(kwargs, 'launchpad_id', 'launchpad_ids')
+            if 'user_id' not in ignore:
+                param = get_parameter(kwargs, 'user_id', 'user_ids')
                 if param:
                     record_ids &= (
-                        memory_storage.get_record_ids_by_launchpad_ids(param))
+                        memory_storage.get_record_ids_by_user_ids(param))
 
             if 'company' not in ignore:
                 param = get_parameter(kwargs, 'company', 'companies')
@@ -439,16 +445,15 @@ def module_details(module, records):
     return details
 
 
-@app.route('/engineers/<launchpad_id>')
+@app.route('/engineers/<user_id>')
 @exception_handler()
 @templated()
 @record_filter(ignore='metric')
-def engineer_details(launchpad_id, records):
+def engineer_details(user_id, records):
     persistent_storage = get_vault()['persistent_storage']
-    user = list(persistent_storage.get_users(launchpad_id=launchpad_id))[0]
+    user = list(persistent_storage.get_users(user_id=user_id))[0]
 
     details = contribution_details(records)
-    details['launchpad_id'] = launchpad_id
     details['user'] = user
     return details
 
@@ -498,8 +503,8 @@ def get_modules(records, metric_filter):
 @aggregate_filter()
 def get_engineers(records, metric_filter):
     response = _get_aggregated_stats(records, metric_filter,
-                                     get_memory_storage().get_launchpad_ids(),
-                                     'launchpad_id', 'author')
+                                     get_memory_storage().get_user_ids(),
+                                     'user_id', 'author')
     return json.dumps(response)
 
 
@@ -512,15 +517,20 @@ def timeline(records, **kwargs):
     releases = get_vault()['releases']
     if not release_names:
         flask.abort(404)
-    if not (set(release_names) & set(releases.keys())):
-        flask.abort(404)
-    release = releases[release_names[0]]
 
-    start_date = release_start_date = user_utils.timestamp_to_week(
-        user_utils.date_to_timestamp(release['start_date']))
-    end_date = release_end_date = user_utils.timestamp_to_week(
-        user_utils.date_to_timestamp(release['end_date']))
-    now = user_utils.timestamp_to_week(int(time.time()))
+    if 'all' in release_names:
+        start_date = release_start_date = utils.timestamp_to_week(
+            get_vault()['start_date'])
+        end_date = release_end_date = utils.timestamp_to_week(
+            get_vault()['end_date'])
+    else:
+        release = releases[release_names[0]]
+        start_date = release_start_date = utils.timestamp_to_week(
+            release['start_date'])
+        end_date = release_end_date = utils.timestamp_to_week(
+            release['end_date'])
+
+    now = utils.timestamp_to_week(int(time.time()))
 
     # expand start-end to year if needed
     if release_end_date - release_start_date < 52:
@@ -552,7 +562,7 @@ def timeline(records, **kwargs):
     array_commits_hl = []
 
     for week in weeks:
-        week_str = user_utils.week_to_date(week)
+        week_str = utils.week_to_date(week)
         array_loc.append([week_str, week_stat_loc[week]])
         array_commits.append([week_str, week_stat_commits[week]])
         array_commits_hl.append([week_str, week_stat_commits_hl[week]])

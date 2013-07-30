@@ -42,7 +42,9 @@ class TestCommitProcessor(testtools.TestCase):
             },
         ])
         self.user = {
-            'launchpad_id': 'john_doe', 'user_name': 'John Doe',
+            'user_id': 'john_doe',
+            'launchpad_id': 'john_doe',
+            'user_name': 'John Doe',
             'emails': ['johndoe@gmail.com', 'jdoe@super.no'],
             'companies': [
                 {'company_name': '*independent',
@@ -65,6 +67,13 @@ class TestCommitProcessor(testtools.TestCase):
         super(TestCommitProcessor, self).tearDown()
         self.launchpad_patch.stop()
 
+    def _make_commit(self, email='johndoe@gmail.com', date=1999999999):
+        return {
+            'author': 'John Doe',
+            'author_email': email,
+            'date': date,
+        }
+
     def test_get_company_by_email_mapped(self):
         email = 'jdoe@super.no'
         res = self.commit_processor._get_company_by_email(email)
@@ -86,20 +95,14 @@ class TestCommitProcessor(testtools.TestCase):
         self.assertEquals(None, res)
 
     def test_update_commit_existing_user(self):
-        commit = {
-            'author_email': 'johndoe@gmail.com',
-            'date': 1999999999,
-        }
+        commit = self._make_commit()
         self.commit_processor._update_commit_with_user_data(commit)
 
         self.assertEquals('SuperCompany', commit['company_name'])
         self.assertEquals('john_doe', commit['launchpad_id'])
 
     def test_update_commit_existing_user_old_job(self):
-        commit = {
-            'author_email': 'johndoe@gmail.com',
-            'date': 1000000000,
-        }
+        commit = self._make_commit(date=1000000000)
         self.commit_processor._update_commit_with_user_data(commit)
 
         self.assertEquals('*independent', commit['company_name'])
@@ -111,10 +114,7 @@ class TestCommitProcessor(testtools.TestCase):
         Should return other company instead of those mentioned in user db
         """
         email = 'johndoe@nec.co.jp'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -138,10 +138,7 @@ class TestCommitProcessor(testtools.TestCase):
         the user and return current company
         """
         email = 'johndoe@yahoo.com'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -165,10 +162,7 @@ class TestCommitProcessor(testtools.TestCase):
         Should add new user and set company depending on email
         """
         email = 'smith@nec.com'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -189,10 +183,7 @@ class TestCommitProcessor(testtools.TestCase):
         Should set user name and empty LPid
         """
         email = 'inkognito@avs.com'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
@@ -209,10 +200,7 @@ class TestCommitProcessor(testtools.TestCase):
         LP raises error during getting user info
         """
         email = 'smith@avs.com'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None,
@@ -230,10 +218,7 @@ class TestCommitProcessor(testtools.TestCase):
         User's email is malformed
         """
         email = 'error.root'
-        commit = {
-            'author_email': email,
-            'date': 1999999999,
-        }
+        commit = self._make_commit(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)

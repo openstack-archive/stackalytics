@@ -102,7 +102,10 @@ class Git(Vcs):
 
         for release in self.repo['releases']:
             release_name = release['release_name'].lower()
-            tag_range = release['tag_from'] + '..' + release['tag_to']
+            if 'tag_from' in release:
+                tag_range = release['tag_from'] + '..' + release['tag_to']
+            else:
+                tag_range = release['tag_to']
             git_log_iterator = sh.git('log', '--pretty=%H', tag_range,
                                       _tty_out=False)
             for commit_id in git_log_iterator:

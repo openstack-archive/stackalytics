@@ -20,7 +20,9 @@
         {% if user.companies %}
         <div>Company: {{ user.companies[-1].company_name|link('/companies/' + user.companies[-1].company_name)|safe }}</div>
         {% endif %}
-        <div>Launchpad: <a href="https://launchpad.net/~{{ launchpad_id }}">{{ launchpad_id }}</a></div>
+        {% if user.launchpad_id %}
+        <div>Launchpad: <a href="https://launchpad.net/~{{ user.launchpad_id }}">{{ user.launchpad_id }}</a></div>
+        {% endif %}
     </div>
 
     <h3>Commits history</h3>
