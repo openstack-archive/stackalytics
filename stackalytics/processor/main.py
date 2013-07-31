@@ -15,7 +15,6 @@
 
 import json
 import urllib
-import urllib2
 
 from oslo.config import cfg
 import psutil
@@ -69,7 +68,13 @@ def _merge_commits(original, new):
         return True
 
 
-def process_repo(repo, runtime_storage, commit_processor, review_processor):
+def _record_typer(record_iterator, record_type):
+    for record in record_iterator:
+        record['record_type'] = record_type
+        yield record
+
+
+def process_repo(repo, runtime_storage, record_processor_inst):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
@@ -87,7 +92,9 @@ def process_repo(repo, runtime_storage, commit_processor, review_processor):
         last_id = runtime_storage.get_last_id(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
-        processed_commit_iterator = commit_processor.process(commit_iterator)
+        commit_iterator_typed = _record_typer(commit_iterator, 'commit')
+        processed_commit_iterator = record_processor_inst.process(
+            commit_iterator_typed)
         runtime_storage.set_records(processed_commit_iterator, _merge_commits)
 
         last_id = vcs_inst.get_last_id(branch)
@@ -98,27 +105,28 @@ def process_repo(repo, runtime_storage, commit_processor, review_processor):
         rcs_key = 'rcs:' + str(urllib.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage.get_last_id(rcs_key)
 
-        reviews_iterator = rcs_inst.log(branch, last_id)
-        processed_review_iterator = review_processor.process(reviews_iterator)
+        review_iterator = rcs_inst.log(branch, last_id)
+        review_iterator_typed = _record_typer(review_iterator, 'review')
+        processed_review_iterator = record_processor_inst.process(
+            review_iterator_typed)
         runtime_storage.set_records(processed_review_iterator)
 
         last_id = rcs_inst.get_last_id(branch)
         runtime_storage.set_last_id(rcs_key, last_id)
 
 
-def update_repos(runtime_storage, persistent_storage):
-    repos = persistent_storage.get_repos()
-    commit_processor = record_processor.get_record_processor(
-        record_processor.COMMIT_PROCESSOR, persistent_storage)
-    review_processor = record_processor.get_record_processor(
-        record_processor.REVIEW_PROCESSOR, persistent_storage)
+def update_repos(runtime_storage, persistent_storage_inst):
+    repos = persistent_storage_inst.find('repos')
+    record_processor_inst = record_processor.RecordProcessor(
+        persistent_storage_inst)
 
     for repo in repos:
-        process_repo(repo, runtime_storage, commit_processor, review_processor)
+        process_repo(repo, runtime_storage, record_processor_inst)
 
 
 def apply_corrections(uri, runtime_storage_inst):
-    corrections_fd = urllib2.urlopen(uri)
+    LOG.info('Applying corrections from uri %s', uri)
+    corrections_fd = urllib.urlopen(uri)
     raw = corrections_fd.read()
     corrections_fd.close()
     corrections = json.loads(raw)['corrections']
@@ -140,11 +148,6 @@ def _read_default_persistent_storage(file_name):
         LOG.error('Error while reading config: %s' % e)
 
 
-def load_default_data(persistent_storage_inst, file_name, force):
-    default_data = _read_default_persistent_storage(file_name)
-    default_data_processor.process(persistent_storage_inst, default_data)
-
-
 def main():
     # init conf and logging
     conf = cfg.CONF
@@ -158,15 +161,14 @@ def main():
     persistent_storage_inst = persistent_storage.get_persistent_storage(
         cfg.CONF.persistent_storage_uri)
 
-    if conf.sync_default_data or conf.force_sync_default_data:
-        LOG.info('Going to synchronize persistent storage with default data '
-                 'from file %s', cfg.CONF.default_data)
-        load_default_data(persistent_storage_inst, cfg.CONF.default_data,
-                          cfg.CONF.force_sync_default_data)
-        return 0
-
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)
+
+    default_data = _read_default_persistent_storage(cfg.CONF.default_data)
+    default_data_processor.process(persistent_storage_inst,
+                                   runtime_storage_inst,
+                                   default_data,
+                                   cfg.CONF.sources_root)
 
     update_pids(runtime_storage_inst)
 

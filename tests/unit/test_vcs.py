@@ -14,10 +14,7 @@
 # limitations under the License.
 
 import mock
-import os
 import testtools
-
-from oslo.config import cfg
 
 from stackalytics.processor import vcs
 
@@ -32,16 +29,19 @@ class TestVcsProcessor(testtools.TestCase):
             'releases': []
         }
         self.git = vcs.Git(self.repo, '/tmp')
-        cfg.CONF.sources_root = ''
-        os.chdir = mock.Mock()
+        self.chdir_patcher = mock.patch('os.chdir')
+        self.chdir_patcher.start()
+
+    def tearDown(self):
+        super(TestVcsProcessor, self).tearDown()
+        self.chdir_patcher.stop()
 
     def test_git_log(self):
         with mock.patch('sh.git') as git_mock:
             git_mock.return_value = '''
 commit_id:b5a416ac344160512f95751ae16e6612aefd4a57
 date:1369119386
-author:Akihiro MOTOKI
-author_email:motoki@da.jp.nec.com
+author_name:Akihiro MOTOKI
 author_email:motoki@da.jp.nec.com
 subject:Remove class-based import in the code repo
 message:Fixes bug 1167901
@@ -55,8 +55,7 @@ diff_stat:
  21 files changed, 340 insertions(+), 408 deletions(-)
 commit_id:5be031f81f76d68c6e4cbaad2247044aca179843
 date:1370975889
-author:Monty Taylor
-author_email:mordred@inaugust.com
+author_name:Monty Taylor
 author_email:mordred@inaugust.com
 subject:Remove explicit distribute depend.
 message:Causes issues with the recent re-merge with setuptools. Advice from
@@ -69,8 +68,7 @@ diff_stat:
  1 file changed, 1 deletion(-)
 commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
 date:1369831203
-author:Mark McClain
-author_email:mark.mcclain@dreamhost.com
+author_name:Mark McClain
 author_email:mark.mcclain@dreamhost.com
 subject:add readme for 2.2.2
 message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
@@ -80,8 +78,7 @@ diff_stat:
  1 file changed, 8 insertions(+)
 commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
 date:1369831203
-author:John Doe
-author_email:john.doe@dreamhost.com
+author_name:John Doe
 author_email:john.doe@dreamhost.com
 subject:add readme for 2.2.2
 message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
@@ -91,8 +88,7 @@ diff_stat:
  0 files changed
 commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
 date:1369831203
-author:Doug Hoffner
-author_email:mark.mcclain@dreamhost.com
+author_name:Doug Hoffner
 author_email:mark.mcclain@dreamhost.com
 subject:add readme for 2.2.2
 message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7

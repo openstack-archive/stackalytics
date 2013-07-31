@@ -24,14 +24,6 @@ OPTS = [
                help='Storage URI'),
     cfg.StrOpt('persistent-storage-uri', default='mongodb://localhost',
                help='URI of persistent storage'),
-    cfg.BoolOpt('sync-default-data', default=False,
-                help='Update persistent storage with default data. '
-                     'Existing data is not overwritten'),
-    cfg.BoolOpt('force-sync-default-data', default=False,
-                help='Completely overwrite persistent storage with the '
-                     'default data'),
-    cfg.BoolOpt('filter-robots', default=True,
-                help='Filter out commits from robots'),
     cfg.StrOpt('listen-host', default='127.0.0.1',
                help='The address dashboard listens on'),
     cfg.IntOpt('listen-port', default=8080,

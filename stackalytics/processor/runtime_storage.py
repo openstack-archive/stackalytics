@@ -65,7 +65,7 @@ class MemcachedStorage(RuntimeStorage):
 
     def _build_index(self):
         self.record_index = {}
-        for record in self._get_all_records():
+        for record in self.get_all_records():
             self.record_index[record['primary_key']] = record['record_id']
 
     def set_records(self, records_iterator, merge_handler=None):
@@ -73,8 +73,12 @@ class MemcachedStorage(RuntimeStorage):
             if record['primary_key'] in self.record_index:
                 # update
                 record_id = self.record_index[record['primary_key']]
-                original = self.memcached.get(self._get_record_name(record_id))
-                if merge_handler:
+                if not merge_handler:
+                    self.memcached.set(self._get_record_name(record_id),
+                                       record)
+                else:
+                    original = self.memcached.get(self._get_record_name(
+                        record_id))
                     if merge_handler(original, record):
                         LOG.debug('Update record %s' % record)
                         self.memcached.set(self._get_record_name(record_id),
@@ -121,7 +125,7 @@ class MemcachedStorage(RuntimeStorage):
         self._set_pids(pid)
 
         if not last_update:
-            for i in self._get_all_records():
+            for i in self.get_all_records():
                 yield i
         else:
             for update_id_set in self._make_range(last_update, update_count,
@@ -179,7 +183,7 @@ class MemcachedStorage(RuntimeStorage):
         if (stop - start) % step > 0:
             yield range(i, stop)
 
-    def _get_all_records(self):
+    def get_all_records(self):
         for record_id_set in self._make_range(0, self._get_record_count(),
                                               BULK_READ_SIZE):
             for i in self.memcached.get_multi(

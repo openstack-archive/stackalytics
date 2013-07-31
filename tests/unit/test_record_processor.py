@@ -23,12 +23,11 @@ from stackalytics.processor import record_processor
 from stackalytics.processor import utils
 
 
-class TestCommitProcessor(testtools.TestCase):
+class TestRecordProcessor(testtools.TestCase):
     def setUp(self):
-        super(TestCommitProcessor, self).setUp()
+        super(TestRecordProcessor, self).setUp()
 
-        p_storage = mock.Mock(persistent_storage.PersistentStorage)
-        p_storage.get_companies = mock.Mock(return_value=[
+        companies = [
             {
                 'company_name': 'SuperCompany',
                 'domains': ['super.com', 'super.no']
@@ -41,7 +40,8 @@ class TestCommitProcessor(testtools.TestCase):
                 'company_name': '*independent',
                 'domains': ['']
             },
-        ])
+        ]
+
         self.user = {
             'user_id': 'john_doe',
             'launchpad_id': 'john_doe',
@@ -54,11 +54,11 @@ class TestCommitProcessor(testtools.TestCase):
                  'end_date': 0},
             ]
         }
-        p_storage.get_users = mock.Mock(return_value=[
+        self.get_users = mock.Mock(return_value=[
             self.user,
         ])
 
-        p_storage.get_releases = mock.Mock(return_value=[
+        releases = [
             {
                 'release_name': 'prehistory',
                 'end_date': utils.date_to_timestamp('2011-Apr-21')
@@ -67,21 +67,34 @@ class TestCommitProcessor(testtools.TestCase):
                 'release_name': 'Diablo',
                 'end_date': utils.date_to_timestamp('2011-Sep-08')
             },
-        ])
+        ]
+
+        def find(table, **criteria):
+            if table == 'companies':
+                return companies
+            elif table == 'users':
+                return self.get_users()
+            elif table == 'releases':
+                return releases
+            else:
+                raise Exception('Wrong table %s' % table)
+
+        p_storage = mock.Mock(persistent_storage.PersistentStorage)
+        p_storage.find = mock.Mock(side_effect=find)
 
         self.persistent_storage = p_storage
-        self.commit_processor = record_processor.CommitProcessor(p_storage)
+        self.commit_processor = record_processor.RecordProcessor(p_storage)
         self.launchpad_patch = mock.patch('launchpadlib.launchpad.Launchpad')
         self.launchpad_patch.start()
         cfg.CONF = mock.MagicMock()
 
     def tearDown(self):
-        super(TestCommitProcessor, self).tearDown()
+        super(TestRecordProcessor, self).tearDown()
         self.launchpad_patch.stop()
 
     def _make_commit(self, email='johndoe@gmail.com', date=1999999999):
         return {
-            'author': 'John Doe',
+            'author_name': 'John Doe',
             'author_email': email,
             'date': date,
         }
@@ -134,11 +147,11 @@ class TestCommitProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
         user = self.user.copy()
         # tell storage to return existing user
-        self.persistent_storage.get_users.return_value = [user]
+        self.get_users.return_value = [user]
 
         self.commit_processor._update_commit_with_user_data(commit)
 
-        self.persistent_storage.update_user.assert_called_once_with(user)
+        self.persistent_storage.update.assert_called_once_with('users', user)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertIn(email, user['emails'])
         self.assertEquals('NEC', commit['company_name'])
@@ -158,11 +171,11 @@ class TestCommitProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
         user = self.user.copy()
         # tell storage to return existing user
-        self.persistent_storage.get_users.return_value = [user]
+        self.get_users.return_value = [user]
 
         self.commit_processor._update_commit_with_user_data(commit)
 
-        self.persistent_storage.update_user.assert_called_once_with(user)
+        self.persistent_storage.update.assert_called_once_with('users', user)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertIn(email, user['emails'])
         self.assertEquals('SuperCompany', commit['company_name'])
@@ -181,7 +194,7 @@ class TestCommitProcessor(testtools.TestCase):
         lp_profile.name = 'smith'
         lp_profile.display_name = 'Smith'
         lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
-        self.persistent_storage.get_users.return_value = []
+        self.get_users.return_value = []
 
         self.commit_processor._update_commit_with_user_data(commit)
 
@@ -199,7 +212,7 @@ class TestCommitProcessor(testtools.TestCase):
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
-        self.persistent_storage.get_users.return_value = []
+        self.get_users.return_value = []
 
         self.commit_processor._update_commit_with_user_data(commit)
 
@@ -217,7 +230,7 @@ class TestCommitProcessor(testtools.TestCase):
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None,
                                               side_effect=Exception)
-        self.persistent_storage.get_users.return_value = []
+        self.get_users.return_value = []
 
         self.commit_processor._update_commit_with_user_data(commit)
 
@@ -234,7 +247,7 @@ class TestCommitProcessor(testtools.TestCase):
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
-        self.persistent_storage.get_users.return_value = []
+        self.get_users.return_value = []
 
         self.commit_processor._update_commit_with_user_data(commit)
 

@@ -54,8 +54,10 @@ class CachedMemoryStorage(MemoryStorage):
 
     def update(self, records):
         for record in records:
-            if record['record_id'] in self.records:
-                self._remove_record_from_index(record)
+            record_id = record['record_id']
+            if record_id in self.records:
+                # remove existing record from indexes
+                self._remove_record_from_index(self.records[record_id])
             self._save_record(record)
 
     def _remove_record_from_index(self, record):

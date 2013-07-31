@@ -14,64 +14,51 @@
 # limitations under the License.
 
 from stackalytics.openstack.common import log as logging
-from stackalytics.processor import utils
+from stackalytics.processor import normalizer
+from stackalytics.processor import persistent_storage
+from stackalytics.processor import record_processor
+from stackalytics.processor import vcs
 
 LOG = logging.getLogger(__name__)
 
 
-def normalize_user(user):
-    user['emails'] = [email.lower() for email in user['emails']]
-    if user['launchpad_id']:
-        user['launchpad_id'] = user['launchpad_id'].lower()
+def _update_persistent_storage(persistent_storage_inst, default_data):
 
-    for c in user['companies']:
-        end_date_numeric = 0
-        if c['end_date']:
-            end_date_numeric = utils.date_to_timestamp(c['end_date'])
-        c['end_date'] = end_date_numeric
+    need_update = False
 
-    # sort companies by end_date
-    def end_date_comparator(x, y):
-        if x["end_date"] == 0:
-            return 1
-        elif y["end_date"] == 0:
-            return -1
-        else:
-            return cmp(x["end_date"], y["end_date"])
+    for table, primary_key in persistent_storage.PRIMARY_KEYS.iteritems():
+        for item in default_data[table]:
+            param = {primary_key: item[primary_key]}
+            for p_item in persistent_storage_inst.find(table, **param):
+                break
+            else:
+                p_item = None
 
-    user['companies'].sort(cmp=end_date_comparator)
+            if item != p_item:
+                need_update = True
+                if p_item:
+                    persistent_storage_inst.update(table, item)
+                else:
+                    persistent_storage_inst.insert(table, item)
 
-
-def _process_users(users):
-    for user in users:
-        if ('launchpad_id' not in user) or ('emails' not in user):
-            LOG.warn('Skipping invalid user: %s', user)
-            continue
-
-        normalize_user(user)
-        user['user_id'] = user['launchpad_id'] or user['emails'][0]
+    return need_update
 
 
-def _process_releases(releases):
-    for release in releases:
-        release['release_name'] = release['release_name'].lower()
-        release['end_date'] = utils.date_to_timestamp(release['end_date'])
-    releases.sort(key=lambda x: x['end_date'])
+def process(persistent_storage_inst, runtime_storage_inst, default_data,
+            sources_root):
 
+    normalizer.normalize_default_data(default_data)
 
-def _process_repos(repos):
-    for repo in repos:
-        if 'releases' not in repo:
-            repo['releases'] = []  # release will be assigned automatically
+    if _update_persistent_storage(persistent_storage_inst, default_data):
 
-PROCESSORS = {
-    'users': _process_users,
-    'releases': _process_releases,
-    'repos': _process_repos,
-}
+        release_index = {}
+        for repo in persistent_storage_inst.find('repos'):
+            vcs_inst = vcs.get_vcs(repo, sources_root)
+            release_index.update(vcs_inst.get_release_index())
 
-
-def process(persistent_storage, default_data):
-    for key, processor in PROCESSORS.items():
-        processor(default_data[key])
-    persistent_storage.sync(default_data, force=True)
+        persistent_storage_inst.reset(default_data)
+        record_processor_inst = record_processor.RecordProcessor(
+            persistent_storage_inst)
+        updated_records = record_processor_inst.update(
+            runtime_storage_inst.get_all_records(), release_index)
+        runtime_storage_inst.set_records(updated_records)

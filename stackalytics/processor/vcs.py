@@ -39,6 +39,9 @@ class Vcs(object):
     def fetch(self):
         pass
 
+    def get_release_index(self):
+        pass
+
     def log(self, branch, head_commit_id):
         pass
 
@@ -49,8 +52,7 @@ class Vcs(object):
 GIT_LOG_PARAMS = [
     ('commit_id', '%H'),
     ('date', '%at'),
-    ('author', '%an'),
-    ('author_email', '%ae'),
+    ('author_name', '%an'),
     ('author_email', '%ae'),
     ('subject', '%s'),
     ('message', '%b'),
@@ -84,9 +86,6 @@ class Git(Vcs):
             raise Exception('Unexpected uri %s for git' % uri)
         self.release_index = {}
 
-    def _chdir(self):
-        os.chdir(self.folder)
-
     def fetch(self):
         LOG.debug('Fetching repo uri %s' % self.repo['uri'])
 
@@ -95,24 +94,30 @@ class Git(Vcs):
             sh.git('clone', '%s' % self.repo['uri'])
             os.chdir(self.folder)
         else:
-            self._chdir()
+            os.chdir(self.folder)
             sh.git('pull', 'origin')
 
-        for release in self.repo['releases']:
-            release_name = release['release_name'].lower()
-            if 'tag_from' in release:
-                tag_range = release['tag_from'] + '..' + release['tag_to']
-            else:
-                tag_range = release['tag_to']
-            git_log_iterator = sh.git('log', '--pretty=%H', tag_range,
-                                      _tty_out=False)
-            for commit_id in git_log_iterator:
-                self.release_index[commit_id.strip()] = release_name
+        self.get_release_index()
+
+    def get_release_index(self):
+        os.chdir(self.folder)
+        if not self.release_index:
+            for release in self.repo['releases']:
+                release_name = release['release_name'].lower()
+                if 'tag_from' in release:
+                    tag_range = release['tag_from'] + '..' + release['tag_to']
+                else:
+                    tag_range = release['tag_to']
+                git_log_iterator = sh.git('log', '--pretty=%H', tag_range,
+                                          _tty_out=False)
+                for commit_id in git_log_iterator:
+                    self.release_index[commit_id.strip()] = release_name
+        return self.release_index
 
     def log(self, branch, head_commit_id):
         LOG.debug('Parsing git log for repo uri %s' % self.repo['uri'])
 
-        self._chdir()
+        os.chdir(self.folder)
         sh.git('checkout', '%s' % branch)
         commit_range = 'HEAD'
         if head_commit_id:
@@ -167,7 +172,7 @@ class Git(Vcs):
     def get_last_id(self, branch):
         LOG.debug('Get head commit for repo uri %s' % self.repo['uri'])
 
-        self._chdir()
+        os.chdir(self.folder)
         sh.git('checkout', '%s' % branch)
         return str(sh.git('rev-parse', 'HEAD')).strip()
 

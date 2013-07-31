@@ -20,61 +20,28 @@ import pymongo
 
 LOG = logging.getLogger(__name__)
 
+PRIMARY_KEYS = {
+    'companies': 'company_name',
+    'repos': 'uri',
+    'users': 'user_id',
+    'releases': 'release_name',
+}
+
 
 class PersistentStorage(object):
     def __init__(self, uri):
         pass
 
-    def sync(self, default_data, force=False):
-        if force:
-            self.clean_all()
-
-        self._build_index(default_data['repos'], 'uri',
-                          self.get_repos, self.insert_repo)
-        self._build_index(default_data['companies'], 'company_name',
-                          self.get_companies, self.insert_company)
-        self._build_index(default_data['users'], 'user_id',
-                          self.get_users, self.insert_user)
-        self._build_index(default_data['releases'], 'release_name',
-                          self.get_releases, self.insert_release)
-
-        LOG.debug('Sync completed')
-
-    def _build_index(self, default_data, primary_key, getter, inserter):
-        # loads all items from persistent storage
-        existing_items = set([item[primary_key] for item in getter()])
-        # inserts items from default storage that are not in persistent storage
-        map(inserter, [item for item in default_data
-                       if item[primary_key] not in existing_items])
-
-    def get_companies(self, **criteria):
+    def reset(self, default_data):
         pass
 
-    def insert_company(self, company):
+    def find(self, table, **criteria):
         pass
 
-    def get_repos(self, **criteria):
+    def insert(self, table, inst):
         pass
 
-    def insert_repo(self, repo):
-        pass
-
-    def get_users(self, **criteria):
-        pass
-
-    def insert_user(self, user):
-        pass
-
-    def update_user(self, user):
-        pass
-
-    def get_releases(self, **criteria):
-        pass
-
-    def insert_release(self, release):
-        pass
-
-    def clean_all(self):
+    def update(self, table, inst):
         pass
 
 
@@ -85,49 +52,28 @@ class MongodbStorage(PersistentStorage):
         self.client = pymongo.MongoClient(uri)
         self.mongo = self.client.stackalytics
 
-        self.mongo.companies.create_index([("company", pymongo.ASCENDING)])
-        self.mongo.repos.create_index([("uri", pymongo.ASCENDING)])
-        self.mongo.users.create_index([("launchpad_id", pymongo.ASCENDING)])
-        self.mongo.releases.create_index([("releases", pymongo.ASCENDING)])
+        for table, primary_key in PRIMARY_KEYS.iteritems():
+            self.mongo[table].create_index([(primary_key, pymongo.ASCENDING)])
 
         LOG.debug('Mongodb storage is created')
 
-    def clean_all(self):
+    def reset(self, default_data):
         LOG.debug('Clear all tables')
-        self.mongo.companies.remove()
-        self.mongo.repos.remove()
-        self.mongo.users.remove()
-        self.mongo.releases.remove()
+        for table in PRIMARY_KEYS.keys():
+            self.mongo[table].remove()
+            if table in default_data:
+                for item in default_data[table]:
+                    self.insert(table, item)
 
-    def get_companies(self, **criteria):
-        return self.mongo.companies.find(criteria)
+    def find(self, table, **criteria):
+        return self.mongo[table].find(criteria)
 
-    def insert_company(self, company):
-        self.mongo.companies.insert(company)
+    def insert(self, table, inst):
+        self.mongo[table].insert(inst)
 
-    def get_repos(self, **criteria):
-        return self.mongo.repos.find(criteria)
-
-    def insert_repo(self, repo):
-        self.mongo.repos.insert(repo)
-
-    def get_users(self, **criteria):
-        return self.mongo.users.find(criteria)
-
-    def insert_user(self, user):
-        LOG.debug('Insert new user: %s', user)
-        self.mongo.users.insert(user)
-
-    def update_user(self, user):
-        LOG.debug('Update user: %s', user)
-        launchpad_id = user['launchpad_id']
-        self.mongo.users.update({'launchpad_id': launchpad_id}, user)
-
-    def get_releases(self, **criteria):
-        return self.mongo.releases.find(criteria)
-
-    def insert_release(self, release):
-        self.mongo.releases.insert(release)
+    def update(self, table, inst):
+        primary_key = PRIMARY_KEYS[table]
+        self.mongo[table].update({primary_key: inst[primary_key]}, inst)
 
 
 def get_persistent_storage(uri):

@@ -86,7 +86,8 @@ def get_vault():
             memory_storage.MEMORY_STORAGE_CACHED,
             vault['runtime_storage'].get_update(os.getpid()))
 
-        releases = list(vault['persistent_storage'].get_releases())
+        persistent_storage_inst = vault['persistent_storage']
+        releases = list(persistent_storage_inst.find('releases'))
         vault['start_date'] = releases[0]['end_date']
         vault['end_date'] = releases[-1]['end_date']
         start_date = releases[0]['end_date']
@@ -95,7 +96,7 @@ def get_vault():
             start_date = r['end_date']
         vault['releases'] = dict((r['release_name'].lower(), r)
                                  for r in releases[1:])
-        modules = vault['persistent_storage'].get_repos()
+        modules = persistent_storage_inst.find('repos')
         vault['modules'] = dict((r['module'].lower(),
                                  r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
@@ -120,7 +121,7 @@ def init_project_types(vault):
     project_type_options = {}
     project_type_group_index = {'all': set()}
 
-    for repo in persistent_storage_inst.get_repos():
+    for repo in persistent_storage_inst.find('repos'):
         project_type = repo['project_type'].lower()
         project_group = None
         if 'project_group' in repo:
@@ -451,7 +452,7 @@ def module_details(module, records):
 @record_filter(ignore='metric')
 def engineer_details(user_id, records):
     persistent_storage = get_vault()['persistent_storage']
-    user = list(persistent_storage.get_users(user_id=user_id))[0]
+    user = list(persistent_storage.find('users', user_id=user_id))[0]
 
     details = contribution_details(records)
     details['user'] = user
@@ -504,7 +505,7 @@ def get_modules(records, metric_filter):
 def get_engineers(records, metric_filter):
     response = _get_aggregated_stats(records, metric_filter,
                                      get_memory_storage().get_user_ids(),
-                                     'user_id', 'author')
+                                     'user_id', 'author_name')
     return json.dumps(response)
 
 
