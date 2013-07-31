@@ -27,6 +27,7 @@ class TestVcsProcessor(testtools.TestCase):
         super(TestVcsProcessor, self).setUp()
 
         self.repo = {
+            'module': 'dummy',
             'uri': 'git://github.com/dummy.git',
             'releases': []
         }

@@ -12,13 +12,14 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import bisect
 
-import logging
+import bisect
 import re
 
 from launchpadlib import launchpad
 from oslo.config import cfg
+from stackalytics.openstack.common import log as logging
+from stackalytics.processor import default_data_processor
 from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
@@ -50,6 +51,13 @@ class CachedProcessor(RecordProcessor):
         for user in users:
             for email in user['emails']:
                 self.users_index[email] = user
+
+        self.releases = list(persistent_storage.get_releases())
+        self.releases_dates = [r['end_date'] for r in self.releases]
+
+    def _get_release(self, timestamp):
+        release_index = bisect.bisect(self.releases_dates, timestamp)
+        return self.releases[release_index]['release_name']
 
     def _find_company(self, companies, date):
         for r in companies:
@@ -101,6 +109,7 @@ class CachedProcessor(RecordProcessor):
                     'end_date': 0,
                 }],
             }
+            default_data_processor.normalize_user(user)
             self.persistent_storage.insert_user(user)
 
         return user
@@ -133,6 +142,7 @@ class CachedProcessor(RecordProcessor):
                     'end_date': 0
                 }]
             }
+            default_data_processor.normalize_user(user)
             # add new user
             self.persistent_storage.insert_user(user)
         else:
@@ -186,6 +196,9 @@ class CommitProcessor(CachedProcessor):
             record['week'] = utils.timestamp_to_week(record['date'])
             record['loc'] = record['lines_added'] + record['lines_deleted']
 
+            if not record['release']:
+                record['release'] = self._get_release(record['date'])
+
             yield record
 
 
@@ -198,14 +211,7 @@ class ReviewProcessor(CachedProcessor):
         for user in users:
             self.launchpad_to_company_index[user['launchpad_id']] = user
 
-        self.releases = list(persistent_storage.get_releases())
-        self.releases_dates = [r['end_date'] for r in self.releases]
-
         LOG.debug('Review processor is instantiated')
-
-    def _get_release(self, timestamp):
-        release_index = bisect.bisect(self.releases_dates, timestamp)
-        return self.releases[release_index]['release_name']
 
     def _process_user(self, email, launchpad_id, user_name, date):
         if email in self.users_index:
@@ -228,21 +234,25 @@ class ReviewProcessor(CachedProcessor):
             return  # ignore
 
         review['record_type'] = 'review'
-        review['primary_key'] = record['id']
+        review['primary_key'] = review['id']
         review['launchpad_id'] = owner['username']
+        review['author'] = owner['name']
         review['author_email'] = owner['email'].lower()
         review['release'] = self._get_release(review['createdOn'])
+        review['week'] = utils.timestamp_to_week(review['createdOn'])
 
         company, user_id = self._process_user(review['author_email'],
                                               review['launchpad_id'],
-                                              owner['name'],
-                                              record['createdOn'])
+                                              review['author'],
+                                              review['createdOn'])
         review['company_name'] = company
         review['user_id'] = user_id
         yield review
 
     def _spawn_marks(self, record):
         review_id = record['id']
+        module = record['module']
+
         for patch in record['patchSets']:
             if 'approvals' not in patch:
                 continue  # not reviewed by anyone
@@ -260,17 +270,19 @@ class ReviewProcessor(CachedProcessor):
                                        str(mark['grantedOn']) +
                                        mark['type'])
                 mark['launchpad_id'] = reviewer['username']
+                mark['author'] = reviewer['name']
                 mark['author_email'] = reviewer['email'].lower()
-                mark['module'] = record['module']
+                mark['module'] = module
+                mark['review_id'] = review_id
+                mark['release'] = self._get_release(mark['grantedOn'])
+                mark['week'] = utils.timestamp_to_week(mark['grantedOn'])
 
                 company, user_id = self._process_user(mark['author_email'],
                                                       mark['launchpad_id'],
-                                                      reviewer['name'],
+                                                      mark['author'],
                                                       mark['grantedOn'])
                 mark['company_name'] = company
                 mark['user_id'] = user_id
-                mark['review_id'] = review_id
-                mark['release'] = self._get_release(mark['grantedOn'])
 
                 yield mark
 

@@ -23,11 +23,11 @@ from psutil import _error
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
+from stackalytics.processor import default_data_processor
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
-from stackalytics.processor import utils
 from stackalytics.processor import vcs
 
 
@@ -140,35 +140,9 @@ def _read_default_persistent_storage(file_name):
         LOG.error('Error while reading config: %s' % e)
 
 
-def process_users(users):
-    res = []
-    for user in users:
-        if ('launchpad_id' not in user) or ('emails' not in user):
-            LOG.warn('Skipping invalid user: %s', user)
-            continue
-
-        u = utils.normalize_user(user.copy())
-        u['user_id'] = user['launchpad_id'] or user['emails'][0]
-        res.append(u)
-    return res
-
-
-def process_releases(releases):
-    res = []
-    for release in releases:
-        r = utils.normalize_release(release)
-        res.append(r)
-    res.sort(key=lambda x: x['end_date'])
-    return res
-
-
 def load_default_data(persistent_storage_inst, file_name, force):
     default_data = _read_default_persistent_storage(file_name)
-
-    default_data['users'] = process_users(default_data['users'])
-    default_data['releases'] = process_releases(default_data['releases'])
-
-    persistent_storage_inst.sync(default_data, force=force)
+    default_data_processor.process(persistent_storage_inst, default_data)
 
 
 def main():

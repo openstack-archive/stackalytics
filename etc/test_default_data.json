@@ -41,13 +41,7 @@
             "branches": ["master"],
             "module": "stackalytics",
             "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/stackalytics.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "uri": "git://github.com/stackforge/stackalytics.git"
         }
     ],
 

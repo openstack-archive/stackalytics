@@ -78,24 +78,22 @@ class Git(Vcs):
         uri = self.repo['uri']
         match = re.search(r'([^\/]+)\.git$', uri)
         if match:
-            self.module = match.group(1)
+            self.folder = os.path.normpath(self.sources_root + '/' +
+                                           match.group(1))
         else:
             raise Exception('Unexpected uri %s for git' % uri)
         self.release_index = {}
 
     def _chdir(self):
-        folder = os.path.normpath(self.sources_root + '/' + self.module)
-        os.chdir(folder)
+        os.chdir(self.folder)
 
     def fetch(self):
         LOG.debug('Fetching repo uri %s' % self.repo['uri'])
 
-        folder = os.path.normpath(self.sources_root + '/' + self.module)
-
-        if not os.path.exists(folder):
+        if not os.path.exists(self.folder):
             os.chdir(self.sources_root)
             sh.git('clone', '%s' % self.repo['uri'])
-            os.chdir(folder)
+            os.chdir(self.folder)
         else:
             self._chdir()
             sh.git('pull', 'origin')
@@ -157,7 +155,7 @@ class Git(Vcs):
                     commit[key] = None
 
             commit['date'] = int(commit['date'])
-            commit['module'] = self.module
+            commit['module'] = self.repo['module']
             commit['branches'] = set([branch])
             if commit['commit_id'] in self.release_index:
                 commit['release'] = self.release_index[commit['commit_id']]

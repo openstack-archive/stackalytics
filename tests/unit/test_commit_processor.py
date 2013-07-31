@@ -20,6 +20,7 @@ import testtools
 
 from stackalytics.processor import persistent_storage
 from stackalytics.processor import record_processor
+from stackalytics.processor import utils
 
 
 class TestCommitProcessor(testtools.TestCase):
@@ -55,6 +56,17 @@ class TestCommitProcessor(testtools.TestCase):
         }
         p_storage.get_users = mock.Mock(return_value=[
             self.user,
+        ])
+
+        p_storage.get_releases = mock.Mock(return_value=[
+            {
+                'release_name': 'prehistory',
+                'end_date': utils.date_to_timestamp('2011-Apr-21')
+            },
+            {
+                'release_name': 'Diablo',
+                'end_date': utils.date_to_timestamp('2011-Sep-08')
+            },
         ])
 
         self.persistent_storage = p_storage
