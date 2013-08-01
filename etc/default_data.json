@@ -14373,6 +14373,19 @@
                     "tag_to": "HEAD"
                 }
             ]
+        },
+        {
+            "branches": ["master"],
+            "module": "packstack",
+            "project_type": "stackforge",
+            "uri": "git://github.com/stackforge/packstack.git",
+            "releases": [
+                {
+                    "release_name": "Havana",
+                    "tag_from": "aa8398c865846e3fd2abc8ed52d0865704d7ce08",
+                    "tag_to": "HEAD"
+                }
+            ]
         }
     ],
 
