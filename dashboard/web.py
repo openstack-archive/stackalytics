@@ -548,11 +548,17 @@ def timeline(records, **kwargs):
     week_stat_commits = dict((c, 0) for c in weeks)
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
+    param = get_parameter(kwargs, 'metric')
+    if ('reviews' in param) or ('marks' in param):
+        handler = lambda record: 0
+    else:
+        handler = lambda record: record['loc']
+
     # fill stats with the data
     for record in records:
         week = record['week']
         if week in weeks:
-            week_stat_loc[week] += record['loc']
+            week_stat_loc[week] += handler(record)
             week_stat_commits[week] += 1
             if 'all' in release_names or record['release'] in release_names:
                 week_stat_commits_hl[week] += 1

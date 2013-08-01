@@ -100,6 +100,9 @@ class Git(Vcs):
         self.get_release_index()
 
     def get_release_index(self):
+        if not os.path.exists(self.folder):
+            return {}
+
         os.chdir(self.folder)
         if not self.release_index:
             for release in self.repo['releases']:
