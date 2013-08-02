@@ -14053,339 +14053,56 @@
                 }
             ]
         },
-
-        {
-            "branches": ["master"],
-            "module": "devstack",
-            "project_type": "openstack",
-            "project_group": "other",
-            "uri": "git://github.com/openstack-dev/devstack.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "896eb66",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "tempest",
-            "project_type": "openstack",
-            "project_group": "other",
-            "uri": "git://github.com/openstack/tempest.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "017e95c",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "requirements",
-            "project_type": "openstack",
-            "project_group": "other",
-            "uri": "git://github.com/openstack/requirements.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "aea036d",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-
         {
             "branches": ["master"],
             "module": "trove",
             "project_type": "openstack",
             "project_group": "incubation",
-            "uri": "git://github.com/openstack/trove.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "ca978a0f",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "uri": "git://github.com/openstack/trove.git"
         },
         {
             "branches": ["master"],
             "module": "trove-integration",
             "project_type": "openstack",
             "project_group": "incubation",
-            "uri": "git://github.com/openstack/trove-integration.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "bac5b1b",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "uri": "git://github.com/openstack/trove-integration.git"
         },
         {
             "branches": ["master"],
             "module": "python-troveclient",
             "project_type": "openstack",
             "project_group": "incubation",
-            "uri": "git://github.com/openstack/python-troveclient.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "6222dea",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "uri": "git://github.com/openstack/python-troveclient.git"
         },
         {
             "branches": ["master"],
             "module": "ironic",
             "project_type": "openstack",
             "project_group": "incubation",
-            "uri": "git://github.com/openstack/ironic.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "8e05dbf",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
+            "uri": "git://github.com/openstack/ironic.git"
+        }
+    ],
 
+    "project_types": [
         {
-            "branches": ["master"],
-            "module": "savanna",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/savanna.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "0.1",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "project_type": "openstack",
+            "project_group": "other",
+            "uri": "https://api.github.com/orgs/openstack/repos"
         },
         {
-            "branches": ["master"],
-            "module": "designate",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/designate.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "411f1da0a391a25cf9a1aa3a838377a5fc186b98",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "project_type": "openstack",
+            "project_group": "other",
+            "uri": "https://api.github.com/orgs/openstack-dev/repos"
         },
         {
-            "branches": ["master"],
-            "module": "diskimage-builder",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/diskimage-builder.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "b196f1bb",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "project_type": "openstack",
+            "project_group": "infrastructure",
+            "uri": "https://api.github.com/orgs/openstack-infra/repos"
         },
         {
-            "branches": ["master"],
-            "module": "marconi",
             "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/marconi.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "1a15292c",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "stackalytics",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/stackalytics.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "murano-api",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/murano-api.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "0.1",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "tripleo-image-elements",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/tripleo-image-elements.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "ea57869d3e1ae899631f6d55b24f35c3d88b635d",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "tripleo-heat-templates",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/tripleo-heat-templates.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "7877d912ced0141c3b0812aa9110d7b2d9f95297",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-openstack",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-openstack.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "c95da8fc509a3a290ea052899e22123384289130",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-nova",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-nova.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "3fe4294a857bc2433543467e86e1760955f8fb71",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-keystone",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-keystone.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "d21f4282afee2c0af737204119c5a7e09cbd4a45",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-glance",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-glance.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "3ce02dbd69cc3827e80455568901e7bb030f137d",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-cinder",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-cinder.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "b0fb0456e08412adba1497ab5778291b2f665a00",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-quantum",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-quantum.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "ad2f2099251502cfbfcae00e2286e4f43863e438",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-horizon",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-horizon.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "44b2416f6e3af420f1c52681e528af0440255c66",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-swift",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-swift.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "6d88ca53095fd4a6f0ea0d2bd3446a7d0e401ac2",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "puppet-ceilometer",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/puppet-ceilometer.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "07c9d444ef816bba26dda86b651980a44a4da2d4",
-                    "tag_to": "HEAD"
-                }
-            ]
-        },
-        {
-            "branches": ["master"],
-            "module": "packstack",
-            "project_type": "stackforge",
-            "uri": "git://github.com/stackforge/packstack.git",
-            "releases": [
-                {
-                    "release_name": "Havana",
-                    "tag_from": "aa8398c865846e3fd2abc8ed52d0865704d7ce08",
-                    "tag_to": "HEAD"
-                }
-            ]
+            "project_group": null,
+            "uri": "https://api.github.com/orgs/stackforge/repos"
         }
     ],
 

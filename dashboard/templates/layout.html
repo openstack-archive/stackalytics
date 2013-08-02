@@ -282,19 +282,17 @@
             </span>
             <span class="drop_metric" style="float: right;">
             <label for="metric">Metric&nbsp;</label><select id="metric" name="metric">
-                <option value="commits">Commits</option>
-                <option value="loc">Lines of code</option>
-                <option value="reviews">Reviews</option>
-                <option value="marks">Marks</option>
+                {% for metric in metric_options %}
+                    <option value="{{ metric[0] }}">{{ metric[1] }}</option>
+                {% endfor %}
             </select>
             </span>
             <span class="drop_release" style="float: right;">
             <label for="release">Release&nbsp;</label><select id="release" name="release">
                 <option value="all">All times</option>
-                <option value="havana">Havana</option>
-                <option value="grizzly">Grizzly</option>
-                <option value="folsom">Folsom</option>
-                <option value="essex">Essex</option>
+                {% for release in release_options %}
+                    <option value="{{ release.release_name }}">{{ release.release_name | capitalize }}</option>
+                {% endfor %}
             </select>
             </span>
         </div>

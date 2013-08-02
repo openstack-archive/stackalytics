@@ -44,9 +44,9 @@
             <div style="margin-left: 4em;">
                 <div>
                 {% if rec.launchpad_id %}
-                    {{ rec.author|link('/engineers/' + rec.launchpad_id)|safe }}
+                    {{ rec.author_name|link('/engineers/' + rec.launchpad_id)|safe }}
                 {% else %}
-                    {{ rec.author }}
+                    {{ rec.author_name }}
                 {% endif %}
                 {% if rec.company_name %}
                     (

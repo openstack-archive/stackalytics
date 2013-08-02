@@ -45,6 +45,14 @@
         }
     ],
 
+    "project_types": [
+        {
+            "project_type": "openstack",
+            "project_group": null,
+            "uri": "https://api.github.com/orgs/openstack-dev/repos"
+        }
+    ],
+
     "releases": [
         {
             "release_name": "prehistory",

@@ -35,10 +35,10 @@ class Rcs(object):
         pass
 
     def log(self, branch, last_id):
-        pass
+        return []
 
     def get_last_id(self, branch):
-        pass
+        return -1
 
 
 class Gerrit(Rcs):
@@ -96,6 +96,8 @@ class Gerrit(Rcs):
                 review['module'] = module
                 yield review
 
+        self.client.close()
+
     def get_last_id(self, branch):
         module = self.repo['module']
         LOG.debug('Get last id for module %s', module)
@@ -107,12 +109,19 @@ class Gerrit(Rcs):
                {'module': module, 'branch': branch})
 
         stdin, stdout, stderr = self.client.exec_command(cmd)
+        last_id = None
         for line in stdout:
             review = json.loads(line)
             if 'sortKey' in review:
-                return int(review['sortKey'], 16)
+                last_id = int(review['sortKey'], 16)
+                break
 
-        raise Exception('Last id is not found for module %s' % module)
+        self.client.close()
+
+        if not last_id:
+            raise Exception('Last id is not found for module %s' % module)
+
+        return last_id
 
 
 def get_rcs(repo, uri):
@@ -121,4 +130,5 @@ def get_rcs(repo, uri):
     if match:
         return Gerrit(repo, uri)
     else:
-        raise Exception('Unknown review control system for uri %s' % uri)
+        LOG.warning('Unsupported review control system, fallback to dummy')
+        return Rcs(repo, uri)

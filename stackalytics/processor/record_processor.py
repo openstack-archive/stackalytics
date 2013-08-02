@@ -37,8 +37,6 @@ class RecordProcessor(object):
         users = persistent_storage_inst.find('users')
         self.users_index = {}
         for user in users:
-            if 'launchpad_id' in user:
-                self.users_index[user['launchpad_id']] = user
             for email in user['emails']:
                 self.users_index[email] = user
 
@@ -65,10 +63,33 @@ class RecordProcessor(object):
                     return self.domains_index[m]
         return None
 
-    def _persist_user(self, launchpad_id, email, user_name):
-        # check if user with launchpad_id exists in persistent storage
+    def _create_user(self, launchpad_id, email, user_name):
+        company = (self._get_company_by_email(email) or
+                   self._get_independent())
+        user = {
+            'user_id': normalizer.get_user_id(launchpad_id, email),
+            'launchpad_id': launchpad_id,
+            'user_name': user_name,
+            'emails': [email],
+            'companies': [{
+                'company_name': company,
+                'end_date': 0,
+            }],
+        }
+        normalizer.normalize_user(user)
+        self.persistent_storage_inst.insert('users', user)
+        return user
+
+    def _persist_user(self, record):
+        launchpad_id = record['launchpad_id']
+        email = record['author_email']
+        user_name = record['author_name']
+
+        # check if user with user_id exists in persistent storage
+        user_id = normalizer.get_user_id(launchpad_id, email)
         persistent_user_iterator = self.persistent_storage_inst.find(
-            'users', launchpad_id=launchpad_id)
+            'users', user_id=user_id)
+
         for persistent_user in persistent_user_iterator:
             break
         else:
@@ -76,35 +97,23 @@ class RecordProcessor(object):
 
         if persistent_user:
             # user already exist, merge
-            LOG.debug('User exists in persistent storage, add new email %s',
-                      email)
+            LOG.debug('User %s (%s) exists, add new email %s',
+                      launchpad_id, user_name, email)
             persistent_user_email = persistent_user['emails'][0]
             if persistent_user_email not in self.users_index:
-                return persistent_user
+                raise Exception('Email %s not found in user index' %
+                                persistent_user_email)
             user = self.users_index[persistent_user_email]
             user['emails'].append(email)
             self.persistent_storage_inst.update('users', user)
         else:
             # add new user
-            LOG.debug('Add new user into persistent storage')
-            company = (self._get_company_by_email(email) or
-                       self._get_independent())
-            user = {
-                'launchpad_id': launchpad_id,
-                'user_name': user_name,
-                'emails': [email],
-                'companies': [{
-                    'company_name': company,
-                    'end_date': 0,
-                }],
-            }
-            normalizer.normalize_user(user)
-            self.persistent_storage_inst.insert('users', user)
+            LOG.debug('Add new user %s (%s)', launchpad_id, user_name)
+            user = self._create_user(launchpad_id, email, user_name)
 
         return user
 
-    def _unknown_user_email(self, email, user_name):
-
+    def _get_lp_info(self, email):
         lp_profile = None
         if not re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email):
             LOG.debug('User email is not valid %s' % email)
@@ -118,78 +127,47 @@ class RecordProcessor(object):
                 LOG.warn('Lookup of email %s failed %s', email, error.message)
 
         if not lp_profile:
-            # user is not found in Launchpad, create dummy record for commit
-            # update
-            LOG.debug('Email is not found at Launchpad, mapping to nobody')
-            user = {
-                'launchpad_id': None,
-                'user_name': user_name,
-                'emails': [email],
-                'companies': [{
-                    'company_name': self._get_independent(),
-                    'end_date': 0
-                }]
-            }
-            normalizer.normalize_user(user)
-            # add new user
-            self.persistent_storage_inst.insert('users', user)
-        else:
-            # get user's launchpad id from his profile
-            launchpad_id = lp_profile.name
-            user_name = lp_profile.display_name
-            LOG.debug('Found user %s', launchpad_id)
+            return None, None
 
-            user = self._persist_user(launchpad_id, email, user_name)
-
-        # update local index
-        self.users_index[email] = user
-        return user
+        return lp_profile.name, lp_profile.display_name
 
     def _get_independent(self):
         return self.domains_index['']
 
-    def _update_commit_with_user_data(self, commit):
-        email = commit['author_email'].lower()
-        if email in self.users_index:
-            user = self.users_index[email]
-        else:
-            user = self._unknown_user_email(email, commit['author_name'])
-
-        commit['launchpad_id'] = user['launchpad_id']
-        commit['user_id'] = user['user_id']
-
-        company = self._get_company_by_email(email)
-        if not company:
-            company = self._find_company(user['companies'], commit['date'])
-        commit['company_name'] = company
-
-        if 'user_name' in user:
-            commit['author_name'] = user['user_name']
-
-    def _process_commit(self, record):
-        self._update_commit_with_user_data(record)
-
-        record['primary_key'] = record['commit_id']
-        record['loc'] = record['lines_added'] + record['lines_deleted']
-
-        yield record
-
-    def _process_user(self, record):
-        email = record['author_email']
+    def _update_record_and_user(self, record):
+        email = record['author_email'].lower()
+        record['author_email'] = email
 
         if email in self.users_index:
             user = self.users_index[email]
+            record['launchpad_id'] = user['launchpad_id']
         else:
-            user = self._persist_user(record['launchpad_id'], email,
-                                      record['author_name'])
+            if ('launchpad_id' not in record) or (not record['launchpad_id']):
+                launchpad_id, user_name = self._get_lp_info(email)
+                record['launchpad_id'] = launchpad_id
+                if user_name:
+                    record['author_name'] = user_name
+
+            user = self._persist_user(record)
             self.users_index[email] = user
+
+        record['user_id'] = user['user_id']
 
         company = self._get_company_by_email(email)
         if not company:
             company = self._find_company(user['companies'], record['date'])
-
         record['company_name'] = company
-        record['user_id'] = user['user_id']
+
+        if 'user_name' in user:
+            record['author_name'] = user['user_name']
+
+    def _process_commit(self, record):
+        record['primary_key'] = record['commit_id']
+        record['loc'] = record['lines_added'] + record['lines_deleted']
+
+        self._update_record_and_user(record)
+
+        yield record
 
     def _spawn_review(self, record):
         # copy everything except pathsets and flatten user data
@@ -202,10 +180,10 @@ class RecordProcessor(object):
         review['primary_key'] = review['id']
         review['launchpad_id'] = owner['username']
         review['author_name'] = owner['name']
-        review['author_email'] = owner['email'].lower()
+        review['author_email'] = owner['email']
         review['date'] = record['createdOn']
 
-        self._process_user(review)
+        self._update_record_and_user(review)
 
         yield review
 
@@ -232,11 +210,11 @@ class RecordProcessor(object):
                                        mark['type'])
                 mark['launchpad_id'] = reviewer['username']
                 mark['author_name'] = reviewer['name']
-                mark['author_email'] = reviewer['email'].lower()
+                mark['author_email'] = reviewer['email']
                 mark['module'] = module
                 mark['review_id'] = review_id
 
-                self._process_user(mark)
+                self._update_record_and_user(mark)
 
                 yield mark
 
@@ -278,7 +256,7 @@ class RecordProcessor(object):
             company_name = record['company_name']
             user_id = record['user_id']
 
-            self._process_user(record)
+            self._update_record_and_user(record)
 
             if ((record['company_name'] != company_name) or
                     (record['user_id'] != user_id)):

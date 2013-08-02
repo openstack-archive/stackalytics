@@ -74,6 +74,7 @@ class MemcachedStorage(RuntimeStorage):
                 # update
                 record_id = self.record_index[record['primary_key']]
                 if not merge_handler:
+                    record['record_id'] = record_id
                     self.memcached.set(self._get_record_name(record_id),
                                        record)
                 else:

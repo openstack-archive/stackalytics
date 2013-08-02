@@ -16,8 +16,9 @@
 from oslo.config import cfg
 
 OPTS = [
-    cfg.StrOpt('default-data', default='etc/default_data.json',
-               help='Default data'),
+    cfg.StrOpt('default-data-uri',
+               default='file:///usr/local/etc/default_data.json',
+               help='URI for default data'),
     cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
     cfg.StrOpt('runtime-storage-uri', default='memcached://127.0.0.1:11211',
@@ -34,8 +35,8 @@ OPTS = [
                help='The address of file with corrections data'),
     cfg.StrOpt('review-uri', default='gerrit://review.openstack.org',
                help='URI of review system'),
-    cfg.StrOpt('ssh-key-filename', default='/home/ishakhat/.ssh/4launchpad_id',
+    cfg.StrOpt('ssh-key-filename', default='/home/user/.ssh/id_rsa',
                help='SSH key for gerrit review system access'),
-    cfg.StrOpt('ssh-username', default='ishakhat',
+    cfg.StrOpt('ssh-username', default='user',
                help='SSH username for gerrit review system access'),
 ]

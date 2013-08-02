@@ -25,6 +25,7 @@ PRIMARY_KEYS = {
     'repos': 'uri',
     'users': 'user_id',
     'releases': 'release_name',
+    'project_types': 'uri',
 }
 
 

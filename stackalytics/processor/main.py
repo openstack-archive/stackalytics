@@ -139,11 +139,12 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(corrections)
 
 
-def _read_default_persistent_storage(file_name):
+def _read_default_data(uri):
     try:
-        with open(file_name, 'r') as content_file:
-            content = content_file.read()
-            return json.loads(content)
+        fd = urllib.urlopen(uri)
+        raw = fd.read()
+        fd.close()
+        return json.loads(raw)
     except Exception as e:
         LOG.error('Error while reading config: %s' % e)
 
@@ -164,7 +165,7 @@ def main():
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)
 
-    default_data = _read_default_persistent_storage(cfg.CONF.default_data)
+    default_data = _read_default_data(cfg.CONF.default_data_uri)
     default_data_processor.process(persistent_storage_inst,
                                    runtime_storage_inst,
                                    default_data,

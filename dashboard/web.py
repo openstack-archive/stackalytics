@@ -124,7 +124,7 @@ def init_project_types(vault):
     for repo in persistent_storage_inst.find('repos'):
         project_type = repo['project_type'].lower()
         project_group = None
-        if 'project_group' in repo:
+        if ('project_group' in repo) and (repo['project_group']):
             project_group = repo['project_group'].lower()
 
         if project_type in project_type_options:
@@ -156,6 +156,12 @@ def init_project_types(vault):
 
 def get_project_type_options():
     return get_vault()['project_type_options']
+
+
+def get_release_options():
+    releases = list((get_vault()['persistent_storage']).find('releases'))[1:]
+    releases.reverse()
+    return releases
 
 
 def is_project_type_valid(project_type):
@@ -337,13 +343,17 @@ def templated(template=None, return_code=200):
             releases = vault['releases']
             if release:
                 release = release.lower()
-                if release not in releases:
-                    release = None
-                else:
-                    release = releases[release]['release_name']
+                if release != 'all':
+                    if release not in releases:
+                        release = None
+                    else:
+                        release = releases[release]['release_name']
             ctx['release'] = (release or get_default('release')).lower()
 
             ctx['project_type_options'] = get_project_type_options()
+            ctx['release_options'] = get_release_options()
+            ctx['metric_options'] = sorted(METRIC_LABELS.items(),
+                                           key=lambda x: x[0])
 
             return flask.render_template(template_name, **ctx), return_code
 

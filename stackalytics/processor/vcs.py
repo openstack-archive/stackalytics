@@ -182,9 +182,10 @@ class Git(Vcs):
 
 def get_vcs(repo, sources_root):
     uri = repo['uri']
-    LOG.debug('Factory is asked for Vcs uri %s' % uri)
+    LOG.debug('Factory is asked for VCS uri %s' % uri)
     match = re.search(r'\.git$', uri)
     if match:
         return Git(repo, sources_root)
     else:
-        raise Exception("Unknown Vcs uri %s" % uri)
+        LOG.warning('Unsupported VCS, fallback to dummy')
+        return Vcs(repo, uri)

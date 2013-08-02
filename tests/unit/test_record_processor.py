@@ -121,14 +121,14 @@ class TestRecordProcessor(testtools.TestCase):
 
     def test_update_commit_existing_user(self):
         commit = self._make_commit()
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         self.assertEquals('SuperCompany', commit['company_name'])
         self.assertEquals('john_doe', commit['launchpad_id'])
 
     def test_update_commit_existing_user_old_job(self):
         commit = self._make_commit(date=1000000000)
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         self.assertEquals('*independent', commit['company_name'])
         self.assertEquals('john_doe', commit['launchpad_id'])
@@ -149,7 +149,7 @@ class TestRecordProcessor(testtools.TestCase):
         # tell storage to return existing user
         self.get_users.return_value = [user]
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         self.persistent_storage.update.assert_called_once_with('users', user)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
@@ -173,7 +173,7 @@ class TestRecordProcessor(testtools.TestCase):
         # tell storage to return existing user
         self.get_users.return_value = [user]
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         self.persistent_storage.update.assert_called_once_with('users', user)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
@@ -196,7 +196,7 @@ class TestRecordProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
         self.get_users.return_value = []
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('NEC', commit['company_name'])
@@ -214,7 +214,7 @@ class TestRecordProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
         self.get_users.return_value = []
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('*independent', commit['company_name'])
@@ -232,7 +232,7 @@ class TestRecordProcessor(testtools.TestCase):
                                               side_effect=Exception)
         self.get_users.return_value = []
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('*independent', commit['company_name'])
@@ -249,7 +249,7 @@ class TestRecordProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
         self.get_users.return_value = []
 
-        self.commit_processor._update_commit_with_user_data(commit)
+        self.commit_processor._update_record_and_user(commit)
 
         self.assertEquals(0, lp_mock.people.getByEmail.called)
         self.assertEquals('*independent', commit['company_name'])

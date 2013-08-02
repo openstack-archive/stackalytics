@@ -19,6 +19,10 @@ from stackalytics.processor import utils
 LOG = logging.getLogger(__name__)
 
 
+def get_user_id(launchpad_id, email):
+    return launchpad_id or email
+
+
 def normalize_user(user):
     user['emails'] = [email.lower() for email in user['emails']]
     if user['launchpad_id']:
@@ -40,7 +44,7 @@ def normalize_user(user):
             return cmp(x["end_date"], y["end_date"])
 
     user['companies'].sort(cmp=end_date_comparator)
-    user['user_id'] = user['launchpad_id'] or user['emails'][0]
+    user['user_id'] = get_user_id(user['launchpad_id'], user['emails'][0])
 
 
 def _normalize_users(users):
