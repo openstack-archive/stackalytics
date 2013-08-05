@@ -25,6 +25,7 @@ LOG = logging.getLogger(__name__)
 
 DEFAULT_PORT = 29418
 GERRIT_URI_PREFIX = r'^gerrit:\/\/'
+PAGE_LIMIT = 100
 
 
 class Rcs(object):
@@ -74,27 +75,42 @@ class Gerrit(Rcs):
                             username=self.username)
         LOG.debug('Successfully connected to Gerrit')
 
+    def _get_cmd(self, module, branch, sort_key):
+        cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
+               '%(module)s branch:%(branch)s limit:%(limit)s' %
+               {'module': module, 'branch': branch, 'limit': PAGE_LIMIT})
+        if sort_key:
+            cmd += ' resume_sortkey:%016x' % sort_key
+        return cmd
+
     def log(self, branch, last_id):
         module = self.repo['module']
         LOG.debug('Retrieve reviews from gerrit for project %s', module)
 
         self._connect()
 
-        cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               '%(module)s '
-               'branch:%(branch)s' %
-               {'module': module, 'branch': branch})
+        sort_key = None
 
-        if last_id:
-            cmd += ' NOT resume_sortkey:%016x' % (last_id + 1)
+        while True:
+            cmd = self._get_cmd(module, branch, sort_key)
+            stdin, stdout, stderr = self.client.exec_command(cmd)
 
-        stdin, stdout, stderr = self.client.exec_command(cmd)
-        for line in stdout:
-            review = json.loads(line)
+            proceed = False
+            for line in stdout:
+                review = json.loads(line)
 
-            if 'sortKey' in review:
-                review['module'] = module
-                yield review
+                if 'sortKey' in review:
+                    sort_key = int(review['sortKey'], 16)
+                    if sort_key == last_id:
+                        proceed = False
+                        break
+
+                    proceed = True
+                    review['module'] = module
+                    yield review
+
+            if not proceed:
+                break
 
         self.client.close()
 
