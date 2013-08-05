@@ -136,7 +136,7 @@ def apply_corrections(uri, runtime_storage_inst):
             valid_corrections.append(c)
         else:
             LOG.warn('Correction misses primary key: %s', c)
-    runtime_storage_inst.apply_corrections(corrections)
+    runtime_storage_inst.apply_corrections(valid_corrections)
 
 
 def _read_default_data(uri):

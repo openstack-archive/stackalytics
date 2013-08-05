@@ -126,7 +126,8 @@ class Git(Vcs):
         if head_commit_id:
             commit_range = head_commit_id + '..HEAD'
         output = sh.git('log', '--pretty=%s' % GIT_LOG_FORMAT, '--shortstat',
-                        '-M', '--no-merges', commit_range, _tty_out=False)
+                        '-M', '--no-merges', commit_range, _tty_out=False,
+                        _decode_errors='ignore')
 
         for rec in re.finditer(GIT_LOG_PATTERN, str(output)):
             i = 1

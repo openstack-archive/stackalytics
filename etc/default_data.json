@@ -14083,26 +14083,26 @@
         }
     ],
 
-    "project_types": [
+    "project_sources": [
         {
+            "organization": "openstack",
             "project_type": "openstack",
-            "project_group": "other",
-            "uri": "https://api.github.com/orgs/openstack/repos"
+            "project_group": "other"
         },
         {
+            "organization": "openstack-dev",
             "project_type": "openstack",
-            "project_group": "other",
-            "uri": "https://api.github.com/orgs/openstack-dev/repos"
+            "project_group": "other"
         },
         {
+            "organization": "openstack-infra",
             "project_type": "openstack",
-            "project_group": "infrastructure",
-            "uri": "https://api.github.com/orgs/openstack-infra/repos"
+            "project_group": "infrastructure"
         },
         {
+            "organization": "stackforge",
             "project_type": "stackforge",
             "project_group": null,
-            "uri": "https://api.github.com/orgs/stackforge/repos"
         }
     ],
 

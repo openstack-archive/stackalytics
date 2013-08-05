@@ -7,6 +7,7 @@ oslo.config
 paramiko>=1.8.0
 pbr>=0.5.16,<0.6
 psutil
+PyGithub
 python-memcached
 pymongo
 sh
