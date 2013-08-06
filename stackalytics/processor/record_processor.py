@@ -25,22 +25,14 @@ LOG = logging.getLogger(__name__)
 
 
 class RecordProcessor(object):
-    def __init__(self, persistent_storage_inst):
-        self.persistent_storage_inst = persistent_storage_inst
+    def __init__(self, runtime_storage_inst):
+        self.runtime_storage_inst = runtime_storage_inst
 
-        companies = persistent_storage_inst.find('companies')
-        self.domains_index = {}
-        for company in companies:
-            for domain in company['domains']:
-                self.domains_index[domain] = company['company_name']
+        self.domains_index = runtime_storage_inst.get_by_key('companies')
 
-        users = persistent_storage_inst.find('users')
-        self.users_index = {}
-        for user in users:
-            for email in user['emails']:
-                self.users_index[email] = user
+        self.users_index = runtime_storage_inst.get_by_key('users')
 
-        self.releases = list(persistent_storage_inst.find('releases'))
+        self.releases = runtime_storage_inst.get_by_key('releases')
         self.releases_dates = [r['end_date'] for r in self.releases]
 
     def _get_release(self, timestamp):
@@ -77,40 +69,6 @@ class RecordProcessor(object):
             }],
         }
         normalizer.normalize_user(user)
-        self.persistent_storage_inst.insert('users', user)
-        return user
-
-    def _persist_user(self, record):
-        launchpad_id = record['launchpad_id']
-        email = record['author_email']
-        user_name = record['author_name']
-
-        # check if user with user_id exists in persistent storage
-        user_id = normalizer.get_user_id(launchpad_id, email)
-        persistent_user_iterator = self.persistent_storage_inst.find(
-            'users', user_id=user_id)
-
-        for persistent_user in persistent_user_iterator:
-            break
-        else:
-            persistent_user = None
-
-        if persistent_user:
-            # user already exist, merge
-            LOG.debug('User %s (%s) exists, add new email %s',
-                      launchpad_id, user_name, email)
-            persistent_user_email = persistent_user['emails'][0]
-            if persistent_user_email not in self.users_index:
-                raise Exception('Email %s not found in user index' %
-                                persistent_user_email)
-            user = self.users_index[persistent_user_email]
-            user['emails'].append(email)
-            self.persistent_storage_inst.update('users', user)
-        else:
-            # add new user
-            LOG.debug('Add new user %s (%s)', launchpad_id, user_name)
-            user = self._create_user(launchpad_id, email, user_name)
-
         return user
 
     def _get_lp_info(self, email):
@@ -127,6 +85,7 @@ class RecordProcessor(object):
                 LOG.warn('Lookup of email %s failed %s', email, error.message)
 
         if not lp_profile:
+            LOG.debug('User with email %s not found', email)
             return None, None
 
         return lp_profile.name, lp_profile.display_name
@@ -142,14 +101,26 @@ class RecordProcessor(object):
             user = self.users_index[email]
             record['launchpad_id'] = user['launchpad_id']
         else:
-            if ('launchpad_id' not in record) or (not record['launchpad_id']):
+            if ('launchpad_id' in record) and (record['launchpad_id']):
+                user = self._create_user(record['launchpad_id'], email,
+                                         record['author_name'])
+            else:
                 launchpad_id, user_name = self._get_lp_info(email)
                 record['launchpad_id'] = launchpad_id
-                if user_name:
-                    record['author_name'] = user_name
 
-            user = self._persist_user(record)
+                if (launchpad_id) and (launchpad_id in self.users_index):
+                    # merge emails
+                    user = self.users_index[launchpad_id]
+                    user['emails'].append(email)
+                else:
+                    # create new
+                    if not user_name:
+                        user_name = record['author_name']
+                    user = self._create_user(launchpad_id, email, user_name)
+
             self.users_index[email] = user
+            if user['launchpad_id']:
+                self.users_index[user['launchpad_id']] = user
 
         record['user_id'] = user['user_id']
 
@@ -158,7 +129,7 @@ class RecordProcessor(object):
             company = self._find_company(user['companies'], record['date'])
         record['company_name'] = company
 
-        if 'user_name' in user:
+        if ('user_name' in user) and (user['user_name']):
             record['author_name'] = user['user_name']
 
     def _process_commit(self, record):
@@ -249,6 +220,8 @@ class RecordProcessor(object):
 
                 yield r
 
+        self.runtime_storage_inst.set_by_key('users', self.users_index)
+
     def update(self, record_iterator, release_index):
         for record in record_iterator:
             need_update = False
@@ -273,3 +246,5 @@ class RecordProcessor(object):
 
             if need_update:
                 yield record
+
+        self.runtime_storage_inst.set_by_key('users', self.users_index)

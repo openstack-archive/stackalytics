@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging
-
 import re
 
 import memcache
+
+from stackalytics.openstack.common import log as logging
 
 LOG = logging.getLogger(__name__)
 
@@ -37,10 +37,10 @@ class RuntimeStorage(object):
     def apply_corrections(self, corrections_iterator):
         pass
 
-    def get_last_id(self, key):
+    def get_by_key(self, key):
         pass
 
-    def set_last_id(self, key, head_commit_id):
+    def set_by_key(self, key, head_commit_id):
         pass
 
     def get_update(self, pid):
@@ -112,11 +112,11 @@ class MemcachedStorage(RuntimeStorage):
                 self.memcached.set(self._get_record_name(record_id), original)
                 self._commit_update(record_id)
 
-    def get_last_id(self, key):
+    def get_by_key(self, key):
         return self.memcached.get(key)
 
-    def set_last_id(self, key, head_commit_id):
-        self.memcached.set(key, head_commit_id)
+    def set_by_key(self, key, value):
+        self.memcached.set(key, value)
 
     def get_update(self, pid):
         last_update = self.memcached.get('pid:%s' % pid)

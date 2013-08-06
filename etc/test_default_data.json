@@ -47,8 +47,8 @@
 
     "project_sources": [
         {
-            "organization": "stackforge",
-            "project_type": "stackforge",
+            "organization": "openstack-dev",
+            "project_type": "openstack",
             "project_group": null
         }
     ],

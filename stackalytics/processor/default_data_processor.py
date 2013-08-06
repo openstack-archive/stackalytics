@@ -31,30 +31,28 @@ def _check_default_data_change(runtime_storage_inst, default_data):
     h.update(json.dumps(default_data))
     digest = h.hexdigest()
 
-    p_digest = runtime_storage_inst.get_last_id('default_data_digest')
+    p_digest = runtime_storage_inst.get_by_key('default_data_digest')
     if digest == p_digest:
         LOG.debug('No changes in default data detected, sha1: %s', digest)
         return False
 
     LOG.debug('Default data has changes, sha1: %s', digest)
-    runtime_storage_inst.set_last_id('default_data_digest', digest)
+    runtime_storage_inst.set_by_key('default_data_digest', digest)
     return True
 
 
-def _retrieve_project_list(default_data):
-
-    if 'project_sources' not in default_data:
-        return
+def _retrieve_project_list(runtime_storage_inst, project_sources):
 
     LOG.info('Retrieving project list from GitHub')
 
     repo_index = {}
-    for repo in default_data['repos']:
+    stored_repos = runtime_storage_inst.get_by_key('repos')
+    for repo in stored_repos:
         repo_index[repo['uri']] = repo
 
     github = MainClass.Github()
 
-    for project_source in default_data['project_sources']:
+    for project_source in project_sources:
         organization = project_source['organization']
         repos = github.get_organization(organization).get_repos()
         LOG.debug('Get list of projects for organization %s', organization)
@@ -69,30 +67,71 @@ def _retrieve_project_list(default_data):
                     'module': repo_name,
                     'project_type': project_source['project_type'],
                     'project_group': project_source['project_group'],
-                    'uri': repo_uri
+                    'uri': repo_uri,
+                    'releases': []
                 }
-                default_data['repos'].append(r)
+                stored_repos.append(r)
                 LOG.debug('Project is added to default data: %s', r)
 
+    runtime_storage_inst.set_by_key('repos', stored_repos)
 
-def process(persistent_storage_inst, runtime_storage_inst, default_data,
-            sources_root):
 
-    _retrieve_project_list(default_data)
+def _process_users(users):
+    users_index = {}
+    for user in users:
+        if 'user_id' in user:
+            users_index[user['user_id']] = user
+        if 'launchpad_id' in user:
+            users_index[user['launchpad_id']] = user
+        for email in user['emails']:
+            users_index[email] = user
+    return users_index
+
+
+def _process_companies(companies):
+    domains_index = {}
+    for company in companies:
+        for domain in company['domains']:
+            domains_index[domain] = company['company_name']
+    return domains_index
+
+
+KEYS = {
+    'users': _process_users,
+    'repos': None,
+    'releases': None,
+    'companies': _process_companies,
+}
+
+
+def _update_default_data(runtime_storage_inst, default_data):
+    for key, processor in KEYS.iteritems():
+        if processor:
+            value = processor(default_data[key])
+        else:
+            value = default_data[key]
+        runtime_storage_inst.set_by_key(key, value)
+
+
+def process(runtime_storage_inst, default_data, sources_root):
 
     normalizer.normalize_default_data(default_data)
 
     if _check_default_data_change(runtime_storage_inst, default_data):
 
-        persistent_storage_inst.reset(default_data)
+        _update_default_data(runtime_storage_inst, default_data)
 
         release_index = {}
-        for repo in persistent_storage_inst.find('repos'):
+        for repo in runtime_storage_inst.get_by_key('repos'):
             vcs_inst = vcs.get_vcs(repo, sources_root)
             release_index.update(vcs_inst.get_release_index())
 
         record_processor_inst = record_processor.RecordProcessor(
-            persistent_storage_inst)
+            runtime_storage_inst)
         updated_records = record_processor_inst.update(
             runtime_storage_inst.get_all_records(), release_index)
         runtime_storage_inst.set_records(updated_records)
+
+    if 'project_sources' in default_data:
+        _retrieve_project_list(runtime_storage_inst,
+                               default_data['project_sources'])

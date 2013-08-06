@@ -29,7 +29,6 @@ import time
 from dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
-from stackalytics.processor import persistent_storage
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
 
@@ -77,17 +76,14 @@ def get_vault():
     vault = getattr(app, 'stackalytics_vault', None)
     if not vault:
         vault = {}
-        vault['runtime_storage'] = runtime_storage.get_runtime_storage(
+        runtime_storage_inst = runtime_storage.get_runtime_storage(
             cfg.CONF.runtime_storage_uri)
-        vault['persistent_storage'] = (
-            persistent_storage.get_persistent_storage(
-                cfg.CONF.persistent_storage_uri))
+        vault['runtime_storage'] = runtime_storage_inst
         vault['memory_storage'] = memory_storage.get_memory_storage(
             memory_storage.MEMORY_STORAGE_CACHED,
             vault['runtime_storage'].get_update(os.getpid()))
 
-        persistent_storage_inst = vault['persistent_storage']
-        releases = list(persistent_storage_inst.find('releases'))
+        releases = list(runtime_storage_inst.get_by_key('releases'))
         vault['start_date'] = releases[0]['end_date']
         vault['end_date'] = releases[-1]['end_date']
         start_date = releases[0]['end_date']
@@ -96,7 +92,7 @@ def get_vault():
             start_date = r['end_date']
         vault['releases'] = dict((r['release_name'].lower(), r)
                                  for r in releases[1:])
-        modules = persistent_storage_inst.find('repos')
+        modules = runtime_storage_inst.get_by_key('repos')
         vault['modules'] = dict((r['module'].lower(),
                                  r['project_type'].lower()) for r in modules)
         app.stackalytics_vault = vault
@@ -117,11 +113,11 @@ def get_memory_storage():
 
 
 def init_project_types(vault):
-    persistent_storage_inst = vault['persistent_storage']
+    runtime_storage_inst = vault['runtime_storage']
     project_type_options = {}
     project_type_group_index = {'all': set()}
 
-    for repo in persistent_storage_inst.find('repos'):
+    for repo in runtime_storage_inst.get_by_key('repos'):
         project_type = repo['project_type'].lower()
         project_group = None
         if ('project_group' in repo) and (repo['project_group']):
@@ -159,7 +155,8 @@ def get_project_type_options():
 
 
 def get_release_options():
-    releases = list((get_vault()['persistent_storage']).find('releases'))[1:]
+    runtime_storage_inst = get_vault()['runtime_storage']
+    releases = runtime_storage_inst.get_by_key('releases')[1:]
     releases.reverse()
     return releases
 
@@ -461,11 +458,13 @@ def module_details(module, records):
 @templated()
 @record_filter(ignore='metric')
 def engineer_details(user_id, records):
-    persistent_storage = get_vault()['persistent_storage']
-    user = list(persistent_storage.find('users', user_id=user_id))[0]
+    runtime_storage_inst = get_vault()['runtime_storage']
+    users_index = runtime_storage_inst.get_by_key('users')
+    if user_id not in users_index:
+        raise Exception('User "%s" not in index' % user_id)
 
     details = contribution_details(records)
-    details['user'] = user
+    details['user'] = users_index[user_id]
     return details
 
 

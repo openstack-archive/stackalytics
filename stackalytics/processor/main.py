@@ -23,7 +23,6 @@ from psutil import _error
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
-from stackalytics.processor import persistent_storage
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
@@ -89,7 +88,7 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         LOG.debug('Processing repo %s, branch %s', uri, branch)
 
         vcs_key = 'vcs:' + str(urllib.quote_plus(uri) + ':' + branch)
-        last_id = runtime_storage.get_last_id(vcs_key)
+        last_id = runtime_storage.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
         commit_iterator_typed = _record_typer(commit_iterator, 'commit')
@@ -98,12 +97,12 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         runtime_storage.set_records(processed_commit_iterator, _merge_commits)
 
         last_id = vcs_inst.get_last_id(branch)
-        runtime_storage.set_last_id(vcs_key, last_id)
+        runtime_storage.set_by_key(vcs_key, last_id)
 
         LOG.debug('Processing reviews for repo %s, branch %s', uri, branch)
 
         rcs_key = 'rcs:' + str(urllib.quote_plus(uri) + ':' + branch)
-        last_id = runtime_storage.get_last_id(rcs_key)
+        last_id = runtime_storage.get_by_key(rcs_key)
 
         review_iterator = rcs_inst.log(branch, last_id)
         review_iterator_typed = _record_typer(review_iterator, 'review')
@@ -112,16 +111,16 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         runtime_storage.set_records(processed_review_iterator)
 
         last_id = rcs_inst.get_last_id(branch)
-        runtime_storage.set_last_id(rcs_key, last_id)
+        runtime_storage.set_by_key(rcs_key, last_id)
 
 
-def update_repos(runtime_storage, persistent_storage_inst):
-    repos = persistent_storage_inst.find('repos')
+def update_repos(runtime_storage_inst):
+    repos = runtime_storage_inst.get_by_key('repos')
     record_processor_inst = record_processor.RecordProcessor(
-        persistent_storage_inst)
+        runtime_storage_inst)
 
     for repo in repos:
-        process_repo(repo, runtime_storage, record_processor_inst)
+        process_repo(repo, runtime_storage_inst, record_processor_inst)
 
 
 def apply_corrections(uri, runtime_storage_inst):
@@ -159,21 +158,17 @@ def main():
     logging.setup('stackalytics')
     LOG.info('Logging enabled')
 
-    persistent_storage_inst = persistent_storage.get_persistent_storage(
-        cfg.CONF.persistent_storage_uri)
-
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)
 
     default_data = _read_default_data(cfg.CONF.default_data_uri)
-    default_data_processor.process(persistent_storage_inst,
-                                   runtime_storage_inst,
+    default_data_processor.process(runtime_storage_inst,
                                    default_data,
                                    cfg.CONF.sources_root)
 
     update_pids(runtime_storage_inst)
 
-    update_repos(runtime_storage_inst, persistent_storage_inst)
+    update_repos(runtime_storage_inst)
 
     apply_corrections(cfg.CONF.corrections_uri, runtime_storage_inst)
 

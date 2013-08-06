@@ -18,8 +18,9 @@ import mock
 from oslo.config import cfg
 import testtools
 
-from stackalytics.processor import persistent_storage
+from stackalytics.processor import default_data_processor
 from stackalytics.processor import record_processor
+from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
 
 
@@ -67,22 +68,26 @@ class TestRecordProcessor(testtools.TestCase):
                 'release_name': 'Diablo',
                 'end_date': utils.date_to_timestamp('2011-Sep-08')
             },
+            {
+                'release_name': 'Zoo',
+                'end_date': utils.date_to_timestamp('2035-Sep-08')
+            },
         ]
 
-        def find(table, **criteria):
+        def get_by_key(table):
             if table == 'companies':
-                return companies
+                return default_data_processor._process_companies(companies)
             elif table == 'users':
-                return self.get_users()
+                return default_data_processor._process_users(self.get_users())
             elif table == 'releases':
                 return releases
             else:
                 raise Exception('Wrong table %s' % table)
 
-        p_storage = mock.Mock(persistent_storage.PersistentStorage)
-        p_storage.find = mock.Mock(side_effect=find)
+        p_storage = mock.Mock(runtime_storage.RuntimeStorage)
+        p_storage.get_by_key = mock.Mock(side_effect=get_by_key)
 
-        self.persistent_storage = p_storage
+        self.runtime_storage = p_storage
         self.commit_processor = record_processor.RecordProcessor(p_storage)
         self.launchpad_patch = mock.patch('launchpadlib.launchpad.Launchpad')
         self.launchpad_patch.start()
@@ -92,11 +97,16 @@ class TestRecordProcessor(testtools.TestCase):
         super(TestRecordProcessor, self).tearDown()
         self.launchpad_patch.stop()
 
-    def _make_commit(self, email='johndoe@gmail.com', date=1999999999):
-        return {
+    def _generate_commits(self, email='johndoe@gmail.com', date=1999999999):
+        yield {
+            'record_type': 'commit',
+            'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
             'author_name': 'John Doe',
             'author_email': email,
             'date': date,
+            'lines_added': 25,
+            'lines_deleted': 9,
+            'release_name': 'havana',
         }
 
     def test_get_company_by_email_mapped(self):
@@ -120,15 +130,15 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEquals(None, res)
 
     def test_update_commit_existing_user(self):
-        commit = self._make_commit()
-        self.commit_processor._update_record_and_user(commit)
+        commit_generator = self._generate_commits()
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         self.assertEquals('SuperCompany', commit['company_name'])
         self.assertEquals('john_doe', commit['launchpad_id'])
 
     def test_update_commit_existing_user_old_job(self):
-        commit = self._make_commit(date=1000000000)
-        self.commit_processor._update_record_and_user(commit)
+        commit_generator = self._generate_commits(date=1000000000)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         self.assertEquals('*independent', commit['company_name'])
         self.assertEquals('john_doe', commit['launchpad_id'])
@@ -139,7 +149,7 @@ class TestRecordProcessor(testtools.TestCase):
         Should return other company instead of those mentioned in user db
         """
         email = 'johndoe@nec.co.jp'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -149,9 +159,10 @@ class TestRecordProcessor(testtools.TestCase):
         # tell storage to return existing user
         self.get_users.return_value = [user]
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
-        self.persistent_storage.update.assert_called_once_with('users', user)
+        self.runtime_storage.set_by_key.assert_called_once_with('users',
+                                                                mock.ANY)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertIn(email, user['emails'])
         self.assertEquals('NEC', commit['company_name'])
@@ -163,7 +174,7 @@ class TestRecordProcessor(testtools.TestCase):
         the user and return current company
         """
         email = 'johndoe@yahoo.com'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -173,9 +184,10 @@ class TestRecordProcessor(testtools.TestCase):
         # tell storage to return existing user
         self.get_users.return_value = [user]
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
-        self.persistent_storage.update.assert_called_once_with('users', user)
+        self.runtime_storage.set_by_key.assert_called_once_with('users',
+                                                                mock.ANY)
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertIn(email, user['emails'])
         self.assertEquals('SuperCompany', commit['company_name'])
@@ -187,7 +199,7 @@ class TestRecordProcessor(testtools.TestCase):
         Should add new user and set company depending on email
         """
         email = 'smith@nec.com'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_profile = mock.Mock()
@@ -196,7 +208,7 @@ class TestRecordProcessor(testtools.TestCase):
         lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
         self.get_users.return_value = []
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('NEC', commit['company_name'])
@@ -208,13 +220,13 @@ class TestRecordProcessor(testtools.TestCase):
         Should set user name and empty LPid
         """
         email = 'inkognito@avs.com'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
         self.get_users.return_value = []
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('*independent', commit['company_name'])
@@ -225,14 +237,14 @@ class TestRecordProcessor(testtools.TestCase):
         LP raises error during getting user info
         """
         email = 'smith@avs.com'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None,
                                               side_effect=Exception)
         self.get_users.return_value = []
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         lp_mock.people.getByEmail.assert_called_once_with(email=email)
         self.assertEquals('*independent', commit['company_name'])
@@ -243,13 +255,13 @@ class TestRecordProcessor(testtools.TestCase):
         User's email is malformed
         """
         email = 'error.root'
-        commit = self._make_commit(email=email)
+        commit_generator = self._generate_commits(email=email)
         lp_mock = mock.MagicMock()
         launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
         lp_mock.people.getByEmail = mock.Mock(return_value=None)
         self.get_users.return_value = []
 
-        self.commit_processor._update_record_and_user(commit)
+        commit = list(self.commit_processor.process(commit_generator))[0]
 
         self.assertEquals(0, lp_mock.people.getByEmail.called)
         self.assertEquals('*independent', commit['company_name'])

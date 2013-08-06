@@ -18,8 +18,6 @@ import mock
 import testtools
 
 from stackalytics.processor import normalizer
-from stackalytics.processor import persistent_storage
-from stackalytics.processor import runtime_storage
 from tests.unit import test_data
 
 
@@ -34,23 +32,8 @@ class TestDefaultDataProcessor(testtools.TestCase):
         normalized_data = copy.deepcopy(test_data.DEFAULT_DATA)
         normalizer.normalize_default_data(normalized_data)
 
-        def find(table, *args, **criteria):
-            if table in normalized_data:
-                return normalized_data[table]
-            else:
-                raise Exception('Wrong table %s' % table)
-
-        self.p_storage = mock.Mock(persistent_storage.PersistentStorage)
-        self.p_storage.find = mock.Mock(side_effect=find)
-
-        self.r_storage = mock.Mock(runtime_storage.RuntimeStorage)
-
-        self.chdir_patcher = mock.patch('os.chdir')
-        self.chdir_patcher.start()
-
     def tearDown(self):
         super(TestDefaultDataProcessor, self).tearDown()
-        self.chdir_patcher.stop()
 
     def test_normalizer(self):
         data = copy.deepcopy(test_data.DEFAULT_DATA)
