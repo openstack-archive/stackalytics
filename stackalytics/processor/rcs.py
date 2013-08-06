@@ -134,9 +134,7 @@ class Gerrit(Rcs):
 
         self.client.close()
 
-        if not last_id:
-            raise Exception('Last id is not found for module %s' % module)
-
+        LOG.debug('Last id for module %s is %s', module, last_id)
         return last_id
 
 
