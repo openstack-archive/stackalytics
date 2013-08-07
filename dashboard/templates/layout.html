@@ -114,6 +114,7 @@
                     var aggregate = 0;
                     var index = 1;
                     var i;
+                    var hasComment = false;
 
                     for (i = 0; i < data.length; i++) {
                         if (i < limit - 1) {
@@ -133,13 +134,27 @@
                         } else {
                             var link = data[i].name
                         }
-                        tableData.push({"index": index_label, "link": link, "metric": data[i].metric});
+                        var rec = {"index": index_label, "link": link, "metric": data[i].metric};
+                        if (data[i].comment) {
+                            rec["comment"] = data[i].comment;
+                            hasComment = true;
+                        }
+                        tableData.push(rec);
                     }
 
                     if (i == limit) {
                         chartData.push([data[i-1].name, data[i-1].metric]);
                     } else if (i > limit) {
                         chartData.push(["others", aggregate]);
+                    }
+
+                    var tableColumns = [
+                            { "mData": "index" },
+                            { "mData": "link" },
+                            { "mData": "metric" }
+                    ];
+                    if (hasComment) {
+                        tableColumns.push({ "mData": "comment"})
                     }
 
                     $("#" + table_id).dataTable({
@@ -153,11 +168,7 @@
                         "sPaginationType": "full_numbers",
                         "iDisplayLength": 25,
                         "aaData": tableData,
-                        "aoColumns": [
-                            { "mData": "index" },
-                            { "mData": "link" },
-                            { "mData": "metric" }
-                        ]
+                        "aoColumns": tableColumns
                     });
 
                     var plot = $.jqplot(chart_id, [chartData], {

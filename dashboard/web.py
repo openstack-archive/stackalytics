@@ -44,8 +44,7 @@ DEFAULTS = {
 METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
-    'reviews': 'Reviews',
-    'marks': 'Marks',
+    'marks': 'Reviews',
 }
 
 DEFAULT_RECORDS_LIMIT = 10
@@ -277,17 +276,59 @@ def aggregate_filter():
         @functools.wraps(f)
         def aggregate_filter_decorated_function(*args, **kwargs):
 
+            def commit_filter(result, record, param_id):
+                result[record[param_id]]['metric'] += 1
+
+            def loc_filter(result, record, param_id):
+                result[record[param_id]]['metric'] += record['loc']
+
+            def mark_filter(result, record, param_id):
+                value = record['value']
+                result_by_param = result[record[param_id]]
+                result_by_param['metric'] += 1
+
+                if value in result_by_param:
+                    result_by_param[value] += 1
+                else:
+                    result_by_param[value] = 1
+
+            def mark_finalize(record):
+                new_record = {}
+                for key in ['id', 'metric', 'name']:
+                    new_record[key] = record[key]
+
+                positive = 0
+                mark_distribution = []
+                for key in ['-2', '-1', '1', '2']:
+                    if key in record:
+                        if key in ['1', '2']:
+                            positive += record[key]
+                        mark_distribution.append(str(record[key]))
+                    else:
+                        mark_distribution.append('0')
+
+                new_record['comment'] = (
+                    '|'.join(mark_distribution) +
+                    ' (%.1f%%)' % ((positive * 100.0) / record['metric']))
+                return new_record
+
             metric_param = (flask.request.args.get('metric') or
                             get_default('metric'))
             metric = metric_param.lower()
-            if metric in ['commits', 'reviews', 'marks']:
-                metric_filter = lambda r: 1
+            aggregate_filter = None
+
+            if metric == 'commits':
+                metric_filter = commit_filter
             elif metric == 'loc':
-                metric_filter = lambda r: r['loc']
+                metric_filter = loc_filter
+            elif metric == 'marks':
+                metric_filter = mark_filter
+                aggregate_filter = mark_finalize
             else:
                 raise Exception('Invalid metric %s' % metric)
 
             kwargs['metric_filter'] = metric_filter
+            kwargs['finalize_handler'] = aggregate_filter
             return f(*args, **kwargs)
 
         return aggregate_filter_decorated_function
@@ -471,16 +512,18 @@ def engineer_details(user_id, records):
 # AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
-                          param_title=None):
+                          param_title=None, finalize_handler=None):
     param_title = param_title or param_id
-    result = dict((c, 0) for c in keys)
-    titles = {}
+    result = dict((c, {'metric': 0, 'id': c}) for c in keys)
     for record in records:
-        result[record[param_id]] += metric_filter(record)
-        titles[record[param_id]] = record[param_title]
+        metric_filter(result, record, param_id)
+        result[record[param_id]]['name'] = record[param_title]
 
-    response = [{'id': r, 'metric': result[r], 'name': titles[r]}
-                for r in result if result[r]]
+    if not finalize_handler:
+        finalize_handler = lambda x: x
+
+    response = [finalize_handler(result[r]) for r in result
+                if result[r]['metric']]
     response.sort(key=lambda x: x['metric'], reverse=True)
     return response
 
@@ -489,7 +532,7 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
 @exception_handler()
 @record_filter()
 @aggregate_filter()
-def get_companies(records, metric_filter):
+def get_companies(records, metric_filter, finalize_handler):
     response = _get_aggregated_stats(records, metric_filter,
                                      get_memory_storage().get_companies(),
                                      'company_name')
@@ -500,7 +543,7 @@ def get_companies(records, metric_filter):
 @exception_handler()
 @record_filter()
 @aggregate_filter()
-def get_modules(records, metric_filter):
+def get_modules(records, metric_filter, finalize_handler):
     response = _get_aggregated_stats(records, metric_filter,
                                      get_memory_storage().get_modules(),
                                      'module')
@@ -511,10 +554,11 @@ def get_modules(records, metric_filter):
 @exception_handler()
 @record_filter()
 @aggregate_filter()
-def get_engineers(records, metric_filter):
+def get_engineers(records, metric_filter, finalize_handler):
     response = _get_aggregated_stats(records, metric_filter,
                                      get_memory_storage().get_user_ids(),
-                                     'user_id', 'author_name')
+                                     'user_id', 'author_name',
+                                     finalize_handler=finalize_handler)
     return json.dumps(response)
 
 

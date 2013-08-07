@@ -7,6 +7,7 @@
 {% block scripts %}
 <script type="text/javascript">
     chartAndTableRenderer("/data/companies", "left_list", "left_chart", "/companies/", {module: "{{ module }}" });
+    chartAndTableRenderer("/data/engineers", "right_list", "right_chart", "/engineers/", {module: "{{ module }}" });
     timelineRenderer({module: "{{ module }}" })
 </script>
 {% endblock %}
@@ -34,37 +35,24 @@
 
 {% block right_frame %}
 
-    <h2>Recent activity</h2>
+    <h2>Contribution by engineers</h2>
 
-    {% for rec in commits %}
-        <div style="padding-bottom: 1em;">
-            <div style='float: left; '>
-                <img src="{{ rec.author_email|gravatar(size=32) }}">
-            </div>
-            <div style="margin-left: 4em;">
-                <div>
-                {% if rec.launchpad_id %}
-                    {{ rec.author_name|link('/engineers/' + rec.launchpad_id)|safe }}
-                {% else %}
-                    {{ rec.author_name }}
-                {% endif %}
-                {% if rec.company_name %}
-                    (
-                    {{ rec.company_name|link('/companies/' + rec.company_name)|safe }}
-                    )
-                {% endif %}
-                <em>{{ rec.date|datetimeformat }}</em>
-                </div>
+    <div id="right_chart" style="width: 100%; height: 350px;"></div>
 
-                {% if rec.correction_comment %}
-                    <div style='font-weight: bold; color: red; padding-left: 2em;'>Commit corrected: {{ rec.correction_comment }}</div>
+    <table id="right_list" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Engineer</th>
+                <th>{{ metric_label }}</th>
+                {% if metric == 'marks' %}
+                    <th>-2|-1|+1|+2 (+/- ratio)</th>
                 {% endif %}
-                <div><b>{{ rec.subject }}</b></div>
-                <div style="white-space: pre-wrap;">{{ rec|commit_message|safe }}</div>
-                <div><span style="color: green">+ {{ rec.lines_added }}</span>
-                    <span style="color: red">- {{ rec.lines_deleted }}</span></div>
-            </div>
-        </div>
-    {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
 
 {% endblock %}
