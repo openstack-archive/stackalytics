@@ -73,7 +73,7 @@ def _record_typer(record_iterator, record_type):
         yield record
 
 
-def process_repo(repo, runtime_storage, record_processor_inst):
+def process_repo(repo, runtime_storage, record_processor_inst, open_reviews):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
@@ -104,7 +104,7 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         rcs_key = 'rcs:' + str(urllib.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage.get_by_key(rcs_key)
 
-        review_iterator = rcs_inst.log(branch, last_id)
+        review_iterator = rcs_inst.log(branch, last_id, open_reviews)
         review_iterator_typed = _record_typer(review_iterator, 'review')
         processed_review_iterator = record_processor_inst.process(
             review_iterator_typed)
@@ -114,13 +114,35 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         runtime_storage.set_by_key(rcs_key, last_id)
 
 
+def _open_reviews(runtime_storage_inst):
+    LOG.debug('Collecting list of open reviews from')
+    open_reviews = {}
+    for record in runtime_storage_inst.get_all_records():
+        if record['record_type'] == 'review':
+            if record['open']:
+                module = record['module']
+                if module not in open_reviews:
+                    open_reviews[module] = set([record['sortKey']])
+                else:
+                    open_reviews[module].add(record['sortKey'])
+    return open_reviews
+
+
 def update_repos(runtime_storage_inst):
     repos = runtime_storage_inst.get_by_key('repos')
     record_processor_inst = record_processor.RecordProcessor(
         runtime_storage_inst)
 
+    open_reviews = _open_reviews(runtime_storage_inst)
+
     for repo in repos:
-        process_repo(repo, runtime_storage_inst, record_processor_inst)
+        module = repo['module']
+        open_reviews_repo = set()
+        if module in open_reviews:
+            open_reviews_repo = open_reviews[module]
+
+        process_repo(repo, runtime_storage_inst, record_processor_inst,
+                     open_reviews_repo)
 
 
 def apply_corrections(uri, runtime_storage_inst):

@@ -75,13 +75,14 @@ class MemcachedStorage(RuntimeStorage):
                 record_id = self.record_index[record['primary_key']]
                 if not merge_handler:
                     record['record_id'] = record_id
+                    LOG.debug('Update record %s', record)
                     self.memcached.set(self._get_record_name(record_id),
                                        record)
                 else:
                     original = self.memcached.get(self._get_record_name(
                         record_id))
                     if merge_handler(original, record):
-                        LOG.debug('Update record %s' % record)
+                        LOG.debug('Update record with merge %s', record)
                         self.memcached.set(self._get_record_name(record_id),
                                            original)
             else:
@@ -89,7 +90,7 @@ class MemcachedStorage(RuntimeStorage):
                 record_id = self._get_record_count()
                 record['record_id'] = record_id
                 self.record_index[record['primary_key']] = record_id
-                LOG.debug('Insert new record %s' % record)
+                LOG.debug('Insert new record %s', record)
                 self.memcached.set(self._get_record_name(record_id), record)
                 self._set_record_count(record_id + 1)
 

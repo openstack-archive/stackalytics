@@ -35,7 +35,7 @@ class Rcs(object):
     def setup(self, **kwargs):
         pass
 
-    def log(self, branch, last_id):
+    def log(self, branch, last_id, open_reviews):
         return []
 
     def get_last_id(self, branch):
@@ -75,15 +75,15 @@ class Gerrit(Rcs):
                             username=self.username)
         LOG.debug('Successfully connected to Gerrit')
 
-    def _get_cmd(self, module, branch, sort_key):
+    def _get_cmd(self, module, branch, sort_key, limit=PAGE_LIMIT):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                '%(module)s branch:%(branch)s limit:%(limit)s' %
-               {'module': module, 'branch': branch, 'limit': PAGE_LIMIT})
+               {'module': module, 'branch': branch, 'limit': limit})
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
         return cmd
 
-    def log(self, branch, last_id):
+    def log(self, branch, last_id, open_reviews):
         module = self.repo['module']
         LOG.debug('Retrieve reviews from gerrit for project %s', module)
 
@@ -111,6 +111,21 @@ class Gerrit(Rcs):
 
             if not proceed:
                 break
+
+        # poll open reviews
+        LOG.debug('Retrieve open reviews from gerrit for project %s', module)
+
+        for sort_key_str in open_reviews:
+            sort_key = int(sort_key_str, 16)
+            cmd = self._get_cmd(module, branch, sort_key + 1, limit=1)
+            LOG.debug('Retrieve review with sortKey %s', sort_key)
+            stdin, stdout, stderr = self.client.exec_command(cmd)
+
+            for line in stdout:
+                review = json.loads(line)
+                if 'sortKey' in review:
+                    review['module'] = module
+                    yield review
 
         self.client.close()
 
