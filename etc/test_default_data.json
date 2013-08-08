@@ -45,7 +45,7 @@
         }
     ],
 
-    "project_sources": [
+    "x-project_sources": [
         {
             "organization": "openstack-dev",
             "project_type": "openstack",

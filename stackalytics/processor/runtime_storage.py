@@ -22,6 +22,7 @@ from stackalytics.openstack.common import log as logging
 LOG = logging.getLogger(__name__)
 
 BULK_READ_SIZE = 64
+BULK_DELETE_SIZE = 4096
 RECORD_ID_PREFIX = 'record:'
 UPDATE_ID_PREFIX = 'update:'
 MEMCACHED_URI_PREFIX = r'^memcached:\/\/'
@@ -51,7 +52,6 @@ class RuntimeStorage(object):
 
 
 class MemcachedStorage(RuntimeStorage):
-
     def __init__(self, uri):
         super(MemcachedStorage, self).__init__(uri)
 
@@ -156,8 +156,11 @@ class MemcachedStorage(RuntimeStorage):
                     min_update = n
 
         first_valid_update = self.memcached.get('first_valid_update') or 0
-        self.memcached.delete_multi(range(first_valid_update, min_update),
-                                    key_prefix=UPDATE_ID_PREFIX)
+        for delete_id_set in self._make_range(first_valid_update, min_update,
+                                              BULK_DELETE_SIZE):
+            if not self.memcached.delete_multi(delete_id_set,
+                                               key_prefix=UPDATE_ID_PREFIX):
+                raise Exception('Failed to delete from memcache')
         self.memcached.set('first_valid_update', min_update)
 
     def _get_update_count(self):
@@ -181,10 +184,10 @@ class MemcachedStorage(RuntimeStorage):
 
     def _make_range(self, start, stop, step):
         i = start
-        for i in range(start, stop, step):
-            yield range(i, i + step)
+        for i in xrange(start, stop, step):
+            yield xrange(i, i + step)
         if (stop - start) % step > 0:
-            yield range(i, stop)
+            yield xrange(i, stop)
 
     def get_all_records(self):
         for record_id_set in self._make_range(0, self._get_record_count(),
