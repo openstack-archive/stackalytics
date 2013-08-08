@@ -6,8 +6,8 @@
 
 {% block scripts %}
 <script type="text/javascript">
-    chartAndTableRenderer("/data/modules", "right_list", "right_chart", "/modules/", {launchpad_id: "{{ launchpad_id }}" });
-    timelineRenderer({launchpad_id: "{{ launchpad_id }}" })
+    chartAndTableRenderer("/data/modules", "right_list", "right_chart", "/modules/", {user_id: "{{ user.user_id }}" });
+    timelineRenderer({user_id: "{{ user.user_id }}" })
 </script>
 {% endblock %}
 
@@ -75,12 +75,11 @@
     {% include "commits_overview.html" %}
 
     <h4>Contribution per companies:</h4>
-        {% for company_info in user.companies %}
+        {% for company_name, company_info in companies.iteritems() %}
             <div>
-                {% set company_name = company_info.company_name %}
                 {{ company_name|link('/companies/' + company_name)|safe }}:
-                <b>{{ companies[company_name].commits }}</b> commits and
-                <b>{{ companies[company_name].loc }}</b> LOC
+                <b>{{ company_info.commits }}</b> commits and
+                <b>{{ company_info.loc }}</b> LOC
             </div>
         {% endfor %}
 

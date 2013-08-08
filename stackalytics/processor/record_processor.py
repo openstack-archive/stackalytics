@@ -69,6 +69,7 @@ class RecordProcessor(object):
             }],
         }
         normalizer.normalize_user(user)
+        LOG.debug('Create new user: %s', user)
         return user
 
     def _get_lp_info(self, email):
