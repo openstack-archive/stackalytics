@@ -441,6 +441,14 @@
             "primary_key": "c8a5bc39dccd513d879ad042165e4713fc2a3878",
             "module": "trove",
             "subject": "Update oslo codebase within reddwarf."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": "I4d559b25413a6138cd7d2fb94c028f8cafde100c",
+            "primary_key": "e434448adb7b92701348eeeb5bee6b1abae31923",
+            "module": "database-api",
+            "subject": "Gerrit Review for Database Developer Guide"
         }
     ]
 }
