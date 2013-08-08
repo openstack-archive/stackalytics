@@ -630,6 +630,20 @@ def timeline(records, **kwargs):
     return json.dumps([array_commits, array_commits_hl, array_loc])
 
 
+@app.route('/data/report/commit')
+@exception_handler()
+@record_filter()
+def get_commit_report(records):
+    loc_threshold = int(flask.request.args.get('loc_threshold') or 0)
+    response = []
+    for record in records:
+        if ('loc' in record) and (record['loc'] > loc_threshold):
+            nr = dict([(k, record[k]) for k in ['loc', 'subject', 'module',
+                                                'primary_key', 'change_id']])
+            response.append(nr)
+    return json.dumps(response, skipkeys=True, indent=2)
+
+
 # Jinja Filters ---------
 
 @app.template_filter('datetimeformat')
