@@ -25,6 +25,7 @@ import flask
 from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
 import time
+from werkzeug import exceptions
 
 from dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
@@ -343,7 +344,9 @@ def exception_handler():
             try:
                 return f(*args, **kwargs)
             except Exception as e:
-                LOG.error(e)
+                if isinstance(e, exceptions.HTTPException):
+                    raise  # ignore Flask exceptions
+                LOG.exception(e)
                 flask.abort(404)
 
         return exception_handler_decorated_function
@@ -502,7 +505,8 @@ def engineer_details(user_id, records):
     runtime_storage_inst = get_vault()['runtime_storage']
     users_index = runtime_storage_inst.get_by_key('users')
     if user_id not in users_index:
-        raise Exception('User "%s" not in index' % user_id)
+        LOG.info('User not found: %s', user_id)
+        flask.abort(404)
 
     details = contribution_details(records)
     details['user'] = users_index[user_id]
