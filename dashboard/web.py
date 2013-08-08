@@ -461,7 +461,7 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
                         key=lambda x: x['id'])
     bugs = sorted([{'id': key, 'records': value}
                    for key, value in bugs_map.iteritems()],
-                  key=lambda x: x['id'])
+                  key=lambda x: int(x['id']))
     commits.sort(key=lambda x: x['date'], reverse=True)
 
     result = {
