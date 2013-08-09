@@ -3,7 +3,7 @@
         {
             "launchpad_id": "foo",
             "user_name": "Pupkin",
-            "emails": ["a@a"],
+            "emails": ["user@test.org"],
             "companies": [
                 {
                     "company_name": "Uno",

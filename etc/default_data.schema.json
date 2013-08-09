@@ -1,0 +1,146 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["users", "releases", "companies", "repos"],
+    "properties": {
+        "users": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "launchpad_id": {
+                        "type": "string"
+                    },
+                    "user_name": {
+                        "type": "string"
+                    },
+                    "emails": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "pattern": "[\\w\\d_\\.-]+@([\\w\\d_\\.-]+\\.)+[\\w]+"
+                        },
+                        "minItems": 1
+                    },
+                    "companies": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "company_name": {
+                                    "type": "string"
+                                },
+                                "end_date": {
+                                    "type": ["string", "null"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": ["launchpad_id", "user_name", "emails"],
+                "additionalProperties": false
+            }
+        },
+        "releases": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "release_name": {
+                        "type": "string"
+                    },
+                    "end_date": {
+                        "type": "string",
+                        "pattern": "20\\d{2}-\\w{3}-[0-3]\\d"
+                    }
+                },
+                "required": ["release_name", "end_date"],
+                "additionalProperties": false
+            }
+        },
+        "repos": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "uri": {
+                        "type": "string"
+                    },
+                    "project_type": {
+                        "type": "string"
+                    },
+                    "project_group": {
+                        "type": "string"
+                    },
+                    "module": {
+                        "type": "string"
+                    },
+                    "branches": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "releases": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "tag_from": {
+                                    "type": "string"
+                                },
+                                "tag_to": {
+                                    "type": "string"
+                                },
+                                "release_name": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": ["tag_from", "tag_to", "release_name"]
+                        }
+                    }
+                },
+                "required": ["uri", "project_type", "module", "branches"],
+                "additionalProperties": false
+            }
+        },
+        "companies": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "company_name": {
+                        "type": "string"
+                    },
+                    "domains": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": ["company_name", "domains"],
+                "additionalProperties": false
+            }
+        },
+        "project_sources": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "organization": {
+                        "type": "string"
+                    },
+                    "project_type": {
+                        "type": "string"
+                    },
+                    "project_group": {
+                        "type": ["string", "null"]
+                    }
+                },
+                "required": ["organization", "project_type"],
+                "additionalProperties": false
+            }
+        }
+    }
+}

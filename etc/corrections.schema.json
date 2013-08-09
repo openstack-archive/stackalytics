@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "required": ["corrections"],
+    "properties": {
+        "corrections": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "primary_key": {
+                        "type": "string"
+                    },
+                    "loc": {
+                        "type": "integer"
+                    },
+                    "correction_comment": {
+                        "type": "string"
+                    },
+                    "module": {
+                        "type": "string"
+                    },
+                    "subject": {
+                        "type": "string"
+                    }
+                },
+                "required": ["primary_key", "correction_comment", "module", "subject"]
+            }
+        }
+    }
+}
