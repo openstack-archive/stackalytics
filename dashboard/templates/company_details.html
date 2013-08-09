@@ -25,6 +25,9 @@
                 <th>#</th>
                 <th>Engineer</th>
                 <th>{{ metric_label }}</th>
+                {% if metric == 'marks' %}
+                    <th>-2|-1|+1|+2 (+/- ratio)</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>
