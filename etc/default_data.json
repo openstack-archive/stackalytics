@@ -831,6 +831,10 @@
             "companies": [
                 {
                     "company_name": "University of Melbourne",
+                    "end_date": "2013-Jun-03"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
                     "end_date": null
                 }
             ],
@@ -3200,6 +3204,10 @@
         {
             "domains": ["oopss.org"],
             "company_name": "Oopss.org"
+        },
+        {
+            "domains": ["openstack.org"],
+            "company_name": "OpenStack Foundation"
         },
         {
             "domains": ["orange.com"],
