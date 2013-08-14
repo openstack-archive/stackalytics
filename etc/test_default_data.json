@@ -39,6 +39,35 @@
     "repos": [
         {
             "branches": ["master"],
+            "project_group": "core",
+            "releases": [
+                {
+                    "tag_to": "2012.1",
+                    "release_name": "Essex",
+                    "tag_from": "2011.3"
+                },
+                {
+                    "tag_to": "2012.2",
+                    "release_name": "Folsom",
+                    "tag_from": "2012.1"
+                },
+                {
+                    "tag_to": "2013.1",
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Havana",
+                    "tag_from": "2013.1"
+                }
+            ],
+            "uri": "git://github.com/openstack/glance.git",
+            "module": "glance",
+            "project_type": "openstack"
+        },
+        {
+            "branches": ["master"],
             "module": "stackalytics",
             "project_type": "stackforge",
             "uri": "git://github.com/stackforge/stackalytics.git"

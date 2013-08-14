@@ -32,10 +32,15 @@ div.page h2 {
     font-size: 23px;
     font-weight: normal;
     font-style: normal;
-    padding-top: 10px;
     margin-bottom: 10px;
-    padding-left: 10px;
+    color: #a41200;
     text-shadow: 1px 1px 0 #fff;
+}
+
+div.page h3 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 input[type="text"],
@@ -70,42 +75,22 @@ input[type="submit"] {
 }
 
 div.drops {
-    font-size: 15px;
     height: 60px;
+    margin-top: 10px;
 }
 
 div.drops label {
     color: #909cb5;
 }
 
-span.drop_release {
-    margin-top: 6px;
-    display: block;
+.drop {
     height: 30px;
-    float: right;
+    float: left;
+    margin-right: 25px;
 }
 
-span.drop_metric {
-    margin-top: 6px;
-    margin-right: 1em;
+.drop label {
     display: block;
-    height: 30px;
-    float: right;
-}
-
-select {
-    background: #f8f9f9;
-    padding: 0 5px 0 5px;
-    min-height: 24px;
-    border: none;
-    border-bottom: 1px solid white;
-    border-right: 1px solid white;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    text-shadow: 1px 1px 0 white;
-    -moz-box-shadow: inset 2px 2px 7px #D3D8DD;
-    -webkit-box-shadow: inset 2px 2px 7px #D3D8DD;
-    box-shadow: inset 2px 2px 7px #D3D8DD;
 }
 
 div.aheader {
@@ -140,11 +125,6 @@ div.page div.navigation a {
     font-weight: bold;
 }
 
-div.page h2 {
-    margin: 10px 0 0 10px;
-    color: #a41200;
-}
-
 div.page div.body {
     padding: 10px;
 }
@@ -154,89 +134,6 @@ div.page div.footer {
     color: #888;
     padding: 1em 1em;
     font-size: 9pt;
-}
-
-div.page ul.messages {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-div.page ul.messages li {
-    margin: 10px 0;
-    padding: 5px;
-    background: #F0FAF9;
-    border: 1px solid #DBF3F1;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    min-height: 48px;
-}
-
-div.page ul.messages p {
-    margin: 0;
-}
-
-div.page ul.messages li img {
-    float: left;
-    padding: 0 10px 0 0;
-}
-
-div.page ul.messages li small {
-    font-size: 0.9em;
-    color: #888;
-}
-
-div.page div.twitbox {
-    margin: 10px 0;
-    padding: 5px;
-    background: #F0FAF9;
-    border: 1px solid #94E2DA;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-div.page div.twitbox h3 {
-    margin: 0;
-    font-size: 1em;
-    color: #2C7E76;
-}
-
-div.page div.twitbox p {
-    margin: 0;
-}
-
-div.page div.twitbox input[type="text"] {
-    width: 585px;
-}
-
-div.page div.twitbox input[type="submit"] {
-    width: 70px;
-    margin-left: 5px;
-}
-
-ul.flashes {
-    list-style: none;
-    margin: 10px 10px 0 10px;
-    padding: 0;
-}
-
-ul.flashes li {
-    background: #B9F3ED;
-    border: 1px solid #81CEC6;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    padding: 4px;
-    font-size: 13px;
-}
-
-div.error {
-    margin: 10px 0;
-    background: #FAE4E4;
-    border: 1px solid #DD6F6F;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    padding: 4px;
-    font-size: 13px;
 }
 
 .spacer {
@@ -284,28 +181,25 @@ a[href^="https://launchpad"]:after {
     opacity: 0.3;
 }
 
-#analytics_header {
-    float: left;
-}
-
-#analytics_header h3 {
-    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
-    font-weight: normal;
+#analytics_header #logo {
+    font-family: 'PT Sans', 'Arial Narrow', arial, sans-serif;
+    font-weight: bolder;
     font-style: normal;
-    font-size: 24px;
+    font-size: 30px;
     color: black;
     text-shadow: 1px 1px 0 #fff;
     margin: 0;
+    padding-right: 10px;
 }
 
-#analytics_header p {
+#analytics_header #slogan {
     font-family: georgia, serif;
-    font-weight: normal;
+    font-weight: lighter;
     font-style: italic;
-    font-size: 16px;
+    font-size: 24px;
     margin: 0;
     padding: 0;
-    color: #647280;
+    color: #9caebf;
     line-height: 1.1em;
     text-shadow: 1px 1px 0 #fff;
 }
