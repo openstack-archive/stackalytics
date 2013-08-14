@@ -660,7 +660,7 @@ def get_user(user_id):
         res['id'] = res['user_id']
         res['text'] = res['user_name']
         if res['companies']:
-            company_name = res['companies'][0]['company_name']
+            company_name = res['companies'][-1]['company_name']
             res['company_link'] = make_link(
                 company_name, '/', {'company': company_name})
         else:
