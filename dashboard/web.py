@@ -606,7 +606,7 @@ def get_companies_json(records):
 @exception_handler()
 @record_filter(ignore='module')
 def get_modules_json(records):
-    return _get_collection(records, 'modules', 'module')
+    return _get_collection(records, 'modules', 'module', 'module_name')
 
 
 @app.route('/data/companies/<company_name>.json')
