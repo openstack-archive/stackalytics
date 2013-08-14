@@ -4,7 +4,7 @@
 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<title>{% block title %}Welcome{% endblock %} | Stackalytics</title>
+<title>Stackalytics</title>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
@@ -15,6 +15,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
@@ -27,6 +28,8 @@
 <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
 
 <script type="text/javascript">
 
@@ -98,7 +101,7 @@
         });
     }
 
-    function chartAndTableRenderer(url, table_id, chart_id, link_prefix, options) {
+    function chartAndTableRenderer(url, table_id, chart_id, link_param, options) {
 
         $(document).ready(function () {
 
@@ -129,10 +132,11 @@
                         } else {
                             index++;
                         }
+                        var link;
                         if (data[i].id) {
-                            var link = make_link(link_prefix, data[i].id, data[i].name);
+                            link = make_link(data[i].id, data[i].name, link_param);
                         } else {
-                            var link = data[i].name
+                            link = data[i].name
                         }
                         var rec = {"index": index_label, "link": link, "metric": data[i].metric};
                         if (data[i].comment) {
@@ -197,20 +201,117 @@
     $(document).ready(function () {
         $('#metric').val('{{ metric }}');
         $('#release').val('{{ release }}');
-        $('#project_type').val('{{ project_type }}');
+        $('#project_type')
+            .val('{{ project_type }}')
+            .on("change", function(e) {
+                    $('#module').val('');
+                    reload();
+                });
+
+        $("#release").select2();
+        $("#metric").select2();
+        $("#project_type").select2();
+
+        $("#company").select2({
+            allowClear: true,
+            ajax: {
+                url: make_uri("/data/companies.json"),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        company_name: term
+                    };
+                },
+                results: function (data, page) {
+                    return {results: data["companies"]};
+                }
+            },
+            initSelection: function (element, callback) {
+                var id = $(element).val();
+                if (id !== "") {
+                    $.ajax(make_uri("/data/companies/" + id + ".json"), {
+                        dataType: "json"
+                    }).done(function (data) {
+                                callback(data["company"]);
+                            });
+                }
+            }
+        });
+
+        $('#company')
+            .on("change", function(e) { reload(); });
+
+        $("#module").select2({
+            allowClear: true,
+            ajax: {
+                url: make_uri("/data/modules.json"),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        module: term
+                    };
+                },
+                results: function (data, page) {
+                    return {results: data["modules"]};
+                }
+            },
+            initSelection: function (element, callback) {
+                var id = $(element).val();
+                if (id !== "") {
+                    $.ajax(make_uri("/data/modules/" + id + ".json"), {
+                        dataType: "json"
+                    }).done(function (data) {
+                                callback(data["module"]);
+                            });
+                }
+            }        });
+
+        $('#module')
+            .on("change", function(e) { reload(); });
+
+        $("#user").select2({
+            allowClear: true,
+            ajax: {
+                url: make_uri("/data/users.json"),
+                dataType: 'json',
+                data: function (term, page) {
+                    return {
+                        user_name: term
+                    };
+                },
+                results: function (data, page) {
+                    return {results: data["users"]};
+                }
+            },
+            initSelection: function (element, callback) {
+                var id = $(element).val();
+                if (id !== "") {
+                    $.ajax(make_uri("/data/users/" + id + ".json"), {
+                        dataType: "json"
+                    }).done(function (data) {
+                                callback(data["user"]);
+                            });
+                }
+            }
+        });
+
+        $('#user')
+            .on("change", function(e) { reload(); });
     });
 
-    function make_link(uri_prefix, id, title, options) {
-        var link = make_uri(uri_prefix + encodeURIComponent(id).toLowerCase(), options);
+    function make_link(id, title, param_name) {
+        var options = {};
+        options[param_name] = encodeURIComponent(id).toLowerCase();
+        var link = make_uri("/", options);
         return "<a href=\"" + link + "\">" + title + "</a>"
     }
 
     function make_uri(uri, options) {
         var ops = {};
+        $.extend(ops, getUrlVars());
         if (options != null) {
             $.extend(ops, options);
         }
-        $.extend(ops, getUrlVars());
         var str = $.map(ops,function (val, index) {
             return index + "=" + val;
         }).join("&");
@@ -223,6 +324,9 @@
         options['release'] = getRelease();
         options['metric'] = getMetric();
         options['project_type'] = getProjectType();
+        options['module'] = $('#module').val();
+        options['company'] = $('#company').val();
+        options['user_id'] = $('#user').val();
 
         return options;
     }
@@ -267,45 +371,68 @@
 
     <div class="page">
     <div class="aheader">
+        <div style="float: right; margin-top: 10px; margin-right: 20px;">
+            <a href="https://wiki.openstack.org/wiki/Stackalytics">About ↗</a>
+        </div>
         <div id="analytics_header">
-            <h3>
-                <a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a>
-                | {{ self.title() }}</h3>
-            <p>Community heartbeat</p>
+            <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
+            <span id="slogan">| community heartbeat</span>
         </div>
 
-        <div class="drops" style='margin: 0.8em; height: 2em;'>
-            <span class="drop_metric" style="float: right;">
-                <a href="https://wiki.openstack.org/wiki/Stackalytics">About ↗</a>
-            </span>
-            <span class="drop_metric" style="float: right;">
-            <label for="project_type">Projects&nbsp;</label><select id="project_type" name="project_type">
-                <option value="All">all</option>
-                {% for option_type, option_groups in project_type_options.iteritems() %}
-                    <optgroup label="{{ option_type }}">
-                        <option value="{{ option_type }}">{{ option_type }} - all</option>
-                        {% for option_group in option_groups %}
-                            <option value="{{ option_group }}">{{ option_group }}</option>
-                        {% endfor %}
-                    </optgroup>
-                {% endfor %}
-            </select>
-            </span>
-            <span class="drop_metric" style="float: right;">
-            <label for="metric">Metric&nbsp;</label><select id="metric" name="metric">
-                {% for metric in metric_options %}
-                    <option value="{{ metric[0] }}">{{ metric[1] }}</option>
-                {% endfor %}
-            </select>
-            </span>
-            <span class="drop_release" style="float: right;">
-            <label for="release">Release&nbsp;</label><select id="release" name="release">
-                <option value="all">All times</option>
-                {% for release in release_options %}
-                    <option value="{{ release.release_name }}">{{ release.release_name | capitalize }}</option>
-                {% endfor %}
-            </select>
-            </span>
+        <div class="drops">
+
+            <div class="drop">
+                <label for="release">Release</label>
+                <select id="release" name="release" style="min-width: 130px;" data-placeholder="Select release">
+                    <option></option>
+                    <option value="all">All times</option>
+                    {% for release in release_options %}
+                        <option value="{{ release.release_name }}">{{ release.release_name | capitalize }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="drop">
+                <label for="project_type">Projects</label>
+                <select id="project_type" name="project_type" style="min-width: 130px;">
+                    <option value="All">all</option>
+                    {% for option_type, option_groups in project_type_options.iteritems() %}
+                        <optgroup label="{{ option_type }}">
+                            <option value="{{ option_type }}">{{ option_type }}
+                                - all
+                            </option>
+                            {% for option_group in option_groups %}
+                                <option value="{{ option_group }}">{{ option_group }}</option>
+                            {% endfor %}
+                        </optgroup>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="drop">
+                <label for="module">Module</label>
+                <input type="hidden" id="module" style="width: 130px" data-placeholder="Any module" value="{{ module }}"/>
+            </div>
+
+            <div class="drop">
+                <label for="company">Company</label>
+                <input type="hidden" id="company" style="width: 130px" data-placeholder="Any company" value="{{ company }}"/>
+            </div>
+
+            <div class="drop">
+                <label for="company">Engineer</label>
+                <input type="hidden" id="user" style="width: 130px" data-placeholder="Any engineer" value="{{ user_id }}"/>
+            </div>
+
+            <div class="drop">
+                <label for="metric">Metric</label>
+                <select id="metric" name="metric" style="width: 130px">
+                    {% for metric in metric_options %}
+                        <option value="{{ metric[0] }}">{{ metric[1] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
         </div>
     </div>
 

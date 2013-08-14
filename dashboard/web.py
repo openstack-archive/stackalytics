@@ -196,9 +196,23 @@ def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
         return p.split(',')
     elif use_default:
         default = get_default(singular_name)
-        return [default] if default else None
+        return [default] if default else []
     else:
         return []
+
+
+def get_single_parameter(kwargs, singular_name, use_default=True):
+    param = get_parameter(kwargs, singular_name, use_default)
+    if param:
+        return param[0]
+    else:
+        return ''
+
+
+def validate_user_id(user_id):
+    runtime_storage_inst = get_vault()['runtime_storage']
+    users_index = runtime_storage_inst.get_by_key('users')
+    return user_id in users_index
 
 
 # Decorators ---------
@@ -236,6 +250,7 @@ def record_filter(ignore=None, use_default=True):
 
             if 'user_id' not in ignore:
                 param = get_parameter(kwargs, 'user_id', 'user_ids')
+                param = [u for u in param if validate_user_id(u)]
                 if param:
                     record_ids &= (
                         memory_storage.get_record_ids_by_user_ids(param))
@@ -396,6 +411,10 @@ def templated(template=None, return_code=200):
             ctx['metric_options'] = sorted(METRIC_LABELS.items(),
                                            key=lambda x: x[0])
 
+            ctx['company'] = get_single_parameter(kwargs, 'company')
+            ctx['module'] = get_single_parameter(kwargs, 'module')
+            ctx['user_id'] = get_single_parameter(kwargs, 'user_id')
+
             return flask.render_template(template_name, **ctx), return_code
 
         return templated_decorated_function
@@ -417,7 +436,7 @@ def page_not_found(e):
     pass
 
 
-def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
+def contribution_details(records):
     blueprints_map = {}
     bugs_map = {}
     companies_map = {}
@@ -428,20 +447,22 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
     for record in records:
         if record['record_type'] == 'commit':
             loc += record['loc']
-            commits.append(record)
-            blueprint = record['blueprint_id']
+            commit = record.copy()
+            commit['branches'] = ','.join(commit['branches'])
+            commits.append(commit)
+            blueprint = commit['blueprint_id']
             if blueprint:
                 if blueprint in blueprints_map:
-                    blueprints_map[blueprint].append(record)
+                    blueprints_map[blueprint].append(commit)
                 else:
-                    blueprints_map[blueprint] = [record]
+                    blueprints_map[blueprint] = [commit]
 
-            bug = record['bug_id']
+            bug = commit['bug_id']
             if bug:
                 if bug in bugs_map:
-                    bugs_map[bug].append(record)
+                    bugs_map[bug].append(commit)
                 else:
-                    bugs_map[bug] = [record]
+                    bugs_map[bug] = [commit]
 
             company = record['company_name']
             if company:
@@ -467,50 +488,12 @@ def contribution_details(records, limit=DEFAULT_RECORDS_LIMIT):
     result = {
         'blueprints': blueprints,
         'bugs': bugs,
-        'commits': commits[0:limit],
         'commit_count': len(commits),
         'companies': companies_map,
         'loc': loc,
         'marks': marks,
     }
     return result
-
-
-@app.route('/companies/<company>')
-@exception_handler()
-@templated()
-@record_filter()
-def company_details(company, records):
-    details = contribution_details(records)
-    details['company'] = (
-        get_memory_storage().get_original_company_name(company))
-    return details
-
-
-@app.route('/modules/<module>')
-@exception_handler()
-@templated()
-@record_filter()
-def module_details(module, records):
-    details = contribution_details(records)
-    details['module'] = module
-    return details
-
-
-@app.route('/engineers/<user_id>')
-@exception_handler()
-@templated()
-@record_filter(ignore='metric')
-def engineer_details(user_id, records):
-    runtime_storage_inst = get_vault()['runtime_storage']
-    users_index = runtime_storage_inst.get_by_key('users')
-    if user_id not in users_index:
-        LOG.info('User not found: %s', user_id)
-        flask.abort(404)
-
-    details = contribution_details(records)
-    details['user'] = users_index[user_id]
-    return details
 
 
 # AJAX Handlers ---------
@@ -564,6 +547,127 @@ def get_engineers(records, metric_filter, finalize_handler):
                                      'user_id', 'author_name',
                                      finalize_handler=finalize_handler)
     return json.dumps(response)
+
+
+@app.route('/data/activity.json')
+@exception_handler()
+@record_filter()
+def get_activity_json(records):
+    commits = []
+    for record in records:
+        if record['record_type'] == 'commit':
+            commit = record.copy()
+            commit['branches'] = ','.join(commit['branches'])
+            if 'correction_comment' not in commit:
+                commit['correction_comment'] = ''
+            commit['message'] = make_commit_message(record)
+            commit['date_str'] = format_datetime(commit['date'])
+            commit['author_link'] = make_link(
+                commit['author_name'], '/', {'user_id': commit['user_id']})
+            commit['company_link'] = make_link(
+                commit['company_name'], '/',
+                {'company': commit['company_name']})
+            commit['gravatar'] = gravatar(commit['author_email'])
+            commits.append(commit)
+    commits.sort(key=lambda x: x['date'], reverse=True)
+    return json.dumps({'activity': commits[0:DEFAULT_RECORDS_LIMIT]})
+
+
+@app.route('/data/contribution.json')
+@exception_handler()
+@record_filter(ignore='metric')
+def get_contribution_json(records):
+    return json.dumps({'contribution': contribution_details(records)})
+
+
+def _get_collection(records, collection_name, name_key, query_param=None):
+    if not query_param:
+        query_param = name_key
+    query = flask.request.args.get(query_param) or ''
+    options = set()
+    for record in records:
+        name = record[name_key]
+        if name in options:
+            continue
+        if name.lower().find(query.lower()) >= 0:
+            options.add(name)
+    result = [{'id': c.lower(), 'text': c} for c in sorted(options)]
+    return json.dumps({collection_name: result})
+
+
+@app.route('/data/companies.json')
+@exception_handler()
+@record_filter(ignore='company')
+def get_companies_json(records):
+    return _get_collection(records, 'companies', 'company_name')
+
+
+@app.route('/data/modules.json')
+@exception_handler()
+@record_filter(ignore='module')
+def get_modules_json(records):
+    return _get_collection(records, 'modules', 'module')
+
+
+@app.route('/data/companies/<company_name>.json')
+def get_company(company_name):
+    memory_storage = get_vault()['memory_storage']
+    for company in memory_storage.get_companies():
+        if company.lower() == company_name.lower():
+            return json.dumps({
+                'company': {
+                    'id': company_name,
+                    'text': memory_storage.get_original_company_name(
+                company_name)}
+            })
+    return json.dumps({})
+
+
+@app.route('/data/modules/<module>.json')
+def get_module(module):
+    memory_storage = get_vault()['memory_storage']
+    for m in memory_storage.get_modules():
+        if m.lower() == module.lower():
+            return json.dumps({'module': {'id': module, 'text': m}})
+    return json.dumps({})
+
+
+@app.route('/data/users.json')
+@exception_handler()
+@record_filter(ignore='user_id')
+def get_users_json(records):
+    user_name_query = flask.request.args.get('user_name') or ''
+    user_ids = set()
+    result = []
+    for record in records:
+        user_id = record['user_id']
+        if user_id in user_ids:
+            continue
+        user_name = record['author_name']
+        if user_name.lower().find(user_name_query.lower()) >= 0:
+            user_ids.add(user_id)
+            result.append({'id': user_id, 'text': user_name})
+    result.sort(key=lambda x: x['text'])
+    return json.dumps({'users': result})
+
+
+@app.route('/data/users/<user_id>.json')
+def get_user(user_id):
+    runtime_storage_inst = get_vault()['runtime_storage']
+    users_index = runtime_storage_inst.get_by_key('users')
+    if user_id in users_index:
+        res = users_index[user_id].copy()
+        res['id'] = res['user_id']
+        res['text'] = res['user_name']
+        if res['companies']:
+            company_name = res['companies'][0]['company_name']
+            res['company_link'] = make_link(
+                company_name, '/', {'company': company_name})
+        else:
+            res['company_link'] = ''
+        res['gravatar'] = gravatar(res['emails'][0])
+        return json.dumps({'user': res})
+    return json.dumps({})
 
 
 @app.route('/data/timeline')
@@ -667,13 +771,16 @@ def safe_encode(s):
 
 
 @app.template_filter('link')
-def make_link(title, uri=None):
-    param_names = ('release', 'metric', 'project_type')
+def make_link(title, uri=None, options=None):
+    param_names = ('release', 'project_type', 'module', 'company', 'user_id',
+                   'metric')
     param_values = {}
     for param_name in param_names:
         v = get_parameter({}, param_name, param_name)
         if v:
             param_values[param_name] = ','.join(v)
+    if options:
+        param_values.update(options)
     if param_values:
         uri += '?' + '&'.join(['%s=%s' % (n, v)
                                for n, v in param_values.iteritems()])
@@ -699,8 +806,7 @@ def make_commit_message(record):
     return s
 
 
-gravatar = gravatar_ext.Gravatar(app, size=100, rating='g',
-                                 default='wavatar')
+gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')
 
 
 def main():

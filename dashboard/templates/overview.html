@@ -1,24 +1,146 @@
 {% extends "layout.html" %}
 
-{% block title %}
-    Overview
-{% endblock %}
+{% set show_company_breakdown = (not company) and (not user_id) %}
+{% set show_engineer_breakdown = ((company) or (module)) and (not user_id) %}
+{% set show_module_breakdown = (not module) %}
+{% set show_user_activity = (user_id) %}
+{% set show_module_activity = (module) %}
+{% set show_activity = (show_user_activity) or (show_module_activity) %}
+{% set show_user_profile = (user_id) %}
 
 {% block scripts %}
 <script type="text/javascript">
-    chartAndTableRenderer("/data/companies", "left_list", "left_chart", "/companies/");
-    chartAndTableRenderer("/data/modules", "right_list", "right_chart", "/modules/");
-    timelineRenderer()
+
+    timelineRenderer();
+
+    {% if show_company_breakdown %}
+    chartAndTableRenderer("/data/companies", "company_table", "company_chart", "company");
+    {% endif %}
+    {% if show_engineer_breakdown %}
+    chartAndTableRenderer("/data/engineers", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
+    {% endif %}
+    {% if show_module_breakdown %}
+    chartAndTableRenderer("/data/modules", "module_table", "module_chart", "module");
+    {% endif %}
+
+    {% if show_activity %}
+        $(document).ready(function () {
+            $.ajax({
+                url: make_uri("/data/activity.json"),
+                dataType: "json",
+                success: function (data) {
+                    $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                }
+            });
+        });
+    {% endif %}
+
+    {% if show_user_profile %}
+        $(document).ready(function () {
+            $.ajax({
+                url: make_uri("/data/users/{{ user_id }}.json"),
+                dataType: "json",
+                success: function (data) {
+                    $("#user_profile_template").tmpl(data["user"]).appendTo("#user_profile_container");
+                }
+            });
+        });
+    {% endif %}
+
+    {% if show_activity %}
+        $(document).ready(function () {
+            $.ajax({
+                url: make_uri("/data/contribution.json"),
+                dataType: "json",
+                success: function (data) {
+                    $("#contribution_template").tmpl(data["contribution"]).appendTo("#contribution_container");
+                }
+            });
+        });
+    {% endif %}
 </script>
+
+{# Templates #}
+<script id="activity_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div style="margin-bottom: 1em;">
+    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
+    <div style="margin-left: 40px;">
+        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
+        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
+    </div>
+    <div style="margin-left: 40px;">
+        {%if correction_comment != "" %}
+        <div style='font-weight: bold; color: red;'>Commit corrected:
+            <span>${correction_comment}</span></div>
+        {%/if %}
+        <div style='font-weight: bold;'>${subject}</div>
+        <div style='white-space: pre-wrap; '>{%html message %}</div>
+        <div><span style="color: green">+<span>${lines_added}</span></span>
+            <span style="color: red">- <span>${lines_deleted}</span></span></div>
+    </div>
+    </div>
+    {% endraw %}
+</script>
+
+<script id="user_profile_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div>
+        <div style="float: left;"><img src="${gravatar}"></div>
+        <div style="margin-left: 90px;">
+            <h2>${user_name}</h2>
+            <div>Company: {%html company_link %}</div>
+            {%if launchpad_id != '' %}
+                <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}">${launchpad_id}</a></div>
+            {%/if %}
+        </div>
+    </div>
+    {% endraw %}
+</script>
+
+<script id="contribution_template" type="text/x-jquery-tmpl">
+    {% raw %}
+<h3>Contribution overview</h3>
+{%if blueprints.length > 0 %}
+    <div>Blueprints:
+        <ol>
+            {%each(i,rec) blueprints %}
+                <li>
+                    <a href="https://blueprints.launchpad.net/${rec.module}/+spec/${rec.id}">${rec.id}</a>
+                    <small>${rec.module}</small>
+                </li>
+            {%/each%}
+        </ol>
+    </div>
+{%/if%}
+
+{%if bugs.length > 0 %}
+    <div>Bugs:
+        <ol>
+            {%each(i,rec) bugs %}
+                <li>
+                    <a href="https://bugs.launchpad.net/bugs/${rec.id}">${rec.id}</a>
+                </li>
+            {%/each%}
+        </ol>
+    </div>
+{%/if%}
+
+<div>Total commits: <b>${commit_count}</b></div>
+<div>Total LOC: <b>${loc}</b></div>
+    {% endraw %}
+</script>
+
 {% endblock %}
 
 {% block left_frame %}
 
+    {% if show_company_breakdown %}
     <h2>Contribution by companies</h2>
 
-    <div id="left_chart" style="width: 100%; height: 350px;"></div>
+    <div id="company_chart" style="width: 100%; height: 350px;"></div>
 
-    <table id="left_list" class="display">
+    <table id="company_table" class="display">
         <thead>
             <tr>
                 <th>#</th>
@@ -30,16 +152,50 @@
         </tbody>
     </table>
     <div class="spacer"></div>
+    {% endif %}
+
+    {% if show_engineer_breakdown %}
+
+    <h2>Contribution by engineers</h2>
+
+    <div id="engineer_chart" style="width: 100%; height: 350px;"></div>
+
+    <table id="engineer_table" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Engineer</th>
+                <th>{{ metric_label }}</th>
+                {% if metric == 'marks' %}
+                    <th>-2|-1|+1|+2 (+/- ratio)</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
+
+    {% endif %}
+
+    {% if show_user_profile %}
+        <div id="user_profile_container" style="margin-bottom: 2em;"></div>
+    {% endif %}
+    {% if show_user_activity %}
+        <h3>Activity log</h3>
+        <div id="activity_container"></div>
+    {% endif %}
 
 {% endblock %}
 
 {% block right_frame %}
 
+    {% if show_module_breakdown %}
     <h2>Contribution by modules</h2>
 
-    <div id="right_chart" style="width: 100%; height: 350px;"></div>
+    <div id="module_chart" style="width: 100%; height: 350px;"></div>
 
-    <table id="right_list" class="display">
+    <table id="module_table" class="display">
         <thead>
             <tr>
                 <th>#</th>
@@ -51,5 +207,18 @@
         </tbody>
     </table>
     <div class="spacer"></div>
+    {% endif %}
+
+    {% if show_user_activity %}
+        <div id="contribution_container"></div>
+    {% endif %}
+
+    {% if show_module_activity %}
+        <div id="activity_container"></div>
+    {% endif %}
+
+    {% if show_module_activity %}
+        <div id="contribution_container"></div>
+    {% endif %}
 
 {% endblock %}
