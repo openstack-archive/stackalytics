@@ -29,7 +29,11 @@
                 url: make_uri("/data/activity.json"),
                 dataType: "json",
                 success: function (data) {
-                    $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                    {% if metric == 'marks' %}
+                    $("#review_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                    {% else %}
+                    $("#commit_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                    {% endif %}
                 }
             });
         });
@@ -61,7 +65,7 @@
 </script>
 
 {# Templates #}
-<script id="activity_template" type="text/x-jquery-tmpl">
+<script id="commit_activity_template" type="text/x-jquery-tmpl">
     {% raw %}
     <div style="margin-bottom: 1em;">
     <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
@@ -78,6 +82,23 @@
         <div style='white-space: pre-wrap; '>{%html message %}</div>
         <div><span style="color: green">+<span>${lines_added}</span></span>
             <span style="color: red">- <span>${lines_deleted}</span></span></div>
+    </div>
+    </div>
+    {% endraw %}
+</script>
+
+<script id="review_activity_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div style="margin-bottom: 1em;">
+    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
+    <div style="margin-left: 40px;">
+        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
+        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
+    </div>
+    <div style="margin-left: 40px;">
+        <div style='font-weight: bold;'>${subject}</div>
+        <div>Change Id: <a href="${url}">${review_id}</a></div>
+        <div>Review mark: ${value}</div>
     </div>
     </div>
     {% endraw %}

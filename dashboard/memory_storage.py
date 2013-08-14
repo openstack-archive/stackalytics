@@ -27,6 +27,7 @@ class CachedMemoryStorage(MemoryStorage):
 
         # common indexes
         self.records = {}
+        self.primary_key_index = {}
         self.record_types_index = {}
         self.module_index = {}
         self.user_id_index = {}
@@ -34,6 +35,7 @@ class CachedMemoryStorage(MemoryStorage):
         self.release_index = {}
 
         self.indexes = {
+            'primary_key': self.primary_key_index,
             'record_type': self.record_types_index,
             'company_name': self.company_index,
             'module': self.module_index,
@@ -108,6 +110,13 @@ class CachedMemoryStorage(MemoryStorage):
     def get_records(self, record_ids):
         for i in record_ids:
             yield self.records[i]
+
+    def get_record_by_primary_key(self, primary_key):
+        record_id = list(self.primary_key_index[primary_key])
+        if record_id:
+            return self.records[record_id[0]]
+        else:
+            return None
 
     def get_original_company_name(self, company_name):
         normalized = company_name.lower()

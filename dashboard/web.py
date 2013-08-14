@@ -549,11 +549,22 @@ def get_engineers(records, metric_filter, finalize_handler):
     return json.dumps(response)
 
 
+def extend_record(record):
+    record['date_str'] = format_datetime(record['date'])
+    record['author_link'] = make_link(
+        record['author_name'], '/', {'user_id': record['user_id']})
+    record['company_link'] = make_link(
+        record['company_name'], '/',
+        {'company': record['company_name']})
+    record['gravatar'] = gravatar(record['author_email'])
+
+
 @app.route('/data/activity.json')
 @exception_handler()
 @record_filter()
 def get_activity_json(records):
-    commits = []
+    result = []
+    memory_storage_inst = get_memory_storage()
     for record in records:
         if record['record_type'] == 'commit':
             commit = record.copy()
@@ -561,16 +572,20 @@ def get_activity_json(records):
             if 'correction_comment' not in commit:
                 commit['correction_comment'] = ''
             commit['message'] = make_commit_message(record)
-            commit['date_str'] = format_datetime(commit['date'])
-            commit['author_link'] = make_link(
-                commit['author_name'], '/', {'user_id': commit['user_id']})
-            commit['company_link'] = make_link(
-                commit['company_name'], '/',
-                {'company': commit['company_name']})
-            commit['gravatar'] = gravatar(commit['author_email'])
-            commits.append(commit)
-    commits.sort(key=lambda x: x['date'], reverse=True)
-    return json.dumps({'activity': commits[0:DEFAULT_RECORDS_LIMIT]})
+            extend_record(commit)
+            result.append(commit)
+        elif record['record_type'] == 'mark':
+            review = record.copy()
+            parent = memory_storage_inst.get_record_by_primary_key(
+                review['review_id'])
+            if parent:
+                review['subject'] = parent['subject']
+                review['url'] = parent['url']
+                extend_record(review)
+                result.append(review)
+
+    result.sort(key=lambda x: x['date'], reverse=True)
+    return json.dumps({'activity': result[0:DEFAULT_RECORDS_LIMIT]})
 
 
 @app.route('/data/contribution.json')
