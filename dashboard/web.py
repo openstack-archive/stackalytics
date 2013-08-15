@@ -563,6 +563,9 @@ def extend_record(record):
 @exception_handler()
 @record_filter()
 def get_activity_json(records):
+    start_record = int(flask.request.args.get('start_record') or 0)
+    page_size = int(flask.request.args.get('page_size') or
+                    DEFAULT_RECORDS_LIMIT)
     result = []
     memory_storage_inst = get_memory_storage()
     for record in records:
@@ -585,7 +588,10 @@ def get_activity_json(records):
                 result.append(review)
 
     result.sort(key=lambda x: x['date'], reverse=True)
-    return json.dumps({'activity': result[0:DEFAULT_RECORDS_LIMIT]})
+    if start_record < 0:
+        start_record += len(result)
+    return json.dumps({'activity':
+                      result[start_record:start_record + page_size]})
 
 
 @app.route('/data/contribution.json')
