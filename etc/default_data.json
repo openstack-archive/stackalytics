@@ -151,6 +151,10 @@
             "launchpad_id": "anotherjesse",
             "companies": [
                 {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Jul-20"
+                },
+                {
                     "company_name": "Nebula",
                     "end_date": null
                 }
@@ -238,6 +242,10 @@
         {
             "launchpad_id": "bcwaldon",
             "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Jul-20"
+                },
                 {
                     "company_name": "Nebula",
                     "end_date": null
@@ -375,6 +383,10 @@
             "launchpad_id": "cboylan",
             "companies": [
                 {
+                    "company_name": "Intel",
+                    "end_date": "2012-Apr-23"
+                },
+                {
                     "company_name": "HP",
                     "end_date": null
                 }
@@ -418,6 +430,10 @@
         {
             "launchpad_id": "chmouel",
             "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Oct-01"
+                },
                 {
                     "company_name": "eNovance",
                     "end_date": null
@@ -510,6 +526,10 @@
         {
             "launchpad_id": "dan-prince",
             "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Feb-03"
+                },
                 {
                     "company_name": "Red Hat",
                     "end_date": null
@@ -632,6 +652,10 @@
             "launchpad_id": "devananda",
             "companies": [
                 {
+                    "company_name": "Percona",
+                    "end_date": "2012-Mar-01"
+                },
+                {
                     "company_name": "HP",
                     "end_date": null
                 }
@@ -686,6 +710,10 @@
         {
             "launchpad_id": "dtroyer",
             "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Jul-20"
+                },
                 {
                     "company_name": "Nebula",
                     "end_date": null
@@ -851,6 +879,21 @@
             ],
             "user_name": "Flavio Percoco Premoli",
             "emails": ["fpercoco@redhat.com", "flaper87@gmail.com"]
+        },
+        {
+            "launchpad_id": "fungi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2013-Apr-08"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeremy Stanley",
+            "emails": ["fungi@yuggoth.org", "jeremy@openstack.org"]
         },
         {
             "launchpad_id": "gabriel-hurley",
@@ -1113,6 +1156,10 @@
             "launchpad_id": "jake-hyperboledesign",
             "companies": [
                 {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Jul-20"
+                },
+                {
                     "company_name": "Nebula",
                     "end_date": null
                 }
@@ -1261,8 +1308,7 @@
                 },
                 {
                     "company_name": "HP",
-                    "end_date": null,
-                    "start_date": "2013-May-18"
+                    "end_date": null
                 }
             ],
             "user_name": "Joe Gordon",
@@ -2425,6 +2471,10 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2012-Oct-01"
+                },
+                {
+                    "company_name": "Big Switch Networks",
                     "end_date": null
                 }
             ],
@@ -2526,6 +2576,10 @@
         {
             "launchpad_id": "termie",
             "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2012-Jul-20"
+                },
                 {
                     "company_name": "Nebula",
                     "end_date": null
@@ -3212,6 +3266,10 @@
         {
             "domains": ["orange.com"],
             "company_name": "Orange"
+        },
+        {
+            "domains": ["percona.com"],
+            "company_name": "Percona"
         },
         {
             "domains": ["persistent.co.in"],
