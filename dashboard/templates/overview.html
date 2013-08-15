@@ -15,13 +15,13 @@
     timelineRenderer();
 
     {% if show_company_breakdown %}
-    chartAndTableRenderer("/data/companies", "company_table", "company_chart", "company");
+    chartAndTableRenderer("/data/companies", "company_container", "company_table", "company_chart", "company");
     {% endif %}
     {% if show_engineer_breakdown %}
-    chartAndTableRenderer("/data/engineers", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
+    chartAndTableRenderer("/data/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
     {% endif %}
     {% if show_module_breakdown %}
-    chartAndTableRenderer("/data/modules", "module_table", "module_chart", "module");
+    chartAndTableRenderer("/data/modules", "module_container", "module_table", "module_chart", "module");
     {% endif %}
 
     {% if show_activity %}
@@ -36,6 +36,9 @@
                 success: function (data) {
                     if (data["activity"].length < page_size) {
                         $('#activity_more').hide();
+                    }
+                    if ((start_record == 0) && (data["activity"].length == 0)) {
+                        $('#activity_header').hide();
                     }
                     {% if metric == 'marks' %}
                     $("#review_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
@@ -99,7 +102,7 @@
         <div style='font-weight: bold;'>${subject}</div>
         <div style='white-space: pre-wrap; '>{%html message %}</div>
         <div><span style="color: green">+<span>${lines_added}</span></span>
-            <span style="color: red">- <span>${lines_deleted}</span></span></div>
+            <span style="color:">- <span>${lines_deleted}</span></span></div>
     </div>
     </div>
     {% endraw %}
@@ -111,12 +114,13 @@
     <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
     <div style="margin-left: 40px;">
         <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
+        <div style="font-weight: bold;">${date_str} in <a href="https://launchpad.net/${module}">${module}</a></div>
     </div>
     <div style="margin-left: 40px;">
+        <div>Patch submitted by {%html parent_author_link %}</div>
         <div style='font-weight: bold;'>${subject}</div>
         <div>Change Id: <a href="${url}">${review_id}</a></div>
-        <div>Review mark: ${value}</div>
+        <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
     </div>
     </div>
     {% endraw %}
@@ -167,6 +171,7 @@
 
 <div>Total commits: <b>${commit_count}</b></div>
 <div>Total LOC: <b>${loc}</b></div>
+<div>Review stat (-2, -1, +1, +2): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}</b></div>
     {% endraw %}
 </script>
 
@@ -175,6 +180,7 @@
 {% block left_frame %}
 
     {% if show_company_breakdown %}
+    <div id="company_container">
     <h2>Contribution by companies</h2>
 
     <div id="company_chart" style="width: 100%; height: 350px;"></div>
@@ -191,10 +197,11 @@
         </tbody>
     </table>
     <div class="spacer"></div>
+    </div>
     {% endif %}
 
     {% if show_engineer_breakdown %}
-
+    <div id="engineer_container">
     <h2>Contribution by engineers</h2>
 
     <div id="engineer_chart" style="width: 100%; height: 350px;"></div>
@@ -214,14 +221,14 @@
         </tbody>
     </table>
     <div class="spacer"></div>
-
+    </div>
     {% endif %}
 
     {% if show_user_profile %}
         <div id="user_profile_container" style="margin-bottom: 2em;"></div>
     {% endif %}
     {% if show_user_activity %}
-        <h3>Activity log</h3>
+        <h3 id="activity_header">Activity log</h3>
         <div id="activity_container"></div>
 
         <div style="height: 44px;">
@@ -236,6 +243,7 @@
 {% block right_frame %}
 
     {% if show_module_breakdown %}
+    <div id="module_container">
     <h2>Contribution by modules</h2>
 
     <div id="module_chart" style="width: 100%; height: 350px;"></div>
@@ -252,6 +260,7 @@
         </tbody>
     </table>
     <div class="spacer"></div>
+    </div>
     {% endif %}
 
     {% if show_user_activity %}

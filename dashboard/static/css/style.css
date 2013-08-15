@@ -208,6 +208,10 @@ a[href^="https://launchpad"]:after {
     font-size: 9pt;
 }
 
+.review_mark {
+    font-weight: bold;
+}
+
 /* MIRANTIS CSS*/
 
 #miraheader {

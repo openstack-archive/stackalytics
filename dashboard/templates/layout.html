@@ -101,7 +101,7 @@
         });
     }
 
-    function chartAndTableRenderer(url, table_id, chart_id, link_param, options) {
+    function chartAndTableRenderer(url, container_id, table_id, chart_id, link_param, options) {
 
         $(document).ready(function () {
 
@@ -118,6 +118,11 @@
                     var index = 1;
                     var i;
                     var hasComment = false;
+
+                    if (data.length == 0) {
+                        $("#" + container_id).hide();
+                        return;
+                    }
 
                     for (i = 0; i < data.length; i++) {
                         if (i < limit - 1) {

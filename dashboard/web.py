@@ -584,12 +584,12 @@ def get_activity_json(records):
             if parent:
                 review['subject'] = parent['subject']
                 review['url'] = parent['url']
+                review['parent_author_link'] = make_link(
+                    parent['author_name'], '/', {'user_id': parent['user_id']})
                 extend_record(review)
                 result.append(review)
 
     result.sort(key=lambda x: x['date'], reverse=True)
-    if start_record < 0:
-        start_record += len(result)
     return json.dumps({'activity':
                       result[start_record:start_record + page_size]})
 
