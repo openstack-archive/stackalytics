@@ -77,7 +77,7 @@ class Gerrit(Rcs):
 
     def _get_cmd(self, module, branch, sort_key, limit=PAGE_LIMIT):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               '%(module)s branch:%(branch)s limit:%(limit)s' %
+               'project:\'^.*/%(module)s\' branch:%(branch)s limit:%(limit)s' %
                {'module': module, 'branch': branch, 'limit': limit})
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
