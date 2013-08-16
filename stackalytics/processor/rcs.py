@@ -76,8 +76,10 @@ class Gerrit(Rcs):
         LOG.debug('Successfully connected to Gerrit')
 
     def _get_cmd(self, module, branch, sort_key, limit=PAGE_LIMIT):
+        # This command matches project by substring, not strict
+        # See https://bugs.launchpad.net/stackalytics/+bug/1212647
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               'project:\'^.*/%(module)s\' branch:%(branch)s limit:%(limit)s' %
+               '%(module)s branch:%(branch)s limit:%(limit)s' %
                {'module': module, 'branch': branch, 'limit': limit})
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
@@ -106,6 +108,7 @@ class Gerrit(Rcs):
                         break
 
                     proceed = True
+                    module = review['project'].partition('/')[2]
                     review['module'] = module
                     yield review
 
