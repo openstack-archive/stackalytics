@@ -2028,7 +2028,9 @@
                 }
             ],
             "user_name": "OpenStack Robot",
-            "emails": ["review@openstack.org", "jenkins@review.openstack.org", "jenkins@openstack.org", "hudson@openstack.org", "openstack-infra@lists.openstack.org"]
+            "emails": ["review@openstack.org", "jenkins@review.openstack.org",
+                "jenkins@openstack.org", "hudson@openstack.org",
+                "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
