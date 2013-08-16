@@ -177,7 +177,7 @@
             "launchpad_id": "armando-migliaccio",
             "companies": [
                 {
-                    "company_name": "Nicira",
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
@@ -280,7 +280,7 @@
             "launchpad_id": "bgh",
             "companies": [
                 {
-                    "company_name": "Nicira",
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
@@ -542,7 +542,7 @@
             "launchpad_id": "danwent",
             "companies": [
                 {
-                    "company_name": "Nicira",
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
@@ -2294,7 +2294,7 @@
             "launchpad_id": "salvatore-orlando",
             "companies": [
                 {
-                    "company_name": "Nicira",
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
@@ -2485,7 +2485,7 @@
             "launchpad_id": "somikbehera",
             "companies": [
                 {
-                    "company_name": "Nicira",
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
@@ -3240,10 +3240,6 @@
             "company_name": "Nexenta"
         },
         {
-            "domains": ["nicira.com"],
-            "company_name": "Nicira"
-        },
-        {
             "domains": ["nimbisservices.com"],
             "company_name": "Nimbis Services"
         },
@@ -3416,7 +3412,7 @@
             "company_name": "VA Linux"
         },
         {
-            "domains": ["vmware.com"],
+            "domains": ["vmware.com", "nicira.com"],
             "company_name": "VMware"
         },
         {
