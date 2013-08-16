@@ -14,6 +14,19 @@
                     "end_date": null
                 }
             ]
+        },
+        {
+            "launchpad_id": "openstack",
+            "companies": [
+                {
+                    "company_name": "*robots",
+                    "end_date": null
+                }
+            ],
+            "user_name": "OpenStack Robot",
+            "emails": ["review@openstack.org", "jenkins@review.openstack.org",
+                "jenkins@openstack.org", "hudson@openstack.org",
+                "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com"]
         }
     ],
 
@@ -33,6 +46,10 @@
         {
             "company_name": "Intel",
             "domains": ["intel.com"]
+        },
+        {
+            "domains": ["openstack.org"],
+            "company_name": "OpenStack Foundation"
         }
     ],
 

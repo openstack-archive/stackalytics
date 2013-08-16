@@ -125,9 +125,14 @@ class RecordProcessor(object):
 
         record['user_id'] = user['user_id']
 
-        company = self._get_company_by_email(email)
-        if not company:
-            company = self._find_company(user['companies'], record['date'])
+        company_by_user = self._find_company(user['companies'], record['date'])
+        if company_by_user == '*robots':
+            # don't map robots by email
+            company = company_by_user
+        else:
+            company = self._get_company_by_email(email)
+            if not company:
+                company = company_by_user
         record['company_name'] = company
 
         if ('user_name' in user) and (user['user_name']):
@@ -157,7 +162,8 @@ class RecordProcessor(object):
 
         self._update_record_and_user(review)
 
-        yield review
+        if record['company_name'] != '*robots':
+            yield review
 
     def _spawn_marks(self, record):
         review_id = record['id']
