@@ -454,6 +454,17 @@
             "emails": ["christophe@sauthier.com", "christophe.sauthier@objectif-libre.com"]
         },
         {
+            "launchpad_id": "c-kassen",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christoph Kassen",
+            "emails": ["c.kassen@telekom.de"]
+        },
+        {
             "launchpad_id": "clay-gerrard",
             "companies": [
                 {
@@ -505,7 +516,11 @@
             "launchpad_id": "cthiel-suse",
             "companies": [
                 {
-                    "company_name": "DE Telekom",
+                    "company_name": "SUSE",
+                    "end_date": "2013-Jan-30"
+                },
+                {
+                    "company_name": "Deutsche Telekom",
                     "end_date": null
                 }
             ],
@@ -673,6 +688,17 @@
             ],
             "user_name": "Davanum Srinivas",
             "emails": ["dims@linux.vnet.ibm.com", "davanum@gmail.com"]
+        },
+        {
+            "launchpad_id": "d-gollub",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Gollub",
+            "emails": ["d.gollub@telekom.de"]
         },
         {
             "launchpad_id": "dmllr",
@@ -1825,6 +1851,17 @@
             "emails": ["mikeyp@LaHondaResearch.org", "mikeyp@lahondaresearch.org"]
         },
         {
+            "launchpad_id": "m-koderer",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marc Koderer",
+            "emails": ["m.koderer@telekom.de"]
+        },
+        {
             "launchpad_id": "mordred",
             "companies": [
                 {
@@ -2366,6 +2403,17 @@
             ],
             "user_name": "Sean McCully",
             "emails": ["sean.mccully@rackspace.com"]
+        },
+        {
+            "launchpad_id": "seif",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Seif Lotfy",
+            "emails": ["s.lotfy@telekom.de"]
         },
         {
             "launchpad_id": "sergey.vilgelm",
@@ -3365,7 +3413,7 @@
         },
         {
             "domains": ["telekom.de"],
-            "company_name": "Telekom Deutschland"
+            "company_name": "Deutsche Telekom"
         },
         {
             "domains": ["qq.com"],
