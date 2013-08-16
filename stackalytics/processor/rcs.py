@@ -75,26 +75,34 @@ class Gerrit(Rcs):
                             username=self.username)
         LOG.debug('Successfully connected to Gerrit')
 
-    def _get_cmd(self, module, branch, sort_key, limit=PAGE_LIMIT):
+    def _get_cmd(self, project_organization, module, branch, sort_key,
+                 limit=PAGE_LIMIT):
         # This command matches project by substring, not strict
         # See https://bugs.launchpad.net/stackalytics/+bug/1212647
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               '%(module)s branch:%(branch)s limit:%(limit)s' %
-               {'module': module, 'branch': branch, 'limit': limit})
+               'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
+               'limit:%(limit)s' %
+               {'ogn': project_organization, 'module': module,
+                'branch': branch, 'limit': limit})
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
         return cmd
 
     def log(self, branch, last_id, open_reviews):
-        module = self.repo['module']
-        LOG.debug('Retrieve reviews from gerrit for project %s', module)
+        match = re.search(r'([^\/]+)/([^\/]+)\.git$', self.repo['uri'])
+        if not match:
+            LOG.error('Invalid repo uri: %s', self.repo['uri'])
+        project_organization = match.group(1)
+        module = match.group(2)
+        LOG.debug('Retrieve reviews from gerrit from organization %s '
+                  'for project %s', project_organization, module)
 
         self._connect()
 
         sort_key = None
 
         while True:
-            cmd = self._get_cmd(module, branch, sort_key)
+            cmd = self._get_cmd(project_organization, module, branch, sort_key)
             stdin, stdout, stderr = self.client.exec_command(cmd)
 
             proceed = False
@@ -108,7 +116,6 @@ class Gerrit(Rcs):
                         break
 
                     proceed = True
-                    module = review['project'].partition('/')[2]
                     review['module'] = module
                     yield review
 
@@ -120,7 +127,8 @@ class Gerrit(Rcs):
 
         for sort_key_str in open_reviews:
             sort_key = int(sort_key_str, 16)
-            cmd = self._get_cmd(module, branch, sort_key + 1, limit=1)
+            cmd = self._get_cmd(project_organization, module, branch,
+                                sort_key + 1, limit=1)
             LOG.debug('Retrieve review with sortKey %s', sort_key)
             stdin, stdout, stderr = self.client.exec_command(cmd)
 
