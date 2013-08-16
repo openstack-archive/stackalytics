@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
 import urllib
 
 from oslo.config import cfg
@@ -26,6 +25,7 @@ from stackalytics.processor import default_data_processor
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
+from stackalytics.processor import utils
 from stackalytics.processor import vcs
 
 
@@ -147,27 +147,18 @@ def update_repos(runtime_storage_inst):
 
 def apply_corrections(uri, runtime_storage_inst):
     LOG.info('Applying corrections from uri %s', uri)
-    corrections_fd = urllib.urlopen(uri)
-    raw = corrections_fd.read()
-    corrections_fd.close()
-    corrections = json.loads(raw)['corrections']
+    corrections = utils.read_json_from_uri(uri)
+    if not corrections:
+        LOG.error('Unable to read corrections from uri: %s', uri)
+        return
+
     valid_corrections = []
-    for c in corrections:
+    for c in corrections['corrections']:
         if 'primary_key' in c:
             valid_corrections.append(c)
         else:
             LOG.warn('Correction misses primary key: %s', c)
     runtime_storage_inst.apply_corrections(valid_corrections)
-
-
-def _read_default_data(uri):
-    try:
-        fd = urllib.urlopen(uri)
-        raw = fd.read()
-        fd.close()
-        return json.loads(raw)
-    except Exception as e:
-        LOG.error('Error while reading config: %s' % e)
 
 
 def main():
@@ -183,7 +174,10 @@ def main():
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)
 
-    default_data = _read_default_data(cfg.CONF.default_data_uri)
+    default_data = utils.read_json_from_uri(cfg.CONF.default_data_uri)
+    if not default_data:
+        LOG.critical('Unable to load default data')
+        return not 0
     default_data_processor.process(runtime_storage_inst,
                                    default_data,
                                    cfg.CONF.sources_root)

@@ -16,7 +16,6 @@
 import bisect
 import re
 
-from launchpadlib import launchpad
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
 from stackalytics.processor import utils
@@ -78,18 +77,15 @@ class RecordProcessor(object):
             LOG.debug('User email is not valid %s' % email)
         else:
             LOG.debug('Lookup user email %s at Launchpad' % email)
-            lp = launchpad.Launchpad.login_anonymously('stackalytics',
-                                                       'production')
-            try:
-                lp_profile = lp.people.getByEmail(email=email)
-            except Exception as error:
-                LOG.warn('Lookup of email %s failed %s', email, error.message)
+            uri = ('https://api.launchpad.net/1.0/people/?'
+                   'ws.op=getByEmail&email=%s' % email)
+            lp_profile = utils.read_json_from_uri(uri)
 
         if not lp_profile:
             LOG.debug('User with email %s not found', email)
             return None, None
 
-        return lp_profile.name, lp_profile.display_name
+        return lp_profile['name'], lp_profile['display_name']
 
     def _get_independent(self):
         return self.domains_index['']
@@ -144,7 +140,8 @@ class RecordProcessor(object):
 
         self._update_record_and_user(record)
 
-        yield record
+        if record['company_name'] != '*robots':
+            yield record
 
     def _spawn_review(self, record):
         # copy everything except pathsets and flatten user data
@@ -162,8 +159,7 @@ class RecordProcessor(object):
 
         self._update_record_and_user(review)
 
-        if record['company_name'] != '*robots':
-            yield review
+        yield review
 
     def _spawn_marks(self, record):
         review_id = record['id']

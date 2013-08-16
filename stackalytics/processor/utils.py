@@ -14,7 +14,14 @@
 # limitations under the License.
 
 import datetime
+import json
 import time
+import urllib
+
+from stackalytics.openstack.common import log as logging
+
+
+LOG = logging.getLogger(__name__)
 
 
 def date_to_timestamp(d):
@@ -33,3 +40,13 @@ def week_to_date(week):
     timestamp = week * 7 * 24 * 3600 + 3 * 24 * 3600
     return (datetime.datetime.fromtimestamp(timestamp).
             strftime('%Y-%m-%d %H:%M:%S'))
+
+
+def read_json_from_uri(uri):
+    try:
+        fd = urllib.urlopen(uri)
+        raw = fd.read()
+        fd.close()
+        return json.loads(raw)
+    except Exception as e:
+        LOG.warn('Error while reading uri: %s' % e)

@@ -2,7 +2,6 @@ d2to1>=0.2.10,<0.3
 Flask>=0.9
 Flask-Gravatar
 iso8601
-launchpadlib
 oslo.config
 paramiko>=1.8.0
 pbr>=0.5.16,<0.6

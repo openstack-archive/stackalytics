@@ -13,15 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from launchpadlib import launchpad
 import mock
-from oslo.config import cfg
 import testtools
 
 from stackalytics.processor import default_data_processor
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
+
+
+LP_URI = 'https://api.launchpad.net/1.0/people/?ws.op=getByEmail&email=%s'
 
 
 class TestRecordProcessor(testtools.TestCase):
@@ -89,13 +90,13 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.runtime_storage = p_storage
         self.commit_processor = record_processor.RecordProcessor(p_storage)
-        self.launchpad_patch = mock.patch('launchpadlib.launchpad.Launchpad')
-        self.launchpad_patch.start()
-        cfg.CONF = mock.MagicMock()
+        self.read_json_from_uri_patch = mock.patch(
+            'stackalytics.processor.utils.read_json_from_uri')
+        self.read_json = self.read_json_from_uri_patch.start()
 
     def tearDown(self):
         super(TestRecordProcessor, self).tearDown()
-        self.launchpad_patch.stop()
+        self.read_json_from_uri_patch.stop()
 
     def _generate_commits(self, email='johndoe@gmail.com', date=1999999999):
         yield {
@@ -150,11 +151,9 @@ class TestRecordProcessor(testtools.TestCase):
         """
         email = 'johndoe@nec.co.jp'
         commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_profile = mock.Mock()
-        lp_profile.name = 'john_doe'
-        lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
+        launchpad_id = 'john_doe'
+        self.read_json.return_value = {'name': launchpad_id,
+                                       'display_name': launchpad_id}
         user = self.user.copy()
         # tell storage to return existing user
         self.get_users.return_value = [user]
@@ -163,10 +162,10 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.runtime_storage.set_by_key.assert_called_once_with('users',
                                                                 mock.ANY)
-        lp_mock.people.getByEmail.assert_called_once_with(email=email)
+        self.read_json.assert_called_once_with(LP_URI % email)
         self.assertIn(email, user['emails'])
         self.assertEquals('NEC', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
+        self.assertEquals(launchpad_id, commit['launchpad_id'])
 
     def test_update_commit_existing_user_new_email_unknown_company(self):
         """
@@ -175,11 +174,9 @@ class TestRecordProcessor(testtools.TestCase):
         """
         email = 'johndoe@yahoo.com'
         commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_profile = mock.Mock()
-        lp_profile.name = 'john_doe'
-        lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
+        launchpad_id = 'john_doe'
+        self.read_json.return_value = {'name': launchpad_id,
+                                       'display_name': launchpad_id}
         user = self.user.copy()
         # tell storage to return existing user
         self.get_users.return_value = [user]
@@ -188,10 +185,10 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.runtime_storage.set_by_key.assert_called_once_with('users',
                                                                 mock.ANY)
-        lp_mock.people.getByEmail.assert_called_once_with(email=email)
+        self.read_json.assert_called_once_with(LP_URI % email)
         self.assertIn(email, user['emails'])
         self.assertEquals('SuperCompany', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
+        self.assertEquals(launchpad_id, commit['launchpad_id'])
 
     def test_update_commit_new_user(self):
         """
@@ -200,19 +197,16 @@ class TestRecordProcessor(testtools.TestCase):
         """
         email = 'smith@nec.com'
         commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_profile = mock.Mock()
-        lp_profile.name = 'smith'
-        lp_profile.display_name = 'Smith'
-        lp_mock.people.getByEmail = mock.Mock(return_value=lp_profile)
+        launchpad_id = 'smith'
+        self.read_json.return_value = {'name': launchpad_id,
+                                       'display_name': 'Smith'}
         self.get_users.return_value = []
 
         commit = list(self.commit_processor.process(commit_generator))[0]
 
-        lp_mock.people.getByEmail.assert_called_once_with(email=email)
+        self.read_json.assert_called_once_with(LP_URI % email)
         self.assertEquals('NEC', commit['company_name'])
-        self.assertEquals('smith', commit['launchpad_id'])
+        self.assertEquals(launchpad_id, commit['launchpad_id'])
 
     def test_update_commit_new_user_unknown_to_lb(self):
         """
@@ -221,32 +215,12 @@ class TestRecordProcessor(testtools.TestCase):
         """
         email = 'inkognito@avs.com'
         commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_mock.people.getByEmail = mock.Mock(return_value=None)
+        self.read_json.return_value = None
         self.get_users.return_value = []
 
         commit = list(self.commit_processor.process(commit_generator))[0]
 
-        lp_mock.people.getByEmail.assert_called_once_with(email=email)
-        self.assertEquals('*independent', commit['company_name'])
-        self.assertEquals(None, commit['launchpad_id'])
-
-    def test_update_commit_new_user_lb_raises_error(self):
-        """
-        LP raises error during getting user info
-        """
-        email = 'smith@avs.com'
-        commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_mock.people.getByEmail = mock.Mock(return_value=None,
-                                              side_effect=Exception)
-        self.get_users.return_value = []
-
-        commit = list(self.commit_processor.process(commit_generator))[0]
-
-        lp_mock.people.getByEmail.assert_called_once_with(email=email)
+        self.read_json.assert_called_once_with(LP_URI % email)
         self.assertEquals('*independent', commit['company_name'])
         self.assertEquals(None, commit['launchpad_id'])
 
@@ -256,13 +230,11 @@ class TestRecordProcessor(testtools.TestCase):
         """
         email = 'error.root'
         commit_generator = self._generate_commits(email=email)
-        lp_mock = mock.MagicMock()
-        launchpad.Launchpad.login_anonymously = mock.Mock(return_value=lp_mock)
-        lp_mock.people.getByEmail = mock.Mock(return_value=None)
+        self.read_json.return_value = None
         self.get_users.return_value = []
 
         commit = list(self.commit_processor.process(commit_generator))[0]
 
-        self.assertEquals(0, lp_mock.people.getByEmail.called)
+        self.assertEquals(0, self.read_json.called)
         self.assertEquals('*independent', commit['company_name'])
         self.assertEquals(None, commit['launchpad_id'])

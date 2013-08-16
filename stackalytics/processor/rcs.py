@@ -77,8 +77,6 @@ class Gerrit(Rcs):
 
     def _get_cmd(self, project_organization, module, branch, sort_key,
                  limit=PAGE_LIMIT):
-        # This command matches project by substring, not strict
-        # See https://bugs.launchpad.net/stackalytics/+bug/1212647
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
                'limit:%(limit)s' %
