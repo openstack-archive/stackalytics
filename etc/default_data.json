@@ -830,6 +830,10 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "01-Jan-2013"
+                },
+                {
+                    "company_name": "PLUMgrid",
                     "end_date": null
                 }
             ],
@@ -2521,7 +2525,7 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
-                    "end_date": "2012-Oct-01"
+                    "end_date": "2012-Oct-12"
                 },
                 {
                     "company_name": "Big Switch Networks",
@@ -3328,6 +3332,10 @@
         {
             "domains": ["pdx.edu"],
             "company_name": "Portland State University"
+        },
+        {
+            "domains": ["plumgrid.com"],
+            "company_name": "PLUMgrid"
         },
         {
             "domains": ["pubyun.com"],
