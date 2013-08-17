@@ -112,11 +112,11 @@ class CachedMemoryStorage(MemoryStorage):
             yield self.records[i]
 
     def get_record_by_primary_key(self, primary_key):
-        record_id = list(self.primary_key_index[primary_key])
-        if record_id:
-            return self.records[record_id[0]]
-        else:
-            return None
+        if primary_key in self.primary_key_index:
+            record_id = list(self.primary_key_index[primary_key])
+            if record_id:
+                return self.records[record_id[0]]
+        return None
 
     def get_original_company_name(self, company_name):
         normalized = company_name.lower()
