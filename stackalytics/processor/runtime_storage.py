@@ -115,10 +115,10 @@ class MemcachedStorage(RuntimeStorage):
                 self._commit_update(record_id)
 
     def get_by_key(self, key):
-        return self.memcached.get(key)
+        return self.memcached.get(key.encode('utf8'))
 
     def set_by_key(self, key, value):
-        self.memcached.set(key, value)
+        self.memcached.set(key.encode('utf8'), value)
 
     def get_update(self, pid):
         last_update = self.memcached.get('pid:%s' % pid)

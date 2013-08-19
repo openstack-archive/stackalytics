@@ -17,13 +17,13 @@ MEMORY_STORAGE_CACHED = 0
 
 
 class MemoryStorage(object):
-    def __init__(self, records):
+    def __init__(self):
         pass
 
 
 class CachedMemoryStorage(MemoryStorage):
-    def __init__(self, records):
-        super(CachedMemoryStorage, self).__init__(records)
+    def __init__(self):
+        super(CachedMemoryStorage, self).__init__()
 
         # common indexes
         self.records = {}
@@ -43,24 +43,27 @@ class CachedMemoryStorage(MemoryStorage):
             'release': self.release_index,
         }
 
-        for record in records:
-            self._save_record(record)
-
-        self.company_name_mapping = dict((c.lower(), c)
-                                         for c in self.company_index.keys())
-
     def _save_record(self, record):
         self.records[record['record_id']] = record
         for key, index in self.indexes.iteritems():
             self._add_to_index(index, record, key)
 
     def update(self, records):
+        have_updates = False
+
         for record in records:
+            have_updates = True
             record_id = record['record_id']
             if record_id in self.records:
                 # remove existing record from indexes
                 self._remove_record_from_index(self.records[record_id])
             self._save_record(record)
+
+        if have_updates:
+            self.company_name_mapping = dict(
+                (c.lower(), c) for c in self.company_index.keys())
+
+        return have_updates
 
     def _remove_record_from_index(self, record):
         for key, index in self.indexes.iteritems():
@@ -134,8 +137,8 @@ class CachedMemoryStorage(MemoryStorage):
         return self.user_id_index.keys()
 
 
-def get_memory_storage(memory_storage_type, records):
+def get_memory_storage(memory_storage_type):
     if memory_storage_type == MEMORY_STORAGE_CACHED:
-        return CachedMemoryStorage(records)
+        return CachedMemoryStorage()
     else:
         raise Exception('Unknown memory storage type %s' % memory_storage_type)

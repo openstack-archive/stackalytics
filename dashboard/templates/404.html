@@ -1,19 +1,15 @@
-{% extends "layout.html" %}
+{% extends "base.html" %}
 
-{% block title %}
-    404
+{% block head %}
+    <meta http-equiv="refresh" content="5; url=/">
 {% endblock %}
 
-{% block left_frame %}
+{% block body %}
 
     <h2>404 Not Found</h2>
 
-    <div>The requested page is not found. Return to <a href="/">Overview</a>
+    <div>The requested page is not found. The page will be automatically redirected to <a href="/">Overview</a>
     </div>
 
-
-{% endblock %}
-
-{% block right_frame %}
 
 {% endblock %}

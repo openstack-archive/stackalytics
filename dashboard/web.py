@@ -75,35 +75,32 @@ else:
 def get_vault():
     vault = getattr(app, 'stackalytics_vault', None)
     if not vault:
-        vault = {}
-        runtime_storage_inst = runtime_storage.get_runtime_storage(
-            cfg.CONF.runtime_storage_uri)
-        vault['runtime_storage'] = runtime_storage_inst
-        vault['memory_storage'] = memory_storage.get_memory_storage(
-            memory_storage.MEMORY_STORAGE_CACHED,
+        try:
+            vault = {}
+            runtime_storage_inst = runtime_storage.get_runtime_storage(
+                cfg.CONF.runtime_storage_uri)
+            vault['runtime_storage'] = runtime_storage_inst
+            vault['memory_storage'] = memory_storage.get_memory_storage(
+                memory_storage.MEMORY_STORAGE_CACHED)
+
+            init_project_types(vault)
+            init_releases(vault)
+
+            app.stackalytics_vault = vault
+        except Exception as e:
+            LOG.critical('Failed to initialize application: %s', e)
+            LOG.exception(e)
+            flask.abort(500)
+
+    if not getattr(flask.request, 'stackalytics_updated', None):
+        flask.request.stackalytics_updated = True
+        memory_storage_inst = vault['memory_storage']
+        have_updates = memory_storage_inst.update(
             vault['runtime_storage'].get_update(os.getpid()))
 
-        releases = list(runtime_storage_inst.get_by_key('releases'))
-        vault['start_date'] = releases[0]['end_date']
-        vault['end_date'] = releases[-1]['end_date']
-        start_date = releases[0]['end_date']
-        for r in releases[1:]:
-            r['start_date'] = start_date
-            start_date = r['end_date']
-        vault['releases'] = dict((r['release_name'].lower(), r)
-                                 for r in releases[1:])
-        modules = runtime_storage_inst.get_by_key('repos')
-        vault['modules'] = dict((r['module'].lower(),
-                                 r['project_type'].lower()) for r in modules)
-        app.stackalytics_vault = vault
-
-        init_project_types(vault)
-    else:
-        if not getattr(flask.request, 'stackalytics_updated', None):
-            flask.request.stackalytics_updated = True
-            memory_storage_inst = vault['memory_storage']
-            memory_storage_inst.update(
-                vault['runtime_storage'].get_update(os.getpid()))
+        if have_updates:
+            init_project_types(vault)
+            init_releases(vault)
 
     return vault
 
@@ -112,12 +109,27 @@ def get_memory_storage():
     return get_vault()['memory_storage']
 
 
+def init_releases(vault):
+    runtime_storage_inst = vault['runtime_storage']
+    releases = runtime_storage_inst.get_by_key('releases')
+    if not releases:
+        raise Exception('Releases are missing in runtime storage')
+    vault['start_date'] = releases[0]['end_date']
+    vault['end_date'] = releases[-1]['end_date']
+    start_date = releases[0]['end_date']
+    for r in releases[1:]:
+        r['start_date'] = start_date
+        start_date = r['end_date']
+    vault['releases'] = dict((r['release_name'].lower(), r)
+                             for r in releases[1:])
+
+
 def init_project_types(vault):
     runtime_storage_inst = vault['runtime_storage']
     project_type_options = {}
     project_type_group_index = {'all': set()}
 
-    for repo in runtime_storage_inst.get_by_key('repos'):
+    for repo in runtime_storage_inst.get_by_key('repos') or []:
         project_type = repo['project_type'].lower()
         project_group = None
         if ('project_group' in repo) and (repo['project_group']):
@@ -176,6 +188,11 @@ def is_project_type_valid(project_type):
     return False
 
 
+def get_user_from_runtime_storage(user_id):
+    runtime_storage_inst = get_vault()['runtime_storage']
+    return runtime_storage_inst.get_by_key('user:%s' % user_id)
+
+
 # Utils ---------
 
 def get_default(param_name):
@@ -207,12 +224,6 @@ def get_single_parameter(kwargs, singular_name, use_default=True):
         return param[0]
     else:
         return ''
-
-
-def validate_user_id(user_id):
-    runtime_storage_inst = get_vault()['runtime_storage']
-    users_index = runtime_storage_inst.get_by_key('users')
-    return user_id in users_index
 
 
 # Decorators ---------
@@ -250,7 +261,7 @@ def record_filter(ignore=None, use_default=True):
 
             if 'user_id' not in ignore:
                 param = get_parameter(kwargs, 'user_id', 'user_ids')
-                param = [u for u in param if validate_user_id(u)]
+                param = [u for u in param if get_user_from_runtime_storage(u)]
                 if param:
                     record_ids &= (
                         memory_storage.get_record_ids_by_user_ids(param))
@@ -674,21 +685,19 @@ def get_users_json(records):
 
 @app.route('/data/users/<user_id>.json')
 def get_user(user_id):
-    runtime_storage_inst = get_vault()['runtime_storage']
-    users_index = runtime_storage_inst.get_by_key('users')
-    if user_id in users_index:
-        res = users_index[user_id].copy()
-        res['id'] = res['user_id']
-        res['text'] = res['user_name']
-        if res['companies']:
-            company_name = res['companies'][-1]['company_name']
-            res['company_link'] = make_link(
-                company_name, '/', {'company': company_name})
-        else:
-            res['company_link'] = ''
-        res['gravatar'] = gravatar(res['emails'][0])
-        return json.dumps({'user': res})
-    return json.dumps({})
+    user = get_user_from_runtime_storage(user_id)
+    if not user:
+        flask.abort(404)
+    user['id'] = user['user_id']
+    user['text'] = user['user_name']
+    if user['companies']:
+        company_name = user['companies'][-1]['company_name']
+        user['company_link'] = make_link(
+            company_name, '/', {'company': company_name})
+    else:
+        user['company_link'] = ''
+    user['gravatar'] = gravatar(user['emails'][0])
+    return json.dumps({'user': user})
 
 
 @app.route('/data/timeline')

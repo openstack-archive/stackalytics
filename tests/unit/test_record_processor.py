@@ -16,13 +16,32 @@
 import mock
 import testtools
 
-from stackalytics.processor import default_data_processor
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
 
 
 LP_URI = 'https://api.launchpad.net/1.0/people/?ws.op=getByEmail&email=%s'
+
+
+def _make_users(users):
+    users_index = {}
+    for user in users:
+        if 'user_id' in user:
+            users_index[user['user_id']] = user
+        if 'launchpad_id' in user:
+            users_index[user['launchpad_id']] = user
+        for email in user['emails']:
+            users_index[email] = user
+    return users_index
+
+
+def _make_companies(companies):
+    domains_index = {}
+    for company in companies:
+        for domain in company['domains']:
+            domains_index[domain] = company['company_name']
+    return domains_index
 
 
 class TestRecordProcessor(testtools.TestCase):
@@ -77,9 +96,9 @@ class TestRecordProcessor(testtools.TestCase):
 
         def get_by_key(table):
             if table == 'companies':
-                return default_data_processor._process_companies(companies)
+                return _make_companies(companies)
             elif table == 'users':
-                return default_data_processor._process_users(self.get_users())
+                return _make_users(self.get_users())
             elif table == 'releases':
                 return releases
             else:
@@ -160,8 +179,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         commit = list(self.commit_processor.process(commit_generator))[0]
 
-        self.runtime_storage.set_by_key.assert_called_once_with('users',
-                                                                mock.ANY)
+        self.runtime_storage.set_by_key.assert_called_with('users', mock.ANY)
         self.read_json.assert_called_once_with(LP_URI % email)
         self.assertIn(email, user['emails'])
         self.assertEquals('NEC', commit['company_name'])
@@ -183,8 +201,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         commit = list(self.commit_processor.process(commit_generator))[0]
 
-        self.runtime_storage.set_by_key.assert_called_once_with('users',
-                                                                mock.ANY)
+        self.runtime_storage.set_by_key.assert_called_with('users', mock.ANY)
         self.read_json.assert_called_once_with(LP_URI % email)
         self.assertIn(email, user['emails'])
         self.assertEquals('SuperCompany', commit['company_name'])

@@ -76,24 +76,25 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
     runtime_storage_inst.set_by_key('repos', stored_repos)
 
 
-def _process_users(users):
+def _process_users(runtime_storage_inst, users):
     users_index = {}
     for user in users:
+        runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
         if 'user_id' in user:
             users_index[user['user_id']] = user
         if 'launchpad_id' in user:
             users_index[user['launchpad_id']] = user
         for email in user['emails']:
             users_index[email] = user
-    return users_index
+    runtime_storage_inst.set_by_key('users', users_index)
 
 
-def _process_companies(companies):
+def _process_companies(runtime_storage_inst, companies):
     domains_index = {}
     for company in companies:
         for domain in company['domains']:
             domains_index[domain] = company['company_name']
-    return domains_index
+    runtime_storage_inst.set_by_key('companies', domains_index)
 
 
 KEYS = {
@@ -105,15 +106,16 @@ KEYS = {
 
 
 def _update_default_data(runtime_storage_inst, default_data):
+    LOG.debug('Update runtime storage with default data')
     for key, processor in KEYS.iteritems():
         if processor:
-            value = processor(default_data[key])
+            processor(runtime_storage_inst, default_data[key])
         else:
-            value = default_data[key]
-        runtime_storage_inst.set_by_key(key, value)
+            runtime_storage_inst.set_by_key(key, default_data[key])
 
 
 def process(runtime_storage_inst, default_data, sources_root):
+    LOG.debug('Process default data')
 
     normalizer.normalize_default_data(default_data)
 

@@ -71,6 +71,9 @@ class RecordProcessor(object):
         LOG.debug('Create new user: %s', user)
         return user
 
+    def _store_user(self, user):
+        self.runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
+
     def _get_lp_info(self, email):
         lp_profile = None
         if not re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email):
@@ -115,6 +118,7 @@ class RecordProcessor(object):
                         user_name = record['author_name']
                     user = self._create_user(launchpad_id, email, user_name)
 
+            self._store_user(user)
             self.users_index[email] = user
             if user['launchpad_id']:
                 self.users_index[user['launchpad_id']] = user
