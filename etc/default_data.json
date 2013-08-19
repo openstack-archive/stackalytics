@@ -885,6 +885,17 @@
             "emails": ["ewan.mellor@citrix.com"]
         },
         {
+            "launchpad_id": "eyerediskin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergey Skripnick",
+            "emails": ["sskripnick@mirantis.com", "eyerediskin@gmail.com"]
+        },
+        {
             "launchpad_id": "fifieldt",
             "companies": [
                 {
@@ -2034,7 +2045,8 @@
             "user_name": "OpenStack Robot",
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
-                "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com"]
+                "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com",
+                "reddwarf-jenkins@googlegroups.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
