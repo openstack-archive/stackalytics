@@ -35,7 +35,7 @@ class Rcs(object):
     def setup(self, **kwargs):
         pass
 
-    def log(self, branch, last_id, open_reviews):
+    def log(self, branch, last_id):
         return []
 
     def get_last_id(self, branch):
@@ -76,31 +76,26 @@ class Gerrit(Rcs):
         LOG.debug('Successfully connected to Gerrit')
 
     def _get_cmd(self, project_organization, module, branch, sort_key,
-                 limit=PAGE_LIMIT):
+                 is_open):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
                'limit:%(limit)s' %
                {'ogn': project_organization, 'module': module,
-                'branch': branch, 'limit': limit})
+                'branch': branch, 'limit': PAGE_LIMIT})
+        if is_open:
+            cmd += ' is:open'
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
         return cmd
 
-    def log(self, branch, last_id, open_reviews):
-        match = re.search(r'([^\/]+)/([^\/]+)\.git$', self.repo['uri'])
-        if not match:
-            LOG.error('Invalid repo uri: %s', self.repo['uri'])
-        project_organization = match.group(1)
-        module = match.group(2)
-        LOG.debug('Retrieve reviews from gerrit from organization %s '
-                  'for project %s', project_organization, module)
-
-        self._connect()
-
-        sort_key = None
+    def _poll_reviews(self, project_organization, module, branch,
+                      start_id=None, last_id=None, is_open=False):
+        sort_key = start_id
 
         while True:
-            cmd = self._get_cmd(project_organization, module, branch, sort_key)
+            cmd = self._get_cmd(project_organization, module, branch, sort_key,
+                                is_open)
+            LOG.debug('Executing command: %s', cmd)
             stdin, stdout, stderr = self.client.exec_command(cmd)
 
             proceed = False
@@ -120,21 +115,26 @@ class Gerrit(Rcs):
             if not proceed:
                 break
 
-        # poll open reviews
-        LOG.debug('Retrieve open reviews from gerrit for project %s', module)
+    def log(self, branch, last_id):
+        match = re.search(r'([^\/]+)/([^\/]+)\.git$', self.repo['uri'])
+        if not match:
+            LOG.error('Invalid repo uri: %s', self.repo['uri'])
+        project_organization = match.group(1)
+        module = match.group(2)
 
-        for sort_key_str in open_reviews:
-            sort_key = int(sort_key_str, 16)
-            cmd = self._get_cmd(project_organization, module, branch,
-                                sort_key + 1, limit=1)
-            LOG.debug('Retrieve review with sortKey %s', sort_key)
-            stdin, stdout, stderr = self.client.exec_command(cmd)
+        self._connect()
 
-            for line in stdout:
-                review = json.loads(line)
-                if 'sortKey' in review:
-                    review['module'] = module
-                    yield review
+        # poll new reviews from the top down to last_id
+        LOG.debug('Poll new reviews')
+        for review in self._poll_reviews(project_organization, module, branch,
+                                         last_id=last_id):
+            yield review
+
+        # poll open reviews from last_id down to bottom
+        LOG.debug('Poll open reviews')
+        for review in self._poll_reviews(project_organization, module, branch,
+                                         start_id=last_id + 1, is_open=True):
+            yield review
 
         self.client.close()
 
