@@ -16,7 +16,6 @@
 import hashlib
 import json
 
-from github import GithubException
 from github import MainClass
 
 from stackalytics.openstack.common import log as logging
@@ -51,14 +50,14 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
     for repo in stored_repos:
         repo_index[repo['uri']] = repo
 
-    github = MainClass.Github()
+    github = MainClass.Github(timeout=60)
 
     for project_source in project_sources:
         organization = project_source['organization']
         LOG.debug('Get list of projects for organization %s', organization)
         try:
             repos = github.get_organization(organization).get_repos()
-        except GithubException as e:
+        except Exception as e:
             LOG.exception(e)
             LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
             return
