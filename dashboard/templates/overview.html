@@ -4,11 +4,11 @@
 {% set show_engineer_breakdown = ((company) or (module)) and (not user_id) %}
 {% set show_module_breakdown = (not module) %}
 {% set show_user_activity = (user_id) %}
-{% set show_module_activity = (module) %}
+{% set show_module_activity = (module) and (not user_id) %}
 {% set show_activity = (show_user_activity) or (show_module_activity) %}
-{% set show_user_contribution = show_user_activity %}
-{% set show_module_contribution = show_module_activity %}
-{% set show_contribution = show_activity %}
+{% set show_user_contribution = (user_id) %}
+{% set show_module_contribution = (module) and (not user_id) %}
+{% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
 
 {% block scripts %}

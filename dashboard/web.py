@@ -563,10 +563,11 @@ def get_engineers(records, metric_filter, finalize_handler):
 def extend_record(record):
     record['date_str'] = format_datetime(record['date'])
     record['author_link'] = make_link(
-        record['author_name'], '/', {'user_id': record['user_id']})
+        record['author_name'], '/',
+        {'user_id': record['user_id'], 'company': ''})
     record['company_link'] = make_link(
         record['company_name'], '/',
-        {'company': record['company_name']})
+        {'company': record['company_name'], 'user_id': ''})
     record['gravatar'] = gravatar(record['author_email'])
 
 
@@ -596,7 +597,9 @@ def get_activity_json(records):
                 review['subject'] = parent['subject']
                 review['url'] = parent['url']
                 review['parent_author_link'] = make_link(
-                    parent['author_name'], '/', {'user_id': parent['user_id']})
+                    parent['author_name'], '/',
+                    {'user_id': parent['user_id'],
+                     'company': ''})
                 extend_record(review)
                 result.append(review)
 
@@ -694,7 +697,7 @@ def get_user(user_id):
     if user['companies']:
         company_name = user['companies'][-1]['company_name']
         user['company_link'] = make_link(
-            company_name, '/', {'company': company_name})
+            company_name, '/', {'company': company_name, 'user_id': ''})
     else:
         user['company_link'] = ''
     user['gravatar'] = gravatar(user['emails'][0])
