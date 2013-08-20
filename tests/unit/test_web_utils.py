@@ -39,9 +39,9 @@ Change-Id: Ie49ccd2138905e178843b375a9b16c3fe572d1db'''
             'module': module,
         }
 
-        expected = '''
-During finish_migration the manager calls initialize_connection but doesn't
-update the block_device_mapping with the potentially new connection_info
+        expected = '''\
+During finish_migration the manager calls initialize_connection but doesn't \
+update the block_device_mapping with the potentially new connection_info \
 returned.
 Fixes bug <a href="https://bugs.launchpad.net/bugs/1076801">1076801</a>
 ''' + ('Change-Id: <a href="https://review.openstack.org/#q,'
@@ -66,7 +66,7 @@ Change-Id: Ie49ccd2138905e178843b375a9b16c3fe572d1db'''
             'module': module,
         }
 
-        expected = '''
+        expected = '''\
 Implemented new driver for Cinder &lt;:
 Implements Blueprint ''' + (
             '<a href="https://blueprints.launchpad.net/cinder/+spec/'
@@ -79,3 +79,9 @@ Implements Blueprint ''' + (
 
         self.assertEqual(expected, observed,
                          'Commit message should be processed correctly')
+
+    def test_unwrap(self):
+        original = 'Lorem ipsum. Dolor\nsit amet.\n Lorem\n ipsum.\ndolor!\n'
+        expected = 'Lorem ipsum. Dolor sit amet.\n Lorem\n ipsum.\ndolor!'
+
+        self.assertEqual(expected, web.unwrap_text(original))

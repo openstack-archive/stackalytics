@@ -388,7 +388,7 @@
 
             <div class="drop">
                 <label for="release">Release</label>
-                <select id="release" name="release" style="min-width: 130px;" data-placeholder="Select release">
+                <select id="release" name="release" style="min-width: 140px;" data-placeholder="Select release">
                     <option></option>
                     <option value="all">All times</option>
                     {% for release in release_options %}
@@ -399,7 +399,7 @@
 
             <div class="drop">
                 <label for="project_type">Projects</label>
-                <select id="project_type" name="project_type" style="min-width: 130px;">
+                <select id="project_type" name="project_type" style="min-width: 140px;">
                     <option value="All">all</option>
                     {% for option_type, option_groups in project_type_options.iteritems() %}
                         <optgroup label="{{ option_type }}">
@@ -416,22 +416,22 @@
 
             <div class="drop">
                 <label for="module">Module</label>
-                <input type="hidden" id="module" style="width: 130px" data-placeholder="Any module" value="{{ module }}"/>
+                <input type="hidden" id="module" style="width: 140px" data-placeholder="Any module" value="{{ module }}"/>
             </div>
 
             <div class="drop">
                 <label for="company">Company</label>
-                <input type="hidden" id="company" style="width: 130px" data-placeholder="Any company" value="{{ company }}"/>
+                <input type="hidden" id="company" style="width: 140px" data-placeholder="Any company" value="{{ company }}"/>
             </div>
 
             <div class="drop">
                 <label for="company">Engineer</label>
-                <input type="hidden" id="user" style="width: 130px" data-placeholder="Any engineer" value="{{ user_id }}"/>
+                <input type="hidden" id="user" style="width: 140px" data-placeholder="Any engineer" value="{{ user_id }}"/>
             </div>
 
             <div class="drop">
                 <label for="metric">Metric</label>
-                <select id="metric" name="metric" style="width: 130px">
+                <select id="metric" name="metric" style="width: 140px">
                     {% for metric in metric_options %}
                         <option value="{{ metric[0] }}">{{ metric[1] }}</option>
                     {% endfor %}
@@ -448,12 +448,12 @@
     <table style="width: 100%" cellspacing="0">
         <tr>
             <td style="width: 50%; vertical-align: top;">
-                <div class="body" style="margin-right: 2em;">
+                <div class="body" style="margin-right: 1em;">
                     {% block left_frame %}{% endblock %}
                 </div>
             </td>
             <td style="width: 50%; vertical-align: top;">
-                <div class="body" style="margin-left: 2em;">
+                <div class="body" style="margin-left: 1em;">
                     {% block right_frame %}{% endblock %}
                 </div>
             </td>

@@ -817,6 +817,20 @@ def make_link(title, uri=None, options=None):
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
 
+def unwrap_text(text):
+    res = ''
+    for line in text.splitlines():
+        s = line.rstrip()
+        if not s:
+            continue
+        res += line
+        if (not s[0].isalpha()) or (s[-1] in ['.', '!', '?', '>', ':', ';']):
+            res += '\n'
+        else:
+            res += ' '
+    return res.rstrip()
+
+
 @app.template_filter('commit_message')
 def make_commit_message(record):
     s = record['message']
@@ -833,6 +847,8 @@ def make_commit_message(record):
                r'\1<a href="https://bugs.launchpad.net/bugs/\2">\2</a>', s)
     s = re.sub(r'\s+(I[0-9a-f]{40})',
                r' <a href="https://review.openstack.org/#q,\1,n,z">\1</a>', s)
+
+    s = unwrap_text(s)
     return s
 
 
