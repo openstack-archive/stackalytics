@@ -6,6 +6,8 @@
 {% set show_user_activity = (user_id) %}
 {% set show_module_activity = (module) %}
 {% set show_activity = (show_user_activity) or (show_module_activity) %}
+{% set show_user_contribution = show_user_activity %}
+{% set show_module_contribution = show_module_activity %}
 {% set show_contribution = show_activity %}
 {% set show_user_profile = (user_id) %}
 
@@ -102,7 +104,7 @@
         <div style='font-weight: bold;'>${subject}</div>
         <div style='white-space: pre-wrap; '>{%html message %}</div>
         <div><span style="color: green">+<span>${lines_added}</span></span>
-            <span style="color:">- <span>${lines_deleted}</span></span></div>
+            <span style="color: blue">- <span>${lines_deleted}</span></span></div>
     </div>
     </div>
     {% endraw %}
@@ -238,6 +240,10 @@
         </div>
     {% endif %}
 
+    {% if show_module_contribution %}
+        <div id="contribution_container"></div>
+    {% endif %}
+
 {% endblock %}
 
 {% block right_frame %}
@@ -263,16 +269,19 @@
     </div>
     {% endif %}
 
-    {% if show_user_activity %}
+    {% if show_user_contribution %}
         <div id="contribution_container"></div>
     {% endif %}
 
     {% if show_module_activity %}
+        <h3 id="activity_header">Activity log</h3>
         <div id="activity_container"></div>
-    {% endif %}
 
-    {% if show_module_activity %}
-        <div id="contribution_container"></div>
+        <div style="height: 44px;">
+        <div class="dataTables_paginate paging_full_numbers" id="activity_paginate">
+            <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
+        </div>
+        </div>
     {% endif %}
 
 {% endblock %}
