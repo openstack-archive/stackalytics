@@ -132,8 +132,11 @@ class Gerrit(Rcs):
 
         # poll open reviews from last_id down to bottom
         LOG.debug('Poll open reviews')
+        start_id = None
+        if last_id:
+            start_id = last_id + 1  # include the last review into query
         for review in self._poll_reviews(project_organization, module, branch,
-                                         start_id=last_id + 1, is_open=True):
+                                         start_id=start_id, is_open=True):
             yield review
 
         self.client.close()

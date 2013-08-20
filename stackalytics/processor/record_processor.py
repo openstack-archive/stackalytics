@@ -235,11 +235,13 @@ class RecordProcessor(object):
 
             company_name = record['company_name']
             user_id = record['user_id']
+            author_name = record['author_name']
 
             self._update_record_and_user(record)
 
             if ((record['company_name'] != company_name) or
-                    (record['user_id'] != user_id)):
+                    (record['user_id'] != user_id) or
+                    (record['author_name'] != author_name)):
                 need_update = True
 
             if record['primary_key'] in release_index:

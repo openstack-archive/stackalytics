@@ -255,3 +255,38 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEquals(0, self.read_json.called)
         self.assertEquals('*independent', commit['company_name'])
         self.assertEquals(None, commit['launchpad_id'])
+
+    def _generate_record_commit(self):
+        yield {'commit_id': u'0afdc64bfd041b03943ceda7849c4443940b6053',
+               'lines_added': 9,
+               'module': u'stackalytics',
+               'record_type': 'commit',
+               'message': u'Closes bug 1212953\n\nChange-Id: '
+                          u'I33f0f37b6460dc494abf2520dc109c9893ace9e6\n',
+               'subject': u'Fixed affiliation of Edgar and Sumit',
+               'loc': 10,
+               'user_id': u'john_doe',
+               'primary_key': u'0afdc64bfd041b03943ceda7849c4443940b6053',
+               'author_email': u'jdoe@super.no',
+               'company_name': u'SuperCompany',
+               'record_id': 6,
+               'lines_deleted': 1,
+               'week': 2275,
+               'blueprint_id': None,
+               'bug_id': u'1212953',
+               'files_changed': 1,
+               'author_name': u'John Doe',
+               'date': 1376737923,
+               'launchpad_id': u'john_doe',
+               'branches': set([u'master']),
+               'change_id': u'I33f0f37b6460dc494abf2520dc109c9893ace9e6',
+               'release': u'havana'}
+
+    def test_update_record_no_changes(self):
+        commit_generator = self._generate_record_commit()
+        release_index = {'0afdc64bfd041b03943ceda7849c4443940b6053': 'havana'}
+
+        updated = list(self.commit_processor.update(commit_generator,
+                                                    release_index))
+
+        self.assertEquals(0, len(updated))
