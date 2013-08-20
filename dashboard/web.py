@@ -623,7 +623,8 @@ def _get_collection(records, collection_name, name_key, query_param=None):
             continue
         if name.lower().find(query.lower()) >= 0:
             options.add(name)
-    result = [{'id': c.lower(), 'text': c} for c in sorted(options)]
+    result = [{'id': safe_encode(c.lower()), 'text': c}
+              for c in sorted(options)]
     return json.dumps({collection_name: result})
 
 
@@ -812,7 +813,7 @@ def make_link(title, uri=None, options=None):
     if options:
         param_values.update(options)
     if param_values:
-        uri += '?' + '&'.join(['%s=%s' % (n, v)
+        uri += '?' + '&'.join(['%s=%s' % (n, safe_encode(v))
                                for n, v in param_values.iteritems()])
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
