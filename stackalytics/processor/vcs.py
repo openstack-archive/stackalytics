@@ -103,6 +103,7 @@ class Git(Vcs):
         if not os.path.exists(self.folder):
             return {}
 
+        LOG.debug('Get release index for repo uri: %s', self.repo['uri'])
         os.chdir(self.folder)
         if not self.release_index:
             for release in self.repo['releases']:
@@ -118,7 +119,7 @@ class Git(Vcs):
         return self.release_index
 
     def log(self, branch, head_commit_id):
-        LOG.debug('Parsing git log for repo uri %s' % self.repo['uri'])
+        LOG.debug('Parsing git log for repo uri %s', self.repo['uri'])
 
         os.chdir(self.folder)
         sh.git('checkout', '%s' % branch)
@@ -174,7 +175,7 @@ class Git(Vcs):
             yield commit
 
     def get_last_id(self, branch):
-        LOG.debug('Get head commit for repo uri %s' % self.repo['uri'])
+        LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
 
         os.chdir(self.folder)
         sh.git('checkout', '%s' % branch)
@@ -183,7 +184,7 @@ class Git(Vcs):
 
 def get_vcs(repo, sources_root):
     uri = repo['uri']
-    LOG.debug('Factory is asked for VCS uri %s' % uri)
+    LOG.debug('Factory is asked for VCS uri: %s', uri)
     match = re.search(r'\.git$', uri)
     if match:
         return Git(repo, sources_root)
