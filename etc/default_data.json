@@ -679,6 +679,17 @@
             "emails": ["devananda.vdv@gmail.com"]
         },
         {
+            "launchpad_id": "devvesa",
+            "companies": [
+                {
+                    "company_name": "StackOps",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaume Devesa",
+            "emails": ["devvesa@gmail.com"]
+        },
+        {
             "launchpad_id": "dims-v",
             "companies": [
                 {
@@ -872,6 +883,17 @@
             ],
             "user_name": "Everett Toews",
             "emails": ["everett.toews@gmail.com", "everett.toews@rackspace.com"]
+        },
+        {
+            "launchpad_id": "evgeny-fadeev",
+            "companies": [
+                {
+                    "company_name": "Askbot",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evgeny Fadeev",
+            "emails": ["evgeny.fadeev@gmail.com"]
         },
         {
             "launchpad_id": "ewanmellor",
@@ -1624,15 +1646,15 @@
             "emails": ["kshileev@griddynamics.com", "kshileev@gmail.com"]
         },
         {
-            "launchpad_id": "kyle-r",
+            "launchpad_id": "kspear",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "University of Melbourne",
                     "end_date": null
                 }
             ],
-            "user_name": "Kai Zhang",
-            "emails": ["kyle@zelin.io"]
+            "user_name": "Kieran Spear",
+            "emails": ["kispear@gmail.com"]
         },
         {
             "launchpad_id": "lakhindr",
@@ -1712,6 +1734,17 @@
             "emails": ["iamljj@gmail.com", "jiajun@unitedstack.com"]
         },
         {
+            "launchpad_id": "loganmc10",
+            "companies": [
+                {
+                    "company_name": "Bacoosta IT Services",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Logan McNaughton",
+            "emails": ["logan@bacoosta.com"]
+        },
+        {
             "launchpad_id": "lorinh",
             "companies": [
                 {
@@ -1732,6 +1765,17 @@
             ],
             "user_name": "Lucas Alvares Gomes",
             "emails": ["lucasagomes@gmail.com"]
+        },
+        {
+            "launchpad_id": "lyz",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Elizabeth Krumbach Joseph",
+            "emails": ["lyz@princessleia.com", "lyz@ubuntu.com"]
         },
         {
             "launchpad_id": "lzy-dev",
@@ -2115,17 +2159,6 @@
             "emails": ["pkilambi@cisco.com", "praddevel@gmail.com"]
         },
         {
-            "launchpad_id": "ppyy",
-            "companies": [
-                {
-                    "company_name": "*independent",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Peng Yong",
-            "emails": ["ppyy@pubyun.com"]
-        },
-        {
             "launchpad_id": "prykhodchenko",
             "companies": [
                 {
@@ -2212,17 +2245,6 @@
             ],
             "user_name": "Eldar Nugaev",
             "emails": ["eldr@ya.ru", "enugaev@griddynamics.com", "reldan@oscloud.ru"]
-        },
-        {
-            "launchpad_id": "rizumu",
-            "companies": [
-                {
-                    "company_name": "*independent",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Thomas Schreiber",
-            "emails": ["tom@rizu.mu"]
         },
         {
             "launchpad_id": "rjuvvadi",
@@ -2511,6 +2533,17 @@
             "emails": ["me@frostman.ru", "slukjanov@mirantis.com"]
         },
         {
+            "launchpad_id": "smaffulli",
+            "companies": [
+                {
+                    "company_name": "OpenStack Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stefano Maffulli",
+            "emails": ["smaffulli@gmail.com"]
+        },
+        {
             "launchpad_id": "smelikyan",
             "companies": [
                 {
@@ -2686,6 +2719,17 @@
             ],
             "user_name": "William Wolf",
             "emails": ["will.wolf@rackspace.com", "throughnothing@gmail.com"]
+        },
+        {
+            "launchpad_id": "tim-miller-0",
+            "companies": [
+                {
+                    "company_name": "Blue Box",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tim Miller",
+            "emails": ["tim.miller.0@gmail.com"]
         },
         {
             "launchpad_id": "tim-simpson",
@@ -3026,6 +3070,10 @@
             "company_name": "Arista Networks"
         },
         {
+            "domains": ["askbot.com"],
+            "company_name": "Askbot"
+        },
+        {
             "domains": ["atomia.com"],
             "company_name": "Atomia"
         },
@@ -3034,8 +3082,16 @@
             "company_name": "B1 Systems"
         },
         {
+            "domains": ["bacoosta.com"],
+            "company_name": "Bacoosta IT Services"
+        },
+        {
             "domains": ["bigswitch.com"],
             "company_name": "Big Switch Networks"
+        },
+        {
+            "domains": ["bluebox.net"],
+            "company_name": "Blue Box"
         },
         {
             "domains": ["brinkster.com"],
@@ -3412,10 +3468,6 @@
         {
             "domains": ["spilgames.com"],
             "company_name": "Spil Games"
-        },
-        {
-            "domains": ["pednape"],
-            "company_name": "StackOps"
         },
         {
             "domains": ["stackops.com"],
