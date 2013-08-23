@@ -1216,6 +1216,17 @@
             "emails": ["ivoks@ubuntu.com", "ante.karamatic@canonical.com"]
         },
         {
+            "launchpad_id": "jaegerandi",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andreas Jaeger",
+            "emails": ["jaegerandi@gmail.com", "aj@suse.de"]
+        },
+        {
             "launchpad_id": "jake-hyperboledesign",
             "companies": [
                 {
