@@ -380,6 +380,29 @@ def exception_handler():
     return decorator
 
 
+def make_page_title(company, user_id, module, release):
+    if company:
+        memory_storage = get_vault()['memory_storage']
+        company = memory_storage.get_original_company_name(company)
+    if company or user_id:
+        if user_id:
+            s = get_user_from_runtime_storage(user_id)['user_name']
+            if company:
+                s += ' (%s)' % company
+        else:
+            s = company
+    else:
+        s = 'OpenStack community'
+    s += ' contribution'
+    if module:
+        s += ' to %s' % module
+    if release != 'all':
+        s += ' in %s release' % release.capitalize()
+    else:
+        s += ' in all releases'
+    return s
+
+
 def templated(template=None, return_code=200):
     def decorator(f):
         @functools.wraps(f)
@@ -425,6 +448,8 @@ def templated(template=None, return_code=200):
             ctx['company'] = get_single_parameter(kwargs, 'company')
             ctx['module'] = get_single_parameter(kwargs, 'module')
             ctx['user_id'] = get_single_parameter(kwargs, 'user_id')
+            ctx['page_title'] = make_page_title(ctx['company'], ctx['user_id'],
+                                                ctx['module'], ctx['release'])
 
             return flask.render_template(template_name, **ctx), return_code
 
