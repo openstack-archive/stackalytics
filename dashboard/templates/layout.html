@@ -4,7 +4,14 @@
 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-<title>Stackalytics</title>
+<title>Stackalytics {% if page_title %}| {{ page_title }} {% endif %}</title>
+
+{% if not page_title %}
+<meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, and code reviews"/>
+{% else %}
+<meta name="description" content="Full commits and review statistics of {{ page_title }}"/>
+{% endif %}
+<meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />

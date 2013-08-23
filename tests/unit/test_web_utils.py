@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import mock
 import testtools
 
 from dashboard import web
@@ -85,3 +86,25 @@ Implements Blueprint ''' + (
         expected = 'Lorem ipsum. Dolor sit amet.\n Lorem\n ipsum.\ndolor!'
 
         self.assertEqual(expected, web.unwrap_text(original))
+
+    @mock.patch('dashboard.web.get_vault')
+    @mock.patch('dashboard.web.get_user_from_runtime_storage')
+    def test_make_page_title(self, user_patch, vault_patch):
+        memory_storage_mock = mock.Mock()
+        memory_storage_mock.get_original_company_name = mock.Mock(
+            return_value='Mirantis'
+        )
+        vault_patch.return_value = {'memory_storage': memory_storage_mock}
+        user_patch.return_value = {'user_name': 'John Doe'}
+
+        self.assertEqual('OpenStack community contribution in all releases',
+                         web.make_page_title('', '', '', 'all'))
+        self.assertEqual('OpenStack community contribution in Havana release',
+                         web.make_page_title('', '', '', 'Havana'))
+        self.assertEqual('Mirantis contribution in Havana release',
+                         web.make_page_title('Mirantis', '', '', 'Havana'))
+        self.assertEqual('John Doe contribution in Havana release',
+                         web.make_page_title('', 'john_doe', '', 'Havana'))
+        self.assertEqual(
+            'John Doe (Mirantis) contribution to neutron in Havana release',
+            web.make_page_title('Mirantis', 'John Doe', 'neutron', 'Havana'))
