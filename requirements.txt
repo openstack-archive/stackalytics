@@ -5,7 +5,7 @@ Flask-Gravatar
 iso8601
 oslo.config
 paramiko>=1.8.0
-psutil
+psutil<=1.0.1
 PyGithub
 python-memcached
 sh
