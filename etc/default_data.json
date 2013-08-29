@@ -2126,6 +2126,17 @@
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
         },
         {
+            "launchpad_id": "pblaho",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Petr Blaho",
+            "emails": ["pblaho@redhat.com", "petrblaho@gmail.com"]
+        },
+        {
             "launchpad_id": "pekowski",
             "companies": [
                 {
@@ -2223,6 +2234,17 @@
             ],
             "user_name": "Major Hayden",
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
+        },
+        {
+            "launchpad_id": "rbowen",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rich Bowen",
+            "emails": ["rbowen@redhat.com", "rbowen@rcbowen.com"]
         },
         {
             "launchpad_id": "rconradharris",
@@ -3005,6 +3027,17 @@
             ],
             "user_name": "Yuxingchao",
             "emails": ["yuxcer@126.com", "yuxcer@gmail.com"]
+        },
+        {
+            "launchpad_id": "zaitcev",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pete Zaitcev",
+            "emails": ["zaitcev@kotori.zaitcev.us", "zaitcev@redhat.com"]
         },
         {
             "launchpad_id": "zhiteng-huang",
