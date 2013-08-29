@@ -190,7 +190,7 @@ def is_project_type_valid(project_type):
 
 def get_user_from_runtime_storage(user_id):
     runtime_storage_inst = get_vault()['runtime_storage']
-    return runtime_storage_inst.get_by_key('user:%s' % user_id)
+    return utils.load_user(runtime_storage_inst, user_id)
 
 
 # Utils ---------

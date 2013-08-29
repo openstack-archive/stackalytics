@@ -122,6 +122,8 @@ def update_repos(runtime_storage_inst):
     for repo in repos:
         process_repo(repo, runtime_storage_inst, record_processor_inst)
 
+    record_processor_inst.finalize()
+
 
 def apply_corrections(uri, runtime_storage_inst):
     LOG.info('Applying corrections from uri %s', uri)
@@ -158,7 +160,8 @@ def main():
         return not 0
     default_data_processor.process(runtime_storage_inst,
                                    default_data,
-                                   cfg.CONF.sources_root)
+                                   cfg.CONF.sources_root,
+                                   cfg.CONF.force_update)
 
     update_pids(runtime_storage_inst)
 

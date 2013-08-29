@@ -21,6 +21,7 @@ from github import MainClass
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
 from stackalytics.processor import record_processor
+from stackalytics.processor import utils
 from stackalytics.processor import vcs
 
 LOG = logging.getLogger(__name__)
@@ -84,7 +85,7 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
 def _process_users(runtime_storage_inst, users):
     users_index = {}
     for user in users:
-        runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
+        utils.store_user(runtime_storage_inst, user)
         if 'user_id' in user:
             users_index[user['user_id']] = user
         if 'launchpad_id' in user:
@@ -119,15 +120,17 @@ def _update_default_data(runtime_storage_inst, default_data):
             runtime_storage_inst.set_by_key(key, default_data[key])
 
 
-def process(runtime_storage_inst, default_data, sources_root):
+def process(runtime_storage_inst, default_data, sources_root, force_update):
     LOG.debug('Process default data')
 
     normalizer.normalize_default_data(default_data)
 
-    if _check_default_data_change(runtime_storage_inst, default_data):
+    if (_check_default_data_change(runtime_storage_inst, default_data) or
+            force_update):
 
         _update_default_data(runtime_storage_inst, default_data)
 
+        LOG.debug('Gather release index for all repos')
         release_index = {}
         for repo in runtime_storage_inst.get_by_key('repos'):
             vcs_inst = vcs.get_vcs(repo, sources_root)
@@ -135,6 +138,14 @@ def process(runtime_storage_inst, default_data, sources_root):
 
         record_processor_inst = record_processor.RecordProcessor(
             runtime_storage_inst)
+        # need to iterate over full view of records and generate valid
+        # users profiles
+        LOG.debug('Iterate all records to create valid users profiles')
+        for record in record_processor_inst.update(
+                runtime_storage_inst.get_all_records(), release_index):
+            pass
+        # update records according to generated users profiles
+        LOG.debug('Update all records according to users profiles')
         updated_records = record_processor_inst.update(
             runtime_storage_inst.get_all_records(), release_index)
         runtime_storage_inst.set_records(updated_records)

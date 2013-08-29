@@ -50,3 +50,11 @@ def read_json_from_uri(uri):
         return json.loads(raw)
     except Exception as e:
         LOG.warn('Error while reading uri: %s' % e)
+
+
+def store_user(runtime_storage_inst, user):
+    runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
+
+
+def load_user(runtime_storage_inst, user_id):
+    return runtime_storage_inst.get_by_key('user:%s' % user_id)

@@ -37,4 +37,6 @@ OPTS = [
                help='SSH key for gerrit review system access'),
     cfg.StrOpt('ssh-username', default='user',
                help='SSH username for gerrit review system access'),
+    cfg.BoolOpt('force-update', default=False,
+                help='Forcibly read default data and update records'),
 ]
