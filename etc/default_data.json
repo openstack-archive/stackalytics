@@ -89,6 +89,17 @@
             "emails": ["akuno@lavabit.com", "anita.kuno@enovance.com"]
         },
         {
+            "launchpad_id": "alex-gaynor",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Gaynor",
+            "emails": ["alex.gaynor@gmail.com"]
+        },
+        {
             "launchpad_id": "alex-meade",
             "companies": [
                 {
@@ -1853,6 +1864,17 @@
             ],
             "user_name": "Kei Masumoto",
             "emails": ["masumotok@nttdata.co.jp"]
+        },
+        {
+            "launchpad_id": "mathieu-rohon",
+            "companies": [
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mathieu Rohon",
+            "emails": ["mathieu.rohon@gmail.com"]
         },
         {
             "launchpad_id": "mathrock",
