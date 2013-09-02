@@ -2159,6 +2159,17 @@
             "emails": ["pblaho@redhat.com", "petrblaho@gmail.com"]
         },
         {
+            "launchpad_id": "pednape",
+            "companies": [
+                {
+                    "company_name": "StackOps",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pedro Navarro P\u00e9rez",
+            "emails": ["pednape@gmail.com"]
+        },
+        {
             "launchpad_id": "pekowski",
             "companies": [
                 {
