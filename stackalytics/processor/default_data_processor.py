@@ -108,6 +108,7 @@ KEYS = {
     'repos': None,
     'releases': None,
     'companies': _process_companies,
+    'module_groups': None,
 }
 
 

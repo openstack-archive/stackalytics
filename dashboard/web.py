@@ -17,6 +17,7 @@ import cgi
 import datetime
 import functools
 import json
+import operator
 import os
 import re
 import urllib
@@ -101,6 +102,7 @@ def get_vault():
         if have_updates:
             init_project_types(vault)
             init_releases(vault)
+            init_module_groups(vault)
 
     return vault
 
@@ -160,6 +162,43 @@ def init_project_types(vault):
 
     vault['project_type_options'] = project_type_options
     vault['project_type_group_index'] = project_type_group_index
+
+
+def init_module_groups(vault):
+    runtime_storage_inst = vault['runtime_storage']
+    module_index = {}
+    module_id_index = {}
+    module_groups = runtime_storage_inst.get_by_key('module_groups') or []
+
+    for module_group in module_groups:
+        module_group_name = module_group['module_group_name']
+        module_group_id = module_group_name.lower()
+
+        module_id_index[module_group_name] = {
+            'group': True,
+            'id': module_group_id,
+            'text': module_group_name,
+            'modules': [m.lower() for m in module_group['modules']],
+        }
+
+        modules = module_group['modules']
+        for module in modules:
+            if module in module_index:
+                module_index[module].add(module_group_id)
+            else:
+                module_index[module] = set([module_group_id])
+
+    memory_storage_inst = vault['memory_storage']
+    for module in memory_storage_inst.get_modules():
+        module_id_index[module] = {
+            'id': module.lower(),
+            'text': module,
+            'modules': [module.lower()],
+        }
+
+    vault['module_group_index'] = module_index
+    vault['module_id_index'] = module_id_index
+    vault['module_groups'] = module_groups
 
 
 def get_project_type_options():
@@ -226,6 +265,15 @@ def get_single_parameter(kwargs, singular_name, use_default=True):
         return ''
 
 
+def resolve_modules(module_ids):
+    module_id_index = get_vault()['module_id_index']
+    modules = set()
+    for module_id in module_ids:
+        if module_id in module_id_index:
+            modules |= set(module_id_index[module_id]['modules'])
+    return modules
+
+
 # Decorators ---------
 
 def record_filter(ignore=None, use_default=True):
@@ -243,8 +291,8 @@ def record_filter(ignore=None, use_default=True):
             if 'module' not in ignore:
                 param = get_parameter(kwargs, 'module', 'modules', use_default)
                 if param:
-                    record_ids &= (
-                        memory_storage.get_record_ids_by_modules(param))
+                    record_ids &= (memory_storage.get_record_ids_by_modules(
+                        resolve_modules(param)))
 
             if 'project_type' not in ignore:
                 param = get_parameter(kwargs, 'project_type', 'project_types',
@@ -667,7 +715,31 @@ def get_companies_json(records):
 @exception_handler()
 @record_filter(ignore='module')
 def get_modules_json(records):
-    return _get_collection(records, 'modules', 'module', 'module_name')
+    module_group_index = get_vault()['module_group_index']
+    module_id_index = get_vault()['module_id_index']
+
+    modules_set = set()
+    for record in records:
+        module = record['module']
+        if module not in modules_set:
+            modules_set.add(module)
+
+    modules_groups_set = set()
+    for module in modules_set:
+        if module in module_group_index:
+            modules_groups_set |= module_group_index[module]
+
+    modules_set |= modules_groups_set
+
+    query = (flask.request.args.get('module_name') or '').lower()
+    options = []
+
+    for module in modules_set:
+        if module.find(query) >= 0:
+            options.append(module_id_index[module])
+
+    result = sorted(options, key=operator.itemgetter('text'))
+    return json.dumps({'modules': result})
 
 
 @app.route('/data/companies/<company_name>.json')
@@ -686,10 +758,10 @@ def get_company(company_name):
 
 @app.route('/data/modules/<module>.json')
 def get_module(module):
-    memory_storage = get_vault()['memory_storage']
-    for m in memory_storage.get_modules():
-        if m.lower() == module.lower():
-            return json.dumps({'module': {'id': module, 'text': m}})
+    module_id_index = get_vault()['module_id_index']
+    module = module.lower()
+    if module in module_id_index:
+        return json.dumps({'module': module_id_index[module]})
     return json.dumps({})
 
 

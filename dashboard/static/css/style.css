@@ -208,6 +208,11 @@ a[href^="https://launchpad"]:after {
     font-size: 9pt;
 }
 
+.select_group {
+    font-weight: bold;
+    color: #4bb2c5;
+}
+
 .review_mark {
     font-weight: bold;
 }
