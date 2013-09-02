@@ -1087,12 +1087,12 @@
             "launchpad_id": "gtt116",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "Netease",
                     "end_date": null
                 }
             ],
             "user_name": "TianTian Gao",
-            "emails": ["gtt116@gmail.com", "gtt116@126.com"]
+            "emails": ["hzgaott@corp.netease.com", "gtt116@gmail.com", "gtt116@126.com"]
         },
         {
             "launchpad_id": "harlowja",
@@ -3071,6 +3071,17 @@
             ],
             "user_name": "Pete Zaitcev",
             "emails": ["zaitcev@kotori.zaitcev.us", "zaitcev@redhat.com"]
+        },
+        {
+            "launchpad_id": "zealot",
+            "companies": [
+                {
+                    "company_name": "Netease",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zang MingJie",
+            "emails": ["zealot0630@gmail.com"]
         },
         {
             "launchpad_id": "zhiteng-huang",
