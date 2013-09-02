@@ -3486,6 +3486,10 @@
             "company_name": "SINA"
         },
         {
+            "domains": ["stackinsider.com"],
+            "company_name": "Stackinsider"
+        },
+        {
             "domains": ["suse.cz", "suse.de", "suse.com"],
             "company_name": "SUSE"
         },
