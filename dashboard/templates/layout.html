@@ -276,7 +276,14 @@
                                 callback(data["module"]);
                             });
                 }
-            }        });
+            },
+            formatResultCssClass: function (item) {
+                if (item.group) {
+                    return "select_group"
+                }
+                return "";
+            }
+        });
 
         $('#module')
             .on("change", function(e) { reload(); });

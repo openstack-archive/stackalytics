@@ -85,6 +85,13 @@
         },
         {
             "branches": ["master"],
+            "module": "python-glanceclient",
+            "project_group": "core",
+            "project_type": "openstack",
+            "uri": "git://github.com/openstack/python-glanceclient.git"
+        },
+        {
+            "branches": ["master"],
             "module": "stackalytics",
             "project_type": "stackforge",
             "uri": "git://github.com/stackforge/stackalytics.git"
@@ -96,6 +103,13 @@
             "organization": "openstack-dev",
             "project_type": "openstack",
             "project_group": null
+        }
+    ],
+
+    "module_groups": [
+        {
+            "module_group_name": "glance-group",
+            "modules": ["glance", "python-glanceclient"]
         }
     ],
 

@@ -143,6 +143,25 @@
                 "required": ["organization", "project_type"],
                 "additionalProperties": false
             }
+        },
+        "module_groups": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "module_group_name": {
+                        "type": "string"
+                    },
+                    "modules": {
+                        "type": ["array"],
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": ["module_group_name", "modules"],
+                "additionalProperties": false
+            }
         }
     }
 }

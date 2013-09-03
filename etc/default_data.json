@@ -4286,6 +4286,40 @@
             "project_group": null
         }
     ],
+    "module_groups": [
+        {
+            "module_group_name": "nova-group",
+            "modules": ["nova", "python-novaclient"]
+        },
+        {
+            "module_group_name": "neutron-group",
+            "modules": ["neutron", "python-neutronclient"]
+        },
+        {
+            "module_group_name": "keystone-group",
+            "modules": ["keystone", "python-keystoneclient"]
+        },
+        {
+            "module_group_name": "cinder-group",
+            "modules": ["cinder", "python-cinderclient"]
+        },
+        {
+            "module_group_name": "glance-group",
+            "modules": ["glance", "python-glanceclient"]
+        },
+        {
+            "module_group_name": "swift-group",
+            "modules": ["swift", "python-swiftclient"]
+        },
+        {
+            "module_group_name": "savanna-group",
+            "modules": ["savanna", "python-savannaclient", "savanna-dashboard", "savanna-extra"]
+        },
+        {
+            "module_group_name": "murano-group",
+            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-common", "murano-conductor", "murano-dashboard", "murano-deployment", "murano-docs", "murano-tests"]
+        }
+    ],
     "releases": [
         {
             "release_name": "prehistory",
