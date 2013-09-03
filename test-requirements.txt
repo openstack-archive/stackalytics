@@ -6,5 +6,7 @@ fixtures>=0.3.12
 jsonschema
 mock
 python-subunit
+sphinx>=1.1.2
+sphinxcontrib-httpdomain
 testrepository>=0.0.13
 testtools>=0.9.32
