@@ -142,9 +142,8 @@ def process(runtime_storage_inst, default_data, sources_root, force_update):
         # need to iterate over full view of records and generate valid
         # users profiles
         LOG.debug('Iterate all records to create valid users profiles')
-        for record in record_processor_inst.update(
-                runtime_storage_inst.get_all_records(), release_index):
-            pass
+        for record in runtime_storage_inst.get_all_records():
+            record_processor_inst.update_user(record)
         # update records according to generated users profiles
         LOG.debug('Update all records according to users profiles')
         updated_records = record_processor_inst.update(

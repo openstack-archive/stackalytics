@@ -93,7 +93,7 @@ class RecordProcessor(object):
     def _get_independent(self):
         return self.domains_index['']
 
-    def _update_user(self, user, email):
+    def _update_user_profile(self, user, email):
         LOG.debug('Add email %s to user %s', email, user['user_id'])
         user['emails'].append(email)
         company_name = self._get_company_by_email(email)
@@ -104,25 +104,22 @@ class RecordProcessor(object):
             user['companies'][0]['company_name'] = company_name
             self.updated_users.add(user['user_id'])
 
-    def _update_record_and_user(self, record):
-        email = record['author_email'].lower()
-        record['author_email'] = email
+    def update_user(self, record):
+        email = record['author_email']
 
         if email in self.users_index:
             user = self.users_index[email]
-            record['launchpad_id'] = user['launchpad_id']
         else:
             if ('launchpad_id' in record) and (record['launchpad_id']):
                 launchpad_id = record['launchpad_id']
                 user_name = record['author_name']
             else:
                 launchpad_id, user_name = self._get_lp_info(email)
-                record['launchpad_id'] = launchpad_id
 
             if (launchpad_id) and (launchpad_id in self.users_index):
                 # merge emails
                 user = self.users_index[launchpad_id]
-                self._update_user(user, email)
+                self._update_user_profile(user, email)
             else:
                 # create new
                 if not user_name:
@@ -134,24 +131,27 @@ class RecordProcessor(object):
             if user['launchpad_id']:
                 self.users_index[user['launchpad_id']] = user
 
-        record['user_id'] = user['user_id']
+        return user
 
-        company_by_user = self._find_company(user['companies'], record['date'])
-        if company_by_user == '*robots':
-            # don't map robots by email
-            company = company_by_user
-        else:
-            company = self._get_company_by_email(email)
-            if not company:
-                company = company_by_user
-        record['company_name'] = company
+    def _update_record_and_user(self, record):
+        user = self.update_user(record)
+
+        record['user_id'] = user['user_id']
+        record['launchpad_id'] = user['launchpad_id']
 
         if ('user_name' in user) and (user['user_name']):
             record['author_name'] = user['user_name']
 
+        company = self._find_company(user['companies'], record['date'])
+        if company != '*robots':
+            company = (self._get_company_by_email(record['author_email'])
+                       or company)
+        record['company_name'] = company
+
     def _process_commit(self, record):
         record['primary_key'] = record['commit_id']
         record['loc'] = record['lines_added'] + record['lines_deleted']
+        record['author_email'] = record['author_email'].lower()
 
         self._update_record_and_user(record)
 
@@ -169,7 +169,7 @@ class RecordProcessor(object):
         review['primary_key'] = review['id']
         review['launchpad_id'] = owner['username']
         review['author_name'] = owner['name']
-        review['author_email'] = owner['email']
+        review['author_email'] = owner['email'].lower()
         review['date'] = record['createdOn']
 
         self._update_record_and_user(review)
@@ -199,7 +199,7 @@ class RecordProcessor(object):
                                        mark['type'])
                 mark['launchpad_id'] = reviewer['username']
                 mark['author_name'] = reviewer['name']
-                mark['author_email'] = reviewer['email']
+                mark['author_email'] = reviewer['email'].lower()
                 mark['module'] = module
                 mark['review_id'] = review_id
 
