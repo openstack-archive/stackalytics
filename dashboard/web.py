@@ -511,6 +511,26 @@ def templated(template=None, return_code=200):
     return decorator
 
 
+def jsonify(root='data'):
+    def decorator(func):
+        @functools.wraps(func)
+        def jsonify_decorated_function(*args, **kwargs):
+            callback = flask.app.request.args.get('callback', False)
+            data = json.dumps({root: func(*args, **kwargs)})
+
+            if callback:
+                data = str(callback) + '(' + data + ')'
+                content_type = 'application/javascript'
+            else:
+                content_type = 'application/json'
+
+            return app.response_class(data, mimetype=content_type)
+
+        return jsonify_decorated_function
+
+    return decorator
+
+
 # Handlers ---------
 
 @app.route('/')
@@ -604,41 +624,41 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
     return response
 
 
-@app.route('/data/companies')
+@app.route('/api/1.0/stats/companies')
+@jsonify('stats')
 @exception_handler()
 @record_filter()
 @aggregate_filter()
 def get_companies(records, metric_filter, finalize_handler):
-    response = _get_aggregated_stats(records, metric_filter,
-                                     get_memory_storage().get_companies(),
-                                     'company_name')
-    return json.dumps(response)
+    return _get_aggregated_stats(records, metric_filter,
+                                 get_memory_storage().get_companies(),
+                                 'company_name')
 
 
-@app.route('/data/modules')
+@app.route('/api/1.0/stats/modules')
+@jsonify('stats')
 @exception_handler()
 @record_filter()
 @aggregate_filter()
 def get_modules(records, metric_filter, finalize_handler):
-    response = _get_aggregated_stats(records, metric_filter,
-                                     get_memory_storage().get_modules(),
-                                     'module')
-    return json.dumps(response)
+    return _get_aggregated_stats(records, metric_filter,
+                                 get_memory_storage().get_modules(),
+                                 'module')
 
 
-@app.route('/data/engineers')
+@app.route('/api/1.0/stats/engineers')
+@jsonify('stats')
 @exception_handler()
 @record_filter()
 @aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
-    response = _get_aggregated_stats(records, metric_filter,
-                                     get_memory_storage().get_user_ids(),
-                                     'user_id', 'author_name',
-                                     finalize_handler=finalize_handler)
-    return json.dumps(response)
+    return _get_aggregated_stats(records, metric_filter,
+                                 get_memory_storage().get_user_ids(),
+                                 'user_id', 'author_name',
+                                 finalize_handler=finalize_handler)
 
 
-def extend_record(record):
+def _extend_record(record):
     record['date_str'] = format_datetime(record['date'])
     record['author_link'] = make_link(
         record['author_name'], '/',
@@ -649,7 +669,8 @@ def extend_record(record):
     record['gravatar'] = gravatar(record['author_email'])
 
 
-@app.route('/data/activity.json')
+@app.route('/api/1.0/activity')
+@jsonify('activity')
 @exception_handler()
 @record_filter()
 def get_activity_json(records):
@@ -665,7 +686,7 @@ def get_activity_json(records):
             if 'correction_comment' not in commit:
                 commit['correction_comment'] = ''
             commit['message'] = make_commit_message(record)
-            extend_record(commit)
+            _extend_record(commit)
             result.append(commit)
         elif record['record_type'] == 'mark':
             review = record.copy()
@@ -678,45 +699,41 @@ def get_activity_json(records):
                     parent['author_name'], '/',
                     {'user_id': parent['user_id'],
                      'company': ''})
-                extend_record(review)
+                _extend_record(review)
                 result.append(review)
 
     result.sort(key=lambda x: x['date'], reverse=True)
-    return json.dumps({'activity':
-                      result[start_record:start_record + page_size]})
+    return result[start_record:start_record + page_size]
 
 
-@app.route('/data/contribution.json')
+@app.route('/api/1.0/contribution')
+@jsonify('contribution')
 @exception_handler()
 @record_filter(ignore='metric')
 def get_contribution_json(records):
-    return json.dumps({'contribution': contribution_details(records)})
+    return contribution_details(records)
 
 
-def _get_collection(records, collection_name, name_key, query_param=None):
-    if not query_param:
-        query_param = name_key
-    query = flask.request.args.get(query_param) or ''
+@app.route('/api/1.0/companies')
+@jsonify('companies')
+@exception_handler()
+@record_filter(ignore='company')
+def get_companies_json(records):
+    query = flask.request.args.get('company_name') or ''
     options = set()
     for record in records:
-        name = record[name_key]
+        name = record['company_name']
         if name in options:
             continue
         if name.lower().find(query.lower()) >= 0:
             options.add(name)
     result = [{'id': safe_encode(c.lower()), 'text': c}
               for c in sorted(options)]
-    return json.dumps({collection_name: result})
+    return result
 
 
-@app.route('/data/companies.json')
-@exception_handler()
-@record_filter(ignore='company')
-def get_companies_json(records):
-    return _get_collection(records, 'companies', 'company_name')
-
-
-@app.route('/data/modules.json')
+@app.route('/api/1.0/modules')
+@jsonify('modules')
 @exception_handler()
 @record_filter(ignore='module')
 def get_modules_json(records):
@@ -743,34 +760,34 @@ def get_modules_json(records):
         if module.find(query) >= 0:
             options.append(module_id_index[module])
 
-    result = sorted(options, key=operator.itemgetter('text'))
-    return json.dumps({'modules': result})
+    return sorted(options, key=operator.itemgetter('text'))
 
 
-@app.route('/data/companies/<company_name>.json')
+@app.route('/api/1.0/companies/<company_name>')
+@jsonify('company')
 def get_company(company_name):
     memory_storage = get_vault()['memory_storage']
     for company in memory_storage.get_companies():
         if company.lower() == company_name.lower():
-            return json.dumps({
-                'company': {
-                    'id': company_name,
-                    'text': memory_storage.get_original_company_name(
-                company_name)}
-            })
-    return json.dumps({})
+            return {
+                'id': company_name,
+                'text': memory_storage.get_original_company_name(company_name)
+            }
+    flask.abort(404)
 
 
-@app.route('/data/modules/<module>.json')
+@app.route('/api/1.0/modules/<module>')
+@jsonify('module')
 def get_module(module):
     module_id_index = get_vault()['module_id_index']
     module = module.lower()
     if module in module_id_index:
-        return json.dumps({'module': module_id_index[module]})
-    return json.dumps({})
+        return module_id_index[module]
+    flask.abort(404)
 
 
-@app.route('/data/users.json')
+@app.route('/api/1.0/users')
+@jsonify('users')
 @exception_handler()
 @record_filter(ignore='user_id')
 def get_users_json(records):
@@ -786,10 +803,11 @@ def get_users_json(records):
             user_ids.add(user_id)
             result.append({'id': user_id, 'text': user_name})
     result.sort(key=lambda x: x['text'])
-    return json.dumps({'users': result})
+    return result
 
 
-@app.route('/data/users/<user_id>.json')
+@app.route('/api/1.0/users/<user_id>')
+@jsonify('user')
 def get_user(user_id):
     user = get_user_from_runtime_storage(user_id)
     if not user:
@@ -803,10 +821,11 @@ def get_user(user_id):
     else:
         user['company_link'] = ''
     user['gravatar'] = gravatar(user['emails'][0])
-    return json.dumps({'user': user})
+    return user
 
 
-@app.route('/data/timeline')
+@app.route('/api/1.0/stats/timeline')
+@jsonify('timeline')
 @exception_handler()
 @record_filter(ignore='release')
 def timeline(records, **kwargs):
@@ -871,10 +890,11 @@ def timeline(records, **kwargs):
         array_commits.append([week_str, week_stat_commits[week]])
         array_commits_hl.append([week_str, week_stat_commits_hl[week]])
 
-    return json.dumps([array_commits, array_commits_hl, array_loc])
+    return [array_commits, array_commits_hl, array_loc]
 
 
-@app.route('/data/report/commit')
+@app.route('/api/1.0/report/commits')
+@jsonify('commits')
 @exception_handler()
 @record_filter()
 def get_commit_report(records):
@@ -885,7 +905,7 @@ def get_commit_report(records):
             nr = dict([(k, record[k]) for k in ['loc', 'subject', 'module',
                                                 'primary_key', 'change_id']])
             response.append(nr)
-    return json.dumps(response, skipkeys=True, indent=2)
+    return response
 
 
 # Jinja Filters ---------

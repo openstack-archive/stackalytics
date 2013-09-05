@@ -14,16 +14,16 @@
 {% block scripts %}
 <script type="text/javascript">
 
-    timelineRenderer();
+    renderTimeline();
 
     {% if show_company_breakdown %}
-    chartAndTableRenderer("/data/companies", "company_container", "company_table", "company_chart", "company");
+    renderTableAndChart("/api/1.0/stats/companies", "company_container", "company_table", "company_chart", "company");
     {% endif %}
     {% if show_engineer_breakdown %}
-    chartAndTableRenderer("/data/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
+    renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
     {% endif %}
     {% if show_module_breakdown %}
-    chartAndTableRenderer("/data/modules", "module_container", "module_table", "module_chart", "module");
+    renderTableAndChart("/api/1.0/stats/modules", "module_container", "module_table", "module_chart", "module");
     {% endif %}
 
     {% if show_activity %}
@@ -33,7 +33,7 @@
 
         function load_activity() {
             $.ajax({
-                url: make_uri("/data/activity.json", {page_size: page_size, start_record: start_record}),
+                url: make_uri("/api/1.0/activity", {page_size: page_size, start_record: start_record}),
                 dataType: "json",
                 success: function (data) {
                     if (data["activity"].length < page_size) {
@@ -65,7 +65,7 @@
     {% if show_user_profile %}
         $(document).ready(function () {
             $.ajax({
-                url: make_uri("/data/users/{{ user_id }}.json"),
+                url: make_uri("/api/1.0/users/{{ user_id }}"),
                 dataType: "json",
                 success: function (data) {
                     $("#user_profile_template").tmpl(data["user"]).appendTo("#user_profile_container");
@@ -77,7 +77,7 @@
     {% if show_contribution %}
         $(document).ready(function () {
             $.ajax({
-                url: make_uri("/data/contribution.json"),
+                url: make_uri("/api/1.0/contribution"),
                 dataType: "json",
                 success: function (data) {
                     $("#contribution_template").tmpl(data["contribution"]).appendTo("#contribution_container");
