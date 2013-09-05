@@ -4317,7 +4317,7 @@
         },
         {
             "module_group_name": "savanna-group",
-            "modules": ["savanna", "python-savannaclient", "savanna-dashboard", "savanna-extra"]
+            "modules": ["savanna", "python-savannaclient", "savanna-dashboard", "savanna-extra", "savanna-image-elements", "puppet-savanna"]
         },
         {
             "module_group_name": "murano-group",
