@@ -2123,7 +2123,7 @@
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
                 "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com",
-                "reddwarf-jenkins@googlegroups.com"]
+                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
@@ -3176,6 +3176,10 @@
         {
             "domains": ["bigswitch.com"],
             "company_name": "Big Switch Networks"
+        },
+        {
+            "domains": ["bitergia.com"],
+            "company_name": "Bitergia"
         },
         {
             "domains": ["bluebox.net"],
