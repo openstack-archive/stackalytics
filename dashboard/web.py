@@ -33,6 +33,7 @@ from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
+from stackalytics import version as stackalytics_version
 
 
 # Constants and Parameters ---------
@@ -498,6 +499,10 @@ def templated(template=None, return_code=200):
             ctx['user_id'] = get_single_parameter(kwargs, 'user_id')
             ctx['page_title'] = make_page_title(ctx['company'], ctx['user_id'],
                                                 ctx['module'], ctx['release'])
+            ctx['stackalytics_version'] = (
+                stackalytics_version.version_info.version_string())
+            ctx['stackalytics_release'] = (
+                stackalytics_version.version_info.release_string())
 
             return flask.render_template(template_name, **ctx), return_code
 
