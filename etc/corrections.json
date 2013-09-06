@@ -449,6 +449,78 @@
             "primary_key": "e434448adb7b92701348eeeb5bee6b1abae31923",
             "module": "database-api",
             "subject": "Gerrit Review for Database Developer Guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 39823,
+            "change_id": null,
+            "primary_key": "07652d00ffd7bb9844c8e5da314fb7dbbe5523fa",
+            "module": "activity-board",
+            "subject": "Removed previous version from OpenStack"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 76495,
+            "change_id": null,
+            "primary_key": "1fa9515104d7611a9c6bff957ae8d97b86dba64a",
+            "module": "activity-board",
+            "subject": "First version"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 32792,
+            "change_id": null,
+            "primary_key": "5051bcb8142720d52da80e8c963f4b58b922e307",
+            "module": "activity-board",
+            "subject": "New version of companies analysis"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4453,
+            "change_id": null,
+            "primary_key": "69387aaa6e72cf147e22b1a422c277e18263cee8",
+            "module": "activity-board",
+            "subject": "wrong dir"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 50980,
+            "change_id": null,
+            "primary_key": "71d5fdcb617aead385f7f49a47d8094001c44d71",
+            "module": "activity-board",
+            "subject": "updated to last version of vizgrimoirejs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 21621,
+            "change_id": null,
+            "primary_key": "ff8f7ab14c720bd7265d7e9d15d5293188fd39ed",
+            "module": "activity-board",
+            "subject": "removing old dash"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 36497,
+            "change_id": null,
+            "primary_key": "786c818d54176ecb0b5b241b5c1df8866195f3ce",
+            "module": "activity-board",
+            "subject": "cleaning"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 11294,
+            "change_id": null,
+            "primary_key": "a1a0ea64da9547f4c097a444dd74124f5337ad98",
+            "module": "tuskar",
+            "subject": "update openstack-common.conf and import from oslo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 184736,
+            "change_id": "I49c5d46cc16696c4c719ee2c6d65c42b03183ba9",
+            "primary_key": "dbfa71f490487c4fabc5be71dfb8426e5d651055",
+            "module": "tuskar-ui",
+            "subject": "Reorganise the tuskar files"
         }
     ]
 }
