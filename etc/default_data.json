@@ -148,10 +148,6 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
-                    "end_date": "2013-Apr-01"
-                },
-                {
-                    "company_name": "OpenStack Foundation",
                     "end_date": null
                 }
             ],
