@@ -2702,6 +2702,17 @@
             "emails": ["sbaker@redhat.com", "steve@stevebaker.org"]
         },
         {
+            "launchpad_id": "subbu",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Subramanian Neelakantan",
+            "emails": ["subramanian.neelakantan@gmail.com"]
+        },
+        {
             "launchpad_id": "sulochan-acharya",
             "companies": [
                 {
