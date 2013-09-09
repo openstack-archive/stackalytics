@@ -2868,7 +2868,7 @@
                 }
             ],
             "user_name": "Thierry Carrez",
-            "emails": ["thierry@openstack.org"]
+            "emails": ["thierry@openstack.org", "thierry.carrez@ubuntu.com"]
         },
         {
             "launchpad_id": "u-matt-h",
@@ -3217,11 +3217,7 @@
             "company_name": "Calxeda"
         },
         {
-            "domains": ["canonical.com"],
-            "company_name": "Canonical"
-        },
-        {
-            "domains": ["ubuntu.com"],
+            "domains": ["canonical.com", "ubuntu.com"],
             "company_name": "Canonical"
         },
         {
