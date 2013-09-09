@@ -506,7 +506,7 @@
                 }
             ],
             "user_name": "James E. Blair",
-            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com"]
+            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org"]
         },
         {
             "launchpad_id": "corywright",
@@ -2119,7 +2119,7 @@
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
                 "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com",
-                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com"]
+                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com", "fuel-ci-bot@mirantis.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
@@ -2416,7 +2416,7 @@
                 }
             ],
             "user_name": "Russell Bryant",
-            "emails": ["russell@russellbryant.net", "rbryant@redhat.com"]
+            "emails": ["russell@russellbryant.net", "rbryant@redhat.com", "rbryant@pbx.openstack.org"]
         },
         {
             "launchpad_id": "ryu-midokura",
@@ -3475,10 +3475,6 @@
         {
             "domains": ["oopss.org"],
             "company_name": "Oopss.org"
-        },
-        {
-            "domains": ["openstack.org"],
-            "company_name": "OpenStack Foundation"
         },
         {
             "domains": ["orange.com"],
