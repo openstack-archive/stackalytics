@@ -52,6 +52,14 @@ def read_json_from_uri(uri):
         LOG.warn('Error while reading uri: %s' % e)
 
 
+def make_range(start, stop, step):
+    last_full = stop - ((stop - start) % step)
+    for i in xrange(start, last_full, step):
+        yield xrange(i, i + step)
+    if stop > last_full:
+        yield xrange(last_full, stop)
+
+
 def store_user(runtime_storage_inst, user):
     runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
 

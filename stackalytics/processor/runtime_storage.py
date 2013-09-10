@@ -18,6 +18,7 @@ import re
 import memcache
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
 
@@ -131,7 +132,7 @@ class MemcachedStorage(RuntimeStorage):
             for i in self.get_all_records():
                 yield i
         else:
-            for update_id_set in self._make_range(last_update, update_count,
+            for update_id_set in utils.make_range(last_update, update_count,
                                                   BULK_READ_SIZE):
                 update_set = self.memcached.get_multi(
                     update_id_set, UPDATE_ID_PREFIX).values()
@@ -156,7 +157,7 @@ class MemcachedStorage(RuntimeStorage):
                     min_update = n
 
         first_valid_update = self.memcached.get('first_valid_update') or 0
-        for delete_id_set in self._make_range(first_valid_update, min_update,
+        for delete_id_set in utils.make_range(first_valid_update, min_update,
                                               BULK_DELETE_SIZE):
             if not self.memcached.delete_multi(delete_id_set,
                                                key_prefix=UPDATE_ID_PREFIX):
@@ -182,15 +183,8 @@ class MemcachedStorage(RuntimeStorage):
     def _set_record_count(self, count):
         self.memcached.set('record:count', count)
 
-    def _make_range(self, start, stop, step):
-        i = start
-        for i in xrange(start, stop, step):
-            yield xrange(i, i + step)
-        if (stop - start) % step > 0:
-            yield xrange(i, stop)
-
     def get_all_records(self):
-        for record_id_set in self._make_range(0, self._get_record_count(),
+        for record_id_set in utils.make_range(0, self._get_record_count(),
                                               BULK_READ_SIZE):
             for i in self.memcached.get_multi(
                     record_id_set, RECORD_ID_PREFIX).values():
