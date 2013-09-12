@@ -48,6 +48,14 @@ METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
     'marks': 'Reviews',
+    'emails': 'Emails',
+}
+
+METRIC_TO_RECORD_TYPE = {
+    'loc': 'commit',
+    'commits': 'commit',
+    'marks': 'mark',
+    'emails': 'email'
 }
 
 DEFAULT_RECORDS_LIMIT = 10
@@ -130,9 +138,9 @@ def init_releases(vault):
 def init_project_types(vault):
     runtime_storage_inst = vault['runtime_storage']
     project_type_options = {}
-    project_type_group_index = {'all': set()}
+    project_type_group_index = {'all': set(['unknown'])}
 
-    for repo in runtime_storage_inst.get_by_key('repos') or []:
+    for repo in utils.load_repos(runtime_storage_inst):
         project_type = repo['project_type'].lower()
         project_group = None
         if ('project_group' in repo) and (repo['project_group']):
@@ -331,13 +339,10 @@ def record_filter(ignore=None, use_default=True):
                                 c.lower() for c in param))
 
             if 'metric' not in ignore:
-                param = get_parameter(kwargs, 'metric')
-                if 'reviews' in param:
-                    record_ids &= memory_storage.get_review_ids()
-                elif 'marks' in param:
-                    record_ids &= memory_storage.get_mark_ids()
-                elif ('loc' in param) or ('commits' in param):
-                    record_ids &= memory_storage.get_commit_ids()
+                metrics = get_parameter(kwargs, 'metric')
+                for metric in metrics:
+                    record_ids &= memory_storage.get_record_ids_by_type(
+                        METRIC_TO_RECORD_TYPE[metric])
 
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
@@ -352,7 +357,7 @@ def aggregate_filter():
         @functools.wraps(f)
         def aggregate_filter_decorated_function(*args, **kwargs):
 
-            def commit_filter(result, record, param_id):
+            def incremental_filter(result, record, param_id):
                 result[record[param_id]]['metric'] += 1
 
             def loc_filter(result, record, param_id):
@@ -391,20 +396,18 @@ def aggregate_filter():
             metric_param = (flask.request.args.get('metric') or
                             get_default('metric'))
             metric = metric_param.lower()
-            aggregate_filter = None
 
-            if metric == 'commits':
-                metric_filter = commit_filter
-            elif metric == 'loc':
-                metric_filter = loc_filter
-            elif metric == 'marks':
-                metric_filter = mark_filter
-                aggregate_filter = mark_finalize
-            else:
+            metric_to_filters_map = {
+                'commits': (incremental_filter, None),
+                'loc': (loc_filter, None),
+                'marks': (mark_filter, mark_finalize),
+                'emails': (incremental_filter, None),
+            }
+            if metric not in metric_to_filters_map:
                 raise Exception('Invalid metric %s' % metric)
 
-            kwargs['metric_filter'] = metric_filter
-            kwargs['finalize_handler'] = aggregate_filter
+            kwargs['metric_filter'] = metric_to_filters_map[metric][0]
+            kwargs['finalize_handler'] = metric_to_filters_map[metric][1]
             return f(*args, **kwargs)
 
         return aggregate_filter_decorated_function
@@ -548,57 +551,35 @@ def page_not_found(e):
 def contribution_details(records):
     blueprints_map = {}
     bugs_map = {}
-    companies_map = {}
-    commits = []
     marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
+    commit_count = 0
     loc = 0
 
     for record in records:
-        if record['record_type'] == 'commit':
-            loc += record['loc']
-            commit = record.copy()
-            commit['branches'] = ','.join(commit['branches'])
-            commits.append(commit)
-            blueprint = commit['blueprint_id']
-            if blueprint:
-                if blueprint in blueprints_map:
-                    blueprints_map[blueprint].append(commit)
-                else:
-                    blueprints_map[blueprint] = [commit]
+        if 'blueprint_id' in record:
+            for bp in record['blueprint_id']:
+                blueprints_map[bp] = record
+        if 'bug_id' in record:
+            for bug in record['bug_id']:
+                bugs_map[bug] = record
 
-            bug = commit['bug_id']
-            if bug:
-                if bug in bugs_map:
-                    bugs_map[bug].append(commit)
-                else:
-                    bugs_map[bug] = [commit]
-
-            company = record['company_name']
-            if company:
-                if company in companies_map:
-                    companies_map[company]['loc'] += record['loc']
-                    companies_map[company]['commits'] += 1
-                else:
-                    companies_map[company] = {'loc': record['loc'],
-                                              'commits': 1}
-        elif record['record_type'] == 'mark':
+        if record['record_type'] == 'mark':
             marks[int(record['value'])] += 1
+        elif record['record_type'] == 'commit':
+            commit_count += 1
+            loc += record['loc']
 
-    blueprints = sorted([{'id': key,
-                          'module': value[0]['module'],
-                          'records': value}
+    blueprints = sorted([{'id': key, 'module': value['module']}
                          for key, value in blueprints_map.iteritems()],
                         key=lambda x: x['id'])
-    bugs = sorted([{'id': key, 'records': value}
+    bugs = sorted([{'id': key, 'module': value['module']}
                    for key, value in bugs_map.iteritems()],
                   key=lambda x: int(x['id']))
-    commits.sort(key=lambda x: x['date'], reverse=True)
 
     result = {
         'blueprints': blueprints,
         'bugs': bugs,
-        'commit_count': len(commits),
-        'companies': companies_map,
+        'commit_count': commit_count,
         'loc': loc,
         'marks': marks,
     }
@@ -701,6 +682,11 @@ def get_activity_json(records):
                      'company': ''})
                 _extend_record(review)
                 result.append(review)
+        elif record['record_type'] == 'email':
+            email = record.copy()
+            _extend_record(email)
+            email['email_link'] = email.get('email_link') or ''
+            result.append(email)
 
     result.sort(key=lambda x: x['date'], reverse=True)
     return result[start_record:start_record + page_size]
@@ -865,10 +851,10 @@ def timeline(records, **kwargs):
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
     param = get_parameter(kwargs, 'metric')
-    if ('reviews' in param) or ('marks' in param):
-        handler = lambda record: 0
-    else:
+    if ('commits' in param) or ('loc' in param):
         handler = lambda record: record['loc']
+    else:
+        handler = lambda record: 0
 
     # fill stats with the data
     for record in records:

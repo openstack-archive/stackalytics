@@ -3717,6 +3717,7 @@
             ],
             "uri": "git://github.com/openstack/nova.git",
             "module": "nova",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3746,6 +3747,7 @@
             ],
             "uri": "git://github.com/openstack/keystone.git",
             "module": "keystone",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3770,6 +3772,7 @@
             ],
             "uri": "git://github.com/openstack/cinder.git",
             "module": "cinder",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3799,6 +3802,7 @@
             ],
             "uri": "git://github.com/openstack/glance.git",
             "module": "glance",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3828,6 +3832,7 @@
             ],
             "uri": "git://github.com/openstack/neutron.git",
             "module": "neutron",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3857,6 +3862,7 @@
             ],
             "uri": "git://github.com/openstack/horizon.git",
             "module": "horizon",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3886,6 +3892,7 @@
             ],
             "uri": "git://github.com/openstack/swift.git",
             "module": "swift",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3910,6 +3917,7 @@
             ],
             "uri": "git://github.com/openstack/python-keystoneclient.git",
             "module": "python-keystoneclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3934,6 +3942,7 @@
             ],
             "uri": "git://github.com/openstack/python-novaclient.git",
             "module": "python-novaclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3953,6 +3962,7 @@
             ],
             "uri": "git://github.com/openstack/python-cinderclient.git",
             "module": "python-cinderclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3972,6 +3982,7 @@
             ],
             "uri": "git://github.com/openstack/python-glanceclient.git",
             "module": "python-glanceclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -3996,6 +4007,7 @@
             ],
             "uri": "git://github.com/openstack/python-neutronclient.git",
             "module": "python-neutronclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4015,6 +4027,7 @@
             ],
             "uri": "git://github.com/openstack/python-swiftclient.git",
             "module": "python-swiftclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4034,6 +4047,7 @@
             ],
             "uri": "git://github.com/openstack/heat.git",
             "module": "heat",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4053,6 +4067,7 @@
             ],
             "uri": "git://github.com/openstack/python-heatclient.git",
             "module": "python-heatclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4072,6 +4087,7 @@
             ],
             "uri": "git://github.com/openstack/ceilometer.git",
             "module": "ceilometer",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4086,6 +4102,7 @@
             ],
             "uri": "git://github.com/openstack/python-ceilometerclient.git",
             "module": "python-ceilometerclient",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4100,6 +4117,7 @@
             ],
             "uri": "git://github.com/openstack/oslo-incubator.git",
             "module": "oslo-incubator",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4114,6 +4132,7 @@
             ],
             "uri": "git://github.com/openstack/oslo.config.git",
             "module": "oslo.config",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4128,6 +4147,7 @@
             ],
             "uri": "git://github.com/openstack/compute-api.git",
             "module": "compute-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4142,6 +4162,7 @@
             ],
             "uri": "git://github.com/openstack/identity-api.git",
             "module": "identity-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4156,6 +4177,7 @@
             ],
             "uri": "git://github.com/openstack/image-api.git",
             "module": "image-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4170,6 +4192,7 @@
             ],
             "uri": "git://github.com/openstack/netconn-api.git",
             "module": "netconn-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4184,6 +4207,7 @@
             ],
             "uri": "git://github.com/openstack/object-api.git",
             "module": "object-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4198,6 +4222,7 @@
             ],
             "uri": "git://github.com/openstack/volume-api.git",
             "module": "volume-api",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4222,6 +4247,7 @@
             ],
             "uri": "git://github.com/openstack/openstack-manuals.git",
             "module": "openstack-manuals",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4236,6 +4262,7 @@
             ],
             "uri": "git://github.com/openstack/api-site.git",
             "module": "api-site",
+            "organization": "openstack",
             "project_type": "openstack"
         },
         {
@@ -4243,6 +4270,7 @@
             "branches": ["master"],
             "uri": "git://github.com/openstack/trove.git",
             "project_type": "openstack",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
@@ -4250,6 +4278,7 @@
             "branches": ["master"],
             "uri": "git://github.com/openstack/trove-integration.git",
             "project_type": "openstack",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
@@ -4257,6 +4286,7 @@
             "branches": ["master"],
             "uri": "git://github.com/openstack/python-troveclient.git",
             "project_type": "openstack",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
@@ -4264,6 +4294,7 @@
             "branches": ["master"],
             "uri": "git://github.com/openstack/ironic.git",
             "project_type": "openstack",
+            "organization": "openstack",
             "project_group": "incubation"
         }
     ],
@@ -4348,5 +4379,7 @@
             "release_name": "Havana",
             "end_date": "2013-Oct-17"
         }
-    ]
+    ],
+
+    "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"]
 }

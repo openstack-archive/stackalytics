@@ -78,4 +78,5 @@ NORMALIZERS = {
 
 def normalize_default_data(default_data):
     for key, normalizer in NORMALIZERS.iteritems():
-        normalizer(default_data[key])
+        if key in default_data:
+            normalizer(default_data[key])

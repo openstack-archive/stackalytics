@@ -74,6 +74,9 @@
                     "project_group": {
                         "type": "string"
                     },
+                    "organization": {
+                        "type": "string"
+                    },
                     "module": {
                         "type": "string"
                     },
@@ -102,7 +105,7 @@
                         }
                     }
                 },
-                "required": ["uri", "project_type", "module", "branches"],
+                "required": ["uri", "project_type", "module", "branches", "organization"],
                 "additionalProperties": false
             }
         },
@@ -161,6 +164,12 @@
                 },
                 "required": ["module_group_name", "modules"],
                 "additionalProperties": false
+            }
+        },
+        "mail_lists": {
+            "type": "array",
+            "items": {
+                "type": "string"
             }
         }
     }

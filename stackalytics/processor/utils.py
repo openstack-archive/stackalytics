@@ -15,6 +15,7 @@
 
 import datetime
 import json
+import re
 import time
 import urllib
 
@@ -42,6 +43,10 @@ def week_to_date(week):
             strftime('%Y-%m-%d %H:%M:%S'))
 
 
+def check_email_validity(email):
+    return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)
+
+
 def read_json_from_uri(uri):
     try:
         fd = urllib.urlopen(uri)
@@ -66,3 +71,7 @@ def store_user(runtime_storage_inst, user):
 
 def load_user(runtime_storage_inst, user_id):
     return runtime_storage_inst.get_by_key('user:%s' % user_id)
+
+
+def load_repos(runtime_storage_inst):
+    return runtime_storage_inst.get_by_key('repos') or []

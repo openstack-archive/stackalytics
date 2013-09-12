@@ -14,7 +14,6 @@
 # limitations under the License.
 
 import bisect
-import re
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
@@ -34,11 +33,31 @@ class RecordProcessor(object):
         self.releases = runtime_storage_inst.get_by_key('releases')
         self.releases_dates = [r['end_date'] for r in self.releases]
 
+        self.modules = None
+
         self.updated_users = set()
 
     def _get_release(self, timestamp):
         release_index = bisect.bisect(self.releases_dates, timestamp)
         return self.releases[release_index]['release_name']
+
+    def _get_modules(self):
+        if self.modules is None:
+            self.modules = set()
+            for repo in utils.load_repos(self.runtime_storage_inst):
+                module = repo['module'].lower()
+                add = True
+                for m in self.modules:
+                    if module.find(m) >= 0:
+                        add = False
+                        break
+                    if m.find(module) >= 0:
+                        self.modules.remove(m)
+                        break
+                if add:
+                    self.modules.add(module)
+
+        return self.modules
 
     def _find_company(self, companies, date):
         for r in companies:
@@ -75,7 +94,7 @@ class RecordProcessor(object):
 
     def _get_lp_info(self, email):
         lp_profile = None
-        if not re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email):
+        if not utils.check_email_validity(email):
             LOG.debug('User email is not valid %s' % email)
         else:
             LOG.debug('Lookup user email %s at Launchpad' % email)
@@ -217,12 +236,43 @@ class RecordProcessor(object):
             for r in gen(record):
                 yield r
 
+    def _guess_module(self, record):
+        subject = record['subject'].lower()
+        pos = len(subject)
+        best_guess_module = None
+
+        for module in self._get_modules():
+            find = subject.find(module)
+            if (find >= 0) and (find < pos):
+                pos = find
+                best_guess_module = module
+
+        if best_guess_module:
+            if (((pos > 0) and (subject[pos - 1] == '[')) or
+                    (not record.get('module'))):
+                record['module'] = best_guess_module
+
+        if not record.get('module'):
+            record['module'] = 'unknown'
+
+    def _process_email(self, record):
+        record['primary_key'] = record['message_id']
+        record['author_email'] = record['author_email'].lower()
+
+        self._update_record_and_user(record)
+        self._guess_module(record)
+
+        yield record
+
     def _apply_type_based_processing(self, record):
         if record['record_type'] == 'commit':
             for r in self._process_commit(record):
                 yield r
         elif record['record_type'] == 'review':
             for r in self._process_review(record):
+                yield r
+        elif record['record_type'] == 'email':
+            for r in self._process_email(record):
                 yield r
 
     def process(self, record_iterator):

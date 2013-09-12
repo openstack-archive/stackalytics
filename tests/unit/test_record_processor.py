@@ -68,6 +68,15 @@ RELEASES = [
     },
 ]
 
+REPOS = [
+    {
+        "branches": ["master"],
+        "module": "stackalytics",
+        "project_type": "stackforge",
+        "uri": "git://github.com/stackforge/stackalytics.git"
+    }
+]
+
 
 class TestRecordProcessor(testtools.TestCase):
     def setUp(self):
@@ -271,6 +280,67 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.assertEquals(0, len(updated))
 
+    def test_process_mail(self):
+        record_processor_inst = make_record_processor()
+        commit_generator = generate_emails(
+            subject='[openstack-dev] [Stackalytics] Configuration files')
+        commit = list(record_processor_inst.process(commit_generator))[0]
+
+        self.assertEquals('SuperCompany', commit['company_name'])
+        self.assertEquals('john_doe', commit['launchpad_id'])
+        self.assertEquals('stackalytics', commit['module'])
+
+    def test_process_mail_guessed(self):
+        runtime_storage_inst = make_runtime_storage(
+            repos=[{'module': 'nova'}, {'module': 'neutron'}])
+        record_processor_inst = make_record_processor(runtime_storage_inst)
+        commit_generator = generate_emails(
+            subject='[openstack-dev] [Neutron] [Nova] Integration issue')
+        commit = list(record_processor_inst.process(commit_generator))[0]
+
+        self.assertEquals('neutron', commit['module'])
+
+    def test_process_mail_guessed_module_in_body_override(self):
+        runtime_storage_inst = make_runtime_storage(
+            repos=[{'module': 'nova'}, {'module': 'heat'}])
+        record_processor_inst = make_record_processor(runtime_storage_inst)
+        commit_generator = generate_emails(
+            subject='[openstack-dev] [heat] Comments/questions on the',
+            module='nova')
+        commit = list(record_processor_inst.process(commit_generator))[0]
+
+        self.assertEquals('heat', commit['module'])
+
+    def test_process_mail_guessed_module_in_body(self):
+        runtime_storage_inst = make_runtime_storage(
+            repos=[{'module': 'nova'}, {'module': 'heat'}])
+        record_processor_inst = make_record_processor(runtime_storage_inst)
+        commit_generator = generate_emails(
+            subject='[openstack-dev] Comments/questions on the heat',
+            module='nova')
+        commit = list(record_processor_inst.process(commit_generator))[0]
+
+        self.assertEquals('nova', commit['module'])
+
+    def test_process_mail_unmatched(self):
+        record_processor_inst = make_record_processor()
+        commit_generator = generate_emails(
+            subject='[openstack-dev] [Photon] Configuration files')
+        commit = list(record_processor_inst.process(commit_generator))[0]
+
+        self.assertEquals('SuperCompany', commit['company_name'])
+        self.assertEquals('john_doe', commit['launchpad_id'])
+        self.assertEquals('unknown', commit['module'])
+
+    def test_get_modules(self):
+        record_processor_inst = make_record_processor()
+        with mock.patch('stackalytics.processor.utils.load_repos') as patch:
+            patch.return_value = [{'module': 'nova'},
+                                  {'module': 'python-novaclient'},
+                                  {'module': 'neutron'}]
+            modules = record_processor_inst._get_modules()
+            self.assertEqual(set(['nova', 'neutron']), set(modules))
+
 
 # Helpers
 
@@ -287,16 +357,32 @@ def generate_commits(email='johndoe@gmail.com', date=1999999999):
     }
 
 
-def make_runtime_storage(users=None, companies=None, releases=None):
-    def get_by_key(table):
-        if table == 'companies':
+def generate_emails(email='johndoe@gmail.com', date=1999999999,
+                    subject='[openstack-dev]', module=None):
+    yield {
+        'record_type': 'email',
+        'message_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
+        'author_name': 'John Doe',
+        'author_email': email,
+        'date': date,
+        'subject': subject,
+        'module': module,
+    }
+
+
+def make_runtime_storage(users=None, companies=None, releases=None,
+                         repos=None):
+    def get_by_key(collection):
+        if collection == 'companies':
             return _make_companies(companies or COMPANIES)
-        elif table == 'users':
+        elif collection == 'users':
             return _make_users(users or USERS)
-        elif table == 'releases':
+        elif collection == 'releases':
             return releases or RELEASES
+        elif collection == 'repos':
+            return repos or REPOS
         else:
-            raise Exception('Wrong table %s' % table)
+            raise Exception('Wrong collection: %s' % collection)
 
     rs = mock.Mock(runtime_storage.RuntimeStorage)
     rs.get_by_key = mock.Mock(side_effect=get_by_key)

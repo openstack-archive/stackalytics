@@ -103,14 +103,8 @@ class CachedMemoryStorage(MemoryStorage):
     def get_record_ids(self):
         return self.records.keys()
 
-    def get_commit_ids(self):
-        return self.record_types_index['commit']
-
-    def get_review_ids(self):
-        return self.record_types_index['review']
-
-    def get_mark_ids(self):
-        return self.record_types_index['mark']
+    def get_record_ids_by_type(self, record_type):
+        return self.record_types_index.get(record_type, set())
 
     def get_records(self, record_ids):
         for i in record_ids:
