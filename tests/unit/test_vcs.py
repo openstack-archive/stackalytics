@@ -44,7 +44,7 @@ date:1369119386
 author_name:Akihiro MOTOKI
 author_email:motoki@da.jp.nec.com
 subject:Remove class-based import in the code repo
-message:Fixes bug 1167901
+message:Fixes bug 1167901.
 
 This commit also removes backslashes for line break.
 
@@ -83,7 +83,7 @@ date:1369831203
 author_name:John Doe
 author_email:john.doe@dreamhost.com
 subject:add readme for 2.2.2
-message: bp fix-me
+message: implements blueprint fix-me.
 Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 
 diff_stat:
@@ -122,6 +122,8 @@ diff_stat:
         self.assertEquals(0, commits[3]['files_changed'])
         self.assertEquals(0, commits[3]['lines_added'])
         self.assertEquals(0, commits[3]['lines_deleted'])
+        self.assertEquals(set(['fix-me']),
+                          set(commits[3]['blueprint_id']))
 
         self.assertEquals(0, commits[4]['files_changed'])
         self.assertEquals(0, commits[4]['lines_added'])
