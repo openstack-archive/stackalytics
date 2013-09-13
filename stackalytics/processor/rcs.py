@@ -75,13 +75,13 @@ class Gerrit(Rcs):
                             username=self.username)
         LOG.debug('Successfully connected to Gerrit')
 
-    def _get_cmd(self, project_organization, module, branch, sort_key,
-                 is_open):
+    def _get_cmd(self, project_organization, module, branch, sort_key=None,
+                 is_open=False, limit=PAGE_LIMIT):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
                'limit:%(limit)s' %
                {'ogn': project_organization, 'module': module,
-                'branch': branch, 'limit': PAGE_LIMIT})
+                'branch': branch, 'limit': limit})
         if is_open:
             cmd += ' is:open'
         if sort_key:
@@ -104,7 +104,7 @@ class Gerrit(Rcs):
 
                 if 'sortKey' in review:
                     sort_key = int(review['sortKey'], 16)
-                    if sort_key == last_id:
+                    if sort_key <= last_id:
                         proceed = False
                         break
 
@@ -116,41 +116,34 @@ class Gerrit(Rcs):
                 break
 
     def log(self, branch, last_id):
-        match = re.search(r'([^\/]+)/([^\/]+)\.git$', self.repo['uri'])
-        if not match:
-            LOG.error('Invalid repo uri: %s', self.repo['uri'])
-        project_organization = match.group(1)
-        module = match.group(2)
-
         self._connect()
 
         # poll new reviews from the top down to last_id
-        LOG.debug('Poll new reviews')
-        for review in self._poll_reviews(project_organization, module, branch,
+        LOG.debug('Poll new reviews for module: %s', self.repo['module'])
+        for review in self._poll_reviews(self.repo['organization'],
+                                         self.repo['module'], branch,
                                          last_id=last_id):
             yield review
 
         # poll open reviews from last_id down to bottom
-        LOG.debug('Poll open reviews')
+        LOG.debug('Poll open reviews for module: %s', self.repo['module'])
         start_id = None
         if last_id:
             start_id = last_id + 1  # include the last review into query
-        for review in self._poll_reviews(project_organization, module, branch,
+        for review in self._poll_reviews(self.repo['organization'],
+                                         self.repo['module'], branch,
                                          start_id=start_id, is_open=True):
             yield review
 
         self.client.close()
 
     def get_last_id(self, branch):
-        module = self.repo['module']
-        LOG.debug('Get last id for module %s', module)
-
         self._connect()
+        LOG.debug('Get last id for module: %s', self.repo['module'])
 
-        cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               '%(module)s branch:%(branch)s limit:1' %
-               {'module': module, 'branch': branch})
-
+        cmd = self._get_cmd(self.repo['organization'], self.repo['module'],
+                            branch, limit=1)
+        LOG.debug('Executing command: %s', cmd)
         stdin, stdout, stderr = self.client.exec_command(cmd)
         last_id = None
         for line in stdout:
@@ -161,7 +154,8 @@ class Gerrit(Rcs):
 
         self.client.close()
 
-        LOG.debug('Last id for module %s is %s', module, last_id)
+        LOG.debug('Module %(module)s last id is %(id)s',
+                  {'module': self.repo['module'], 'id': last_id})
         return last_id
 
 

@@ -71,6 +71,7 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
                 r = {
                     'branches': ['master'],
                     'module': repo_name,
+                    'organization': organization,
                     'project_type': project_source['project_type'],
                     'project_group': project_source['project_group'],
                     'uri': repo_uri,

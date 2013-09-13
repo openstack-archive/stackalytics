@@ -69,7 +69,7 @@ GIT_LOG_PATTERN = re.compile(''.join([(r[0] + ':(.*?)\n')
 MESSAGE_PATTERNS = {
     'bug_id': re.compile(r'bug[\s#:]*(?P<id>\d+)', re.IGNORECASE),
     'blueprint_id': re.compile(r'\b(?:blueprint|bp)\b[ \t]*[#:]?[ \t]*'
-                               r'(?P<id>\S+)', re.IGNORECASE),
+                               r'(?P<id>[a-z0-9-]+)', re.IGNORECASE),
     'change_id': re.compile('Change-Id: (?P<id>I[0-9a-f]{40})', re.IGNORECASE),
 }
 
