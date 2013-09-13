@@ -67,10 +67,10 @@ GIT_LOG_PATTERN = re.compile(''.join([(r[0] + ':(.*?)\n')
                              re.DOTALL)
 
 MESSAGE_PATTERNS = {
-    'bug_id': re.compile(r'(bug)[\s#:]*(\d+)', re.IGNORECASE),
-    'blueprint_id': re.compile(r'\b(blueprint|bp)\b[ \t]*[#:]?[ \t]*(\S+)',
-                               re.IGNORECASE),
-    'change_id': re.compile('(Change-Id): (I[0-9a-f]{40})', re.IGNORECASE),
+    'bug_id': re.compile(r'bug[\s#:]*(?P<id>\d+)', re.IGNORECASE),
+    'blueprint_id': re.compile(r'\b(?:blueprint|bp)\b[ \t]*[#:]?[ \t]*'
+                               r'(?P<id>\S+)', re.IGNORECASE),
+    'change_id': re.compile('Change-Id: (?P<id>I[0-9a-f]{40})', re.IGNORECASE),
 }
 
 
@@ -158,12 +158,11 @@ class Git(Vcs):
             commit['lines_added'] = int(lines_changed or 0)
             commit['lines_deleted'] = int(lines_deleted or 0)
 
-            for key in MESSAGE_PATTERNS:
-                match = re.search(MESSAGE_PATTERNS[key], commit['message'])
-                if match:
-                    commit[key] = match.group(2)
-                else:
-                    commit[key] = None
+            for pattern_name, pattern in MESSAGE_PATTERNS.iteritems():
+                collection = set()
+                for item in re.finditer(pattern, commit['message']):
+                    collection.add(item.group('id'))
+                commit[pattern_name] = list(collection)
 
             commit['date'] = int(commit['date'])
             commit['module'] = self.repo['module']

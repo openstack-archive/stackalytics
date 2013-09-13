@@ -44,6 +44,8 @@
                     }
                     {% if metric == 'marks' %}
                     $("#review_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                    {% elif metric == 'emails' %}
+                    $("#email_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
                     {% else %}
                     $("#commit_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
                     {% endif %}
@@ -128,6 +130,30 @@
     {% endraw %}
 </script>
 
+<script id="email_activity_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div style="margin-bottom: 1em;">
+    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
+    <div style="margin-left: 40px;">
+        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
+        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
+    </div>
+    <div style="margin-left: 40px;">
+        <div style='font-weight: bold;'>
+        {%if email_link != "" %}
+        <a href='${email_link}'>
+        {%/if%}
+        ${subject}
+        {%if email_link != "" %}
+        </a>
+        {%/if%}
+        </div>
+    </div>
+    </div>
+    {% endraw %}
+</script>
+
+
 <script id="user_profile_template" type="text/x-jquery-tmpl">
     {% raw %}
     <div>
@@ -165,6 +191,7 @@
             {%each(i,rec) bugs %}
                 <li>
                     <a href="https://bugs.launchpad.net/bugs/${rec.id}">${rec.id}</a>
+                    <small>${rec.module}</small>
                 </li>
             {%/each%}
         </ol>

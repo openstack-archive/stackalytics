@@ -47,7 +47,7 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
     LOG.info('Retrieving project list from GitHub')
 
     repo_index = {}
-    stored_repos = runtime_storage_inst.get_by_key('repos')
+    stored_repos = utils.load_repos(runtime_storage_inst)
     for repo in stored_repos:
         repo_index[repo['uri']] = repo
 
@@ -105,20 +105,17 @@ def _process_companies(runtime_storage_inst, companies):
 
 KEYS = {
     'users': _process_users,
-    'repos': None,
-    'releases': None,
     'companies': _process_companies,
-    'module_groups': None,
 }
 
 
 def _update_default_data(runtime_storage_inst, default_data):
     LOG.debug('Update runtime storage with default data')
-    for key, processor in KEYS.iteritems():
-        if processor:
-            processor(runtime_storage_inst, default_data[key])
+    for key, value in default_data.iteritems():
+        if key in KEYS:
+            KEYS[key](runtime_storage_inst, value)
         else:
-            runtime_storage_inst.set_by_key(key, default_data[key])
+            runtime_storage_inst.set_by_key(key, value)
 
 
 def process(runtime_storage_inst, default_data, sources_root, force_update):
@@ -133,7 +130,7 @@ def process(runtime_storage_inst, default_data, sources_root, force_update):
 
         LOG.debug('Gather release index for all repos')
         release_index = {}
-        for repo in runtime_storage_inst.get_by_key('repos'):
+        for repo in utils.load_repos(runtime_storage_inst):
             vcs_inst = vcs.get_vcs(repo, sources_root)
             release_index.update(vcs_inst.get_release_index())
 

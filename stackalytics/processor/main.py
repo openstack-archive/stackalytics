@@ -22,6 +22,7 @@ from psutil import _error
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
+from stackalytics.processor import mls
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
@@ -73,7 +74,7 @@ def _record_typer(record_iterator, record_type):
         yield record
 
 
-def process_repo(repo, runtime_storage, record_processor_inst):
+def process_repo(repo, runtime_storage_inst, record_processor_inst):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
@@ -88,39 +89,53 @@ def process_repo(repo, runtime_storage, record_processor_inst):
         LOG.debug('Processing repo %s, branch %s', uri, branch)
 
         vcs_key = 'vcs:' + str(urllib.quote_plus(uri) + ':' + branch)
-        last_id = runtime_storage.get_by_key(vcs_key)
+        last_id = runtime_storage_inst.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
         commit_iterator_typed = _record_typer(commit_iterator, 'commit')
         processed_commit_iterator = record_processor_inst.process(
             commit_iterator_typed)
-        runtime_storage.set_records(processed_commit_iterator, _merge_commits)
+        runtime_storage_inst.set_records(
+            processed_commit_iterator, _merge_commits)
 
         last_id = vcs_inst.get_last_id(branch)
-        runtime_storage.set_by_key(vcs_key, last_id)
+        runtime_storage_inst.set_by_key(vcs_key, last_id)
 
         LOG.debug('Processing reviews for repo %s, branch %s', uri, branch)
 
         rcs_key = 'rcs:' + str(urllib.quote_plus(uri) + ':' + branch)
-        last_id = runtime_storage.get_by_key(rcs_key)
+        last_id = runtime_storage_inst.get_by_key(rcs_key)
 
         review_iterator = rcs_inst.log(branch, last_id)
         review_iterator_typed = _record_typer(review_iterator, 'review')
         processed_review_iterator = record_processor_inst.process(
             review_iterator_typed)
-        runtime_storage.set_records(processed_review_iterator)
+        runtime_storage_inst.set_records(processed_review_iterator)
 
         last_id = rcs_inst.get_last_id(branch)
-        runtime_storage.set_by_key(rcs_key, last_id)
+        runtime_storage_inst.set_by_key(rcs_key, last_id)
 
 
-def update_repos(runtime_storage_inst):
-    repos = runtime_storage_inst.get_by_key('repos')
+def process_mail_list(uri, runtime_storage_inst, record_processor_inst):
+    mail_iterator = mls.log(uri, runtime_storage_inst)
+    mail_iterator_typed = _record_typer(mail_iterator, 'email')
+    processed_mail_iterator = record_processor_inst.process(
+        mail_iterator_typed)
+    runtime_storage_inst.set_records(processed_mail_iterator)
+
+
+def update_records(runtime_storage_inst):
+    repos = utils.load_repos(runtime_storage_inst)
     record_processor_inst = record_processor.RecordProcessor(
         runtime_storage_inst)
 
     for repo in repos:
         process_repo(repo, runtime_storage_inst, record_processor_inst)
+
+    mail_lists = runtime_storage_inst.get_by_key('mail_lists') or []
+    for mail_list in mail_lists:
+        process_mail_list(mail_list, runtime_storage_inst,
+                          record_processor_inst)
 
     record_processor_inst.finalize()
 
@@ -165,7 +180,7 @@ def main():
 
     update_pids(runtime_storage_inst)
 
-    update_repos(runtime_storage_inst)
+    update_records(runtime_storage_inst)
 
     apply_corrections(cfg.CONF.corrections_uri, runtime_storage_inst)
 

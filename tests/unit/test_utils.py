@@ -42,3 +42,11 @@ class TestUtils(testtools.TestCase):
 
     def test_make_range_5_26_10(self):
         self._test_one_range(5, 26, 10)
+
+    def test_email_valid(self):
+        self.assertTrue(utils.check_email_validity('pupkin@gmail.com'))
+        self.assertTrue(utils.check_email_validity('v.pup_kin2@ntt.co.jp'))
+
+    def test_email_invalid(self):
+        self.assertFalse(utils.check_email_validity('pupkin@localhost'))
+        self.assertFalse(utils.check_email_validity('222@some.(trash)'))
