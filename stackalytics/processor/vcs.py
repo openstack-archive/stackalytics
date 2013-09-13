@@ -96,7 +96,11 @@ class Git(Vcs):
             os.chdir(self.folder)
         else:
             os.chdir(self.folder)
-            sh.git('pull', 'origin')
+            try:
+                sh.git('pull', 'origin')
+            except sh.ErrorReturnCode as e:
+                LOG.error('Unable to pull git repo. Ignore it')
+                LOG.exception(e)
 
         self.get_release_index()
 
