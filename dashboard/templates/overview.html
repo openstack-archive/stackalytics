@@ -42,13 +42,7 @@
                     if ((start_record == 0) && (data["activity"].length == 0)) {
                         $('#activity_header').hide();
                     }
-                    {% if metric == 'marks' %}
-                    $("#review_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
-                    {% elif metric == 'emails' %}
-                    $("#email_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
-                    {% else %}
-                    $("#commit_activity_template").tmpl(data["activity"]).appendTo("#activity_container");
-                    {% endif %}
+                    $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
                 }
             });
         }
@@ -90,7 +84,7 @@
 </script>
 
 {# Templates #}
-<script id="commit_activity_template" type="text/x-jquery-tmpl">
+<script id="activity_template" type="text/x-jquery-tmpl">
     {% raw %}
     <div style="margin-bottom: 1em;">
     <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
@@ -99,6 +93,7 @@
         <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
     </div>
     <div style="margin-left: 40px;">
+        {%if record_type == "commit" %}
         {%if correction_comment != "" %}
         <div style='font-weight: bold; color: red;'>Commit corrected:
             <span>${correction_comment}</span></div>
@@ -107,38 +102,12 @@
         <div style='white-space: pre-wrap; '>{%html message %}</div>
         <div><span style="color: green">+<span>${lines_added}</span></span>
             <span style="color: blue">- <span>${lines_deleted}</span></span></div>
-    </div>
-    </div>
-    {% endraw %}
-</script>
-
-<script id="review_activity_template" type="text/x-jquery-tmpl">
-    {% raw %}
-    <div style="margin-bottom: 1em;">
-    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
-    <div style="margin-left: 40px;">
-        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} in <a href="https://launchpad.net/${module}">${module}</a></div>
-    </div>
-    <div style="margin-left: 40px;">
+        {%elif record_type == "mark" %}
         <div>Patch submitted by {%html parent_author_link %}</div>
         <div style='font-weight: bold;'>${subject}</div>
         <div>Change Id: <a href="${url}">${review_id}</a></div>
         <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
-    </div>
-    </div>
-    {% endraw %}
-</script>
-
-<script id="email_activity_template" type="text/x-jquery-tmpl">
-    {% raw %}
-    <div style="margin-bottom: 1em;">
-    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
-    <div style="margin-left: 40px;">
-        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
-    </div>
-    <div style="margin-left: 40px;">
+        {%elif record_type == "email" %}
         <div style='font-weight: bold;'>
         {%if email_link != "" %}
         <a href='${email_link}'>
@@ -148,11 +117,15 @@
         </a>
         {%/if%}
         </div>
+        {%elif ((record_type == "bp_draft") || (record_type == "bp_implementation")) %}
+        <div style='font-weight: bold;'>${title} (<a href='${web_link}'>${name}</a>)</div>
+        <div style='white-space: pre-wrap;'>${summary}</div>
+
+        {%/if%}
     </div>
     </div>
     {% endraw %}
 </script>
-
 
 <script id="user_profile_template" type="text/x-jquery-tmpl">
     {% raw %}

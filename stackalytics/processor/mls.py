@@ -68,6 +68,7 @@ def _link_content_changed(link, runtime_storage_inst):
     conn.request('HEAD', parsed_uri.path)
     res = conn.getresponse()
     last_modified = res.getheader('last-modified')
+    conn.close()
 
     if last_modified != runtime_storage_inst.get_by_key('mail_link:' + link):
         LOG.debug('Mail archive changed, last modified at: %s', last_modified)

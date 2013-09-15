@@ -264,6 +264,42 @@ class RecordProcessor(object):
 
         yield record
 
+    def _process_blueprint(self, record):
+        if record.get('drafter'):
+            bp_draft = dict([(k, v) for k, v in record.iteritems()])
+            bp_draft['primary_key'] = 'bpd:' + record['self_link']
+
+            drafter = utils.load_user(self.runtime_storage_inst,
+                                      record['drafter'])
+            if drafter and record['date_created']:
+                bp_draft['record_type'] = 'bp_draft'
+                bp_draft['author_name'] = drafter['user_name']
+                bp_draft['author_email'] = drafter['emails'][0]
+                bp_draft['launchpad_id'] = record['drafter']
+                bp_draft['date'] = record['date_created']
+
+                self._update_record_and_user(bp_draft)
+
+                yield bp_draft
+
+        if record.get('assignee'):
+            bp_implementation = dict([(k, v) for k, v in record.iteritems()])
+            bp_implementation['primary_key'] = 'bpi:' + record['self_link']
+
+            assignee = utils.load_user(self.runtime_storage_inst,
+                                       record['assignee'])
+            if assignee and record['date_completed']:
+                bp_implementation['record_type'] = 'bp_implementation'
+                bp_implementation['author_name'] = assignee['user_name']
+                bp_implementation['author_email'] = assignee['emails'][0]
+                bp_implementation['launchpad_id'] = record['assignee']
+                bp_implementation['date'] = record['date_completed']
+
+                if bp_implementation['author_email']:
+                    self._update_record_and_user(bp_implementation)
+
+                yield bp_implementation
+
     def _apply_type_based_processing(self, record):
         if record['record_type'] == 'commit':
             for r in self._process_commit(record):
@@ -273,6 +309,9 @@ class RecordProcessor(object):
                 yield r
         elif record['record_type'] == 'email':
             for r in self._process_email(record):
+                yield r
+        elif record['record_type'] == 'bp':
+            for r in self._process_blueprint(record):
                 yield r
 
     def process(self, record_iterator):

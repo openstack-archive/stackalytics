@@ -49,13 +49,17 @@ METRIC_LABELS = {
     'commits': 'Commits',
     'marks': 'Reviews',
     'emails': 'Emails',
+    'bp_draft': 'New Blueprints',
+    'bp_implementation': 'Completed Blueprints',
 }
 
 METRIC_TO_RECORD_TYPE = {
     'loc': 'commit',
     'commits': 'commit',
     'marks': 'mark',
-    'emails': 'email'
+    'emails': 'email',
+    'bp_draft': 'bp_draft',
+    'bp_implementation': 'bp_implementation',
 }
 
 DEFAULT_RECORDS_LIMIT = 10
@@ -402,6 +406,8 @@ def aggregate_filter():
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
                 'emails': (incremental_filter, None),
+                'bp_draft': (incremental_filter, None),
+                'bp_implementation': (incremental_filter, None),
             }
             if metric not in metric_to_filters_map:
                 raise Exception('Invalid metric %s' % metric)
@@ -687,6 +693,11 @@ def get_activity_json(records):
             _extend_record(email)
             email['email_link'] = email.get('email_link') or ''
             result.append(email)
+        elif ((record['record_type'] == 'bp_draft') or
+             (record['record_type'] == 'bp_implementation')):
+            blueprint = record.copy()
+            _extend_record(blueprint)
+            result.append(blueprint)
 
     result.sort(key=lambda x: x['date'], reverse=True)
     return result[start_record:start_record + page_size]

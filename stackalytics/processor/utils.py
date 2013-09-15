@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import datetime
+import iso8601
 import json
 import re
 import time
@@ -30,6 +31,10 @@ def date_to_timestamp(d):
         return int(time.time())
     return int(time.mktime(
         datetime.datetime.strptime(d, '%Y-%b-%d').timetuple()))
+
+
+def iso8601_to_timestamp(s):
+    return int(time.mktime(iso8601.parse_date(s).timetuple()))
 
 
 def timestamp_to_week(timestamp):
