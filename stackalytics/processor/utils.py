@@ -47,14 +47,18 @@ def check_email_validity(email):
     return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)
 
 
-def read_json_from_uri(uri):
+def read_uri(uri):
     try:
         fd = urllib.urlopen(uri)
         raw = fd.read()
         fd.close()
-        return json.loads(raw)
+        return raw
     except Exception as e:
         LOG.warn('Error while reading uri: %s' % e)
+
+
+def read_json_from_uri(uri):
+    return json.loads(read_uri(uri))
 
 
 def make_range(start, stop, step):

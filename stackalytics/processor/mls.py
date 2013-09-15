@@ -20,7 +20,6 @@ import StringIO
 from email import utils as email_utils
 import re
 import time
-import urllib
 import urlparse
 
 from stackalytics.openstack.common import log as logging
@@ -55,18 +54,8 @@ TRAILING_RECORD = ('From ishakhat at mirantis.com  Tue Sep 17 07:30:43 2013'
                    'From: ')
 
 
-def _read_uri(uri):
-    try:
-        fd = urllib.urlopen(uri)
-        raw = fd.read()
-        fd.close()
-        return raw
-    except Exception as e:
-        LOG.warn('Error while reading uri: %s' % e)
-
-
 def _get_mail_archive_links(uri):
-    content = _read_uri(uri)
+    content = utils.read_uri(uri)
     links = set(re.findall(r'\shref\s*=\s*[\'"]([^\'"]*\.txt\.gz)', content,
                            flags=re.IGNORECASE))
     return [urlparse.urljoin(uri, link) for link in links]
@@ -90,7 +79,7 @@ def _link_content_changed(link, runtime_storage_inst):
 
 def _retrieve_mails(uri):
     LOG.debug('Retrieving mail archive from uri: %s', uri)
-    content = _read_uri(uri)
+    content = utils.read_uri(uri)
     gzip_fd = gzip.GzipFile(fileobj=StringIO.StringIO(content))
     content = gzip_fd.read()
     LOG.debug('Mail archive is loaded, start processing')
