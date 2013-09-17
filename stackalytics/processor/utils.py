@@ -63,7 +63,10 @@ def read_uri(uri):
 
 
 def read_json_from_uri(uri):
-    return json.loads(read_uri(uri))
+    try:
+        return json.loads(read_uri(uri))
+    except Exception as e:
+        LOG.warn('Error parsing json: %s' % e)
 
 
 def make_range(start, stop, step):

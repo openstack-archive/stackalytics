@@ -21,38 +21,6 @@ from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
 
 
-LP_URI = 'https://api.launchpad.net/1.0/people/?ws.op=getByEmail&email=%s'
-
-COMPANIES = [
-    {
-        'company_name': 'SuperCompany',
-        'domains': ['super.com', 'super.no']
-    },
-    {
-        "domains": ["nec.com", "nec.co.jp"],
-        "company_name": "NEC"
-    },
-    {
-        'company_name': '*independent',
-        'domains': ['']
-    },
-]
-
-USERS = [
-    {
-        'user_id': 'john_doe',
-        'launchpad_id': 'john_doe',
-        'user_name': 'John Doe',
-        'emails': ['johndoe@gmail.com', 'jdoe@super.no'],
-        'companies': [
-            {'company_name': '*independent',
-             'end_date': 1234567890},
-            {'company_name': 'SuperCompany',
-             'end_date': 0},
-        ]
-    }
-]
-
 RELEASES = [
     {
         'release_name': 'prehistory',
@@ -84,164 +52,423 @@ class TestRecordProcessor(testtools.TestCase):
         self.read_json_from_uri_patch = mock.patch(
             'stackalytics.processor.utils.read_json_from_uri')
         self.read_launchpad = self.read_json_from_uri_patch.start()
+        self.lp_profile_by_launchpad_id_patch = mock.patch(
+            'stackalytics.processor.launchpad_utils.'
+            'lp_profile_by_launchpad_id')
+        self.lp_profile_by_launchpad_id = (
+            self.lp_profile_by_launchpad_id_patch.start())
+        self.lp_profile_by_launchpad_id.return_value = None
+        self.lp_profile_by_email_patch = mock.patch(
+            'stackalytics.processor.launchpad_utils.lp_profile_by_email')
+        self.lp_profile_by_email = (
+            self.lp_profile_by_email_patch.start())
+        self.lp_profile_by_email.return_value = None
 
     def tearDown(self):
         super(TestRecordProcessor, self).tearDown()
         self.read_json_from_uri_patch.stop()
+        self.lp_profile_by_launchpad_id_patch.stop()
+        self.lp_profile_by_email_patch.stop()
+
+    # get_company_by_email
 
     def test_get_company_by_email_mapped(self):
-        record_processor_inst = make_record_processor()
-        email = 'jdoe@super.no'
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}]
+        )
+        email = 'jdoe@ibm.com'
         res = record_processor_inst._get_company_by_email(email)
-        self.assertEquals('SuperCompany', res)
+        self.assertEquals('IBM', res)
 
     def test_get_company_by_email_with_long_suffix_mapped(self):
-        record_processor_inst = make_record_processor()
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'NEC', 'domains': ['nec.co.jp']}]
+        )
         email = 'man@mxw.nes.nec.co.jp'
         res = record_processor_inst._get_company_by_email(email)
         self.assertEquals('NEC', res)
 
     def test_get_company_by_email_with_long_suffix_mapped_2(self):
-        record_processor_inst = make_record_processor()
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'NEC',
+                        'domains': ['nec.co.jp', 'nec.com']}]
+        )
         email = 'man@mxw.nes.nec.com'
         res = record_processor_inst._get_company_by_email(email)
         self.assertEquals('NEC', res)
 
     def test_get_company_by_email_not_mapped(self):
-        record_processor_inst = make_record_processor()
+        record_processor_inst = self.make_record_processor()
         email = 'foo@boo.com'
         res = record_processor_inst._get_company_by_email(email)
         self.assertEquals(None, res)
 
-    def test_update_commit_existing_user(self):
-        record_processor_inst = make_record_processor()
-        commit_generator = generate_commits()
-        commit = list(record_processor_inst.process(commit_generator))[0]
+    # get_lp_info
 
-        self.assertEquals('SuperCompany', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
+    def test_get_lp_info_invalid_email(self):
+        self.read_launchpad.return_value = None
+        record_processor_inst = self.make_record_processor(users=[])
+        self.assertEquals((None, None),
+                          record_processor_inst._get_lp_info('error.root'))
 
-    def test_update_commit_existing_user_old_job(self):
-        record_processor_inst = make_record_processor()
-        commit_generator = generate_commits(date=1000000000)
-        commit = list(record_processor_inst.process(commit_generator))[0]
+    # commit processing
 
-        self.assertEquals('*independent', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
+    def test_process_commit_existing_user(self):
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': '*independent',
+                         'end_date': 1234567890},
+                        {'company_name': 'NEC',
+                         'end_date': 0},
+                    ]
+                }
+            ])
 
-    def test_update_commit_existing_user_new_email_known_company(self):
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@gmail.com',
+                             author_name='John Doe')))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
+
+    def test_process_commit_existing_user_old_job(self):
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': '*independent',
+                         'end_date': 1234567890},
+                        {'company_name': 'NEC',
+                         'end_date': 0},
+                    ]
+                }
+            ])
+
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@gmail.com',
+                             author_name='John Doe',
+                             date=1000000000)))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': '*independent',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
+
+    def test_process_commit_existing_user_new_email_known_company(self):
         # User is known to LP, his email is new to us, and maps to other
         # company. Should return other company instead of those mentioned
-        # in user db
-        email = 'johndoe@nec.co.jp'
-        commit_generator = generate_commits(email=email)
-        launchpad_id = 'john_doe'
-        self.read_launchpad.return_value = {'name': launchpad_id,
-                                            'display_name': launchpad_id}
-        user = make_user()
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[user]))
+        # in user profile
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {'user_id': 'john_doe',
+                 'launchpad_id': 'john_doe',
+                 'user_name': 'John Doe',
+                 'emails': ['johndoe@nec.co.jp'],
+                 'companies': [{'company_name': 'NEC', 'end_date': 0}]}
+            ],
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+            lp_info={'johndoe@ibm.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
 
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@ibm.com',
+                             author_name='John Doe')))[0]
 
-        self.read_launchpad.assert_called_once_with(LP_URI % email)
-        self.assertIn(email, user['emails'])
-        self.assertEquals('NEC', commit['company_name'])
-        self.assertEquals(launchpad_id, commit['launchpad_id'])
-
-    def test_update_commit_existing_user_new_email_unknown_company(self):
-        # User is known to LP, but his email is new to us. Should match
-        # the user and return current company
-        email = 'johndoe@yahoo.com'
-        commit_generator = generate_commits(email=email)
-        launchpad_id = 'john_doe'
-        self.read_launchpad.return_value = {'name': launchpad_id,
-                                            'display_name': launchpad_id}
-        user = make_user()
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[user]))
-
-        commit = list(record_processor_inst.process(commit_generator))[0]
-
-        self.read_launchpad.assert_called_once_with(LP_URI % email)
-        self.assertIn(email, user['emails'])
-        self.assertEquals('SuperCompany', commit['company_name'])
-        self.assertEquals(launchpad_id, commit['launchpad_id'])
-
-    def test_update_commit_existing_user_new_email_known_company_update(self):
-        # User is known to LP, his email is new to us and belongs to company B.
-        # Should match the user and return company B and update user
-        email = 'johndoe@nec.com'
-        commit_generator = generate_commits(email=email)
-        launchpad_id = 'john_doe'
-        self.read_launchpad.return_value = {'name': launchpad_id,
-                                            'display_name': launchpad_id}
-        user = {
-            'user_id': 'john_doe',
-            'launchpad_id': launchpad_id,
-            'user_name': 'John Doe',
-            'emails': ['johndoe@gmail.com'],
-            'companies': [
-                {'company_name': '*independent', 'end_date': 0}
-            ]
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@ibm.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
         }
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[user]))
 
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        self.assertRecordsMatch(expected_commit, processed_commit)
+        self.assertIn('johndoe@ibm.com',
+                      record_processor_inst.users_index['john_doe']['emails'])
 
-        self.read_launchpad.assert_called_once_with(LP_URI % email)
-        self.assertIn(email, user['emails'])
-        self.assertEquals('NEC', user['companies'][0]['company_name'],
+    def test_process_commit_existing_user_new_email_unknown_company(self):
+        # User is known to LP, but his email is new to us. Should match
+        # the user and return company from user profile
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {'user_id': 'john_doe',
+                 'launchpad_id': 'john_doe',
+                 'user_name': 'John Doe',
+                 'emails': ['johndoe@nec.co.jp'],
+                 'companies': [{'company_name': 'NEC', 'end_date': 0}]}
+            ],
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+            lp_info={'johndoe@gmail.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@gmail.com',
+                             author_name='John Doe')))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
+        self.assertIn('johndoe@gmail.com',
+                      record_processor_inst.users_index['john_doe']['emails'])
+
+    def test_process_commit_existing_user_new_email_known_company_update(self):
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {'user_id': 'john_doe',
+                 'launchpad_id': 'john_doe',
+                 'user_name': 'John Doe',
+                 'emails': ['johndoe@gmail.com'],
+                 'companies': [{'company_name': '*independent',
+                                'end_date': 0}]}
+            ],
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+            lp_info={'johndoe@ibm.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@ibm.com',
+                             author_name='John Doe')))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@ibm.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
+        user = record_processor_inst.users_index['john_doe']
+        self.assertIn('johndoe@gmail.com', user['emails'])
+        self.assertEquals('IBM', user['companies'][0]['company_name'],
                           message='User affiliation should be updated')
-        self.assertEquals('NEC', commit['company_name'])
-        self.assertEquals(launchpad_id, commit['launchpad_id'])
 
-    def test_update_commit_new_user(self):
+    def test_process_commit_new_user(self):
         # User is known to LP, but new to us
         # Should add new user and set company depending on email
-        email = 'smith@nec.com'
-        commit_generator = generate_commits(email=email)
-        launchpad_id = 'smith'
-        self.read_launchpad.return_value = {'name': launchpad_id,
-                                            'display_name': 'Smith'}
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[]))
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+            lp_info={'johndoe@ibm.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
 
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@ibm.com',
+                             author_name='John Doe')))[0]
 
-        self.read_launchpad.assert_called_once_with(LP_URI % email)
-        self.assertEquals('NEC', commit['company_name'])
-        self.assertEquals(launchpad_id, commit['launchpad_id'])
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@ibm.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
+        }
 
-    def test_update_commit_new_user_unknown_to_lb(self):
+        self.assertRecordsMatch(expected_commit, processed_commit)
+        user = record_processor_inst.users_index['john_doe']
+        self.assertIn('johndoe@ibm.com', user['emails'])
+        self.assertEquals('IBM', user['companies'][0]['company_name'])
+
+    def test_process_commit_new_user_unknown_to_lb(self):
         # User is new to us and not known to LP
         # Should set user name and empty LPid
-        email = 'inkognito@avs.com'
-        commit_generator = generate_commits(email=email)
-        self.read_launchpad.return_value = None
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[]))
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}])
 
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@ibm.com',
+                             author_name='John Doe')))[0]
 
-        self.read_launchpad.assert_called_once_with(LP_URI % email)
-        self.assertEquals('*independent', commit['company_name'])
-        self.assertEquals(None, commit['launchpad_id'])
+        expected_commit = {
+            'launchpad_id': None,
+            'author_email': 'johndoe@ibm.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
+        }
 
-    def test_update_commit_invalid_email(self):
-        # User's email is malformed
-        email = 'error.root'
-        commit_generator = generate_commits(email=email)
-        self.read_launchpad.return_value = None
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[]))
+        self.assertRecordsMatch(expected_commit, processed_commit)
+        self.assertEquals(1, len(record_processor_inst.users_index))
+        user = record_processor_inst.users_index['johndoe@ibm.com']
+        self.assertIn('johndoe@ibm.com', user['emails'])
+        self.assertEquals('IBM', user['companies'][0]['company_name'])
+        self.assertEquals(None, user['launchpad_id'])
 
-        commit = list(record_processor_inst.process(commit_generator))[0]
+    # process records complex scenarios
 
-        self.assertEquals(0, self.read_launchpad.called)
-        self.assertEquals('*independent', commit['company_name'])
-        self.assertEquals(None, commit['launchpad_id'])
+    def test_process_blueprint_one_draft_spawned_lp_doesnt_know_user(self):
+        # In: blueprint record
+        #     LP doesn't know user
+        # Out: blueprint-draft record
+        #      new user profile created
+        record_processor_inst = self.make_record_processor()
+
+        processed_records = list(record_processor_inst.process([
+            {'record_type': 'bp',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890}
+        ]))
+
+        self.assertRecordsMatch(
+            {'record_type': 'bpd',
+             'launchpad_id': 'john_doe',
+             'author_name': 'john_doe',
+             'company_name': '*independent'},
+            processed_records[0])
+
+        self.assertEquals(1, len(record_processor_inst.users_index))
+        user = record_processor_inst.users_index['john_doe']
+        self.assertEquals({
+            'user_id': 'john_doe',
+            'launchpad_id': 'john_doe',
+            'user_name': 'john_doe',
+            'emails': [],
+            'companies': [{'company_name': '*independent', 'end_date': 0}]
+        }, user)
+
+    def test_process_blueprint_one_draft_spawned_lp_knows_user(self):
+        # In: blueprint record
+        #     LP knows user
+        # Out: blueprint-draft record
+        #      new user profile created, name is taken from LP profile
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_records = list(record_processor_inst.process([
+            {'record_type': 'bp',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890}
+        ]))
+
+        self.assertRecordsMatch(
+            {'record_type': 'bpd',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'company_name': '*independent'},
+            processed_records[0])
+
+        self.assertEquals(1, len(record_processor_inst.users_index))
+        user = record_processor_inst.users_index['john_doe']
+        self.assertEquals({
+            'user_id': 'john_doe',
+            'launchpad_id': 'john_doe',
+            'user_name': 'John Doe',
+            'emails': [],
+            'companies': [{'company_name': '*independent', 'end_date': 0}]
+        }, user)
+
+    def test_process_blueprint_then_review(self):
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_records = list(record_processor_inst.process([
+            {'record_type': 'bp',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890},
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova'}
+        ]))
+
+        self.assertRecordsMatch(
+            {'record_type': 'bpd',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'company_name': '*independent'},
+            processed_records[0])
+
+        self.assertRecordsMatch(
+            {'record_type': 'review',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'author_email': 'john_doe@gmail.com',
+             'company_name': '*independent'},
+            processed_records[1])
+
+        user = {'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@gmail.com'],
+                'companies': [{'company_name': '*independent', 'end_date': 0}]}
+        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
+                          record_processor_inst.users_index)
+
+    def test_process_blueprint_then_commit(self):
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}},
+            lp_info={'john_doe@gmail.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_records = list(record_processor_inst.process([
+            {'record_type': 'bp',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890},
+            {'record_type': 'commit',
+             'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
+             'author_name': 'John Doe',
+             'author_email': 'john_doe@gmail.com',
+             'date': 1234567890,
+             'lines_added': 25,
+             'lines_deleted': 9,
+             'release_name': 'havana'}
+        ]))
+
+        self.assertRecordsMatch(
+            {'record_type': 'bpd',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'company_name': '*independent'},
+            processed_records[0])
+
+        self.assertRecordsMatch(
+            {'record_type': 'commit',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'author_email': 'john_doe@gmail.com',
+             'company_name': '*independent'},
+            processed_records[1])
+
+        user = {'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@gmail.com'],
+                'companies': [{'company_name': '*independent', 'end_date': 0}]}
+        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
+                          record_processor_inst.users_index)
+
+    # update records
 
     def _generate_record_commit(self):
         yield {'commit_id': u'0afdc64bfd041b03943ceda7849c4443940b6053',
@@ -272,68 +499,187 @@ class TestRecordProcessor(testtools.TestCase):
     def test_update_record_no_changes(self):
         commit_generator = self._generate_record_commit()
         release_index = {'0afdc64bfd041b03943ceda7849c4443940b6053': 'havana'}
-        record_processor_inst = make_record_processor(
-            make_runtime_storage(users=[]))
+        record_processor_inst = self.make_record_processor(
+            users=[],
+            companies=[{'company_name': 'SuperCompany',
+                        'domains': ['super.no']}])
 
         updated = list(record_processor_inst.update(commit_generator,
                                                     release_index))
 
         self.assertEquals(0, len(updated))
 
-    def test_process_mail(self):
-        record_processor_inst = make_record_processor()
-        commit_generator = generate_emails(
-            subject='[openstack-dev] [Stackalytics] Configuration files')
-        commit = list(record_processor_inst.process(commit_generator))[0]
+    # mail processing
 
-        self.assertEquals('SuperCompany', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
-        self.assertEquals('stackalytics', commit['module'])
+    def test_process_mail(self):
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': 'NEC', 'end_date': 0},
+                    ]
+                }
+            ],
+            repos=[{"module": "stackalytics"}]
+        )
+
+        processed_commit = list(record_processor_inst.process(
+            generate_emails(
+                author_email='johndoe@gmail.com',
+                author_name='John Doe',
+                subject='[openstack-dev] [Stackalytics] Configuration files')
+        ))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+            'module': 'stackalytics',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
 
     def test_process_mail_guessed(self):
-        runtime_storage_inst = make_runtime_storage(
-            repos=[{'module': 'nova'}, {'module': 'neutron'}])
-        record_processor_inst = make_record_processor(runtime_storage_inst)
-        commit_generator = generate_emails(
-            subject='[openstack-dev] [Neutron] [Nova] Integration issue')
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': 'NEC', 'end_date': 0},
+                    ]
+                }
+            ],
+            repos=[{'module': 'nova'}, {'module': 'neutron'}]
+        )
 
-        self.assertEquals('neutron', commit['module'])
+        processed_commit = list(record_processor_inst.process(
+            generate_emails(
+                author_email='johndoe@gmail.com',
+                author_name='John Doe',
+                subject='[openstack-dev] [Neutron] [Nova] Integration issue')
+        ))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+            'module': 'neutron',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
 
     def test_process_mail_guessed_module_in_body_override(self):
-        runtime_storage_inst = make_runtime_storage(
-            repos=[{'module': 'nova'}, {'module': 'heat'}])
-        record_processor_inst = make_record_processor(runtime_storage_inst)
-        commit_generator = generate_emails(
-            subject='[openstack-dev] [heat] Comments/questions on the',
-            module='nova')
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': 'NEC', 'end_date': 0},
+                    ]
+                }
+            ],
+            repos=[{'module': 'nova'}, {'module': 'neutron'}]
+        )
 
-        self.assertEquals('heat', commit['module'])
+        processed_commit = list(record_processor_inst.process(
+            generate_emails(
+                author_email='johndoe@gmail.com',
+                author_name='John Doe',
+                module='nova',
+                subject='[openstack-dev] [neutron] Comments/questions on the')
+        ))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+            'module': 'neutron',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
 
     def test_process_mail_guessed_module_in_body(self):
-        runtime_storage_inst = make_runtime_storage(
-            repos=[{'module': 'nova'}, {'module': 'heat'}])
-        record_processor_inst = make_record_processor(runtime_storage_inst)
-        commit_generator = generate_emails(
-            subject='[openstack-dev] Comments/questions on the heat',
-            module='nova')
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': 'NEC', 'end_date': 0},
+                    ]
+                }
+            ],
+            repos=[{'module': 'nova'}, {'module': 'neutron'}]
+        )
 
-        self.assertEquals('nova', commit['module'])
+        processed_commit = list(record_processor_inst.process(
+            generate_emails(
+                author_email='johndoe@gmail.com',
+                author_name='John Doe',
+                module='nova',
+                subject='[openstack-dev] Comments/questions on the')
+        ))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+            'module': 'nova',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
 
     def test_process_mail_unmatched(self):
-        record_processor_inst = make_record_processor()
-        commit_generator = generate_emails(
-            subject='[openstack-dev] [Photon] Configuration files')
-        commit = list(record_processor_inst.process(commit_generator))[0]
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {
+                    'user_id': 'john_doe',
+                    'launchpad_id': 'john_doe',
+                    'user_name': 'John Doe',
+                    'emails': ['johndoe@gmail.com', 'johndoe@nec.co.jp'],
+                    'companies': [
+                        {'company_name': 'NEC', 'end_date': 0},
+                    ]
+                }
+            ],
+            repos=[{'module': 'nova'}, {'module': 'neutron'}]
+        )
 
-        self.assertEquals('SuperCompany', commit['company_name'])
-        self.assertEquals('john_doe', commit['launchpad_id'])
-        self.assertEquals('unknown', commit['module'])
+        processed_commit = list(record_processor_inst.process(
+            generate_emails(
+                author_email='johndoe@gmail.com',
+                author_name='John Doe',
+                subject='[openstack-dev] Comments/questions on the')
+        ))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@gmail.com',
+            'author_name': 'John Doe',
+            'company_name': 'NEC',
+            'module': 'unknown',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
 
     def test_get_modules(self):
-        record_processor_inst = make_record_processor()
+        record_processor_inst = self.make_record_processor()
         with mock.patch('stackalytics.processor.utils.load_repos') as patch:
             patch.return_value = [{'module': 'nova'},
                                   {'module': 'python-novaclient'},
@@ -341,15 +687,36 @@ class TestRecordProcessor(testtools.TestCase):
             modules = record_processor_inst._get_modules()
             self.assertEqual(set(['nova', 'neutron']), set(modules))
 
+    def assertRecordsMatch(self, expected, actual):
+        for key, value in expected.iteritems():
+            self.assertEquals(value, actual[key],
+                              'Values for key %s do not match' % key)
 
-# Helpers
+    # Helpers
 
-def generate_commits(email='johndoe@gmail.com', date=1999999999):
+    def make_record_processor(self, users=None, companies=None, releases=None,
+                              repos=None, lp_info=None, lp_user_name=None):
+        rp = record_processor.RecordProcessor(make_runtime_storage(
+            users=users, companies=companies, releases=releases, repos=repos))
+
+        if lp_info is not None:
+            self.lp_profile_by_email.side_effect = (
+                lambda x: lp_info.get(x))
+
+        if lp_user_name is not None:
+            self.lp_profile_by_launchpad_id.side_effect = (
+                lambda x: lp_user_name.get(x))
+
+        return rp
+
+
+def generate_commits(author_name='John Doe', author_email='johndoe@gmail.com',
+                     date=1999999999):
     yield {
         'record_type': 'commit',
         'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
-        'author_name': 'John Doe',
-        'author_email': email,
+        'author_name': author_name,
+        'author_email': author_email,
         'date': date,
         'lines_added': 25,
         'lines_deleted': 9,
@@ -357,13 +724,13 @@ def generate_commits(email='johndoe@gmail.com', date=1999999999):
     }
 
 
-def generate_emails(email='johndoe@gmail.com', date=1999999999,
-                    subject='[openstack-dev]', module=None):
+def generate_emails(author_name='John Doe', author_email='johndoe@gmail.com',
+                    date=1999999999, subject='[openstack-dev]', module=None):
     yield {
         'record_type': 'email',
         'message_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
-        'author_name': 'John Doe',
-        'author_email': email,
+        'author_name': author_name,
+        'author_email': author_email,
         'date': date,
         'subject': subject,
         'module': module,
@@ -374,9 +741,11 @@ def make_runtime_storage(users=None, companies=None, releases=None,
                          repos=None):
     def get_by_key(collection):
         if collection == 'companies':
-            return _make_companies(companies or COMPANIES)
+            return _make_companies(companies or [
+                {"company_name": "*independent", "domains": [""]},
+            ])
         elif collection == 'users':
-            return _make_users(users or USERS)
+            return _make_users(users or [])
         elif collection == 'releases':
             return releases or RELEASES
         elif collection == 'repos':
@@ -387,26 +756,6 @@ def make_runtime_storage(users=None, companies=None, releases=None,
     rs = mock.Mock(runtime_storage.RuntimeStorage)
     rs.get_by_key = mock.Mock(side_effect=get_by_key)
     return rs
-
-
-def make_record_processor(runtime_storage_inst=None):
-    return record_processor.RecordProcessor(runtime_storage_inst or
-                                            make_runtime_storage())
-
-
-def make_user():
-    return {
-        'user_id': 'john_doe',
-        'launchpad_id': 'john_doe',
-        'user_name': 'John Doe',
-        'emails': ['johndoe@gmail.com', 'jdoe@super.no'],
-        'companies': [
-            {'company_name': '*independent',
-             'end_date': 1234567890},
-            {'company_name': 'SuperCompany',
-             'end_date': 0},
-        ]
-    }
 
 
 def _make_users(users):

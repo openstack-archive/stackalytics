@@ -216,3 +216,94 @@ a[href^="https://launchpad"]:after {
 .review_mark {
     font-weight: bold;
 }
+
+.specstatusApproved, .specstatusApproved a {
+    color: #008000;
+}
+.specstatusPendingApproval, .specstatusPendingApproval a, .specstatusPendingView, .specstatusPendingView a {
+    color: #FF0099;
+}
+.specstatusDraft, .specstatusDraft a, .specstatusDiscussion, .specstatusDiscussion a {
+    color: #993300;
+}
+.specstatusNew, .specstatusNew a {
+    color: #FF0000;
+}
+.specstatusSuperseded, .specstatusSuperseded a, .specstatusObsolete, .specstatusObsolete a, .specpriorityUndefined, .specpriorityUndefined a {
+    color: #808080;
+}
+.specpriorityLow, .specpriorityLow a {
+    color: #000000;
+}
+.specpriorityMedium, .specpriorityMedium a {
+    color: #FF6600;
+}
+.specpriorityHigh, .specpriorityHigh a, .specpriorityEssential, .specpriorityEssential a {
+    color: #FF0000;
+}
+.specdeliveryUnknown, .specdeliveryUnknown a, .specdeliveryNotStarted, .specdeliveryNotStarted a {
+    color: #808080;
+}
+.specdeliveryDeferred, .specdeliveryDeferred a, .specdeliveryNeendsInfrastructure, .specdeliveryNeendsInfrastructure a, .specdeliveryBlocked, .specdeliveryBlocked a {
+    color: #FF0000;
+}
+.specdeliveryStarted, .specdeliveryStarted a, .specdeliveryGood, .specdeliveryGood a {
+    color: #0000FF;
+}
+.specdeliverySlow, .specdeliverySlow a {
+    color: #FF0000;
+}
+.specdeliveryBeta, .specdeliveryBeta a {
+    color: #FF6600;
+}
+.specdeliveryNEEDSREVIEW, .specdeliveryNEEDSREVIEW a {
+    color: #800080;
+}
+.specdeliveryAWAITINGDEPLOYMENT, .specdeliveryAWAITINGDEPLOYMENT a {
+    color: #FF0000;
+}
+.specdeliveryImplemented, .specdeliveryImplemented a, .specdeliveryINFORMATIONAL, .specdeliveryINFORMATIONAL a {
+    color: #008000;
+}
+.bug-activity {
+    color: #555555;
+}
+.statusNew, .statusNew a {
+    color: #993300;
+}
+.statusIncomplete, .statusIncomplete a, .statusConfirmed, .statusConfirmed a {
+    color: #FF0000;
+}
+.statusTriaged, .statusTriaged a {
+    color: #FF6600;
+}
+.statusInProgress, .statusInProgress a {
+    color: #000000;
+}
+.statusFixCommitted, .statusFixCommitted a {
+    color: #005500;
+}
+.statusFixReleased, .statusFixReleased a {
+    color: #008000;
+}
+.statusInvalid, .statusInvalid a, .statusWontFix, .statusWontFix a {
+    color: #555555;
+}
+.importanceCritical, .importanceCritical a {
+    color: #FF0000;
+}
+.importanceHigh, .importanceHigh a {
+    color: #FF6600;
+}
+.importanceMedium, .importanceMedium a {
+    color: #008000;
+}
+.importanceLow, .importanceLow a {
+    color: #000000;
+}
+.importanceWishlist, .importanceWishlist a {
+    color: #0000FF;
+}
+.importanceUndecided, .importanceUndecided a {
+    color: #999999;
+}

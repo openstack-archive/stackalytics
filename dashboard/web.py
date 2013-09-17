@@ -49,8 +49,8 @@ METRIC_LABELS = {
     'commits': 'Commits',
     'marks': 'Reviews',
     'emails': 'Emails',
-    'bp_draft': 'New Blueprints',
-    'bp_implementation': 'Completed Blueprints',
+    'bpd': 'New Blueprints',
+    'bpc': 'Completed Blueprints',
 }
 
 METRIC_TO_RECORD_TYPE = {
@@ -58,8 +58,8 @@ METRIC_TO_RECORD_TYPE = {
     'commits': 'commit',
     'marks': 'mark',
     'emails': 'email',
-    'bp_draft': 'bp_draft',
-    'bp_implementation': 'bp_implementation',
+    'bpd': 'bpd',
+    'bpc': 'bpc',
 }
 
 DEFAULT_RECORDS_LIMIT = 10
@@ -406,8 +406,8 @@ def aggregate_filter():
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
                 'emails': (incremental_filter, None),
-                'bp_draft': (incremental_filter, None),
-                'bp_implementation': (incremental_filter, None),
+                'bpd': (incremental_filter, None),
+                'bpc': (incremental_filter, None),
             }
             if metric not in metric_to_filters_map:
                 raise Exception('Invalid metric %s' % metric)
@@ -554,44 +554,6 @@ def page_not_found(e):
     pass
 
 
-def contribution_details(records):
-    blueprints_map = {}
-    bugs_map = {}
-    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
-    commit_count = 0
-    loc = 0
-
-    for record in records:
-        if 'blueprint_id' in record:
-            for bp in record['blueprint_id']:
-                blueprints_map[bp] = record
-        if 'bug_id' in record:
-            for bug in record['bug_id']:
-                bugs_map[bug] = record
-
-        if record['record_type'] == 'mark':
-            marks[int(record['value'])] += 1
-        elif record['record_type'] == 'commit':
-            commit_count += 1
-            loc += record['loc']
-
-    blueprints = sorted([{'id': key, 'module': value['module']}
-                         for key, value in blueprints_map.iteritems()],
-                        key=lambda x: x['id'])
-    bugs = sorted([{'id': key, 'module': value['module']}
-                   for key, value in bugs_map.iteritems()],
-                  key=lambda x: int(x['id']))
-
-    result = {
-        'blueprints': blueprints,
-        'bugs': bugs,
-        'commit_count': commit_count,
-        'loc': loc,
-        'marks': marks,
-    }
-    return result
-
-
 # AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
@@ -653,7 +615,9 @@ def _extend_record(record):
     record['company_link'] = make_link(
         record['company_name'], '/',
         {'company': record['company_name'], 'user_id': ''})
-    record['gravatar'] = gravatar(record['author_email'])
+    record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
+    record['blueprint_id_count'] = len(record.get('blueprint_id', []))
+    record['bug_id_count'] = len(record.get('bug_id', []))
 
 
 @app.route('/api/1.0/activity')
@@ -693,10 +657,13 @@ def get_activity_json(records):
             _extend_record(email)
             email['email_link'] = email.get('email_link') or ''
             result.append(email)
-        elif ((record['record_type'] == 'bp_draft') or
-             (record['record_type'] == 'bp_implementation')):
+        elif ((record['record_type'] == 'bpd') or
+             (record['record_type'] == 'bpc')):
             blueprint = record.copy()
             _extend_record(blueprint)
+            if 'mention_date' in record:
+                record['mention_date_str'] = format_datetime(
+                    record['mention_date'])
             result.append(blueprint)
 
     result.sort(key=lambda x: x['date'], reverse=True)
@@ -708,7 +675,36 @@ def get_activity_json(records):
 @exception_handler()
 @record_filter(ignore='metric')
 def get_contribution_json(records):
-    return contribution_details(records)
+    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
+    commit_count = 0
+    loc = 0
+    new_blueprint_count = 0
+    competed_blueprint_count = 0
+    email_count = 0
+
+    for record in records:
+        record_type = record['record_type']
+        if record_type == 'commit':
+            commit_count += 1
+            loc += record['loc']
+        elif record['record_type'] == 'mark':
+            marks[int(record['value'])] += 1
+        elif record['record_type'] == 'email':
+            email_count += 1
+        elif record['record_type'] == 'bpd':
+            new_blueprint_count += 1
+        elif record['record_type'] == 'bpc':
+            competed_blueprint_count += 1
+
+    result = {
+        'new_blueprint_count': new_blueprint_count,
+        'competed_blueprint_count': competed_blueprint_count,
+        'commit_count': commit_count,
+        'email_count': email_count,
+        'loc': loc,
+        'marks': marks,
+    }
+    return result
 
 
 @app.route('/api/1.0/companies')
@@ -817,7 +813,10 @@ def get_user(user_id):
             company_name, '/', {'company': company_name, 'user_id': ''})
     else:
         user['company_link'] = ''
-    user['gravatar'] = gravatar(user['emails'][0])
+    if user['emails']:
+        user['gravatar'] = gravatar(user['emails'][0])
+    else:
+        user['gravatar'] = gravatar('stackalytics')
     return user
 
 

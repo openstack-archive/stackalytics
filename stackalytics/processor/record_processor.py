@@ -16,6 +16,7 @@
 import bisect
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import launchpad_utils
 from stackalytics.processor import normalizer
 from stackalytics.processor import utils
 
@@ -66,6 +67,9 @@ class RecordProcessor(object):
         return companies[-1]['company_name']
 
     def _get_company_by_email(self, email):
+        if not email:
+            return None
+
         name, at, domain = email.partition('@')
         if domain:
             parts = domain.split('.')
@@ -81,13 +85,16 @@ class RecordProcessor(object):
         user = {
             'user_id': normalizer.get_user_id(launchpad_id, email),
             'launchpad_id': launchpad_id,
-            'user_name': user_name,
-            'emails': [email],
+            'user_name': user_name or '',
             'companies': [{
                 'company_name': company,
                 'end_date': 0,
             }],
         }
+        if email:
+            user['emails'] = [email]
+        else:
+            user['emails'] = []
         normalizer.normalize_user(user)
         LOG.debug('Create new user: %s', user)
         return user
@@ -95,12 +102,9 @@ class RecordProcessor(object):
     def _get_lp_info(self, email):
         lp_profile = None
         if not utils.check_email_validity(email):
-            LOG.debug('User email is not valid %s' % email)
+            LOG.debug('User email is not valid %s', email)
         else:
-            LOG.debug('Lookup user email %s at Launchpad' % email)
-            uri = ('https://api.launchpad.net/1.0/people/?'
-                   'ws.op=getByEmail&email=%s' % email)
-            lp_profile = utils.read_json_from_uri(uri)
+            lp_profile = launchpad_utils.lp_profile_by_email(email)
 
         if not lp_profile:
             LOG.debug('User with email %s not found', email)
@@ -108,6 +112,18 @@ class RecordProcessor(object):
 
         LOG.debug('Email is mapped to launchpad user: %s', lp_profile['name'])
         return lp_profile['name'], lp_profile['display_name']
+
+    def _get_lp_user_name(self, launchpad_id):
+        if not launchpad_id:
+            return None
+
+        lp_profile = launchpad_utils.lp_profile_by_launchpad_id(launchpad_id)
+
+        if not lp_profile:
+            LOG.debug('User with id %s not found', launchpad_id)
+            return launchpad_id
+
+        return lp_profile['display_name']
 
     def _get_independent(self):
         return self.domains_index['']
@@ -124,14 +140,14 @@ class RecordProcessor(object):
             self.updated_users.add(user['user_id'])
 
     def update_user(self, record):
-        email = record['author_email']
+        email = record.get('author_email')
 
         if email in self.users_index:
             user = self.users_index[email]
         else:
-            if ('launchpad_id' in record) and (record['launchpad_id']):
-                launchpad_id = record['launchpad_id']
-                user_name = record['author_name']
+            if record.get('launchpad_id'):
+                launchpad_id = record.get('launchpad_id')
+                user_name = record.get('author_name')
             else:
                 launchpad_id, user_name = self._get_lp_info(email)
 
@@ -142,11 +158,14 @@ class RecordProcessor(object):
             else:
                 # create new
                 if not user_name:
-                    user_name = record['author_name']
+                    user_name = record.get('author_name')
+                if not user_name:
+                    user_name = self._get_lp_user_name(launchpad_id)
                 user = self._create_user(launchpad_id, email, user_name)
 
             utils.store_user(self.runtime_storage_inst, user)
-            self.users_index[email] = user
+            if email:
+                self.users_index[email] = user
             if user['launchpad_id']:
                 self.users_index[user['launchpad_id']] = user
 
@@ -158,12 +177,12 @@ class RecordProcessor(object):
         record['user_id'] = user['user_id']
         record['launchpad_id'] = user['launchpad_id']
 
-        if ('user_name' in user) and (user['user_name']):
+        if user.get('user_name'):
             record['author_name'] = user['user_name']
 
         company = self._find_company(user['companies'], record['date'])
         if company != '*robots':
-            company = (self._get_company_by_email(record['author_email'])
+            company = (self._get_company_by_email(record.get('author_email'))
                        or company)
         record['company_name'] = company
 
@@ -199,7 +218,7 @@ class RecordProcessor(object):
         review_id = record['id']
         module = record['module']
 
-        for patch in record['patchSets']:
+        for patch in record.get('patchSets', []):
             if 'approvals' not in patch:
                 continue  # not reviewed by anyone
             for approval in patch['approvals']:
@@ -265,40 +284,28 @@ class RecordProcessor(object):
         yield record
 
     def _process_blueprint(self, record):
-        if record.get('drafter'):
-            bp_draft = dict([(k, v) for k, v in record.iteritems()])
-            bp_draft['primary_key'] = 'bpd:' + record['self_link']
+        bpd_author = record.get('drafter') or record.get('owner')
 
-            drafter = utils.load_user(self.runtime_storage_inst,
-                                      record['drafter'])
-            if drafter and record['date_created']:
-                bp_draft['record_type'] = 'bp_draft'
-                bp_draft['author_name'] = drafter['user_name']
-                bp_draft['author_email'] = drafter['emails'][0]
-                bp_draft['launchpad_id'] = record['drafter']
-                bp_draft['date'] = record['date_created']
+        bpd = dict([(k, v) for k, v in record.iteritems()])
+        bpd['record_type'] = 'bpd'
+        bpd['primary_key'] = 'bpd:' + record['self_link']
+        bpd['launchpad_id'] = bpd_author
+        bpd['date'] = record['date_created']
 
-                self._update_record_and_user(bp_draft)
+        self._update_record_and_user(bpd)
 
-                yield bp_draft
+        yield bpd
 
-        if record.get('assignee'):
-            bp_implementation = dict([(k, v) for k, v in record.iteritems()])
-            bp_implementation['primary_key'] = 'bpi:' + record['self_link']
+        if record.get('assignee') and record['date_completed']:
+            bpc = dict([(k, v) for k, v in record.iteritems()])
+            bpc['record_type'] = 'bpc'
+            bpc['primary_key'] = 'bpc:' + record['self_link']
+            bpc['launchpad_id'] = record['assignee']
+            bpc['date'] = record['date_completed']
 
-            assignee = utils.load_user(self.runtime_storage_inst,
-                                       record['assignee'])
-            if assignee and record['date_completed']:
-                bp_implementation['record_type'] = 'bp_implementation'
-                bp_implementation['author_name'] = assignee['user_name']
-                bp_implementation['author_email'] = assignee['emails'][0]
-                bp_implementation['launchpad_id'] = record['assignee']
-                bp_implementation['date'] = record['date_completed']
+            self._update_record_and_user(bpc)
 
-                if bp_implementation['author_email']:
-                    self._update_record_and_user(bp_implementation)
-
-                yield bp_implementation
+            yield bpc
 
     def _apply_type_based_processing(self, record):
         if record['record_type'] == 'commit':
@@ -359,16 +366,69 @@ class RecordProcessor(object):
         self.runtime_storage_inst.set_by_key('users', self.users_index)
 
     def _get_records_for_users_to_update(self):
+        valid_blueprints = {}
+        mentioned_blueprints = {}
         for record in self.runtime_storage_inst.get_all_records():
+            for bp in record.get('blueprint_id', []):
+                if bp in mentioned_blueprints:
+                    mentioned_blueprints[bp]['count'] += 1
+                    if record['date'] > mentioned_blueprints[bp]['date']:
+                        mentioned_blueprints[bp]['date'] = record['date']
+                else:
+                    mentioned_blueprints[bp] = {
+                        'count': 1,
+                        'date': record['date']
+                    }
+            if record['record_type'] in ['bpd', 'bpi']:
+                valid_blueprints[record['name']] = {
+                    'primary_key': record['primary_key'],
+                    'count': 0,
+                    'date': record['date']
+                }
+
+        for bp in valid_blueprints.keys():
+            if bp in mentioned_blueprints:
+                valid_blueprints[bp]['count'] = (
+                    mentioned_blueprints[bp]['count'])
+                valid_blueprints[bp]['date'] = (
+                    mentioned_blueprints[bp]['date'])
+
+        for record in self.runtime_storage_inst.get_all_records():
+
+            need_update = False
+
             user_id = record['user_id']
             if user_id in self.updated_users:
                 user = self.users_index[user_id]
                 user_company_name = user['companies'][0]['company_name']
                 if record['company_name'] != user_company_name:
-                    LOG.debug('Record company will be changed to: %s',
-                              user_company_name)
+                    LOG.debug('Update record %s: company changed to: %s',
+                              record['primary_key'], user_company_name)
                     record['company_name'] = user_company_name
-                    yield record
+                    need_update = True
+
+            valid_bp = set([])
+            for bp in record.get('blueprint_id', []):
+                if bp in valid_blueprints:
+                    valid_bp.add(bp)
+                else:
+                    LOG.debug('Update record %s: removed invalid bp: %s',
+                              record['primary_key'], bp)
+                    need_update = True
+            record['blueprint_id'] = list(valid_bp)
+
+            if record['record_type'] in ['bpd', 'bpi']:
+                bp = valid_blueprints[record['name']]
+                if ((record.get('mention_count') != bp['count']) or
+                        (record.get('mention_date') != bp['date'])):
+                    record['mention_count'] = bp['count']
+                    record['mention_date'] = bp['date']
+                    LOG.debug('Update record %s: mention stats: (%s:%s)',
+                              record['primary_key'], bp['count'], bp['date'])
+                    need_update = True
+
+            if need_update:
+                yield record
 
     def finalize(self):
         self.runtime_storage_inst.set_records(
