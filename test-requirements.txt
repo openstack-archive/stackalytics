@@ -2,6 +2,7 @@ hacking>=0.6,<0.8
 
 coverage
 discover
+docutils==0.9.1
 fixtures>=0.3.12
 jsonschema
 mock
