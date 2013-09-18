@@ -3133,6 +3133,21 @@
             ],
             "user_name": "Zhongyue Luo",
             "emails": ["lzyeval@gmail.com", "zhongyue.nah@intel.com"]
+        },
+        {
+            "launchpad_id": "danms",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2013-Sep-06"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dan Smith",
+            "emails": ["danms@us.ibm.com", "dms@danplanet.com", "dansmith@redhat.com"]
         }
     ],
     "companies": [
