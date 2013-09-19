@@ -1606,6 +1606,18 @@
             "emails": ["kbringard@attinteractive.com", "kbringard@att.com"]
         },
         {
+            "launchpad_id": "kc-wang",
+            "gerrit_id": "kcwang",
+            "companies": [
+                {
+                    "company_name": "Big Switch Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kuang-Ching Wang",
+            "emails": ["kuangching.wang@gmail.com", "kc.wang@bigswitch.com"]
+        },
+        {
             "launchpad_id": "ke-wu",
             "companies": [
                 {

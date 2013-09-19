@@ -91,6 +91,8 @@ def _process_users(runtime_storage_inst, users):
             users_index[user['user_id']] = user
         if 'launchpad_id' in user:
             users_index[user['launchpad_id']] = user
+        if 'gerrit_id' in user:
+            users_index[user['gerrit_id']] = user
         for email in user['emails']:
             users_index[email] = user
     runtime_storage_inst.set_by_key('users', users_index)
