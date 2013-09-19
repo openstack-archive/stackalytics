@@ -1941,6 +1941,10 @@
             "companies": [
                 {
                     "company_name": "Canonical",
+                    "end_date": "2012-Dec-13"
+                },
+                {
+                    "company_name": "Rackspace",
                     "end_date": null
                 }
             ],
