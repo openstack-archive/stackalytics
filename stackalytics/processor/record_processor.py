@@ -154,7 +154,8 @@ class RecordProcessor(object):
             if (launchpad_id) and (launchpad_id in self.users_index):
                 # merge emails
                 user = self.users_index[launchpad_id]
-                self._update_user_profile(user, email)
+                if email:
+                    self._update_user_profile(user, email)
             else:
                 # create new
                 if not user_name:

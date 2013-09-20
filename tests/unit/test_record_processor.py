@@ -468,6 +468,49 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
                           record_processor_inst.users_index)
 
+    def test_process_review_then_blueprint(self):
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_records = list(record_processor_inst.process([
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova'},
+            {'record_type': 'bp',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890}
+        ]))
+
+        self.assertRecordsMatch(
+            {'record_type': 'review',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'author_email': 'john_doe@gmail.com',
+             'company_name': '*independent'},
+            processed_records[0])
+
+        self.assertRecordsMatch(
+            {'record_type': 'bpd',
+             'launchpad_id': 'john_doe',
+             'author_name': 'John Doe',
+             'company_name': '*independent'},
+            processed_records[1])
+
+        user = {'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@gmail.com'],
+                'companies': [{'company_name': '*independent', 'end_date': 0}]}
+        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
+                          record_processor_inst.users_index)
+
     # update records
 
     def _generate_record_commit(self):
