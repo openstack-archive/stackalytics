@@ -1474,6 +1474,17 @@
             "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com"]
         },
         {
+            "launchpad_id": "joshua.hesketh",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joshua Hesketh",
+            "emails": ["joshua.hesketh@rackspace.com", "joshua.hesketh@RACKSPACE.COM", "josh@nitrotech.org"]
+        },
+        {
             "launchpad_id": "joshua-mckenty",
             "companies": [
                 {
