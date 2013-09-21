@@ -13,7 +13,7 @@ Overview
 * `Wiki <https://wiki.openstack.org/wiki/Stackalytics>`_
 
 
-User guide
+API
 ----------
 .. toctree::
    :maxdepth: 1
