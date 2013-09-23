@@ -2018,6 +2018,17 @@
             "emails": ["rosario.disomma@dreamhost.com"]
         },
         {
+            "launchpad_id": "mrda",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Davies",
+            "emails": ["michael@the-davies.net"]
+        },
+        {
             "launchpad_id": "mshuler",
             "companies": [
                 {
