@@ -325,6 +325,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         processed_records = list(record_processor_inst.process([
             {'record_type': 'bp',
+             'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
              'owner': 'john_doe',
              'date_created': 1234567890}
@@ -358,6 +359,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         processed_records = list(record_processor_inst.process([
             {'record_type': 'bp',
+             'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
              'owner': 'john_doe',
              'date_created': 1234567890}
@@ -387,6 +389,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         processed_records = list(record_processor_inst.process([
             {'record_type': 'bp',
+             'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
              'owner': 'john_doe',
              'date_created': 1234567890},
@@ -432,6 +435,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         processed_records = list(record_processor_inst.process([
             {'record_type': 'bp',
+             'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
              'owner': 'john_doe',
              'date_created': 1234567890},
@@ -483,6 +487,7 @@ class TestRecordProcessor(testtools.TestCase):
              'createdOn': 1379404951,
              'module': 'nova'},
             {'record_type': 'bp',
+             'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
              'owner': 'john_doe',
              'date_created': 1234567890}
@@ -777,6 +782,7 @@ def generate_emails(author_name='John Doe', author_email='johndoe@gmail.com',
         'date': date,
         'subject': subject,
         'module': module,
+        'body': 'lorem ipsum',
     }
 
 

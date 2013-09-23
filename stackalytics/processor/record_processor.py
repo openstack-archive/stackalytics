@@ -282,14 +282,21 @@ class RecordProcessor(object):
         self._update_record_and_user(record)
         self._guess_module(record)
 
+        if record.get('blueprint_id'):
+            self.runtime_storage_inst.set_by_key(
+                'email:%s' % record['primary_key'], record['body'])
+
+        del record['body']
+
         yield record
 
     def _process_blueprint(self, record):
         bpd_author = record.get('drafter') or record.get('owner')
 
-        bpd = dict([(k, v) for k, v in record.iteritems()])
+        bpd = dict([(k, v) for k, v in record.iteritems()
+                    if k.find('_link') < 0])
         bpd['record_type'] = 'bpd'
-        bpd['primary_key'] = 'bpd:' + record['self_link']
+        bpd['primary_key'] = 'bpd:' + record['id']
         bpd['launchpad_id'] = bpd_author
         bpd['date'] = record['date_created']
 
@@ -298,9 +305,10 @@ class RecordProcessor(object):
         yield bpd
 
         if record.get('assignee') and record['date_completed']:
-            bpc = dict([(k, v) for k, v in record.iteritems()])
+            bpc = dict([(k, v) for k, v in record.iteritems()
+                        if k.find('_link') < 0])
             bpc['record_type'] = 'bpc'
-            bpc['primary_key'] = 'bpc:' + record['self_link']
+            bpc['primary_key'] = 'bpc:' + record['id']
             bpc['launchpad_id'] = record['assignee']
             bpc['date'] = record['date_completed']
 
@@ -381,7 +389,7 @@ class RecordProcessor(object):
                         'date': record['date']
                     }
             if record['record_type'] in ['bpd', 'bpi']:
-                valid_blueprints[record['name']] = {
+                valid_blueprints[record['id']] = {
                     'primary_key': record['primary_key'],
                     'count': 0,
                     'date': record['date']
@@ -419,7 +427,7 @@ class RecordProcessor(object):
             record['blueprint_id'] = list(valid_bp)
 
             if record['record_type'] in ['bpd', 'bpi']:
-                bp = valid_blueprints[record['name']]
+                bp = valid_blueprints[record['id']]
                 if ((record.get('mention_count') != bp['count']) or
                         (record.get('mention_date') != bp['date'])):
                     record['mention_count'] = bp['count']

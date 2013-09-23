@@ -19,7 +19,6 @@ import StringIO
 
 from email import utils as email_utils
 import re
-import time
 import urlparse
 
 from stackalytics.openstack.common import log as logging
@@ -81,6 +80,9 @@ def _link_content_changed(link, runtime_storage_inst):
 def _retrieve_mails(uri):
     LOG.debug('Retrieving mail archive from uri: %s', uri)
     content = utils.read_uri(uri)
+    if not content:
+        LOG.error('Error reading mail archive from uri: %s', uri)
+        return
     gzip_fd = gzip.GzipFile(fileobj=StringIO.StringIO(content))
     content = gzip_fd.read()
     LOG.debug('Mail archive is loaded, start processing')
@@ -94,7 +96,8 @@ def _retrieve_mails(uri):
             continue
 
         author_name = rec.group(2)
-        date = int(time.mktime(email_utils.parsedate(rec.group(3))))
+        date = int(email_utils.mktime_tz(
+            email_utils.parsedate_tz(rec.group(3))))
         subject = rec.group(4)
         message_id = rec.group(5)
         body = rec.group(6)
@@ -105,15 +108,18 @@ def _retrieve_mails(uri):
             'author_email': author_email,
             'subject': subject,
             'date': date,
+            'body': body,
         }
 
         for pattern_name, pattern in MESSAGE_PATTERNS.iteritems():
             collection = set()
             for item in re.finditer(pattern, body):
                 groups = item.groupdict()
-                collection.add(groups['id'])
+                item_id = groups['id']
                 if 'module' in groups:
+                    item_id = groups['module'] + ':' + item_id
                     email['module'] = groups['module']
+                collection.add(item_id)
             email[pattern_name] = list(collection)
 
         yield email
@@ -125,5 +131,5 @@ def log(uri, runtime_storage_inst):
     for link in links:
         if _link_content_changed(link, runtime_storage_inst):
             for mail in _retrieve_mails(link):
-                LOG.debug('New mail: %s', mail)
+                LOG.debug('New mail: %s', mail['message_id'])
                 yield mail

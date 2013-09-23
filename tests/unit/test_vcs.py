@@ -122,7 +122,7 @@ diff_stat:
         self.assertEquals(0, commits[3]['files_changed'])
         self.assertEquals(0, commits[3]['lines_added'])
         self.assertEquals(0, commits[3]['lines_deleted'])
-        self.assertEquals(set(['fix-me']),
+        self.assertEquals(set(['dummy:fix-me']),
                           set(commits[3]['blueprint_id']))
 
         self.assertEquals(0, commits[4]['files_changed'])

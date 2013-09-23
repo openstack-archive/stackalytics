@@ -44,9 +44,10 @@ Change-Id: Ie49ccd2138905e178843b375a9b16c3fe572d1db'''
 During finish_migration the manager calls initialize_connection but doesn't \
 update the block_device_mapping with the potentially new connection_info \
 returned.
-Fixes bug <a href="https://bugs.launchpad.net/bugs/1076801">1076801</a>
+Fixes bug <a href="https://bugs.launchpad.net/bugs/1076801" class="ext_link">\
+1076801</a>
 ''' + ('Change-Id: <a href="https://review.openstack.org/#q,'
-       'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z">'
+       'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
        'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
 
         observed = web.make_commit_message(record)
@@ -71,9 +72,9 @@ Change-Id: Ie49ccd2138905e178843b375a9b16c3fe572d1db'''
 Implemented new driver for Cinder &lt;:
 Implements Blueprint ''' + (
             '<a href="https://blueprints.launchpad.net/cinder/+spec/'
-            'super-driver">super-driver</a>' + '\n' +
+            'super-driver" class="ext_link">super-driver</a>' + '\n' +
             'Change-Id: <a href="https://review.openstack.org/#q,'
-            'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z">'
+            'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
             'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
 
         observed = web.make_commit_message(record)
@@ -86,6 +87,15 @@ Implements Blueprint ''' + (
         expected = 'Lorem ipsum. Dolor sit amet.\n Lorem\n ipsum.\ndolor!'
 
         self.assertEqual(expected, web.unwrap_text(original))
+
+    def test_unwrap_split_long_link(self):
+        original = ('https://blueprints.launchpad.net/stackalytics/+spec/'
+                    'stackalytics-core')
+        expected = ('https://&#8203;blueprints.launchpad.net/&#8203;'
+                    'stackalytics/&#8203;+spec/&#8203;stackalytics-core')
+
+        self.assertEqual(expected, web.make_commit_message(
+            {'message': original, 'module': 'none'}))
 
     @mock.patch('dashboard.web.get_vault')
     @mock.patch('dashboard.web.get_user_from_runtime_storage')
