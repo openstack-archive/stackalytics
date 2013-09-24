@@ -1787,6 +1787,17 @@
             "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com"]
         },
         {
+            "launchpad_id": "linuxjedi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Hutchings",
+            "emails": ["andrew@linuxjedi.co.uk"]
+        },
+        {
             "launchpad_id": "liquid-x",
             "companies": [
                 {
