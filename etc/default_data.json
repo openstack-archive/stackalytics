@@ -133,6 +133,17 @@
             "emails": ["ap@pilotti.it"]
         },
         {
+            "launchpad_id": "amcrn",
+            "companies": [
+                {
+                    "company_name": "eBay",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Auston McReynolds",
+            "emails": ["amcreynolds@ebaysf.com", "amcreynolds@ebay.com"]
+        },
+        {
             "launchpad_id": "andrewbogott",
             "companies": [
                 {
@@ -3332,6 +3343,10 @@
         {
             "domains": ["dreamhost.com"],
             "company_name": "DreamHost"
+        },
+        {
+            "domains": ["ebaysf.com", "ebay.com"],
+            "company_name": "eBay"
         },
         {
             "domains": ["embrane.com"],
