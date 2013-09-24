@@ -17,7 +17,6 @@ import urllib
 
 from oslo.config import cfg
 import psutil
-from psutil import _error
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
@@ -42,8 +41,8 @@ def get_pids():
             if p.cmdline and p.cmdline[0].find('/uwsgi'):
                 if p.parent:
                     uwsgi_dict[p.pid] = p.parent.pid
-        except _error.NoSuchProcess:
-            # the process may disappear after get_pid_list call, ignore it
+        except Exception as e:
+            LOG.debug('Exception while iterating process list: %s', e)
             pass
 
     result = set()

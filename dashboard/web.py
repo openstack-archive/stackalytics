@@ -49,7 +49,7 @@ METRIC_LABELS = {
     'commits': 'Commits',
     'marks': 'Reviews',
     'emails': 'Emails',
-    'bpd': 'New Blueprints',
+    'bpd': 'Drafted Blueprints',
     'bpc': 'Completed Blueprints',
 }
 
@@ -615,6 +615,9 @@ def _extend_record(record):
     record['company_link'] = make_link(
         record['company_name'], '/',
         {'company': record['company_name'], 'user_id': ''})
+    record['module_link'] = make_link(
+        record['module'], '/',
+        {'module': record['module'], 'company': '', 'user_id': ''})
     record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
     record['blueprint_id_count'] = len(record.get('blueprint_id', []))
     record['bug_id_count'] = len(record.get('bug_id', []))
@@ -662,7 +665,7 @@ def get_activity_json(records):
             blueprint = record.copy()
             _extend_record(blueprint)
             if 'mention_date' in record:
-                record['mention_date_str'] = format_datetime(
+                blueprint['mention_date_str'] = format_datetime(
                     record['mention_date'])
             result.append(blueprint)
 
@@ -904,12 +907,46 @@ def get_commit_report(records):
     return response
 
 
+@app.route('/report/blueprint/<module>/<blueprint_name>')
+@templated()
+@exception_handler()
+def blueprint_report(module, blueprint_name):
+    memory_storage_inst = get_vault()['memory_storage']
+    runtime_storage_inst = get_vault()['runtime_storage']
+
+    blueprint_id = module + ':' + blueprint_name
+
+    for bpd in memory_storage_inst.get_records(
+            memory_storage_inst.get_record_ids_by_type('bpd')):
+        if bpd['id'] == blueprint_id:
+            _extend_record(bpd)
+            break
+    else:
+        flask.abort(404)
+        return
+
+    record_ids = memory_storage_inst.get_record_ids_by_blueprint_ids(
+        [blueprint_id])
+
+    activity = []
+    for record in memory_storage_inst.get_records(record_ids):
+        _extend_record(record)
+        if record['record_type'] == 'email':
+            record['body'] = (runtime_storage_inst.get_by_key('email:%s' %
+                              record['primary_key']))
+        activity.append(record)
+
+    activity.sort(key=lambda x: x['date'])
+
+    return {'blueprint': bpd, 'activity': activity}
+
+
 # Jinja Filters ---------
 
 @app.template_filter('datetimeformat')
 def format_datetime(timestamp):
     return datetime.datetime.utcfromtimestamp(
-        timestamp).strftime('%d %b %Y @ %H:%M')
+        timestamp).strftime('%d %b %Y %H:%M:%S')
 
 
 @app.template_filter('launchpadmodule')
@@ -960,15 +997,18 @@ def make_commit_message(record):
 
     # clear text
     s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
+    s = re.sub(r'([/\/]+)', r'\1&#8203;', s)
 
     # insert links
     s = re.sub(re.compile('(blueprint\s+)([\w-]+)', flags=re.IGNORECASE),
                r'\1<a href="https://blueprints.launchpad.net/' +
-               module + r'/+spec/\2">\2</a>', s)
-    s = re.sub(re.compile('(bug\s+)#?([\d]{5,7})', flags=re.IGNORECASE),
-               r'\1<a href="https://bugs.launchpad.net/bugs/\2">\2</a>', s)
+               module + r'/+spec/\2" class="ext_link">\2</a>', s)
+    s = re.sub(re.compile('(bug[\s#:]*)([\d]{5,7})', flags=re.IGNORECASE),
+               r'\1<a href="https://bugs.launchpad.net/bugs/\2" '
+               r'class="ext_link">\2</a>', s)
     s = re.sub(r'\s+(I[0-9a-f]{40})',
-               r' <a href="https://review.openstack.org/#q,\1,n,z">\1</a>', s)
+               r' <a href="https://review.openstack.org/#q,\1,n,z" '
+               r'class="ext_link">\1</a>', s)
 
     s = unwrap_text(s)
     return s

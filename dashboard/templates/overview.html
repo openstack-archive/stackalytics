@@ -43,6 +43,11 @@
                         $('#activity_header').hide();
                     }
                     $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                    $('.ext_link').click(function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        window.open(this.href, '_blank');
+                    });
                 }
             });
         }
@@ -90,7 +95,7 @@
     <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
     <div style="margin-left: 40px;">
         <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} to <a href="https://launchpad.net/${module}">${module}</a></div>
+        <div style="font-weight: bold;">${date_str} in {%html module_link%}</div>
     </div>
     <div style="margin-left: 40px;">
         {%if record_type == "commit" %}
@@ -125,7 +130,7 @@
             </div>
             {%/if%}
         {%elif ((record_type == "bpd") || (record_type == "bpc")) %}
-            <div style='font-weight: bold;'>${title} (<a href='${web_link}'>${name}</a>)</div>
+            <div style='font-weight: bold;'>${title} (<a href="/report/blueprint/${module}/${name}" class="ext_link">${name}</a>)</div>
             <div style='white-space: pre-wrap;'>${summary}</div>
 
             <div>Priority: <span class="specpriority${priority}">${priority}</span></div>

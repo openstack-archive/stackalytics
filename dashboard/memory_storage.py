@@ -33,6 +33,7 @@ class CachedMemoryStorage(MemoryStorage):
         self.user_id_index = {}
         self.company_index = {}
         self.release_index = {}
+        self.blueprint_id_index = {}
 
         self.indexes = {
             'primary_key': self.primary_key_index,
@@ -49,6 +50,11 @@ class CachedMemoryStorage(MemoryStorage):
         self.records[record['record_id']] = record
         for key, index in self.indexes.iteritems():
             self._add_to_index(index, record, key)
+        for bp_id in (record.get('blueprint_id') or []):
+            if bp_id in self.blueprint_id_index:
+                self.blueprint_id_index[bp_id].add(record['record_id'])
+            else:
+                self.blueprint_id_index[bp_id] = set([record['record_id']])
 
     def update(self, records):
         have_updates = False
@@ -99,6 +105,10 @@ class CachedMemoryStorage(MemoryStorage):
 
     def get_record_ids_by_releases(self, releases):
         return self._get_record_ids_from_index(releases, self.release_index)
+
+    def get_record_ids_by_blueprint_ids(self, blueprint_ids):
+        return self._get_record_ids_from_index(blueprint_ids,
+                                               self.blueprint_id_index)
 
     def get_record_ids(self):
         return self.records.keys()

@@ -175,6 +175,10 @@ class Git(Vcs):
                 commit['release'] = self.release_index[commit['commit_id']]
             else:
                 commit['release'] = None
+            if 'blueprint_id' in commit:
+                commit['blueprint_id'] = [(commit['module'] + ':' + bp_name)
+                                          for bp_name
+                                          in commit['blueprint_id']]
 
             yield commit
 
