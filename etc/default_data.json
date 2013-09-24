@@ -539,6 +539,17 @@
             "emails": ["corywright@gmail.com", "cory.wright@rackspace.com"]
         },
         {
+            "launchpad_id": "cp16net",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craig Vyvial",
+            "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com"]
+        },
+        {
             "launchpad_id": "cthiel-suse",
             "companies": [
                 {
@@ -2390,6 +2401,17 @@
             ],
             "user_name": "Ramana Juvvadi",
             "emails": ["rjuvvadi@hcl.com", "rrjuvvadi@gmail.com", "ramana@venus.lekha.org"]
+        },
+        {
+            "launchpad_id": "ridhi-j-shah",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Riddhi Shah",
+            "emails": ["riddhi.shah@rackspace.com", "ridhi.j.shah@gmail.com"]
         },
         {
             "launchpad_id": "rlane",
