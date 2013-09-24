@@ -50,3 +50,17 @@ class TestUtils(testtools.TestCase):
     def test_email_invalid(self):
         self.assertFalse(utils.check_email_validity('pupkin@localhost'))
         self.assertFalse(utils.check_email_validity('222@some.(trash)'))
+
+    def test_unwrap(self):
+        original = 'Lorem ipsum. Dolor\nsit amet.\n Lorem\n ipsum.\ndolor!\n'
+        expected = 'Lorem ipsum. Dolor sit amet.\n Lorem\n ipsum.\ndolor!'
+
+        self.assertEqual(expected, utils.unwrap_text(original))
+
+    def test_format_text_split_long_link(self):
+        original = ('https://blueprints.launchpad.net/stackalytics/+spec/'
+                    'stackalytics-core')
+        expected = ('https://&#8203;blueprints.launchpad.net/&#8203;'
+                    'stackalytics/&#8203;+spec/&#8203;stackalytics-core')
+
+        self.assertEqual(expected, utils.format_text(original))

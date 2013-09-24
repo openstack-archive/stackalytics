@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import cgi
 import datetime
 import iso8601
 import json
@@ -87,3 +88,23 @@ def load_user(runtime_storage_inst, user_id):
 
 def load_repos(runtime_storage_inst):
     return runtime_storage_inst.get_by_key('repos') or []
+
+
+def unwrap_text(text):
+    res = ''
+    for line in text.splitlines():
+        s = line.rstrip()
+        if not s:
+            continue
+        res += line
+        if (not s[0].isalpha()) or (s[-1] in ['.', '!', '?', '>', ':', ';']):
+            res += '\n'
+        else:
+            res += ' '
+    return res.rstrip()
+
+
+def format_text(s):
+    s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
+    s = re.sub(r'([/\/]+)', r'\1&#8203;', s)
+    return s

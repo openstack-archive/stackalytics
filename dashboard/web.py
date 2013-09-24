@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import cgi
 import datetime
 import functools
 import json
@@ -664,6 +663,7 @@ def get_activity_json(records):
              (record['record_type'] == 'bpc')):
             blueprint = record.copy()
             _extend_record(blueprint)
+            blueprint['summary'] = utils.format_text(record['summary'])
             if 'mention_date' in record:
                 blueprint['mention_date_str'] = format_datetime(
                     record['mention_date'])
@@ -976,28 +976,11 @@ def make_link(title, uri=None, options=None):
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
 
-def unwrap_text(text):
-    res = ''
-    for line in text.splitlines():
-        s = line.rstrip()
-        if not s:
-            continue
-        res += line
-        if (not s[0].isalpha()) or (s[-1] in ['.', '!', '?', '>', ':', ';']):
-            res += '\n'
-        else:
-            res += ' '
-    return res.rstrip()
-
-
-@app.template_filter('commit_message')
 def make_commit_message(record):
     s = record['message']
     module = record['module']
 
-    # clear text
-    s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
-    s = re.sub(r'([/\/]+)', r'\1&#8203;', s)
+    s = utils.format_text(s)
 
     # insert links
     s = re.sub(re.compile('(blueprint\s+)([\w-]+)', flags=re.IGNORECASE),
@@ -1010,7 +993,7 @@ def make_commit_message(record):
                r' <a href="https://review.openstack.org/#q,\1,n,z" '
                r'class="ext_link">\1</a>', s)
 
-    s = unwrap_text(s)
+    s = utils.unwrap_text(s)
     return s
 
 

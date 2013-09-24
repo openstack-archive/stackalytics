@@ -28,6 +28,11 @@
 <div><span class="label">Registered By:</span> {{blueprint.author_name}} ({{ blueprint.company_name }})</div>
 <div><span class="label">Registered On:</span> {{blueprint.date_str}}</div>
 
+{% if blueprint.summary %}
+<h2>Summary</h2>
+<div class="message">{{  blueprint.summary }}</div>
+{% endif %}
+
 {% if blueprint.whiteboard %}
 <h2>Whiteboard</h2>
 <div class="message">{{  blueprint.whiteboard }}</div>
