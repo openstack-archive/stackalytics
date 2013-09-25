@@ -517,10 +517,29 @@
             "emails": ["clint@fewbar.com", "clint.byrum@hp.com", "clint@ubuntu.com"]
         },
         {
-            "launchpad_id": "corvus",
+            "launchpad_id": "cmsj",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Jones",
+            "emails": ["cmsj@tenshu.net"]
+        },
+        {
+            "launchpad_id": "corvus",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2011-Dec-01"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": "2012-Jun-04"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
                     "end_date": null
                 }
             ],
@@ -3183,6 +3202,17 @@
             ],
             "user_name": "Pete Zaitcev",
             "emails": ["zaitcev@kotori.zaitcev.us", "zaitcev@redhat.com"]
+        },
+        {
+            "launchpad_id": "zaro0508",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Khai Do",
+            "emails": ["zaro0508@gmail.com"]
         },
         {
             "launchpad_id": "zealot",
