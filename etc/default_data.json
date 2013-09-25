@@ -78,15 +78,23 @@
             "emails": ["ikharin@mirantis.com", "akscram@gmail.com"]
         },
         {
-            "launchpad_id": "akuno",
+            "launchpad_id": "anteaya",
             "companies": [
                 {
+                    "company_name": "independent",
+                    "end_date": "2013-Apr-02"
+                },
+                {
                     "company_name": "eNovance",
+                    "end_date": "2013-Jun-21"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Anita Kuno",
-            "emails": ["akuno@lavabit.com", "anita.kuno@enovance.com"]
+            "emails": ["akuno@lavabit.com", "anita.kuno@enovance.com", "anteaya@anteaya.info"]
         },
         {
             "launchpad_id": "alex-gaynor",
