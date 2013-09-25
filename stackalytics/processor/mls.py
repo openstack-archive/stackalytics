@@ -33,11 +33,12 @@ EMAIL_HEADER_PATTERN = ('From \S+(?: at \S+)?\s+'
 
 MAIL_BOX_PATTERN = re.compile(
     '^' + EMAIL_HEADER_PATTERN +
-    'From: (\S+(?: at \S+))(?:\W+(\w+(?:\s\w+)*))?.*?\n'
-    'Date: (.*?)\n'
-    'Subject: (.*?)(?=\n\S+:)'
-    '.*?Message-ID: (\S+)\n'
-    '\n(.*?)\n'
+    'From: (?P<author_email>\S+(?: at \S+))'
+    '(?:\W+(?P<author_name>\w+(?:\s\w+)*))?.*?\n'
+    'Date: (?P<date>.*?)\n'
+    'Subject: (?P<subject>.*?)(?=\n\S+:)'
+    '.*?Message-ID: (?P<message_id>\S+)\n'
+    '\n(?P<body>.*?)\n'
     '(?=' + EMAIL_HEADER_PATTERN + 'From: )',
     flags=re.MULTILINE | re.DOTALL)
 
@@ -90,30 +91,17 @@ def _retrieve_mails(uri):
     content += TRAILING_RECORD
 
     for rec in re.finditer(MAIL_BOX_PATTERN, content):
-
-        author_email = rec.group(1).replace(' at ', '@', 1)
-        if not utils.check_email_validity(author_email):
+        email = rec.groupdict()
+        email['author_email'] = email['author_email'].replace(' at ', '@', 1)
+        if not utils.check_email_validity(email['author_email']):
             continue
 
-        author_name = rec.group(2)
-        date = int(email_utils.mktime_tz(
-            email_utils.parsedate_tz(rec.group(3))))
-        subject = rec.group(4)
-        message_id = rec.group(5)
-        body = rec.group(6)
-
-        email = {
-            'message_id': message_id,
-            'author_name': author_name,
-            'author_email': author_email,
-            'subject': subject,
-            'date': date,
-            'body': body,
-        }
+        email['date'] = int(email_utils.mktime_tz(
+            email_utils.parsedate_tz(email['date'])))
 
         for pattern_name, pattern in MESSAGE_PATTERNS.iteritems():
             collection = set()
-            for item in re.finditer(pattern, body):
+            for item in re.finditer(pattern, email['body']):
                 groups = item.groupdict()
                 item_id = groups['id']
                 if 'module' in groups:

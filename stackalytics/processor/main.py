@@ -80,9 +80,9 @@ def process_repo(repo, runtime_storage_inst, record_processor_inst):
 
     bp_iterator = lp.log(repo)
     bp_iterator_typed = _record_typer(bp_iterator, 'bp')
-    processed_mail_iterator = record_processor_inst.process(
+    processed_bp_iterator = record_processor_inst.process(
         bp_iterator_typed)
-    runtime_storage_inst.set_records(processed_mail_iterator)
+    runtime_storage_inst.set_records(processed_bp_iterator)
 
     vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
     vcs_inst.fetch()

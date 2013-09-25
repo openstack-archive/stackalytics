@@ -912,7 +912,6 @@ def get_commit_report(records):
 @exception_handler()
 def blueprint_report(module, blueprint_name):
     memory_storage_inst = get_vault()['memory_storage']
-    runtime_storage_inst = get_vault()['runtime_storage']
 
     blueprint_id = module + ':' + blueprint_name
 
@@ -931,9 +930,6 @@ def blueprint_report(module, blueprint_name):
     activity = []
     for record in memory_storage_inst.get_records(record_ids):
         _extend_record(record)
-        if record['record_type'] == 'email':
-            record['body'] = (runtime_storage_inst.get_by_key('email:%s' %
-                              record['primary_key']))
         activity.append(record)
 
     activity.sort(key=lambda x: x['date'])

@@ -282,11 +282,8 @@ class RecordProcessor(object):
         self._update_record_and_user(record)
         self._guess_module(record)
 
-        if record.get('blueprint_id'):
-            self.runtime_storage_inst.set_by_key(
-                'email:%s' % record['primary_key'], record['body'])
-
-        del record['body']
+        if not record.get('blueprint_id'):
+            del record['body']
 
         yield record
 
