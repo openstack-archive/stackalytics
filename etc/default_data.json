@@ -4261,7 +4261,7 @@
         },
         {
             "branches": ["master"],
-            "project_group": "incubation",
+            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -4546,6 +4546,18 @@
         {
             "module_group_name": "swift-group",
             "modules": ["swift", "python-swiftclient"]
+        },
+        {
+            "module_group_name": "ironic-group",
+            "modules": ["ironic", "python-ironicclient", "pyghmi"]
+        },
+        {
+            "module_group_name": "tripleo-group",
+            "modules": ["tripleo-incubator", "tripleo-image-elements", "tripleo-heat-templates", "diskimage-builder", "os-apply-config", "os-collect-config", "os-refresh-config"]
+        },
+        {
+            "module_group_name": "oslo-group",
+            "modules": ["oslo-incubator", "oslo.config", "oslo.messaging", "oslo.sphinx", "hacking", "pbr"]
         },
         {
             "module_group_name": "fuel-group",
