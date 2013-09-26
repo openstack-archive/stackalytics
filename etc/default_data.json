@@ -1000,6 +1000,21 @@
             "emails": ["sskripnick@mirantis.com", "eyerediskin@gmail.com"]
         },
         {
+            "launchpad_id": "fallenpegasus",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2012-Sep-30"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Atwood",
+            "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com"]
+        },
+        {
             "launchpad_id": "fifieldt",
             "companies": [
                 {
