@@ -4548,6 +4548,10 @@
             "modules": ["swift", "python-swiftclient"]
         },
         {
+            "module_group_name": "libra-group",
+            "modules": ["libra", "python-libraclient"]
+        },
+        {
             "module_group_name": "ironic-group",
             "modules": ["ironic", "python-ironicclient", "pyghmi"]
         },
