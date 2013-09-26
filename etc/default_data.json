@@ -823,6 +823,17 @@
             "emails": ["duncan.thomas@hp.com", "duncan.thomas@gmail.com"]
         },
         {
+            "launchpad_id": "dshrews",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Shrewsbury",
+            "emails": ["shrewsbury.dave@gmail.com"]
+        },
+        {
             "launchpad_id": "dweimer",
             "companies": [
                 {
