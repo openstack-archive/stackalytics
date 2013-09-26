@@ -4420,6 +4420,54 @@
             "project_type": "openstack",
             "organization": "openstack",
             "project_group": "incubation"
+        },
+        {
+            "module": "savanna",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/savanna.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
+        },
+        {
+            "module": "savanna-dashboard",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/savanna-dashboard.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
+        },
+        {
+            "module": "python-savannaclient",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/python-savannaclient.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
+        },
+        {
+            "module": "savanna-extra",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/savanna-extra.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
+        },
+        {
+            "module": "savanna-image-elements",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/savanna-image-elements.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
+        },
+        {
+            "module": "puppet-savanna",
+            "branches": ["master"],
+            "uri": "git://github.com/stackforge/puppet-savanna.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "incubation"
         }
     ],
     "project_sources": [
