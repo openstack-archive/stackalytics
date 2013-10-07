@@ -4477,41 +4477,41 @@
         {
             "module": "savanna",
             "branches": ["master"],
-            "uri": "git://github.com/stackforge/savanna.git",
+            "uri": "git://github.com/openstack/savanna.git",
             "project_type": "openstack",
-            "organization": "stackforge",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
             "module": "savanna-dashboard",
             "branches": ["master"],
-            "uri": "git://github.com/stackforge/savanna-dashboard.git",
+            "uri": "git://github.com/openstack/savanna-dashboard.git",
             "project_type": "openstack",
-            "organization": "stackforge",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
             "module": "python-savannaclient",
             "branches": ["master"],
-            "uri": "git://github.com/stackforge/python-savannaclient.git",
+            "uri": "git://github.com/openstack/python-savannaclient.git",
             "project_type": "openstack",
-            "organization": "stackforge",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
             "module": "savanna-extra",
             "branches": ["master"],
-            "uri": "git://github.com/stackforge/savanna-extra.git",
+            "uri": "git://github.com/openstack/savanna-extra.git",
             "project_type": "openstack",
-            "organization": "stackforge",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
             "module": "savanna-image-elements",
             "branches": ["master"],
-            "uri": "git://github.com/stackforge/savanna-image-elements.git",
+            "uri": "git://github.com/openstack/savanna-image-elements.git",
             "project_type": "openstack",
-            "organization": "stackforge",
+            "organization": "openstack",
             "project_group": "incubation"
         },
         {
