@@ -372,6 +372,7 @@ class RecordProcessor(object):
         self.runtime_storage_inst.set_by_key('users', self.users_index)
 
     def _get_records_for_users_to_update(self):
+        users_reviews = {}
         valid_blueprints = {}
         mentioned_blueprints = {}
         for record in self.runtime_storage_inst.get_all_records():
@@ -392,12 +393,29 @@ class RecordProcessor(object):
                     'date': record['date']
                 }
 
+            if record['record_type'] == 'review':
+                launchpad_id = record['launchpad_id']
+                review = {'date': record['date'], 'id': record['id']}
+                if launchpad_id in users_reviews:
+                    users_reviews[launchpad_id].append(review)
+                else:
+                    users_reviews[launchpad_id] = [review]
+
         for bp in valid_blueprints.keys():
             if bp in mentioned_blueprints:
                 valid_blueprints[bp]['count'] = (
                     mentioned_blueprints[bp]['count'])
                 valid_blueprints[bp]['date'] = (
                     mentioned_blueprints[bp]['date'])
+
+        reviews_index = {}
+        for launchpad_id, reviews in users_reviews.iteritems():
+            reviews.sort(key=lambda x: x['date'])
+            review_attempt = 0
+            for review in reviews:
+                review_attempt += 1
+                review['review_attempt'] = review_attempt
+                reviews_index[review['id']] = review
 
         for record in self.runtime_storage_inst.get_all_records():
 
@@ -431,6 +449,12 @@ class RecordProcessor(object):
                     record['mention_date'] = bp['date']
                     LOG.debug('Update record %s: mention stats: (%s:%s)',
                               record['primary_key'], bp['count'], bp['date'])
+                    need_update = True
+
+            if record['record_type'] == 'review':
+                review = reviews_index[record['id']]
+                if record.get('review_attempt') != review['review_attempt']:
+                    record['review_attempt'] = review['review_attempt']
                     need_update = True
 
             if need_update:

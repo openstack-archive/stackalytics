@@ -47,6 +47,7 @@ METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
     'marks': 'Reviews',
+    'nc_marks': 'Newcomers Reviews',
     'emails': 'Emails',
     'bpd': 'Drafted Blueprints',
     'bpc': 'Completed Blueprints',
@@ -56,6 +57,7 @@ METRIC_TO_RECORD_TYPE = {
     'loc': 'commit',
     'commits': 'commit',
     'marks': 'mark',
+    'nc_marks': 'mark',
     'emails': 'email',
     'bpd': 'bpd',
     'bpc': 'bpc',
@@ -347,6 +349,16 @@ def record_filter(ignore=None, use_default=True):
                     record_ids &= memory_storage.get_record_ids_by_type(
                         METRIC_TO_RECORD_TYPE[metric])
 
+                    if metric == 'nc_marks':
+                        filtered_ids = []
+                        for record in memory_storage.get_records(record_ids):
+                            parent = memory_storage.get_record_by_primary_key(
+                                record['review_id'])
+                            if (parent and ('review_attempt' in parent)
+                                and (parent['review_attempt'] <= 5)):
+                                filtered_ids.append(record['record_id'])
+                        record_ids = filtered_ids
+
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
 
@@ -404,6 +416,7 @@ def aggregate_filter():
                 'commits': (incremental_filter, None),
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
+                'nc_marks': (mark_filter, mark_finalize),
                 'emails': (incremental_filter, None),
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),
@@ -646,6 +659,7 @@ def get_activity_json(records):
             parent = memory_storage_inst.get_record_by_primary_key(
                 review['review_id'])
             if parent:
+                review['review_attempt'] = parent.get('review_attempt')
                 review['subject'] = parent['subject']
                 review['url'] = parent['url']
                 review['parent_author_link'] = make_link(
@@ -780,6 +794,39 @@ def get_module(module):
     if module in module_id_index:
         return module_id_index[module]
     flask.abort(404)
+
+
+@app.route('/api/1.0/stats/bpd/<module>')
+@jsonify('stats')
+@exception_handler()
+def get_bpd(module):
+    memory_storage_inst = get_vault()['memory_storage']
+
+    module = module.lower()
+    record_ids = (
+        set(memory_storage_inst.get_record_ids_by_type('bpd')) &
+        set(memory_storage_inst.get_record_ids_by_modules([module])))
+
+    # param = get_parameter(kwargs, 'release', 'releases', use_default)
+    # if param:
+    #     if 'all' not in param:
+    #         record_ids &= (
+    #             memory_storage.get_record_ids_by_releases(
+    #                 c.lower() for c in param))
+
+    result = []
+    for record in memory_storage_inst.get_records(record_ids):
+        result.append({
+            'date': record['date'],
+            'lifecycle_status': record['lifecycle_status'],
+            'metric': record['mention_count'],
+            'id': record['name'],
+            'name': record['name'],
+        })
+
+    result.sort(key=lambda x: x['metric'])
+
+    return result
 
 
 @app.route('/api/1.0/users')

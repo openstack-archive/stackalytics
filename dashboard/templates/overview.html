@@ -2,6 +2,7 @@
 
 {% set show_company_breakdown = (not company) and (not user_id) %}
 {% set show_engineer_breakdown = ((company) or (module)) and (not user_id) %}
+{% set show_bp_breakdown = (module) and (not user_id) and (metric == 'bpd!') %}
 {% set show_module_breakdown = (not module) %}
 {% set show_user_activity = (user_id) %}
 {% set show_module_activity = (module) and (not user_id) %}
@@ -21,6 +22,9 @@
     {% endif %}
     {% if show_engineer_breakdown %}
     renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id", {company: "{{ company|encode }}" });
+    {% endif %}
+    {% if show_bp_breakdown %}
+    renderTableAndChart("/api/1.0/stats/bpd", "bp_container", "bp_table", "bp_chart", "bpd", {module: "{{ module|encode }}" });
     {% endif %}
     {% if show_module_breakdown %}
     renderTableAndChart("/api/1.0/stats/modules", "module_container", "module_table", "module_chart", "module");
@@ -108,7 +112,7 @@
             <div><span style="color: green">+<span>${lines_added}</span></span>
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
-            <div>Patch submitted by {%html parent_author_link %}</div>
+            <div>Patch #${review_attempt} submitted by {%html parent_author_link %}</div>
             <div style='font-weight: bold;'>${subject}</div>
             <div>Change Id: <a href="${url}">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
@@ -210,9 +214,30 @@
                 <th>#</th>
                 <th>Engineer</th>
                 <th>{{ metric_label }}</th>
-                {% if metric == 'marks' %}
+                {% if metric in ['marks', 'nc_marks'] %}
                     <th>-2|-1|+1|+2 (+/- ratio)</th>
                 {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
+    </div>
+    {% endif %}
+
+    {% if show_bp_breakdown %}
+    <div id="bp_container">
+    <h2>Mention # by blueprint</h2>
+
+    <div id="bp_chart" style="width: 100%; height: 350px;"></div>
+
+    <table id="bp_table" class="display">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Blueprint</th>
+                <th>Mention #</th>
             </tr>
         </thead>
         <tbody>
