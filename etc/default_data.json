@@ -56,6 +56,28 @@
             "emails": ["gareth@unitedstack.com", "academicgareth@gmail.com"]
         },
         {
+            "launchpad_id": "niu-zglinux",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhenguo Niu",
+            "emails": ["zhenguo@unitedstack.com", "Niu.ZGlinux@gmail.com"]
+        },
+        {
+            "launchpad_id": "denny-6",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Denny Zhang",
+            "emails": ["denny@unitedstack.com", "filebat.mark@gmail.com"]
+        },
+        {
             "launchpad_id": "adriansmith",
             "companies": [
                 {
