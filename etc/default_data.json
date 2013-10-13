@@ -138,7 +138,7 @@
                 }
             ],
             "user_name": "Alessandro Pilotti",
-            "emails": ["ap@pilotti.it"]
+            "emails": ["ap@pilotti.it", "apilotti@cloudbasesolutions.com"]
         },
         {
             "launchpad_id": "amcrn",
@@ -3422,6 +3422,10 @@
         {
             "domains": ["cloud.com"],
             "company_name": "Citrix Systems"
+        },
+        {
+            "domains": ["cloudbasesolutions.com"],
+            "company_name": "Cloudbase Solutions"
         },
         {
             "domains": ["cloudtp.com"],
