@@ -3073,6 +3073,17 @@
             "emails": ["victor.r.howard@gmail.com"]
         },
         {
+            "launchpad_id": "vipuls",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vipul Sabhaya",
+            "emails": ["vipuls@gmail.com", "vipul.sabhaya@hp.com"]
+        },
+        {
             "launchpad_id": "vishvananda",
             "companies": [
                 {
