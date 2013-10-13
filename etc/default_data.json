@@ -2599,6 +2599,17 @@
             "emails": ["rainer.toebbicke@cern.ch"]
         },
         {
+            "launchpad_id": "russell-sim",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Russell Sim",
+            "emails": ["russell.sim@gmail.com", "russell.sim@unimelb.edu.au"]
+        },
+        {
             "launchpad_id": "russellb",
             "companies": [
                 {
@@ -2630,6 +2641,17 @@
             ],
             "user_name": "Salvatore Orlando",
             "emails": ["salv.orlando@gmail.com", "sorlando@nicira.com", "salvatore.orlando@eu.citrix.com"]
+        },
+        {
+            "launchpad_id": "sorrison",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sam Morrison",
+            "emails": ["sorrison@gmail.com", "sam.morrison@unimelb.edu.au"]
         },
         {
             "launchpad_id": "sandy-sandywalsh",
