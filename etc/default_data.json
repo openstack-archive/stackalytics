@@ -525,6 +525,17 @@
             "emails": ["clint@fewbar.com", "clint.byrum@hp.com", "clint@ubuntu.com"]
         },
         {
+            "launchpad_id": "cody-somerville",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cody A.W. Somerville",
+            "emails": ["cody.somerville@hp.com", "cody-somerville@ubuntu.com", "cody.somerville@gmail.com"]
+        },
+        {
             "launchpad_id": "cmsj",
             "companies": [
                 {
