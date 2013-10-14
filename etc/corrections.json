@@ -793,6 +793,310 @@
             "primary_key": "c02700748c9f3663fa916663431f09167baced02",
             "module": "horizon",
             "subject": "Update Horizon English message files for translation"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "75edee38c3cf99c3d59a7ad29c875a5bfa246e8b",
+            "module": "storyboard",
+            "subject": "Initial import"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "252366860399e27d979a17daf16c604e674e1dc3",
+            "module": "groups",
+            "subject": "import openstack theme into profile"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I82ea30cff906ddd7acb7a4e40427d3384ead4dba"],
+            "primary_key": "08ea3d7956c7c955586fcf78d1512d37f0db3acf",
+            "module": "activity-board",
+            "subject": "Fix error in the increase of participants"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I7b85da3fd601fd9f625d77da839c9242016f01ad"],
+            "primary_key": "63d6c2e8ad67bd00ff5d0c74d36ca599fb00fa92",
+            "module": "activity-board",
+            "subject": "Add releases and companies study"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I922383a3e32cc99dc2be403b6ba7559515910363"],
+            "primary_key": "3b229243b077fcda841201863eea78c18544a27f",
+            "module": "activity-board",
+            "subject": "Removal of dataset"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "82c7274ddc007a5a3ab5998e88d13662eba75c1a",
+            "module": "activity-board",
+            "subject": "New version of OpenStack production dashboard"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "1fa9515104d7611a9c6bff957ae8d97b86dba64a",
+            "module": "activity-board",
+            "subject": "First version"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I1e017c332c80eb01b04e042b5da0129198169bd5"],
+            "primary_key": "e820a28edf293da7fa02c53220eedec77903b49c",
+            "module": "heat",
+            "subject": "Add the missing heat.po files into heat"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Icb3532d2fb724bbb711c06086cb906bde22a380f"],
+            "primary_key": "30b9bed2fc907ca8686b14fe95de5ee70ba561d9",
+            "module": "murano-conductor",
+            "subject": "Added base64 encryption of the script files. Now script files are stored separately from templates in the ./scripts/ directory."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Id40ea569912311684735fe7cc514d97218093768"],
+            "primary_key": "72a5a01445072eac1adf3fdc481fba1e0fbebbfe",
+            "module": "murano-tests",
+            "subject": "Add some fixes for tempest tests"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie1ee7affae75c60833c012c921e50d7b14026101"],
+            "primary_key": "d523d3651dc386f3b4627c4f079777d67b59e643",
+            "module": "taskflow",
+            "subject": "Remove usage of oslo.db and oslo.config"
+        },
+        {
+            "correction_comment": "Reset LOC to 1000",
+            "loc": 1000,
+            "change_id": ["Icef6433dbc2763241c99be83d5549c1e7eac4a76"],
+            "primary_key": "811f12efb1f090dc400d62bb28d8ad30374aff8d",
+            "module": "stackalytics",
+            "subject": "UI navigation is improved"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "0084e5d1244e9d1c7a47dfdc8a0f3adf497ec96f",
+            "module": "staccato",
+            "subject": "Initial Commit.  WSGI is not yet in place."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "5b77db2d21dcbfd09f4295fe2e783cbc87a2fea6",
+            "module": "fuel-main",
+            "subject": "[FUEL-777] remove puppet modules from fuelweb root"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "4dc2d5a929f68088443ddaa8690375ea5acdda35",
+            "module": "fuel-main",
+            "subject": "Merging of cobbler modules:"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "fef53fc52acb2dcec6a8e3efde08c685670a0873",
+            "module": "fuel-main",
+            "subject": "[FUEL-777] merge mcollective|nailgun|osnailyfacter module into FUEL-library puppet"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "5f9246584c633bf749c97802718a76602dbd9403",
+            "module": "fuel-main",
+            "subject": "Added screen to edit node network interfaces"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "7dba20ef9c3487d2e708645246afa21f44fb76d8",
+            "module": "fuel-web",
+            "subject": "pep8 fixes"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "9629fc222c6eca4695a093c56ae85964ca634b5e",
+            "module": "fuel-web",
+            "subject": "initial import of fuelmenu"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "1cdc33c7232fef405ec19087eab0a894bc58fe25",
+            "module": "fuel-ostf",
+            "subject": "Move plugin from ostf_plugin repo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "afbe1ea46c75ae66a7f92820a560188494fba310",
+            "module": "fuel-ostf",
+            "subject": "Move plugin from ostf_plugin repo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "18711dd51fe8fbb18335cf23f485800859bf7d62",
+            "module": "fuel-ostf",
+            "subject": "Add license agreement. Change Cleanup script. Delete unnessesary files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I1d030ffc2b3ed18c7a194693f1cd2a382b961c1c"],
+            "primary_key": "499d63fe966577c4870d70c44704b554630d8bff",
+            "module": "fuel-ostf",
+            "subject": "Add base directories for tets. Add tests with simple verification of status code for next cases: * List services by admin in keystone * List users by admin * List instances * List volumes * List snapshots * list flavors * list rate limits * List networks * List ports"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "c112a4115171ef0f5d4e559ab1338593493c9c3b",
+            "module": "manila",
+            "subject": "volume api removed"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "9b20ae70ce4760f8a46f7b0ff9c78b508db2cc75",
+            "module": "manila",
+            "subject": "Deleted manila.volume"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "5e9ada9fc68c175da007a92e6d8d307df3315326",
+            "module": "python-manilaclient",
+            "subject": "Initial checkin"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ib848105210e3455f457eba117f19b862c2698144"],
+            "primary_key": "b17ca94717a4d0f8b071f9d824e06e1b497614e6",
+            "module": "compute-api",
+            "subject": "Remove duplicate WADL file and clean up dev guide to fix errors in \"Servers\" section"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia4ecbdb304e18a42769b50d52d33e3757710fe5b"],
+            "primary_key": "b390e59445b275680bb03ce5000fd16801aaab02",
+            "module": "openstack-manuals",
+            "subject": "Move install and config info from Network Admin Guide to Install Guide and Config Ref"
+        },
+        {
+            "correction_comment": "Reset LOC to 10000",
+            "loc": 10000,
+            "change_id": ["I21cf53e26c25d75ad1b75ec7449e8e1a7e4b9bb2"],
+            "primary_key": "2fcbd6e70c6dfc2143b0e7c889a548510b8aa08d",
+            "module": "openstack-manuals",
+            "subject": "Fix bug#1220351 Create Cloud Administrator Guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I93e1416b16fc8aac7169b83d2a89d910755bd820"],
+            "primary_key": "d787ea65f81eece50fc8c6b734e3398608455102",
+            "module": "openstack-manuals",
+            "subject": "More updates for user guide and other related books Started to update and pull in files from command ref I will get rid of command ref once user guide is completely built patchset - df"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I212508ec4315140633c75596560792618560f987"],
+            "primary_key": "c572c204e961d8a5c550c7ce78e02a9ceb832967",
+            "module": "api-site",
+            "subject": "Removes API Programming guide due to being outdated"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie69d9dbc75ce90496da316244c97acca1877a327"],
+            "primary_key": "fd43cbd73b9de8a216039e6e66a8523e4c96543d",
+            "module": "python-troveclient",
+            "subject": "Massive refactoring to the troveclient"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia3136d21c0ab542ffd9201ed077498def1532232"],
+            "primary_key": "758430f7a0c900607cf31da48b0194ae6ba8907f",
+            "module": "operations-guide",
+            "subject": "Add Japanese translation file."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I062d3dfb538682d72011307e8b96672e8f0844a5"],
+            "primary_key": "e826e77a16a295633798cf5097875386d099d487",
+            "module": "diskimage-builder",
+            "subject": "Delete elements moved to tripleo-image-elements."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I40b053e5487348f524753db517b79bf4ca81d569"],
+            "primary_key": "78d9a06dd8d03d9ee2233efb4c544d3e7473e3fa",
+            "module": "python-marconiclient",
+            "subject": "Revert \"Add apiclient library\""
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "066b4152aaba044203ff535f89aa6641a49df4b1",
+            "module": "heat-cfnclient",
+            "subject": "Initial import from heat repo."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I89ed102f7be4b554a28b001c9c0d40dab4a51ae6"],
+            "primary_key": "a0739c9423a4c559b45af96fa4cdb30539dcdbd7",
+            "module": "horizon",
+            "subject": "Drop NodeJS dependency in favor of pure-python lesscpy"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If1f8651c437bd9a332e7392a59f155c8b3ca3d6c"],
+            "primary_key": "ae2c5d263d01160bcea355d2070ad9d7e26a1e22",
+            "module": "devstack-gate",
+            "subject": "Remove node management from devstack-gate"
         }
     ]
 }
