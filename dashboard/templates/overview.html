@@ -25,7 +25,7 @@
     {% if show_engineer_breakdown %}
         {% if show_review_ratio %}
         renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id",
-                ["index", "link", "metric", "mark_ratio"]);
+                ["index", "link", "mark_ratio", "metric"]);
         {% else %}
         renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id");
         {% endif %}
@@ -260,10 +260,10 @@
             <tr>
                 <th>#</th>
                 <th>Engineer</th>
-                <th>{{ metric_label }}</th>
-                {% if metric in ['marks', 'tm_marks'] %}
+                {% if show_review_ratio %}
                     <th>-2|-1|+1|+2 (+/- ratio)</th>
                 {% endif %}
+                <th>{{ metric_label }}</th>
             </tr>
         </thead>
         <tbody>
