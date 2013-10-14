@@ -1457,6 +1457,17 @@
             "emails": ["jason@cannavale.com", "jason.cannavale@rackspace.com"]
         },
         {
+            "launchpad_id": "jcruz7",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Cruz",
+            "emails": ["jcruz7@gmail.com", "joe.cruz@rackspace.com"]
+        },
+        {
             "launchpad_id": "jdanjou",
             "companies": [
                 {
