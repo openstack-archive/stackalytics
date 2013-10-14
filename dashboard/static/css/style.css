@@ -307,3 +307,7 @@ a[href^="https://launchpad"]:after {
 .importanceUndecided, .importanceUndecided a {
     color: #999999;
 }
+
+.select2-results {
+    max-height: 300px;
+}
