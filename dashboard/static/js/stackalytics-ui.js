@@ -83,12 +83,12 @@ function renderTimeline(options) {
     });
 }
 
-function renderTableAndChart(url, container_id, table_id, chart_id, link_param, options) {
+function renderTableAndChart(url, container_id, table_id, chart_id, link_param, table_column_names) {
 
     $(document).ready(function () {
 
         $.ajax({
-            url: make_uri(url, options),
+            url: make_uri(url),
             dataType: "json",
             success: function (data) {
 
@@ -99,7 +99,6 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                 var aggregate = 0;
                 var index = 1;
                 var i;
-                var hasComment = false;
 
                 data = data["stats"];
 
@@ -121,18 +120,15 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                     } else {
                         index++;
                     }
-                    var link;
-                    if (data[i].id) {
-                        link = make_link(data[i].id, data[i].name, link_param);
-                    } else {
-                        link = data[i].name
+                    if (!data[i].link) {
+                        if (data[i].id) {
+                            data[i]["link"] = make_link(data[i].id, data[i].name, link_param);
+                        } else {
+                            data[i]["link"] = data[i].name
+                        }
                     }
-                    var rec = {"index": index_label, "link": link, "metric": data[i].metric};
-                    if (data[i].comment) {
-                        rec["comment"] = data[i].comment;
-                        hasComment = true;
-                    }
-                    tableData.push(rec);
+                    data[i]["index"] = index_label;
+                    tableData.push(data[i]);
                 }
 
                 if (i == limit) {
@@ -141,26 +137,29 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                     chartData.push(["others", aggregate]);
                 }
 
-                var tableColumns = [
-                    { "mData": "index" },
-                    { "mData": "link" },
-                    { "mData": "metric" }
-                ];
-                if (hasComment) {
-                    tableColumns.push({ "mData": "comment"})
+                if (!table_column_names) {
+                    table_column_names = ["index", "link", "metric"];
+                }
+                var tableColumns = [];
+                var sort_by_column = 0;
+                for (i = 0; i < table_column_names.length; i++) {
+                    tableColumns.push({"mData": table_column_names[i]})
+                    if (table_column_names[i] == "metric") {
+                        sort_by_column = i;
+                    }
                 }
 
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aLengthMenu": [
-                            [25, 50, -1],
-                            [25, 50, "All"]
+                            [10, 25, 50, -1],
+                            [10, 25, 50, "All"]
                         ],
                         "aaSorting": [
-                            [ 2, "desc" ]
+                            [ sort_by_column, "desc" ]
                         ],
                         "sPaginationType": "full_numbers",
-                        "iDisplayLength": 25,
+                        "iDisplayLength": 10,
                         "aaData": tableData,
                         "aoColumns": tableColumns
                     });

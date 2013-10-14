@@ -386,7 +386,7 @@ class RecordProcessor(object):
                         'count': 1,
                         'date': record['date']
                     }
-            if record['record_type'] in ['bpd', 'bpi']:
+            if record['record_type'] in ['bpd', 'bpc']:
                 valid_blueprints[record['id']] = {
                     'primary_key': record['primary_key'],
                     'count': 0,
@@ -401,12 +401,13 @@ class RecordProcessor(object):
                 else:
                     users_reviews[launchpad_id] = [review]
 
-        for bp in valid_blueprints.keys():
-            if bp in mentioned_blueprints:
-                valid_blueprints[bp]['count'] = (
-                    mentioned_blueprints[bp]['count'])
-                valid_blueprints[bp]['date'] = (
-                    mentioned_blueprints[bp]['date'])
+        for bp_name, bp in valid_blueprints.iteritems():
+            if bp_name in mentioned_blueprints:
+                bp['count'] = mentioned_blueprints[bp_name]['count']
+                bp['date'] = mentioned_blueprints[bp_name]['date']
+            else:
+                bp['count'] = 0
+                bp['date'] = 0
 
         reviews_index = {}
         for launchpad_id, reviews in users_reviews.iteritems():
@@ -441,7 +442,7 @@ class RecordProcessor(object):
                     need_update = True
             record['blueprint_id'] = list(valid_bp)
 
-            if record['record_type'] in ['bpd', 'bpi']:
+            if record['record_type'] in ['bpd', 'bpc']:
                 bp = valid_blueprints[record['id']]
                 if ((record.get('mention_count') != bp['count']) or
                         (record.get('mention_date') != bp['date'])):

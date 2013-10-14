@@ -405,7 +405,7 @@ def aggregate_filter():
                     else:
                         mark_distribution.append('0')
 
-                new_record['comment'] = (
+                new_record['mark_ratio'] = (
                     '|'.join(mark_distribution) +
                     ' (%.1f%%)' % ((positive * 100.0) / record['metric']))
                 return new_record
@@ -685,6 +685,8 @@ def get_activity_json(records):
             if 'mention_date' in record:
                 blueprint['mention_date_str'] = format_datetime(
                     record['mention_date'])
+            blueprint['blueprint_link'] = make_blueprint_link(
+                blueprint['name'], blueprint['module'])
             result.append(blueprint)
 
     result.sort(key=lambda x: x['date'], reverse=True)
@@ -800,35 +802,24 @@ def get_module(module):
     flask.abort(404)
 
 
-@app.route('/api/1.0/stats/bpd/<module>')
+@app.route('/api/1.0/stats/bp')
 @jsonify('stats')
 @exception_handler()
-def get_bpd(module):
-    memory_storage_inst = get_vault()['memory_storage']
-
-    module = module.lower()
-    record_ids = (
-        set(memory_storage_inst.get_record_ids_by_type('bpd')) &
-        set(memory_storage_inst.get_record_ids_by_modules([module])))
-
-    # param = get_parameter(kwargs, 'release', 'releases', use_default)
-    # if param:
-    #     if 'all' not in param:
-    #         record_ids &= (
-    #             memory_storage.get_record_ids_by_releases(
-    #                 c.lower() for c in param))
-
+@record_filter()
+def get_bpd(records):
     result = []
-    for record in memory_storage_inst.get_records(record_ids):
-        result.append({
-            'date': record['date'],
-            'lifecycle_status': record['lifecycle_status'],
-            'metric': record['mention_count'],
-            'id': record['name'],
-            'name': record['name'],
-        })
+    for record in records:
+        if record['record_type'] in ['bpd', 'bpc']:
+            result.append({
+                'date': format_date(record['date']),
+                'status': record['lifecycle_status'],
+                'metric': record['mention_count'],
+                'id': record['name'],
+                'name': record['name'],
+                'link': make_blueprint_link(record['name'], record['module'])
+            })
 
-    result.sort(key=lambda x: x['metric'])
+    result.sort(key=lambda x: x['metric'], reverse=True)
 
     return result
 
@@ -996,6 +987,10 @@ def format_datetime(timestamp):
         timestamp).strftime('%d %b %Y %H:%M:%S')
 
 
+def format_date(timestamp):
+    return datetime.datetime.utcfromtimestamp(timestamp).strftime('%d-%b-%y')
+
+
 @app.template_filter('launchpadmodule')
 def format_launchpad_module_link(module):
     return '<a href="https://launchpad.net/%s">%s</a>' % (module, module)
@@ -1021,6 +1016,11 @@ def make_link(title, uri=None, options=None):
         uri += '?' + '&'.join(['%s=%s' % (n, safe_encode(v))
                                for n, v in param_values.iteritems()])
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
+
+
+def make_blueprint_link(name, module):
+    uri = '/report/blueprint/' + module + '/' + name
+    return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': name}
 
 
 def make_commit_message(record):
