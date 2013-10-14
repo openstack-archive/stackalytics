@@ -513,6 +513,294 @@
             "primary_key": "dbfa71f490487c4fabc5be71dfb8426e5d651055",
             "module": "tuskar-ui",
             "subject": "Reorganise the tuskar files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 11185,
+            "change_id": ["Ic5575d44f58d77d972fe81a3ca00b234cf4eca5b"],
+            "primary_key": "8b95255f1c6461f8df3787f07f853ae8ec43a7a5",
+            "module": "activity-board",
+            "subject": "Add style files for the new browser"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 28796,
+            "change_id": ["I52da87be94c909f7d3e514bab69e1574c449ca6c"],
+            "primary_key": "8860fb43b1f0381aa3b44eaa87835f178bcddc68",
+            "module": "activity-board",
+            "subject": "Add releases study"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 33025,
+            "change_id": ["I1e8c329a58f00efa48cd5c9205c8e41db4cbe94a"],
+            "primary_key": "0bbeff39c9aac810a26792744ad052c8a9a90043",
+            "module": "activity-board",
+            "subject": "Remove non-basic files of the product"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4010,
+            "change_id": [],
+            "primary_key": "cdc2d95f29c1f79b9d84bdda11b0f33b99d1b660",
+            "module": "activity-board",
+            "subject": "removing files and moving data under the same dir"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 17736,
+            "change_id": [],
+            "primary_key": "0b5aa9344d2a940522c9c94f53628737d1380b88",
+            "module": "activity-board",
+            "subject": "We need src now because here is jquery located in HTML files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 3217,
+            "change_id": ["I1ea62ef17e81ab53cacb5e4940f0c4e2516ed383"],
+            "primary_key": "34e47b64d926c055d9895c5b3f27949eaca68999",
+            "module": "heat",
+            "subject": "Move heat-cfn, heat-boto, heat-watch to new repo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 5309,
+            "change_id": ["I7c33a55de13a5974f41676ee9a77010d73a12050"],
+            "primary_key": "87be5e3fff28d074083e7616ba01c0db74f8c5ba",
+            "module": "murano-docs",
+            "subject": "Move installation chapter to admin guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 6728,
+            "change_id": ["Ic0ac44675999aca3e872c1762e4a1d7f1553f5f2"],
+            "primary_key": "cae29398c888d8597f2fa9ac9d24429d02fdaefd",
+            "module": "murano-docs",
+            "subject": "Cherry-pick changes from release-0.2."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 5781,
+            "change_id": ["I36bc87ec21c3082fe1502a5191c032dc67224bf0"],
+            "primary_key": "b2d104d1a17a283082b180f33abeca3ea3d989dd",
+            "module": "murano-tests",
+            "subject": "Cherry-pick changes from release-0.2."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 3033,
+            "change_id": [],
+            "primary_key": "f642482de5f469291e153931da748201c7269e63",
+            "module": "tuskar",
+            "subject": "Move common things to ironic.common."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 5256,
+            "change_id": ["I106858cee2f9dcb87b59022790f48c263db7b7e0"],
+            "primary_key": "ecb7598bf9e0295cf1c5fb40ee75c72d17669601",
+            "module": "tuskar-ui",
+            "subject": "Reduce duplicated horizon code"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 71816,
+            "change_id": [],
+            "primary_key": "1e80bfc7bd1f238a2e28a67e03fcab62e7ddc6df",
+            "module": "fuel-main",
+            "subject": "Update makesystem for fuel-main repo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 7986,
+            "change_id": [],
+            "primary_key": "f7cfd53b1893705325d0b5477932bdcd835a10f5",
+            "module": "fuel-main",
+            "subject": "[FUEL-777] deduplicate rabbitmq and stdlib"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 7555,
+            "change_id": [],
+            "primary_key": "4e9b965c07638a4f040f94607748e3e327faccb4",
+            "module": "fuel-main",
+            "subject": "move astute to its own repo"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 3487,
+            "change_id": [],
+            "primary_key": "06d200f0aa3339a78a13298b3109d9a3935ab1e0",
+            "module": "manila",
+            "subject": "Removed ubused unittests."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 22229,
+            "change_id": [],
+            "primary_key": "35fe8d3b7fe48a2c50608005229d33937c29e887",
+            "module": "manila",
+            "subject": "Removed volume specific tests"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 134802,
+            "change_id": [],
+            "primary_key": "b2b51fb29ff14f16bb136ddb0dcd932b1e7616b3",
+            "module": "manila",
+            "subject": "Mass replace osapi_volume to osapi_share Removed locale"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 447337,
+            "change_id": [],
+            "primary_key": "dc4ce932ed304a2c1dbe68059bdea664792db67f",
+            "module": "manila",
+            "subject": "Renamed cinder to manila. Fixed setup.py, fixed bin scripts."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 240158,
+            "change_id": [],
+            "primary_key": "f99ef92c9024b1dfc604646c8c0912b963c11523",
+            "module": "manila",
+            "subject": "Initialize from cinder"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 1040262,
+            "change_id": [],
+            "primary_key": "bcc917973f12a47a73337752fa3da7c082f1f314",
+            "module": "python-manilaclient",
+            "subject": "env folders removed"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 1043048,
+            "change_id": [],
+            "primary_key": "041bfa455cfcd379aad9d1f406460f3e3a58124a",
+            "module": "python-manilaclient",
+            "subject": "cleaned client with fixed tests. no quotas functionality implemented"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 94511,
+            "change_id": ["Id5ffc774b966ba7b9a591743a877aa10ab3094c7"],
+            "primary_key": "64b6c9261ef1f29cba7f73bb73c6fed3a59fbea2",
+            "module": "openstack-manuals",
+            "subject": "Folder rename, file rename, flattening of directories"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 26203,
+            "change_id": ["If201d68c1e72a24c57a61775bc22d1784beea324"],
+            "primary_key": "82fa21b9d0553f51b13277539d170805b5058e07",
+            "module": "openstack-manuals",
+            "subject": "Removes openstack-object-storage-admin directory, moving content."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 9726,
+            "change_id": ["Ic536a07e242fcc583c938a68f0beee0601189c5c"],
+            "primary_key": "1d53c8178a48146e9f0d80e8b21ba2a563203aa5",
+            "module": "openstack-manuals",
+            "subject": "Initial drop of the OpenStack Security Guide in docbook form."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4720,
+            "change_id": [],
+            "primary_key": "34fd51935e3523d6ff8f9fd09b96c018a665e3b6",
+            "module": "fuel-web",
+            "subject": "rebase cleanup"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 8416,
+            "change_id": [],
+            "primary_key": "6a986e777939d40c3a2a868f05489809aa7df95f",
+            "module": "fuel-web",
+            "subject": "Split repos"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4356,
+            "change_id": [],
+            "primary_key": "fb26f19c99ea46045f2dc70d686aa58562a43e67",
+            "module": "fuel-astute",
+            "subject": "Remove unused deploy configs and generation utils"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 22380,
+            "change_id": [],
+            "primary_key": "21c0b0cb45844293f597545a0f2e19dfa2a213ec",
+            "module": "fuel-astute",
+            "subject": "Removing unnecessary data"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 22039,
+            "change_id": [],
+            "primary_key": "e58c8cfca6a94d78f4873374357c32d886dc6651",
+            "module": "fuel-astute",
+            "subject": "Early draft version"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4329,
+            "change_id": ["I583349443685e3022f4c4c1893c2c07d1d2af1d5"],
+            "primary_key": "f368a6481036b53fb73dbc50c81cd92419883b38",
+            "module": "openstack-manuals",
+            "subject": "Restructured Install Guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4100,
+            "change_id": [],
+            "primary_key": "05e9ce4c489adc24c4f70d01f4182a9d64fcf582",
+            "module": "ironic",
+            "subject": "Import add'l files from Nova"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 3703,
+            "change_id": ["Ib73f97cc3ef0e4bfa6b9cb41d4a21525533973e3"],
+            "primary_key": "8237e8cfb921e85e36c9787505109073435e2744",
+            "module": "climate",
+            "subject": "Update OpenStack Common code."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 4028,
+            "change_id": ["I58b9861775169397f00e5f72c9cc359d4dcd99d6"],
+            "primary_key": "5ce8f6c0a38f1731a274652ba5f8f13572e1c18e",
+            "module": "fuel-ostf-plugin",
+            "subject": "Mark repo as obsolete"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 154804,
+            "change_id": ["I06cfd7f8a4cdd650f43010836947b54bd8f5aee4"],
+            "primary_key": "4910222356fbd2aeb0dab1b3cebe00330c2641f7",
+            "module": "horizon",
+            "subject": "Import translations from Transifex for Havana RC1"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 5101,
+            "change_id": ["I126291ca5eb7c607b86446c2351062ce87600bbb"],
+            "primary_key": "6469afe386274f3df4dc34e95e62ecc372f3a668",
+            "module": "horizon",
+            "subject": "Sync English PO files with the latest code for Havana-3"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 6840,
+            "change_id": ["I1aeb990bf472eaac03734b42452e42d33f9168c6"],
+            "primary_key": "c02700748c9f3663fa916663431f09167baced02",
+            "module": "horizon",
+            "subject": "Update Horizon English message files for translation"
         }
     ]
 }
