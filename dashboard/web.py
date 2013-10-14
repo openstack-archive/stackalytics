@@ -41,13 +41,14 @@ DEFAULTS = {
     'metric': 'commits',
     'release': 'havana',
     'project_type': 'openstack',
+    'review_nth': 5,
 }
 
 METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
     'marks': 'Reviews',
-    'nc_marks': 'Newcomers Reviews',
+    'tm_marks': 'Top Mentors',
     'emails': 'Emails',
     'bpd': 'Drafted Blueprints',
     'bpc': 'Completed Blueprints',
@@ -57,7 +58,7 @@ METRIC_TO_RECORD_TYPE = {
     'loc': 'commit',
     'commits': 'commit',
     'marks': 'mark',
-    'nc_marks': 'mark',
+    'tm_marks': 'mark',
     'emails': 'email',
     'bpd': 'bpd',
     'bpc': 'bpc',
@@ -349,15 +350,16 @@ def record_filter(ignore=None, use_default=True):
                     record_ids &= memory_storage.get_record_ids_by_type(
                         METRIC_TO_RECORD_TYPE[metric])
 
-                    if metric == 'nc_marks':
-                        filtered_ids = []
-                        for record in memory_storage.get_records(record_ids):
-                            parent = memory_storage.get_record_by_primary_key(
-                                record['review_id'])
-                            if (parent and ('review_attempt' in parent)
-                                and (parent['review_attempt'] <= 5)):
-                                filtered_ids.append(record['record_id'])
-                        record_ids = filtered_ids
+                if 'tm_marks' in metrics:
+                    filtered_ids = []
+                    review_nth = int(get_parameter(kwargs, 'review_nth')[0])
+                    for record in memory_storage.get_records(record_ids):
+                        parent = memory_storage.get_record_by_primary_key(
+                            record['review_id'])
+                        if (parent and ('review_number' in parent) and
+                                (parent['review_number'] <= review_nth)):
+                            filtered_ids.append(record['record_id'])
+                    record_ids = filtered_ids
 
             kwargs['records'] = memory_storage.get_records(record_ids)
             return f(*args, **kwargs)
@@ -416,7 +418,7 @@ def aggregate_filter():
                 'commits': (incremental_filter, None),
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
-                'nc_marks': (mark_filter, mark_finalize),
+                'tm_marks': (mark_filter, mark_finalize),
                 'emails': (incremental_filter, None),
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),
@@ -509,6 +511,8 @@ def templated(template=None, return_code=200):
                     else:
                         release = releases[release]['release_name']
             ctx['release'] = (release or get_default('release')).lower()
+            ctx['review_nth'] = (flask.request.args.get('review_nth') or
+                                 get_default('review_nth'))
 
             ctx['project_type_options'] = get_project_type_options()
             ctx['release_options'] = get_release_options()
@@ -659,7 +663,7 @@ def get_activity_json(records):
             parent = memory_storage_inst.get_record_by_primary_key(
                 review['review_id'])
             if parent:
-                review['review_attempt'] = parent.get('review_attempt')
+                review['review_number'] = parent.get('review_number')
                 review['subject'] = parent['subject']
                 review['url'] = parent['url']
                 review['parent_author_link'] = make_link(

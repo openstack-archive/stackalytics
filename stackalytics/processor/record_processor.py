@@ -411,10 +411,10 @@ class RecordProcessor(object):
         reviews_index = {}
         for launchpad_id, reviews in users_reviews.iteritems():
             reviews.sort(key=lambda x: x['date'])
-            review_attempt = 0
+            review_number = 0
             for review in reviews:
-                review_attempt += 1
-                review['review_attempt'] = review_attempt
+                review_number += 1
+                review['review_number'] = review_number
                 reviews_index[review['id']] = review
 
         for record in self.runtime_storage_inst.get_all_records():
@@ -453,8 +453,8 @@ class RecordProcessor(object):
 
             if record['record_type'] == 'review':
                 review = reviews_index[record['id']]
-                if record.get('review_attempt') != review['review_attempt']:
-                    record['review_attempt'] = review['review_attempt']
+                if record.get('review_number') != review['review_number']:
+                    record['review_number'] = review['review_number']
                     need_update = True
 
             if need_update:

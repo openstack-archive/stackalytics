@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% set show_company_breakdown = (not company) and (not user_id) %}
-{% set show_engineer_breakdown = ((company) or (module)) and (not user_id) %}
+{% set show_engineer_breakdown = (not user_id) %}
 {% set show_bp_breakdown = (module) and (not user_id) and (metric == 'bpd!') %}
 {% set show_module_breakdown = (not module) %}
 {% set show_user_activity = (user_id) %}
@@ -11,6 +11,7 @@
 {% set show_module_contribution = (module) and (not user_id) %}
 {% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
+{% set show_top_mentors_options = (metric == 'tm_marks') %}
 
 {% block scripts %}
 <script type="text/javascript">
@@ -112,7 +113,7 @@
             <div><span style="color: green">+<span>${lines_added}</span></span>
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
-            <div>Patch #${review_attempt} submitted by {%html parent_author_link %}</div>
+            <div>Review #${review_number} submitted by {%html parent_author_link %}</div>
             <div style='font-weight: bold;'>${subject}</div>
             <div>Change Id: <a href="${url}">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
@@ -179,6 +180,45 @@
 
 {% endblock %}
 
+{% block report_options %}
+    {% if show_top_mentors_options %}
+        <script type='text/javascript'>
+            $(document).ready(function () {
+                $('#review_nth').val('{{ review_nth }}');
+                $("#review_nth").select2();
+            });
+
+            function make_options() {
+                var options = make_std_options();
+                options['review_nth'] = $('#review_nth').val();
+                return options;
+            }
+
+            function reload() {
+                window.location.search = $.map(make_options(),function (val, index) {
+                    return index + "=" + val;
+                }).join("&")
+            }
+
+            $(document).on('change', '#review_nth', function (evt) {
+                reload();
+            });
+        </script>
+        <div class="drop" style="margin-top: 1em;">
+            <label for="review_nth">Review #</label>
+            <select id="review_nth" name="review_nth"
+                    style="min-width: 140px;"
+                    data-placeholder="Select review #">
+                <option></option>
+                {% set review_number_options = [1, 2, 3, 4, 5, 10, 15] %}
+                {% for option in review_number_options %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    {% endif %}
+{% endblock %}
+
 {% block left_frame %}
 
     {% if show_company_breakdown %}
@@ -214,7 +254,7 @@
                 <th>#</th>
                 <th>Engineer</th>
                 <th>{{ metric_label }}</th>
-                {% if metric in ['marks', 'nc_marks'] %}
+                {% if metric in ['marks', 'tm_marks'] %}
                     <th>-2|-1|+1|+2 (+/- ratio)</th>
                 {% endif %}
             </tr>
