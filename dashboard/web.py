@@ -682,7 +682,7 @@ def get_activity_json(records):
             blueprint = record.copy()
             _extend_record(blueprint)
             blueprint['summary'] = utils.format_text(record['summary'])
-            if 'mention_date' in record:
+            if record.get('mention_count'):
                 blueprint['mention_date_str'] = format_datetime(
                     record['mention_date'])
             blueprint['blueprint_link'] = make_blueprint_link(
@@ -813,7 +813,7 @@ def get_bpd(records):
             result.append({
                 'date': format_date(record['date']),
                 'status': record['lifecycle_status'],
-                'metric': record['mention_count'],
+                'metric': record.get('mention_count') or 0,
                 'id': record['name'],
                 'name': record['name'],
                 'link': make_blueprint_link(record['name'], record['module'])
