@@ -108,3 +108,12 @@ def format_text(s):
     s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
     s = re.sub(r'([/\/]+)', r'\1&#8203;', s)
     return s
+
+
+def merge_records(original, new):
+    need_update = False
+    for key, value in new.iteritems():
+        if original.get(key) != value:
+            need_update = True
+            original[key] = value
+    return need_update
