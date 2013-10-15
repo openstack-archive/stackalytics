@@ -92,7 +92,12 @@ def process_repo(repo, runtime_storage_inst, record_processor_inst):
     rcs_inst.setup(key_filename=cfg.CONF.ssh_key_filename,
                    username=cfg.CONF.ssh_username)
 
-    for branch in repo['branches']:
+    branches = set(['master'])
+    for release in repo.get('releases'):
+        if 'branch' in release:
+            branches.add(release['branch'])
+
+    for branch in branches:
         LOG.debug('Processing repo %s, branch %s', uri, branch)
 
         vcs_key = 'vcs:' + str(urllib.quote_plus(uri) + ':' + branch)

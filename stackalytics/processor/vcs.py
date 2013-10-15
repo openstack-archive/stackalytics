@@ -97,7 +97,7 @@ class Git(Vcs):
         else:
             os.chdir(self.folder)
             try:
-                sh.git('pull', 'origin')
+                sh.git('fetch')
             except sh.ErrorReturnCode as e:
                 LOG.error('Unable to pull git repo. Ignore it')
                 LOG.exception(e)
@@ -113,6 +113,13 @@ class Git(Vcs):
         if not self.release_index:
             for release in self.repo['releases']:
                 release_name = release['release_name'].lower()
+
+                if 'branch' in release:
+                    branch = release['branch']
+                else:
+                    branch = 'master'
+                sh.git('checkout', 'origin/' + branch)
+
                 if 'tag_from' in release:
                     tag_range = release['tag_from'] + '..' + release['tag_to']
                 else:
@@ -127,7 +134,7 @@ class Git(Vcs):
         LOG.debug('Parsing git log for repo uri %s', self.repo['uri'])
 
         os.chdir(self.folder)
-        sh.git('checkout', '%s' % branch)
+        sh.git('checkout', 'origin/' + branch)
         commit_range = 'HEAD'
         if head_commit_id:
             commit_range = head_commit_id + '..HEAD'
@@ -186,7 +193,7 @@ class Git(Vcs):
         LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
 
         os.chdir(self.folder)
-        sh.git('checkout', '%s' % branch)
+        sh.git('checkout', 'origin/' + branch)
         return str(sh.git('rev-parse', 'HEAD')).strip()
 
 

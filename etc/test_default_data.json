@@ -55,7 +55,6 @@
 
     "repos": [
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -64,12 +63,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -85,7 +86,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "module": "python-glanceclient",
             "project_group": "core",
             "project_type": "openstack",
@@ -93,7 +93,6 @@
             "uri": "git://github.com/openstack/python-glanceclient.git"
         },
         {
-            "branches": ["master"],
             "module": "stackalytics",
             "project_type": "stackforge",
             "organization": "stackforge",
