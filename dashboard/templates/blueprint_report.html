@@ -20,6 +20,7 @@
 
 <div><span class="label">Title:</span> {{ blueprint.title }}</div>
 <div><span class="label">URL:</span> <a href="https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}">https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}</a></div>
+<div><span class="label">Module:</span> {{blueprint.module}}</div>
 <div><span class="label">Status:</span> <span class="status{{blueprint.lifecycle_status}}">{{blueprint.lifecycle_status}}</span></div>
 <div><span class="label">Priority:</span> <span class="status{{blueprint.priority}}">{{blueprint.priority}}</span></div>
 <div><span class="label">Definition Status:</span> <span class="specstatus{{blueprint.definition_status}}">{{blueprint.definition_status}}</span></div>
@@ -27,10 +28,13 @@
 <div><span class="label">Direction:</span> {% if blueprint.direction_approved %} Approved {% else %} Needs Approval {% endif %}</div>
 <div><span class="label">Registered By:</span> {{blueprint.author_name}} ({{ blueprint.company_name }})</div>
 <div><span class="label">Registered On:</span> {{blueprint.date_str}}</div>
+{% if blueprint.mention_count %}
+<div><span class="label">Popularity:</span> mentioned {{blueprint.mention_count}} times, last on {{blueprint.mention_date_str}}</div>
+{% endif %}
 
 {% if blueprint.summary %}
 <h2>Summary</h2>
-<div class="message">{{  blueprint.summary }}</div>
+<div class="message">{{  blueprint.summary | safe }}</div>
 {% endif %}
 
 {% if blueprint.whiteboard %}
@@ -52,7 +56,7 @@
             <div style="font-weight: bold;">{{ item.author_name }} ({{ item.company_name }})</div>
             {% if item.record_type == "commit" %}
                 <div style='font-weight: bold;'>Commit &ldquo;{{ item.subject }}&rdquo;</div>
-                <div class="message">{{ item.message }}</div>
+                <div class="message">{{ item.message | safe }}</div>
                 <div><span style="color: green">+<span>{{ item.lines_added }}</span></span>
                     <span style="color: blue">- <span>{{ item.lines_deleted }}</span></span>
                 </div>
@@ -69,7 +73,7 @@
             {% elif item.record_type == "email" %}
                 <div style='font-weight: bold;'>Email &ldquo;{{item.subject}}&rdquo;</div>
                 {% if item.body %}
-                    <div class="message">{{ item.body }}</div>
+                    <div class="message">{{ item.body|safe }}</div>
                 {% endif %}
             {% endif %}
         </div>

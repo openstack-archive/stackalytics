@@ -623,7 +623,7 @@ def get_engineers(records, metric_filter, finalize_handler):
                                  finalize_handler=finalize_handler)
 
 
-def _extend_record(record):
+def _extend_record_common_fields(record):
     record['date_str'] = format_datetime(record['date'])
     record['author_link'] = make_link(
         record['author_name'], '/',
@@ -639,6 +639,47 @@ def _extend_record(record):
     record['bug_id_count'] = len(record.get('bug_id', []))
 
 
+def _extend_record(record):
+    if record['record_type'] == 'commit':
+        commit = record.copy()
+        commit['branches'] = ','.join(commit['branches'])
+        if 'correction_comment' not in commit:
+            commit['correction_comment'] = ''
+        commit['message'] = make_commit_message(record)
+        _extend_record_common_fields(commit)
+        return commit
+    elif record['record_type'] == 'mark':
+        review = record.copy()
+        parent = get_memory_storage().get_record_by_primary_key(
+            review['review_id'])
+        if parent:
+            review['review_number'] = parent.get('review_number')
+            review['subject'] = parent['subject']
+            review['url'] = parent['url']
+            review['parent_author_link'] = make_link(
+                parent['author_name'], '/',
+                {'user_id': parent['user_id'],
+                 'company': ''})
+            _extend_record_common_fields(review)
+            return review
+    elif record['record_type'] == 'email':
+        email = record.copy()
+        _extend_record_common_fields(email)
+        email['email_link'] = email.get('email_link') or ''
+        return email
+    elif ((record['record_type'] == 'bpd') or
+          (record['record_type'] == 'bpc')):
+        blueprint = record.copy()
+        _extend_record_common_fields(blueprint)
+        blueprint['summary'] = utils.format_text(record['summary'])
+        if record.get('mention_count'):
+            blueprint['mention_date_str'] = format_datetime(
+                record['mention_date'])
+        blueprint['blueprint_link'] = make_blueprint_link(
+            blueprint['name'], blueprint['module'])
+        return blueprint
+
+
 @app.route('/api/1.0/activity')
 @jsonify('activity')
 @exception_handler()
@@ -648,46 +689,10 @@ def get_activity_json(records):
     page_size = int(flask.request.args.get('page_size') or
                     DEFAULT_RECORDS_LIMIT)
     result = []
-    memory_storage_inst = get_memory_storage()
     for record in records:
-        if record['record_type'] == 'commit':
-            commit = record.copy()
-            commit['branches'] = ','.join(commit['branches'])
-            if 'correction_comment' not in commit:
-                commit['correction_comment'] = ''
-            commit['message'] = make_commit_message(record)
-            _extend_record(commit)
-            result.append(commit)
-        elif record['record_type'] == 'mark':
-            review = record.copy()
-            parent = memory_storage_inst.get_record_by_primary_key(
-                review['review_id'])
-            if parent:
-                review['review_number'] = parent.get('review_number')
-                review['subject'] = parent['subject']
-                review['url'] = parent['url']
-                review['parent_author_link'] = make_link(
-                    parent['author_name'], '/',
-                    {'user_id': parent['user_id'],
-                     'company': ''})
-                _extend_record(review)
-                result.append(review)
-        elif record['record_type'] == 'email':
-            email = record.copy()
-            _extend_record(email)
-            email['email_link'] = email.get('email_link') or ''
-            result.append(email)
-        elif ((record['record_type'] == 'bpd') or
-             (record['record_type'] == 'bpc')):
-            blueprint = record.copy()
-            _extend_record(blueprint)
-            blueprint['summary'] = utils.format_text(record['summary'])
-            if record.get('mention_count'):
-                blueprint['mention_date_str'] = format_datetime(
-                    record['mention_date'])
-            blueprint['blueprint_link'] = make_blueprint_link(
-                blueprint['name'], blueprint['module'])
-            result.append(blueprint)
+        processed_record = _extend_record(record)
+        if processed_record:
+            result.append(processed_record)
 
     result.sort(key=lambda x: x['date'], reverse=True)
     return result[start_record:start_record + page_size]
@@ -811,7 +816,7 @@ def get_bpd(records):
     for record in records:
         if record['record_type'] in ['bpd', 'bpc']:
             result.append({
-                'date': format_date(record['date']),
+                'date': format_date(record['mention_date']),
                 'status': record['lifecycle_status'],
                 'metric': record.get('mention_count') or 0,
                 'id': record['name'],
@@ -953,28 +958,18 @@ def get_commit_report(records):
 @templated()
 @exception_handler()
 def blueprint_report(module, blueprint_name):
-    memory_storage_inst = get_vault()['memory_storage']
-
     blueprint_id = module + ':' + blueprint_name
-
-    for bpd in memory_storage_inst.get_records(
-            memory_storage_inst.get_record_ids_by_type('bpd')):
-        if bpd['id'] == blueprint_id:
-            _extend_record(bpd)
-            break
-    else:
+    bpd = get_memory_storage().get_record_by_primary_key('bpd:' + blueprint_id)
+    if not bpd:
         flask.abort(404)
         return
 
-    record_ids = memory_storage_inst.get_record_ids_by_blueprint_ids(
+    bpd = _extend_record(bpd)
+    record_ids = get_memory_storage().get_record_ids_by_blueprint_ids(
         [blueprint_id])
-
-    activity = []
-    for record in memory_storage_inst.get_records(record_ids):
-        _extend_record(record)
-        activity.append(record)
-
-    activity.sort(key=lambda x: x['date'])
+    activity = [_extend_record(record) for record in
+                get_memory_storage().get_records(record_ids)]
+    activity.sort(key=lambda x: x['date'], reverse=True)
 
     return {'blueprint': bpd, 'activity': activity}
 
