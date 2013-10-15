@@ -20,6 +20,7 @@ import re
 import sh
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import utils
 
 
 LOG = logging.getLogger(__name__)
@@ -148,6 +149,9 @@ class Git(Vcs):
             for param in GIT_LOG_PARAMS:
                 commit[param[0]] = unicode(rec.group(i), 'utf8')
                 i += 1
+
+            if not utils.check_email_validity(commit['author_email']):
+                continue
 
             commit['files_changed'] = int(rec.group(i))
             i += 1

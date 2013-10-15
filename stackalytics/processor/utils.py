@@ -50,7 +50,9 @@ def week_to_date(week):
 
 
 def check_email_validity(email):
-    return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)
+    if email:
+        return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)
+    return False
 
 
 def read_uri(uri):
