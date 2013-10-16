@@ -88,19 +88,36 @@ class Git(Vcs):
             raise Exception('Unexpected uri %s for git' % uri)
         self.release_index = {}
 
+    def _checkout(self, branch):
+        try:
+            sh.git('checkout', 'origin/' + branch)
+            return True
+        except sh.ErrorReturnCode as e:
+            LOG.error('Unable to checkout branch %(branch)s from repo '
+                      '%(uri)s. Ignore it',
+                      {'branch': branch, 'uri': self.repo['uri']})
+            LOG.exception(e)
+            return False
+
     def fetch(self):
         LOG.debug('Fetching repo uri %s' % self.repo['uri'])
 
         if not os.path.exists(self.folder):
             os.chdir(self.sources_root)
-            sh.git('clone', '%s' % self.repo['uri'])
+            try:
+                sh.git('clone', self.repo['uri'])
+            except sh.ErrorReturnCode as e:
+                LOG.error('Unable to clone git repo %s. Ignore it',
+                          self.repo['uri'])
+                LOG.exception(e)
             os.chdir(self.folder)
         else:
             os.chdir(self.folder)
             try:
                 sh.git('fetch')
             except sh.ErrorReturnCode as e:
-                LOG.error('Unable to pull git repo. Ignore it')
+                LOG.error('Unable to fetch git repo %s. Ignore it',
+                          self.repo['uri'])
                 LOG.exception(e)
 
         self.get_release_index()
@@ -119,7 +136,8 @@ class Git(Vcs):
                     branch = release['branch']
                 else:
                     branch = 'master'
-                sh.git('checkout', 'origin/' + branch)
+                if not self._checkout(branch):
+                    continue
 
                 if 'tag_from' in release:
                     tag_range = release['tag_from'] + '..' + release['tag_to']
@@ -135,7 +153,9 @@ class Git(Vcs):
         LOG.debug('Parsing git log for repo uri %s', self.repo['uri'])
 
         os.chdir(self.folder)
-        sh.git('checkout', 'origin/' + branch)
+        if not self._checkout(branch):
+            return
+
         commit_range = 'HEAD'
         if head_commit_id:
             commit_range = head_commit_id + '..HEAD'
@@ -197,7 +217,8 @@ class Git(Vcs):
         LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
 
         os.chdir(self.folder)
-        sh.git('checkout', 'origin/' + branch)
+        if not self._checkout(branch):
+            return None
         return str(sh.git('rev-parse', 'HEAD')).strip()
 
 
