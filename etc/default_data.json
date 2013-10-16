@@ -233,6 +233,17 @@
             "emails": ["amigliaccio@nicira.com", "Armando.Migliaccio@eu.citrix.com", "amigliaccio@internap.com", "armamig@gmail.com", "armando.migliaccio@citrix.com", "armando.migliaccio@eu.citrix.com"]
         },
         {
+            "launchpad_id": "arnaudleg",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arnaud Legendre",
+            "emails": ["arnaudleg@gmail.com"]
+        },
+        {
             "launchpad_id": "asalkeld",
             "companies": [
                 {
