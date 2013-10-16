@@ -70,10 +70,18 @@ class Gerrit(Rcs):
             self.username = None
 
     def _connect(self):
-        self.client.connect(self.hostname, port=self.port,
-                            key_filename=self.key_filename,
-                            username=self.username)
-        LOG.debug('Successfully connected to Gerrit')
+        try:
+            self.client.connect(self.hostname, port=self.port,
+                                key_filename=self.key_filename,
+                                username=self.username)
+            LOG.debug('Successfully connected to Gerrit')
+            return True
+        except Exception as e:
+            LOG.error('Failed to connect to gerrit %(host)s:%(port)s. '
+                      'Error: %(err)s', {'host': self.hostname,
+                                         'port': self.port, 'err': e})
+            LOG.exception(e)
+            return False
 
     def _get_cmd(self, project_organization, module, branch, sort_key=None,
                  is_open=False, limit=PAGE_LIMIT):
@@ -88,6 +96,15 @@ class Gerrit(Rcs):
             cmd += ' resume_sortkey:%016x' % sort_key
         return cmd
 
+    def _exec_command(self, cmd):
+        try:
+            return self.client.exec_command(cmd)
+        except Exception as e:
+            LOG.error('Error %(error)s while execute command %(cmd)s',
+                      {'error': e, 'cmd': cmd})
+            LOG.exception(e)
+            return False
+
     def _poll_reviews(self, project_organization, module, branch,
                       start_id=None, last_id=None, is_open=False):
         sort_key = start_id
@@ -96,7 +113,10 @@ class Gerrit(Rcs):
             cmd = self._get_cmd(project_organization, module, branch, sort_key,
                                 is_open)
             LOG.debug('Executing command: %s', cmd)
-            stdin, stdout, stderr = self.client.exec_command(cmd)
+            exec_result = self._exec_command(cmd)
+            if not exec_result:
+                break
+            stdin, stdout, stderr = exec_result
 
             proceed = False
             for line in stdout:
@@ -116,7 +136,8 @@ class Gerrit(Rcs):
                 break
 
     def log(self, branch, last_id):
-        self._connect()
+        if not self._connect():
+            return
 
         # poll new reviews from the top down to last_id
         LOG.debug('Poll new reviews for module: %s', self.repo['module'])
@@ -138,13 +159,19 @@ class Gerrit(Rcs):
         self.client.close()
 
     def get_last_id(self, branch):
-        self._connect()
+        if not self._connect():
+            return None
+
         LOG.debug('Get last id for module: %s', self.repo['module'])
 
         cmd = self._get_cmd(self.repo['organization'], self.repo['module'],
                             branch, limit=1)
         LOG.debug('Executing command: %s', cmd)
-        stdin, stdout, stderr = self.client.exec_command(cmd)
+        exec_result = self._exec_command(cmd)
+        if not exec_result:
+            return None
+        stdin, stdout, stderr = exec_result
+
         last_id = None
         for line in stdout:
             review = json.loads(line)
