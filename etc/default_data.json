@@ -193,7 +193,7 @@
                 }
             ],
             "user_name": "Anne Gentle",
-            "emails": ["anne@openstack.org", "anne.gentle@rackspace.com"]
+            "emails": ["anne@openstack.org", "anne.gentle@rackspace.com", "annegentle@justwriteclick.com"]
         },
         {
             "launchpad_id": "anotherjesse",
@@ -3533,6 +3533,10 @@
             "company_name": "Dassault Syst\u00e8mes"
         },
         {
+            "domains": ["debian.org"],
+            "company_name": "Debian"
+        },
+        {
             "domains": ["Dell.com", "software.dell.com", "dell.com"],
             "company_name": "Dell"
         },
@@ -3543,6 +3547,10 @@
         {
             "domains": ["dreamhost.com"],
             "company_name": "DreamHost"
+        },
+        {
+            "domains": ["earthlink.net"],
+            "company_name": "Earthlink"
         },
         {
             "domains": ["ebaysf.com", "ebay.com"],
@@ -3557,8 +3565,8 @@
             "company_name": "EMC"
         },
         {
-            "domains": ["earthlink.net"],
-            "company_name": "Earthlink"
+            "domains": ["ericsson.com"],
+            "company_name": "Ericsson"
         },
         {
             "domains": ["fathomdb.com"],
@@ -3567,6 +3575,10 @@
         {
             "domains": ["fnal.gov"],
             "company_name": "Fermilab"
+        },
+        {
+            "domains": ["freescale.com"],
+            "company_name": "Freescale"
         },
         {
             "domains": ["griddynamics.com", "griddynamics.net"],
@@ -3643,6 +3655,14 @@
         {
             "domains": ["jhuapl.edu"],
             "company_name": "Johns Hopkins University"
+        },
+        {
+            "domains": ["juniper.com"],
+            "company_name": "Juniper"
+        },
+        {
+            "domains": ["kent.ac.uk"],
+            "company_name": "University of Kent"
         },
         {
             "domains": ["kt.com"],
@@ -3773,6 +3793,10 @@
             "company_name": "Portland State University"
         },
         {
+            "domains": ["playhaven.com"],
+            "company_name": "PlayHaven"
+        },
+        {
             "domains": ["plumgrid.com"],
             "company_name": "PLUMgrid"
         },
@@ -3791,6 +3815,10 @@
         {
             "domains": ["rackspace.co.uk", "rackspace.com", "slicehost.com", "mailtrust.com"],
             "company_name": "Rackspace"
+        },
+        {
+            "domains": ["radisys.com"],
+            "company_name": "Radisys"
         },
         {
             "domains": ["radware.com"],
@@ -3923,6 +3951,10 @@
         {
             "domains": ["virtualtech.jp"],
             "company_name": "Virtualtech"
+        },
+        {
+            "domains": ["windriver.com"],
+            "company_name": "Wind River"
         },
         {
             "domains": ["wikimedia.org"],
