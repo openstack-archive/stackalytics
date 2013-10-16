@@ -2027,6 +2027,17 @@
             "emails": ["mark.washenberger@rackspace.com", "mark.washenberger@markwash.net"]
         },
         {
+            "launchpad_id": "martyntaylor",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Martyn Taylor",
+            "emails": ["mtaylor@redhat.com"]
+        },
+        {
             "launchpad_id": "maru",
             "companies": [
                 {
@@ -2597,6 +2608,17 @@
             ],
             "user_name": "Rohit Agarwalla",
             "emails": ["rohitgarwalla@gmail.com", "rohitagarwalla@gmail.com", "roagarwa@cisco.com"]
+        },
+        {
+            "launchpad_id": "romcheg",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roman Prykhodchenko",
+            "emails": ["romcheg@romcheg.org"]
         },
         {
             "launchpad_id": "rsokolkov",
@@ -3657,7 +3679,7 @@
             "company_name": "Johns Hopkins University"
         },
         {
-            "domains": ["juniper.com"],
+            "domains": ["juniper.com", "juniper.net"],
             "company_name": "Juniper"
         },
         {
@@ -3733,7 +3755,7 @@
             "company_name": "NASA"
         },
         {
-            "domains": ["nec.com", "nec.co.jp"],
+            "domains": ["nec.com", "nec.co.jp", "nectechnologies.in"],
             "company_name": "NEC"
         },
         {
