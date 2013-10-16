@@ -3971,7 +3971,6 @@
     ],
     "repos": [
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -3980,12 +3979,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4001,7 +4002,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4010,12 +4010,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4031,16 +4033,17 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "c53d8e34"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4056,7 +4059,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4065,12 +4067,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4086,7 +4090,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4095,12 +4098,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4116,7 +4121,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4125,12 +4129,14 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4146,7 +4152,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4155,12 +4160,14 @@
                     "tag_from": "1.4.3"
                 },
                 {
-                    "tag_to": "1.7.4",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "1.4.8"
                 },
                 {
-                    "tag_to": "1.8.0",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "1.7.4"
                 },
@@ -4176,7 +4183,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4201,7 +4207,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4226,7 +4231,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4246,7 +4250,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4266,7 +4269,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4291,7 +4293,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4311,11 +4312,11 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "v7.release"
                 },
@@ -4331,7 +4332,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4351,11 +4351,11 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
-                    "tag_to": "2013.1",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "grizzly-2"
                 },
@@ -4371,7 +4371,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4386,7 +4385,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4401,7 +4399,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "core",
             "releases": [
                 {
@@ -4416,7 +4413,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4431,7 +4427,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4446,7 +4441,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4461,7 +4455,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4476,7 +4469,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4491,7 +4483,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4506,16 +4497,17 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
-                    "tag_to": "2012.2",
+                    "branch": "stable/folsom",
+                    "tag_to": "HEAD",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
                 {
-                    "tag_to": "2013.1.rc2",
+                    "branch": "stable/grizzly",
+                    "tag_to": "HEAD",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -4531,7 +4523,6 @@
             "project_type": "openstack"
         },
         {
-            "branches": ["master"],
             "project_group": "documentation",
             "releases": [
                 {
@@ -4547,7 +4538,6 @@
         },
         {
             "module": "trove",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/trove.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4555,7 +4545,6 @@
         },
         {
             "module": "trove-integration",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/trove-integration.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4563,7 +4552,6 @@
         },
         {
             "module": "python-troveclient",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/python-troveclient.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4571,7 +4559,6 @@
         },
         {
             "module": "ironic",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/ironic.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4579,7 +4566,6 @@
         },
         {
             "module": "savanna",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/savanna.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4587,7 +4573,6 @@
         },
         {
             "module": "savanna-dashboard",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/savanna-dashboard.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4595,7 +4580,6 @@
         },
         {
             "module": "python-savannaclient",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/python-savannaclient.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4603,7 +4587,6 @@
         },
         {
             "module": "savanna-extra",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/savanna-extra.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4611,7 +4594,6 @@
         },
         {
             "module": "savanna-image-elements",
-            "branches": ["master"],
             "uri": "git://github.com/openstack/savanna-image-elements.git",
             "project_type": "openstack",
             "organization": "openstack",
@@ -4619,7 +4601,6 @@
         },
         {
             "module": "puppet-savanna",
-            "branches": ["master"],
             "uri": "git://github.com/stackforge/puppet-savanna.git",
             "project_type": "openstack",
             "organization": "stackforge",

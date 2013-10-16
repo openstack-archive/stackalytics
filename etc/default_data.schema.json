@@ -83,17 +83,14 @@
                     "module": {
                         "type": "string"
                     },
-                    "branches": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
                     "releases": {
                         "type": "array",
                         "items": {
                             "type": "object",
                             "properties": {
+                                "branch": {
+                                    "type": "string"
+                                },
                                 "tag_from": {
                                     "type": "string"
                                 },
@@ -108,7 +105,7 @@
                         }
                     }
                 },
-                "required": ["uri", "project_type", "module", "branches", "organization"],
+                "required": ["uri", "project_type", "module", "organization"],
                 "additionalProperties": false
             }
         },
