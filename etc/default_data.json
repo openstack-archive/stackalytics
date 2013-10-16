@@ -3194,6 +3194,17 @@
             "emails": ["vasiliyk@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "wanglong",
+            "companies": [
+                {
+                    "company_name": "cs2c",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wang Long",
+            "emails": ["wl3617@qq.com", "long.wang@bj.cs2c.com.cn", "wanglong@cse.buaa.edu.cn"]
+        },
+        {
             "launchpad_id": "wenjianhn",
             "companies": [
                 {
