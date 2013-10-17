@@ -4061,9 +4061,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/nova.git",
@@ -4092,9 +4098,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/keystone.git",
@@ -4118,9 +4130,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/cinder.git",
@@ -4149,9 +4167,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/glance.git",
@@ -4180,9 +4204,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/neutron.git",
@@ -4211,9 +4241,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/horizon.git",
@@ -4242,9 +4278,15 @@
                     "tag_from": "1.7.4"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "1.8.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "1.10.0"
                 }
             ],
             "uri": "git://github.com/openstack/swift.git",
@@ -4266,9 +4308,14 @@
                     "tag_from": "0.2.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "0.4.1",
                     "release_name": "Havana",
                     "tag_from": "0.2.3"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.4.1"
                 }
             ],
             "uri": "git://github.com/openstack/python-keystoneclient.git",
@@ -4290,9 +4337,14 @@
                     "tag_from": "2.9.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2.15.0",
                     "release_name": "Havana",
                     "tag_from": "2.13.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2.15.0"
                 }
             ],
             "uri": "git://github.com/openstack/python-novaclient.git",
@@ -4309,9 +4361,14 @@
                     "tag_from": "1.0.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "1.0.6",
                     "release_name": "Havana",
                     "tag_from": "1.0.3"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "1.0.6"
                 }
             ],
             "uri": "git://github.com/openstack/python-cinderclient.git",
@@ -4328,9 +4385,14 @@
                     "tag_from": "0.6.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "0.11.0",
                     "release_name": "Havana",
                     "tag_from": "0.9.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.11.0"
                 }
             ],
             "uri": "git://github.com/openstack/python-glanceclient.git",
@@ -4352,9 +4414,14 @@
                     "tag_from": "2.1"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2.3.1",
                     "release_name": "Havana",
                     "tag_from": "2.2.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2.3.1"
                 }
             ],
             "uri": "git://github.com/openstack/python-neutronclient.git",
@@ -4371,9 +4438,14 @@
                     "tag_from": "1.2.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "1.8.0",
                     "release_name": "Havana",
-                    "tag_from": "1.3.0"
+                    "tag_from": "1.4.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "1.8.0"
                 }
             ],
             "uri": "git://github.com/openstack/python-swiftclient.git",
@@ -4391,9 +4463,15 @@
                     "tag_from": "v7.release"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/heat.git",
@@ -4410,9 +4488,14 @@
                     "tag_from": "0.1.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "0.2.5",
                     "release_name": "Havana",
                     "tag_from": "0.2.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.2.5"
                 }
             ],
             "uri": "git://github.com/openstack/python-heatclient.git",
@@ -4430,9 +4513,15 @@
                     "tag_from": "grizzly-2"
                 },
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/ceilometer.git",
@@ -4444,9 +4533,14 @@
             "project_group": "core",
             "releases": [
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "1.0.6",
                     "release_name": "Havana",
                     "tag_from": "1.0.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "1.0.6"
                 }
             ],
             "uri": "git://github.com/openstack/python-ceilometerclient.git",
@@ -4458,9 +4552,15 @@
             "project_group": "core",
             "releases": [
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/oslo-incubator.git",
@@ -4472,9 +4572,15 @@
             "project_group": "core",
             "releases": [
                 {
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "fc8ca59"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "1.2.1"
                 }
             ],
             "uri": "git://github.com/openstack/oslo.config.git",
@@ -4639,21 +4745,57 @@
             "uri": "git://github.com/openstack/savanna.git",
             "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation"
+            "project_group": "incubation",
+            "releases": [
+                {
+                    "tag_to": "0.3",
+                    "release_name": "Havana",
+                    "tag_from": "9e780767"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.3"
+                }
+            ]
         },
         {
             "module": "savanna-dashboard",
             "uri": "git://github.com/openstack/savanna-dashboard.git",
             "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation"
+            "project_group": "incubation",
+            "releases": [
+                {
+                    "tag_to": "0.3",
+                    "release_name": "Havana",
+                    "tag_from": "06bce5a1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.3"
+                }
+            ]
         },
         {
             "module": "python-savannaclient",
             "uri": "git://github.com/openstack/python-savannaclient.git",
             "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation"
+            "project_group": "incubation",
+            "releases": [
+                {
+                    "tag_to": "0.3",
+                    "release_name": "Havana",
+                    "tag_from": "0f4f63b1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "0.3"
+                }
+            ]
         },
         {
             "module": "savanna-extra",
@@ -4779,7 +4921,7 @@
             "end_date": "2013-Oct-17"
         },
         {
-            "release_name": "IceHouse",
+            "release_name": "Icehouse",
             "end_date": "2014-Apr-04"
         }
     ],
