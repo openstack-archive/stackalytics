@@ -623,6 +623,20 @@ def get_engineers(records, metric_filter, finalize_handler):
                                  finalize_handler=finalize_handler)
 
 
+@app.route('/api/1.0/stats/distinct_engineers')
+@jsonify('stats')
+@exception_handler()
+@record_filter()
+def get_distinct_engineers(records):
+    result = {}
+    for record in records:
+        result[record['user_id']] = {
+            'author_name': record['author_name'],
+            'author_email': record['author_email'],
+        }
+    return result
+
+
 def _extend_record_common_fields(record):
     record['date_str'] = format_datetime(record['date'])
     record['author_link'] = make_link(
