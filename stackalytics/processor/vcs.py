@@ -16,6 +16,7 @@
 
 import os
 import re
+import shutil
 
 import sh
 
@@ -101,6 +102,13 @@ class Git(Vcs):
 
     def fetch(self):
         LOG.debug('Fetching repo uri %s' % self.repo['uri'])
+
+        if os.path.exists(self.folder):
+            os.chdir(self.folder)
+            uri = str(sh.git('config', '--get', 'remote.origin.url'))
+            if uri != self.repo['uri']:
+                os.chdir('..')
+                shutil.rmtree(self.folder)
 
         if not os.path.exists(self.folder):
             os.chdir(self.sources_root)

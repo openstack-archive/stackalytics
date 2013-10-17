@@ -42,18 +42,17 @@ def _check_default_data_change(runtime_storage_inst, default_data):
     return True
 
 
-def _retrieve_project_list(runtime_storage_inst, project_sources):
+def _retrieve_project_list(default_data):
 
     LOG.info('Retrieving project list from GitHub')
 
     repo_index = {}
-    stored_repos = utils.load_repos(runtime_storage_inst)
-    for repo in stored_repos:
+    for repo in default_data['repos']:
         repo_index[repo['uri']] = repo
 
     github = MainClass.Github(timeout=60)
 
-    for project_source in project_sources:
+    for project_source in default_data['project_sources']:
         organization = project_source['organization']
         LOG.debug('Get list of projects for organization %s', organization)
         try:
@@ -61,7 +60,7 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
         except Exception as e:
             LOG.exception(e)
             LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
-            return
+            return False
 
         for repo in repos:
             repo_uri = repo.git_url
@@ -77,10 +76,10 @@ def _retrieve_project_list(runtime_storage_inst, project_sources):
                     'uri': repo_uri,
                     'releases': []
                 }
-                stored_repos.append(r)
+                default_data['repos'].append(r)
                 LOG.debug('Project is added to default data: %s', r)
 
-    runtime_storage_inst.set_by_key('repos', stored_repos)
+    return True
 
 
 def _process_users(runtime_storage_inst, users):
@@ -126,11 +125,15 @@ def process(runtime_storage_inst, default_data, sources_root, force_update):
 
     normalizer.normalize_default_data(default_data)
 
-    if (_check_default_data_change(runtime_storage_inst, default_data) or
-            force_update):
+    dd_changed = _check_default_data_change(runtime_storage_inst, default_data)
 
-        _update_default_data(runtime_storage_inst, default_data)
+    if 'project_sources' in default_data:
+        if not _retrieve_project_list(default_data):
+            raise Exception('Unable to retrieve project list')
 
+    _update_default_data(runtime_storage_inst, default_data)
+
+    if (dd_changed or force_update):
         LOG.debug('Gather release index for all repos')
         release_index = {}
         for repo in utils.load_repos(runtime_storage_inst):
@@ -149,7 +152,3 @@ def process(runtime_storage_inst, default_data, sources_root, force_update):
         updated_records = record_processor_inst.update(
             runtime_storage_inst.get_all_records(), release_index)
         runtime_storage_inst.set_records(updated_records)
-
-    if 'project_sources' in default_data:
-        _retrieve_project_list(runtime_storage_inst,
-                               default_data['project_sources'])
