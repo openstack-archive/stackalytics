@@ -3603,6 +3603,10 @@
             "company_name": "Freescale"
         },
         {
+            "domains": ["globallogic.com"],
+            "company_name": "GlobalLogic"
+        },
+        {
             "domains": ["griddynamics.com", "griddynamics.net"],
             "company_name": "Grid Dynamics"
         },
@@ -3727,7 +3731,7 @@
             "company_name": "Managed IT"
         },
         {
-            "domains": ["mellanox.com"],
+            "domains": ["mellanox.com", "mellanox.co.il"],
             "company_name": "Mellanox"
         },
         {
@@ -3785,6 +3789,10 @@
         {
             "domains": ["nimbula.com"],
             "company_name": "Nimbula"
+        },
+        {
+            "domains": ["nuagenetworks.net"],
+            "company_name": "Nuage Networks"
         },
         {
             "domains": ["objectif-libre.com"],
@@ -3861,6 +3869,10 @@
         {
             "domains": ["sina.com"],
             "company_name": "SINA"
+        },
+        {
+            "domains": ["siu.edu"],
+            "company_name": "Southern Illinois University"
         },
         {
             "domains": ["stackinsider.com"],
@@ -3981,6 +3993,10 @@
         {
             "domains": ["wikimedia.org"],
             "company_name": "Wikimedia Foundation"
+        },
+        {
+            "domains": ["xlab.si"],
+            "company_name": "Xlab"
         },
         {
             "domains": ["yahoo-inc.com"],
