@@ -105,8 +105,10 @@ class Git(Vcs):
 
         if os.path.exists(self.folder):
             os.chdir(self.folder)
-            uri = str(sh.git('config', '--get', 'remote.origin.url'))
+            uri = str(sh.git('config', '--get', 'remote.origin.url')).strip()
             if uri != self.repo['uri']:
+                LOG.debug('Repo uri %(uri)s differs from cloned %(old)s',
+                          {'uri': self.repo['uri'], 'old': uri})
                 os.chdir('..')
                 shutil.rmtree(self.folder)
 
