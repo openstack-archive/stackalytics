@@ -164,7 +164,10 @@
         <div style="float: left;"><img src="${gravatar}"></div>
         <div style="margin-left: 90px;">
             <h2>${user_name}</h2>
-            <div>Company: {%html company_link %}</div>
+            <div>Company: {%html company_link %}
+                    [<span style="font-style: italic;"><a
+                        href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change↗</a></span>]
+            </div>
             {%if launchpad_id != '' %}
                 <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}">${launchpad_id}</a></div>
             {%/if%}

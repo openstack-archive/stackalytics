@@ -815,8 +815,13 @@ def get_bpd(records):
     result = []
     for record in records:
         if record['record_type'] in ['bpd', 'bpc']:
+            mention_date = record.get('mention_date')
+            if mention_date:
+                date = format_date(mention_date)
+            else:
+                date = 'never'
             result.append({
-                'date': format_date(record['mention_date']),
+                'date': date,
                 'status': record['lifecycle_status'],
                 'metric': record.get('mention_count') or 0,
                 'id': record['name'],
