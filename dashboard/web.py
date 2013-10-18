@@ -912,7 +912,7 @@ def timeline(records, **kwargs):
         end_date = release_end_date = utils.timestamp_to_week(
             release['end_date'])
 
-    now = utils.timestamp_to_week(int(time.time()))
+    now = utils.timestamp_to_week(int(time.time())) + 1
 
     # expand start-end to year if needed
     if release_end_date - release_start_date < 52:
