@@ -314,6 +314,17 @@
             "emails": ["brian.waldon@rackspace.com", "bcwaldon@gmail.com"]
         },
         {
+            "launchpad_id": "bdpayne",
+            "companies": [
+                {
+                    "company_name": "Nebula",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bryan D. Payne",
+            "emails": ["bdpayne@acm.org"]
+        },
+        {
             "launchpad_id": "belliott",
             "companies": [
                 {
@@ -2019,7 +2030,7 @@
             "launchpad_id": "markwash",
             "companies": [
                 {
-                    "company_name": "Rackspace",
+                    "company_name": "Nebula",
                     "end_date": null
                 }
             ],
