@@ -4761,7 +4761,7 @@
                 {
                     "tag_to": "0.3",
                     "release_name": "Havana",
-                    "tag_from": "9e780767"
+                    "tag_from": "0.1"
                 },
                 {
                     "tag_to": "HEAD",
