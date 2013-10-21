@@ -82,6 +82,10 @@ def make_range(start, stop, step):
 
 def store_user(runtime_storage_inst, user):
     runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
+    if user.get('launchpad_id'):
+        runtime_storage_inst.set_by_key('user:%s' % user['launchpad_id'], user)
+    for email in user.get('emails') or []:
+        runtime_storage_inst.set_by_key('user:%s' % email, user)
 
 
 def load_user(runtime_storage_inst, user_id):

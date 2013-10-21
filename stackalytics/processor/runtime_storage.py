@@ -42,7 +42,7 @@ class RuntimeStorage(object):
     def get_by_key(self, key):
         pass
 
-    def set_by_key(self, key, head_commit_id):
+    def set_by_key(self, key, value):
         pass
 
     def get_update(self, pid):

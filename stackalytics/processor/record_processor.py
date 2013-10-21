@@ -29,8 +29,6 @@ class RecordProcessor(object):
 
         self.domains_index = runtime_storage_inst.get_by_key('companies')
 
-        self.users_index = runtime_storage_inst.get_by_key('users')
-
         self.releases = runtime_storage_inst.get_by_key('releases')
         self.releases_dates = [r['end_date'] for r in self.releases]
 
@@ -142,18 +140,19 @@ class RecordProcessor(object):
     def update_user(self, record):
         email = record.get('author_email')
 
-        if email in self.users_index:
-            user = self.users_index[email]
-        else:
+        user = utils.load_user(self.runtime_storage_inst, email)
+        if not user:
             if record.get('launchpad_id'):
                 launchpad_id = record.get('launchpad_id')
                 user_name = record.get('author_name')
             else:
                 launchpad_id, user_name = self._get_lp_info(email)
 
-            if (launchpad_id) and (launchpad_id in self.users_index):
+            if launchpad_id:
+                user = utils.load_user(self.runtime_storage_inst, launchpad_id)
+
+            if user:
                 # merge emails
-                user = self.users_index[launchpad_id]
                 if email:
                     self._update_user_profile(user, email)
             else:
@@ -165,10 +164,6 @@ class RecordProcessor(object):
                 user = self._create_user(launchpad_id, email, user_name)
 
             utils.store_user(self.runtime_storage_inst, user)
-            if email:
-                self.users_index[email] = user
-            if user['launchpad_id']:
-                self.users_index[user['launchpad_id']] = user
 
         return user
 
@@ -198,7 +193,7 @@ class RecordProcessor(object):
             yield record
 
     def _spawn_review(self, record):
-        # copy everything except pathsets and flatten user data
+        # copy everything except patchsets and flatten user data
         review = dict([(k, v) for k, v in record.iteritems()
                        if k not in ['patchSets', 'owner', 'createdOn']])
         owner = record['owner']
@@ -340,8 +335,6 @@ class RecordProcessor(object):
 
                 yield r
 
-        self.runtime_storage_inst.set_by_key('users', self.users_index)
-
     def update(self, record_iterator, release_index):
         for record in record_iterator:
             need_update = False
@@ -368,8 +361,6 @@ class RecordProcessor(object):
 
             if need_update:
                 yield record
-
-        self.runtime_storage_inst.set_by_key('users', self.users_index)
 
     def _get_records_for_users_to_update(self):
         users_reviews = {}
@@ -424,7 +415,7 @@ class RecordProcessor(object):
 
             user_id = record['user_id']
             if user_id in self.updated_users:
-                user = self.users_index[user_id]
+                user = utils.load_user(self.runtime_storage_inst, user_id)
                 user_company_name = user['companies'][0]['company_name']
                 if record['company_name'] != user_company_name:
                     LOG.debug('Update record %s: company changed to: %s',

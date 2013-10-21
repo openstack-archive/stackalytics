@@ -202,8 +202,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertIn('johndoe@ibm.com',
-                      record_processor_inst.users_index['john_doe']['emails'])
+        self.assertIn('johndoe@ibm.com', utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
 
     def test_process_commit_existing_user_new_email_unknown_company(self):
         # User is known to LP, but his email is new to us. Should match
@@ -232,8 +232,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertIn('johndoe@gmail.com',
-                      record_processor_inst.users_index['john_doe']['emails'])
+        self.assertIn('johndoe@gmail.com', utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
 
     def test_process_commit_existing_user_new_email_known_company_update(self):
         record_processor_inst = self.make_record_processor(
@@ -261,7 +261,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        user = record_processor_inst.users_index['john_doe']
+        user = utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertIn('johndoe@gmail.com', user['emails'])
         self.assertEquals('IBM', user['companies'][0]['company_name'],
                           message='User affiliation should be updated')
@@ -286,7 +287,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        user = record_processor_inst.users_index['john_doe']
+        user = utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertIn('johndoe@ibm.com', user['emails'])
         self.assertEquals('IBM', user['companies'][0]['company_name'])
 
@@ -308,8 +310,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertEquals(1, len(record_processor_inst.users_index))
-        user = record_processor_inst.users_index['johndoe@ibm.com']
+        user = utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'johndoe@ibm.com')
         self.assertIn('johndoe@ibm.com', user['emails'])
         self.assertEquals('IBM', user['companies'][0]['company_name'])
         self.assertEquals(None, user['launchpad_id'])
@@ -338,8 +340,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[0])
 
-        self.assertEquals(1, len(record_processor_inst.users_index))
-        user = record_processor_inst.users_index['john_doe']
+        user = utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertEquals({
             'user_id': 'john_doe',
             'launchpad_id': 'john_doe',
@@ -372,8 +374,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[0])
 
-        self.assertEquals(1, len(record_processor_inst.users_index))
-        user = record_processor_inst.users_index['john_doe']
+        user = utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertEquals({
             'user_id': 'john_doe',
             'launchpad_id': 'john_doe',
@@ -423,8 +425,10 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
-                          record_processor_inst.users_index)
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe'))
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
 
     def test_process_blueprint_then_commit(self):
         record_processor_inst = self.make_record_processor(
@@ -469,8 +473,10 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
-                          record_processor_inst.users_index)
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe'))
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
 
     def test_process_review_then_blueprint(self):
         record_processor_inst = self.make_record_processor(
@@ -513,8 +519,10 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEquals({'john_doe': user, 'john_doe@gmail.com': user},
-                          record_processor_inst.users_index)
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe'))
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
 
     # update records
 
@@ -788,22 +796,37 @@ def generate_emails(author_name='John Doe', author_email='johndoe@gmail.com',
 
 def make_runtime_storage(users=None, companies=None, releases=None,
                          repos=None):
-    def get_by_key(collection):
-        if collection == 'companies':
+    runtime_storage_cache = {}
+
+    def get_by_key(key):
+        if key == 'companies':
             return _make_companies(companies or [
                 {"company_name": "*independent", "domains": [""]},
             ])
-        elif collection == 'users':
+        elif key == 'users':
             return _make_users(users or [])
-        elif collection == 'releases':
+        elif key == 'releases':
             return releases or RELEASES
-        elif collection == 'repos':
+        elif key == 'repos':
             return repos or REPOS
         else:
-            raise Exception('Wrong collection: %s' % collection)
+            return runtime_storage_cache.get(key)
+
+    def set_by_key(key, value):
+        runtime_storage_cache[key] = value
 
     rs = mock.Mock(runtime_storage.RuntimeStorage)
     rs.get_by_key = mock.Mock(side_effect=get_by_key)
+    rs.set_by_key = mock.Mock(side_effect=set_by_key)
+
+    if users:
+        for user in users:
+            set_by_key('user:%s' % user['user_id'], user)
+            if user.get('launchpad_id'):
+                set_by_key('user:%s' % user['launchpad_id'], user)
+            for email in user.get('emails') or []:
+                set_by_key('user:%s' % email, user)
+
     return rs
 
 
