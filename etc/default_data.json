@@ -3029,17 +3029,6 @@
             "emails": ["termie@preciousroy.local", "github@anarkystic.com", "code@term.ie"]
         },
         {
-            "launchpad_id": "therve",
-            "companies": [
-                {
-                    "company_name": "HP",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Thomas Herve",
-            "emails": ["therve@gmail.com"]
-        },
-        {
             "launchpad_id": "thingee",
             "companies": [
                 {
@@ -3624,6 +3613,10 @@
         {
             "domains": ["gridcentric.ca", "gridcentric.com"],
             "company_name": "Gridcentric"
+        },
+        {
+            "domains": ["grnet.gr"],
+            "company_name": "GRNET"
         },
         {
             "domains": ["hcl.com"],
