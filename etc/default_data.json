@@ -3431,6 +3431,10 @@
             "company_name": "*independent"
         },
         {
+            "domains": ["360.cn"],
+            "company_name": "Qihoo 360 Technology Co"
+        },
+        {
             "domains": ["99cloud.net"],
             "company_name": "99cloud"
         },
@@ -3483,6 +3487,10 @@
             "company_name": "Blue Box"
         },
         {
+            "domains": ["bluehost.com"],
+            "company_name": "Bluehost"
+        },
+        {
             "domains": ["brinkster.com"],
             "company_name": "Brinkster"
         },
@@ -3509,6 +3517,10 @@
         {
             "domains": ["canonical.com"],
             "company_name": "Canonical"
+        },
+        {
+            "domains": ["cienet.com.cn"],
+            "company_name": "CIeNET Technologies"
         },
         {
             "domains": ["cisco.com"],
@@ -3559,7 +3571,7 @@
             "company_name": "Debian"
         },
         {
-            "domains": ["Dell.com", "software.dell.com", "dell.com"],
+            "domains": ["dell.com", "software.dell.com"],
             "company_name": "Dell"
         },
         {
@@ -3585,6 +3597,10 @@
         {
             "domains": ["emc.com"],
             "company_name": "EMC"
+        },
+        {
+            "domains": ["endurancewindpower.com"],
+            "company_name": "Endurance Wind Power"
         },
         {
             "domains": ["ericsson.com"],
@@ -3665,6 +3681,10 @@
         {
             "domains": ["it.pt"],
             "company_name": "Instituto de Telecomunicacoes"
+        },
+        {
+            "domains": ["inria.fr"],
+            "company_name": "Inria"
         },
         {
             "domains": ["intel.com"],
@@ -3769,6 +3789,10 @@
         {
             "domains": ["nttmcl.com", "nttdata.co.jp", "ntt.com", "ntt.co.jp", "nttdata.com", "vertex.co.in"],
             "company_name": "NTT"
+        },
+        {
+            "domains": ["ntts.co.jp"],
+            "company_name": "NTT Software"
         },
         {
             "domains": ["nebula.com", "ansolabs.com"],
@@ -3895,6 +3919,10 @@
             "company_name": "Scality"
         },
         {
+            "domains": ["snabb.co"],
+            "company_name": "Snabb"
+        },
+        {
             "domains": ["softlayer.com"],
             "company_name": "SoftLayer"
         },
@@ -3913,6 +3941,10 @@
         {
             "domains": ["stackops.com"],
             "company_name": "StackOps"
+        },
+        {
+            "domains": ["stsci.edu"],
+            "company_name": "Space Telescope Science Institute"
         },
         {
             "domains": ["swiftstack.com"],
@@ -3947,6 +3979,10 @@
             "company_name": "Time Warner Cable"
         },
         {
+            "domains": ["tunnelvisionlabs.com"],
+            "company_name": "Tunnel Vision Laboratories"
+        },
+        {
             "domains": ["ubisoft.com"],
             "company_name": "Ubisoft"
         },
@@ -3963,8 +3999,16 @@
             "company_name": "University of Maryland"
         },
         {
+            "domains": ["uni-wuerzburg.de"],
+            "company_name": "University of Würzburg"
+        },
+        {
             "domains": ["unimelb.edu.au"],
             "company_name": "University of Melbourne"
+        },
+        {
+            "domains": ["umn.edu"],
+            "company_name": "University of Minnesota"
         },
         {
             "domains": ["toronto.edu"],
@@ -4005,6 +4049,10 @@
         {
             "domains": ["yahoo-inc.com"],
             "company_name": "Yahoo!"
+        },
+        {
+            "domains": ["ysance.com"],
+            "company_name": "Ysance"
         },
         {
             "domains": ["zadarastorage.com"],
