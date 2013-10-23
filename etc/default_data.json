@@ -4740,9 +4740,15 @@
                     "tag_from": "2012.2"
                 },
                 {
+		    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/openstack-manuals.git",
