@@ -1,6 +1,116 @@
 {
     "users": [
         {
+            "launchpad_id": "kozhukalov",
+            "user_name": "Vladimir Kozhukalov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "vkozhukalov@mirantis.com",
+                "kozhukalov@gmail.com"
+            ]
+        },
+        {
+            "launchpad_id": "mihgen",
+            "user_name": "Mike Scherbakov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "mscherbakov@mirantis.com",
+                "mihgen@gmail.com"
+            ]
+        },
+        {
+            "launchpad_id": "xdeller",
+            "user_name": "Andrey Korolyov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "andrey@xdel.ru",
+                "akorolev@mirantis.com"
+            ]
+        },
+        {
+            "launchpad_id": "enchantner",
+            "user_name": "Nikolay Markov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "nmarkov@mirantis.com"
+            ]
+        },
+        {
+            "launchpad_id": "idv1985",
+            "user_name": "Dmitry Ilyin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "dilyin@mirantis.com",
+                "idv1985@gmail.com"
+            ]
+        },
+        {
+            "launchpad_id": "vsharshov",
+            "user_name": "Vladimir Sharshov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "vsharshov@gmail.com",
+                "vsharshov@mirantis.com"
+            ]
+        },
+        {
+            "launchpad_id": "bogdando",
+            "user_name": "Bogdan Dobrelya",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "bogdando@mail.ru",
+                "bdobrelia@mirantis.com"
+            ]
+        },
+        {
+            "launchpad_id": "ekirpichov",
+            "user_name": "Eugene Kirpichov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "ekirpichov@gmail.com"
+            ]
+        },
+        {
             "launchpad_id": "0x44",
             "companies": [
                 {
@@ -4777,7 +4887,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-		    "branch": "stable/havana",
+            "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"
@@ -5020,6 +5130,5 @@
             "end_date": "2014-Apr-04"
         }
     ],
-
     "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"]
 }
