@@ -916,6 +916,17 @@
             "emails": ["shrewsbury.dave@gmail.com"]
         },
         {
+            "launchpad_id": "dstanek",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Stanek",
+            "emails": ["dstanek@dstanek.com", "david.stanek@rackspace.com"]
+        },
+        {
             "launchpad_id": "dweimer",
             "companies": [
                 {
