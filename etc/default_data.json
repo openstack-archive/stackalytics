@@ -1666,7 +1666,7 @@
             "launchpad_id": "jproulx",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "MIT CSAIL",
                     "end_date": null
                 }
             ],
@@ -3557,6 +3557,10 @@
         {
             "domains": ["cloudwatt.com"],
             "company_name": "Cloudwatt"
+        },
+        {
+            "domains": ["csail.mit.edu"],
+            "company_name": "MIT CSAIL"
         },
         {
             "domains": ["coraid.com"],
