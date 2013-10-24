@@ -1818,6 +1818,17 @@
             "emails": ["ken.pepple@cloudtp.com", "ken@pepple.info", "ken.pepple@rabbityard.com", "ken.pepple@gmail.com"]
         },
         {
+            "launchpad_id": "kevinconway",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kevin Conway",
+            "emails": ["kevinjacobconway@gmail.com"]
+        },
+        {
             "launchpad_id": "khussein",
             "companies": [
                 {
