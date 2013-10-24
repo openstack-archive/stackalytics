@@ -3288,6 +3288,17 @@
             "emails": ["thomas@goirand.fr"]
         },
         {
+            "launchpad_id": "thowe-g",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Terry Howe",
+            "emails": ["terrylhowe@gmail.com"]
+        },
+        {
             "launchpad_id": "throughnothing",
             "companies": [
                 {
