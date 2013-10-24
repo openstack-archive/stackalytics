@@ -484,6 +484,28 @@
             "emails": ["matt.dietz@rackspace.com", "matthew.dietz@gmail.com", "matthewdietz@Matthew-Dietzs-MacBook-Pro.local"]
         },
         {
+            "launchpad_id": "chad-lung",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chad Lung",
+            "emails": ["chad.lung@gmail.com", "chad.lung@rackspace.com"]
+        },
+        {
+            "launchpad_id": "changbl",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Changbin Liu",
+            "emails": ["changbin.liu@gmail.com", "changbl@research.att.com"]
+        },
+        {
             "launchpad_id": "chemikadze",
             "companies": [
                 {
@@ -1196,6 +1218,17 @@
             "emails": ["gkotton@redhat.com"]
         },
         {
+            "launchpad_id": "geekinutah",
+            "companies": [
+                {
+                    "company_name": "Bluehost",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael H Wilson",
+            "emails": ["geekinutah@gmail.com"]
+        },
+        {
             "launchpad_id": "ghe.rivero",
             "companies": [
                 {
@@ -1343,6 +1376,17 @@
             "emails": ["hugh@wherenow.org"]
         },
         {
+            "launchpad_id": "hwbi2008",
+            "companies": [
+                {
+                    "company_name": "Stackinsider",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hwbi",
+            "emails": ["hwbi2008@gmail.com"]
+        },
+        {
             "launchpad_id": "idv1985",
             "user_name": "Dmitry Ilyin",
             "companies": [
@@ -1468,6 +1512,17 @@
             "emails": ["jason@koelker.net", "jkoelker@rackspace.com"]
         },
         {
+            "launchpad_id": "jason-smithss",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jason Smith",
+            "emails": ["jason@smithss.org", "jason.smith@rackspace.com"]
+        },
+        {
             "launchpad_id": "jasondunsmore",
             "companies": [
                 {
@@ -1556,6 +1611,17 @@
             "emails": ["joshd@hq.newdream.net", "josh.durgin@dreamhost.com", "josh.durgin@inktank.com"]
         },
         {
+            "launchpad_id": "jeladi",
+            "companies": [
+                {
+                    "company_name": "IroquoiSystems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeff White",
+            "emails": ["jeladi@yahoo.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
@@ -1565,6 +1631,17 @@
             ],
             "user_name": "Jim Jiang",
             "emails": ["wentian@unitedstack.com", "jiangwt100@gmail.com"]
+        },
+        {
+            "launchpad_id": "jing",
+            "companies": [
+                {
+                    "company_name": "Stackinsider",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lawrance",
+            "emails": ["lawrancejing@gmail.com", "lawrence.jing@stackinsider.com"]
         },
         {
             "launchpad_id": "jk0",
@@ -1598,6 +1675,17 @@
             ],
             "user_name": "Joe Arnold",
             "emails": ["joe@swiftstack.com", "joe@cloudscaling.com"]
+        },
+        {
+            "launchpad_id": "joe-topjian-v",
+            "companies": [
+                {
+                    "company_name": "Cybera",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Topjian",
+            "emails": ["joe@topjian.net"]
         },
         {
             "launchpad_id": "jogo",
@@ -1782,6 +1870,17 @@
             ],
             "user_name": "justinsb",
             "emails": ["justin@fathomdb.com", "superstack@superstack.org"]
+        },
+        {
+            "launchpad_id": "k3vinmcdonald",
+            "companies": [
+                {
+                    "company_name": "SoftLayer",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kevin McDonald",
+            "emails": ["k3vinmcdonald@gmail.com"]
         },
         {
             "launchpad_id": "kannan",
@@ -2312,6 +2411,17 @@
             "emails": ["mshuler@rackspace.com"]
         },
         {
+            "launchpad_id": "namei-unix",
+            "companies": [
+                {
+                    "company_name": "Taobao",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liu Yuan",
+            "emails": ["namei.unix@gmail.com"]
+        },
+        {
             "launchpad_id": "nati-ueno",
             "companies": [
                 {
@@ -2354,6 +2464,17 @@
             ],
             "user_name": "Nermina Miller",
             "emails": ["nerminamiller@gmail.com"]
+        },
+        {
+            "launchpad_id": "nick-ma-b",
+            "companies": [
+                {
+                    "company_name": "Stackinsider",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Li Ma",
+            "emails": ["nick.ma@live.cn"]
         },
         {
             "launchpad_id": "nijaba",
@@ -2759,6 +2880,17 @@
             "emails": ["rainer.toebbicke@cern.ch"]
         },
         {
+            "launchpad_id": "rupakg",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rupak Ganguly",
+            "emails": ["rupakg@gmail.com"]
+        },
+        {
             "launchpad_id": "russell-sim",
             "companies": [
                 {
@@ -3145,6 +3277,17 @@
             "emails": ["thingee@gmail.com", "mike.perez@dreamhost.com"]
         },
         {
+            "launchpad_id": "thomas-goirand",
+            "companies": [
+                {
+                    "company_name": "GPLHost",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thomas Goirand",
+            "emails": ["thomas@goirand.fr"]
+        },
+        {
             "launchpad_id": "throughnothing",
             "companies": [
                 {
@@ -3319,6 +3462,17 @@
             ],
             "user_name": "Vasyl Khomenko",
             "emails": ["vasiliyk@yahoo-inc.com"]
+        },
+        {
+            "launchpad_id": "vmtrooper",
+            "companies": [
+                {
+                    "company_name": "VCE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Trevor R Jr",
+            "emails": ["vmtrooper@gmail.com", "Trevor.RobertsJr@vce.com"]
         },
         {
             "launchpad_id": "vsharshov",
@@ -3702,6 +3856,10 @@
             "company_name": "MIT CSAIL"
         },
         {
+            "domains": ["cybera.ca"],
+            "company_name": "Cybera"
+        },
+        {
             "domains": ["debian.org"],
             "company_name": "Debian"
         },
@@ -3760,6 +3918,10 @@
         {
             "domains": ["globallogic.com"],
             "company_name": "GlobalLogic"
+        },
+        {
+            "domains": ["gplhost.com"],
+            "company_name": "GPLHost"
         },
         {
             "domains": ["gridcentric.ca", "gridcentric.com"],
@@ -3836,6 +3998,10 @@
         {
             "domains": ["iomart.com"],
             "company_name": "iomart"
+        },
+        {
+            "domains": ["iroquoisystems.com"],
+            "company_name": "IroquoiSystems"
         },
         {
             "domains": ["isi.edu"],
@@ -4122,6 +4288,10 @@
             "company_name": "Switch"
         },
         {
+            "domains": ["taobao.com"],
+            "company_name": "Taobao"
+        },
+        {
             "domains": ["tcs.com"],
             "company_name": "Tata"
         },
@@ -4172,6 +4342,10 @@
         {
             "domains": ["vbridges.com"],
             "company_name": "VirtualBridges"
+        },
+        {
+            "domains": ["vce.com"],
+            "company_name": "VCE"
         },
         {
             "domains": ["vexxhost.com"],
