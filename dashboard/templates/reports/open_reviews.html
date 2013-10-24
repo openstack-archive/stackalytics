@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open reviews report for {{ module }}</title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .label {
+            font-weight: bold;
+            line-height: 135%;
+        }
+        .message {
+            margin-top: 1em;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body style="margin: 2em;">
+
+<h1>Open Reviews Report</h1>
+
+<h3>Longest waiting reviews (since first revision, total age): </h3>
+<ol>
+{% for item in oldest %}
+    <li>{{ item.age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }}</li>
+{% endfor %}
+</ol>

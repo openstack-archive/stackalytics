@@ -16,7 +16,7 @@
 import mock
 import testtools
 
-from dashboard import web
+from dashboard import helpers
 
 
 class TestWebUtils(testtools.TestCase):
@@ -50,7 +50,7 @@ Fixes bug <a href="https://bugs.launchpad.net/bugs/1076801" class="ext_link">\
        'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
        'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
 
-        observed = web.make_commit_message(record)
+        observed = helpers.make_commit_message(record)
 
         self.assertEqual(expected, observed,
                          'Commit message should be processed correctly')
@@ -77,13 +77,13 @@ Implements Blueprint ''' + (
             'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
             'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
 
-        observed = web.make_commit_message(record)
+        observed = helpers.make_commit_message(record)
 
         self.assertEqual(expected, observed,
                          'Commit message should be processed correctly')
 
-    @mock.patch('dashboard.web.get_vault')
-    @mock.patch('dashboard.web.get_user_from_runtime_storage')
+    @mock.patch('dashboard.vault.get_vault')
+    @mock.patch('dashboard.vault.get_user_from_runtime_storage')
     def test_make_page_title(self, user_patch, vault_patch):
         memory_storage_mock = mock.Mock()
         memory_storage_mock.get_original_company_name = mock.Mock(
@@ -93,13 +93,14 @@ Implements Blueprint ''' + (
         user_patch.return_value = {'user_name': 'John Doe'}
 
         self.assertEqual('OpenStack community contribution in all releases',
-                         web.make_page_title('', '', '', 'all'))
+                         helpers.make_page_title('', '', '', 'all'))
         self.assertEqual('OpenStack community contribution in Havana release',
-                         web.make_page_title('', '', '', 'Havana'))
+                         helpers.make_page_title('', '', '', 'Havana'))
         self.assertEqual('Mirantis contribution in Havana release',
-                         web.make_page_title('Mirantis', '', '', 'Havana'))
+                         helpers.make_page_title('Mirantis', '', '', 'Havana'))
         self.assertEqual('John Doe contribution in Havana release',
-                         web.make_page_title('', 'john_doe', '', 'Havana'))
+                         helpers.make_page_title('', 'john_doe', '', 'Havana'))
         self.assertEqual(
             'John Doe (Mirantis) contribution to neutron in Havana release',
-            web.make_page_title('Mirantis', 'John Doe', 'neutron', 'Havana'))
+            helpers.make_page_title(
+                'Mirantis', 'John Doe', 'neutron', 'Havana'))

@@ -13,58 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import datetime
-import functools
-import json
 import operator
 import os
-import re
-import urllib
+import time
 
 import flask
 from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
-import time
-from werkzeug import exceptions
 
-from dashboard import memory_storage
+from dashboard import decorators
+from dashboard import helpers
+from dashboard import parameters
+from dashboard import reports
+from dashboard import vault
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
-from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
-from stackalytics import version as stackalytics_version
-
-
-# Constants and Parameters ---------
-
-DEFAULTS = {
-    'metric': 'commits',
-    'release': 'icehouse',
-    'project_type': 'openstack',
-    'review_nth': 5,
-}
-
-METRIC_LABELS = {
-    'loc': 'Lines of code',
-    'commits': 'Commits',
-    'marks': 'Reviews',
-    'tm_marks': 'Top Mentors',
-    'emails': 'Emails',
-    'bpd': 'Drafted Blueprints',
-    'bpc': 'Completed Blueprints',
-}
-
-METRIC_TO_RECORD_TYPE = {
-    'loc': 'commit',
-    'commits': 'commit',
-    'marks': 'mark',
-    'tm_marks': 'mark',
-    'emails': 'email',
-    'bpd': 'bpd',
-    'bpc': 'bpc',
-}
-
-DEFAULT_RECORDS_LIMIT = 10
 
 
 # Application objects ---------
@@ -72,6 +36,7 @@ DEFAULT_RECORDS_LIMIT = 10
 app = flask.Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('DASHBOARD_CONF', silent=True)
+app.register_blueprint(reports.blueprint)
 
 LOG = logging.getLogger(__name__)
 
@@ -88,484 +53,16 @@ else:
     LOG.warn('Conf file is empty or not exist')
 
 
-def get_vault():
-    vault = getattr(app, 'stackalytics_vault', None)
-    if not vault:
-        try:
-            vault = {}
-            runtime_storage_inst = runtime_storage.get_runtime_storage(
-                cfg.CONF.runtime_storage_uri)
-            vault['runtime_storage'] = runtime_storage_inst
-            vault['memory_storage'] = memory_storage.get_memory_storage(
-                memory_storage.MEMORY_STORAGE_CACHED)
-
-            init_project_types(vault)
-            init_releases(vault)
-
-            app.stackalytics_vault = vault
-        except Exception as e:
-            LOG.critical('Failed to initialize application: %s', e)
-            LOG.exception(e)
-            flask.abort(500)
-
-    if not getattr(flask.request, 'stackalytics_updated', None):
-        flask.request.stackalytics_updated = True
-        memory_storage_inst = vault['memory_storage']
-        have_updates = memory_storage_inst.update(
-            vault['runtime_storage'].get_update(os.getpid()))
-
-        if have_updates:
-            init_project_types(vault)
-            init_releases(vault)
-            init_module_groups(vault)
-
-    return vault
-
-
-def get_memory_storage():
-    return get_vault()['memory_storage']
-
-
-def init_releases(vault):
-    runtime_storage_inst = vault['runtime_storage']
-    releases = runtime_storage_inst.get_by_key('releases')
-    if not releases:
-        raise Exception('Releases are missing in runtime storage')
-    vault['start_date'] = releases[0]['end_date']
-    vault['end_date'] = releases[-1]['end_date']
-    start_date = releases[0]['end_date']
-    for r in releases[1:]:
-        r['start_date'] = start_date
-        start_date = r['end_date']
-    vault['releases'] = dict((r['release_name'].lower(), r)
-                             for r in releases[1:])
-
-
-def init_project_types(vault):
-    runtime_storage_inst = vault['runtime_storage']
-    project_type_options = {}
-    project_type_group_index = {'all': set(['unknown'])}
-
-    for repo in utils.load_repos(runtime_storage_inst):
-        project_type = repo['project_type'].lower()
-        project_group = None
-        if ('project_group' in repo) and (repo['project_group']):
-            project_group = repo['project_group'].lower()
-
-        if project_type in project_type_options:
-            if project_group:
-                project_type_options[project_type].add(project_group)
-        else:
-            if project_group:
-                project_type_options[project_type] = set([project_group])
-            else:
-                project_type_options[project_type] = set()
-
-        module = repo['module']
-        if project_type in project_type_group_index:
-            project_type_group_index[project_type].add(module)
-        else:
-            project_type_group_index[project_type] = set([module])
-
-        if project_group:
-            if project_group in project_type_group_index:
-                project_type_group_index[project_group].add(module)
-            else:
-                project_type_group_index[project_group] = set([module])
-
-        project_type_group_index['all'].add(module)
-
-    vault['project_type_options'] = project_type_options
-    vault['project_type_group_index'] = project_type_group_index
-
-
-def init_module_groups(vault):
-    runtime_storage_inst = vault['runtime_storage']
-    module_index = {}
-    module_id_index = {}
-    module_groups = runtime_storage_inst.get_by_key('module_groups') or []
-
-    for module_group in module_groups:
-        module_group_name = module_group['module_group_name']
-        module_group_id = module_group_name.lower()
-
-        module_id_index[module_group_name] = {
-            'group': True,
-            'id': module_group_id,
-            'text': module_group_name,
-            'modules': [m.lower() for m in module_group['modules']],
-        }
-
-        modules = module_group['modules']
-        for module in modules:
-            if module in module_index:
-                module_index[module].add(module_group_id)
-            else:
-                module_index[module] = set([module_group_id])
-
-    memory_storage_inst = vault['memory_storage']
-    for module in memory_storage_inst.get_modules():
-        module_id_index[module] = {
-            'id': module.lower(),
-            'text': module,
-            'modules': [module.lower()],
-        }
-
-    vault['module_group_index'] = module_index
-    vault['module_id_index'] = module_id_index
-    vault['module_groups'] = module_groups
-
-
-def get_project_type_options():
-    return get_vault()['project_type_options']
-
-
-def get_release_options():
-    runtime_storage_inst = get_vault()['runtime_storage']
-    releases = runtime_storage_inst.get_by_key('releases')[1:]
-    releases.reverse()
-    return releases
-
-
-def is_project_type_valid(project_type):
-    if not project_type:
-        return False
-    project_type = project_type.lower()
-    if project_type == 'all':
-        return True
-    project_types = get_project_type_options()
-    if project_type in project_types:
-        return True
-    for p, g in project_types.iteritems():
-        if project_type in g:
-            return True
-    return False
-
-
-def get_user_from_runtime_storage(user_id):
-    runtime_storage_inst = get_vault()['runtime_storage']
-    return utils.load_user(runtime_storage_inst, user_id)
-
-
-# Utils ---------
-
-def get_default(param_name):
-    if param_name in DEFAULTS:
-        return DEFAULTS[param_name]
-    else:
-        return None
-
-
-def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
-    if singular_name in kwargs:
-        p = kwargs[singular_name]
-    else:
-        p = flask.request.args.get(singular_name)
-        if (not p) and plural_name:
-            flask.request.args.get(plural_name)
-    if p:
-        return p.split(',')
-    elif use_default:
-        default = get_default(singular_name)
-        return [default] if default else []
-    else:
-        return []
-
-
-def get_single_parameter(kwargs, singular_name, use_default=True):
-    param = get_parameter(kwargs, singular_name, use_default)
-    if param:
-        return param[0]
-    else:
-        return ''
-
-
-def resolve_modules(module_ids):
-    module_id_index = get_vault()['module_id_index']
-    modules = set()
-    for module_id in module_ids:
-        if module_id in module_id_index:
-            modules |= set(module_id_index[module_id]['modules'])
-    return modules
-
-
-# Decorators ---------
-
-def record_filter(ignore=None, use_default=True):
-    if not ignore:
-        ignore = []
-
-    def decorator(f):
-        @functools.wraps(f)
-        def record_filter_decorated_function(*args, **kwargs):
-
-            vault = get_vault()
-            memory_storage = vault['memory_storage']
-            record_ids = set(memory_storage.get_record_ids())  # make a copy
-
-            if 'module' not in ignore:
-                param = get_parameter(kwargs, 'module', 'modules', use_default)
-                if param:
-                    record_ids &= (memory_storage.get_record_ids_by_modules(
-                        resolve_modules(param)))
-
-            if 'project_type' not in ignore:
-                param = get_parameter(kwargs, 'project_type', 'project_types',
-                                      use_default)
-                if param:
-                    ptgi = vault['project_type_group_index']
-                    modules = set()
-                    for project_type in param:
-                        project_type = project_type.lower()
-                        if project_type in ptgi:
-                            modules |= ptgi[project_type]
-                    record_ids &= (
-                        memory_storage.get_record_ids_by_modules(modules))
-
-            if 'user_id' not in ignore:
-                param = get_parameter(kwargs, 'user_id', 'user_ids')
-                param = [u for u in param if get_user_from_runtime_storage(u)]
-                if param:
-                    record_ids &= (
-                        memory_storage.get_record_ids_by_user_ids(param))
-
-            if 'company' not in ignore:
-                param = get_parameter(kwargs, 'company', 'companies')
-                if param:
-                    record_ids &= (
-                        memory_storage.get_record_ids_by_companies(param))
-
-            if 'release' not in ignore:
-                param = get_parameter(kwargs, 'release', 'releases',
-                                      use_default)
-                if param:
-                    if 'all' not in param:
-                        record_ids &= (
-                            memory_storage.get_record_ids_by_releases(
-                                c.lower() for c in param))
-
-            if 'metric' not in ignore:
-                metrics = get_parameter(kwargs, 'metric')
-                for metric in metrics:
-                    record_ids &= memory_storage.get_record_ids_by_type(
-                        METRIC_TO_RECORD_TYPE[metric])
-
-                if 'tm_marks' in metrics:
-                    filtered_ids = []
-                    review_nth = int(get_parameter(kwargs, 'review_nth')[0])
-                    for record in memory_storage.get_records(record_ids):
-                        parent = memory_storage.get_record_by_primary_key(
-                            record['review_id'])
-                        if (parent and ('review_number' in parent) and
-                                (parent['review_number'] <= review_nth)):
-                            filtered_ids.append(record['record_id'])
-                    record_ids = filtered_ids
-
-            kwargs['records'] = memory_storage.get_records(record_ids)
-            return f(*args, **kwargs)
-
-        return record_filter_decorated_function
-
-    return decorator
-
-
-def aggregate_filter():
-    def decorator(f):
-        @functools.wraps(f)
-        def aggregate_filter_decorated_function(*args, **kwargs):
-
-            def incremental_filter(result, record, param_id):
-                result[record[param_id]]['metric'] += 1
-
-            def loc_filter(result, record, param_id):
-                result[record[param_id]]['metric'] += record['loc']
-
-            def mark_filter(result, record, param_id):
-                value = record['value']
-                result_by_param = result[record[param_id]]
-                result_by_param['metric'] += 1
-
-                if value in result_by_param:
-                    result_by_param[value] += 1
-                else:
-                    result_by_param[value] = 1
-
-            def mark_finalize(record):
-                new_record = {}
-                for key in ['id', 'metric', 'name']:
-                    new_record[key] = record[key]
-
-                positive = 0
-                mark_distribution = []
-                for key in ['-2', '-1', '1', '2']:
-                    if key in record:
-                        if key in ['1', '2']:
-                            positive += record[key]
-                        mark_distribution.append(str(record[key]))
-                    else:
-                        mark_distribution.append('0')
-
-                new_record['mark_ratio'] = (
-                    '|'.join(mark_distribution) +
-                    ' (%.1f%%)' % ((positive * 100.0) / record['metric']))
-                return new_record
-
-            metric_param = (flask.request.args.get('metric') or
-                            get_default('metric'))
-            metric = metric_param.lower()
-
-            metric_to_filters_map = {
-                'commits': (incremental_filter, None),
-                'loc': (loc_filter, None),
-                'marks': (mark_filter, mark_finalize),
-                'tm_marks': (mark_filter, mark_finalize),
-                'emails': (incremental_filter, None),
-                'bpd': (incremental_filter, None),
-                'bpc': (incremental_filter, None),
-            }
-            if metric not in metric_to_filters_map:
-                raise Exception('Invalid metric %s' % metric)
-
-            kwargs['metric_filter'] = metric_to_filters_map[metric][0]
-            kwargs['finalize_handler'] = metric_to_filters_map[metric][1]
-            return f(*args, **kwargs)
-
-        return aggregate_filter_decorated_function
-
-    return decorator
-
-
-def exception_handler():
-    def decorator(f):
-        @functools.wraps(f)
-        def exception_handler_decorated_function(*args, **kwargs):
-            try:
-                return f(*args, **kwargs)
-            except Exception as e:
-                if isinstance(e, exceptions.HTTPException):
-                    raise  # ignore Flask exceptions
-                LOG.exception(e)
-                flask.abort(404)
-
-        return exception_handler_decorated_function
-
-    return decorator
-
-
-def make_page_title(company, user_id, module, release):
-    if company:
-        memory_storage = get_vault()['memory_storage']
-        company = memory_storage.get_original_company_name(company)
-    if company or user_id:
-        if user_id:
-            s = get_user_from_runtime_storage(user_id)['user_name']
-            if company:
-                s += ' (%s)' % company
-        else:
-            s = company
-    else:
-        s = 'OpenStack community'
-    s += ' contribution'
-    if module:
-        s += ' to %s' % module
-    if release != 'all':
-        s += ' in %s release' % release.capitalize()
-    else:
-        s += ' in all releases'
-    return s
-
-
-def templated(template=None, return_code=200):
-    def decorator(f):
-        @functools.wraps(f)
-        def templated_decorated_function(*args, **kwargs):
-
-            vault = get_vault()
-            template_name = template
-            if template_name is None:
-                template_name = (flask.request.endpoint.replace('.', '/') +
-                                 '.html')
-            ctx = f(*args, **kwargs)
-            if ctx is None:
-                ctx = {}
-
-            # put parameters into template
-            metric = flask.request.args.get('metric')
-            if metric not in METRIC_LABELS:
-                metric = None
-            ctx['metric'] = metric or get_default('metric')
-            ctx['metric_label'] = METRIC_LABELS[ctx['metric']]
-
-            project_type = flask.request.args.get('project_type')
-            if not is_project_type_valid(project_type):
-                project_type = get_default('project_type')
-            ctx['project_type'] = project_type
-
-            release = flask.request.args.get('release')
-            releases = vault['releases']
-            if release:
-                release = release.lower()
-                if release != 'all':
-                    if release not in releases:
-                        release = None
-                    else:
-                        release = releases[release]['release_name']
-            ctx['release'] = (release or get_default('release')).lower()
-            ctx['review_nth'] = (flask.request.args.get('review_nth') or
-                                 get_default('review_nth'))
-
-            ctx['project_type_options'] = get_project_type_options()
-            ctx['release_options'] = get_release_options()
-            ctx['metric_options'] = sorted(METRIC_LABELS.items(),
-                                           key=lambda x: x[0])
-
-            ctx['company'] = get_single_parameter(kwargs, 'company')
-            ctx['module'] = get_single_parameter(kwargs, 'module')
-            ctx['user_id'] = get_single_parameter(kwargs, 'user_id')
-            ctx['page_title'] = make_page_title(ctx['company'], ctx['user_id'],
-                                                ctx['module'], ctx['release'])
-            ctx['stackalytics_version'] = (
-                stackalytics_version.version_info.version_string())
-            ctx['stackalytics_release'] = (
-                stackalytics_version.version_info.release_string())
-
-            return flask.render_template(template_name, **ctx), return_code
-
-        return templated_decorated_function
-
-    return decorator
-
-
-def jsonify(root='data'):
-    def decorator(func):
-        @functools.wraps(func)
-        def jsonify_decorated_function(*args, **kwargs):
-            callback = flask.app.request.args.get('callback', False)
-            data = json.dumps({root: func(*args, **kwargs)})
-
-            if callback:
-                data = str(callback) + '(' + data + ')'
-                content_type = 'application/javascript'
-            else:
-                content_type = 'application/json'
-
-            return app.response_class(data, mimetype=content_type)
-
-        return jsonify_decorated_function
-
-    return decorator
-
-
 # Handlers ---------
 
 @app.route('/')
-@templated()
+@decorators.templated()
 def overview():
     pass
 
 
 @app.errorhandler(404)
-@templated('404.html', 404)
+@decorators.templated('404.html', 404)
 def page_not_found(e):
     pass
 
@@ -590,43 +87,43 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
 
 
 @app.route('/api/1.0/stats/companies')
-@jsonify('stats')
-@exception_handler()
-@record_filter()
-@aggregate_filter()
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter()
+@decorators.aggregate_filter()
 def get_companies(records, metric_filter, finalize_handler):
     return _get_aggregated_stats(records, metric_filter,
-                                 get_memory_storage().get_companies(),
+                                 vault.get_memory_storage().get_companies(),
                                  'company_name')
 
 
 @app.route('/api/1.0/stats/modules')
-@jsonify('stats')
-@exception_handler()
-@record_filter()
-@aggregate_filter()
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter()
+@decorators.aggregate_filter()
 def get_modules(records, metric_filter, finalize_handler):
     return _get_aggregated_stats(records, metric_filter,
-                                 get_memory_storage().get_modules(),
+                                 vault.get_memory_storage().get_modules(),
                                  'module')
 
 
 @app.route('/api/1.0/stats/engineers')
-@jsonify('stats')
-@exception_handler()
-@record_filter()
-@aggregate_filter()
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter()
+@decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
     return _get_aggregated_stats(records, metric_filter,
-                                 get_memory_storage().get_user_ids(),
+                                 vault.get_memory_storage().get_user_ids(),
                                  'user_id', 'author_name',
                                  finalize_handler=finalize_handler)
 
 
 @app.route('/api/1.0/stats/distinct_engineers')
-@jsonify('stats')
-@exception_handler()
-@record_filter()
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter()
 def get_distinct_engineers(records):
     result = {}
     for record in records:
@@ -637,74 +134,17 @@ def get_distinct_engineers(records):
     return result
 
 
-def _extend_record_common_fields(record):
-    record['date_str'] = format_datetime(record['date'])
-    record['author_link'] = make_link(
-        record['author_name'], '/',
-        {'user_id': record['user_id'], 'company': ''})
-    record['company_link'] = make_link(
-        record['company_name'], '/',
-        {'company': record['company_name'], 'user_id': ''})
-    record['module_link'] = make_link(
-        record['module'], '/',
-        {'module': record['module'], 'company': '', 'user_id': ''})
-    record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
-    record['blueprint_id_count'] = len(record.get('blueprint_id', []))
-    record['bug_id_count'] = len(record.get('bug_id', []))
-
-
-def _extend_record(record):
-    if record['record_type'] == 'commit':
-        commit = record.copy()
-        commit['branches'] = ','.join(commit['branches'])
-        if 'correction_comment' not in commit:
-            commit['correction_comment'] = ''
-        commit['message'] = make_commit_message(record)
-        _extend_record_common_fields(commit)
-        return commit
-    elif record['record_type'] == 'mark':
-        review = record.copy()
-        parent = get_memory_storage().get_record_by_primary_key(
-            review['review_id'])
-        if parent:
-            review['review_number'] = parent.get('review_number')
-            review['subject'] = parent['subject']
-            review['url'] = parent['url']
-            review['parent_author_link'] = make_link(
-                parent['author_name'], '/',
-                {'user_id': parent['user_id'],
-                 'company': ''})
-            _extend_record_common_fields(review)
-            return review
-    elif record['record_type'] == 'email':
-        email = record.copy()
-        _extend_record_common_fields(email)
-        email['email_link'] = email.get('email_link') or ''
-        return email
-    elif ((record['record_type'] == 'bpd') or
-          (record['record_type'] == 'bpc')):
-        blueprint = record.copy()
-        _extend_record_common_fields(blueprint)
-        blueprint['summary'] = utils.format_text(record['summary'])
-        if record.get('mention_count'):
-            blueprint['mention_date_str'] = format_datetime(
-                record['mention_date'])
-        blueprint['blueprint_link'] = make_blueprint_link(
-            blueprint['name'], blueprint['module'])
-        return blueprint
-
-
 @app.route('/api/1.0/activity')
-@jsonify('activity')
-@exception_handler()
-@record_filter()
+@decorators.jsonify('activity')
+@decorators.exception_handler()
+@decorators.record_filter()
 def get_activity_json(records):
     start_record = int(flask.request.args.get('start_record') or 0)
     page_size = int(flask.request.args.get('page_size') or
-                    DEFAULT_RECORDS_LIMIT)
+                    parameters.DEFAULT_RECORDS_LIMIT)
     result = []
     for record in records:
-        processed_record = _extend_record(record)
+        processed_record = helpers.extend_record(record)
         if processed_record:
             result.append(processed_record)
 
@@ -713,9 +153,9 @@ def get_activity_json(records):
 
 
 @app.route('/api/1.0/contribution')
-@jsonify('contribution')
-@exception_handler()
-@record_filter(ignore='metric')
+@decorators.jsonify('contribution')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='metric')
 def get_contribution_json(records):
     marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
     commit_count = 0
@@ -750,9 +190,9 @@ def get_contribution_json(records):
 
 
 @app.route('/api/1.0/companies')
-@jsonify('companies')
-@exception_handler()
-@record_filter(ignore='company')
+@decorators.jsonify('companies')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='company')
 def get_companies_json(records):
     query = flask.request.args.get('company_name') or ''
     options = set()
@@ -762,18 +202,18 @@ def get_companies_json(records):
             continue
         if name.lower().find(query.lower()) >= 0:
             options.add(name)
-    result = [{'id': safe_encode(c.lower()), 'text': c}
+    result = [{'id': helpers.safe_encode(c.lower()), 'text': c}
               for c in sorted(options)]
     return result
 
 
 @app.route('/api/1.0/modules')
-@jsonify('modules')
-@exception_handler()
-@record_filter(ignore='module')
+@decorators.jsonify('modules')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='module')
 def get_modules_json(records):
-    module_group_index = get_vault()['module_group_index']
-    module_id_index = get_vault()['module_id_index']
+    module_group_index = vault.get_vault()['module_group_index']
+    module_id_index = vault.get_vault()['module_id_index']
 
     modules_set = set()
     for record in records:
@@ -799,22 +239,23 @@ def get_modules_json(records):
 
 
 @app.route('/api/1.0/companies/<company_name>')
-@jsonify('company')
+@decorators.jsonify('company')
 def get_company(company_name):
-    memory_storage = get_vault()['memory_storage']
-    for company in memory_storage.get_companies():
+    memory_storage_inst = vault.get_memory_storage()
+    for company in memory_storage_inst.get_companies():
         if company.lower() == company_name.lower():
             return {
                 'id': company_name,
-                'text': memory_storage.get_original_company_name(company_name)
+                'text': memory_storage_inst.get_original_company_name(
+                    company_name)
             }
     flask.abort(404)
 
 
 @app.route('/api/1.0/modules/<module>')
-@jsonify('module')
+@decorators.jsonify('module')
 def get_module(module):
-    module_id_index = get_vault()['module_id_index']
+    module_id_index = vault.get_vault()['module_id_index']
     module = module.lower()
     if module in module_id_index:
         return module_id_index[module]
@@ -822,16 +263,16 @@ def get_module(module):
 
 
 @app.route('/api/1.0/stats/bp')
-@jsonify('stats')
-@exception_handler()
-@record_filter()
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter()
 def get_bpd(records):
     result = []
     for record in records:
         if record['record_type'] in ['bpd', 'bpc']:
             mention_date = record.get('mention_date')
             if mention_date:
-                date = format_date(mention_date)
+                date = helpers.format_date(mention_date)
             else:
                 date = 'never'
             result.append({
@@ -840,7 +281,8 @@ def get_bpd(records):
                 'metric': record.get('mention_count') or 0,
                 'id': record['name'],
                 'name': record['name'],
-                'link': make_blueprint_link(record['name'], record['module'])
+                'link': helpers.make_blueprint_link(
+                    record['name'], record['module'])
             })
 
     result.sort(key=lambda x: x['metric'], reverse=True)
@@ -849,9 +291,9 @@ def get_bpd(records):
 
 
 @app.route('/api/1.0/users')
-@jsonify('users')
-@exception_handler()
-@record_filter(ignore='user_id')
+@decorators.jsonify('users')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='user_id')
 def get_users_json(records):
     user_name_query = flask.request.args.get('user_name') or ''
     user_ids = set()
@@ -869,42 +311,42 @@ def get_users_json(records):
 
 
 @app.route('/api/1.0/users/<user_id>')
-@jsonify('user')
+@decorators.jsonify('user')
 def get_user(user_id):
-    user = get_user_from_runtime_storage(user_id)
+    user = vault.get_user_from_runtime_storage(user_id)
     if not user:
         flask.abort(404)
     user['id'] = user['user_id']
     user['text'] = user['user_name']
     if user['companies']:
         company_name = user['companies'][-1]['company_name']
-        user['company_link'] = make_link(
+        user['company_link'] = helpers.make_link(
             company_name, '/', {'company': company_name, 'user_id': ''})
     else:
         user['company_link'] = ''
     if user['emails']:
-        user['gravatar'] = gravatar(user['emails'][0])
+        user['gravatar'] = helpers.gravatar(user['emails'][0])
     else:
-        user['gravatar'] = gravatar('stackalytics')
+        user['gravatar'] = helpers.gravatar('stackalytics')
     return user
 
 
 @app.route('/api/1.0/stats/timeline')
-@jsonify('timeline')
-@exception_handler()
-@record_filter(ignore='release')
+@decorators.jsonify('timeline')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='release')
 def timeline(records, **kwargs):
     # find start and end dates
-    release_names = get_parameter(kwargs, 'release', 'releases')
-    releases = get_vault()['releases']
+    release_names = parameters.get_parameter(kwargs, 'release', 'releases')
+    releases = vault.get_vault()['releases']
     if not release_names:
         flask.abort(404)
 
     if 'all' in release_names:
         start_date = release_start_date = utils.timestamp_to_week(
-            get_vault()['start_date'])
+            vault.get_vault()['start_date'])
         end_date = release_end_date = utils.timestamp_to_week(
-            get_vault()['end_date'])
+            vault.get_vault()['end_date'])
     else:
         release = releases[release_names[0]]
         start_date = release_start_date = utils.timestamp_to_week(
@@ -929,7 +371,7 @@ def timeline(records, **kwargs):
     week_stat_commits = dict((c, 0) for c in weeks)
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
-    param = get_parameter(kwargs, 'metric')
+    param = parameters.get_parameter(kwargs, 'metric')
     if ('commits' in param) or ('loc' in param):
         handler = lambda record: record['loc']
     else:
@@ -956,106 +398,6 @@ def timeline(records, **kwargs):
         array_commits_hl.append([week_str, week_stat_commits_hl[week]])
 
     return [array_commits, array_commits_hl, array_loc]
-
-
-@app.route('/api/1.0/report/commits')
-@jsonify('commits')
-@exception_handler()
-@record_filter()
-def get_commit_report(records):
-    loc_threshold = int(flask.request.args.get('loc_threshold') or 0)
-    response = []
-    for record in records:
-        if ('loc' in record) and (record['loc'] > loc_threshold):
-            nr = dict([(k, record[k]) for k in ['loc', 'subject', 'module',
-                                                'primary_key', 'change_id']])
-            response.append(nr)
-    return response
-
-
-@app.route('/report/blueprint/<module>/<blueprint_name>')
-@templated()
-@exception_handler()
-def blueprint_report(module, blueprint_name):
-    blueprint_id = module + ':' + blueprint_name
-    bpd = get_memory_storage().get_record_by_primary_key('bpd:' + blueprint_id)
-    if not bpd:
-        flask.abort(404)
-        return
-
-    bpd = _extend_record(bpd)
-    record_ids = get_memory_storage().get_record_ids_by_blueprint_ids(
-        [blueprint_id])
-    activity = [_extend_record(record) for record in
-                get_memory_storage().get_records(record_ids)]
-    activity.sort(key=lambda x: x['date'], reverse=True)
-
-    return {'blueprint': bpd, 'activity': activity}
-
-
-# Jinja Filters ---------
-
-@app.template_filter('datetimeformat')
-def format_datetime(timestamp):
-    return datetime.datetime.utcfromtimestamp(
-        timestamp).strftime('%d %b %Y %H:%M:%S')
-
-
-def format_date(timestamp):
-    return datetime.datetime.utcfromtimestamp(timestamp).strftime('%d-%b-%y')
-
-
-@app.template_filter('launchpadmodule')
-def format_launchpad_module_link(module):
-    return '<a href="https://launchpad.net/%s">%s</a>' % (module, module)
-
-
-@app.template_filter('encode')
-def safe_encode(s):
-    return urllib.quote_plus(s.encode('utf-8'))
-
-
-@app.template_filter('link')
-def make_link(title, uri=None, options=None):
-    param_names = ('release', 'project_type', 'module', 'company', 'user_id',
-                   'metric')
-    param_values = {}
-    for param_name in param_names:
-        v = get_parameter({}, param_name, param_name)
-        if v:
-            param_values[param_name] = ','.join(v)
-    if options:
-        param_values.update(options)
-    if param_values:
-        uri += '?' + '&'.join(['%s=%s' % (n, safe_encode(v))
-                               for n, v in param_values.iteritems()])
-    return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
-
-
-def make_blueprint_link(name, module):
-    uri = '/report/blueprint/' + module + '/' + name
-    return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': name}
-
-
-def make_commit_message(record):
-    s = record['message']
-    module = record['module']
-
-    s = utils.format_text(s)
-
-    # insert links
-    s = re.sub(re.compile('(blueprint\s+)([\w-]+)', flags=re.IGNORECASE),
-               r'\1<a href="https://blueprints.launchpad.net/' +
-               module + r'/+spec/\2" class="ext_link">\2</a>', s)
-    s = re.sub(re.compile('(bug[\s#:]*)([\d]{5,7})', flags=re.IGNORECASE),
-               r'\1<a href="https://bugs.launchpad.net/bugs/\2" '
-               r'class="ext_link">\2</a>', s)
-    s = re.sub(r'\s+(I[0-9a-f]{40})',
-               r' <a href="https://review.openstack.org/#q,\1,n,z" '
-               r'class="ext_link">\1</a>', s)
-
-    s = utils.unwrap_text(s)
-    return s
 
 
 gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')

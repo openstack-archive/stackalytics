@@ -11,6 +11,7 @@
 {% set show_module_contribution = (module) and (not user_id) %}
 {% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
+{% set show_module_profile = (module) %}
 {% set show_top_mentors_options = (metric == 'tm_marks') %}
 {% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
 
@@ -290,10 +291,6 @@
         </div>
     {% endif %}
 
-    {% if show_module_contribution %}
-        <div id="contribution_container"></div>
-    {% endif %}
-
 {% endblock %}
 
 {% block right_frame %}
@@ -317,6 +314,13 @@
     </table>
     <div class="spacer"></div>
     </div>
+    {% endif %}
+
+    {% if show_module_profile %}
+        <h2>Module {{ module }}</h2>
+        <div><a href="/report/reviews/{{ module }}">Open reviews report</a></div>
+
+        <div id="contribution_container"></div>
     {% endif %}
 
     {% if show_bp_breakdown %}
