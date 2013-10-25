@@ -4351,6 +4351,10 @@
             "company_name": "VA Linux"
         },
         {
+            "domains": ["varmour.com"],
+            "company_name": "vArmour"
+        },
+        {
             "domains": ["vbridges.com"],
             "company_name": "VirtualBridges"
         },
