@@ -303,6 +303,19 @@
             "emails": ["bdpayne@acm.org"]
         },
         {
+            "launchpad_id": "bdudko",
+            "user_name": "Bogdan Dudko",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "bdudko@mirantis.com"
+            ]
+        },
+        {
             "launchpad_id": "belliott",
             "companies": [
                 {
@@ -774,6 +787,19 @@
             ],
             "user_name": "Darren Worrall",
             "emails": ["daz@dwuk.net", "darren@iweb.co.uk"]
+        },
+        {
+            "launchpad_id": "dborodaenko",
+            "user_name": "Dmitry Borodaenko",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "dborodaenko@mirantis.com"
+            ]
         },
         {
             "launchpad_id": "debo",
@@ -2464,6 +2490,19 @@
             ],
             "user_name": "Nermina Miller",
             "emails": ["nerminamiller@gmail.com"]
+        },
+        {
+            "launchpad_id": "nfedotov",
+            "user_name": "Nikolay Fedotov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "emails": [
+                "nfedotov@mirantis.com"
+            ]
         },
         {
             "launchpad_id": "nick-ma-b",
