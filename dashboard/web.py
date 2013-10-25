@@ -39,7 +39,7 @@ from stackalytics import version as stackalytics_version
 
 DEFAULTS = {
     'metric': 'commits',
-    'release': 'havana',
+    'release': 'icehouse',
     'project_type': 'openstack',
     'review_nth': 5,
 }
