@@ -1185,6 +1185,18 @@
             "emails": ["fpercoco@redhat.com", "flaper87@gmail.com"]
         },
         {
+            "launchpad_id": "fujioka-yuuichi-d",
+            "gerrit_id": "fujiokayuuichi",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuuichi Fujioka",
+            "emails": ["yuuichi-fujioka@zx.mxh.nes.nec.co.jp", "fujioka.yuuichi@gmail.com"]
+        },
+        {
             "launchpad_id": "fungi",
             "companies": [
                 {
@@ -1940,6 +1952,17 @@
             ],
             "user_name": "Kaushik Chandrashekar",
             "emails": ["kaushik.chand@gmail.com", "kaushik.chandrashekar@rackspace.com"]
+        },
+        {
+            "launchpad_id": "kb-sankethi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Keshava Bharadwaj",
+            "emails": ["kb.sankethi@gmail.com"]
         },
         {
             "launchpad_id": "kbringard",
@@ -3314,6 +3337,17 @@
             ],
             "user_name": "termie",
             "emails": ["termie@preciousroy.local", "github@anarkystic.com", "code@term.ie"]
+        },
+        {
+            "launchpad_id": "thesheep",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Radomir Dopieralski",
+            "emails": ["openstack@sheep.art.pl"]
         },
         {
             "launchpad_id": "thingee",
