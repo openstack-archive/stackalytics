@@ -2166,6 +2166,17 @@
             "emails": ["logan@bacoosta.com"]
         },
         {
+            "launchpad_id": "loquacity",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lana Brindley",
+            "emails": ["lana.brindley@rackspace.com", "lana.brindley@RACKSPACE.COM", "openstack@lanabrindley.com"]
+        },
+        {
             "launchpad_id": "lorinh",
             "companies": [
                 {
