@@ -5017,6 +5017,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/compute-api.git",
@@ -5031,6 +5036,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/identity-api.git",
@@ -5045,6 +5055,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/image-api.git",
@@ -5059,6 +5074,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/netconn-api.git",
@@ -5073,6 +5093,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/object-api.git",
@@ -5087,6 +5112,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/volume-api.git",
@@ -5110,7 +5140,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-            "branch": "stable/havana",
+		    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"
@@ -5132,7 +5162,31 @@
                 {
                     "tag_to": "HEAD",
                     "release_name": "Havana",
+                    "tag_from": "65027f8"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
+                }
+            ],
+            "uri": "git://github.com/openstack/operations-guide.git",
+            "module": "operations-guide",
+            "organization": "openstack",
+            "project_type": "openstack"
+        },
+        {
+            "project_group": "documentation",
+            "releases": [
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Havana",
                     "tag_from": "2013.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "2013.2"
                 }
             ],
             "uri": "git://github.com/openstack/api-site.git",
