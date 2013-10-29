@@ -44,44 +44,106 @@ def _extend_record_common_fields(record):
 
 
 def extend_record(record):
+    record = record.copy()
+    _extend_record_common_fields(record)
+
     if record['record_type'] == 'commit':
-        commit = record.copy()
-        commit['branches'] = ','.join(commit['branches'])
-        if 'correction_comment' not in commit:
-            commit['correction_comment'] = ''
-        commit['message'] = make_commit_message(record)
-        _extend_record_common_fields(commit)
-        return commit
+        record['branches'] = ','.join(record['branches'])
+        if 'correction_comment' not in record:
+            record['correction_comment'] = ''
+        record['message'] = make_commit_message(record)
     elif record['record_type'] == 'mark':
-        review = record.copy()
         parent = vault.get_memory_storage().get_record_by_primary_key(
-            review['review_id'])
-        if parent:
-            review['review_number'] = parent.get('review_number')
-            review['subject'] = parent['subject']
-            review['url'] = parent['url']
-            review['parent_author_link'] = make_link(
-                parent['author_name'], '/',
-                {'user_id': parent['user_id'],
-                 'company': ''})
-            _extend_record_common_fields(review)
-            return review
+            record['review_id'])
+        if not parent:
+            return None
+
+        for k, v in parent.iteritems():
+            record['parent_%s' % k] = v
+        record['review_number'] = parent.get('review_number')
+        record['subject'] = parent['subject']
+        record['url'] = parent['url']
+        record['parent_author_link'] = make_link(
+            parent['author_name'], '/',
+            {'user_id': parent['user_id'], 'company': ''})
     elif record['record_type'] == 'email':
-        email = record.copy()
-        _extend_record_common_fields(email)
-        email['email_link'] = email.get('email_link') or ''
-        return email
-    elif ((record['record_type'] == 'bpd') or
-          (record['record_type'] == 'bpc')):
-        blueprint = record.copy()
-        _extend_record_common_fields(blueprint)
-        blueprint['summary'] = utils.format_text(record['summary'])
+        record['email_link'] = record.get('email_link') or ''
+    elif record['record_type'] in ['bpd', 'bpc']:
+        record['summary'] = utils.format_text(record['summary'])
         if record.get('mention_count'):
-            blueprint['mention_date_str'] = format_datetime(
+            record['mention_date_str'] = format_datetime(
                 record['mention_date'])
-        blueprint['blueprint_link'] = make_blueprint_link(
-            blueprint['name'], blueprint['module'])
-        return blueprint
+        record['blueprint_link'] = make_blueprint_link(
+            record['name'], record['module'])
+
+    return record
+
+
+def extend_user(user):
+    user = user.copy()
+
+    user['id'] = user['user_id']
+    user['text'] = user['user_name']
+    if user['companies']:
+        company_name = user['companies'][-1]['company_name']
+        user['company_link'] = make_link(
+            company_name, '/', {'company': company_name, 'user_id': ''})
+    else:
+        user['company_link'] = ''
+    if user['emails']:
+        user['gravatar'] = gravatar(user['emails'][0])
+    else:
+        user['gravatar'] = gravatar(user['user_id'])
+
+    return user
+
+
+def get_activity(records, start_record=0,
+                 page_size=parameters.DEFAULT_RECORDS_LIMIT):
+    result = []
+    for record in records:
+        processed_record = extend_record(record)
+        if processed_record:
+            result.append(processed_record)
+
+    result.sort(key=lambda x: x['date'], reverse=True)
+    if page_size == -1:
+        return result[start_record:]
+    else:
+        return result[start_record:start_record + page_size]
+
+
+def get_contribution_summary(records):
+    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
+    commit_count = 0
+    loc = 0
+    drafted_blueprint_count = 0
+    completed_blueprint_count = 0
+    email_count = 0
+
+    for record in records:
+        record_type = record['record_type']
+        if record_type == 'commit':
+            commit_count += 1
+            loc += record['loc']
+        elif record['record_type'] == 'mark':
+            marks[record['value']] += 1
+        elif record['record_type'] == 'email':
+            email_count += 1
+        elif record['record_type'] == 'bpd':
+            drafted_blueprint_count += 1
+        elif record['record_type'] == 'bpc':
+            completed_blueprint_count += 1
+
+    result = {
+        'drafted_blueprint_count': drafted_blueprint_count,
+        'completed_blueprint_count': completed_blueprint_count,
+        'commit_count': commit_count,
+        'email_count': email_count,
+        'loc': loc,
+        'marks': marks,
+    }
+    return result
 
 
 def format_datetime(timestamp):

@@ -196,7 +196,50 @@ function render_bar_chart(chart_id, chart_data) {
                 label: "Age"
             },
             yaxis: {
-                label: "Count"
+                label: "Count",
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+            }
+        }
+    });
+}
+
+function render_punch_card(chart_id, chart_data) {
+    $.jqplot(chart_id, chart_data, {
+        seriesDefaults:{
+            renderer: $.jqplot.BubbleRenderer,
+            rendererOptions: {
+                varyBubbleColors: false,
+                color: '#a09898',
+                autoscalePointsFactor: -0.25,
+                highlightAlpha: 0.7
+            },
+            shadow: true,
+            shadowAlpha: 0.05
+        },
+        axesDefaults: {
+            tickRenderer: $.jqplot.CanvasAxisTickRenderer
+        },
+        axes: {
+            xaxis: {
+                label: 'Hour',
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                tickOptions: {
+                    formatter: function (format, val) {
+                        if (val < 0 || val > 24) { return "" }
+                        return val;
+                    }
+                }
+            },
+            yaxis: {
+                label: 'Day of week',
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                tickOptions: {
+                    formatter: function (format, val) {
+                        if (val < 0 || val > 6) { return "" }
+                        var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                        return labels[val];
+                    }
+                }
             }
         }
     });

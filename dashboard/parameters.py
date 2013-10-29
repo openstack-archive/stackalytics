@@ -48,6 +48,7 @@ METRIC_TO_RECORD_TYPE = {
 }
 
 DEFAULT_RECORDS_LIMIT = 10
+DEFAULT_STATIC_ACTIVITY_SIZE = 50
 
 
 def get_default(param_name):

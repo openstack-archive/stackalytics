@@ -157,36 +157,7 @@ def get_activity_json(records):
 @decorators.exception_handler()
 @decorators.record_filter(ignore='metric')
 def get_contribution_json(records):
-    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
-    commit_count = 0
-    loc = 0
-    new_blueprint_count = 0
-    competed_blueprint_count = 0
-    email_count = 0
-
-    for record in records:
-        record_type = record['record_type']
-        if record_type == 'commit':
-            commit_count += 1
-            loc += record['loc']
-        elif record['record_type'] == 'mark':
-            marks[record['value']] += 1
-        elif record['record_type'] == 'email':
-            email_count += 1
-        elif record['record_type'] == 'bpd':
-            new_blueprint_count += 1
-        elif record['record_type'] == 'bpc':
-            competed_blueprint_count += 1
-
-    result = {
-        'new_blueprint_count': new_blueprint_count,
-        'competed_blueprint_count': competed_blueprint_count,
-        'commit_count': commit_count,
-        'email_count': email_count,
-        'loc': loc,
-        'marks': marks,
-    }
-    return result
+    return helpers.get_contribution_summary(records)
 
 
 @app.route('/api/1.0/companies')
@@ -316,18 +287,7 @@ def get_user(user_id):
     user = vault.get_user_from_runtime_storage(user_id)
     if not user:
         flask.abort(404)
-    user['id'] = user['user_id']
-    user['text'] = user['user_name']
-    if user['companies']:
-        company_name = user['companies'][-1]['company_name']
-        user['company_link'] = helpers.make_link(
-            company_name, '/', {'company': company_name, 'user_id': ''})
-    else:
-        user['company_link'] = ''
-    if user['emails']:
-        user['gravatar'] = helpers.gravatar(user['emails'][0])
-    else:
-        user['gravatar'] = helpers.gravatar('stackalytics')
+    user = helpers.extend_user(user)
     return user
 
 

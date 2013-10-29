@@ -12,14 +12,16 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import json
 
+import datetime
 import operator
 import time
 
 import flask
 
-from dashboard import decorators
+from dashboard import decorators, parameters
 from dashboard import helpers
 from dashboard import vault
 from stackalytics.processor import utils
@@ -110,6 +112,50 @@ def open_reviews(module):
         'latest_revision': _process_stat(
             waiting_on_reviewer, 'updated_on', time_now),
         'first_revision': _process_stat(waiting_on_reviewer, 'date', time_now),
+    }
+
+
+def _get_punch_card_data(records):
+    punch_card_raw = []  # matrix days x hours
+    for wday in xrange(0, 7):
+        punch_card_raw.append([0] * 24)
+    for record in records:
+        tt = datetime.datetime.fromtimestamp(record['date']).timetuple()
+        punch_card_raw[tt.tm_wday][tt.tm_hour] += 1
+
+    punch_card_data = []  # format for jqplot bubble renderer
+    for wday in xrange(0, 7):
+        for hour in xrange(0, 24):
+            v = punch_card_raw[wday][hour]
+            if v:
+                punch_card_data.append([hour, wday, v, v])
+
+    return punch_card_data
+
+
+@blueprint.route('/users/<user_id>')
+@decorators.templated()
+@decorators.exception_handler()
+def user_activity(user_id):
+    user = vault.get_user_from_runtime_storage(user_id)
+    if not user:
+        flask.abort(404)
+    user = helpers.extend_user(user)
+
+    memory_storage_inst = vault.get_memory_storage()
+    records = memory_storage_inst.get_records(
+        memory_storage_inst.get_record_ids_by_user_ids([user_id]))
+
+    activity = helpers.get_activity(records, 0, -1)
+
+    punch_card_data = _get_punch_card_data(activity)
+
+    return {
+        'user': user,
+        'activity': activity[:parameters.DEFAULT_STATIC_ACTIVITY_SIZE],
+        'total_records': len(activity),
+        'contribution': helpers.get_contribution_summary(activity),
+        'punch_card_data': json.dumps(punch_card_data),
     }
 
 
