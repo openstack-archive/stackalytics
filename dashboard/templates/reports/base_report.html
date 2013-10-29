@@ -63,7 +63,8 @@
 
                 <h3>{{ item.date_str}} &mdash; commit &ldquo;{{item.subject}}&rdquo; to {{ item.module }}</h3>
 
-                <div>Author: <a href="{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a>
+                    (<a href="/report/companies/{{ item.company_name }}">{{ item.company_name }}</a>)</div>
 
                 <div class="message">{{ item.message | safe }}</div>
                 <div><span style="color: green">+<span>{{ item.lines_added }}</span></span>
@@ -78,7 +79,10 @@
 
                 <h3>{{ item.date_str}} &mdash; review &ldquo;{{item.subject}}&rdquo; in {{ item.module }}</h3>
 
-                <div>Patch submitted by: <a href="{{ item.parent_user_id }}">{{ item.parent_author_name }}</a> ({{ item.parent_company_name }})</div>
+                <div>Reviewer: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a>
+                    (<a href="/report/companies/{{ item.company_name }}">{{ item.company_name }}</a>)</div>
+                <div>Submitter: <a href="/report/users/{{ item.parent_user_id }}">{{ item.parent_author_name }}</a>
+                    (<a href="/report/companies/{{ item.company_name }}">{{ item.parent_company_name }}</a>)</div>
                 <div>Change Id: <a href="{{item.url}}">{{item.review_id}}</a></div>
                 <div style="color: {% if item.value > 0 %} green {% else %} blue {% endif %}">
                     {{item.description}}: <span class="review_mark">{{item.value}}</span></div>
@@ -87,7 +91,8 @@
 
                 <h3>{{ item.date_str}} &mdash; patch &ldquo;{{item.subject}}&rdquo; posted into {{ item.module }}</h3>
 
-                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a>
+                    (<a href="/report/companies/{{ item.company_name }}">{{ item.company_name }}</a>)</div>
                 <div>Current Status: {{ item.status }}</div>
                 <div>URL: <a href="{{item.url}}">{{item.url}}</a></div>
                 <div>Change Id: <a href="{{item.url}}">{{item.id}}</a></div>
@@ -96,7 +101,8 @@
 
                 <h3>{{ item.date_str}} &mdash; email &ldquo;{{item.subject}}&rdquo;</h3>
 
-                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a>
+                    (<a href="/report/companies/{{ item.company_name }}">{{ item.company_name }}</a>)</div>
                 {% if item.body %}
                     <div class="message">{{ item.body|safe }}</div>
                 {% endif %}
@@ -105,7 +111,8 @@
 
                 <h3>{{ item.date_str}} &mdash; blueprint &ldquo;{{item.title}}&rdquo; in {{ item.module }}</h3>
 
-                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a>
+                    (<a href="/report/companies/{{ item.parent_company_name }}">{{ item.parent_company_name }}</a>)</div>
                 <div>Launchpad: <a href="https://blueprints.launchpad.net/{{ item.module }}/+spec/{{ item.name }}">https://blueprints.launchpad.net/{{ item.module }}/+spec/{{ item.name }}</a></div>
                 <div>Report: {{ item.blueprint_link | safe}}</div>
                 {% if item.summary %}
@@ -118,6 +125,21 @@
 
 {% endfor %}
 {% endif %}
+
+{%- endmacro %}
+
+{% macro show_contribution_summary(contribution) -%}
+
+    <h2>Contribution summary</h2>
+    <ul>
+        <li>Total commits: {{ contribution.commit_count }}</li>
+        <li>Total LOC: {{ contribution.loc }}</li>
+        <li>Review stat (-2, -1, +1, +2): {{ contribution.marks[-2] }}, {{ contribution.marks[-1] }},
+            {{ contribution.marks[1] }}, {{ contribution.marks[2] }}</li>
+        <li>Draft Blueprints: {{ contribution.drafted_blueprint_count }}</li>
+        <li>Completed Blueprints: {{ contribution.completed_blueprint_count }}</li>
+        <li>Emails: {{ contribution.email_count }}</li>
+    </ul>
 
 {%- endmacro %}
 

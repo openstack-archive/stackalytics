@@ -130,6 +130,12 @@ def _get_punch_card_data(records):
             if v:
                 punch_card_data.append([hour, wday, v, v])
 
+    # add corner point, otherwise chart doesn't know the bounds
+    if punch_card_raw[0][0] == 0:
+        punch_card_data.append([0, 0, 0, 0])
+    if punch_card_raw[6][23] == 0:
+        punch_card_data.append([23, 6, 0, 0])
+
     return punch_card_data
 
 
@@ -152,6 +158,30 @@ def user_activity(user_id):
 
     return {
         'user': user,
+        'activity': activity[:parameters.DEFAULT_STATIC_ACTIVITY_SIZE],
+        'total_records': len(activity),
+        'contribution': helpers.get_contribution_summary(activity),
+        'punch_card_data': json.dumps(punch_card_data),
+    }
+
+
+@blueprint.route('/companies/<company>')
+@decorators.templated()
+@decorators.exception_handler()
+def company_activity(company):
+    memory_storage_inst = vault.get_memory_storage()
+    original_name = memory_storage_inst.get_original_company_name(company)
+
+    memory_storage_inst = vault.get_memory_storage()
+    records = memory_storage_inst.get_records(
+        memory_storage_inst.get_record_ids_by_companies([original_name]))
+
+    activity = helpers.get_activity(records, 0, -1)
+
+    punch_card_data = _get_punch_card_data(activity)
+
+    return {
+        'company': original_name,
         'activity': activity[:parameters.DEFAULT_STATIC_ACTIVITY_SIZE],
         'total_records': len(activity),
         'contribution': helpers.get_contribution_summary(activity),

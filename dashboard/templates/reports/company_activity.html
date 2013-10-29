@@ -1,7 +1,7 @@
 {% extends "reports/base_report.html" %}
 
 {% block title %}
-{{ user.user_name }} activity report
+{{ company }} activity report
 {% endblock %}
 
 {% block head %}
@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block body %}
-<h1>{{ user.user_name }} activity report</h1>
+<h1>{{ company }} activity report</h1>
 
 {{ show_contribution_summary(contribution) }}
 
