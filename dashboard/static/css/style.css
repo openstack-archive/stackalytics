@@ -167,6 +167,20 @@ div#right_list_wrapper {
     line-height: 135%;
 }
 
+.activity {
+    margin-bottom: 2em;
+}
+
+.activity h3 {
+    margin-bottom: 0.2em;
+}
+.activity b {
+    color: red;
+}
+.activity .message {
+    margin: 0;
+}
+
 a[href^="https://blueprints"]:after {
     content: "↗";
     opacity: 0.3;

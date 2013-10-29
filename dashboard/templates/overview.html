@@ -11,7 +11,7 @@
 {% set show_module_contribution = (module) and (not user_id) %}
 {% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
-{% set show_module_profile = (module) %}
+{% set show_module_profile = (module) and (not user_id) and (not company) %}
 {% set show_top_mentors_options = (metric == 'tm_marks') %}
 {% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
 

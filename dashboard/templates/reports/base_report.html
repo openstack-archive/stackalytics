@@ -48,7 +48,7 @@
 {% else %}
 
 {% for item in activity %}
-    <div style="margin-bottom: 1em;">
+    <div class="activity">
         <div style='float: left; '>
             {% if show_gravatar %}
             <img src="{{ item.gravatar }}">
@@ -57,11 +57,14 @@
             {% endif %}
         </div>
 
-        <div style="margin-left: 80px;">
-            <div style="font-weight: bold;">{{ item.date_str}}</div>
-            <div style="font-weight: bold;">{{ item.author_name }} ({{ item.company_name }})</div>
+        <div style="margin-left: 86px;">
+
             {% if item.record_type == "commit" %}
-                <div style='font-weight: bold;'>Commit &ldquo;{{ item.subject }}&rdquo; to {{ item.module }}</div>
+
+                <h3>{{ item.date_str}} &mdash; commit &ldquo;{{item.subject}}&rdquo; to {{ item.module }}</h3>
+
+                <div>Author: <a href="{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+
                 <div class="message">{{ item.message | safe }}</div>
                 <div><span style="color: green">+<span>{{ item.lines_added }}</span></span>
                     <span style="color: blue">- <span>{{ item.lines_deleted }}</span></span>
@@ -70,21 +73,45 @@
                     <div style='font-weight: bold; color: red;'>Commit corrected:
                         <span>{{ item.correction_comment }}</span></div>
                 {% endif %}
+
             {% elif item.record_type == "mark" %}
-                <div style='font-weight: bold;'>Review &ldquo;{{item.subject}}&rdquo; in {{ item.module }}</div>
-                <div>Patch submitted by <a href="{{ item.parent_user_id }}">{{ item.parent_author_name }}</a></div>
+
+                <h3>{{ item.date_str}} &mdash; review &ldquo;{{item.subject}}&rdquo; in {{ item.module }}</h3>
+
+                <div>Patch submitted by: <a href="{{ item.parent_user_id }}">{{ item.parent_author_name }}</a> ({{ item.parent_company_name }})</div>
                 <div>Change Id: <a href="{{item.url}}">{{item.review_id}}</a></div>
                 <div style="color: {% if item.value > 0 %} green {% else %} blue {% endif %}">
                     {{item.description}}: <span class="review_mark">{{item.value}}</span></div>
+
             {% elif item.record_type == "review" %}
-                <div style='font-weight: bold;'>Patch &ldquo;{{item.subject}}&rdquo; in {{ item.module }}</div>
+
+                <h3>{{ item.date_str}} &mdash; patch &ldquo;{{item.subject}}&rdquo; posted into {{ item.module }}</h3>
+
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Current Status: {{ item.status }}</div>
                 <div>URL: <a href="{{item.url}}">{{item.url}}</a></div>
                 <div>Change Id: <a href="{{item.url}}">{{item.id}}</a></div>
+
             {% elif item.record_type == "email" %}
-                <div style='font-weight: bold;'>Email &ldquo;{{item.subject}}&rdquo;</div>
+
+                <h3>{{ item.date_str}} &mdash; email &ldquo;{{item.subject}}&rdquo;</h3>
+
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
                 {% if item.body %}
                     <div class="message">{{ item.body|safe }}</div>
                 {% endif %}
+
+            {% elif item.record_type in ["bpd", "bpc"]  %}
+
+                <h3>{{ item.date_str}} &mdash; blueprint &ldquo;{{item.title}}&rdquo; in {{ item.module }}</h3>
+
+                <div>Author: <a href="/report/users/{{ item.user_id }}">{{ item.author_name }}</a> ({{ item.company_name }})</div>
+                <div>Launchpad: <a href="https://blueprints.launchpad.net/{{ item.module }}/+spec/{{ item.name }}">https://blueprints.launchpad.net/{{ item.module }}/+spec/{{ item.name }}</a></div>
+                <div>Report: {{ item.blueprint_link | safe}}</div>
+                {% if item.summary %}
+                    <div class="message">{{ item.summary|safe }}</div>
+                {% endif %}
+
             {% endif %}
         </div>
     </div>
