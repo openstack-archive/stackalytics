@@ -83,31 +83,24 @@ def open_reviews(module):
     memory_storage_inst = vault.get_memory_storage()
     time_now = int(time.time())
 
-    review_marks = {}
-    reviews = {}
+    module_id_index = vault.get_vault()['module_id_index']
+    module = module.lower()
+    if module in module_id_index:
+        modules = module_id_index[module]['modules']
+    else:
+        modules = [module]
 
-    mark_ids = (memory_storage_inst.get_record_ids_by_modules([module]) &
-                memory_storage_inst.get_record_ids_by_type('mark'))
-
-    for mark in memory_storage_inst.get_records(mark_ids):
-        review_id = mark['review_id']
-        if review_id in review_marks:
-            if mark['date'] > review_marks[review_id]['date']:
-                review_marks[review_id] = mark
-        else:
-            review = memory_storage_inst.get_record_by_primary_key(review_id)
-            if not review:
-                continue  # todo because we filter jenkins
-            review_marks[review_id] = mark
-            reviews[review_id] = review
+    review_ids = (memory_storage_inst.get_record_ids_by_modules(modules) &
+                  memory_storage_inst.get_record_ids_by_type('review'))
 
     waiting_on_reviewer = []
     total_open = 0
-    for review_id, mark in review_marks.iteritems():
-        if reviews[review_id]['open']:
+
+    for review in memory_storage_inst.get_records(review_ids):
+        if review['status'] == 'NEW':
             total_open += 1
-            if mark['value'] in ['1', '2']:
-                waiting_on_reviewer.append(reviews[review_id])
+            if review['value'] in [1, 2]:
+                waiting_on_reviewer.append(review)
 
     return {
         'module': module,
@@ -115,7 +108,7 @@ def open_reviews(module):
         'waiting_on_reviewer': len(waiting_on_reviewer),
         'waiting_on_submitter': total_open - len(waiting_on_reviewer),
         'latest_revision': _process_stat(
-            waiting_on_reviewer, 'lastUpdated', time_now),
+            waiting_on_reviewer, 'updated_on', time_now),
         'first_revision': _process_stat(waiting_on_reviewer, 'date', time_now),
     }
 

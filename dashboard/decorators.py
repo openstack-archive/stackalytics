@@ -140,9 +140,9 @@ def aggregate_filter():
 
                 positive = 0
                 mark_distribution = []
-                for key in ['-2', '-1', '1', '2']:
+                for key in [-2, -1, 1, 2]:
                     if key in record:
-                        if key in ['1', '2']:
+                        if key in [1, 2]:
                             positive += record[key]
                         mark_distribution.append(str(record[key]))
                     else:

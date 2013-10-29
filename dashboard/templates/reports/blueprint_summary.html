@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ blueprint.title }}</title>
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-    <style>
-        .label {
-            font-weight: bold;
-            line-height: 135%;
-        }
-        .message {
-            margin-top: 1em;
-            white-space: pre-wrap;
-        }
-    </style>
-</head>
-<body style="margin: 2em;">
+{% extends "reports/base_report.html" %}
 
+{% block title %}
+Blueprint {{ blueprint.title }} detailed report
+{% endblock %}
+
+{% block body %}
 <h1>Blueprint &ldquo;{{ blueprint.name }}&rdquo;</h1>
 
 <div><span class="label">Title:</span> {{ blueprint.title }}</div>
@@ -42,43 +31,6 @@
 <div class="message">{{  blueprint.whiteboard }}</div>
 {% endif %}
 
-<h2>Activity Log</h2>
 
-{% if not activity %}
-    <div>No activities related to this blueprint.</div>
-{% endif %}
-{% for item in activity %}
-    <div style="margin-bottom: 1em;">
-        <div style='float: left; '><img src="{{ item.author_email | gravatar(size=64) }}">
-        </div>
-        <div style="margin-left: 80px;">
-            <div style="font-weight: bold;">{{ item.date_str}}</div>
-            <div style="font-weight: bold;">{{ item.author_name }} ({{ item.company_name }})</div>
-            {% if item.record_type == "commit" %}
-                <div style='font-weight: bold;'>Commit &ldquo;{{ item.subject }}&rdquo;</div>
-                <div class="message">{{ item.message | safe }}</div>
-                <div><span style="color: green">+<span>{{ item.lines_added }}</span></span>
-                    <span style="color: blue">- <span>{{ item.lines_deleted }}</span></span>
-                </div>
-                {% if item.correction_comment %}
-                    <div style='font-weight: bold; color: red;'>Commit corrected:
-                        <span>{{ item.correction_comment }}</span></div>
-                {% endif %}
-            {% elif item.record_type == "mark" %}
-                <div style='font-weight: bold;'>Review &ldquo;{{item.subject}}&rdquo;</div>
-                <div>Patch submitted by {{ parent_author_link }}</div>
-                <div>Change Id: <a href="{{item.url}}">{{item.review_id}}</a></div>
-                <div style="color: {% if item.value > 0 %} green {% else %} blue {% endif %}">
-                    {{item.description}}: <span class="review_mark">{{item.value}}</span></div>
-            {% elif item.record_type == "email" %}
-                <div style='font-weight: bold;'>Email &ldquo;{{item.subject}}&rdquo;</div>
-                {% if item.body %}
-                    <div class="message">{{ item.body|safe }}</div>
-                {% endif %}
-            {% endif %}
-        </div>
-    </div>
-
-{% endfor %}
-</body>
-</html>
+{{ show_activity_log(activity) }}
+{% endblock %}

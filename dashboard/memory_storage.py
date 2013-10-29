@@ -130,7 +130,7 @@ class CachedMemoryStorage(MemoryStorage):
     def get_original_company_name(self, company_name):
         normalized = company_name.lower()
         if normalized not in self.company_name_mapping:
-            raise Exception('Unknown company name %s' % company_name)
+            return normalized
         return self.company_name_mapping[normalized]
 
     def get_companies(self):
