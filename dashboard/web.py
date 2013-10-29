@@ -170,7 +170,7 @@ def get_contribution_json(records):
             commit_count += 1
             loc += record['loc']
         elif record['record_type'] == 'mark':
-            marks[int(record['value'])] += 1
+            marks[record['value']] += 1
         elif record['record_type'] == 'email':
             email_count += 1
         elif record['record_type'] == 'bpd':

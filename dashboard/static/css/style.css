@@ -159,6 +159,12 @@ div#right_list_wrapper {
 
 .message {
     white-space: pre-wrap;
+    margin-top: 0.8em;
+}
+
+.label {
+    font-weight: bold;
+    line-height: 135%;
 }
 
 a[href^="https://blueprints"]:after {

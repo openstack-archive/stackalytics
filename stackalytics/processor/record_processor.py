@@ -206,6 +206,20 @@ class RecordProcessor(object):
         review['author_email'] = owner['email'].lower()
         review['date'] = record['createdOn']
 
+        patch_sets = record.get('patchSets', [])
+        review['updated_on'] = review['date']
+        if patch_sets:
+            patch = patch_sets[-1]
+            if 'approvals' in patch:
+                review['value'] = min([int(p['value'])
+                                       for p in patch['approvals']])
+                review['updated_on'] = patch['approvals'][0]['grantedOn']
+            else:
+                review['updated_on'] = patch['createdOn']
+
+        if 'value' not in review:
+            review['value'] = 0
+
         self._update_record_and_user(review)
 
         yield review
@@ -220,13 +234,14 @@ class RecordProcessor(object):
             for approval in patch['approvals']:
                 # copy everything and flatten user data
                 mark = dict([(k, v) for k, v in approval.iteritems()
-                             if k not in ['by', 'grantedOn']])
+                             if k not in ['by', 'grantedOn', 'value']])
                 reviewer = approval['by']
 
                 if 'email' not in reviewer or 'username' not in reviewer:
                     continue  # ignore
 
                 mark['record_type'] = 'mark'
+                mark['value'] = int(approval['value'])
                 mark['date'] = approval['grantedOn']
                 mark['primary_key'] = (record['id'] +
                                        str(mark['date']) +

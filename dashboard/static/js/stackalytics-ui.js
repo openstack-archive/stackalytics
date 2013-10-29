@@ -181,6 +181,27 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
     });
 }
 
+function render_bar_chart(chart_id, chart_data) {
+    $.jqplot(chart_id, chart_data, {
+        seriesDefaults: {
+            renderer: $.jqplot.BarRenderer,
+            rendererOptions: {
+                barMargin: 1
+            },
+            pointLabels: {show: true}
+        },
+        axes: {
+            xaxis: {
+                renderer: $.jqplot.CategoryAxisRenderer,
+                label: "Age"
+            },
+            yaxis: {
+                label: "Count"
+            }
+        }
+    });
+}
+
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {

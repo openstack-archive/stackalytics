@@ -127,7 +127,7 @@ def init_module_groups(vault):
         module_group_name = module_group['module_group_name']
         module_group_id = module_group_name.lower()
 
-        module_id_index[module_group_name] = {
+        module_id_index[module_group_id] = {
             'group': True,
             'id': module_group_id,
             'text': module_group_name,

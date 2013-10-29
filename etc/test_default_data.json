@@ -16,7 +16,7 @@
             ]
         },
         {
-            "launchpad_id": "openstack",
+            "launchpad_id": "jenkins",
             "companies": [
                 {
                     "company_name": "*robots",
@@ -48,8 +48,8 @@
             "domains": ["intel.com"]
         },
         {
-            "domains": ["openstack.org"],
-            "company_name": "OpenStack Foundation"
+            "domains": ["robots"],
+            "company_name": "*robots"
         }
     ],
 
