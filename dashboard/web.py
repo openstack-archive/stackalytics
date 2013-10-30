@@ -142,14 +142,16 @@ def get_activity_json(records):
     start_record = int(flask.request.args.get('start_record') or 0)
     page_size = int(flask.request.args.get('page_size') or
                     parameters.DEFAULT_RECORDS_LIMIT)
+    records_sorted = sorted(records, key=lambda x: x['date'], reverse=True)
+    records_sorted = records_sorted[start_record:start_record + page_size]
+
     result = []
-    for record in records:
+    for record in records_sorted:
         processed_record = helpers.extend_record(record)
         if processed_record:
             result.append(processed_record)
 
-    result.sort(key=lambda x: x['date'], reverse=True)
-    return result[start_record:start_record + page_size]
+    return result
 
 
 @app.route('/api/1.0/contribution')

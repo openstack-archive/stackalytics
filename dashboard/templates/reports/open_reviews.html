@@ -4,7 +4,7 @@
 Open reviews report for {{ module }}
 {% endblock %}
 
-{% block head %}
+{% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
             render_bar_chart("latest_revision_chart", [{{ latest_revision.chart_data }}]);
@@ -13,7 +13,7 @@ Open reviews report for {{ module }}
     </script>
 {% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>Open reviews for {{ module }}</h1>
 
 <h3>Summary</h3>

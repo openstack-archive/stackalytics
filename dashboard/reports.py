@@ -21,7 +21,7 @@ import time
 
 import flask
 
-from dashboard import decorators, parameters
+from dashboard import decorators
 from dashboard import helpers
 from dashboard import vault
 from stackalytics.processor import utils
@@ -34,7 +34,7 @@ blueprint = flask.Blueprint('reports', __name__, url_prefix='/report')
 @decorators.templated()
 @decorators.exception_handler()
 def blueprint_summary(module, blueprint_name):
-    blueprint_id = module + ':' + blueprint_name
+    blueprint_id = utils.get_blueprint_id(module, blueprint_name)
     bpd = vault.get_memory_storage().get_record_by_primary_key(
         'bpd:' + blueprint_id)
     if not bpd:
@@ -136,7 +136,7 @@ def _get_punch_card_data(records):
     if punch_card_raw[6][23] == 0:
         punch_card_data.append([23, 6, 0, 0])
 
-    return punch_card_data
+    return json.dumps(punch_card_data)
 
 
 @blueprint.route('/users/<user_id>')
@@ -151,17 +151,13 @@ def user_activity(user_id):
     memory_storage_inst = vault.get_memory_storage()
     records = memory_storage_inst.get_records(
         memory_storage_inst.get_record_ids_by_user_ids([user_id]))
-
-    activity = helpers.get_activity(records, 0, -1)
-
-    punch_card_data = _get_punch_card_data(activity)
+    records = sorted(records, key=operator.itemgetter('date'), reverse=True)
 
     return {
         'user': user,
-        'activity': activity[:parameters.DEFAULT_STATIC_ACTIVITY_SIZE],
-        'total_records': len(activity),
-        'contribution': helpers.get_contribution_summary(activity),
-        'punch_card_data': json.dumps(punch_card_data),
+        'total_records': len(records),
+        'contribution': helpers.get_contribution_summary(records),
+        'punch_card_data': _get_punch_card_data(records),
     }
 
 
@@ -175,17 +171,13 @@ def company_activity(company):
     memory_storage_inst = vault.get_memory_storage()
     records = memory_storage_inst.get_records(
         memory_storage_inst.get_record_ids_by_companies([original_name]))
-
-    activity = helpers.get_activity(records, 0, -1)
-
-    punch_card_data = _get_punch_card_data(activity)
+    records = sorted(records, key=operator.itemgetter('date'), reverse=True)
 
     return {
-        'company': original_name,
-        'activity': activity[:parameters.DEFAULT_STATIC_ACTIVITY_SIZE],
-        'total_records': len(activity),
-        'contribution': helpers.get_contribution_summary(activity),
-        'punch_card_data': json.dumps(punch_card_data),
+        'company_name': original_name,
+        'total_records': len(records),
+        'contribution': helpers.get_contribution_summary(records),
+        'punch_card_data': _get_punch_card_data(records),
     }
 
 

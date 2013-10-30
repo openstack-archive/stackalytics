@@ -11,7 +11,6 @@
 {% set show_module_contribution = (module) and (not user_id) %}
 {% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
-{% set show_module_profile = (module) and (not user_id) and (not company) %}
 {% set show_top_mentors_options = (metric == 'tm_marks') %}
 {% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
 
@@ -187,6 +186,15 @@
 <div>Draft Blueprints: <b>${drafted_blueprint_count}</b></div>
 <div>Completed Blueprints: <b>${completed_blueprint_count}</b></div>
 <div>Emails: <b>${email_count}</b></div>
+{% if module %}
+<div><b><a href="/report/reviews/{{ module }}" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
+{% endif %}
+{% if company %}
+<div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}↗</a></b></div>
+{% endif %}
+{% if user_id %}
+<div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_id }}↗</a></b></div>
+{% endif %}
 </script>
 
 {% endblock %}
@@ -291,6 +299,10 @@
         </div>
     {% endif %}
 
+    {% if show_module_contribution %}
+        <div id="contribution_container"></div>
+    {% endif %}
+
 {% endblock %}
 
 {% block right_frame %}
@@ -314,13 +326,6 @@
     </table>
     <div class="spacer"></div>
     </div>
-    {% endif %}
-
-    {% if show_module_profile %}
-        <h2>Module {{ module }}</h2>
-        <div><a href="/report/reviews/{{ module }}" target="_blank">Open reviews report↗</a></div>
-
-        <div id="contribution_container"></div>
     {% endif %}
 
     {% if show_bp_breakdown %}

@@ -1,10 +1,11 @@
 {% extends "reports/base_report.html" %}
+{% import '_macros/activity_log.html' as activity_log %}
 
 {% block title %}
-{{ user.user_name }} activity report
+{{ user.user_name }} activity in OpenStack
 {% endblock %}
 
-{% block head %}
+{% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
             render_punch_card("punch_card", [{{ punch_card_data }}]);
@@ -12,13 +13,13 @@
     </script>
 {% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>{{ user.user_name }} activity report</h1>
 
 {{ show_contribution_summary(contribution) }}
 
 <div id="punch_card" style="width: 100%; height: 350px;"></div>
 
-{{ show_activity_log(activity, false) }}
+{{ activity_log.show_activity_log(user_id=user.user_id, show_gravatar=false, gravatar_size=64) }}
 
 {% endblock %}

@@ -1,0 +1,131 @@
+{% macro show_activity_log(user_id=None, company=None, blueprint_id=None, show_gravatar=True, gravatar_size=32) -%}
+
+<script type="text/javascript">
+    var page_size = 10;
+    var start_record = 0;
+    var uri_options = {project_type: "all", release: "all", metric: "all"};
+    {% if user_id %}
+        uri_options["user_id"] = "{{ user_id }}";
+    {% endif %}
+    {% if company %}
+        uri_options["company"] = "{{ company }}";
+    {% endif %}
+    {% if blueprint_id %}
+        uri_options["blueprint_id"] = "{{ blueprint_id }}";
+    {% endif %}
+
+    function load_activity(extra_options) {
+        var options = {page_size: page_size, start_record: start_record};
+        $.extend(options, extra_options);
+
+        $.ajax({
+            url: make_uri("/api/1.0/activity", options),
+            dataType: "json",
+            success: function (data) {
+                if (data["activity"].length < page_size) {
+                    $('#activity_more').hide();
+                }
+                if ((start_record == 0) && (data["activity"].length == 0)) {
+                    $('#activity_header').hide();
+                }
+                $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                $('.ext_link').click(function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    window.open(this.href, '_blank');
+                });
+                $(".expand-button").click(function () {
+                    $("#content-" + this.id).slideToggle('fast');
+                });
+            }
+        });
+    }
+    $(document).ready(function () {
+        load_activity(uri_options);
+    });
+    $(document).ready(function () {
+        $('#activity_more')
+                .click(function () {
+                    start_record += page_size;
+                    load_activity(uri_options)
+                });
+    });
+</script>
+
+<script id="activity_template" type="text/x-jquery-tmpl">
+    <div style="margin-bottom: 1em;">
+    <div style='float: left; '>
+        <img src="${gravatar}" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+    </div>
+
+    <div style="margin-left: {{ gravatar_size * 1.4 }}px;">
+
+    {% raw %}
+        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
+        <div style="font-weight: bold;">${date_str} in {%html module_link%}</div>
+
+        {%if record_type == "commit" %}
+            {%if correction_comment != "" %}
+            <div style='font-weight: bold; color: red;'>Commit corrected:
+                <span>${correction_comment}</span></div>
+            {%/if%}
+            <div style='font-weight: bold;'>${subject}</div>
+            <div style='white-space: pre-wrap; '>{%html message %}</div>
+            <div><span style="color: green">+<span>${lines_added}</span></span>
+                <span style="color: blue">- <span>${lines_deleted}</span></span></div>
+        {%elif record_type == "mark" %}
+            <div>Review #${review_number} submitted by {%html parent_author_link %}</div>
+            <div style='font-weight: bold;'>${subject}</div>
+            <div>Change Id: <a href="${url}">${review_id}</a></div>
+            <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
+        {%elif record_type == "review" %}
+            <div style='font-weight: bold;'>${subject}</div>
+            <div>Change Id: <a href="${url}">${id}</a></div>
+        {%elif record_type == "email" %}
+            <div style='font-weight: bold;'>
+            {%if email_link != "" %}
+            <a href='${email_link}'>
+            {%/if%}
+            ${subject}
+            {%if email_link != "" %}
+            </a>
+            {%/if%}
+            </div>
+            {%if blueprint_id_count %}
+            <div>Mentions blueprints:
+            {%each( index, value ) blueprint_id %}
+                ${value}
+            {%/each%}
+            </div>
+            {%/if%}
+            {%if body %}
+            <div>Email: <span class="expand-button" id="button-${record_id}">[+]</span></div>
+            <div id="content-button-${record_id}" class="message" style="display:none;">${body}</div>
+            {%/if%}
+        {%elif ((record_type == "bpd") || (record_type == "bpc")) %}
+            <div style='font-weight: bold;'>${title} ({%html blueprint_link %})</div>
+            <div style='white-space: pre-wrap;'>${summary}</div>
+
+            <div>Priority: <span class="specpriority${priority}">${priority}</span></div>
+            <div>Status: <span class="status${lifecycle_status}">${lifecycle_status}</span>
+                (<span class="specstatus${definition_status}">${definition_status}</span>,
+                <span class="specdelivery${implementation_status}">${implementation_status}</span>)</div>
+            {%if mention_count %}
+            <div><b>Mention count: ${mention_count}, last mention on ${mention_date_str}</b></div>
+            {%/if%}
+        {%/if%}
+    </div>
+    </div>
+    {% endraw %}
+</script>
+
+    <h2 id="activity_header">Activity Log</h2>
+    <div id="activity_container"></div>
+
+    <div style="height: 44px;">
+        <div class="dataTables_paginate paging_full_numbers" id="activity_paginate">
+            <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
+        </div>
+    </div>
+
+{%- endmacro %}

@@ -133,3 +133,7 @@ def merge_records(original, new):
             need_update = True
             original[key] = value
     return need_update
+
+
+def get_blueprint_id(module, name):
+    return module + ':' + name

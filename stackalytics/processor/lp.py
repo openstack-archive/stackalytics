@@ -49,7 +49,7 @@ def log(repo):
                 record[field] = utils.iso8601_to_timestamp(date)
 
         record['module'] = module
-        record['id'] = module + ':' + record['name']
+        record['id'] = utils.get_blueprint_id(module, record['name'])
 
         LOG.debug('New blueprint: %s', record)
         yield record

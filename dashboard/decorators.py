@@ -88,9 +88,11 @@ def record_filter(ignore=None, use_default=True):
 
             if 'metric' not in ignore:
                 metrics = parameters.get_parameter(kwargs, 'metric')
-                for metric in metrics:
-                    record_ids &= memory_storage_inst.get_record_ids_by_type(
-                        parameters.METRIC_TO_RECORD_TYPE[metric])
+                if 'all' not in metrics:
+                    for metric in metrics:
+                        record_ids &= (
+                            memory_storage_inst.get_record_ids_by_type(
+                                parameters.METRIC_TO_RECORD_TYPE[metric]))
 
                 if 'tm_marks' in metrics:
                     filtered_ids = []
@@ -103,6 +105,13 @@ def record_filter(ignore=None, use_default=True):
                                 (parent['review_number'] <= review_nth)):
                             filtered_ids.append(record['record_id'])
                     record_ids = filtered_ids
+
+            if 'blueprint_id' not in ignore:
+                param = parameters.get_parameter(kwargs, 'blueprint_id')
+                if param:
+                    record_ids &= (
+                        memory_storage_inst.get_record_ids_by_blueprint_ids(
+                            param))
 
             kwargs['records'] = memory_storage_inst.get_records(record_ids)
             return f(*args, **kwargs)
@@ -167,7 +176,7 @@ def aggregate_filter():
                 'bpc': (incremental_filter, None),
             }
             if metric not in metric_to_filters_map:
-                raise Exception('Invalid metric %s' % metric)
+                metric = parameters.get_default('metric')
 
             kwargs['metric_filter'] = metric_to_filters_map[metric][0]
             kwargs['finalize_handler'] = metric_to_filters_map[metric][1]
@@ -241,6 +250,9 @@ def templated(template=None, return_code=200):
                                            key=lambda x: x[0])
 
             ctx['company'] = parameters.get_single_parameter(kwargs, 'company')
+            ctx['company_original'] = (
+                vault.get_memory_storage().get_original_company_name(
+                    ctx['company']))
             ctx['module'] = parameters.get_single_parameter(kwargs, 'module')
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')
             ctx['page_title'] = helpers.make_page_title(
