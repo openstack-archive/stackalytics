@@ -494,7 +494,7 @@
                 }
             ],
             "user_name": "Matt Dietz",
-            "emails": ["matt.dietz@rackspace.com", "matthew.dietz@gmail.com", "matthewdietz@Matthew-Dietzs-MacBook-Pro.local"]
+            "emails": ["matt.dietz@rackspace.com", "matthew.dietz@gmail.com", "matthewdietz@matthew-dietzs-macbook-pro.local"]
         },
         {
             "launchpad_id": "chad-lung",
@@ -753,7 +753,7 @@
                 }
             ],
             "user_name": "Dave Walker",
-            "emails": ["Dave.Walker@canonical.com", "DaveWalker@ubuntu.com", "davewalker@ubuntu.com", "dave.walker@canonical.com", "Dave.Walker@Canonical.com"]
+            "emails": ["dave.walker@canonical.com", "davewalker@ubuntu.com"]
         },
         {
             "launchpad_id": "david-goetz",
@@ -1830,7 +1830,7 @@
                 }
             ],
             "user_name": "Joshua Hesketh",
-            "emails": ["joshua.hesketh@rackspace.com", "joshua.hesketh@RACKSPACE.COM", "josh@nitrotech.org"]
+            "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org"]
         },
         {
             "launchpad_id": "jpichon",
@@ -2197,7 +2197,7 @@
                 }
             ],
             "user_name": "Lana Brindley",
-            "emails": ["lana.brindley@rackspace.com", "lana.brindley@RACKSPACE.COM", "openstack@lanabrindley.com"]
+            "emails": ["lana.brindley@rackspace.com", "openstack@lanabrindley.com"]
         },
         {
             "launchpad_id": "lorinh",
@@ -2413,7 +2413,7 @@
                 }
             ],
             "user_name": "Mike Pittaro",
-            "emails": ["mikeyp@LaHondaResearch.org", "mikeyp@lahondaresearch.org"]
+            "emails": ["mikeyp@lahondaresearch.org"]
         },
         {
             "launchpad_id": "mordred",
@@ -5174,7 +5174,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-		    "branch": "stable/havana",
+            "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"

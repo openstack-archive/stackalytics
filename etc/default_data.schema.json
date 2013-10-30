@@ -9,7 +9,8 @@
                 "type": "object",
                 "properties": {
                     "launchpad_id": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "[a-z\\d-]+"
                     },
                     "gerrit_id": {
                         "type": "string"
@@ -21,7 +22,7 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "pattern": "[\\w\\d_\\.-]+@([\\w\\d_\\.-]+\\.)+[\\w]+"
+                            "pattern": "[a-z\\d_\\.-]+@([a-z\\d_\\.-]+\\.)+[a-z]+"
                         },
                         "minItems": 1
                     },
@@ -120,7 +121,8 @@
                     "domains": {
                         "type": "array",
                         "items": {
-                            "type": "string"
+                            "type": "string",
+                            "pattern": "[a-z\\d\\.]*"
                         }
                     }
                 },
