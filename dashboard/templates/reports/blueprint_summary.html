@@ -1,10 +1,11 @@
 {% extends "reports/base_report.html" %}
+{% import '_macros/activity_log.html' as activity_log %}
 
 {% block title %}
 Blueprint &ldquo;{{ blueprint.title }}&rdquo; report
 {% endblock %}
 
-{% block body %}
+{% block content %}
 <h1>Blueprint &ldquo;{{ blueprint.name }}&rdquo;</h1>
 
 <div><span class="label">Title:</span> {{ blueprint.title }}</div>
@@ -31,5 +32,6 @@ Blueprint &ldquo;{{ blueprint.title }}&rdquo; report
 <div class="message">{{  blueprint.whiteboard }}</div>
 {% endif %}
 
-{{ show_activity_log(activity, true) }}
+{{ activity_log.show_activity_log(blueprint_id=blueprint.id, show_gravatar=false, gravatar_size=64) }}
+
 {% endblock %}

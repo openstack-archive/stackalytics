@@ -1,7 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "base.html" %}
+
+{% block head %}
     <title>{% block title %}{% endblock %}</title>
+
+    <meta name="keywords" content="openstack, contribution, statistics, community, review, commit, report, havana, grizzly, icehouse"/>
+
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
@@ -34,10 +37,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
 
-{% block head %}{% endblock %}
-
-</head>
-<body style="margin: 2em;">
+    {% block scripts %}{% endblock %}
+{% endblock %}
 
 {% macro show_activity_log(activity, show_gravatar) -%}
 
@@ -143,12 +144,16 @@
 
 {%- endmacro %}
 
+{% block body %}
+
+<div style="margin: 2em;">
 <div id="analytics_header" style="padding-bottom: 1em; border-bottom: 1px solid darkgrey;">
     <span id="logo"><a href="/">Stackalytics</a></span>
     <span id="slogan">| community heartbeat</span>
 </div>
 
-{% block body %}{% endblock %}
+{% block content %}
+{% endblock %}
 
-</body>
-</html>
+</div>
+{% endblock %}
