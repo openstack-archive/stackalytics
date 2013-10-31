@@ -32,6 +32,6 @@ Blueprint &ldquo;{{ blueprint.title }}&rdquo; report
 <div class="message">{{  blueprint.whiteboard }}</div>
 {% endif %}
 
-{{ activity_log.show_activity_log(blueprint_id=blueprint.id, show_gravatar=false, gravatar_size=64) }}
+{{ activity_log.show_activity_log(blueprint_id=blueprint.id, gravatar_size=64) }}
 
 {% endblock %}

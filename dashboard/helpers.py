@@ -58,23 +58,28 @@ def extend_record(record):
         if not parent:
             return None
 
+        parent = parent.copy()
+        _extend_record_common_fields(parent)
         for k, v in parent.iteritems():
             record['parent_%s' % k] = v
+
         record['review_number'] = parent.get('review_number')
         record['subject'] = parent['subject']
         record['url'] = parent['url']
-        record['parent_author_link'] = make_link(
-            parent['author_name'], '/',
-            {'user_id': parent['user_id'], 'company': ''})
     elif record['record_type'] == 'email':
         record['email_link'] = record.get('email_link') or ''
+        record['blueprint_links'] = []
+        for bp_id in record.get('blueprint_id', []):
+            bp_module, bp_name = bp_id.split(':')
+            record['blueprint_links'].append(
+                make_blueprint_link(bp_module, bp_name))
     elif record['record_type'] in ['bpd', 'bpc']:
         record['summary'] = utils.format_text(record['summary'])
         if record.get('mention_count'):
             record['mention_date_str'] = format_datetime(
                 record['mention_date'])
-        record['blueprint_link'] = make_blueprint_link(
-            record['name'], record['module'])
+        record['blueprint_link'] = make_blueprint_link(record['module'],
+                                                       record['name'])
 
     return record
 
@@ -179,7 +184,7 @@ def make_link(title, uri=None, options=None):
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
 
-def make_blueprint_link(name, module):
+def make_blueprint_link(module, name):
     uri = '/report/blueprint/' + module + '/' + name
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': name}
 

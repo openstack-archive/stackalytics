@@ -1,4 +1,4 @@
-{% macro show_activity_log(user_id=None, company=None, blueprint_id=None, show_gravatar=True, gravatar_size=32) -%}
+{% macro show_activity_log(user_id=None, company=None, blueprint_id=None, show_record_type=True, show_user_gravatar=True, gravatar_size=32) -%}
 
 <script type="text/javascript">
     var page_size = 10;
@@ -55,7 +55,11 @@
 <script id="activity_template" type="text/x-jquery-tmpl">
     <div style="margin-bottom: 1em;">
     <div style='float: left; '>
-        <img src="${gravatar}" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+        {% if show_user_gravatar %}
+            <img src="${gravatar}" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+        {% else %}
+            <img src="http://www.gravatar.com/avatar/a${parseInt(record_type,36)}?s={{ gravatar_size }}&d=identicon" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+        {% endif %}
     </div>
 
     <div style="margin-left: {{ gravatar_size * 1.4 }}px;">
@@ -65,36 +69,37 @@
         <div style="font-weight: bold;">${date_str} in {%html module_link%}</div>
 
         {%if record_type == "commit" %}
+            <div style='font-weight: bold;'>Commit &ldquo;${subject}&rdquo;</div>
+            <div style='white-space: pre-wrap; '>{%html message %}</div>
             {%if correction_comment != "" %}
             <div style='font-weight: bold; color: red;'>Commit corrected:
                 <span>${correction_comment}</span></div>
             {%/if%}
-            <div style='font-weight: bold;'>${subject}</div>
-            <div style='white-space: pre-wrap; '>{%html message %}</div>
             <div><span style="color: green">+<span>${lines_added}</span></span>
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
-            <div>Review #${review_number} submitted by {%html parent_author_link %}</div>
-            <div style='font-weight: bold;'>${subject}</div>
+            <div style='font-weight: bold;'>Review &ldquo;${subject}&rdquo;</div>
+            <div>${review_number} review submitted by {%html parent_author_link %} ({%html parent_company_link %})</div>
             <div>Change Id: <a href="${url}">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
         {%elif record_type == "review" %}
-            <div style='font-weight: bold;'>${subject}</div>
+            <div style='font-weight: bold;'>Patch &ldquo;${subject}&rdquo;</div>
+            <div>Current Status: ${status}</div>
             <div>Change Id: <a href="${url}">${id}</a></div>
         {%elif record_type == "email" %}
             <div style='font-weight: bold;'>
             {%if email_link != "" %}
             <a href='${email_link}'>
             {%/if%}
-            ${subject}
+            Email &ldquo;${subject}&rdquo;
             {%if email_link != "" %}
             </a>
             {%/if%}
             </div>
             {%if blueprint_id_count %}
             <div>Mentions blueprints:
-            {%each( index, value ) blueprint_id %}
-                ${value}
+            {%each( index, value ) blueprint_links %}
+                {%html value %}
             {%/each%}
             </div>
             {%/if%}
@@ -103,7 +108,7 @@
             <div id="content-button-${record_id}" class="message" style="display:none;">${body}</div>
             {%/if%}
         {%elif ((record_type == "bpd") || (record_type == "bpc")) %}
-            <div style='font-weight: bold;'>${title} ({%html blueprint_link %})</div>
+            <div style='font-weight: bold;'>Blueprint &ldquo;${title}&rdquo; ({%html blueprint_link %})</div>
             <div style='white-space: pre-wrap;'>${summary}</div>
 
             <div>Priority: <span class="specpriority${priority}">${priority}</span></div>

@@ -254,8 +254,8 @@ def get_bpd(records):
                 'metric': record.get('mention_count') or 0,
                 'id': record['name'],
                 'name': record['name'],
-                'link': helpers.make_blueprint_link(
-                    record['name'], record['module'])
+                'link': helpers.make_blueprint_link(record['module'],
+                                                    record['name'])
             })
 
     result.sort(key=lambda x: x['metric'], reverse=True)
