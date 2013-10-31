@@ -143,6 +143,12 @@
                     },
                     "project_group": {
                         "type": ["string", "null"]
+                    },
+                    "exclude": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 },
                 "required": ["organization", "project_type"],

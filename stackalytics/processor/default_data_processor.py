@@ -62,11 +62,13 @@ def _retrieve_project_list(default_data):
             LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
             return False
 
+        exclude = set(project_source.get('exclude', []))
+
         for repo in repos:
             repo_uri = repo.git_url
             repo_name = repo.name
 
-            if repo_uri not in repo_index:
+            if (repo_uri not in repo_index) and (repo_name not in exclude):
                 r = {
                     'branches': ['master'],
                     'module': repo_name,
