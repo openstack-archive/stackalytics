@@ -5333,6 +5333,13 @@
             "project_type": "openstack",
             "organization": "stackforge",
             "project_group": "incubation"
+        },
+        {
+            "module": "refstack",
+            "uri": "git://github.com/openstack-ops/refstack.git",
+            "project_type": "openstack",
+            "organization": "stackforge",
+            "project_group": "infrastructure"
         }
     ],
     "project_sources": [
@@ -5350,6 +5357,11 @@
         {
             "organization": "openstack-infra",
             "project_type": "openstack",
+            "project_group": "infrastructure"
+        },
+        {
+            "organization": "openstack-ops",
+            "project_type": "stackforge",
             "project_group": "infrastructure"
         },
         {
