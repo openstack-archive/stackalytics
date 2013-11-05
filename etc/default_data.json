@@ -1392,6 +1392,17 @@
             "emails": ["hovyakov@gmail.com", "hovyakov@griddynamics.com", "dkhovyakov@griddynamics.com"]
         },
         {
+            "launchpad_id": "huangtianhua",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Huang Tianhua",
+            "emails": ["huangtianhua@huawei.com", "tiantian223@163.com"]
+        },
+        {
             "launchpad_id": "hubcap",
             "companies": [
                 {
@@ -5333,13 +5344,6 @@
             "project_type": "openstack",
             "organization": "stackforge",
             "project_group": "incubation"
-        },
-        {
-            "module": "refstack",
-            "uri": "git://github.com/openstack-ops/refstack.git",
-            "project_type": "openstack",
-            "organization": "stackforge",
-            "project_group": "infrastructure"
         }
     ],
     "project_sources": [
@@ -5362,7 +5366,7 @@
         {
             "organization": "openstack-ops",
             "project_type": "stackforge",
-            "project_group": "infrastructure"
+            "project_group": "other"
         },
         {
             "organization": "stackforge",
