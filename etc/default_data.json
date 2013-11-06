@@ -894,6 +894,21 @@
             "emails": ["dims@linux.vnet.ibm.com", "davanum@gmail.com"]
         },
         {
+            "launchpad_id": "dlenwell",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2013-Sep-03"
+                },
+                {
+                    "company_name": "Piston Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Lenwell",
+            "emails": ["david@pistoncloud.com", "dlenwell@gmail.com"]
+        },
+        {
             "launchpad_id": "dmllr",
             "companies": [
                 {
