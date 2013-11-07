@@ -3757,6 +3757,17 @@
             "emails": ["zealot0630@gmail.com"]
         },
         {
+            "launchpad_id": "zhaoqin",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Qin Zhao",
+            "emails": ["chaochin@gmail.com", "zhaoqin@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "zhiteng-huang",
             "companies": [
                 {
