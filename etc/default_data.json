@@ -5441,6 +5441,10 @@
         {
             "module_group_name": "murano-group",
             "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-common", "murano-conductor", "murano-dashboard", "murano-deployment", "murano-docs", "murano-tests"]
+        },
+        {
+            "module_group_name": "puppet-group",
+            "modules": ["puppet-openstack", "puppet-nova", "puppet-neutron", "puppet-glance", "puppet-keystone", "puppet-horizon", "puppet-heat", "puppet-cinder", "puppet-openstack_dev_env", "puppet-swift", "puppet-tempest", "puppet-ceilometer"]
         }
     ],
     "releases": [
