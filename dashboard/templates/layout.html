@@ -42,154 +42,8 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        $('#metric').val('{{ metric }}');
-        $('#release').val('{{ release }}');
-        $('#project_type')
-            .val('{{ project_type }}')
-            .on("change", function(e) {
-                    $('#module').val('');
-                    reload();
-                });
-
-        $("#release").select2();
-        $("#metric").select2();
-        $("#project_type").select2();
-
-        $("#company").select2({
-            allowClear: true,
-            ajax: {
-                url: make_uri("/api/1.0/companies"),
-                dataType: 'json',
-                data: function (term, page) {
-                    return {
-                        company_name: term
-                    };
-                },
-                results: function (data, page) {
-                    return {results: data["companies"]};
-                }
-            },
-            initSelection: function (element, callback) {
-                var id = $(element).val();
-                if (id !== "") {
-                    $.ajax(make_uri("/api/1.0/companies/" + id), {
-                        dataType: "json"
-                    }).done(function (data) {
-                                callback(data["company"]);
-                            });
-                }
-            }
-        });
-
-        $('#company')
-            .on("change", function(e) { reload(); });
-
-        $("#module").select2({
-            allowClear: true,
-            ajax: {
-                url: make_uri("/api/1.0/modules"),
-                dataType: 'json',
-                data: function (term, page) {
-                    return {
-                        module_name: term
-                    };
-                },
-                results: function (data, page) {
-                    return {results: data["modules"]};
-                }
-            },
-            initSelection: function (element, callback) {
-                var id = $(element).val();
-                if (id !== "") {
-                    $.ajax(make_uri("/api/1.0/modules/" + id), {
-                        dataType: "json"
-                    }).done(function (data) {
-                                callback(data["module"]);
-                            });
-                }
-            },
-            formatResultCssClass: function (item) {
-                if (item.group) {
-                    return "select_group"
-                }
-                return "";
-            }
-        });
-
-        $('#module')
-            .on("change", function(e) { reload(); });
-
-        $("#user").select2({
-            allowClear: true,
-            ajax: {
-                url: make_uri("/api/1.0/users"),
-                dataType: 'json',
-                data: function (term, page) {
-                    return {
-                        user_name: term
-                    };
-                },
-                results: function (data, page) {
-                    return {results: data["users"]};
-                }
-            },
-            initSelection: function (element, callback) {
-                var id = $(element).val();
-                if (id !== "") {
-                    $.ajax(make_uri("/api/1.0/users/" + id), {
-                        dataType: "json"
-                    }).done(function (data) {
-                                callback(data["user"]);
-                            });
-                }
-            }
-        });
-
-        $('#user')
-            .on("change", function(e) { reload(); });
+        init_selectors("");
     });
-
-    function make_std_options() {
-        var options = {};
-        options['release'] = getRelease();
-        options['metric'] = getMetric();
-        options['project_type'] = getProjectType();
-        options['module'] = $('#module').val();
-        options['company'] = $('#company').val();
-        options['user_id'] = $('#user').val();
-
-        return options;
-    }
-
-    function reload() {
-        window.location.search = $.map(make_std_options(),function (val, index) {
-            return index + "=" + val;
-        }).join("&")
-    }
-
-    $(document).on('change', '#metric', function (evt) {
-        reload();
-    });
-
-    $(document).on('change', '#release', function (evt) {
-        reload();
-    });
-
-    $(document).on('change', '#project_type', function (evt) {
-        reload();
-    });
-
-    function getRelease() {
-        return $('#release').val()
-    }
-
-    function getMetric() {
-        return $('#metric').val()
-    }
-
-    function getProjectType() {
-        return $('#project_type').val()
-    }
 
 </script>
 
@@ -213,30 +67,12 @@
 
             <div class="drop">
                 <label for="release">Release</label>
-                <select id="release" name="release" style="min-width: 140px;" data-placeholder="Select release">
-                    <option></option>
-                    <option value="all">All times</option>
-                    {% for release in release_options %}
-                        <option value="{{ release.release_name }}">{{ release.release_name | capitalize }}</option>
-                    {% endfor %}
-                </select>
+                <input type="hidden" id="release" style="width: 140px" data-placeholder="Select release"/>
             </div>
 
             <div class="drop">
                 <label for="project_type">Projects</label>
-                <select id="project_type" name="project_type" style="min-width: 140px;">
-                    <option value="All">all</option>
-                    {% for option_type, option_groups in project_type_options.iteritems() %}
-                        <optgroup label="{{ option_type }}">
-                            <option value="{{ option_type }}">{{ option_type }}
-                                - all
-                            </option>
-                            {% for option_group in option_groups %}
-                                <option value="{{ option_group }}">{{ option_group }}</option>
-                            {% endfor %}
-                        </optgroup>
-                    {% endfor %}
-                </select>
+                <input type="hidden" id="project_type" style="width: 140px" data-placeholder="Select project type"/>
             </div>
 
             <div class="drop">
@@ -256,11 +92,7 @@
 
             <div class="drop">
                 <label for="metric">Metric</label>
-                <select id="metric" name="metric" style="width: 140px">
-                    {% for metric in metric_options %}
-                        <option value="{{ metric[0] }}">{{ metric[1] }}</option>
-                    {% endfor %}
-                </select>
+                <input type="hidden" id="metric" style="width: 140px" data-placeholder="Select metric"/>
             </div>
 
         </div>

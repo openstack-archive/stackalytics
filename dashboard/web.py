@@ -61,6 +61,11 @@ def overview():
     pass
 
 
+@app.route('/widget')
+def widget():
+    return flask.render_template('widget.html')
+
+
 @app.errorhandler(404)
 @decorators.templated('404.html', 404)
 def page_not_found(e):
@@ -291,6 +296,68 @@ def get_user(user_id):
         flask.abort(404)
     user = helpers.extend_user(user)
     return user
+
+
+@app.route('/api/1.0/releases')
+@decorators.jsonify('releases')
+@decorators.exception_handler()
+def get_releases_json():
+    query = (flask.request.args.get('query') or '').lower()
+    return [{'id': r['release_name'], 'text': r['release_name'].capitalize()}
+            for r in vault.get_release_options()
+            if r['release_name'].find(query) >= 0]
+
+
+@app.route('/api/1.0/releases/<release>')
+@decorators.jsonify('release')
+def get_release_json(release):
+    if release != 'all':
+        if release not in vault.get_vault()['releases']:
+            release = parameters.get_default('release')
+
+    return {'id': release, 'text': release.capitalize()}
+
+
+@app.route('/api/1.0/metrics')
+@decorators.jsonify('metrics')
+@decorators.exception_handler()
+def get_metrics_json():
+    query = (flask.request.args.get('query') or '').lower()
+    return sorted([{'id': m, 'text': t}
+                   for m, t in parameters.METRIC_LABELS.iteritems()
+                   if t.lower().find(query) >= 0],
+                  key=operator.itemgetter('text'))
+
+
+@app.route('/api/1.0/metrics/<metric>')
+@decorators.jsonify('metric')
+@decorators.exception_handler()
+def get_metric_json(metric):
+    if metric not in parameters.METRIC_LABELS:
+        metric = parameters.get_default('metric')
+    return {'id': metric, 'text': parameters.METRIC_LABELS[metric]}
+
+
+@app.route('/api/1.0/project_types')
+@decorators.jsonify('project_types')
+@decorators.exception_handler()
+def get_project_types_json():
+    return [{'id': m, 'text': m, 'items': list(t)}
+            for m, t in vault.get_project_type_options().iteritems()]
+
+
+@app.route('/api/1.0/project_types/<project_type>')
+@decorators.jsonify('project_type')
+@decorators.exception_handler()
+def get_project_type_json(project_type):
+    if project_type != 'all':
+        for pt, groups in vault.get_project_type_options().iteritems():
+            if (project_type == pt) or (project_type in groups):
+                break
+        else:
+            project_type = parameters.get_default('project_type')
+
+    return {'id': project_type, 'text': project_type}
 
 
 @app.route('/api/1.0/stats/timeline')

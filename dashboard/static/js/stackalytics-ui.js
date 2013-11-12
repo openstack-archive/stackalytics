@@ -89,7 +89,7 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
 
         $.ajax({
             url: make_uri(url),
-            dataType: "json",
+            dataType: "jsonp",
             success: function (data) {
 
                 var tableData = [];
@@ -143,7 +143,7 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                 var tableColumns = [];
                 var sort_by_column = 0;
                 for (i = 0; i < table_column_names.length; i++) {
-                    tableColumns.push({"mData": table_column_names[i]})
+                    tableColumns.push({"mData": table_column_names[i]});
                     if (table_column_names[i] == "metric") {
                         sort_by_column = i;
                     }
@@ -271,4 +271,237 @@ function make_uri(uri, options) {
     }).join("&");
 
     return (str == "") ? uri : uri + "?" + str;
+}
+
+function make_std_options() {
+    var options = {};
+    options['release'] = $('#release').val();
+    options['metric'] = $('#metric').val();
+    options['project_type'] = $('#project_type').val();
+    options['module'] = $('#module').val() || '';
+    options['company'] = $('#company').val() || '';
+    options['user_id'] = $('#user').val() || '';
+
+    return options;
+}
+
+function reload() {
+    window.location.search = $.map(make_std_options(),function (val, index) {
+        return index + "=" + val;
+    }).join("&")
+}
+
+function init_selectors(base_url) {
+    var release = getUrlVars()["release"];
+    if (!release) {
+        release = "_default";
+    }
+    $("#release").val(release).select2({
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/releases"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    query: term
+                };
+            },
+            results: function (data, page) {
+                return {results: data["releases"]};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            $.ajax(make_uri(base_url + "/api/1.0/releases/" + id), {
+                dataType: "jsonp"
+            }).done(function (data) {
+                    callback(data["release"]);
+                    $("#release").val(data["release"].id)
+                });
+        }
+    });
+    $('#release')
+        .on("change", function (e) {
+            reload();
+        });
+
+    var metric = getUrlVars()["metric"];
+    if (!metric) {
+        metric = "_default";
+    }
+    $("#metric").val(metric).select2({
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/metrics"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    query: term
+                };
+            },
+            results: function (data, page) {
+                $("#metric").val(data["default"]);
+                return {results: data["metrics"]};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            $.ajax(make_uri(base_url + "/api/1.0/metrics/" + id), {
+                dataType: "jsonp"
+            }).done(function (data) {
+                    callback(data["metric"]);
+                    $("#metric").val(data["metric"].id);
+                });
+        }
+    });
+    $('#metric')
+        .on("change", function (e) {
+            reload();
+        });
+
+    var project_type = getUrlVars()["project_type"];
+    if (!project_type) {
+        project_type = "_default";
+    }
+    $("#project_type").val(project_type).select2({
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/project_types"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    query: term
+                };
+            },
+            results: function (data, page) {
+                const project_types = data["project_types"];
+                var result = [];
+                result.push({id: "all", text: "all", group: true});
+                for (var key in project_types) {
+                    result.push({id: project_types[key].id, text: project_types[key].text, group: true});
+                    for (var i in project_types[key].items) {
+                        result.push({id: project_types[key].items[i], text: project_types[key].items[i]});
+                    }
+                }
+                return {results: result};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            $.ajax(make_uri(base_url + "/api/1.0/project_types/" + id), {
+                dataType: "jsonp"
+            }).done(function (data) {
+                    callback(data["project_type"]);
+                    $("#project_type").val(data["project_type"].id);
+                });
+        },
+        formatResultCssClass: function (item) {
+            if (item.group) {
+                return "project_group"
+            } else {
+                return "project_group_item";
+            }
+        }
+    });
+    $('#project_type')
+        .on("change", function (e) {
+            $('#module').val('');
+            reload();
+        });
+
+    $("#company").select2({
+        allowClear: true,
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/companies"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    company_name: term
+                };
+            },
+            results: function (data, page) {
+                return {results: data["companies"]};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            if (id !== "") {
+                $.ajax(make_uri(base_url + "/api/1.0/companies/" + id), {
+                    dataType: "jsonp"
+                }).done(function (data) {
+                        callback(data["company"]);
+                    });
+            }
+        }
+    });
+
+    $('#company')
+        .on("change", function (e) {
+            reload();
+        });
+
+    $("#module").select2({
+        allowClear: true,
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/modules"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    module_name: term
+                };
+            },
+            results: function (data, page) {
+                return {results: data["modules"]};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            if (id !== "") {
+                $.ajax(make_uri(base_url + "/api/1.0/modules/" + id), {
+                    dataType: "jsonp"
+                }).done(function (data) {
+                        callback(data["module"]);
+                    });
+            }
+        },
+        formatResultCssClass: function (item) {
+            if (item.group) {
+                return "select_group"
+            }
+            return "";
+        }
+    });
+
+    $('#module')
+        .on("change", function (e) {
+            reload();
+        });
+
+    $("#user").select2({
+        allowClear: true,
+        ajax: {
+            url: make_uri(base_url + "/api/1.0/users"),
+            dataType: 'jsonp',
+            data: function (term, page) {
+                return {
+                    user_name: term
+                };
+            },
+            results: function (data, page) {
+                return {results: data["users"]};
+            }
+        },
+        initSelection: function (element, callback) {
+            var id = $(element).val();
+            if (id !== "") {
+                $.ajax(make_uri(base_url + "/api/1.0/users/" + id), {
+                    dataType: "json"
+                }).done(function (data) {
+                        callback(data["user"]);
+                    });
+            }
+        }
+    });
+
+    $('#user')
+        .on("change", function (e) {
+            reload();
+        });
 }

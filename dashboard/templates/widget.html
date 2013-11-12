@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stackalytics Widget</title>
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<title>Stackalytics Widget</title>
+
+<meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, and code reviews"/>
+<meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
+
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
+
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
+<!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
+
+<script type="text/javascript">
+
+    var base_url = "http://localhost:5000";
+
+    $(document).ready(function () {
+        init_selectors(base_url);
+        renderTableAndChart(base_url + "/api/1.0/stats/companies", null, null, "company_chart", null);
+    });
+
+    $(function () {
+        $("#tabs").tabs({
+            activate: function( event, ui ) {
+                if (ui.newTab.index() == 0) {
+                    renderTableAndChart(base_url + "/api/1.0/stats/companies", null, null, "company_chart", null);
+                } else {
+                    renderTableAndChart(base_url + "/api/1.0/stats/modules", null, null, "module_chart", null);
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $("#more")
+                .button()
+                .click(function (event) {
+                    event.preventDefault();
+                    window.open('http://stackalytics.com/', 'stackalytics');
+                    return false;
+                });
+    });
+
+</script>
+
+<style type="text/css">
+    html, body, p {
+        font-size: 12px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    .drop {
+        margin: 0;
+        height: auto;
+    }
+    .jqplot-target {
+        font-size: 10px;
+    }
+    table.jqplot-table-legend, table.jqplot-cursor-legend {
+        font-size: 10px;
+    }
+    .ui-tabs .ui-tabs-panel {
+        padding: 0;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="page" style="width: 320px; height: 400px; padding: 10px;">
+    <h2>OpenStack&reg; Contribution Tracker</h2>
+
+    <div id="tabs" style="position: relative;">
+        <ul>
+            <li><a href="#tabs-1">By companies</a></li>
+            <li><a href="#tabs-2">By modules</a></li>
+        </ul>
+        <div id="tabs-1">
+            <div id="company_chart"
+                 style="width: 100%; height: 260px; background-color: white"></div>
+        </div>
+        <div id="tabs-2">
+            <div id="module_chart" style="width: 100%; height: 260px;"></div>
+        </div>
+        <div style="position: absolute; left: 20px; top: 240px;"><a id="more" href="#">More</a>
+        </div>
+    </div>
+
+    <div>
+        <div class="drop" style="margin-right: 15px;">
+            <label for="release">Release</label>
+            <input type="hidden" id="release" style="width: 95px" data-placeholder="Select release"/>
+        </div>
+
+        <div class="drop" style="margin-right: 15px;">
+            <label for="project_type">Projects</label>
+            <input type="hidden" id="project_type" style="width: 95px" data-placeholder="Select project type"/>
+        </div>
+
+        <div class="drop">
+            <label for="metric">Metric</label>
+            <input type="hidden" id="metric" style="width: 95px" data-placeholder="Select metric"/>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

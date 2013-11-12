@@ -233,6 +233,14 @@ a[href^="https://launchpad"]:after {
     color: #4bb2c5;
 }
 
+.project_group {
+    font-weight: bold;
+}
+
+.project_group_item {
+    padding-left: 0.5em;
+}
+
 .review_mark {
     font-weight: bold;
 }
