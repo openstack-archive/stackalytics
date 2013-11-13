@@ -338,7 +338,6 @@ function init_selectors(base_url) {
                 };
             },
             results: function (data, page) {
-                $("#metric").val(data["default"]);
                 return {results: data["metrics"]};
             }
         },
