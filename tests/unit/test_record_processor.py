@@ -343,6 +343,7 @@ class TestRecordProcessor(testtools.TestCase):
         user = utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertEquals({
+            'seq': 1,
             'user_id': 'john_doe',
             'launchpad_id': 'john_doe',
             'user_name': 'john_doe',
@@ -377,6 +378,7 @@ class TestRecordProcessor(testtools.TestCase):
         user = utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe')
         self.assertEquals({
+            'seq': 1,
             'user_id': 'john_doe',
             'launchpad_id': 'john_doe',
             'user_name': 'John Doe',
@@ -420,7 +422,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[1])
 
-        user = {'user_id': 'john_doe',
+        user = {'seq': 1,
+                'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
@@ -468,7 +471,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[1])
 
-        user = {'user_id': 'john_doe',
+        user = {'seq': 1,
+                'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
@@ -514,7 +518,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[1])
 
-        user = {'user_id': 'john_doe',
+        user = {'seq': 1,
+                'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
@@ -523,6 +528,170 @@ class TestRecordProcessor(testtools.TestCase):
             record_processor_inst.runtime_storage_inst, 'john_doe'))
         self.assertEquals(user, utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+
+    def test_process_email_then_review(self):
+        # it is expected that the user profile will contain both email and
+        # LP id
+        record_processor_inst = self.make_record_processor()
+
+        list(record_processor_inst.process([
+            {'record_type': 'email',
+             'message_id': '<message-id>',
+             'author_email': 'john_doe@gmail.com',
+             'subject': 'hello, world!',
+             'body': 'lorem ipsum',
+             'date': 1234567890},
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova'}
+        ]))
+
+        user = {'seq': 1,
+                'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@gmail.com'],
+                'companies': [{'company_name': '*independent', 'end_date': 0}]}
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+        self.assertEquals(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe'))
+
+    def test_merge_users(self):
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}
+            },
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+        )
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'bp',
+             'id': 'mod:blueprint',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890},
+            {'record_type': 'email',
+             'message_id': '<message-id>',
+             'author_email': 'john_doe@ibm.com',
+             'subject': 'hello, world!',
+             'body': 'lorem ipsum',
+             'date': 1234567890},
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@ibm.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova'}
+        ]))
+
+        record_processor_inst.finalize()
+
+        user = {'seq': 2,
+                'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@ibm.com'],
+                'companies': [{'company_name': 'IBM', 'end_date': 0}]}
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+        self.assertEquals(2, runtime_storage_inst.get_by_key('user:count'))
+        self.assertEquals(None, utils.load_user(runtime_storage_inst, 1))
+        self.assertEquals(user, utils.load_user(runtime_storage_inst, 2))
+        self.assertEquals(user, utils.load_user(runtime_storage_inst,
+                                                'john_doe'))
+        self.assertEquals(user, utils.load_user(runtime_storage_inst,
+                                                'john_doe@ibm.com'))
+
+        # all records should have the same user_id and company name
+        for record in runtime_storage_inst.get_all_records():
+            self.assertEquals('john_doe', record['user_id'],
+                              message='Record %s' % record['primary_key'])
+            self.assertEquals('IBM', record['company_name'],
+                              message='Record %s' % record['primary_key'])
+
+    # record post-processing
+
+    def test_blueprint_mention_count(self):
+        record_processor_inst = self.make_record_processor()
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'bp',
+             'id': 'mod:blueprint',
+             'self_link': 'http://launchpad.net/blueprint',
+             'owner': 'john_doe',
+             'date_created': 1234567890},
+            {'record_type': 'bp',
+             'id': 'mod:ignored',
+             'self_link': 'http://launchpad.net/ignored',
+             'owner': 'john_doe',
+             'date_created': 1234567890},
+            {'record_type': 'email',
+             'message_id': '<message-id>',
+             'author_email': 'john_doe@gmail.com',
+             'subject': 'hello, world!',
+             'body': 'lorem ipsum',
+             'date': 1234567890,
+             'blueprint_id': ['mod:blueprint']},
+            {'record_type': 'email',
+             'message_id': '<another-message-id>',
+             'author_email': 'john_doe@gmail.com',
+             'subject': 'hello, world!',
+             'body': 'lorem ipsum',
+             'date': 1234567895,
+             'blueprint_id': ['mod:blueprint', 'mod:invalid']},
+        ]))
+        record_processor_inst.finalize()
+
+        bp1 = runtime_storage_inst.get_by_primary_key('bpd:mod:blueprint')
+        self.assertEquals(2, bp1['mention_count'])
+        self.assertEquals(1234567895, bp1['mention_date'])
+
+        bp2 = runtime_storage_inst.get_by_primary_key('bpd:mod:ignored')
+        self.assertEquals(0, bp2['mention_count'])
+        self.assertEquals(0, bp2['mention_date'])
+
+        email = runtime_storage_inst.get_by_primary_key('<another-message-id>')
+        self.assertTrue('mod:blueprint' in email['blueprint_id'])
+        self.assertFalse('mod:invalid' in email['blueprint_id'])
+
+    def test_review_number(self):
+        record_processor_inst = self.make_record_processor()
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'review',
+             'id': 'I111',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 10,
+             'module': 'nova'},
+            {'record_type': 'review',
+             'id': 'I222',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 5,
+             'module': 'glance'},
+        ]))
+        record_processor_inst.finalize()
+
+        review1 = runtime_storage_inst.get_by_primary_key('I111')
+        self.assertEquals(2, review1['review_number'])
+
+        review2 = runtime_storage_inst.get_by_primary_key('I222')
+        self.assertEquals(1, review2['review_number'])
 
     # update records
 
@@ -797,6 +966,7 @@ def generate_emails(author_name='John Doe', author_email='johndoe@gmail.com',
 def make_runtime_storage(users=None, companies=None, releases=None,
                          repos=None):
     runtime_storage_cache = {}
+    runtime_storage_record_keys = set([])
 
     def get_by_key(key):
         if key == 'companies':
@@ -815,9 +985,35 @@ def make_runtime_storage(users=None, companies=None, releases=None,
     def set_by_key(key, value):
         runtime_storage_cache[key] = value
 
+    def delete_by_key(key):
+        del runtime_storage_cache[key]
+
+    def inc_user_count():
+        count = runtime_storage_cache.get('user:count') or 0
+        count += 1
+        runtime_storage_cache['user:count'] = count
+        return count
+
+    def set_records(records_iterator):
+        for record in records_iterator:
+            runtime_storage_cache[record['primary_key']] = record
+            runtime_storage_record_keys.add(record['primary_key'])
+
+    def get_all_records():
+        return [runtime_storage_cache[key]
+                for key in runtime_storage_record_keys]
+
+    def get_by_primary_key(primary_key):
+        return runtime_storage_cache.get(primary_key)
+
     rs = mock.Mock(runtime_storage.RuntimeStorage)
     rs.get_by_key = mock.Mock(side_effect=get_by_key)
     rs.set_by_key = mock.Mock(side_effect=set_by_key)
+    rs.delete_by_key = mock.Mock(side_effect=delete_by_key)
+    rs.inc_user_count = mock.Mock(side_effect=inc_user_count)
+    rs.set_records = mock.Mock(side_effect=set_records)
+    rs.get_all_records = mock.Mock(side_effect=get_all_records)
+    rs.get_by_primary_key = mock.Mock(side_effect=get_by_primary_key)
 
     if users:
         for user in users:
