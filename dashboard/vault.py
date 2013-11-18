@@ -161,6 +161,7 @@ def get_project_type_options():
 def get_release_options():
     runtime_storage_inst = get_vault()['runtime_storage']
     releases = runtime_storage_inst.get_by_key('releases')[1:]
+    releases.append({'release_name': 'all'})
     releases.reverse()
     return releases
 
