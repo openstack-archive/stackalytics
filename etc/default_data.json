@@ -133,6 +133,17 @@
             "emails": ["amcreynolds@ebaysf.com", "amcreynolds@ebay.com"]
         },
         {
+            "launchpad_id": "andersonvom",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anderson Mesquita",
+            "emails": ["andersonvom@gmail.com", "andersonvom@thoughtworks.com", "anderson.mesquita@rackspace.com"]
+        },
+        {
             "launchpad_id": "andrewbogott",
             "companies": [
                 {
