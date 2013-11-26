@@ -56,6 +56,17 @@
             "emails": ["gareth@unitedstack.com", "academicgareth@gmail.com"]
         },
         {
+            "launchpad_id": "aditirav",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aditi Raveesh",
+            "emails": ["aditi.raveesh@gmail.com", "aditirav@thoughtworks.com"]
+        },
+        {
             "launchpad_id": "adriansmith",
             "companies": [
                 {
@@ -2602,6 +2613,17 @@
             "emails": ["nicolas@barcet.com", "nick@enovance.com", "nijaba@ubuntu.com", "nick.barcet@canonical.com"]
         },
         {
+            "launchpad_id": "nikhil-komawar",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nikhil Komawar",
+            "emails": ["nikhil.komawar@rackspace.com"]
+        },
+        {
             "launchpad_id": "niu-zglinux",
             "companies": [
                 {
@@ -3876,6 +3898,10 @@
         {
             "domains": ["99cloud.net"],
             "company_name": "99cloud"
+        },
+        {
+            "domains": ["alcatel-lucent.com"],
+            "company_name": "Alcatel-Lucent"
         },
         {
             "domains": ["alyseo.com"],
