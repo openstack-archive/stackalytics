@@ -2380,6 +2380,18 @@
             "emails": ["nathanael.i.burton@gmail.com", "nathanael.i.burton.work@gmail.com"]
         },
         {
+            "launchpad_id": "matt-0",
+            "gerrit_id": "mattoliverau",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Oliver",
+            "emails": ["matt@oliver.net.au"]
+        },
+        {
             "launchpad_id": "matt-nycresistor",
             "companies": [
                 {
