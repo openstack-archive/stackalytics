@@ -3428,6 +3428,18 @@
             "emails": ["swann.croiset@bull.net", "swann@oopss.org"]
         },
         {
+            "launchpad_id": "sylvain-bauza",
+            "gerrit_id": "sbauza",
+            "companies": [
+                {
+                    "company_name": "Bull",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sylvain Bauza",
+            "emails": ["sbauza@free.fr", "sylvain.bauza@bull.net "]
+        },
+        {
             "launchpad_id": "tatyana-leontovich",
             "companies": [
                 {
@@ -4379,10 +4391,6 @@
         {
             "domains": ["objectif-libre.com"],
             "company_name": "Objectif Libre"
-        },
-        {
-            "domains": ["oopss.org"],
-            "company_name": "Oopss.org"
         },
         {
             "domains": ["orange.com"],
