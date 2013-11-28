@@ -119,6 +119,12 @@ class MemcachedStorage(RuntimeStorage):
     def inc_user_count(self):
         return self.memcached.incr('user:count')
 
+    def get_all_users(self):
+        for n in xrange(0, self.get_by_key('user:count') + 1):
+            user = self.get_by_key('user:%s' % n)
+            if user:
+                yield user
+
     def get_by_key(self, key):
         return self.memcached.get(key.encode('utf8'))
 

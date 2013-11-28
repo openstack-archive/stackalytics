@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import bisect
+import time
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import launchpad_utils
@@ -153,9 +154,12 @@ class RecordProcessor(object):
             user['user_id'] = user['launchpad_id']
 
         emails = set([])
+        core_in = set([])
         for u in [user_a, user_b, user_c]:
             emails |= set(u.get('emails', []))
+            core_in |= set(u.get('core', []))
         user['emails'] = list(emails)
+        user['core'] = list(core_in)
 
         self._update_user_affiliation(user)
         if (self._get_user_exact_company(user_b) and
@@ -263,6 +267,7 @@ class RecordProcessor(object):
     def _spawn_marks(self, record):
         review_id = record['id']
         module = record['module']
+        branch = record['branch']
 
         for patch in record.get('patchSets', []):
             if 'approvals' not in patch:
@@ -286,6 +291,7 @@ class RecordProcessor(object):
                 mark['author_name'] = reviewer['name']
                 mark['author_email'] = reviewer['email'].lower()
                 mark['module'] = module
+                mark['branch'] = branch
                 mark['review_id'] = review_id
 
                 self._update_record_and_user(mark)
@@ -417,6 +423,8 @@ class RecordProcessor(object):
         users_reviews = {}
         valid_blueprints = {}
         mentioned_blueprints = {}
+        core_engineers = {}
+        quarter_ago = int(time.time()) - 60 * 60 * 24 * 30 * 3  # a quarter ago
         for record in self.runtime_storage_inst.get_all_records():
             for bp in record.get('blueprint_id', []):
                 if bp in mentioned_blueprints:
@@ -464,9 +472,9 @@ class RecordProcessor(object):
 
             need_update = False
 
-            user_id = record['user_id']
-            if user_id in self.updated_users:
-                user = utils.load_user(self.runtime_storage_inst, user_id)
+            if record['user_id'] in self.updated_users:
+                user = utils.load_user(self.runtime_storage_inst,
+                                       record['user_id'])
                 user_company_name = user['companies'][0]['company_name']
                 if record['company_name'] != user_company_name:
                     LOG.debug('Update record %s: company changed to: %s',
@@ -505,8 +513,24 @@ class RecordProcessor(object):
                     record['review_number'] = review['review_number']
                     need_update = True
 
+            if (record['record_type'] == 'mark' and
+                    record['date'] > quarter_ago and
+                    record['value'] in [2, -2]):
+                module_branch = (record['module'], record['branch'])
+                user_id = record['user_id']
+                if user_id in core_engineers:
+                    core_engineers[user_id].add(module_branch)
+                else:
+                    core_engineers[user_id] = set([module_branch])
+
             if need_update:
                 yield record
+
+        for user in self.runtime_storage_inst.get_all_users():
+            core_old = user.get('core')
+            user['core'] = list(core_engineers.get(user['user_id'], []))
+            if user['core'] != core_old:
+                utils.store_user(self.runtime_storage_inst, user)
 
     def finalize(self):
         self.runtime_storage_inst.set_records(

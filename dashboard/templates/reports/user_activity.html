@@ -16,6 +16,20 @@
 {% block content %}
 <h1>{{ user.user_name }} activity report</h1>
 
+<h2>Profile</h2>
+<ul>
+    {% if user.launchpad_id %}
+    <li>Launchpad: {{ user.launchpad_id }}</li>
+    {% endif %}
+    {% if user.core %}
+    <li>Core in:
+        {% for item in user.core %}
+        {{ item[0] }} ({{ item[1] }})
+        {% endfor %}
+    </li>
+    {% endif %}
+</ul>
+
 {{ show_contribution_summary(contribution) }}
 
 <div id="punch_card" style="width: 100%; height: 350px;"></div>

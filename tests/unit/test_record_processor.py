@@ -404,7 +404,7 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@gmail.com',
                        'username': 'john_doe'},
              'createdOn': 1379404951,
-             'module': 'nova'}
+             'module': 'nova', 'branch': 'master'}
         ]))
 
         self.assertRecordsMatch(
@@ -423,6 +423,7 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
+                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -472,6 +473,7 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
+                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -495,7 +497,7 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@gmail.com',
                        'username': 'john_doe'},
              'createdOn': 1379404951,
-             'module': 'nova'},
+             'module': 'nova', 'branch': 'master'},
             {'record_type': 'bp',
              'id': 'mod:blueprint',
              'self_link': 'http://launchpad.net/blueprint',
@@ -519,6 +521,7 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
+                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -548,10 +551,11 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@gmail.com',
                        'username': 'john_doe'},
              'createdOn': 1379404951,
-             'module': 'nova'}
+             'module': 'nova', 'branch': 'master'}
         ]))
 
         user = {'seq': 1,
+                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -590,12 +594,13 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@ibm.com',
                        'username': 'john_doe'},
              'createdOn': 1379404951,
-             'module': 'nova'}
+             'module': 'nova', 'branch': 'master'}
         ]))
 
         record_processor_inst.finalize()
 
         user = {'seq': 2,
+                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -616,6 +621,70 @@ class TestRecordProcessor(testtools.TestCase):
                               message='Record %s' % record['primary_key'])
             self.assertEquals('IBM', record['company_name'],
                               message='Record %s' % record['primary_key'])
+
+    def test_core_user_guess(self):
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}
+            },
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+        )
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@ibm.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova',
+             'branch': 'master',
+             'patchSets': [
+                 {'number': '1',
+                  'revision': '4d8984e92910c37b7d101c1ae8c8283a2e6f4a76',
+                  'ref': 'refs/changes/16/58516/1',
+                  'uploader': {
+                      'name': 'Bill Smith',
+                      'email': 'bill@smith.to',
+                      'username': 'bsmith'},
+                  'createdOn': 1385470730,
+                  'approvals': [
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '2', 'grantedOn': 1385478464,
+                       'by': {
+                           'name': 'John Doe',
+                           'email': 'john_doe@ibm.com',
+                           'username': 'john_doe'}},
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '-1', 'grantedOn': 1385478465,
+                       'by': {
+                           'name': 'Homer Simpson',
+                           'email': 'hsimpson@gmail.com',
+                           'username': 'homer'}}
+                  ]
+                  }]}
+        ]))
+
+        record_processor_inst.finalize()
+
+        user_1 = {'seq': 1, 'user_id': 'john_doe',
+                  'launchpad_id': 'john_doe', 'user_name': 'John Doe',
+                  'emails': ['john_doe@ibm.com'],
+                  'core': [('nova', 'master')],
+                  'companies': [{'company_name': 'IBM', 'end_date': 0}]}
+        user_2 = {'seq': 2, 'user_id': 'homer',
+                  'launchpad_id': 'homer', 'user_name': 'Homer Simpson',
+                  'emails': ['hsimpson@gmail.com'],
+                  'core': [],
+                  'companies': [{'company_name': '*independent',
+                                 'end_date': 0}]}
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+        self.assertEquals(user_1, utils.load_user(runtime_storage_inst,
+                                                  'john_doe'))
+        self.assertEquals(user_2, utils.load_user(runtime_storage_inst,
+                                                  'homer'))
 
     # record post-processing
 
@@ -675,7 +744,7 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@gmail.com',
                        'username': 'john_doe'},
              'createdOn': 10,
-             'module': 'nova'},
+             'module': 'nova', 'branch': 'master'},
             {'record_type': 'review',
              'id': 'I222',
              'subject': 'Fix AttributeError in Keypair._add_details()',
@@ -683,7 +752,7 @@ class TestRecordProcessor(testtools.TestCase):
                        'email': 'john_doe@gmail.com',
                        'username': 'john_doe'},
              'createdOn': 5,
-             'module': 'glance'},
+             'module': 'glance', 'branch': 'master'},
         ]))
         record_processor_inst.finalize()
 
@@ -994,6 +1063,12 @@ def make_runtime_storage(users=None, companies=None, releases=None,
         runtime_storage_cache['user:count'] = count
         return count
 
+    def get_all_users():
+        for n in xrange(0, (runtime_storage_cache.get('user:count') or 0) + 1):
+            u = runtime_storage_cache.get('user:%s' % n)
+            if u:
+                yield u
+
     def set_records(records_iterator):
         for record in records_iterator:
             runtime_storage_cache[record['primary_key']] = record
@@ -1011,6 +1086,7 @@ def make_runtime_storage(users=None, companies=None, releases=None,
     rs.set_by_key = mock.Mock(side_effect=set_by_key)
     rs.delete_by_key = mock.Mock(side_effect=delete_by_key)
     rs.inc_user_count = mock.Mock(side_effect=inc_user_count)
+    rs.get_all_users = mock.Mock(side_effect=get_all_users)
     rs.set_records = mock.Mock(side_effect=set_records)
     rs.get_all_records = mock.Mock(side_effect=get_all_records)
     rs.get_by_primary_key = mock.Mock(side_effect=get_by_primary_key)
