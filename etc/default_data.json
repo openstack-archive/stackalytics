@@ -2425,6 +2425,17 @@
             "emails": ["msherborne@gmail.com"]
         },
         {
+            "launchpad_id": "maty-grosz",
+            "companies": [
+                {
+                    "company_name": "Alcatel-Lucent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maty Grosz",
+            "emails": ["maty.grosz@alcatel-lucent.com", "imdg24@gmail.com"]
+        },
+        {
             "launchpad_id": "michael-ogorman",
             "companies": [
                 {
@@ -3149,11 +3160,15 @@
             "companies": [
                 {
                     "company_name": "IBM",
+                    "end_date": "2013-Nov-01"
+                },
+                {
+                    "company_name": "Samsung",
                     "end_date": null
                 }
             ],
             "user_name": "Sean Dague",
-            "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com"]
+            "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com"]
         },
         {
             "launchpad_id": "sean-mccully",
@@ -4440,6 +4455,10 @@
         {
             "domains": ["rr.com"],
             "company_name": "Time Warner Cable"
+        },
+        {
+            "domains": ["samsung.com"],
+            "company_name": "Samsung"
         },
         {
             "domains": ["scality.com"],
