@@ -13,6 +13,7 @@
         },
         {
             "launchpad_id": "a-gorodnev",
+            "gerrit_id": "agorodnev",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -2426,6 +2427,7 @@
         },
         {
             "launchpad_id": "maty-grosz",
+            "gerrit_id": "matyg",
             "companies": [
                 {
                     "company_name": "Alcatel-Lucent",
