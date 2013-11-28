@@ -61,6 +61,7 @@ class MemcachedStorage(RuntimeStorage):
             storage_uri = stripped.split(',')
             self.memcached = memcache.Client(storage_uri)
             self._build_index()
+            self._init_user_count()
         else:
             raise Exception('Invalid storage uri %s' % uri)
 
@@ -115,11 +116,17 @@ class MemcachedStorage(RuntimeStorage):
                 self.memcached.set(self._get_record_name(record_id), original)
                 self._commit_update(record_id)
 
+    def inc_user_count(self):
+        return self.memcached.incr('user:count')
+
     def get_by_key(self, key):
         return self.memcached.get(key.encode('utf8'))
 
     def set_by_key(self, key, value):
         self.memcached.set(key.encode('utf8'), value)
+
+    def delete_by_key(self, key):
+        self.memcached.delete(key.encode('utf8'))
 
     def get_update(self, pid):
         last_update = self.memcached.get('pid:%s' % pid)
@@ -194,6 +201,10 @@ class MemcachedStorage(RuntimeStorage):
         count = self._get_update_count()
         self.memcached.set(UPDATE_ID_PREFIX + str(count), record_id)
         self.memcached.set('update:count', count + 1)
+
+    def _init_user_count(self):
+        if not self.memcached.get('user:count'):
+            self.memcached.set('user:count', 1)
 
 
 def get_runtime_storage(uri):

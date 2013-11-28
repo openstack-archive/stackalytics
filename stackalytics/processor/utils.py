@@ -81,6 +81,9 @@ def make_range(start, stop, step):
 
 
 def store_user(runtime_storage_inst, user):
+    if not user.get('seq'):
+        user['seq'] = runtime_storage_inst.inc_user_count()
+    runtime_storage_inst.set_by_key('user:%s' % user['seq'], user)
     if user.get('user_id'):
         runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
     if user.get('launchpad_id'):
@@ -93,6 +96,10 @@ def load_user(runtime_storage_inst, user_id):
     if user_id:
         return runtime_storage_inst.get_by_key('user:%s' % user_id)
     return None
+
+
+def delete_user(runtime_storage_inst, user):
+    runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
 
 
 def load_repos(runtime_storage_inst):
