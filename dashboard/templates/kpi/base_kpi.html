@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta name="keywords" content="openstack, contribution, statistics, community, review, commit, report, havana, grizzly, icehouse"/>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
+    <!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.barRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.bubbleRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.categoryAxisRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisLabelRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
+
+    {% block scripts %}{% endblock %}
+{% endblock %}
+
+{% block body %}
+
+<div style="margin: 2em;">
+<div id="analytics_header" style="padding-bottom: 1em; border-bottom: 1px solid darkgrey;">
+    <span id="logo"><a href="/">Stackalytics</a></span>
+    <span id="slogan">| community heartbeat</span>
+</div>
+
+{% block content %}
+{% endblock %}
+
+</div>
+{% endblock %}

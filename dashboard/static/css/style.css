@@ -336,6 +336,41 @@ a[href^="https://launchpad"]:after {
     color: #999999;
 }
 
+.kpi_block {
+    padding-bottom: 1em;
+}
+
+.kpi_title_block {
+    margin-left: 50px;
+}
+
+.kpi_title {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.kpi_marker {
+    font-size: 19pt;
+    font-weight: bold;
+    text-align: center; vertical-align: middle;
+    background-color: lightgray; color: white;
+    float: left; width: 32px; height: 32px;
+}
+
+.kpi_good {
+    background-color: #008000;
+}
+
+.kpi_bad {
+    background-color: red;
+}
+
+.kpi_note {
+    font-size: 11pt;
+    color: #606060;
+    display: none;
+}
+
 .select2-results {
     max-height: 300px;
 }
