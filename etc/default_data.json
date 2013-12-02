@@ -68,6 +68,17 @@
             "emails": ["aditi.raveesh@gmail.com", "aditirav@thoughtworks.com"]
         },
         {
+            "launchpad_id": "adkinss",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Scott Adkins",
+            "emails": ["scott_adkins@cable.comcast.com", "adkinss@gmail.com"]
+        },
+        {
             "launchpad_id": "adriansmith",
             "companies": [
                 {
