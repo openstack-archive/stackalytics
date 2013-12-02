@@ -509,6 +509,17 @@
             "emails": ["clark.boylan@gmail.com"]
         },
         {
+            "launchpad_id": "cburkett",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chuck Burkett",
+            "emails": ["chuck_burkett@cable.comcast.com", "chuck@burkett.org"]
+        },
+        {
             "launchpad_id": "cerberus",
             "companies": [
                 {
@@ -1127,6 +1138,17 @@
             "emails": ["nmarkov@mirantis.com"]
         },
         {
+            "launchpad_id": "eric-scholz1975",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Scholz",
+            "emails": ["eric_scholz@cable.comcast.com", "eric.scholz1975@gmail.com"]
+        },
+        {
             "launchpad_id": "ethuleau",
             "companies": [
                 {
@@ -1461,6 +1483,17 @@
             ],
             "user_name": "Hugh Saunders",
             "emails": ["hugh@wherenow.org"]
+        },
+        {
+            "launchpad_id": "hvprash",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Prashanth Hari",
+            "emails": ["prashanth_hari@cable.comcast.com", "hvprash@gmail.com"]
         },
         {
             "launchpad_id": "hwbi2008",
