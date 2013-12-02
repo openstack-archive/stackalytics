@@ -95,9 +95,8 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                 var tableData = [];
                 var chartData = [];
 
-                var limit = 10;
+                const limit = 10;
                 var aggregate = 0;
-                var index = 1;
                 var i;
 
                 data = data["stats"];
@@ -114,12 +113,6 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                         aggregate += data[i].metric;
                     }
 
-                    var index_label = index;
-                    if (data[i].name == "*independent") {
-                        index_label = "";
-                    } else {
-                        index++;
-                    }
                     if (!data[i].link) {
                         if (data[i].id) {
                             data[i]["link"] = make_link(data[i].id, data[i].name, link_param);
@@ -127,7 +120,6 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                             data[i]["link"] = data[i].name
                         }
                     }
-                    data[i]["index"] = index_label;
                     tableData.push(data[i]);
                 }
 

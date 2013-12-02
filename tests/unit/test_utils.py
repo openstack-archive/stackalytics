@@ -64,3 +64,16 @@ class TestUtils(testtools.TestCase):
                     'stackalytics/&#8203;+spec/&#8203;stackalytics-core')
 
         self.assertEqual(expected, utils.format_text(original))
+
+    def test_add_index(self):
+        sequence = [{'name': 'A'}, {'name': 'B'}, {'name': 'C'}]
+        expected = [{'index': 1, 'name': 'A'}, {'index': 2, 'name': 'B'},
+                    {'index': 3, 'name': 'C'}]
+        self.assertEqual(expected, utils.add_index(sequence))
+
+    def test_add_index_with_filter(self):
+        sequence = [{'name': 'A'}, {'name': 'B'}, {'name': 'C'}]
+        expected = [{'index': 0, 'name': 'A'}, {'index': '', 'name': 'B'},
+                    {'index': 1, 'name': 'C'}]
+        self.assertEqual(expected, utils.add_index(
+            sequence, start=0, item_filter=lambda x: x['name'] != 'B'))

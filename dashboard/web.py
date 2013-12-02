@@ -88,6 +88,7 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
     response = [finalize_handler(result[r]) for r in result
                 if result[r]['metric']]
     response.sort(key=lambda x: x['metric'], reverse=True)
+    utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
     return response
 
 
@@ -264,6 +265,7 @@ def get_bpd(records):
             })
 
     result.sort(key=lambda x: x['metric'], reverse=True)
+    utils.add_index(result)
 
     return result
 

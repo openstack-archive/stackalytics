@@ -144,3 +144,14 @@ def merge_records(original, new):
 
 def get_blueprint_id(module, name):
     return module + ':' + name
+
+
+def add_index(sequence, start=1, item_filter=lambda x: True):
+    n = start
+    for item in sequence:
+        if item_filter(item):
+            item['index'] = n
+            n += 1
+        else:
+            item['index'] = ''
+    return sequence
