@@ -1,0 +1,72 @@
+{% extends "kpi/base_kpi.html" %}
+
+{% block title %}
+    Group KPI
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+        function load_position_target_data(id, url, target_id, target_value) {
+            $.ajax({
+                url: make_uri(url),
+                dataType: "jsonp",
+                success: function (data) {
+                    data = data["stats"];
+                    var position = -1;
+
+                    for (var i = 0; i < data.length; i++) {
+                        if (data[i].id == target_id) {
+                            position = i;
+                            break;
+                        }
+                    }
+                    var isOk = false;
+                    var message = "";
+                    if (position >= 0) {
+                        if (position <= target_value) {
+                            isOk = true;
+                            message = "Target position is " + target_value;
+                        } else {
+                            message = "Position " + position + " is worse than target " + target_value;
+                        }
+                    } else {
+                        message = "Target " + target_id + " is not found";
+                    }
+
+                    $("#position_target_marker_" + id).addClass(isOk? "kpi_good": "kpi_bad").text(i);
+                    $("#position_target_note_" + id).show().text(message);
+                }
+            });
+        }
+
+    </script>
+{% endblock %}
+
+{% macro position_target(record_filter, target_id, target_value, title) -%}
+
+    {% set id=title.replace(' ', '_') %}
+
+    <script type="application/javascript">
+        $(document).ready(function () {
+            load_position_target_data("{{ id }}", "{{ record_filter|make_url('/api/1.0/stats/companies')|safe }}", "{{ target_id }}", "{{ target_value }}");
+        });
+    </script>
+
+    <div id="position_target" class="kpi_block">
+        <div id="position_target_marker_{{ id }}" class="kpi_marker"></div>
+        <div class="kpi_title_block">
+            <div class="kpi_title">{{ title }}</div>
+            <div class="kpi_note" id="position_target_note_{{ id }}"></div>
+        </div>
+    </div>
+
+{%- endmacro %}
+
+{% block content %}
+    <h1>Metrics</h1>
+
+    {{ position_target({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'commits'}, 'Mirantis', 5, 'Position by commits') }}
+    {{ position_target({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks'}, 'Mirantis', 5, 'Position by reviews') }}
+
+{% endblock %}

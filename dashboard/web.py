@@ -23,6 +23,7 @@ from oslo.config import cfg
 
 from dashboard import decorators
 from dashboard import helpers
+from dashboard import kpi
 from dashboard import parameters
 from dashboard import reports
 from dashboard import vault
@@ -37,6 +38,7 @@ app = flask.Flask(__name__)
 app.config.from_object(__name__)
 app.config.from_envvar('DASHBOARD_CONF', silent=True)
 app.register_blueprint(reports.blueprint)
+app.register_blueprint(kpi.blueprint)
 
 LOG = logging.getLogger(__name__)
 
@@ -432,6 +434,12 @@ def timeline(records, **kwargs):
 
 
 gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')
+
+
+@app.template_filter('make_url')
+def to_url_params(dict_params, base_url):
+    return base_url + '?' + '&'.join(
+        ['%s=%s' % (k, v) for k, v in dict_params.iteritems()])
 
 
 def main():
