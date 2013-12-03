@@ -23,10 +23,31 @@ from dashboard import helpers
 from dashboard import parameters
 from dashboard import vault
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import utils
 from stackalytics import version as stackalytics_version
 
 
 LOG = logging.getLogger(__name__)
+
+
+def _get_time_filter(kwargs):
+    start_date = parameters.get_single_parameter(kwargs, 'start_date')
+    if start_date:
+        start_date = utils.date_to_timestamp_ext(start_date)
+    else:
+        start_date = 0
+    end_date = parameters.get_single_parameter(kwargs, 'end_date')
+    if end_date:
+        end_date = utils.date_to_timestamp_ext(end_date)
+    else:
+        end_date = utils.date_to_timestamp_ext('now')
+
+    def time_filter(records):
+        for record in records:
+            if start_date <= record['date'] <= end_date:
+                yield record
+
+    return time_filter
 
 
 def record_filter(ignore=None, use_default=True):
@@ -113,7 +134,10 @@ def record_filter(ignore=None, use_default=True):
                         memory_storage_inst.get_record_ids_by_blueprint_ids(
                             param))
 
-            kwargs['records'] = memory_storage_inst.get_records(record_ids)
+            time_filter = _get_time_filter(kwargs)
+
+            kwargs['records'] = time_filter(
+                memory_storage_inst.get_records(record_ids))
             return f(*args, **kwargs)
 
         return record_filter_decorated_function
