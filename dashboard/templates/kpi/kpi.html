@@ -7,7 +7,7 @@
 {% block scripts %}
     <script type="text/javascript">
 
-        function load_position_target_data(id, url, target_id, target_value) {
+        function goal_position_in_top_loader(id, url, target_id, target_value) {
             $.ajax({
                 url: make_uri(url),
                 dataType: "jsonp",
@@ -17,7 +17,7 @@
 
                     for (var i = 0; i < data.length; i++) {
                         if (data[i].id == target_id) {
-                            position = i;
+                            position = data[i].index;
                             break;
                         }
                     }
@@ -28,13 +28,13 @@
                             isOk = true;
                             message = "Target position is " + target_value;
                         } else {
-                            message = "Position " + position + " is worse than target " + target_value;
+                            message = "Position " + position + " is worse than target position " + target_value;
                         }
                     } else {
                         message = "Target " + target_id + " is not found";
                     }
 
-                    $("#position_target_marker_" + id).addClass(isOk? "kpi_good": "kpi_bad").text(i);
+                    $("#position_target_marker_" + id).addClass(isOk? "kpi_good": "kpi_bad").text(position);
                     $("#position_target_note_" + id).show().text(message);
                 }
             });
@@ -43,13 +43,14 @@
     </script>
 {% endblock %}
 
-{% macro position_target(record_filter, target_id, target_value, title) -%}
+{% macro goal_position_in_top(record_filter, item_type, item_id, target_position, title) -%}
 
-    {% set id=title.replace(' ', '_') %}
+    {% set id = title.replace(' ', '_') %}
+    {% set uri = '/api/1.0/stats/' + item_type %}
 
     <script type="application/javascript">
         $(document).ready(function () {
-            load_position_target_data("{{ id }}", "{{ record_filter|make_url('/api/1.0/stats/companies')|safe }}", "{{ target_id }}", "{{ target_value }}");
+            goal_position_in_top_loader("{{ id }}", "{{ record_filter|make_url(uri)|safe }}", "{{ item_id }}", "{{ target_position }}");
         });
     </script>
 
@@ -66,7 +67,9 @@
 {% block content %}
     <h1>Metrics</h1>
 
-    {{ position_target({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'commits'}, 'Mirantis', 5, 'Position by commits') }}
-    {{ position_target({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks'}, 'Mirantis', 5, 'Position by reviews') }}
+    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'commits'}, 'companies', 'Mirantis', 5, 'Position by commits') }}
+    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks'}, 'engineers', 'boris-42', 5, 'Position by reviews') }}
+    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks', 'module': 'glance', 'filter': 'non-core'},
+                            'engineers', 'boris-42', 3, 'Top-3 in non-core top reviewers') }}
 
 {% endblock %}
