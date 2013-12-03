@@ -125,24 +125,25 @@ def get_modules(records, metric_filter, finalize_handler):
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
 
-    post_filter = flask.request.args.get('filter')
-    if post_filter not in ['core', 'non-core']:
-        post_filter = None
+    exclude = flask.request.args.get('exclude')
+    module = parameters.get_single_parameter({}, 'module')
 
     def filter_core_users(record):
         user = vault.get_user_from_runtime_storage(record['id'])
-        module = parameters.get_single_parameter({}, 'module')
         is_core = (module, 'master') in user['core']
-        if ((post_filter == 'core' and is_core) or
-                (post_filter == 'non-core' and not is_core)):
+        if exclude:
+            if ((exclude == 'non-core' and is_core) or
+                    (exclude == 'core' and not is_core)):
+                return record
+        else:
+            record['core'] = is_core
             return record
 
-    postprocessing = filter_core_users if post_filter else None
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_user_ids(),
                                  'user_id', 'author_name',
                                  finalize_handler=finalize_handler,
-                                 postprocessing=postprocessing)
+                                 postprocessing=filter_core_users)
 
 
 @app.route('/api/1.0/stats/distinct_engineers')

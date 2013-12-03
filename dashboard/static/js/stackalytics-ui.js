@@ -115,11 +115,16 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
 
                     if (!data[i].link) {
                         if (data[i].id) {
-                            data[i]["link"] = make_link(data[i].id, data[i].name, link_param);
+                            data[i].link = make_link(data[i].id, data[i].name, link_param);
                         } else {
-                            data[i]["link"] = data[i].name
+                            data[i].link = data[i].name
                         }
                     }
+
+                    if (data[i].core) {
+                        data[i].link += '&nbsp;&#x273B;'
+                    }
+
                     tableData.push(data[i]);
                 }
 

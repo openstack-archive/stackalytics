@@ -69,7 +69,7 @@
 
     {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'commits'}, 'companies', 'Mirantis', 5, 'Position by commits') }}
     {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks'}, 'engineers', 'boris-42', 5, 'Position by reviews') }}
-    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks', 'module': 'glance', 'filter': 'non-core'},
+    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks', 'module': 'glance', 'exclude': 'core'},
                             'engineers', 'boris-42', 3, 'Top-3 in non-core top reviewers') }}
 
 {% endblock %}
