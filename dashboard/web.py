@@ -77,7 +77,8 @@ def page_not_found(e):
 # AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
-                          param_title=None, finalize_handler=None):
+                          param_title=None, finalize_handler=None,
+                          postprocessing=None):
     param_title = param_title or param_id
     result = dict((c, {'metric': 0, 'id': c}) for c in keys)
     for record in records:
@@ -90,6 +91,7 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
     response = [finalize_handler(result[r]) for r in result
                 if result[r]['metric']]
     response.sort(key=lambda x: x['metric'], reverse=True)
+    response = [item for item in map(postprocessing, response) if item]
     utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
     return response
 
@@ -122,10 +124,25 @@ def get_modules(records, metric_filter, finalize_handler):
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
+
+    post_filter = flask.request.args.get('filter')
+    if post_filter not in ['core', 'non-core']:
+        post_filter = None
+
+    def filter_core_users(record):
+        user = vault.get_user_from_runtime_storage(record['id'])
+        module = parameters.get_single_parameter({}, 'module')
+        is_core = (module, 'master') in user['core']
+        if ((post_filter == 'core' and is_core) or
+                (post_filter == 'non-core' and not is_core)):
+            return record
+
+    postprocessing = filter_core_users if post_filter else None
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_user_ids(),
                                  'user_id', 'author_name',
-                                 finalize_handler=finalize_handler)
+                                 finalize_handler=finalize_handler,
+                                 postprocessing=postprocessing)
 
 
 @app.route('/api/1.0/stats/distinct_engineers')
