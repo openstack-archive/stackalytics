@@ -34,6 +34,13 @@ def date_to_timestamp(d):
         datetime.datetime.strptime(d, '%Y-%b-%d').timetuple()))
 
 
+def date_to_timestamp_ext(d):
+    try:
+        return date_to_timestamp(d)
+    except ValueError:
+        return int(d)
+
+
 def iso8601_to_timestamp(s):
     return int(time.mktime(iso8601.parse_date(s).timetuple()))
 

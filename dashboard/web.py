@@ -382,24 +382,29 @@ def get_project_type_json(project_type):
     return {'id': project_type, 'text': project_type}
 
 
+def _get_date(kwargs, param_name):
+    date_param = parameters.get_single_parameter(kwargs, param_name)
+    if date_param:
+        ts = utils.date_to_timestamp_ext(date_param)
+    else:
+        ts = vault.get_vault()[param_name]
+    return utils.timestamp_to_week(ts)
+
+
 @app.route('/api/1.0/stats/timeline')
 @decorators.jsonify('timeline')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='release')
 def timeline(records, **kwargs):
     # find start and end dates
-    release_names = parameters.get_parameter(kwargs, 'release', 'releases')
+    release_name = parameters.get_single_parameter(kwargs, 'release') or 'all'
     releases = vault.get_vault()['releases']
-    if not release_names:
-        flask.abort(404)
 
-    if 'all' in release_names:
-        start_date = release_start_date = utils.timestamp_to_week(
-            vault.get_vault()['start_date'])
-        end_date = release_end_date = utils.timestamp_to_week(
-            vault.get_vault()['end_date'])
+    if 'all' in release_name:
+        start_date = release_start_date = _get_date(kwargs, 'start_date')
+        end_date = release_end_date = _get_date(kwargs, 'end_date')
     else:
-        release = releases[release_names[0]]
+        release = releases[release_name[0]]
         start_date = release_start_date = utils.timestamp_to_week(
             release['start_date'])
         end_date = release_end_date = utils.timestamp_to_week(
@@ -434,7 +439,7 @@ def timeline(records, **kwargs):
         if week in weeks:
             week_stat_loc[week] += handler(record)
             week_stat_commits[week] += 1
-            if 'all' in release_names or record['release'] in release_names:
+            if 'all' in release_name or record['release'] in release_name:
                 week_stat_commits_hl[week] += 1
 
     # form arrays in format acceptable to timeline plugin
