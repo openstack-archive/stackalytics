@@ -5387,6 +5387,20 @@
             "releases": [
                 {
                     "tag_to": "HEAD",
+                    "release_name": "Icehouse",
+                    "tag_from": "b02b2945036a2a19033cb619af4fb33cc0515ec5"
+                }
+            ],
+            "uri": "git://github.com/openstack/openstack-doc-tools.git",
+            "module": "openstack-manuals",
+            "organization": "openstack",
+            "project_type": "openstack"
+        },
+        {
+            "project_group": "documentation",
+            "releases": [
+                {
+                    "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "65027f8"
                 },
