@@ -3681,6 +3681,17 @@
             "emails": ["usrleon@gmail.com", "mlvov@mirantis.com"]
         },
         {
+            "launchpad_id": "vandita-arora",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vandita Arora",
+            "emails": ["vandita_arora@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "victor-r-howard",
             "companies": [
                 {
