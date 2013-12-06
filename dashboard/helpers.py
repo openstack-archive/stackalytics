@@ -119,7 +119,7 @@ def get_activity(records, start_record=0,
 
 
 def get_contribution_summary(records):
-    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2])
+    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2, 'A'])
     commit_count = 0
     loc = 0
     drafted_blueprint_count = 0
@@ -132,7 +132,10 @@ def get_contribution_summary(records):
             commit_count += 1
             loc += record['loc']
         elif record['record_type'] == 'mark':
-            marks[record['value']] += 1
+            if record['type'] == 'APRV':
+                marks['A'] += 1
+            else:
+                marks[record['value']] += 1
         elif record['record_type'] == 'email':
             email_count += 1
         elif record['record_type'] == 'bpd':

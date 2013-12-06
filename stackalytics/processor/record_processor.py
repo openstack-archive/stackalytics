@@ -248,6 +248,7 @@ class RecordProcessor(object):
 
         patch_sets = record.get('patchSets', [])
         review['updated_on'] = review['date']
+        review['patch_count'] = len(patch_sets)
         if patch_sets:
             patch = patch_sets[-1]
             if 'approvals' in patch:
@@ -293,6 +294,7 @@ class RecordProcessor(object):
                 mark['module'] = module
                 mark['branch'] = branch
                 mark['review_id'] = review_id
+                mark['patch'] = int(patch['number'])
 
                 self._update_record_and_user(mark)
 
@@ -532,6 +534,49 @@ class RecordProcessor(object):
             if user['core'] != core_old:
                 utils.store_user(self.runtime_storage_inst, user)
 
+    def _marks_with_disagreement(self):
+        LOG.debug('Process marks to find disagreements')
+        marks_per_patch = {}
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['record_type'] == 'mark' and record['type'] == 'CRVW':
+                review_id = record['review_id']
+                patch_number = record['patch']
+                if (review_id, patch_number) in marks_per_patch:
+                    marks_per_patch[(review_id, patch_number)].append(record)
+                else:
+                    marks_per_patch[(review_id, patch_number)] = [record]
+
+        cores = dict([(user['user_id'], user)
+                      for user in self.runtime_storage_inst.get_all_users()
+                      if user['core']])
+
+        for key, marks in marks_per_patch.iteritems():
+            if len(marks) < 2:
+                continue
+
+            core_mark = 0
+            for mark in sorted(marks, key=lambda x: x['date'], reverse=True):
+
+                if core_mark == 0:
+                    user_id = mark['user_id']
+                    if user_id in cores:
+                        user = cores[user_id]
+                        if (mark['module'], mark['branch']) in user['core']:
+                            # mark is from core engineer
+                            core_mark = mark['value']
+                            continue
+
+                disagreement = (core_mark != 0) and (
+                    (core_mark < 0 < mark['value']) or
+                    (core_mark > 0 > mark['value']))
+                old_disagreement = mark.get('x')
+                mark['x'] = disagreement
+                if old_disagreement != disagreement:
+                    yield mark
+
     def finalize(self):
         self.runtime_storage_inst.set_records(
             self._get_records_for_users_to_update())
+
+        self.runtime_storage_inst.set_records(
+            self._marks_with_disagreement())

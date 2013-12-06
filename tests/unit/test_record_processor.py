@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import itertools
 
 import mock
 import testtools
@@ -761,6 +762,61 @@ class TestRecordProcessor(testtools.TestCase):
 
         review2 = runtime_storage_inst.get_by_primary_key('I222')
         self.assertEquals(1, review2['review_number'])
+
+    def test_mark_disagreement(self):
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {'user_id': 'john_doe',
+                 'launchpad_id': 'john_doe',
+                 'user_name': 'John Doe',
+                 'emails': ['john_doe@ibm.com'],
+                 'core': [('nova', 'master')],
+                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
+            ],
+        )
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@ibm.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova',
+             'branch': 'master',
+             'patchSets': [
+                 {'number': '1',
+                  'revision': '4d8984e92910c37b7d101c1ae8c8283a2e6f4a76',
+                  'ref': 'refs/changes/16/58516/1',
+                  'uploader': {
+                      'name': 'Bill Smith',
+                      'email': 'bill@smith.to',
+                      'username': 'bsmith'},
+                  'createdOn': 1385470730,
+                  'approvals': [
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '1', 'grantedOn': 1385478465,
+                       'by': {
+                           'name': 'Homer Simpson',
+                           'email': 'hsimpson@gmail.com',
+                           'username': 'homer'}},
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '-2', 'grantedOn': 1385478466,
+                       'by': {
+                           'name': 'John Doe',
+                           'email': 'john_doe@ibm.com',
+                           'username': 'john_doe'}}
+                  ]
+                  }]}
+        ]))
+        record_processor_inst.finalize()
+
+        marks = list([r for r in runtime_storage_inst.get_all_records()
+                      if r['record_type'] == 'mark'])
+        homer_mark = next(itertools.ifilter(
+            lambda x: x['date'] == 1385478465, marks), None)
+        self.assertTrue(homer_mark['x'])  # disagreement
 
     # update records
 

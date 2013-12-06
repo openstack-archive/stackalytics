@@ -78,7 +78,7 @@ def _process_stat(data, key, time_now):
     }
 
 
-@blueprint.route('/reviews/<module>')
+@blueprint.route('/reviews/<module>/open')
 @decorators.templated()
 @decorators.exception_handler()
 def open_reviews(module):
@@ -112,6 +112,17 @@ def open_reviews(module):
         'latest_revision': _process_stat(
             waiting_on_reviewer, 'updated_on', time_now),
         'first_revision': _process_stat(waiting_on_reviewer, 'date', time_now),
+    }
+
+
+@blueprint.route('/reviews/<module>/<days>')
+@decorators.templated()
+@decorators.exception_handler()
+def reviews(module, days):
+    return {
+        'module': module,
+        'days': days,
+        'start_date': int(time.time()) - int(days) * 24 * 60 * 60
     }
 
 

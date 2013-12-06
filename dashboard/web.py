@@ -126,11 +126,18 @@ def get_modules(records, metric_filter, finalize_handler):
 def get_engineers(records, metric_filter, finalize_handler):
 
     exclude = flask.request.args.get('exclude')
-    module = parameters.get_single_parameter({}, 'module')
+    modules_names = parameters.get_parameter({}, 'module', 'modules')
+    modules = vault.resolve_modules(modules_names)
 
     def filter_core_users(record):
         user = vault.get_user_from_runtime_storage(record['id'])
-        is_core = (module, 'master') in user['core']
+        is_core = False
+        for (module, branch) in user['core']:
+            if module in modules:
+                is_core = branch
+                if branch == 'master':  # we need master, but stables are ok
+                    break
+
         if exclude:
             if ((exclude == 'non-core' and is_core) or
                     (exclude == 'core' and not is_core)):
@@ -404,7 +411,7 @@ def timeline(records, **kwargs):
         start_date = release_start_date = _get_date(kwargs, 'start_date')
         end_date = release_end_date = _get_date(kwargs, 'end_date')
     else:
-        release = releases[release_name[0]]
+        release = releases[release_name]
         start_date = release_start_date = utils.timestamp_to_week(
             release['start_date'])
         end_date = release_end_date = utils.timestamp_to_week(
@@ -439,7 +446,7 @@ def timeline(records, **kwargs):
         if week in weeks:
             week_stat_loc[week] += handler(record)
             week_stat_commits[week] += 1
-            if 'all' in release_name or record['release'] in release_name:
+            if 'all' == release_name or record['release'] == release_name:
                 week_stat_commits_hl[week] += 1
 
     # form arrays in format acceptable to timeline plugin

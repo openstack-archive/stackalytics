@@ -181,13 +181,15 @@
 <h2>Contribution Summary</h2>
 <div>Total commits: <b>${commit_count}</b></div>
 <div>Total LOC: <b>${loc}</b></div>
-<div>Review stat (-2, -1, +1, +2): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}</b></div>
+<div>Review stat (-2, -1, +1, +2, A): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}, ${marks["A"]}</b></div>
     {% endraw %}
 <div>Draft Blueprints: <b>${drafted_blueprint_count}</b></div>
 <div>Completed Blueprints: <b>${completed_blueprint_count}</b></div>
 <div>Emails: <b>${email_count}</b></div>
 {% if module %}
-<div><b><a href="/report/reviews/{{ module }}" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
+<div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
+<div><b><a href="/report/reviews/{{ module }}/30" target="_blank">Reviews for the last 30 days in {{ module }}↗</a></b></div>
+<div><b><a href="/report/reviews/{{ module }}/90" target="_blank">Reviews for the last 90 days in {{ module }}↗</a></b></div>
 {% endif %}
 {% if company %}
 <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}↗</a></b></div>
@@ -273,7 +275,7 @@
                 <th>#</th>
                 <th>Engineer</th>
                 {% if show_review_ratio %}
-                    <th>-2|-1|+1|+2 (+/- ratio)</th>
+                    <th>-2|-1|+1|+2|A (+/- ratio)</th>
                 {% endif %}
                 <th>{{ metric_label }}</th>
             </tr>
