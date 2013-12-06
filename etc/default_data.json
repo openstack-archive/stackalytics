@@ -4086,6 +4086,10 @@
             "company_name": "Bull"
         },
         {
+            "domains": ["cable.comcast.com"],
+            "company_name": "Comcast"
+        },
+        {
             "domains": ["calxeda.com"],
             "company_name": "Calxeda"
         },
