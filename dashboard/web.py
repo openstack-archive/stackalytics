@@ -20,6 +20,7 @@ import time
 import flask
 from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
+import re
 
 from dashboard import decorators
 from dashboard import helpers
@@ -470,6 +471,11 @@ gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')
 def to_url_params(dict_params, base_url):
     return base_url + '?' + '&'.join(
         ['%s=%s' % (k, v) for k, v in dict_params.iteritems()])
+
+
+@app.template_filter('remove_ctrl_chars')
+def remove_ctrl_chars(text):
+    return re.sub(r'[\W]', '_', text)
 
 
 def main():
