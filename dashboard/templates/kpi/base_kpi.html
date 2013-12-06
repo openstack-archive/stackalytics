@@ -37,6 +37,87 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
 
+    <script type="text/javascript">
+
+        function process_stats(container_id, url, query_options, item_id, goal, comparator) {
+            $.ajax({
+                url: make_uri(url, query_options),
+                dataType: "jsonp",
+                success: function (data) {
+                    data = data["stats"];
+                    var index = -1;
+                    var sum = 0;
+
+                    for (var i = 0; i < data.length; i++) {
+                        sum += data[i].metric;
+                        if (data[i].id == item_id) {
+                            index = i;
+                        }
+                    }
+
+                    var result = {
+                        mark: false,
+                        goal: goal
+                    };
+
+                    if (index < 0) {
+                        result.info = "Item " + item_id + " is not found in the stats";
+                    }
+                    else {
+                        var comparison_result = comparator(data[index], sum);
+                        result.mark = comparison_result.mark;
+                        result.info = comparison_result.info;
+                    }
+                    $("#kpi_block_template").tmpl(result).appendTo("#" + container_id);
+                }
+            });
+        }
+
+        function goal_position_in_top(container_id, query_options, item_type, item_id, position, goal) {
+            $(document).ready(function () {
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                        function(item, sum) {
+                            var mark = item.index <= position;
+                            return {
+                                mark: mark,
+                                info: mark? "Achieved position is " + position:
+                                            "Position " + item.index + " is worse than target position " + position,
+                                value: item.index
+                            }
+                        });
+            });
+        }
+
+        function goal_percentage_in_top_less_than(container_id, query_options, item_type, item_id, goal_percentage, goal) {
+            $(document).ready(function () {
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                        function(item, sum) {
+                            var percentage = item.metric / sum;
+                            var mark = percentage < goal_percentage;
+                            var percentage_formatted = Math.round(percentage * 100) + "%";
+                            var goal_percentage_formatted = Math.round(goal_percentage * 100) + "%";
+                            return {
+                                mark: mark,
+                                info: mark? "Achieved percentage " + goal_percentage_formatted:
+                                            "Value " + percentage_formatted + " is more than the goal " + goal_percentage_formatted,
+                                value: percentage_formatted
+                            }
+                        });
+            });
+        }
+
+    </script>
+
+    <script id="kpi_block_template" type="text/x-jquery-tmpl">
+    <div class="kpi_block">
+        <div class="kpi_marker ${(mark ? "kpi_good" : "kpi_bad")} ">${(mark ? "&#x2714;" : "&#x2716;")}</div>
+        <div class="kpi_title_block">
+            <div class="kpi_title">Goal: ${goal}</div>
+            <div class="kpi_info">Result: ${info}</div>
+        </div>
+    </div>
+    </script>
+
     {% block scripts %}{% endblock %}
 {% endblock %}
 
