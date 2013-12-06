@@ -1,0 +1,126 @@
+{% extends "reports/base_report.html" %}
+
+{% block title %}
+Reviews for the last {{ days }} days in {{ module }}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio"];
+            var table_id = "review_stats_table";
+
+            $.ajax({
+                url: make_uri("/api/1.0/stats/engineers?metric=marks&project_type=all&module={{ module }}&release=all&start_date={{ start_date }}"),
+                dataType: "json",
+                success: function (data) {
+                    var tableData = data["stats"];
+
+                    var tableColumns = [];
+                    var sort_by_column = 0;
+                    for (var i = 0; i < table_column_names.length; i++) {
+                        tableColumns.push({"mData": table_column_names[i]});
+                        if (table_column_names[i] == "metric") {
+                            sort_by_column = i;
+                        }
+                    }
+
+                    var summary = {
+                        'marks': 0,
+                        'core_marks': 0,
+                        'reviewers': tableData.length,
+                        'core_reviewers': 0
+                    };
+
+                    for (i = 0; i < tableData.length; i++) {
+                        if (tableData[i].id) {
+                            var options = {user_id: tableData[i].id, metric: "marks"};
+                            var link = make_uri("/", options);
+                            tableData[i].link = "<a href=\"" + link + "\">" + tableData[i].name + " (" + tableData[i].id + ")</a>"
+                        } else {
+                            tableData[i].link = tableData[i].name
+                        }
+
+                        if (tableData[i].core == "master") {
+                            tableData[i].link += "&nbsp;&#x273B;";
+                            summary.core_marks += tableData[i].metric;
+                            summary.core_reviewers ++;
+                        } else if (tableData[i].core) {
+                            tableData[i].link += "&nbsp;&#x272C; <small><i>" + tableData[i].core + "</i></small>";
+                        }
+                        summary.marks += tableData[i].metric;
+                    }
+
+                    if (table_id) {
+                        $("#" + table_id).dataTable({
+                            "aaSorting": [
+                                [ sort_by_column, "desc" ]
+                            ],
+                            "bFilter": true,
+                            "bInfo": false,
+                            "bAutoWidth": false,
+                            "bPaginate": false,
+                            "iDisplayLength": -1,
+                            "aaData": tableData,
+                            "aoColumns": tableColumns,
+                            "aoColumnDefs": [
+                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10] }
+                            ]
+                        });
+                    }
+                    $("#review_summary_template").tmpl(summary).appendTo("#review_summary_container");
+                }
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        table.dataTable tr.even {
+            background-color: #EEF1F4;
+        }
+
+        table.dataTable tr.even:hover, table.dataTable tr.odd:hover {
+            background-color: #F8FFEC;
+        }
+
+        table.dataTable tr.even td.sorting_1 {
+            background-color: #E0E8E8;
+        }
+    </style>
+
+<script id="review_summary_template" type="text/x-jquery-tmpl">
+<h2>Review Summary</h2>
+<div>Total reviews: <b>${marks}</b> (${(marks / {{ days }}).toFixed(1) } per day)</div>
+<div>Total reviewers: <b>${reviewers}</b> (${(marks / reviewers / {{ days }}).toFixed(1) } per reviewer per day)</div>
+<div>Total reviews by core team: <b>${core_marks}</b> (${(core_marks / {{ days }}).toFixed(1) } per day)</div>
+<div>Core team size: <b>${core_reviewers}</b> (${(core_marks / core_reviewers / {{ days }}).toFixed(1) } per core per day)</div>
+</script>
+
+{% endblock %}
+
+{% block content %}
+<h1>Reviews for the last {{ days }} days in {{ module }}</h1>
+
+    <table id="review_stats_table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Engineer</th>
+                <th>Reviews</th>
+                <th>-2</th>
+                <th>-1</th>
+                <th>+1</th>
+                <th>+2</th>
+                <th>A</th>
+                <th>(+/- %)</th>
+                <th>Disagreements</th>
+                <th>Ratio</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+    <div id="review_summary_container"></div>
+
+{% endblock %}

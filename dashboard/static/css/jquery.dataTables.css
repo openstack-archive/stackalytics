@@ -16,7 +16,6 @@ border-right: 1px solid #CCC;
 background-color: #F0F3FA;
 text-align: left;
 font-weight: normal;
-background-image: none;
 border-bottom: 1px dotted #CECECE;
 text-shadow: 1px 1px 0px white;
 padding: 5px 6px;
@@ -45,10 +44,10 @@ table.dataTable td.dataTables_empty {
 table.dataTable tr.odd { background-color: #fbfafa; }
 table.dataTable tr.even { background-color: white; }
 
-table.dataTable tr.odd td.sorting_1 { background-color: #eef1f4; border-right: 1px solid #CCC; }
+table.dataTable tr.odd td.sorting_1 { background-color: #eef1f4; }
 table.dataTable tr.odd td.sorting_2 { background-color: #DADCFF; }
 table.dataTable tr.odd td.sorting_3 { background-color: #E0E2FF; }
-table.dataTable tr.even td.sorting_1 { background-color: #f8f9fa; border-right: 1px solid #CCC; }
+table.dataTable tr.even td.sorting_1 { background-color: #f8f9fa; }
 table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }
 table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
 
