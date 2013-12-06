@@ -341,16 +341,16 @@ a[href^="https://launchpad"]:after {
 }
 
 .kpi_title_block {
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 .kpi_title {
-    font-size: 16pt;
+    font-size: 13pt;
     font-weight: bold;
 }
 
 .kpi_marker {
-    font-size: 19pt;
+    font-size: 16pt;
     font-weight: bold;
     text-align: center; vertical-align: middle;
     color: lightgray;
