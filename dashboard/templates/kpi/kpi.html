@@ -7,9 +7,9 @@
 {% block scripts %}
     <script type="text/javascript">
 
-        function process_stats(marker_id, url, item_id, comparator) {
+        function process_stats(url, query_options, item_id, goal, comparator) {
             $.ajax({
-                url: make_uri(url),
+                url: make_uri(url, query_options),
                 dataType: "jsonp",
                 success: function (data) {
                     data = data["stats"];
@@ -23,52 +23,51 @@
                         }
                     }
 
-                    var isOk = false;
-                    var message = "";
-                    var value = "";
+                    var result = {
+                        mark: false,
+                        goal: goal
+                    };
 
                     if (index < 0) {
-                        message = "Item " + item_id + " is not found in the stats";
+                        result.info = "Item " + item_id + " is not found in the stats";
                     }
                     else {
-                        var compare_result = comparator(data[index], sum);
-                        isOk = compare_result.result;
-                        message = compare_result.message;
-                        value = compare_result.value;
+                        var comparison_result = comparator(data[index], sum);
+                        result.mark = comparison_result.mark;
+                        result.info = comparison_result.info;
                     }
-                    $("#kpi_marker_" + marker_id).addClass(isOk ? "kpi_good" : "kpi_bad").text(value);
-                    $("#kpi_note_" + marker_id).show().text(message);
+                    $("#kpi_block_template").tmpl(result).appendTo("#kpi_container");
                 }
             });
         }
 
-        function goal_position_in_top(marker_id, url, item_id, position) {
+        function goal_position_in_top(query_options, item_type, item_id, position, goal) {
             $(document).ready(function () {
-                process_stats(marker_id, url, item_id,
+                process_stats("/api/1.0/stats/" + item_type, query_options, item_id, goal,
                         function(item, sum) {
-                            var result = item.index <= position;
+                            var mark = item.index <= position;
                             return {
-                                result: result,
-                                message: result? "Target position is " + position:
-                                        "Position " + item.index + " is worse than target position " + position,
+                                mark: mark,
+                                info: mark? "Achieved position is " + position:
+                                            "Position " + item.index + " is worse than target position " + position,
                                 value: item.index
                             }
                         });
             });
         }
 
-        function goal_percentage_in_top_less_than(marker_id, url, item_id, goal_percentage) {
+        function goal_percentage_in_top_less_than(query_options, item_type, item_id, goal_percentage, goal) {
             $(document).ready(function () {
-                process_stats(marker_id, url, item_id,
+                process_stats("/api/1.0/stats/" + item_type, query_options, item_id, goal,
                         function(item, sum) {
                             var percentage = item.metric / sum;
-                            var result = percentage < goal_percentage;
+                            var mark = percentage < goal_percentage;
                             var percentage_formatted = Math.round(percentage * 100) + "%";
                             var goal_percentage_formatted = Math.round(goal_percentage * 100) + "%";
                             return {
-                                result: result,
-                                message: result? "Target percentage is " + goal_percentage_formatted:
-                                        "Value " + percentage_formatted + " is more than target " + goal_percentage_formatted,
+                                mark: mark,
+                                info: mark? "Achieved percentage " + goal_percentage_formatted:
+                                            "Value " + percentage_formatted + " is more than the goal " + goal_percentage_formatted,
                                 value: percentage_formatted
                             }
                         });
@@ -76,50 +75,37 @@
         }
 
     </script>
-{% endblock %}
 
-{% macro marker_block(id, title) %}
-    <div id="position_target" class="kpi_block">
-        <div id="kpi_marker_{{ id }}" class="kpi_marker"></div>
+    <script id="kpi_block_template" type="text/x-jquery-tmpl">
+    <div class="kpi_block">
+        <div class="kpi_marker ${(mark ? "kpi_good" : "kpi_bad")} ">${(mark ? "&#x2714;" : "&#x2716;")}</div>
         <div class="kpi_title_block">
-            <div class="kpi_title">{{ title }}</div>
-            <div class="kpi_note" id="kpi_note_{{ id }}"></div>
+            <div class="kpi_title">Goal: ${goal}</div>
+            <div class="kpi_info">Result: ${info}</div>
         </div>
     </div>
-{%- endmacro %}
-
-{% macro goal_position_in_top(record_filter, item_type, item_id, target_position, title) -%}
-    {% set id = title|remove_ctrl_chars %}
-    {% set uri = '/api/1.0/stats/' + item_type %}
-
-    <script type="application/javascript">
-        goal_position_in_top("{{ id }}", "{{ record_filter|make_url(uri)|safe }}", "{{ item_id }}", {{ target_position }});
     </script>
 
-    {{ marker_block(id, title) }}
-{%- endmacro %}
-
-{% macro goal_percentage_in_top_less_than(record_filter, item_type, item_id, target_percentage, title) -%}
-    {% set id = title|remove_ctrl_chars %}
-    {% set uri = '/api/1.0/stats/' + item_type %}
-
-    <script type="application/javascript">
-        goal_percentage_in_top_less_than("{{ id }}", "{{ record_filter|make_url(uri)|safe }}", "{{ item_id }}", {{ target_percentage }});
-    </script>
-
-    {{ marker_block(id, title) }}
-{%- endmacro %}
+{% endblock %}
 
 
 {% block content %}
     <h1>Metrics</h1>
 
-    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'commits'}, 'companies', 'Mirantis', 5, 'Position by commits') }}
-    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks'}, 'engineers', 'boris-42', 5, 'Position by reviews') }}
-    {{ goal_position_in_top({'release': 'icehouse', 'project_type': 'openstack', 'metric': 'marks', 'module': 'glance', 'exclude': 'core'},
-                            'engineers', 'boris-42', 3, 'Top-3 in non-core top reviewers') }}
+    <div id="kpi_container"></div>
 
-    {{ goal_percentage_in_top_less_than({'release': 'all', 'project_type': 'stackforge', 'metric': 'commits', 'module': 'stackalytics'},
-                                        'companies', 'Mirantis', 0.8, 'Internal contribution is less than 80%') }}
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+             goal_position_in_top({release: "icehouse", metric: "commits", project_type: "openstack"}, "companies", "Mirantis", 5, "Be in top 5 by commits");
+             goal_position_in_top({release: "icehouse", metric: "marks", project_type: "openstack"}, "engineers", "boris-42", 5, "Be in top 5 by reviews");
+             goal_position_in_top({release: "icehouse", metric: "marks", project_type: "openstack", module: "glance", exclude: "core"},
+                     "engineers", "boris-42", 3, "Be in top 3 among non-core reviewers");
+
+             goal_percentage_in_top_less_than({release: "all", metric: "commits", project_type: "stackforge", module: "stackalytics"},
+                     "companies", "Mirantis", 0.8, "Mirantis contribution is less than 80%");
+
+        });
+    </script>
 
 {% endblock %}

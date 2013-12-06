@@ -353,22 +353,21 @@ a[href^="https://launchpad"]:after {
     font-size: 19pt;
     font-weight: bold;
     text-align: center; vertical-align: middle;
-    background-color: lightgray; color: white;
+    color: lightgray;
     float: left; width: 32px; height: 32px;
 }
 
 .kpi_good {
-    background-color: #008000;
+    color: #008000;
 }
 
 .kpi_bad {
-    background-color: red;
+    color: #C00000;
 }
 
-.kpi_note {
+.kpi_info {
     font-size: 11pt;
     color: #606060;
-    display: none;
 }
 
 .select2-results {
