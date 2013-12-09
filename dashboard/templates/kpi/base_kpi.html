@@ -80,8 +80,23 @@
                             var mark = item.index <= position;
                             return {
                                 mark: mark,
-                                info: mark? "Achieved position is " + position:
-                                            "Position " + item.index + " is worse than target position " + position,
+                                info: mark? "Achieved position is " + item.index:
+                                            "Position " + item.index + " is worse than the goal position " + position,
+                                value: item.index
+                            }
+                        });
+            });
+        }
+
+        function goal_metric(container_id, query_options, item_type, item_id, metric, goal) {
+            $(document).ready(function () {
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                        function(item, sum) {
+                            var mark = item.metric > metric;
+                            return {
+                                mark: mark,
+                                info: mark? "Achieved metric " + item.metric:
+                                            "Position " + item.metric + " is worse than the goal in " + metric,
                                 value: item.index
                             }
                         });
@@ -98,7 +113,7 @@
                             var goal_percentage_formatted = Math.round(goal_percentage * 100) + "%";
                             return {
                                 mark: mark,
-                                info: mark? "Achieved percentage " + goal_percentage_formatted:
+                                info: mark? "Achieved percentage " + percentage_formatted:
                                             "Value " + percentage_formatted + " is more than the goal " + goal_percentage_formatted,
                                 value: percentage_formatted
                             }

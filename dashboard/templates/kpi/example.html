@@ -19,6 +19,8 @@
                      {release: "all", metric: "commits", project_type: "stackforge", module: "stackalytics"},
                      "companies", "Mirantis", 0.8, "Mirantis contribution is less than 80%");
 
+             goal_metric("kpi_container_position", {release: "icehouse", metric: "bpd", project_type: "openstack", module: "glance", exclude: "core"},
+                     "modules", "glance", 10, "File at least 10 blueprints into Glance");
         });
     </script>
 {% endblock %}

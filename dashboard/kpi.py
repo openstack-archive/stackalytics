@@ -21,8 +21,8 @@ from dashboard import decorators
 blueprint = flask.Blueprint('kpi', __name__, url_prefix='/kpi')
 
 
-@blueprint.route('/group')
+@blueprint.route('/example')
 @decorators.templated()
 @decorators.exception_handler()
-def kpi():
+def example():
     return
