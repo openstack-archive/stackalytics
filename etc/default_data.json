@@ -5407,7 +5407,7 @@
                 }
             ],
             "uri": "git://github.com/openstack/openstack-doc-tools.git",
-            "module": "openstack-manuals",
+            "module": "openstack-doc-tools",
             "organization": "openstack",
             "project_type": "openstack"
         },
