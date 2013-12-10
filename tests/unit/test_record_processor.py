@@ -818,6 +818,36 @@ class TestRecordProcessor(testtools.TestCase):
             lambda x: x['date'] == 1385478465, marks), None)
         self.assertTrue(homer_mark['x'])  # disagreement
 
+    def test_commit_merge_date(self):
+        record_processor_inst = self.make_record_processor()
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        runtime_storage_inst.set_records(record_processor_inst.process([
+            {'record_type': 'commit',
+             'commit_id': 'de7e8f2',
+             'change_id': ['I104573'],
+             'author_name': 'John Doe',
+             'author_email': 'john_doe@gmail.com',
+             'date': 1234567890,
+             'lines_added': 25,
+             'lines_deleted': 9,
+             'release_name': 'havana'},
+            {'record_type': 'review',
+             'id': 'I104573',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 1385478465,
+             'lastUpdated': 1385490000,
+             'status': 'MERGED',
+             'module': 'nova', 'branch': 'master'},
+        ]))
+        record_processor_inst.finalize()
+
+        commit = runtime_storage_inst.get_by_primary_key('de7e8f2')
+        self.assertEqual(1385490000, commit['date'])
+
     # update records
 
     def _generate_record_commit(self):

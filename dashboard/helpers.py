@@ -52,6 +52,8 @@ def extend_record(record):
         if 'correction_comment' not in record:
             record['correction_comment'] = ''
         record['message'] = make_commit_message(record)
+        if record['commit_date']:
+            record['commit_date_str'] = format_datetime(record['commit_date'])
     elif record['record_type'] == 'mark':
         parent = vault.get_memory_storage().get_record_by_primary_key(
             record['review_id'])

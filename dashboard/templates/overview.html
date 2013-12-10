@@ -117,6 +117,9 @@
             {%/if%}
             <div style='font-weight: bold;'>${subject}</div>
             <div style='white-space: pre-wrap; '>{%html message %}</div>
+            {%if commit_date_str != "" %}
+                <div>Commit date: ${commit_date_str}</div>
+            {%/if%}
             <div><span style="color: green">+<span>${lines_added}</span></span>
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
