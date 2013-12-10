@@ -5403,7 +5403,7 @@
                 {
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
-                    "tag_from": "b02b2945036a2a19033cb619af4fb33cc0515ec5"
+                    "tag_from": "95617e3"
                 }
             ],
             "uri": "git://github.com/openstack/openstack-doc-tools.git",
