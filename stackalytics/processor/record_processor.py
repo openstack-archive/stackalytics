@@ -226,6 +226,7 @@ class RecordProcessor(object):
         record['primary_key'] = record['commit_id']
         record['loc'] = record['lines_added'] + record['lines_deleted']
         record['author_email'] = record['author_email'].lower()
+        record['commit_date'] = record['date']
 
         self._update_record_and_user(record)
 
@@ -448,7 +449,26 @@ class RecordProcessor(object):
             if need_update:
                 yield record
 
-    def _update_records_with_blueprint_mention_info(self):
+    def _update_commits_with_merge_date(self):
+        change_id_to_date = {}
+        for record in self.runtime_storage_inst.get_all_records():
+            if (record['record_type'] == 'review' and
+                    record.get('status') == 'MERGED'):
+                change_id_to_date[record['id']] = record['lastUpdated']
+
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['record_type'] == 'commit':
+                change_id_list = record.get('change_id')
+                if change_id_list and len(change_id_list) == 1:
+                    change_id = change_id_list[0]
+                    if change_id in change_id_to_date:
+                        old_date = record['date']
+                        if old_date != change_id_to_date[change_id]:
+                            record['date'] = change_id_to_date[change_id]
+                            self._renew_record_date(record)
+                            yield record
+
+    def _update_blueprints_with_mention_info(self):
         LOG.debug('Process blueprints and calculate mention info')
 
         valid_blueprints = {}
@@ -505,7 +525,7 @@ class RecordProcessor(object):
             if need_update:
                 yield record
 
-    def _update_records_with_review_number(self):
+    def _update_reviews_with_sequence_number(self):
         LOG.debug('Set review number in review records')
 
         users_reviews = {}
@@ -556,7 +576,7 @@ class RecordProcessor(object):
             if user['core'] != core_old:
                 utils.store_user(self.runtime_storage_inst, user)
 
-    def _update_records_with_disagreement(self):
+    def _update_marks_with_disagreement(self):
         LOG.debug('Process marks to find disagreements')
 
         marks_per_patch = {}
@@ -602,13 +622,16 @@ class RecordProcessor(object):
             self._update_records_with_user_info())
 
         self.runtime_storage_inst.set_records(
-            self._update_records_with_review_number())
+            self._update_reviews_with_sequence_number())
 
         self.runtime_storage_inst.set_records(
-            self._update_records_with_blueprint_mention_info())
+            self._update_blueprints_with_mention_info())
+
+        self.runtime_storage_inst.set_records(
+            self._update_commits_with_merge_date())
 
         self._determine_core_contributors()
 
         # disagreement calculation must go after determining core contributors
         self.runtime_storage_inst.set_records(
-            self._update_records_with_disagreement())
+            self._update_marks_with_disagreement())

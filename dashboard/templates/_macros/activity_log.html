@@ -71,6 +71,9 @@
         {%if record_type == "commit" %}
             <div style='font-weight: bold;'>Commit &ldquo;${subject}&rdquo;</div>
             <div style='white-space: pre-wrap; '>{%html message %}</div>
+            {%if commit_date_str != "" %}
+                <div>Commit date: ${commit_date_str}</div>
+            {%/if%}
             {%if correction_comment != "" %}
             <div style='font-weight: bold; color: red;'>Commit corrected:
                 <span>${correction_comment}</span></div>
