@@ -105,19 +105,18 @@ def extend_user(user):
     return user
 
 
-def get_activity(records, start_record=0,
-                 page_size=parameters.DEFAULT_RECORDS_LIMIT):
+def get_activity(records, start_record, page_size):
+    records_sorted = sorted(records, key=lambda x: x['date'], reverse=True)
+
     result = []
-    for record in records:
+    for record in records_sorted[start_record:]:
         processed_record = extend_record(record)
         if processed_record:
             result.append(processed_record)
+            if len(result) == page_size:
+                break
 
-    result.sort(key=lambda x: x['date'], reverse=True)
-    if page_size == -1:
-        return result[start_record:]
-    else:
-        return result[start_record:start_record + page_size]
+    return result
 
 
 def get_contribution_summary(records):
