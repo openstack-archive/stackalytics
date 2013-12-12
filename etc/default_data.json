@@ -5628,7 +5628,7 @@
         },
         {
             "module_group_name": "fuel-group",
-            "modules": ["fuel-main", "fuel-web", "fuel-astute", "fuel-ostf"]
+            "modules": ["fuel-main", "fuel-web", "fuel-astute", "fuel-ostf", "fuel-library", "fuel-docs", "fuel-devops"]
         },
         {
             "module_group_name": "savanna-group",
