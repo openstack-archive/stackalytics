@@ -1320,11 +1320,15 @@
             "companies": [
                 {
                     "company_name": "Red Hat",
+                    "end_date": "2013-Jul-17"
+                },
+                {
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
             "user_name": "Gary Kotton",
-            "emails": ["gkotton@redhat.com"]
+            "emails": ["gkotton@vmware.com"]
         },
         {
             "launchpad_id": "geekinutah",
