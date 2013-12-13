@@ -1610,6 +1610,17 @@
             "emails": ["jaegerandi@gmail.com", "aj@suse.de"]
         },
         {
+            "launchpad_id": "jaimegildesagredo",
+            "companies": [
+                {
+                    "company_name": "StackOps",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaime Gil de Sagredo",
+            "emails": ["jaimegildesagredo@gmail.com"]
+        },
+        {
             "launchpad_id": "jake-hyperboledesign",
             "companies": [
                 {
