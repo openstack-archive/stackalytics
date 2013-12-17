@@ -1,8 +1,8 @@
 {
     "corrections": [
         {
-            "correction_comment": "Reset LOC to 0",
-            "loc": 0,
+            "correction_comment": "Reset LOC to 3k",
+            "loc": 3000,
             "change_id": "Ie7d07ba7c89857e13d4ddc8f0e9b68de020a3d19",
             "primary_key": "ee3fe4e836ca1c81e50a8324a9b5f982de4fa97f",
             "module": "neutron",
