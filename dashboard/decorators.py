@@ -183,15 +183,20 @@ def aggregate_filter():
                         mark_distribution.append('0')
                         new_record[key] = 0
 
-                positive_ratio = ' (%.1f%%)' % (
-                    (positive * 100.0) / record['metric'])
-                new_record['mark_ratio'] = (
-                    '|'.join(mark_distribution) + positive_ratio)
-                new_record['positive_ratio'] = positive_ratio
                 new_record['disagreements'] = record.get('disagreements', 0)
-                new_record['disagreement_ratio'] = '%.1f%%' % (
-                    (record.get('disagreements', 0) * 100.0) / record['metric']
-                )
+                if record['metric']:
+                    positive_ratio = '%.1f%%' % (
+                        (positive * 100.0) / record['metric'])
+                    new_record['disagreement_ratio'] = '%.1f%%' % (
+                        (record.get('disagreements', 0) * 100.0) /
+                        record['metric'])
+                else:
+                    positive_ratio = helpers.INFINITY_HTML
+                    new_record['disagreement_ratio'] = helpers.INFINITY_HTML
+                new_record['mark_ratio'] = ('|'.join(mark_distribution) +
+                                            ' (' + positive_ratio + ')')
+                new_record['positive_ratio'] = positive_ratio
+
                 return new_record
 
             metric_param = (flask.request.args.get('metric') or

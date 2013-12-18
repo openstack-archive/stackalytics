@@ -1,13 +1,14 @@
 {% extends "reports/base_report.html" %}
 
 {% block title %}
-Reviews for the last {{ days }} days in {{ module }}
+Contribution into {{ module }} for the last {{ days }} days
 {% endblock %}
 
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio"];
+            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
+                                      "review_ratio", "commit", "email"];
             var table_id = "review_stats_table";
 
             $.ajax({
@@ -28,15 +29,20 @@ Reviews for the last {{ days }} days in {{ module }}
                     var summary = {
                         'marks': 0,
                         'core_marks': 0,
-                        'reviewers': tableData.length,
-                        'core_reviewers': 0
+                        'reviewers': 0,
+                        'core_reviewers': 0,
+                        'commits': 0,
+                        'reviews': 0,
+                        'patch_count': 0,
+                        'emails': 0
                     };
 
                     for (i = 0; i < tableData.length; i++) {
                         if (tableData[i].id) {
-                            var options = {user_id: tableData[i].id, metric: "marks"};
-                            var link = make_uri("/", options);
-                            tableData[i].link = "<a href=\"" + link + "\">" + tableData[i].name + " (" + tableData[i].id + ")</a>"
+                            var user_link = make_uri("/", {user_id: tableData[i].id, metric: "marks"});
+                            var company_link = make_uri("/", {company: tableData[i].company, metric: "marks"});
+                            tableData[i].link = "<a href=\"" + user_link + "\">" + tableData[i].name + "</a>" +
+                                    " <a href=\"" + company_link + "\">" + "(" + tableData[i].company + ")</a>"
                         } else {
                             tableData[i].link = tableData[i].name
                         }
@@ -48,7 +54,15 @@ Reviews for the last {{ days }} days in {{ module }}
                         } else if (tableData[i].core) {
                             tableData[i].link += "&nbsp;&#x272C; <small><i>" + tableData[i].core + "</i></small>";
                         }
+                        if (tableData[i].metric > 0) {
+                            summary.reviewers ++;
+                        }
+                        tableData[i].review_ratio = tableData[i].review + " / " + tableData[i].patch_count;
                         summary.marks += tableData[i].metric;
+                        summary.commits += tableData[i].commit;
+                        summary.reviews += tableData[i].review;
+                        summary.patch_count += tableData[i].patch_count;
+                        summary.emails += tableData[i].email;
                     }
 
                     if (table_id) {
@@ -64,7 +78,7 @@ Reviews for the last {{ days }} days in {{ module }}
                             "aaData": tableData,
                             "aoColumns": tableColumns,
                             "aoColumnDefs": [
-                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10] }
+                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
                             ]
                         });
                     }
@@ -94,12 +108,17 @@ Reviews for the last {{ days }} days in {{ module }}
 <div>Total reviewers: <b>${reviewers}</b> (${(marks / reviewers / {{ days }}).toFixed(1) } per reviewer per day)</div>
 <div>Total reviews by core team: <b>${core_marks}</b> (${(core_marks / {{ days }}).toFixed(1) } per day)</div>
 <div>Core team size: <b>${core_reviewers}</b> (${(core_marks / core_reviewers / {{ days }}).toFixed(1) } per core per day)</div>
+<h2>Contribution Summary</h2>
+<div>On review: <b>${reviews}</b> (${(reviews / {{ days }}).toFixed(1) } per day)</div>
+<div>Patch sets: <b>${patch_count}</b> (${(patch_count / {{ days }}).toFixed(1) } per day)</div>
+<div>Commits: <b>${commits}</b> (${(commits / {{ days }}).toFixed(1) } per day)</div>
+<div>Emails: <b>${emails}</b> (${(emails / {{ days }}).toFixed(1) } per day)</div>
 </script>
 
 {% endblock %}
 
 {% block content %}
-<h1>Reviews for the last {{ days }} days in {{ module }}</h1>
+<h1>Contribution into {{ module }} for the last {{ days }} days</h1>
 
     <table id="review_stats_table">
         <thead>
@@ -112,9 +131,12 @@ Reviews for the last {{ days }} days in {{ module }}
                 <th>+1</th>
                 <th>+2</th>
                 <th>A</th>
-                <th>(+/- %)</th>
+                <th>+/-</th>
                 <th>Disagreements</th>
                 <th>Ratio</th>
+                <th>On review / patch sets</th>
+                <th>Commits</th>
+                <th>Emails</th>
             </tr>
         </thead>
         <tbody>

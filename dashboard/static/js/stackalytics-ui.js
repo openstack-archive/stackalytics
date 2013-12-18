@@ -266,7 +266,7 @@ function make_uri(uri, options) {
         $.extend(ops, options);
     }
     var str = $.map(ops,function (val, index) {
-        return index + "=" + val;
+        return index + "=" + encodeURIComponent(val).toLowerCase();
     }).join("&");
 
     return (str == "") ? uri : uri + "?" + str;

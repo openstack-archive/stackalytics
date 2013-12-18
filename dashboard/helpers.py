@@ -24,6 +24,8 @@ from dashboard import vault
 from stackalytics.processor import utils
 
 
+INFINITY_HTML = '&#x221E;'
+
 gravatar = gravatar_ext.Gravatar(None, size=64, rating='g', default='wavatar')
 
 

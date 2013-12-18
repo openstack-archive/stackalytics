@@ -78,8 +78,7 @@ def page_not_found(e):
 # AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
-                          param_title=None, finalize_handler=None,
-                          postprocessing=None):
+                          param_title=None, finalize_handler=None):
     param_title = param_title or param_id
     result = dict((c, {'metric': 0, 'id': c}) for c in keys)
     for record in records:
@@ -87,12 +86,11 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
         result[record[param_id]]['name'] = record[param_title]
 
     if not finalize_handler:
-        finalize_handler = lambda x: x
-
-    response = [finalize_handler(result[r]) for r in result
-                if result[r]['metric']]
+        response = [r for r in result.values() if r['metric']]
+    else:
+        response = result.values()
     response.sort(key=lambda x: x['metric'], reverse=True)
-    response = [item for item in map(postprocessing, response) if item]
+    response = [item for item in map(finalize_handler, response) if item]
     utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
     return response
 
@@ -122,7 +120,7 @@ def get_modules(records, metric_filter, finalize_handler):
 @app.route('/api/1.0/stats/engineers')
 @decorators.jsonify('stats')
 @decorators.exception_handler()
-@decorators.record_filter()
+@decorators.record_filter(ignore='metric')
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
 
@@ -130,8 +128,20 @@ def get_engineers(records, metric_filter, finalize_handler):
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = vault.resolve_modules(modules_names)
 
-    def filter_core_users(record):
+    def postprocessing(record):
+        if finalize_handler:
+            record = finalize_handler(record)
         user = vault.get_user_from_runtime_storage(record['id'])
+        record['company'] = user['companies'][-1]['company_name']
+        record['review'] = record.get('review', 0)
+        record['commit'] = record.get('commit', 0)
+        record['email'] = record.get('email', 0)
+        record['patch_count'] = record.get('patch_count', 0)
+
+        if not (record['metric'] or record['review'] or record['commit'] or
+                record['email'] or record['patch_count']):
+            return
+
         is_core = False
         for (module, branch) in user['core']:
             if module in modules:
@@ -147,11 +157,25 @@ def get_engineers(records, metric_filter, finalize_handler):
             record['core'] = is_core
             return record
 
-    return _get_aggregated_stats(records, metric_filter,
+    def record_processing(result, record, param_id):
+        record_type = record['record_type']
+
+        result_row = result[record[param_id]]
+        if record_type == 'mark':
+            metric_filter(result, record, param_id)
+        elif record_type == 'commit':
+            result_row['commit'] = result_row.get('commit', 0) + 1
+        elif record_type == 'email':
+            result_row['email'] = result_row.get('email', 0) + 1
+        elif record_type == 'review':
+            result_row['review'] = result_row.get('review', 0) + 1
+            result_row['patch_count'] = (result_row.get('patch_count', 0) +
+                                         record['patch_count'])
+
+    return _get_aggregated_stats(records, record_processing,
                                  vault.get_memory_storage().get_user_ids(),
                                  'user_id', 'author_name',
-                                 finalize_handler=finalize_handler,
-                                 postprocessing=filter_core_users)
+                                 finalize_handler=postprocessing)
 
 
 @app.route('/api/1.0/stats/distinct_engineers')
