@@ -1,12 +1,12 @@
 pbr>=0.5.21,<1.0
 
-Flask>=0.9
+Flask>=0.10,<1.0
 Flask-Gravatar
-iso8601
-oslo.config
+iso8601>=0.1.8
+oslo.config>=1.2.0
 paramiko>=1.8.0
 psutil<=1.0.1
 PyGithub
-python-memcached
+python-memcached>=1.48
 sh
-six
+six>=1.4.1

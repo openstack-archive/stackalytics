@@ -102,29 +102,29 @@ diff_stat:
             '''
 
         commits = list(self.git.log('dummy', 'dummy'))
-        self.assertEquals(5, len(commits))
+        self.assertEqual(5, len(commits))
 
-        self.assertEquals(21, commits[0]['files_changed'])
-        self.assertEquals(340, commits[0]['lines_added'])
-        self.assertEquals(408, commits[0]['lines_deleted'])
-        self.assertEquals(['1167901'], commits[0]['bug_id'])
+        self.assertEqual(21, commits[0]['files_changed'])
+        self.assertEqual(340, commits[0]['lines_added'])
+        self.assertEqual(408, commits[0]['lines_deleted'])
+        self.assertEqual(['1167901'], commits[0]['bug_id'])
 
-        self.assertEquals(1, commits[1]['files_changed'])
-        self.assertEquals(0, commits[1]['lines_added'])
-        self.assertEquals(1, commits[1]['lines_deleted'])
+        self.assertEqual(1, commits[1]['files_changed'])
+        self.assertEqual(0, commits[1]['lines_added'])
+        self.assertEqual(1, commits[1]['lines_deleted'])
 
-        self.assertEquals(1, commits[2]['files_changed'])
-        self.assertEquals(8, commits[2]['lines_added'])
-        self.assertEquals(0, commits[2]['lines_deleted'])
-        self.assertEquals(set(['987654', '1234567']),
-                          set(commits[2]['bug_id']))
+        self.assertEqual(1, commits[2]['files_changed'])
+        self.assertEqual(8, commits[2]['lines_added'])
+        self.assertEqual(0, commits[2]['lines_deleted'])
+        self.assertEqual(set(['987654', '1234567']),
+                         set(commits[2]['bug_id']))
 
-        self.assertEquals(0, commits[3]['files_changed'])
-        self.assertEquals(0, commits[3]['lines_added'])
-        self.assertEquals(0, commits[3]['lines_deleted'])
-        self.assertEquals(set(['dummy:fix-me']),
-                          set(commits[3]['blueprint_id']))
+        self.assertEqual(0, commits[3]['files_changed'])
+        self.assertEqual(0, commits[3]['lines_added'])
+        self.assertEqual(0, commits[3]['lines_deleted'])
+        self.assertEqual(set(['dummy:fix-me']),
+                         set(commits[3]['blueprint_id']))
 
-        self.assertEquals(0, commits[4]['files_changed'])
-        self.assertEquals(0, commits[4]['lines_added'])
-        self.assertEquals(0, commits[4]['lines_deleted'])
+        self.assertEqual(0, commits[4]['files_changed'])
+        self.assertEqual(0, commits[4]['lines_added'])
+        self.assertEqual(0, commits[4]['lines_deleted'])
