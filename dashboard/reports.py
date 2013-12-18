@@ -115,10 +115,10 @@ def open_reviews(module):
     }
 
 
-@blueprint.route('/reviews/<module>/<days>')
+@blueprint.route('/contribution/<module>/<days>')
 @decorators.templated()
 @decorators.exception_handler()
-def reviews(module, days):
+def contribution(module, days):
     return {
         'module': module,
         'days': days,
