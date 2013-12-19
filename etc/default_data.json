@@ -3075,6 +3075,7 @@
         },
         {
             "launchpad_id": "robert-myers",
+            "gerrit_id": "rmyers",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -3082,7 +3083,7 @@
                 }
             ],
             "user_name": "Robert Myers",
-            "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com"]
+            "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
         },
         {
             "launchpad_id": "rohitagarwalla",
