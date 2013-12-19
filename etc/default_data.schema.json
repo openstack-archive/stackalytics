@@ -39,8 +39,10 @@
                                     "pattern": "20\\d{2}-\\w{3}-[0-3]\\d"
                                 }
                             },
+                            "required": ["company_name", "end_date"],
                             "additionalProperties": false
-                        }
+                        },
+                        "minItems": 1
                     }
                 },
                 "required": ["launchpad_id", "user_name", "emails"],

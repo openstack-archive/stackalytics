@@ -19,20 +19,9 @@ from stackalytics.processor import utils
 LOG = logging.getLogger(__name__)
 
 
-def get_user_id(launchpad_id, email):
-    return launchpad_id or email
-
-
-def normalize_user(user):
-    user['emails'] = [email.lower() for email in user['emails']]
-    if user['launchpad_id']:
-        user['launchpad_id'] = user['launchpad_id'].lower()
-
+def _normalize_user(user):
     for c in user['companies']:
-        end_date_numeric = 0
-        if c['end_date']:
-            end_date_numeric = utils.date_to_timestamp(c['end_date'])
-        c['end_date'] = end_date_numeric
+        c['end_date'] = utils.date_to_timestamp(c['end_date'])
 
     # sort companies by end_date
     def end_date_comparator(x, y):
@@ -44,19 +33,12 @@ def normalize_user(user):
             return cmp(x["end_date"], y["end_date"])
 
     user['companies'].sort(cmp=end_date_comparator)
-    if user['emails']:
-        user['user_id'] = get_user_id(user['launchpad_id'], user['emails'][0])
-    else:
-        user['user_id'] = user['launchpad_id']
+    user['user_id'] = user['launchpad_id']
 
 
 def _normalize_users(users):
     for user in users:
-        if ('launchpad_id' not in user) or ('emails' not in user):
-            LOG.warn('Skipping invalid user: %s', user)
-            continue
-
-        normalize_user(user)
+        _normalize_user(user)
 
 
 def _normalize_releases(releases):

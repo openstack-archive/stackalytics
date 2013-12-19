@@ -17,6 +17,7 @@ import copy
 import mock
 import testtools
 
+from stackalytics.processor import default_data_processor
 from stackalytics.processor import normalizer
 from tests.unit import test_data
 
@@ -49,3 +50,23 @@ class TestDefaultDataProcessor(testtools.TestCase):
         self.assertEqual(test_data.USERS[0]['launchpad_id'],
                          data['users'][0]['user_id'],
                          message='User id should be set')
+
+    def test_update_project_list(self):
+        with mock.patch('stackalytics.processor.default_data_processor.'
+                        '_retrieve_project_list_from_github') as retriever:
+            retriever.return_value = [
+                {'module': 'nova', 'uri': 'git://github.com/openstack/nova'},
+                {'module': 'qa', 'uri': 'git://github.com/openstack/qa'},
+            ]
+            dd = {
+                'repos': [
+                    {'module': 'qa', 'uri': 'git://github.com/openstack/qa'},
+                ],
+                'project_sources': ['any']
+            }
+
+            default_data_processor._update_project_list(dd)
+
+            self.assertEqual(2, len(dd['repos']))
+            self.assertIn('qa', set([r['module'] for r in dd['repos']]))
+            self.assertIn('nova', set([r['module'] for r in dd['repos']]))

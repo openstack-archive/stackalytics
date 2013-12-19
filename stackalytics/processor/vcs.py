@@ -139,7 +139,7 @@ class Git(Vcs):
         LOG.debug('Get release index for repo uri: %s', self.repo['uri'])
         os.chdir(self.folder)
         if not self.release_index:
-            for release in self.repo['releases']:
+            for release in self.repo.get('releases', []):
                 release_name = release['release_name'].lower()
 
                 if 'branch' in release:

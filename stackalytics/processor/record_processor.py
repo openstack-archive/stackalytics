@@ -18,7 +18,6 @@ import time
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import launchpad_utils
-from stackalytics.processor import normalizer
 from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
@@ -82,7 +81,7 @@ class RecordProcessor(object):
         company = (self._get_company_by_email(email) or
                    self._get_independent())
         user = {
-            'user_id': normalizer.get_user_id(launchpad_id, email),
+            'user_id': launchpad_id or email,
             'launchpad_id': launchpad_id,
             'user_name': user_name or '',
             'companies': [{
@@ -94,7 +93,6 @@ class RecordProcessor(object):
             user['emails'] = [email]
         else:
             user['emails'] = []
-        normalizer.normalize_user(user)
         return user
 
     def _get_lp_info(self, email):

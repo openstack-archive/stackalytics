@@ -28,6 +28,8 @@ LOG = logging.getLogger(__name__)
 
 
 def date_to_timestamp(d):
+    if not d:
+        return 0
     if d == 'now':
         return int(time.time())
     return int(time.mktime(
