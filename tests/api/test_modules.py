@@ -22,11 +22,9 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_modules(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                           {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
                  'module_groups': [
                      {'module_group_name': 'nova-group',
@@ -37,7 +35,9 @@ class TestAPIModules(test_api.TestAPI):
             response = self.app.get('/api/1.0/modules')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
-                [{'id': 'glance', 'modules': ['glance'], 'text': 'glance'},
+                [{'group': True, 'id': 'all', 'text': 'All',
+                  'modules': ['glance', 'nova']},
+                 {'id': 'glance', 'modules': ['glance'], 'text': 'glance'},
                  {'id': 'nova', 'modules': ['nova'], 'text': 'nova'},
                  {'group': True, 'id': 'nova-group', 'text': 'nova-group',
                   'modules': ['nova', 'python-novaclient']}], modules)
@@ -50,8 +50,7 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_module(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}],
                  'module_groups': [
                      {'module_group_name': 'nova-group',

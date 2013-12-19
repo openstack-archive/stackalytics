@@ -27,12 +27,11 @@ class TestAPIUsers(test_api.TestAPI):
 
     def test_users(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}]},
-                test_api.make_records(record_type=['commit'],
+                test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_id=['john_doe', 'bill_smith'])):
-            response = self.app.get('/api/1.0/users')
+            response = self.app.get('/api/1.0/users?module=nova')
             users = json.loads(response.data)['users']
             self.assertEqual(2, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
@@ -40,12 +39,11 @@ class TestAPIUsers(test_api.TestAPI):
 
     def test_users_search(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}]},
-                test_api.make_records(record_type=['commit'],
+                test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_name=['John Doe', 'Bill Smith'])):
-            response = self.app.get('/api/1.0/users?query=doe')
+            response = self.app.get('/api/1.0/users?module=nova&query=doe')
             users = json.loads(response.data)['users']
             self.assertEqual(1, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
@@ -55,7 +53,9 @@ class TestAPIUsers(test_api.TestAPI):
                 {'user:john_doe': {
                     'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
                     'companies': [{'company_name': 'NEC', 'end_date': 0}],
-                    'emails': 'john_doe@gmail.com'}}):
+                    'emails': 'john_doe@gmail.com'}},
+                test_api.make_records(record_type=['commit'], module=['nova'],
+                                      user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users/john_doe')
             user = json.loads(response.data)['user']
             self.assertEqual('john_doe', user['user_id'])
@@ -65,6 +65,12 @@ class TestAPIUsers(test_api.TestAPI):
                 {'user:john_doe': {
                     'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
                     'companies': [{'company_name': 'NEC', 'end_date': 0}],
-                    'emails': 'john_doe@gmail.com'}}):
+                    'emails': 'john_doe@gmail.com'},
+                 'repos': [{'module': 'nova', 'organization': 'openstack',
+                            'uri': 'git://github.com/openstack/nova.git'}],
+                 'module_groups': [
+                     {'module_group_name': 'openstack', 'modules': ['nova']}]},
+                test_api.make_records(record_type=['commit'], module=['nova'],
+                                      user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users/nonexistent')
             self.assertEqual(404, response.status_code)

@@ -8,18 +8,18 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "commits", project_type: "openstack"},
+             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "commits", module: "openstack"},
                      "companies", "Mirantis", 5, "Be in top 5 by commits");
-             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", project_type: "openstack"},
+             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", module: "openstack"},
                      "engineers", "boris-42", 5, "Be in top 5 by reviews");
-             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", project_type: "openstack", module: "glance", exclude: "core"},
-                     "engineers", "boris-42", 5, "Be in top 5 among non-core reviewers", function(data_line) { return !data_line.core });
+             goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", module: "glance"},
+                     "engineers", "boris-42", 3, "Be in top 3 among non-core reviewers");
 
              goal_percentage_in_top_less_than("kpi_container_percentage",
-                     {release: "all", metric: "commits", project_type: "stackforge", module: "stackalytics"},
+                     {release: "all", metric: "commits", module: "stackalytics"},
                      "companies", "Mirantis", 0.8, "Mirantis contribution is less than 80%");
 
-             goal_metric("kpi_container_position", {release: "icehouse", metric: "bpd", project_type: "openstack", module: "glance", exclude: "core"},
+             goal_metric("kpi_container_position", {release: "icehouse", metric: "bpd", module: "glance", exclude: "core"},
                      "modules", "glance", 10, "File at least 10 blueprints into Glance");
         });
     </script>

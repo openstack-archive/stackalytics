@@ -17,7 +17,6 @@ import os
 
 import flask
 from oslo.config import cfg
-import six
 
 from dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
@@ -39,7 +38,6 @@ def get_vault():
             vault['memory_storage'] = memory_storage.get_memory_storage(
                 memory_storage.MEMORY_STORAGE_CACHED)
 
-            init_project_types(vault)
             init_releases(vault)
 
             flask.current_app.stackalytics_vault = vault
@@ -55,7 +53,6 @@ def get_vault():
             vault['runtime_storage'].get_update(os.getpid()))
 
         if have_updates:
-            init_project_types(vault)
             init_releases(vault)
             init_module_groups(vault)
 
@@ -84,53 +81,20 @@ def init_releases(vault):
     vault['releases'] = releases_map
 
 
-def init_project_types(vault):
-    runtime_storage_inst = vault['runtime_storage']
-    project_type_options = {}
-    project_type_group_index = {'all': set(['unknown'])}
-
-    for repo in utils.load_repos(runtime_storage_inst):
-        project_type = repo['project_type'].lower()
-        project_group = None
-        if ('project_group' in repo) and (repo['project_group']):
-            project_group = repo['project_group'].lower()
-
-        if project_type in project_type_options:
-            if project_group:
-                project_type_options[project_type].add(project_group)
-        else:
-            if project_group:
-                project_type_options[project_type] = set([project_group])
-            else:
-                project_type_options[project_type] = set()
-
-        module = repo['module']
-        if project_type in project_type_group_index:
-            project_type_group_index[project_type].add(module)
-        else:
-            project_type_group_index[project_type] = set([module])
-
-        if project_group:
-            if project_group in project_type_group_index:
-                project_type_group_index[project_group].add(module)
-            else:
-                project_type_group_index[project_group] = set([module])
-
-        project_type_group_index['all'].add(module)
-
-    vault['project_type_options'] = project_type_options
-    vault['project_type_group_index'] = project_type_group_index
-
-
 def init_module_groups(vault):
     runtime_storage_inst = vault['runtime_storage']
+    memory_storage_inst = vault['memory_storage']
+
     module_index = {}
     module_id_index = {}
     module_groups = runtime_storage_inst.get_by_key('module_groups') or []
 
+    module_groups.append({'module_group_name': 'All',
+                          'modules': set(memory_storage_inst.get_modules())})
+
     for module_group in module_groups:
         module_group_name = module_group['module_group_name']
-        module_group_id = module_group_name.lower()
+        module_group_id = utils.safe_encode(module_group_name.lower())
 
         module_id_index[module_group_id] = {
             'group': True,
@@ -146,10 +110,9 @@ def init_module_groups(vault):
             else:
                 module_index[module] = set([module_group_id])
 
-    memory_storage_inst = vault['memory_storage']
     for module in memory_storage_inst.get_modules():
         module_id_index[module] = {
-            'id': module.lower(),
+            'id': utils.safe_encode(module.lower()),
             'text': module,
             'modules': [module.lower()],
         }
@@ -157,10 +120,6 @@ def init_module_groups(vault):
     vault['module_group_index'] = module_index
     vault['module_id_index'] = module_id_index
     vault['module_groups'] = module_groups
-
-
-def get_project_type_options():
-    return get_vault()['project_type_options']
 
 
 def get_release_options():
@@ -171,28 +130,13 @@ def get_release_options():
     return releases
 
 
-def is_project_type_valid(project_type):
-    if not project_type:
-        return False
-    project_type = project_type.lower()
-    if project_type == 'all':
-        return True
-    project_types = get_project_type_options()
-    if project_type in project_types:
-        return True
-    for p, g in six.iteritems(project_types):
-        if project_type in g:
-            return True
-    return False
-
-
 def get_user_from_runtime_storage(user_id):
     runtime_storage_inst = get_vault()['runtime_storage']
     return utils.load_user(runtime_storage_inst, user_id)
 
 
 def resolve_modules(module_ids):
-    module_id_index = get_vault()['module_id_index']
+    module_id_index = get_vault().get('module_id_index') or {}
     modules = set()
     for module_id in module_ids:
         if module_id in module_id_index:

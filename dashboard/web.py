@@ -242,7 +242,7 @@ def get_companies_json(records):
             continue
         if name.lower().find(query.lower()) >= 0:
             options.add(name)
-    result = [{'id': helpers.safe_encode(c.lower()), 'text': c}
+    result = [{'id': utils.safe_encode(c.lower()), 'text': c}
               for c in sorted(options)]
     return result
 
@@ -406,7 +406,7 @@ def get_metric_json(metric):
 @decorators.exception_handler()
 def get_project_types_json():
     return [{'id': m, 'text': m, 'items': list(t)}
-            for m, t in six.iteritems(vault.get_project_type_options())]
+            for m, t in vault.get_project_type_options().iteritems()]
 
 
 @app.route('/api/1.0/project_types/<project_type>')
@@ -414,7 +414,7 @@ def get_project_types_json():
 @decorators.exception_handler()
 def get_project_type_json(project_type):
     if project_type != 'all':
-        for pt, groups in six.iteritems(vault.get_project_type_options()):
+        for pt, groups in vault.get_project_type_options().iteritems():
             if (project_type == pt) or (project_type in groups):
                 break
         else:

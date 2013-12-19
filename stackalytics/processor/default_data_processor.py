@@ -66,14 +66,38 @@ def _retrieve_project_list_from_github(project_sources):
                     'branches': ['master'],
                     'module': repo.name,
                     'organization': organization,
-                    'project_type': project_source['project_type'],
-                    'project_group': project_source['project_group'],
                     'uri': repo.git_url,
                     'releases': []
                 }
                 repos.append(r)
                 LOG.debug('Project is added to default data: %s', r)
     return repos
+
+
+def _create_module_groups(project_sources, repos):
+    organizations = {}
+    for repo in repos:
+        ogn = repo['organization']
+        if ogn in organizations:
+            organizations[ogn].append(repo['module'])
+        else:
+            organizations[ogn] = [repo['module']]
+
+    ps_organizations = dict([(ps.get('organization'),
+                              ps.get('module_group_name') or
+                              ps.get('organization'))
+                             for ps in project_sources])
+
+    module_groups = []
+    for ogn, modules in organizations.iteritems():
+        if ogn in ps_organizations:
+            module_group_name = ps_organizations[ogn]
+        else:
+            module_group_name = ogn
+        module_groups.append({'module_group_name': module_group_name,
+                              'modules': modules})
+
+    return module_groups
 
 
 def _update_project_list(default_data):
@@ -84,6 +108,9 @@ def _update_project_list(default_data):
     if repos:
         default_data['repos'] += [r for r in repos
                                   if r['uri'] not in configured_repos]
+
+    default_data['module_groups'] += _create_module_groups(
+        default_data['project_sources'], default_data['repos'])
 
 
 def _store_users(runtime_storage_inst, users):

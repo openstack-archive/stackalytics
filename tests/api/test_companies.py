@@ -22,11 +22,9 @@ class TestAPICompanies(test_api.TestAPI):
 
     def test_get_companies(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                           {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
@@ -34,46 +32,49 @@ class TestAPICompanies(test_api.TestAPI):
                                       company_name=['NEC', 'IBM', 'NTT']),
                 test_api.make_records(record_type=['review'],
                                       primary_key=['0123456789', '9876543210'],
+                                      module=['glance'],
                                       company_name=['IBM']),
                 test_api.make_records(record_type=['mark'],
                                       review_id=['0123456789', '9876543210'],
+                                      module=['glance'],
                                       company_name=['IBM']),
                 test_api.make_records(record_type=['mark'],
                                       review_id=['0123456789'],
+                                      module=['glance'],
                                       company_name=['NEC'])):
 
-            response = self.app.get('/api/1.0/companies?metric=commits')
+            response = self.app.get('/api/1.0/companies?metric=commits&'
+                                    'module=glance')
             companies = json.loads(response.data)['companies']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'},
                               {'id': 'ntt', 'text': 'NTT'}], companies)
 
-            response = self.app.get('/api/1.0/companies?metric=marks')
+            response = self.app.get('/api/1.0/companies?metric=marks&'
+                                    'module=glance')
             companies = json.loads(response.data)['companies']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'}], companies)
 
             response = self.app.get('/api/1.0/companies?metric=commits&'
-                                    'company_name=ib')
+                                    'company_name=ib&module=glance')
             companies = json.loads(response.data)['companies']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'}], companies)
 
     def test_get_company(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'project_type': 'openstack',
-                            'organization': 'openstack',
+                           {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['glance'],
                                       company_name=['NEC', 'IBM', 'NTT'])):
 
-            response = self.app.get('/api/1.0/companies/nec')
+            response = self.app.get('/api/1.0/companies/nec?module=glance')
             company = json.loads(response.data)['company']
             self.assertEqual({'id': 'nec', 'text': 'NEC'}, company)
 
-            response = self.app.get('/api/1.0/companies/google')
+            response = self.app.get('/api/1.0/companies/google?module=glance')
             self.assertEqual(404, response.status_code)

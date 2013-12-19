@@ -12,7 +12,7 @@ Contribution into {{ module }} for the last {{ days }} days
             var table_id = "review_stats_table";
 
             $.ajax({
-                url: make_uri("/api/1.0/stats/engineers_extended?project_type=all&module={{ module }}&release=all&start_date={{ start_date }}"),
+                url: make_uri("/api/1.0/stats/engineers_extended?metric=marks&module={{ module }}&release=all&start_date={{ start_date }}"),
                 dataType: "json",
                 success: function (data) {
                     var tableData = data["stats"];
