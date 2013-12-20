@@ -2818,7 +2818,8 @@
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
                 "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com",
-                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com", "fuel-ci-bot@mirantis.com"]
+                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com", "fuel-ci-bot@mirantis.com",
+                "os-external-testing@mellanox.com", "tobbe@tail-f.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
@@ -5407,7 +5408,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-            "branch": "stable/havana",
+                    "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"
