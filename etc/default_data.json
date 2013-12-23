@@ -178,6 +178,17 @@
             "emails": ["abogott@wikimedia.org"]
         },
         {
+            "launchpad_id": "andy-edmonds",
+            "companies": [
+                {
+                    "company_name": "Zurich University of Applied Sciences",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andy Edmonds",
+            "emails": ["andy.edmonds@gmail.com"]
+        },
+        {
             "launchpad_id": "annegentle",
             "companies": [
                 {
@@ -4731,6 +4742,10 @@
         {
             "domains": ["zelin.io"],
             "company_name": "Zelin"
+        },
+        {
+            "domains": ["zhaw.ch"],
+            "company_name": "Zurich University of Applied Sciences"
         },
         {
             "domains": ["zinux.com"],
