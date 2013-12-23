@@ -32,10 +32,6 @@
 
     "companies": [
         {
-            "company_name": "Mirantis",
-            "domains": ["mirantis.com"]
-        },
-        {
             "company_name": "*independent",
             "domains": [""]
         },
@@ -46,6 +42,10 @@
         {
             "company_name": "Intel",
             "domains": ["intel.com"]
+        },
+        {
+            "company_name": "Mirantis",
+            "domains": ["mirantis.com"]
         },
         {
             "domains": ["robots"],
