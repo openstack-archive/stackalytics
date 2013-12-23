@@ -106,7 +106,8 @@ class RecordProcessor(object):
             LOG.debug('User with email %s not found', email)
             return None, None
 
-        LOG.debug('Email is mapped to launchpad user: %s', lp_profile['name'])
+        LOG.debug('Email %{email}s is mapped to launchpad user %{lp}s',
+                  {'email': email, 'lp': lp_profile['name']})
         return lp_profile['name'], lp_profile['display_name']
 
     def _get_lp_user_name(self, launchpad_id):

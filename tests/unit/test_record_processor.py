@@ -567,6 +567,51 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(user, utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe'))
 
+    def test_process_commit_then_review_with_different_email(self):
+        record_processor_inst = self.make_record_processor(
+            lp_info={'john_doe@gmail.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}},
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}])
+
+        list(record_processor_inst.process([
+            {'record_type': 'commit',
+             'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
+             'author_name': 'John Doe', 'author_email': 'john_doe@gmail.com',
+             'date': 1234567890, 'lines_added': 25, 'lines_deleted': 9,
+             'release_name': 'havana'},
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'Bill Smith', 'email': 'bill@smith.to',
+                       'username': 'bsmith'},
+             'createdOn': 1379404951, 'module': 'nova', 'branch': 'master',
+             'patchSets': [
+                 {'number': '1',
+                  'revision': '4d8984e92910c37b7d101c1ae8c8283a2e6f4a76',
+                  'ref': 'refs/changes/16/58516/1',
+                  'uploader': {'name': 'Bill Smith', 'email': 'bill@smith.to',
+                               'username': 'bsmith'},
+                  'createdOn': 1385470730,
+                  'approvals': [
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '1', 'grantedOn': 1385478464,
+                       'by': {'name': 'John Doe', 'email': 'john_doe@ibm.com',
+                              'username': 'john_doe'}}]}]}
+        ]))
+        user = {'seq': 1,
+                'core': [],
+                'user_id': 'john_doe',
+                'launchpad_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@ibm.com', 'john_doe@gmail.com'],
+                'companies': [{'company_name': 'IBM', 'end_date': 0}]}
+        self.assertEqual(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe'))
+        self.assertEqual(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+        self.assertEqual(user, utils.load_user(
+            record_processor_inst.runtime_storage_inst, 'john_doe@ibm.com'))
+
     def test_merge_users(self):
         record_processor_inst = self.make_record_processor(
             lp_user_name={
