@@ -872,9 +872,7 @@
                     "end_date": null
                 }
             ],
-            "emails": [
-                "dborodaenko@mirantis.com"
-            ]
+            "emails": ["dborodaenko@mirantis.com", "angdraug@gmail.com"]
         },
         {
             "launchpad_id": "debo",
