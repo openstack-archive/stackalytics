@@ -150,7 +150,7 @@ def update_records(runtime_storage_inst):
         process_mail_list(mail_list, runtime_storage_inst,
                           record_processor_inst)
 
-    record_processor_inst.finalize()
+    record_processor_inst.update()
 
 
 def apply_corrections(uri, runtime_storage_inst):

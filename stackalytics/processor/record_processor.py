@@ -34,8 +34,6 @@ class RecordProcessor(object):
 
         self.modules = None
 
-        self.updated_users = set()
-
     def _get_release(self, timestamp):
         release_index = bisect.bisect(self.releases_dates, timestamp)
         return self.releases[release_index]['release_name']
@@ -134,7 +132,6 @@ class RecordProcessor(object):
                 LOG.debug('Updating affiliation of user %s to %s',
                           user['user_id'], company_name)
                 uc[0]['company_name'] = company_name
-                self.updated_users.add(user['user_id'])
                 break
 
     def _get_user_exact_company(self, user):
@@ -149,7 +146,6 @@ class RecordProcessor(object):
             user[key] = user_a.get(key) or user_b.get(key) or user_c.get(key)
 
         if user['launchpad_id'] and user['user_id'] != user['launchpad_id']:
-            self.updated_users.add(user['user_id'])
             user['user_id'] = user['launchpad_id']
 
         emails = set([])
@@ -161,11 +157,6 @@ class RecordProcessor(object):
         user['core'] = list(core_in)
 
         self._update_user_affiliation(user)
-        if (self._get_user_exact_company(user_b) and
-                (self._get_user_exact_company(user)
-                 != self._get_user_exact_company(user_b))):
-            # affiliation changed automatically
-            self.updated_users.add(user_b['user_id'])
 
         if user_a.get('seq') and user_b.get('seq'):
             LOG.debug('Delete user: %s', user_b)
@@ -397,10 +388,23 @@ class RecordProcessor(object):
 
                 yield r
 
-    def update(self, record_iterator, release_index):
-        for record in record_iterator:
-            need_update = False
+    def _update_records_with_releases(self, release_index):
+        LOG.debug('Update records with releases')
 
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['primary_key'] in release_index:
+                release = release_index[record['primary_key']]
+            else:
+                release = self._get_release(record['date'])
+
+            if record['release'] != release:
+                record['release'] = release
+                yield record
+
+    def _update_records_with_user_info(self):
+        LOG.debug('Update user info in records')
+
+        for record in self.runtime_storage_inst.get_all_records():
             company_name = record['company_name']
             user_id = record['user_id']
             author_name = record['author_name']
@@ -410,42 +414,10 @@ class RecordProcessor(object):
             if ((record['company_name'] != company_name) or
                     (record['user_id'] != user_id) or
                     (record['author_name'] != author_name)):
-                need_update = True
-
-            if record['primary_key'] in release_index:
-                release = release_index[record['primary_key']]
-            else:
-                release = self._get_release(record['date'])
-
-            if record['release'] != release:
-                need_update = True
-                record['release'] = release
-
-            if need_update:
-                yield record
-
-    def _update_records_with_user_info(self):
-        LOG.debug('Update user info in records')
-
-        for record in self.runtime_storage_inst.get_all_records():
-            need_update = False
-
-            if record['user_id'] in self.updated_users:
-                user = utils.load_user(self.runtime_storage_inst,
-                                       record['user_id'])
-                user_company_name = user['companies'][0]['company_name']
-                if record['company_name'] != user_company_name:
-                    LOG.debug('Update record %s: company changed to: %s',
-                              record['primary_key'], user_company_name)
-                    record['company_name'] = user_company_name
-                    need_update = True
-                if record['user_id'] != user['user_id']:
-                    LOG.debug('Update record %s, user id changed to: %s',
-                              record['primary_key'], user['user_id'])
-                    record['user_id'] = user['user_id']
-                    need_update = True
-
-            if need_update:
+                LOG.debug('User info (%(id)s, %(name)s, %(company)s) has '
+                          'changed in record %(record)s',
+                          {'id': user_id, 'name': author_name,
+                           'company': company_name, 'record': record})
                 yield record
 
     def _update_commits_with_merge_date(self):
@@ -465,6 +437,9 @@ class RecordProcessor(object):
                         if old_date != change_id_to_date[change_id]:
                             record['date'] = change_id_to_date[change_id]
                             self._renew_record_date(record)
+                            LOG.debug('Date %(date)s has changed in record '
+                                      '%(record)s', {'date': old_date,
+                                                     'record': record})
                             yield record
 
     def _update_blueprints_with_mention_info(self):
@@ -616,9 +591,13 @@ class RecordProcessor(object):
                 if old_disagreement != disagreement:
                     yield mark
 
-    def finalize(self):
+    def update(self, release_index=None):
         self.runtime_storage_inst.set_records(
             self._update_records_with_user_info())
+
+        if release_index:
+            self.runtime_storage_inst.set_records(
+                self._update_records_with_releases(release_index))
 
         self.runtime_storage_inst.set_records(
             self._update_reviews_with_sequence_number())

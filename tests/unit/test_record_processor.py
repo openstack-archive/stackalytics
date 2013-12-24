@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import itertools
 
 import mock
@@ -629,7 +630,7 @@ class TestRecordProcessor(testtools.TestCase):
              'date_created': 1234567890},
             {'record_type': 'email',
              'message_id': '<message-id>',
-             'author_email': 'john_doe@ibm.com',
+             'author_email': 'john_doe@ibm.com', 'author_name': 'John Doe',
              'subject': 'hello, world!',
              'body': 'lorem ipsum',
              'date': 1234567890},
@@ -643,7 +644,7 @@ class TestRecordProcessor(testtools.TestCase):
              'module': 'nova', 'branch': 'master'}
         ]))
 
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         user = {'seq': 2,
                 'core': [],
@@ -713,7 +714,7 @@ class TestRecordProcessor(testtools.TestCase):
                   }]}
         ]))
 
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         user_1 = {'seq': 1, 'user_id': 'john_doe',
                   'launchpad_id': 'john_doe', 'user_name': 'John Doe',
@@ -751,20 +752,20 @@ class TestRecordProcessor(testtools.TestCase):
              'date_created': 1234567890},
             {'record_type': 'email',
              'message_id': '<message-id>',
-             'author_email': 'john_doe@gmail.com',
+             'author_email': 'john_doe@gmail.com', 'author_name': 'John Doe',
              'subject': 'hello, world!',
              'body': 'lorem ipsum',
              'date': 1234567890,
              'blueprint_id': ['mod:blueprint']},
             {'record_type': 'email',
              'message_id': '<another-message-id>',
-             'author_email': 'john_doe@gmail.com',
+             'author_email': 'john_doe@gmail.com', 'author_name': 'John Doe',
              'subject': 'hello, world!',
              'body': 'lorem ipsum',
              'date': 1234567895,
              'blueprint_id': ['mod:blueprint', 'mod:invalid']},
         ]))
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         bp1 = runtime_storage_inst.get_by_primary_key('bpd:mod:blueprint')
         self.assertEqual(2, bp1['mention_count'])
@@ -800,7 +801,7 @@ class TestRecordProcessor(testtools.TestCase):
              'createdOn': 5,
              'module': 'glance', 'branch': 'master'},
         ]))
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         review1 = runtime_storage_inst.get_by_primary_key('I111')
         self.assertEqual(2, review1['review_number'])
@@ -855,7 +856,7 @@ class TestRecordProcessor(testtools.TestCase):
                   ]
                   }]}
         ]))
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         marks = list([r for r in runtime_storage_inst.get_all_records()
                       if r['record_type'] == 'mark'])
@@ -888,7 +889,7 @@ class TestRecordProcessor(testtools.TestCase):
              'status': 'MERGED',
              'module': 'nova', 'branch': 'master'},
         ]))
-        record_processor_inst.finalize()
+        record_processor_inst.update()
 
         commit = runtime_storage_inst.get_by_primary_key('de7e8f2')
         self.assertEqual(1385490000, commit['date'])
@@ -920,19 +921,6 @@ class TestRecordProcessor(testtools.TestCase):
                'branches': set([u'master']),
                'change_id': u'I33f0f37b6460dc494abf2520dc109c9893ace9e6',
                'release': u'havana'}
-
-    def test_update_record_no_changes(self):
-        commit_generator = self._generate_record_commit()
-        release_index = {'0afdc64bfd041b03943ceda7849c4443940b6053': 'havana'}
-        record_processor_inst = self.make_record_processor(
-            users=[],
-            companies=[{'company_name': 'SuperCompany',
-                        'domains': ['super.no']}])
-
-        updated = list(record_processor_inst.update(commit_generator,
-                                                    release_index))
-
-        self.assertEqual(0, len(updated))
 
     # mail processing
 

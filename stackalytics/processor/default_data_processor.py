@@ -120,7 +120,7 @@ def _store_default_data(runtime_storage_inst, default_data):
 
 
 def _update_records(runtime_storage_inst, sources_root):
-    LOG.debug('Gather release index for all repos')
+    LOG.debug('Update existing records')
     release_index = {}
     for repo in utils.load_repos(runtime_storage_inst):
         vcs_inst = vcs.get_vcs(repo, sources_root)
@@ -128,18 +128,7 @@ def _update_records(runtime_storage_inst, sources_root):
 
     record_processor_inst = record_processor.RecordProcessor(
         runtime_storage_inst)
-
-    # need to iterate over full view of records and generate valid
-    # users profiles
-    LOG.debug('Iterate all records to create valid users profiles')
-    for record in runtime_storage_inst.get_all_records():
-        record_processor_inst.update_user(record)
-
-    # update records according to generated users profiles
-    LOG.debug('Update all records according to users profiles')
-    updated_records = record_processor_inst.update(
-        runtime_storage_inst.get_all_records(), release_index)
-    runtime_storage_inst.set_records(updated_records)
+    record_processor_inst.update(release_index)
 
 
 def process(runtime_storage_inst, default_data, sources_root, force_update):
