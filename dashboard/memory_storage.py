@@ -34,6 +34,7 @@ class CachedMemoryStorage(MemoryStorage):
         self.company_index = {}
         self.release_index = {}
         self.blueprint_id_index = {}
+        self.company_name_mapping = {}
 
         self.indexes = {
             'primary_key': self.primary_key_index,

@@ -67,16 +67,19 @@ def get_memory_storage():
 def init_releases(vault):
     runtime_storage_inst = vault['runtime_storage']
     releases = runtime_storage_inst.get_by_key('releases')
-    if not releases:
-        raise Exception('Releases are missing in runtime storage')
-    vault['start_date'] = releases[0]['end_date']
-    vault['end_date'] = releases[-1]['end_date']
-    start_date = releases[0]['end_date']
-    for r in releases[1:]:
-        r['start_date'] = start_date
-        start_date = r['end_date']
-    vault['releases'] = dict((r['release_name'].lower(), r)
-                             for r in releases[1:])
+    releases_map = {}
+
+    if releases:
+        vault['start_date'] = releases[0]['end_date']
+        vault['end_date'] = releases[-1]['end_date']
+        start_date = releases[0]['end_date']
+        for r in releases[1:]:
+            r['start_date'] = start_date
+            start_date = r['end_date']
+        releases_map = dict((r['release_name'].lower(), r)
+                            for r in releases[1:])
+
+    vault['releases'] = releases_map
 
 
 def init_project_types(vault):
@@ -160,7 +163,7 @@ def get_project_type_options():
 
 def get_release_options():
     runtime_storage_inst = get_vault()['runtime_storage']
-    releases = runtime_storage_inst.get_by_key('releases')[1:]
+    releases = (runtime_storage_inst.get_by_key('releases') or [None])[1:]
     releases.append({'release_name': 'all'})
     releases.reverse()
     return releases

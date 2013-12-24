@@ -53,7 +53,7 @@ if conf_file and os.path.isfile(conf_file):
     conf(default_config_files=[conf_file])
     app.config['DEBUG'] = cfg.CONF.debug
 else:
-    LOG.warn('Conf file is empty or not exist')
+    LOG.info('Conf file is empty or not exist')
 
 
 # Handlers ---------
