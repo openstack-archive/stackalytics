@@ -31,15 +31,9 @@ class TestAPI(testtools.TestCase):
 
 
 @contextlib.contextmanager
-def make_runtime_storage(data, record_type=None, **kwargs):
-
-    if record_type:
-        count = 0
-        for record in generate_records(record_type, **kwargs):
-            record['record_id'] = count
-            data['record:%s' % count] = record
-            count += 1
-        data['record:count'] = count
+def make_runtime_storage(data, *args):
+    for arg in args:
+        data.update(arg)
 
     runtime_storage_inst = TestStorage(data)
     setattr(web.app, 'stackalytics_vault', None)
@@ -76,8 +70,8 @@ class TestStorage(runtime_storage.RuntimeStorage):
                 yield record
 
 
-def generate_commits(**kwargs):
-    for values in product(**kwargs):
+def _generate_commits(**kwargs):
+    for values in _product(**kwargs):
         commit = {
             'commit_id': str(uuid.uuid4()),
             'lines_added': 9, 'module': 'nova', 'record_type': 'commit',
@@ -99,13 +93,25 @@ def generate_commits(**kwargs):
         yield commit
 
 
-def generate_records(record_types, **kwargs):
+def _generate_records(**kwargs):
+    record_types = kwargs.get('record_type', [])
     if 'commit' in record_types:
-        for commit in generate_commits(**kwargs):
+        for commit in _generate_commits(**kwargs):
             yield commit
 
 
-def product(**kwargs):
+def make_records(**kwargs):
+    data = {}
+    count = 0
+    for record in _generate_records(**kwargs):
+        record['record_id'] = count
+        data['record:%s' % count] = record
+        count += 1
+    data['record:count'] = count
+    return data
+
+
+def _product(**kwargs):
     position_to_key = {}
     values = []
     for key, value in kwargs.iteritems():

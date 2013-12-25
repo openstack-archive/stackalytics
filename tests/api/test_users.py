@@ -30,8 +30,8 @@ class TestAPIUsers(test_api.TestAPI):
                 {'repos': [{'module': 'nova', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}]},
-                ['commit'],
-                user_id=['john_doe', 'bill_smith']):
+                test_api.make_records(record_type=['commit'],
+                                      user_id=['john_doe', 'bill_smith'])):
             response = self.app.get('/api/1.0/users')
             users = json.loads(response.data)['users']
             self.assertEqual(2, len(users))
@@ -43,8 +43,8 @@ class TestAPIUsers(test_api.TestAPI):
                 {'repos': [{'module': 'nova', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}]},
-                ['commit'],
-                user_name=['John Doe', 'Bill Smith']):
+                test_api.make_records(record_type=['commit'],
+                                      user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users?query=doe')
             users = json.loads(response.data)['users']
             self.assertEqual(1, len(users))
