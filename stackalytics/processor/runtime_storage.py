@@ -51,6 +51,9 @@ class RuntimeStorage(object):
     def active_pids(self, pids):
         pass
 
+    def get_all_records(self):
+        pass
+
 
 class MemcachedStorage(RuntimeStorage):
     def __init__(self, uri):
