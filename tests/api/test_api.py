@@ -31,9 +31,8 @@ class TestAPI(testtools.TestCase):
 
 
 @contextlib.contextmanager
-def make_runtime_storage(data, *args):
-    for arg in args:
-        data.update(arg)
+def make_runtime_storage(data, *generators):
+    _add_generated_records(data, *generators)
 
     runtime_storage_inst = TestStorage(data)
     setattr(web.app, 'stackalytics_vault', None)
@@ -45,6 +44,19 @@ def make_runtime_storage(data, *args):
             yield runtime_storage_inst
         finally:
             pass
+
+
+def make_records(**kwargs):
+    def generate_records():
+        record_types = kwargs.get('record_type', [])
+        if 'commit' in record_types:
+            for commit in _generate_commits(algebraic_product(**kwargs)):
+                yield commit
+        elif 'mark' in record_types:
+            for mark in _generate_marks(algebraic_product(**kwargs)):
+                yield mark
+
+    return generate_records
 
 
 class TestStorage(runtime_storage.RuntimeStorage):
@@ -70,8 +82,8 @@ class TestStorage(runtime_storage.RuntimeStorage):
                 yield record
 
 
-def _generate_commits(**kwargs):
-    for values in _product(**kwargs):
+def _generate_commits(values_list):
+    for values in values_list:
         commit = {
             'commit_id': str(uuid.uuid4()),
             'lines_added': 9, 'module': 'nova', 'record_type': 'commit',
@@ -93,25 +105,40 @@ def _generate_commits(**kwargs):
         yield commit
 
 
-def _generate_records(**kwargs):
-    record_types = kwargs.get('record_type', [])
-    if 'commit' in record_types:
-        for commit in _generate_commits(**kwargs):
-            yield commit
+def _generate_marks(values_list):
+    for values in values_list:
+        mark = {
+            'record_type': 'mark',
+            'id': str(uuid.uuid4()),
+            'module': 'nova',
+            'message': str(uuid.uuid4()),
+            'subject': 'Fixed affiliation of Edgar and Sumit',
+            'user_id': 'john_doe',
+            'primary_key': str(uuid.uuid4()),
+            'author_email': 'john_doe@ibm.com', 'company_name': 'IBM',
+            'week': 2275,
+            'blueprint_id': None, 'bug_id': '1212953',
+            'author_name': 'John Doe',
+            'date': 1376737923, 'launchpad_id': 'john_doe',
+            'branches': set(['master']),
+            'change_id': 'I33f0f37b6460dc494abf2520dc109c9893ace9e6',
+            'release': 'icehouse'
+        }
+        mark.update(values)
+        yield mark
 
 
-def make_records(**kwargs):
-    data = {}
+def _add_generated_records(data, *generators):
     count = 0
-    for record in _generate_records(**kwargs):
-        record['record_id'] = count
-        data['record:%s' % count] = record
-        count += 1
+    for gen in generators:
+        for record in gen():
+            record['record_id'] = count
+            data['record:%s' % count] = record
+            count += 1
     data['record:count'] = count
-    return data
 
 
-def _product(**kwargs):
+def algebraic_product(**kwargs):
     position_to_key = {}
     values = []
     for key, value in kwargs.iteritems():
