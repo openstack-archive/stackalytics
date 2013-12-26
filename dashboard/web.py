@@ -85,10 +85,7 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
         metric_filter(result, record, param_id)
         result[record[param_id]]['name'] = record[param_title]
 
-    if not finalize_handler:
-        response = [r for r in result.values() if r['metric']]
-    else:
-        response = result.values()
+    response = [r for r in result.values() if r['metric']]
     response.sort(key=lambda x: x['metric'], reverse=True)
     response = [item for item in map(finalize_handler, response) if item]
     utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
@@ -117,14 +114,23 @@ def get_modules(records, metric_filter, finalize_handler):
                                  'module')
 
 
+def is_engineer_core_in_modules(user, modules):
+    is_core = False
+    for (module, branch) in user['core']:
+        if module in modules:
+            is_core = branch
+            if branch == 'master':  # we need master, but stables are ok
+                break
+    return is_core
+
+
 @app.route('/api/1.0/stats/engineers')
 @decorators.jsonify('stats')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='metric')
+@decorators.record_filter()
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler):
 
-    exclude = flask.request.args.get('exclude')
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = vault.resolve_modules(modules_names)
 
@@ -132,50 +138,61 @@ def get_engineers(records, metric_filter, finalize_handler):
         if finalize_handler:
             record = finalize_handler(record)
         user = vault.get_user_from_runtime_storage(record['id'])
-        record['company'] = user['companies'][-1]['company_name']
-        record['review'] = record.get('review', 0)
-        record['commit'] = record.get('commit', 0)
-        record['email'] = record.get('email', 0)
-        record['patch_count'] = record.get('patch_count', 0)
+        record['core'] = is_engineer_core_in_modules(user, modules)
+        return record
 
-        if not (record['metric'] or record['review'] or record['commit'] or
-                record['email'] or record['patch_count']):
-            return
-
-        is_core = False
-        for (module, branch) in user['core']:
-            if module in modules:
-                is_core = branch
-                if branch == 'master':  # we need master, but stables are ok
-                    break
-
-        if exclude:
-            if ((exclude == 'non-core' and is_core) or
-                    (exclude == 'core' and not is_core)):
-                return record
-        else:
-            record['core'] = is_core
-            return record
-
-    def record_processing(result, record, param_id):
-        record_type = record['record_type']
-
-        result_row = result[record[param_id]]
-        if record_type == 'mark':
-            metric_filter(result, record, param_id)
-        elif record_type == 'commit':
-            result_row['commit'] = result_row.get('commit', 0) + 1
-        elif record_type == 'email':
-            result_row['email'] = result_row.get('email', 0) + 1
-        elif record_type == 'review':
-            result_row['review'] = result_row.get('review', 0) + 1
-            result_row['patch_count'] = (result_row.get('patch_count', 0) +
-                                         record['patch_count'])
-
-    return _get_aggregated_stats(records, record_processing,
+    return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_user_ids(),
                                  'user_id', 'author_name',
                                  finalize_handler=postprocessing)
+
+
+@app.route('/api/1.0/stats/engineers_extended')
+@decorators.jsonify('stats')
+@decorators.exception_handler()
+@decorators.record_filter(ignore='metric')
+def get_engineers_extended(records):
+    modules_names = parameters.get_parameter({}, 'module', 'modules')
+    modules = vault.resolve_modules(modules_names)
+
+    def postprocessing(record):
+        record = decorators.mark_finalize(record)
+
+        if not (record['mark'] or record['review'] or record['commit'] or
+                record['email'] or record['patch_count']):
+            return
+
+        user = vault.get_user_from_runtime_storage(record['id'])
+        record['company'] = user['companies'][-1]['company_name']
+        record['core'] = is_engineer_core_in_modules(user, modules)
+        return record
+
+    def record_processing(result, record, param_id):
+        result_row = result[record[param_id]]
+        record_type = record['record_type']
+        result_row[record_type] = result_row.get(record_type, 0) + 1
+        if record_type == 'mark':
+            decorators.mark_filter(result, record, param_id)
+            result_row['metric'] = result_row['mark']
+        if record_type == 'review':
+            result_row['patch_count'] = (result_row.get('patch_count', 0) +
+                                         record['patch_count'])
+
+    result = dict((user_id, {'id': user_id, 'mark': 0, 'review': 0,
+                             'commit': 0, 'email': 0, 'patch_count': 0,
+                             'metric': 0})
+                  for user_id in vault.get_memory_storage().get_user_ids())
+
+    for record in records:
+        record_processing(result, record, 'user_id')
+        result[record['user_id']]['name'] = record['author_name']
+
+    response = result.values()
+    response.sort(key=lambda x: x['mark'], reverse=True)
+    response = [item for item in map(postprocessing, response) if item]
+    utils.add_index(response)
+
+    return response
 
 
 @app.route('/api/1.0/stats/distinct_engineers')

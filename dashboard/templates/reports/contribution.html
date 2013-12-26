@@ -7,12 +7,12 @@ Contribution into {{ module }} for the last {{ days }} days
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
+            var table_column_names = ["index", "link", "mark", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
                                       "review_ratio", "commit", "email"];
             var table_id = "review_stats_table";
 
             $.ajax({
-                url: make_uri("/api/1.0/stats/engineers?metric=marks&project_type=all&module={{ module }}&release=all&start_date={{ start_date }}"),
+                url: make_uri("/api/1.0/stats/engineers_extended?project_type=all&module={{ module }}&release=all&start_date={{ start_date }}"),
                 dataType: "json",
                 success: function (data) {
                     var tableData = data["stats"];
@@ -21,7 +21,7 @@ Contribution into {{ module }} for the last {{ days }} days
                     var sort_by_column = 0;
                     for (var i = 0; i < table_column_names.length; i++) {
                         tableColumns.push({"mData": table_column_names[i]});
-                        if (table_column_names[i] == "metric") {
+                        if (table_column_names[i] == "mark") {
                             sort_by_column = i;
                         }
                     }
@@ -49,16 +49,16 @@ Contribution into {{ module }} for the last {{ days }} days
 
                         if (tableData[i].core == "master") {
                             tableData[i].link += "&nbsp;&#x273B;";
-                            summary.core_marks += tableData[i].metric;
+                            summary.core_marks += tableData[i].mark;
                             summary.core_reviewers ++;
                         } else if (tableData[i].core) {
                             tableData[i].link += "&nbsp;&#x272C; <small><i>" + tableData[i].core + "</i></small>";
                         }
-                        if (tableData[i].metric > 0) {
+                        if (tableData[i].mark > 0) {
                             summary.reviewers ++;
                         }
                         tableData[i].review_ratio = tableData[i].review + " / " + tableData[i].patch_count;
-                        summary.marks += tableData[i].metric;
+                        summary.marks += tableData[i].mark;
                         summary.commits += tableData[i].commit;
                         summary.reviews += tableData[i].review;
                         summary.patch_count += tableData[i].patch_count;

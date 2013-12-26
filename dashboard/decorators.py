@@ -145,59 +145,62 @@ def record_filter(ignore=None, use_default=True):
     return decorator
 
 
+def incremental_filter(result, record, param_id):
+    result[record[param_id]]['metric'] += 1
+
+
+def loc_filter(result, record, param_id):
+    result[record[param_id]]['metric'] += record['loc']
+
+
+def mark_filter(result, record, param_id):
+    result_by_param = result[record[param_id]]
+    if record['type'] == 'APRV':
+        value = 'A'
+    else:
+        value = record['value']
+        result_by_param['metric'] += 1
+    result_by_param[value] = result_by_param.get(value, 0) + 1
+
+    if record.get('x'):
+        result_by_param['disagreements'] = (
+            result_by_param.get('disagreements', 0) + 1)
+
+
+def mark_finalize(record):
+    new_record = record.copy()
+
+    positive = 0
+    mark_distribution = []
+    for key in [-2, -1, 1, 2, 'A']:
+        if key in record:
+            if key in [1, 2]:
+                positive += record[key]
+            mark_distribution.append(str(record[key]))
+        else:
+            mark_distribution.append('0')
+            new_record[key] = 0
+
+    new_record['disagreements'] = record.get('disagreements', 0)
+    if record['metric']:
+        positive_ratio = '%.1f%%' % (
+            (positive * 100.0) / record['metric'])
+        new_record['disagreement_ratio'] = '%.1f%%' % (
+            (record.get('disagreements', 0) * 100.0) / record['metric'])
+    else:
+        positive_ratio = helpers.INFINITY_HTML
+        new_record['disagreement_ratio'] = helpers.INFINITY_HTML
+    new_record['mark_ratio'] = (
+        '|'.join(mark_distribution) + ' (' + positive_ratio + ')')
+    new_record['positive_ratio'] = positive_ratio
+
+    return new_record
+
+
 def aggregate_filter():
     def decorator(f):
         @functools.wraps(f)
         def aggregate_filter_decorated_function(*args, **kwargs):
-
-            def incremental_filter(result, record, param_id):
-                result[record[param_id]]['metric'] += 1
-
-            def loc_filter(result, record, param_id):
-                result[record[param_id]]['metric'] += record['loc']
-
-            def mark_filter(result, record, param_id):
-                result_by_param = result[record[param_id]]
-                if record['type'] == 'APRV':
-                    value = 'A'
-                else:
-                    value = record['value']
-                    result_by_param['metric'] += 1
-                result_by_param[value] = result_by_param.get(value, 0) + 1
-
-                if record.get('x'):
-                    result_by_param['disagreements'] = (
-                        result_by_param.get('disagreements', 0) + 1)
-
-            def mark_finalize(record):
-                new_record = record.copy()
-
-                positive = 0
-                mark_distribution = []
-                for key in [-2, -1, 1, 2, 'A']:
-                    if key in record:
-                        if key in [1, 2]:
-                            positive += record[key]
-                        mark_distribution.append(str(record[key]))
-                    else:
-                        mark_distribution.append('0')
-                        new_record[key] = 0
-
-                new_record['disagreements'] = record.get('disagreements', 0)
-                if record['metric']:
-                    positive_ratio = '%.1f%%' % (
-                        (positive * 100.0) / record['metric'])
-                    new_record['disagreement_ratio'] = '%.1f%%' % (
-                        (record.get('disagreements', 0) * 100.0) /
-                        record['metric'])
-                else:
-                    positive_ratio = helpers.INFINITY_HTML
-                    new_record['disagreement_ratio'] = helpers.INFINITY_HTML
-                new_record['mark_ratio'] = ('|'.join(mark_distribution) +
-                                            ' (' + positive_ratio + ')')
-                new_record['positive_ratio'] = positive_ratio
-
-                return new_record
 
             metric_param = (flask.request.args.get('metric') or
                             parameters.get_default('metric'))

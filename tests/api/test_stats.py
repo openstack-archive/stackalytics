@@ -41,3 +41,82 @@ class TestAPIStats(test_api.TestAPI):
             self.assertEqual('glance', stats[0]['id'])
             self.assertEqual(60, stats[1]['metric'])
             self.assertEqual('nova', stats[1]['id'])
+
+    def test_get_engineers(self):
+        with test_api.make_runtime_storage(
+                {'repos': [{'module': 'nova', 'project_type': 'openstack',
+                            'organization': 'openstack',
+                            'uri': 'git://github.com/openstack/nova.git'},
+                           {'module': 'glance', 'project_type': 'openstack',
+                            'organization': 'openstack',
+                            'uri': 'git://github.com/openstack/glance.git'}],
+                 'user:john_doe': {
+                     'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
+                     'companies': [{'company_name': 'NEC', 'end_date': 0}],
+                     'emails': ['john_doe@gmail.com'], 'core': []},
+                 'user:bill': {
+                     'seq': 1, 'user_id': 'bill', 'user_name': 'Bill Smith',
+                     'companies': [{'company_name': 'IBM', 'end_date': 0}],
+                     'emails': ['bill_smith@gmail.com'], 'core': []}},
+                test_api.make_records(record_type=['commit'],
+                                      loc=[10, 20, 30],
+                                      module=['nova'],
+                                      user_id=['john_doe']),
+                test_api.make_records(record_type=['commit'],
+                                      loc=[100, 200, 300],
+                                      module=['glance'],
+                                      user_id=['john_doe']),
+                test_api.make_records(record_type=['review'],
+                                      primary_key=['0123456789'],
+                                      module=['glance']),
+                test_api.make_records(record_type=['mark'],
+                                      review_id=['0123456789'],
+                                      module=['glance'],
+                                      user_id=['john_doe', 'bill'])):
+            response = self.app.get('/api/1.0/stats/engineers?metric=loc')
+            stats = json.loads(response.data)['stats']
+            self.assertEqual(1, len(stats))
+            self.assertEqual(660, stats[0]['metric'])
+
+    def test_get_engineers_extended(self):
+        with test_api.make_runtime_storage(
+                {'repos': [{'module': 'nova', 'project_type': 'openstack',
+                            'organization': 'openstack',
+                            'uri': 'git://github.com/openstack/nova.git'},
+                           {'module': 'glance', 'project_type': 'openstack',
+                            'organization': 'openstack',
+                            'uri': 'git://github.com/openstack/glance.git'}],
+                 'user:john_doe': {
+                     'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
+                     'companies': [{'company_name': 'NEC', 'end_date': 0}],
+                     'emails': ['john_doe@gmail.com'], 'core': []},
+                 'user:smith': {
+                     'seq': 1, 'user_id': 'smith', 'user_name': 'Bill Smith',
+                     'companies': [{'company_name': 'IBM', 'end_date': 0}],
+                     'emails': ['bill_smith@gmail.com'], 'core': []}},
+                test_api.make_records(record_type=['commit'],
+                                      loc=[10, 20, 30],
+                                      module=['nova'],
+                                      user_id=['john_doe']),
+                test_api.make_records(record_type=['review'],
+                                      primary_key=['0123456789', '9876543210'],
+                                      module=['glance']),
+                test_api.make_records(record_type=['mark'],
+                                      review_id=['0123456789', '9876543210'],
+                                      module=['glance'],
+                                      value=[1],
+                                      type=['CRVW'],
+                                      author_name=['John Doe'],
+                                      user_id=['john_doe']),
+                test_api.make_records(record_type=['mark'],
+                                      review_id=['0123456789'],
+                                      module=['glance'],
+                                      author_name=['Bill Smith'],
+                                      user_id=['smith'])):
+            response = self.app.get('/api/1.0/stats/engineers_extended')
+            stats = json.loads(response.data)['stats']
+            self.assertEqual(2, len(stats))
+            self.assertEqual(2, stats[0]['mark'])
+            self.assertEqual('john_doe', stats[0]['id'])
+            self.assertEqual(3, stats[0]['commit'])
+            self.assertEqual(2, stats[0]['1'])
