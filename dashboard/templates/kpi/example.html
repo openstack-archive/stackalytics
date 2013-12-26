@@ -13,7 +13,7 @@
              goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", project_type: "openstack"},
                      "engineers", "boris-42", 5, "Be in top 5 by reviews");
              goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", project_type: "openstack", module: "glance", exclude: "core"},
-                     "engineers", "boris-42", 3, "Be in top 3 among non-core reviewers");
+                     "engineers", "boris-42", 5, "Be in top 5 among non-core reviewers", function(data_line) { return !data_line.core });
 
              goal_percentage_in_top_less_than("kpi_container_percentage",
                      {release: "all", metric: "commits", project_type: "stackforge", module: "stackalytics"},

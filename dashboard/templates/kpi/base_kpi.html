@@ -39,19 +39,28 @@
 
     <script type="text/javascript">
 
-        function process_stats(container_id, url, query_options, item_id, goal, comparator) {
+        function process_stats(container_id, url, query_options, item_id, goal, comparator, data_filter) {
             $.ajax({
                 url: make_uri(url, query_options),
                 dataType: "jsonp",
                 success: function (data) {
                     data = data["stats"];
+                    var position = -1;
                     var index = -1;
                     var sum = 0;
 
                     for (var i = 0; i < data.length; i++) {
+                        if (data_filter) {
+                            if (!data_filter(data[i])) {
+                                continue;
+                            }
+                        }
                         sum += data[i].metric;
+                        if (data[i].index) {
+                            index ++;
+                        }
                         if (data[i].id == item_id) {
-                            index = i;
+                            position = index;
                         }
                     }
 
@@ -60,11 +69,11 @@
                         goal: goal
                     };
 
-                    if (index < 0) {
+                    if (position < 0) {
                         result.info = "Item " + item_id + " is not found in the stats";
                     }
                     else {
-                        var comparison_result = comparator(data[index], sum);
+                        var comparison_result = comparator(data[position], sum);
                         result.mark = comparison_result.mark;
                         result.info = comparison_result.info;
                     }
@@ -73,7 +82,7 @@
             });
         }
 
-        function goal_position_in_top(container_id, query_options, item_type, item_id, position, goal) {
+        function goal_position_in_top(container_id, query_options, item_type, item_id, position, goal, data_filter) {
             $(document).ready(function () {
                 process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
                         function(item, sum) {
@@ -84,7 +93,7 @@
                                             "Position " + item.index + " is worse than the goal position " + position,
                                 value: item.index
                             }
-                        });
+                        }, data_filter);
             });
         }
 
