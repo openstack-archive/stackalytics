@@ -46,7 +46,7 @@
                 success: function (data) {
                     data = data["stats"];
                     var position = -1;
-                    var index = -1;
+                    var index = 0;
                     var sum = 0;
 
                     for (var i = 0; i < data.length; i++) {
@@ -56,11 +56,9 @@
                             }
                         }
                         sum += data[i].metric;
-                        if (data[i].index) {
-                            index ++;
-                        }
+                        data[i].index = ++ index;  // re-index
                         if (data[i].id == item_id) {
-                            position = index;
+                            position = i;
                         }
                     }
 
@@ -105,7 +103,7 @@
                             return {
                                 mark: mark,
                                 info: mark? "Achieved metric " + item.metric:
-                                            "Position " + item.metric + " is worse than the goal in " + metric,
+                                            "Metric " + item.metric + " is worse than the goal in " + metric,
                                 value: item.index
                             }
                         });
