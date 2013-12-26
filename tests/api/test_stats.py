@@ -30,14 +30,14 @@ class TestAPIStats(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/glance.git'}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
-                                      module=['nova', 'glance']),
+                                      module=['nova']),
                 test_api.make_records(record_type=['commit'],
                                       loc=[100, 200, 300],
                                       module=['glance'])):
             response = self.app.get('/api/1.0/stats/modules?metric=loc')
             stats = json.loads(response.data)['stats']
             self.assertEqual(2, len(stats))
-            self.assertEqual(660, stats[0]['metric'])
+            self.assertEqual(600, stats[0]['metric'])
             self.assertEqual('glance', stats[0]['id'])
             self.assertEqual(60, stats[1]['metric'])
             self.assertEqual('nova', stats[1]['id'])

@@ -47,14 +47,19 @@ def make_runtime_storage(data, *generators):
 
 
 def make_records(**kwargs):
+    GENERATORS = {
+        'commit': _generate_commits,
+        'mark': _generate_marks,
+        'review': _generate_review,
+    }
+
     def generate_records():
-        record_types = kwargs.get('record_type', [])
-        if 'commit' in record_types:
-            for commit in _generate_commits(algebraic_product(**kwargs)):
-                yield commit
-        elif 'mark' in record_types:
-            for mark in _generate_marks(algebraic_product(**kwargs)):
-                yield mark
+        for record_type in kwargs.get('record_type', []):
+            if record_type in GENERATORS.keys():
+                for values in algebraic_product(**kwargs):
+                    record = GENERATORS[record_type]().next()
+                    record.update(values)
+                    yield record
 
     return generate_records
 
@@ -82,8 +87,7 @@ class TestStorage(runtime_storage.RuntimeStorage):
                 yield record
 
 
-def _generate_commits(values_list):
-    for values in values_list:
+def _generate_commits():
         commit = {
             'commit_id': str(uuid.uuid4()),
             'lines_added': 9, 'module': 'nova', 'record_type': 'commit',
@@ -101,31 +105,40 @@ def _generate_commits(values_list):
             'change_id': u'I33f0f37b6460dc494abf2520dc109c9893ace9e6',
             'release': u'icehouse'
         }
-        commit.update(values)
         yield commit
 
 
-def _generate_marks(values_list):
-    for values in values_list:
+def _generate_marks():
         mark = {
-            'record_type': 'mark',
-            'id': str(uuid.uuid4()),
-            'module': 'nova',
-            'message': str(uuid.uuid4()),
-            'subject': 'Fixed affiliation of Edgar and Sumit',
-            'user_id': 'john_doe',
-            'primary_key': str(uuid.uuid4()),
-            'author_email': 'john_doe@ibm.com', 'company_name': 'IBM',
-            'week': 2275,
-            'blueprint_id': None, 'bug_id': '1212953',
-            'author_name': 'John Doe',
-            'date': 1376737923, 'launchpad_id': 'john_doe',
-            'branches': set(['master']),
-            'change_id': 'I33f0f37b6460dc494abf2520dc109c9893ace9e6',
-            'release': 'icehouse'
-        }
-        mark.update(values)
+            'launchpad_id': 'john_doe', 'week': 2294, 'user_id': 'john_doe',
+            'description': 'Approved', 'author_name': 'John Doe',
+            'author_email': 'john_doe@gmail.com',
+            'primary_key': str(uuid.uuid4()) + 'APRV',
+            'module': 'glance', 'patch': 2, 'record_type': 'mark',
+            'company_name': '*independent', 'branch': 'master',
+            'date': 1387860458, 'record_id': 37184, 'release': 'icehouse',
+            'value': 1, 'type': 'APRV',
+            'review_id': str(uuid.uuid4())}
         yield mark
+
+
+def _generate_review():
+    yield {
+        'status': 'NEW', 'review_number': 6, 'number': '60721',
+        'module': 'glance', 'topic': 'bug/1258999', 'record_type': 'review',
+        'value': -2, 'open': True,
+        'id': str(uuid.uuid4()),
+        'subject': 'Adding missing copy_from policy from policy.json',
+        'user_id': 'john_doe',
+        'primary_key': 'Ibc0d1fa7626629c28c514514a985a6b89db2ac69',
+        'author_email': 'john_doe@gmail.com', 'company_name': '*independent',
+        'branch': 'master',
+        'launchpad_id': 'john_doe', 'lastUpdated': 1387865203,
+        'author_name': 'John Doe', 'date': 1386547707,
+        'url': 'https://review.openstack.org/60721', 'patch_count': 2,
+        'sortKey': '0029f92e0000ed31', 'project': 'openstack/glance',
+        'week': 2292, 'release': 'icehouse', 'updated_on': 1387865147
+    }
 
 
 def _add_generated_records(data, *generators):
