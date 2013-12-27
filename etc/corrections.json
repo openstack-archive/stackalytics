@@ -1097,6 +1097,310 @@
             "primary_key": "ae2c5d263d01160bcea355d2070ad9d7e26a1e22",
             "module": "devstack-gate",
             "subject": "Remove node management from devstack-gate"
+        },
+        {
+            "correction_comment": "Reset LOC to 250",
+            "loc": 250,
+            "change_id": ["I7b0d47a8802dcf6e6c052f137b5f9494b1b99501"],
+            "primary_key": "4915ebb1a7f2ac456977f0f5422a59d310ee6382",
+            "module": "elastic-recheck",
+            "subject": "add SearchResultSet and Hit objects"
+        },
+        {
+            "correction_comment": "Reset LOC to 476",
+            "loc": 476,
+            "change_id": ["Ibc257e98726938a577da4300b389fa13ff34d8a0"],
+            "primary_key": "faffd3512d3d1ecd07aa4f9c1f5d5a1e9d10a0d3",
+            "module": "barbican",
+            "subject": "Replace Celery with Oslo messaging for asynchronous queuing."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "b7027853d13ef5e5ff7695170f7dd2bc6b695967",
+            "module": "refstack",
+            "subject": "moved jquery and bootstrap locally rather than cdn"
+        },
+        {
+            "correction_comment": "Reset LOC to 4",
+            "loc": 4,
+            "change_id": ["I707aeb96aa7c995f9699c87b42a44f7f0fbc68cd"],
+            "primary_key": "a60d49ab46189a75493f3fde62d38388f7fb6842",
+            "module": "libra",
+            "subject": "[ADMIN_API] Adding oslo.notify dependencies"
+        },
+        {
+            "correction_comment": "Reset LOC to 380",
+            "loc": 380,
+            "change_id": ["I9718489335e24cb24733d4c4fc2a966e490014d3"],
+            "primary_key": "3db98ab1fd1596a544f84c4ad0a6314383ed6629",
+            "module": "designate",
+            "subject": "Add SLDs that act like TLDs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "130e6cbdc89edc4e7a6b5471b1f17b4de03444b7",
+            "module": "openstackid",
+            "subject": "[smarcet] - Refs #4586, #4583, #4580"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "63aae9b805bcd0ae6a9db1fceb51235113215206",
+            "module": "openstackid",
+            "subject": "[smarcet] - Refs # 4577 - Signature verification Request Handle Dumb Mode"
+        },
+        {
+            "correction_comment": "Reset LOC to 388",
+            "loc": 388,
+            "change_id": ["Iddb44083d2eeb27b066880609f13d7ded4af8372"],
+            "primary_key": "2b88dfbc33a51e9d42def2922f06d1c434c600b7",
+            "module": "trove-integration",
+            "subject": "Moving mgmt host tests."
+        },
+        {
+            "correction_comment": "Reset LOC to 2242",
+            "loc": 2242,
+            "change_id": ["I59e5026878fdacfc41d7938c0f5736dc3d7a1dad"],
+            "primary_key": "cf63982eaf90d3f0824029f19b6cd59e72333fd3",
+            "module": "netconn-api",
+            "subject": "Update to point to wadls in the api-site repo to correct neutron:type error"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "7c013ea912f80e948104dbfcf79582f2711017e6",
+            "module": "rubick",
+            "subject": "Updated schema code & schema generator"
+        },
+        {
+            "correction_comment": "Reset LOC to 800",
+            "loc": 800,
+            "change_id": ["I2ff7520a423408fb27dcd40fb030c020bc77acdf"],
+            "primary_key": "84061ce3b961d069f11d22d6a46ed258aa190acb",
+            "module": "api-site",
+            "subject": "Update orchestration wadl, remove unnecessary files, modify referenced files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ibb6dfa3868c4653ce7b8a2a15b8a7a8059c3cd18"],
+            "primary_key": "c9c2b026442db31095450462a58140aebf7ad9d1",
+            "module": "groups",
+            "subject": "Openstack theme - remove duplicated theme from groups directory"
+        },
+        {
+            "correction_comment": "Reset LOC to 143",
+            "loc": 143,
+            "change_id": ["I4ee64dcf625e20bca1f8dd51ba542d93f3cbd85c"],
+            "primary_key": "5a4078eb5b4c6cdbc633c05b79265186675497a6",
+            "module": "fuel-web",
+            "subject": "Grunt with Bower package manager"
+        },
+        {
+            "correction_comment": "Reset LOC to 400",
+            "loc": 400,
+            "change_id": ["I1d3b2af7bcbc4281e58b4325966e3995369906c3"],
+            "primary_key": "2da21774e60b40d340b1e2f1074385f4078e063f",
+            "module": "fuel-web",
+            "subject": "Basic localization"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I6622332707c5a53ab56fa2796bef73be9e8c8c49"],
+            "primary_key": "b20519cb174d84a0db64171f4c96b542289c04da",
+            "module": "marconi",
+            "subject": "Remove proxy code"
+        },
+        {
+            "correction_comment": "Reset LOC to 12",
+            "loc": 12,
+            "change_id": ["I77e75e7cdd5fd3426b9b981c4e0df5d30ef7b196"],
+            "primary_key": "7711a78ac4365a04d49a69ca5238b7c2fc045f15",
+            "module": "horizon",
+            "subject": "JSHint integration"
+        },
+        {
+            "correction_comment": "Reset LOC to 22",
+            "loc": 22,
+            "change_id": ["I02da3e095848fae83c3a75ea90dcf0e6d3e6b772"],
+            "primary_key": "3ece82f646e50e02f83456490eef7c63b99a8c15",
+            "module": "horizon",
+            "subject": "AngularJS + base horizon module"
+        },
+        {
+            "correction_comment": "Reset LOC to 300",
+            "loc": 300,
+            "change_id": ["I93f1a91989905fce27dfd72af2f941f94f3cec15"],
+            "primary_key": "2e316cc048cb6aea369b8079caa04354bdc1ff10",
+            "module": "compute-api",
+            "subject": "Add os-quota-sets extension"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I9b7887c1914def145e87cf20dbd0ec65cb0fe987"],
+            "primary_key": "0518b205d4c97a32c4884a893371dee02b8eaee1",
+            "module": "nova",
+            "subject": "powervm: remove powervm virt driver from nova"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If95e9c1b66bd64c1989243bc1590b332dc3c9e20"],
+            "primary_key": "d7769d4927920b87691b67c86dda0ab2afc24fcd",
+            "module": "murano-repository",
+            "subject": "Restore Services folder after unsuccessful move"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I270a1cbdac36a4418775179de9f39e9109ea162f"],
+            "primary_key": "f880f9b5b20fa1fcba047d9fe774c149db352aab",
+            "module": "mistral",
+            "subject": "Adding pecan, wsme, oslo and adjusting packages"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I0f04694fdb5eb0c6e4b01e563fb3901af7796f72"],
+            "primary_key": "f37ed674abfd2cd231e4d2fc97d254667268b53c",
+            "module": "savanna",
+            "subject": "Remove unused oslo libs"
+        },
+        {
+            "correction_comment": "Reset LOC to 293",
+            "loc": 293,
+            "change_id": ["I6656afddee16c3deeb61c1ebc91522f45fd6d300"],
+            "primary_key": "cbf64bff9c11c9f047e9bd1cdf8b6cd4b9bb5b22",
+            "module": "openstack-manuals",
+            "subject": "restructure of associate training guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I641ae9b30be885c39a33947dd30b131c75032778"],
+            "primary_key": "9441b7dd27082b2ec9115e528e3afb363fd74669",
+            "module": "openstack-manuals",
+            "subject": "Fix graph common/figures/SCH_5002_V00_NUAC-Keystone.png"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4484d50fa60eb53e3155fe4e119c30e54b03832e"],
+            "primary_key": "d933ec7fec53217f2b16dc572f79cc461ab59621",
+            "module": "openstack-manuals",
+            "subject": "Updates sitemap.xml for havana release links"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4efc663d0caee2c8c68fad69e43a41386c1133e7"],
+            "primary_key": "44199858be691460c97f6461022d86835ae35dae",
+            "module": "openstack-manuals",
+            "subject": "Removed old pot files"
+        },
+        {
+            "correction_comment": "Reset LOC to 500",
+            "loc": 500,
+            "change_id": ["Ib2c53a999937fecea268cfcb1c17a1d944b08c5e"],
+            "primary_key": "ec4817184220197f2d7103bade1134b003a8ea18",
+            "module": "fuel-provision",
+            "subject": "Initial commit"
+        },
+        {
+            "correction_comment": "Reset LOC to 1000",
+            "loc": 1000,
+            "change_id": ["I7371ccce1e2f3c0a649fe9d6a41b146f04c0f4c1"],
+            "primary_key": "4bbe6ffb9da6461c8776a346d4972eca747556d9",
+            "module": "rubick",
+            "subject": "Discovery API improvements, PEP8 issues clean up"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "b45c78f0beb6742fa552e60383f22ac3cdcb5eb3",
+            "module": "rubick",
+            "subject": "Added config schema compiled database"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "228675ebdf90d370ae2eee2512d3285051e4b63f",
+            "module": "rubick",
+            "subject": "Removed old schema python files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "f11534b5036613c6c122846f44a470be953a9699",
+            "module": "rubick",
+            "subject": "Converted config schemas to YAML"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "d4825d56942638d5dee4d98ccee33916331aa617",
+            "module": "rubick",
+            "subject": "Added auto-generated schemas for havana release"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "13e417a327da8401c413581cb7b523bda5a63d6b",
+            "module": "fuel-library",
+            "subject": "rename Quantum ==> Neutron, stage #1"
+        },
+        {
+            "correction_comment": "Reset LOC to 778",
+            "loc": 778,
+            "change_id": ["Iae8329a639e26881fbc3286479a429ae75149493"],
+            "primary_key": "cd8f0b1e8ec79d0e421bfdba2e4a8f6ca0101098",
+            "module": "billingstack",
+            "subject": "Bring code up to speed."
+        },
+        {
+            "correction_comment": "Reset LOC to 3300",
+            "loc": 3300,
+            "change_id": ["Ib38ed3fee65fbda31f94acb9e5e8e7e597ca3260"],
+            "primary_key": "c7e3ec7dfd450b041cf2ec4db58d694cf21c6610",
+            "module": "murano-agent",
+            "subject": "Add C demo agent"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ic554e33be6400c0bbe034aeecb38da527a29bf4f"],
+            "primary_key": "1ad08099cf8024eda6a1f5e236ef68a7d9f7bbe0",
+            "module": "murano-conductor",
+            "subject": "Data folder clean-up"
+        },
+        {
+            "correction_comment": "Reset LOC to 400",
+            "loc": 400,
+            "change_id": ["I733c5a9a8aec1ca26d448b2b228bfdb28136db72"],
+            "primary_key": "1f9d44cd46fcd4f4ea7deff0f3b5471279b814f6",
+            "module": "murano-tests",
+            "subject": "Add tempest additional negative tests"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ida83879c8821d4e15375b97efb79c3abd7806f79"],
+            "primary_key": "25a466fe0795a7ad46fe11e82c0b3caca91678f6",
+            "module": "tuskar-ui",
+            "subject": "New structure of panels"
         }
     ]
 }
