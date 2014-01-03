@@ -2518,6 +2518,17 @@
             "emails": ["msherborne@gmail.com"]
         },
         {
+            "launchpad_id": "mattfarina",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Farina",
+            "emails": ["matt@mattfarina.com"]
+        },
+        {
             "launchpad_id": "maty-grosz",
             "gerrit_id": "matyg",
             "companies": [
