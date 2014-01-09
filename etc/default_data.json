@@ -3220,6 +3220,17 @@
             "emails": ["ryu@midokura.jp", "ryu@midokura.com"]
         },
         {
+            "launchpad_id": "sahid-ferdjaoui",
+            "companies": [
+                {
+                    "company_name": "Cloudwatt",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sahid Orentino Ferdjaoui",
+            "emails": ["sahid.ferdjaoui@cloudwatt.com", "sahid.ferdjaoui@gmail.com"]
+        },
+        {
             "launchpad_id": "salvatore-orlando",
             "companies": [
                 {
