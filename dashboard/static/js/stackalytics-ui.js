@@ -247,7 +247,7 @@ function render_punch_card(chart_id, chart_data) {
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
-        vars[key] = value;
+        vars[key] = decodeURIComponent(value);
     });
     return vars;
 }
@@ -286,7 +286,7 @@ function make_std_options() {
 
 function reload() {
     window.location.search = $.map(make_std_options(),function (val, index) {
-        return index + "=" + val;
+        return index + "=" + encodeURIComponent(val);
     }).join("&")
 }
 
