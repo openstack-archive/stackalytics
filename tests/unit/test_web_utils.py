@@ -17,6 +17,7 @@ import mock
 import testtools
 
 from dashboard import helpers
+from dashboard import parameters
 
 
 class TestWebUtils(testtools.TestCase):
@@ -104,3 +105,36 @@ Implements Blueprint ''' + (
             'John Doe (Mirantis) contribution to neutron in Havana release',
             helpers.make_page_title(
                 'Mirantis', 'John Doe', 'neutron', 'Havana'))
+
+    @mock.patch('flask.request')
+    @mock.patch('dashboard.parameters.get_default')
+    def test_parameters_get_parameter(self, get_default, flask_request):
+
+        flask_request.args = mock.Mock()
+        flask_request.args.get = mock.Mock(side_effect=lambda x: x)
+
+        def make(values=None):
+            def f(arg):
+                return values.get(arg, None) if values else None
+            return f
+
+        get_default.side_effect = make()
+        flask_request.args.get.side_effect = make({'param': 'foo'})
+        self.assertEqual(['foo'], parameters.get_parameter(
+            {'param': 'foo'}, 'param'))
+
+        flask_request.args.get.side_effect = make({'param': 'foo'})
+        self.assertEqual(['foo'], parameters.get_parameter({}, 'param'))
+
+        flask_request.args.get.side_effect = make({'param': 'foo'})
+        self.assertEqual([], parameters.get_parameter(
+            {}, 'other', use_default=False))
+
+        flask_request.args.get.side_effect = make({'params': 'foo'})
+        self.assertEqual(['foo'], parameters.get_parameter(
+            {}, 'param', plural_name='params'))
+
+        flask_request.args.get.side_effect = make({})
+        get_default.side_effect = make({'param': 'foo'})
+        self.assertEqual(['foo'], parameters.get_parameter({}, 'param'))
+        self.assertEqual([], parameters.get_parameter({}, 'other'))

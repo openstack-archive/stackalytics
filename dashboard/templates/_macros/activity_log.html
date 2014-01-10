@@ -8,7 +8,7 @@
         uri_options["user_id"] = "{{ user_id }}";
     {% endif %}
     {% if company %}
-        uri_options["company"] = "{{ company }}";
+        uri_options["company"] = "{{ company|safe }}";
     {% endif %}
     {% if blueprint_id %}
         uri_options["blueprint_id"] = "{{ blueprint_id }}";

@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import urllib
 
 import flask
 
@@ -64,9 +65,9 @@ def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
     else:
         p = flask.request.args.get(singular_name)
         if (not p) and plural_name:
-            flask.request.args.get(plural_name)
+            p = flask.request.args.get(plural_name)
     if p:
-        return p.split(',')
+        return urllib.unquote_plus(p).split(',')
     elif use_default:
         default = get_default(singular_name)
         return [default] if default else []
