@@ -20,7 +20,9 @@ import re
 import time
 import urllib
 
+
 import iso8601
+import six
 
 from stackalytics.openstack.common import log as logging
 
@@ -145,7 +147,7 @@ def make_age_string(seconds):
 
 def merge_records(original, new):
     need_update = False
-    for key, value in new.iteritems():
+    for key, value in six.iteritems(new):
         if original.get(key) != value:
             need_update = True
             original[key] = value

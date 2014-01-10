@@ -21,6 +21,7 @@ import time
 import flask
 from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
+import six
 
 from dashboard import decorators
 from dashboard import helpers
@@ -386,7 +387,7 @@ def get_release_json(release):
 def get_metrics_json():
     query = (flask.request.args.get('query') or '').lower()
     return sorted([{'id': m, 'text': t}
-                   for m, t in parameters.METRIC_LABELS.iteritems()
+                   for m, t in six.iteritems(parameters.METRIC_LABELS)
                    if t.lower().find(query) >= 0],
                   key=operator.itemgetter('text'))
 
@@ -405,7 +406,7 @@ def get_metric_json(metric):
 @decorators.exception_handler()
 def get_project_types_json():
     return [{'id': m, 'text': m, 'items': list(t)}
-            for m, t in vault.get_project_type_options().iteritems()]
+            for m, t in six.iteritems(vault.get_project_type_options())]
 
 
 @app.route('/api/1.0/project_types/<project_type>')
@@ -413,7 +414,7 @@ def get_project_types_json():
 @decorators.exception_handler()
 def get_project_type_json(project_type):
     if project_type != 'all':
-        for pt, groups in vault.get_project_type_options().iteritems():
+        for pt, groups in six.iteritems(vault.get_project_type_options()):
             if (project_type == pt) or (project_type in groups):
                 break
         else:
@@ -502,7 +503,7 @@ gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')
 @app.template_filter('make_url')
 def to_url_params(dict_params, base_url):
     return base_url + '?' + '&'.join(
-        ['%s=%s' % (k, v) for k, v in dict_params.iteritems()])
+        ['%s=%s' % (k, v) for k, v in six.iteritems(dict_params)])
 
 
 @app.template_filter('remove_ctrl_chars')

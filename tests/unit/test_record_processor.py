@@ -16,6 +16,7 @@
 import itertools
 
 import mock
+import six
 import testtools
 
 from stackalytics.processor import record_processor
@@ -1101,7 +1102,7 @@ class TestRecordProcessor(testtools.TestCase):
             self.assertEqual(set(['nova', 'neutron']), set(modules))
 
     def assertRecordsMatch(self, expected, actual):
-        for key, value in expected.iteritems():
+        for key, value in six.iteritems(expected):
             self.assertEqual(value, actual[key],
                              'Values for key %s do not match' % key)
 

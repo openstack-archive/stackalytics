@@ -18,6 +18,7 @@ import itertools
 import uuid
 
 import mock
+import six
 import testtools
 
 from dashboard import web
@@ -155,12 +156,12 @@ def _add_generated_records(data, *generators):
 def algebraic_product(**kwargs):
     position_to_key = {}
     values = []
-    for key, value in kwargs.iteritems():
+    for key, value in six.iteritems(kwargs):
         position_to_key[len(values)] = key
         values.append(value)
 
     for chain in itertools.product(*values):
         result = {}
-        for position, key in position_to_key.iteritems():
+        for position, key in six.iteritems(position_to_key):
             result[key] = chain[position]
         yield result

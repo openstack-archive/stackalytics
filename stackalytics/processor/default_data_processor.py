@@ -17,6 +17,7 @@ import hashlib
 import json
 
 from github import MainClass
+import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
@@ -112,7 +113,7 @@ def _store_default_data(runtime_storage_inst, default_data):
     normalizer.normalize_default_data(default_data)
 
     LOG.debug('Update runtime storage with default data')
-    for key, value in default_data.iteritems():
+    for key, value in six.iteritems(default_data):
         if key in STORE_FUNCS:
             STORE_FUNCS[key](runtime_storage_inst, value)
         else:

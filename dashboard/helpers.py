@@ -18,6 +18,7 @@ import re
 import urllib
 
 from flask.ext import gravatar as gravatar_ext
+import six
 
 from dashboard import parameters
 from dashboard import vault
@@ -64,7 +65,7 @@ def extend_record(record):
 
         parent = parent.copy()
         _extend_record_common_fields(parent)
-        for k, v in parent.iteritems():
+        for k, v in six.iteritems(parent):
             record['parent_%s' % k] = v
 
         record['review_number'] = parent.get('review_number')
@@ -186,7 +187,7 @@ def make_link(title, uri=None, options=None):
         param_values.update(options)
     if param_values:
         uri += '?' + '&'.join(['%s=%s' % (n, safe_encode(v))
-                               for n, v in param_values.iteritems()])
+                               for n, v in six.iteritems(param_values)])
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
 

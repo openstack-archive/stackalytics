@@ -20,6 +20,8 @@ import re
 import StringIO
 import urlparse
 
+import six
+
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 
@@ -98,7 +100,7 @@ def _retrieve_mails(uri):
         email['date'] = int(email_utils.mktime_tz(
             email_utils.parsedate_tz(email['date'])))
 
-        for pattern_name, pattern in MESSAGE_PATTERNS.iteritems():
+        for pattern_name, pattern in six.iteritems(MESSAGE_PATTERNS):
             collection = set()
             for item in re.finditer(pattern, email['body']):
                 groups = item.groupdict()

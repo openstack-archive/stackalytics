@@ -16,6 +16,7 @@
 import re
 
 import memcache
+import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
@@ -111,7 +112,7 @@ class MemcachedStorage(RuntimeStorage):
             original = self.memcached.get(self._get_record_name(record_id))
             need_update = False
 
-            for field, value in correction.iteritems():
+            for field, value in six.iteritems(correction):
                 if (field not in original) or (original[field] != value):
                     need_update = True
                     original[field] = value

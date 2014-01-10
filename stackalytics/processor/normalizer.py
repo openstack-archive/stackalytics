@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import six
+
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 
@@ -63,6 +65,6 @@ NORMALIZERS = {
 
 
 def normalize_default_data(default_data):
-    for key, normalizer in NORMALIZERS.iteritems():
+    for key, normalizer in six.iteritems(NORMALIZERS):
         if key in default_data:
             normalizer(default_data[key])
