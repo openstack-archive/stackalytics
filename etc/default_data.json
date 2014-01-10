@@ -1739,11 +1739,15 @@
             "companies": [
                 {
                     "company_name": "AT&T",
+                    "end_date": "2013-Dec-31"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Jay Pipes",
-            "emails": ["jpipes@uberbox.gateway.2wire.net", "jaypipes@gmail.com"]
+            "emails": ["jpipes@uberbox.gateway.2wire.net", "jaypipes@gmail.com", "jpipes@mirantis.com"]
         },
         {
             "launchpad_id": "jcannava",
