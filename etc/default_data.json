@@ -2544,6 +2544,17 @@
             "emails": ["matt@mattfarina.com"]
         },
         {
+            "launchpad_id": "mattt416",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Thompson",
+            "emails": ["mattt@defunct.ca"]
+        },
+        {
             "launchpad_id": "maty-grosz",
             "gerrit_id": "matyg",
             "companies": [
