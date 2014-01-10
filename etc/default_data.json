@@ -738,6 +738,25 @@
             "emails": ["d.gollub@telekom.de"]
         },
         {
+            "launchpad_id": "dachary",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2012-Sep-09"
+                },
+                {
+                    "company_name": "April",
+                    "end_date": "2012-Dec-31"
+                },
+                {
+                    "company_name": "Cloudwatt",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Loic Dachary",
+            "emails": ["loic@dachary.org", "loic.dachary@cloudwatt.com", "loic.dachary@enovance.com"]
+        },
+        {
             "launchpad_id": "daisy-ycguo",
             "companies": [
                 {
