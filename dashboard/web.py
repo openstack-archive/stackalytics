@@ -15,12 +15,12 @@
 
 import operator
 import os
+import re
 import time
 
 import flask
 from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
-import re
 
 from dashboard import decorators
 from dashboard import helpers

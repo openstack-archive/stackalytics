@@ -15,6 +15,7 @@
 
 from oslo.config import cfg
 
+
 OPTS = [
     cfg.StrOpt('default-data-uri',
                default='file:///usr/local/etc/default_data.json',

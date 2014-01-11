@@ -15,9 +15,10 @@
 
 import contextlib
 import itertools
+import uuid
+
 import mock
 import testtools
-import uuid
 
 from dashboard import web
 from stackalytics.processor import runtime_storage

@@ -20,6 +20,7 @@ from stackalytics.openstack.common import log as logging
 from stackalytics.processor import launchpad_utils
 from stackalytics.processor import utils
 
+
 LOG = logging.getLogger(__name__)
 
 

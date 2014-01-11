@@ -13,9 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 import datetime
+import json
 import operator
 import time
 

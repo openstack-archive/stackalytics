@@ -13,12 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from email import utils as email_utils
 import gzip
 import httplib
-import StringIO
-
-from email import utils as email_utils
 import re
+import StringIO
 import urlparse
 
 from stackalytics.openstack.common import log as logging

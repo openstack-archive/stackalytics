@@ -15,11 +15,12 @@
 
 import cgi
 import datetime
-import iso8601
 import json
 import re
 import time
 import urllib
+
+import iso8601
 
 from stackalytics.openstack.common import log as logging
 
