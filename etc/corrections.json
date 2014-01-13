@@ -1401,6 +1401,38 @@
             "primary_key": "25a466fe0795a7ad46fe11e82c0b3caca91678f6",
             "module": "tuskar-ui",
             "subject": "New structure of panels"
+        },
+        {
+            "correction_comment": "Reset LOC to 35",
+            "loc": 35,
+            "change_id": ["I541e75580ae734ccd5d48d699eb48225203646e8"],
+            "primary_key": "670d9e063c0addde33f5b15654714aa0730cbd6d",
+            "module": "openstack-doc-tools",
+            "subject": "Do not download RNG Schema, instead use local copies"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie48b99deb54877f9857abe94e90c9f160852aa92"],
+            "primary_key": "1d75d9ec43ac975a7abc1fd3b9bd004f6cc019d0",
+            "module": "openstack-manuals",
+            "subject": "Update whitespace and change td in thead to th"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4f255f452a9105b6e91b3b7554be9b789beb974f"],
+            "primary_key": "416f5f3b556c7ac214168d19f93f8c69231c0f8d",
+            "module": "operations-guide",
+            "subject": "Replace tabs with whitespace"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia52b386a928e1d03709dfdb23f0d504c7d01bc19"],
+            "primary_key": "6cc6019aceec9ecb4a2455c071a60d726cd63c85",
+            "module": "designate",
+            "subject": "Sync with oslo-incubator"
         }
     ]
 }
