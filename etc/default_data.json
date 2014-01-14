@@ -4318,6 +4318,10 @@
             "company_name": "eNovance"
         },
         {
+            "domains": ["epam.com"],
+            "company_name": "EPAM Systems"
+        },
+        {
             "domains": ["ericsson.com"],
             "company_name": "Ericsson"
         },
