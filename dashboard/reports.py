@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import collections
 import datetime
 import json
 import operator
@@ -203,4 +204,37 @@ def get_commit_report(records):
             nr = dict([(k, record[k]) for k in ['loc', 'subject', 'module',
                                                 'primary_key', 'change_id']])
             response.append(nr)
+    return response
+
+
+@blueprint.route('/single_plus_two_reviews')
+@decorators.jsonify()
+@decorators.exception_handler()
+@decorators.record_filter(ignore='metric')
+def get_single_plus_two_reviews_report(records):
+    memory_storage_inst = vault.get_memory_storage()
+    plus_twos = collections.defaultdict(list)
+    for record in records:
+        if record['record_type'] != 'mark':
+            continue
+
+        if (record['branch'] == 'master' and record['type'] == 'CRVW' and
+                record['value'] == +2):
+            review_id = record['review_id']
+            review = memory_storage_inst.get_record_by_primary_key(review_id)
+            if review and review['status'] == 'MERGED':
+                plus_twos[review_id].append(record)
+
+    response = []
+    for review_id in plus_twos.keys():
+        if len(plus_twos[review_id]) < 2:
+            mark = plus_twos[review_id][0]
+            review = memory_storage_inst.get_record_by_primary_key(
+                mark['review_id'])
+            response.append({'review_by': review['user_id'],
+                             'mark_by': mark['user_id'],
+                             'subject': review['subject'],
+                             'url': review['url'],
+                             'project': review['project']})
+
     return response
