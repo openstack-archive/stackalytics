@@ -18,6 +18,7 @@ import re
 import shutil
 
 import sh
+import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
@@ -202,7 +203,7 @@ class Git(Vcs):
             commit['lines_added'] = int(lines_changed or 0)
             commit['lines_deleted'] = int(lines_deleted or 0)
 
-            for pattern_name, pattern in MESSAGE_PATTERNS.iteritems():
+            for pattern_name, pattern in six.iteritems(MESSAGE_PATTERNS):
                 collection = set()
                 for item in re.finditer(pattern, commit['message']):
                     collection.add(item.group('id'))

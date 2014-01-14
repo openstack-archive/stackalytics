@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import six
+
+
 MEMORY_STORAGE_CACHED = 0
 
 
@@ -49,7 +52,7 @@ class CachedMemoryStorage(MemoryStorage):
         if record.get('company_name') == '*robots':
             return
         self.records[record['record_id']] = record
-        for key, index in self.indexes.iteritems():
+        for key, index in six.iteritems(self.indexes):
             self._add_to_index(index, record, key)
         for bp_id in (record.get('blueprint_id') or []):
             if bp_id in self.blueprint_id_index:
@@ -75,7 +78,7 @@ class CachedMemoryStorage(MemoryStorage):
         return have_updates
 
     def _remove_record_from_index(self, record):
-        for key, index in self.indexes.iteritems():
+        for key, index in six.iteritems(self.indexes):
             index[record[key]].remove(record['record_id'])
 
     def _add_to_index(self, record_index, record, key):

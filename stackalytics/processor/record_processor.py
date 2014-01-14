@@ -16,6 +16,8 @@
 import bisect
 import time
 
+import six
+
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import launchpad_utils
 from stackalytics.processor import utils
@@ -226,7 +228,7 @@ class RecordProcessor(object):
 
     def _spawn_review(self, record):
         # copy everything except patchsets and flatten user data
-        review = dict([(k, v) for k, v in record.iteritems()
+        review = dict([(k, v) for k, v in six.iteritems(record)
                        if k not in ['patchSets', 'owner', 'createdOn']])
         owner = record['owner']
         if 'email' not in owner or 'username' not in owner:
@@ -267,7 +269,7 @@ class RecordProcessor(object):
                 continue  # not reviewed by anyone
             for approval in patch['approvals']:
                 # copy everything and flatten user data
-                mark = dict([(k, v) for k, v in approval.iteritems()
+                mark = dict([(k, v) for k, v in six.iteritems(approval)
                              if k not in ['by', 'grantedOn', 'value']])
                 reviewer = approval['by']
 
@@ -336,7 +338,7 @@ class RecordProcessor(object):
     def _process_blueprint(self, record):
         bpd_author = record.get('drafter') or record.get('owner')
 
-        bpd = dict([(k, v) for k, v in record.iteritems()
+        bpd = dict([(k, v) for k, v in six.iteritems(record)
                     if k.find('_link') < 0])
         bpd['record_type'] = 'bpd'
         bpd['primary_key'] = 'bpd:' + record['id']
@@ -348,7 +350,7 @@ class RecordProcessor(object):
         yield bpd
 
         if record.get('assignee') and record['date_completed']:
-            bpc = dict([(k, v) for k, v in record.iteritems()
+            bpc = dict([(k, v) for k, v in six.iteritems(record)
                         if k.find('_link') < 0])
             bpc['record_type'] = 'bpc'
             bpc['primary_key'] = 'bpc:' + record['id']
@@ -466,7 +468,7 @@ class RecordProcessor(object):
                     'date': record['date']
                 }
 
-        for bp_name, bp in valid_blueprints.iteritems():
+        for bp_name, bp in six.iteritems(valid_blueprints):
             if bp_name in mentioned_blueprints:
                 bp['count'] = mentioned_blueprints[bp_name]['count']
                 bp['date'] = mentioned_blueprints[bp_name]['date']
@@ -514,7 +516,7 @@ class RecordProcessor(object):
                     users_reviews[launchpad_id] = [review]
 
         reviews_index = {}
-        for launchpad_id, reviews in users_reviews.iteritems():
+        for launchpad_id, reviews in six.iteritems(users_reviews):
             reviews.sort(key=lambda x: x['date'])
             review_number = 0
             for review in reviews:
@@ -568,7 +570,7 @@ class RecordProcessor(object):
                       for user in self.runtime_storage_inst.get_all_users()
                       if user['core']])
 
-        for key, marks in marks_per_patch.iteritems():
+        for key, marks in six.iteritems(marks_per_patch):
             if len(marks) < 2:
                 continue
 

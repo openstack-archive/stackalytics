@@ -17,6 +17,7 @@ import os
 
 import flask
 from oslo.config import cfg
+import six
 
 from dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
@@ -179,7 +180,7 @@ def is_project_type_valid(project_type):
     project_types = get_project_type_options()
     if project_type in project_types:
         return True
-    for p, g in project_types.iteritems():
+    for p, g in six.iteritems(project_types):
         if project_type in g:
             return True
     return False
