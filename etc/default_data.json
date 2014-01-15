@@ -671,6 +671,17 @@
             "emails": ["cody.somerville@hp.com", "cody-somerville@ubuntu.com", "cody.somerville@gmail.com"]
         },
         {
+            "launchpad_id": "colettealexander",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Colette Alexander",
+            "emails": ["colette.alexander@hp.com", "colettealexander@gmail.com"]
+        },
+        {
             "launchpad_id": "corvus",
             "companies": [
                 {
@@ -2239,6 +2250,17 @@
                 "vkozhukalov@mirantis.com",
                 "kozhukalov@gmail.com"
             ]
+        },
+        {
+            "launchpad_id": "krotscheck",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Krotscheck",
+            "emails": ["michael.krotscheck@hp.com", "krotscheck@gmail.com"]
         },
         {
             "launchpad_id": "kshileev",
