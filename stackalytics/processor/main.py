@@ -13,12 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import urllib
-
 from oslo.config import cfg
 import psutil
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.openstack.common.py3kcompat import urlutils
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
 from stackalytics.processor import lp
@@ -100,7 +99,7 @@ def process_repo(repo, runtime_storage_inst, record_processor_inst):
     for branch in branches:
         LOG.debug('Processing repo %s, branch %s', uri, branch)
 
-        vcs_key = 'vcs:' + str(urllib.quote_plus(uri) + ':' + branch)
+        vcs_key = 'vcs:' + str(urlutils.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage_inst.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
@@ -115,7 +114,7 @@ def process_repo(repo, runtime_storage_inst, record_processor_inst):
 
         LOG.debug('Processing reviews for repo %s, branch %s', uri, branch)
 
-        rcs_key = 'rcs:' + str(urllib.quote_plus(uri) + ':' + branch)
+        rcs_key = 'rcs:' + str(urlutils.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage_inst.get_by_key(rcs_key)
 
         review_iterator = rcs_inst.log(branch, last_id)

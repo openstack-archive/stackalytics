@@ -13,11 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import urllib
-
 import flask
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.openstack.common.py3kcompat import urlutils
 
 
 LOG = logging.getLogger(__name__)
@@ -69,7 +68,7 @@ def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
         if (not p) and plural_name:
             p = flask.request.args.get(plural_name)
     if p:
-        return urllib.unquote_plus(p).split(',')
+        return urlutils.unquote_plus(p).split(',')
     elif use_default:
         default = get_default(singular_name)
         return [default] if default else []

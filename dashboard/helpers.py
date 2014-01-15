@@ -15,13 +15,13 @@
 
 import datetime
 import re
-import urllib
 
 from flask.ext import gravatar as gravatar_ext
 import six
 
 from dashboard import parameters
 from dashboard import vault
+from stackalytics.openstack.common.py3kcompat import urlutils
 from stackalytics.processor import utils
 
 
@@ -172,7 +172,7 @@ def format_launchpad_module_link(module):
 
 
 def safe_encode(s):
-    return urllib.quote_plus(s.encode('utf-8'))
+    return urlutils.quote_plus(s.encode('utf-8'))
 
 
 def make_link(title, uri=None, options=None):
