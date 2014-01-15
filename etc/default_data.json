@@ -3963,6 +3963,17 @@
             "emails": ["yejia@unitedstack.com", "xyj.asmy@gmail.com"]
         },
         {
+            "launchpad_id": "yevgen-runts",
+            "companies": [
+                {
+                    "company_name": "EPAM Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yevgen Runts",
+            "emails": ["yevgen_runts@epam.com"]
+        },
+        {
             "launchpad_id": "yogesh-srikrishnan",
             "companies": [
                 {
