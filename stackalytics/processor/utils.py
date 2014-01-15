@@ -18,13 +18,12 @@ import datetime
 import json
 import re
 import time
-import urllib
-
 
 import iso8601
 import six
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.openstack.common.py3kcompat import urlutils
 
 
 LOG = logging.getLogger(__name__)
@@ -69,7 +68,7 @@ def check_email_validity(email):
 
 def read_uri(uri):
     try:
-        fd = urllib.urlopen(uri)
+        fd = urlutils.urlopen(uri)
         raw = fd.read()
         fd.close()
         return raw
