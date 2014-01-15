@@ -4570,12 +4570,8 @@
             "company_name": "Nimbula"
         },
         {
-            "domains": ["ntt.com", "nttmcl.com", "nttdata.co.jp", "ntt.co.jp", "nttdata.com", "vertex.co.in"],
+            "domains": ["ntt.com", "nttmcl.com", "nttdata.co.jp", "ntt.co.jp", "nttdata.com", "vertex.co.in", "ntts.co.jp"],
             "company_name": "NTT"
-        },
-        {
-            "domains": ["ntts.co.jp"],
-            "company_name": "NTT Software"
         },
         {
             "domains": ["nuagenetworks.net"],
