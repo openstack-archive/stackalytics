@@ -13,8 +13,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import collections
+
 from oslo.config import cfg
 import psutil
+import six
+import yaml
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.openstack.common.py3kcompat import urlutils
@@ -168,6 +172,53 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 
+def _make_module_group(name, modules):
+    module_group = {'module_group_name': name, 'modules': modules}
+    LOG.debug('New module group: %s', module_group)
+    return module_group
+
+
+def _read_module_groups(program_list_uri):
+    LOG.debug('Process list of programs from uri: %s', program_list_uri)
+    content = yaml.safe_load(utils.read_uri(program_list_uri))
+    module_groups = []
+    modules_by_types = collections.defaultdict(list)
+    for name, info in six.iteritems(content):
+        if 'codename' in info:
+            name += ' (%s)' % info['codename']
+
+        all_modules = []
+        for project_type, project_list in six.iteritems(info['projects']):
+            module_list = [s.split('/')[1] for s in project_list]
+            modules_by_types[project_type] += module_list
+            all_modules += module_list
+
+        module_groups.append(_make_module_group(name, all_modules))
+
+    all_modules = []
+    for project_type, modules_list in six.iteritems(modules_by_types):
+        all_modules += modules_list
+        module_groups.append(
+            _make_module_group('OpenStack ' + project_type.capitalize(),
+                               modules_list))
+    module_groups.append(_make_module_group('OpenStack All Official',
+                                            all_modules))
+    return module_groups
+
+
+def process_program_list(runtime_storage_inst, program_list_uri):
+    stored_module_groups = runtime_storage_inst.get_by_key('module_groups')
+    mg_dict = dict([(mg['module_group_name'], mg['modules'])
+                   for mg in stored_module_groups])
+    for mg in _read_module_groups(program_list_uri):
+        mg_dict[mg['module_group_name']] = mg['modules']
+
+    stored_module_groups = [{'module_group_name': name, 'modules': modules}
+                            for name, modules in six.iteritems(mg_dict)]
+
+    runtime_storage_inst.set_by_key('module_groups', stored_module_groups)
+
+
 def main():
     # init conf and logging
     conf = cfg.CONF
@@ -189,6 +240,8 @@ def main():
                                    default_data,
                                    cfg.CONF.sources_root,
                                    cfg.CONF.force_update)
+
+    process_program_list(runtime_storage_inst, cfg.CONF.program_list_uri)
 
     update_pids(runtime_storage_inst)
 

@@ -1,0 +1,9 @@
+Image Service:
+  codename: Glance
+  ptl: Mark Washenberger (markwash)
+  url: https://wiki.openstack.org/wiki/Glance
+  projects:
+    integrated:
+    - openstack/glance
+    other:
+    - openstack/python-glanceclient
