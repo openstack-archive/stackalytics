@@ -2094,6 +2094,18 @@
             "emails": ["k3vinmcdonald@gmail.com"]
         },
         {
+            "launchpad_id": "kanaderohan",
+            "gerrit_id": "kanaderohan",
+            "companies": [
+                {
+                    "company_name": "Izel Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rohan Kanade",
+            "emails": ["rohan.kanade@izeltech.com", "openstack@rohankanade.com"]
+        },
+        {
             "launchpad_id": "kannan",
             "companies": [
                 {
@@ -3377,6 +3389,18 @@
             "emails": ["shilla.saebi@gmail.com","shilla_saebi@cable.comcast.com"]
         },
         {
+            "launchpad_id": "shrirangphadke",
+            "gerrit_id": "shrirangphadke",
+            "companies": [
+                {
+                    "company_name": "Izel Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shrirang Phadke",
+            "emails": ["shrirang.phadke@izeltech.com"]
+        },
+        {
             "launchpad_id": "shuo-yang",
             "gerrit_id": "syang",
             "companies": [
@@ -4463,6 +4487,10 @@
         {
             "domains": ["iweb.com", "iweb.co.uk"],
             "company_name": "iWeb"
+        },
+        {
+            "domains": ["izeltech.com"],
+            "company_name": "Izel Technologies"
         },
         {
             "domains": ["jhuapl.edu"],
