@@ -1433,6 +1433,14 @@
             "primary_key": "6cc6019aceec9ecb4a2455c071a60d726cd63c85",
             "module": "designate",
             "subject": "Sync with oslo-incubator"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia67097d964b62d2fef2b32d93b5988400bb27bfa"],
+            "primary_key": "5447eb40353f52c00c8bccd2c4ecf37e09dae98a",
+            "module": "openstack-manuals",
+            "subject": "Imported Translations from Transifex"
         }
     ]
 }
