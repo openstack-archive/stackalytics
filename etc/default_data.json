@@ -3715,12 +3715,12 @@
             "launchpad_id": "thomas-goirand",
             "companies": [
                 {
-                    "company_name": "GPLHost",
+                    "company_name": "eNovance",
                     "end_date": null
                 }
             ],
             "user_name": "Thomas Goirand",
-            "emails": ["thomas@goirand.fr"]
+            "emails": ["thomas@goirand.fr", "zigo@debian.org"]
         },
         {
             "launchpad_id": "thowe-g",
