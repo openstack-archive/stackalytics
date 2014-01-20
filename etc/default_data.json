@@ -3010,6 +3010,18 @@
             "emails": ["phongdly@us.ibm.com"]
         },
         {
+            "launchpad_id": "pierre-padrixe",
+            "gerrit_id": "stannie",
+            "companies": [
+                {
+                    "company_name": "Numergy",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pierre Padrixe",
+            "emails": ["pierre.padrixe@numergy.com", "pierre@padrixe.com", "pierre.padrixe@gmail.com"]
+        },
+        {
             "launchpad_id": "pkilambi",
             "companies": [
                 {
@@ -3864,6 +3876,18 @@
             ],
             "user_name": "Vandita Arora",
             "emails": ["vandita_arora@cable.comcast.com"]
+        },
+        {
+            "launchpad_id": "vey-julien",
+            "gerrit_id": "julienvey",
+            "companies": [
+                {
+                    "company_name": "Numergy",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julien Vey",
+            "emails": ["vey.julien@gmail.com", "julien.vey@numergy.com"]
         },
         {
             "launchpad_id": "victor-r-howard",
