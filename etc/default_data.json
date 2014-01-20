@@ -4639,6 +4639,10 @@
             "company_name": "Nuage Networks"
         },
         {
+            "domains": ["numergy.com", "numergy.fr"],
+            "company_name": "Numergy"
+        },
+        {
             "domains": ["objectif-libre.com"],
             "company_name": "Objectif Libre"
         },
