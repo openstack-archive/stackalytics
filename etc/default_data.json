@@ -2584,6 +2584,17 @@
             "emails": ["msherborne@gmail.com"]
         },
         {
+            "launchpad_id": "mattf",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Farrellee",
+            "emails": ["matt@redhat.com"]
+        },
+        {
             "launchpad_id": "mattfarina",
             "companies": [
                 {
