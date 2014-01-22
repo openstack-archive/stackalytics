@@ -3525,6 +3525,18 @@
             "emails": ["slicknik@gmail.com", "nikhil.manchanda@hp.com", "nikhil@manchanda.me"]
         },
         {
+            "launchpad_id": "sliim",
+            "gerrit_id": "Sliim",
+            "companies": [
+                {
+                    "company_name": "Numergy",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Antoine Rouyer",
+            "emails": ["antoine.rouyer@numergy.com", "rouyer.antoine@gmail.com", "sliim@mailoo.org"]
+        },
+        {
             "launchpad_id": "slukjanov",
             "companies": [
                 {
