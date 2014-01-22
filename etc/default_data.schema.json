@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "required": ["users", "releases", "companies", "repos"],
+    "required": ["users", "releases", "companies", "repos", "project_types"],
     "properties": {
         "users": {
             "type": "array",
@@ -173,6 +173,33 @@
             "type": "array",
             "items": {
                 "type": "string"
+            }
+        },
+        "project_types": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "pattern": "^[\\w-]+$"
+                    },
+                    "child": {
+                        "type": "boolean"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "modules": {
+                        "type": ["array"],
+                        "items": {
+                            "type": "string",
+                            "pattern": "^[\\w-]+$"
+                        }
+                    }
+                },
+                "required": ["id", "title", "modules"],
+                "additionalProperties": false
             }
         }
     }

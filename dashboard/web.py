@@ -20,6 +20,7 @@ import time
 
 import flask
 from flask.ext import gravatar as gravatar_ext
+import itertools
 from oslo.config import cfg
 import six
 
@@ -174,7 +175,6 @@ def get_engineers_extended(records):
         result_row[record_type] = result_row.get(record_type, 0) + 1
         if record_type == 'mark':
             decorators.mark_filter(result, record, param_id)
-            result_row['metric'] = result_row['mark']
         if record_type == 'review':
             result_row['patch_count'] = (result_row.get('patch_count', 0) +
                                          record['patch_count'])
@@ -255,27 +255,29 @@ def get_modules_json(records):
     module_group_index = vault.get_vault()['module_group_index']
     module_id_index = vault.get_vault()['module_id_index']
 
-    modules_set = set()
-    for record in records:
-        module = record['module']
-        if module not in modules_set:
-            modules_set.add(module)
+    tags = parameters.get_parameter({}, 'tag', 'tags')
 
-    modules_groups_set = set()
-    for module in modules_set:
-        if module in module_group_index:
-            modules_groups_set |= module_group_index[module]
+    # all modules mentioned in records
+    module_ids = set(record['module'] for record in records)
+    # plus all module groups that hold these modules
+    module_ids |= set(itertools.chain.from_iterable(
+        module_group_index.get(module, []) for module in module_ids))
+    # keep only modules with specified tags
+    if tags:
+        module_ids = set(module_id for module_id in module_ids
+                         if module_id_index[module_id].get('tag') in tags)
 
-    modules_set |= modules_groups_set
+    query = (flask.request.args.get('query') or '').lower()
+    matched = []
 
-    query = (flask.request.args.get('module_name') or '').lower()
-    options = []
+    for module_id in module_ids:
+        if module_id.find(query) >= 0:
+            module = dict([(k, v) for k, v in
+                           six.iteritems(module_id_index[module_id])
+                           if k not in ['modules']])
+            matched.append(module)
 
-    for module in modules_set:
-        if module.find(query) >= 0:
-            options.append(module_id_index[module])
-
-    return sorted(options, key=operator.itemgetter('text'))
+    return sorted(matched, key=operator.itemgetter('text'))
 
 
 @app.route('/api/1.0/companies/<company_name>')
@@ -405,22 +407,19 @@ def get_metric_json(metric):
 @decorators.jsonify('project_types')
 @decorators.exception_handler()
 def get_project_types_json():
-    return [{'id': m, 'text': m, 'items': list(t)}
-            for m, t in vault.get_project_type_options().iteritems()]
+    return [{'id': pt['id'], 'text': pt['title'], 'items': pt.get('items', [])}
+            for pt in vault.get_project_types()]
 
 
 @app.route('/api/1.0/project_types/<project_type>')
 @decorators.jsonify('project_type')
 @decorators.exception_handler()
 def get_project_type_json(project_type):
-    if project_type != 'all':
-        for pt, groups in vault.get_project_type_options().iteritems():
-            if (project_type == pt) or (project_type in groups):
-                break
-        else:
-            project_type = parameters.get_default('project_type')
+    if not vault.is_project_type_valid(project_type):
+        project_type = parameters.get_default('project_type')
 
-    return {'id': project_type, 'text': project_type}
+    pt = vault.get_project_type(project_type)
+    return {'id': pt['id'], 'text': pt['title']}
 
 
 def _get_date(kwargs, param_name):

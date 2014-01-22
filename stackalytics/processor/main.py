@@ -172,8 +172,9 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 
-def _make_module_group(name, modules):
-    module_group = {'module_group_name': name, 'modules': modules}
+def _make_module_group(group_id, name, modules, tag=None):
+    module_group = {'id': group_id, 'module_group_name': name,
+                    'modules': modules, 'tag': tag}
     LOG.debug('New module group: %s', module_group)
     return module_group
 
@@ -184,8 +185,10 @@ def _read_module_groups(program_list_uri):
     module_groups = []
     modules_by_types = collections.defaultdict(list)
     for name, info in six.iteritems(content):
+        group_id = name.lower()
         if 'codename' in info:
-            name += ' (%s)' % info['codename']
+            name = '%s (%s)' % (info['codename'], name)
+            group_id = '%s-group' % info['codename'].lower()
 
         all_modules = []
         for project_type, project_list in six.iteritems(info['projects']):
@@ -193,30 +196,26 @@ def _read_module_groups(program_list_uri):
             modules_by_types[project_type] += module_list
             all_modules += module_list
 
-        module_groups.append(_make_module_group(name, all_modules))
+        module_groups.append(_make_module_group(
+            group_id, name, all_modules, 'program'))
 
     all_modules = []
     for project_type, modules_list in six.iteritems(modules_by_types):
         all_modules += modules_list
         module_groups.append(
-            _make_module_group('OpenStack ' + project_type.capitalize(),
-                               modules_list))
-    module_groups.append(_make_module_group('OpenStack All Official',
-                                            all_modules))
+            _make_module_group(
+                'official-%s' % project_type, project_type.capitalize(),
+                modules_list, 'project_type'))
+    module_groups.append(_make_module_group(
+        'official-all', 'OpenStack', all_modules, 'project_type'))
     return module_groups
 
 
 def process_program_list(runtime_storage_inst, program_list_uri):
-    stored_module_groups = runtime_storage_inst.get_by_key('module_groups')
-    mg_dict = dict([(mg['module_group_name'], mg['modules'])
-                   for mg in stored_module_groups])
+    module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
     for mg in _read_module_groups(program_list_uri):
-        mg_dict[mg['module_group_name']] = mg['modules']
-
-    stored_module_groups = [{'module_group_name': name, 'modules': modules}
-                            for name, modules in six.iteritems(mg_dict)]
-
-    runtime_storage_inst.set_by_key('module_groups', stored_module_groups)
+        module_groups[mg['module_group_name']] = mg
+    runtime_storage_inst.set_by_key('module_groups', module_groups)
 
 
 def main():

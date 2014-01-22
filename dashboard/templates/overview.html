@@ -4,9 +4,9 @@
 {% set show_company_breakdown = (not company) and (not user_id) %}
 {% set show_engineer_breakdown = (not user_id) %}
 {% set show_bp_breakdown = (metric in ['bpd', 'bpc']) %}
-{% set show_module_breakdown = (not module) or (module_inst['group']) %}
+{% set show_module_breakdown = (not module) %}
 {% set show_user_activity = (user_id) %}
-{% set show_module_activity = (module) and (not user_id) and (not module_inst['group']) %}
+{% set show_module_activity = (module) and (not user_id) %}
 {% set show_activity = (show_user_activity) or (show_module_activity) %}
 {% set show_user_contribution = (user_id) or (company) %}
 {% set show_module_contribution = (module) and (not user_id) %}

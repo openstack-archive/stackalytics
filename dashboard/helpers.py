@@ -178,7 +178,8 @@ def format_launchpad_module_link(module):
 
 
 def make_link(title, uri=None, options=None):
-    param_names = ('release', 'module', 'company', 'user_id', 'metric')
+    param_names = ('release', 'project_type', 'module', 'company', 'user_id',
+                   'metric')
     param_values = {}
     for param_name in param_names:
         v = parameters.get_parameter({}, param_name, param_name)

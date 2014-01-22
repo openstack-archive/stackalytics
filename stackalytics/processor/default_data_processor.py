@@ -89,13 +89,13 @@ def _create_module_groups(project_sources, repos):
                              for ps in project_sources])
 
     module_groups = []
-    for ogn, modules in organizations.iteritems():
+    for ogn, modules in six.iteritems(organizations):
         if ogn in ps_organizations:
             module_group_name = ps_organizations[ogn]
         else:
             module_group_name = ogn
         module_groups.append({'module_group_name': module_group_name,
-                              'modules': modules})
+                              'modules': modules, 'tag': 'organization'})
 
     return module_groups
 
@@ -130,9 +130,15 @@ def _store_companies(runtime_storage_inst, companies):
     runtime_storage_inst.set_by_key('companies', domains_index)
 
 
+def _store_module_groups(runtime_storage_inst, module_groups):
+    mg_set = dict([(mg['module_group_name'], mg) for mg in module_groups])
+    runtime_storage_inst.set_by_key('module_groups', mg_set)
+
+
 STORE_FUNCS = {
     'users': _store_users,
     'companies': _store_companies,
+    'module_groups': _store_module_groups,
 }
 
 

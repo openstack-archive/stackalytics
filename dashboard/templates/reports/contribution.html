@@ -7,12 +7,12 @@ Contribution into {{ module }} for the last {{ days }} days
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            var table_column_names = ["index", "link", "mark", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
+            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
                                       "review_ratio", "commit", "email"];
             var table_id = "review_stats_table";
 
             $.ajax({
-                url: make_uri("/api/1.0/stats/engineers_extended?metric=marks&module={{ module }}&release=all&start_date={{ start_date }}"),
+                url: make_uri("/api/1.0/stats/engineers_extended?project_type=all&metric=marks&module={{ module }}&release=all&start_date={{ start_date }}"),
                 dataType: "json",
                 success: function (data) {
                     var tableData = data["stats"];
@@ -21,7 +21,7 @@ Contribution into {{ module }} for the last {{ days }} days
                     var sort_by_column = 0;
                     for (var i = 0; i < table_column_names.length; i++) {
                         tableColumns.push({"mData": table_column_names[i]});
-                        if (table_column_names[i] == "mark") {
+                        if (table_column_names[i] == "metric") {
                             sort_by_column = i;
                         }
                     }
