@@ -177,7 +177,7 @@ class Git(Vcs):
             i = 1
             commit = {}
             for param in GIT_LOG_PARAMS:
-                commit[param[0]] = unicode(rec.group(i), 'utf8')
+                commit[param[0]] = six.text_type(rec.group(i), 'utf8')
                 i += 1
 
             if not utils.check_email_validity(commit['author_email']):
