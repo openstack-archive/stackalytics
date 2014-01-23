@@ -1441,6 +1441,46 @@
             "primary_key": "5447eb40353f52c00c8bccd2c4ecf37e09dae98a",
             "module": "openstack-manuals",
             "subject": "Imported Translations from Transifex"
+        },
+        {
+            "correction_comment": "Reset LOC to 76",
+            "loc": 76,
+            "change_id": ["I19ffba481e0db271e080f3bc62e429dbc6c673f7"],
+            "primary_key": "5efa05ccc4a37f4679a2ff8693947ea33196e50a",
+            "module": "turbo-hipster",
+            "subject": "Regenerate datasets using innodb stats as well."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If5bcb80accaa7a34f7a6f32e76755366badd7dd1"],
+            "primary_key": "9e890bff28cc5d8cc416a1180aa4a505ada981eb",
+            "module": "database-api",
+            "subject": "Remove target directory"
+        },
+        {
+            "correction_comment": "Reset LOC to 12",
+            "loc": 12,
+            "change_id": ["I259384716089b1cdb2c66e6777d54848de5fa58d"],
+            "primary_key": "277b12affc3fe5fc21a8540acf82cfecad9cbbe0",
+            "module": "horizon",
+            "subject": "Revert \"JSHint integration\""
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "cf67d3ad4744d7eff3ab38a986fb195e57f755ef",
+            "module": "compass-core",
+            "subject": "Migrate repo of 'compass' to repo of 'compass-core', leave 'compass' to host project homepage"
+        },
+        {
+            "correction_comment": "Reset LOC to 12",
+            "loc": 0,
+            "change_id": [],
+            "primary_key": "87dac1562892d7c39cd9f2a738dbb7aaef21f645",
+            "module": "compass-web",
+            "subject": "Update UI to work with updated UI. Add demo config data."
         }
     ]
 }
