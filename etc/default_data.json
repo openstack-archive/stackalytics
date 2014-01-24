@@ -145,6 +145,18 @@
             "emails": ["ap@pilotti.it", "apilotti@cloudbasesolutions.com"]
         },
         {
+            "launchpad_id": "allison",
+            "gerrit_id": "wendar",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Allison Randal",
+            "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com"]
+        },
+        {
             "launchpad_id": "amcrn",
             "companies": [
                 {
