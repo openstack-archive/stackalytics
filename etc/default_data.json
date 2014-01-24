@@ -3673,6 +3673,17 @@
             "emails": ["sbaker@redhat.com", "steve@stevebaker.org"]
         },
         {
+            "launchpad_id": "stevenk",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steve Kowalik",
+            "emails": ["steven@wedontsleep.org"]
+        },
+        {
             "launchpad_id": "subbu",
             "companies": [
                 {
