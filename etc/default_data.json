@@ -1451,6 +1451,17 @@
             "emails": ["graham@hayes.ie","graham.hayes@hp.com","graham@managedit.ie"]
         },
         {
+            "launchpad_id": "greghaynes",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gregory Haynes",
+            "emails": ["greg@greghaynes.net"]
+        },
+        {
             "launchpad_id": "greglange",
             "companies": [
                 {
