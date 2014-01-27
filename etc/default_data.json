@@ -283,11 +283,15 @@
             "companies": [
                 {
                     "company_name": "Red Hat",
+                    "end_date": "2014-Jan-03"
+                },
+                {
+                    "company_name": "Rackspace",
                     "end_date": null
                 }
             ],
             "user_name": "Angus Salkeld",
-            "emails": ["angus@salkeld.id.au", "asalkeld@redhat.com"]
+            "emails": ["angus@salkeld.id.au", "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
             "launchpad_id": "asomya",
