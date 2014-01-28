@@ -5935,6 +5935,10 @@
         {
             "module_group_name": "puppet-group",
             "modules": ["puppet-openstack", "puppet-nova", "puppet-neutron", "puppet-glance", "puppet-keystone", "puppet-horizon", "puppet-heat", "puppet-cinder", "puppet-openstack_dev_env", "puppet-swift", "puppet-tempest", "puppet-ceilometer"]
+        },
+        {
+            "module_group_name": "chef-group",
+            "modules": ["openstack-chef-repo", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-identity", "cookbook-openstack-block-storage", "cookbook-openstack-object-storage", "cookbook-openstack-orchestration", "cookbook-openstack-metering", "cookbook-openstack-network", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-dashboard", "cookbook-openstack-image"]
         }
     ],
     "releases": [
