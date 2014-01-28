@@ -477,6 +477,17 @@
             "emails": ["boris@pavlovic.me"]
         },
         {
+            "launchpad_id": "breu",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joseph W. Breu",
+            "emails": ["joseph.breu@rackspace.com", "breu@breu.org"]
+        },
+        {
             "launchpad_id": "broskos",
             "companies": [
                 {
