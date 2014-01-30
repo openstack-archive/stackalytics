@@ -179,6 +179,20 @@
             "emails": ["andersonvom@gmail.com", "andersonvom@thoughtworks.com", "anderson.mesquita@rackspace.com"]
         },
         {
+            "launchpad_id": "andrew-mccrae",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andy McCrae",
+            "emails": [
+                "andy.mccrae@gmail.com",
+                "andrew.mccrae@rackspace.co.uk"
+            ]
+        },
+        {
             "launchpad_id": "andrewbogott",
             "companies": [
                 {
@@ -1430,6 +1444,17 @@
             "emails": ["z-launchpad@brim.net", "gholt@rackspace.com"]
         },
         {
+            "launchpad_id": "git-harry",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Harry",
+            "emails": ["git-harry@live.co.uk"]
+        },
+        {
             "launchpad_id": "gmb",
             "companies": [
                 {
@@ -1652,6 +1677,18 @@
             ],
             "user_name": "Daniel Salinas",
             "emails": ["imsplitbit@gmail.com", "dsalinas@rackspace.com"]
+        },
+        {
+
+            "launchpad_id": "invsblduck",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brett Campbell",
+            "emails": ["invsblduck@gmail.com"]
         },
         {
             "launchpad_id": "ironcamel",
