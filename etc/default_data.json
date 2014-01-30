@@ -572,6 +572,17 @@
             "emails": ["clark.boylan@gmail.com"]
         },
         {
+            "launchpad_id": "cbrandily",
+            "companies": [
+                {
+                    "company_name": "Thales",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cedric Brandily",
+            "emails": ["zzelle@gmail.com", "cedric.brandily@thalesgroup.com"]
+        },
+        {
             "launchpad_id": "cburkett",
             "companies": [
                 {
