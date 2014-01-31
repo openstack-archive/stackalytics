@@ -73,7 +73,12 @@ MESSAGE_PATTERNS = {
     'blueprint_id': re.compile(r'\b(?:blueprint|bp)\b[ \t]*[#:]?[ \t]*'
                                r'(?P<id>[a-z0-9-]+)', re.IGNORECASE),
     'change_id': re.compile('Change-Id: (?P<id>I[0-9a-f]{40})', re.IGNORECASE),
+    'co-author': re.compile(r'(?:Co-Authored|Also)-By:'
+                            r'\s*(?P<id>.*)\s', re.IGNORECASE)
 }
+
+CO_AUTHOR_PATTERN = re.compile(
+    r'(?P<author_name>.+)\s*<(?P<author_email>.+)>', re.IGNORECASE)
 
 
 class Git(Vcs):
@@ -216,12 +221,22 @@ class Git(Vcs):
                 commit['release'] = self.release_index[commit['commit_id']]
             else:
                 commit['release'] = None
+
             if 'blueprint_id' in commit:
                 commit['blueprint_id'] = [(commit['module'] + ':' + bp_name)
                                           for bp_name
                                           in commit['blueprint_id']]
 
             yield commit
+
+            # Handles co-authors in the commit message. According to the bp
+            # we want to count contribution for authors and co-authors.
+            if 'co-author' in commit:
+                for coauthor in commit['co-author']:
+                    m = re.match(CO_AUTHOR_PATTERN, coauthor)
+                    if utils.check_email_validity(m.group("author_email")):
+                        commit.update(m.groupdict())
+                        yield commit
 
     def get_last_id(self, branch):
         LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
