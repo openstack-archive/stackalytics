@@ -1295,6 +1295,21 @@
             "emails": ["ewan.mellor@citrix.com"]
         },
         {
+            "launchpad_id": "ewindisch",
+            "companies": [
+                {
+                    "company_name": "Cloudscaling",
+                    "end_date": "2014-Jan-03"
+                },
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Windisch",
+            "emails": ["eric@windisch.us", "eric@cloudscaling.com", "ewindisch@docker.com", "eric.windisch@docker.com"]
+        },
+        {
             "launchpad_id": "eyerediskin",
             "companies": [
                 {
