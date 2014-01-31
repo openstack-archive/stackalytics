@@ -4515,6 +4515,10 @@
             "company_name": "Denali Systems"
         },
         {
+            "domains": ["docker.com"],
+            "company_name": "Docker"
+        },
+        {
             "domains": ["dreamhost.com"],
             "company_name": "DreamHost"
         },
