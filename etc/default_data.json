@@ -4951,6 +4951,10 @@
             "company_name": "Deutsche Telekom"
         },
         {
+            "domains": ["thales.com"],
+            "company_name": "Thales"
+        },
+        {
             "domains": ["thoughtworks.com"],
             "company_name": "ThoughtWorks"
         },
