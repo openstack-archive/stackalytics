@@ -4563,6 +4563,10 @@
             "company_name": "Freescale"
         },
         {
+            "domains": ["getchef.com", "opscode.com"],
+            "company_name": "Chef"
+        },
+        {
             "domains": ["globallogic.com"],
             "company_name": "GlobalLogic"
         },
