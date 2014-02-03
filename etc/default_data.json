@@ -3267,6 +3267,21 @@
             "emails": ["eldr@ya.ru", "enugaev@griddynamics.com", "reldan@oscloud.ru"]
         },
         {
+            "launchpad_id": "retr0h",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": "2013-Aug-30"
+                },
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "John Dewey",
+            "emails": ["john@dewey.ws"]
+        },
+        {
             "launchpad_id": "ridhi-j-shah",
             "companies": [
                 {
