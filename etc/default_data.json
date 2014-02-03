@@ -402,6 +402,17 @@
             "emails": ["brian.elliott@rackspace.com", "bdelliott@gmail.com"]
         },
         {
+            "launchpad_id": "bertrand-lallau",
+            "companies": [
+                {
+                    "company_name": "Thales",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bertrand Lallau",
+            "emails": ["bertrand.lallau@gmail.com", "bertrand.lallau@thalesgroup.com"]
+        },
+        {
             "launchpad_id": "bfschott",
             "companies": [
                 {
