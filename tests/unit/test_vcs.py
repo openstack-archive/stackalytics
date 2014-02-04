@@ -99,10 +99,26 @@ message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 diff_stat:
 
  0 files changed, 0 insertions(+), 0 deletions(-)
+
+ 0 files changed
+commit_id:12811c76f3a8208b36f81e61451ec17d227b4e58
+date:1369831203
+author_name:Jimi Hendrix
+author_email:jimi.hendrix@openstack.com
+subject:adds support off co-authors
+message:Change-Id: Id811c762ec1d13992b306c4a38e7360575e61451
+Co-Authored-By: Tupac Shakur <tupac.shakur@openstack.com>
+Also-By: Bob Dylan <bob.dylan@openstack.com>
+
+diff_stat:
+
+ 0 files changed, 0 insertions(+), 0 deletions(-)
+
             '''
 
         commits = list(self.git.log('dummy', 'dummy'))
-        self.assertEqual(5, len(commits))
+        commits_expected = 6 + 2  # authors + co-authors
+        self.assertEqual(commits_expected, len(commits))
 
         self.assertEqual(21, commits[0]['files_changed'])
         self.assertEqual(340, commits[0]['lines_added'])
@@ -128,3 +144,8 @@ diff_stat:
         self.assertEqual(0, commits[4]['files_changed'])
         self.assertEqual(0, commits[4]['lines_added'])
         self.assertEqual(0, commits[4]['lines_deleted'])
+
+        self.assertEqual(
+            ['Tupac Shakur <tupac.shakur@openstack.com>',
+             'Bob Dylan <bob.dylan@openstack.com>'],
+            commits[5]['co-author'])
