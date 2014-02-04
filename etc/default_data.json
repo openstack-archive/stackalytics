@@ -5076,6 +5076,10 @@
             "company_name": "Wind River"
         },
         {
+            "domains": ["x-ion.de"],
+            "company_name": "x-ion"
+        },
+        {
             "domains": ["xlab.si"],
             "company_name": "Xlab"
         },
