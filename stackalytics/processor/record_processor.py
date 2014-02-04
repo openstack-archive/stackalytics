@@ -268,6 +268,9 @@ class RecordProcessor(object):
             if 'approvals' not in patch:
                 continue  # not reviewed by anyone
             for approval in patch['approvals']:
+                if approval['type'] not in ('CRVW', 'APRV'):
+                    continue  # keep only Code-Review and Approved
+
                 # copy everything and flatten user data
                 mark = dict([(k, v) for k, v in six.iteritems(approval)
                              if k not in ['by', 'grantedOn', 'value']])
