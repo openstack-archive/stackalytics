@@ -157,11 +157,6 @@ div#right_list_wrapper {
     margin-top: 20px;
 }
 
-.message {
-    white-space: pre-wrap;
-    margin-top: 0.8em;
-}
-
 .label {
     font-weight: bold;
     line-height: 135%;
@@ -179,6 +174,18 @@ div#right_list_wrapper {
 }
 .activity .message {
     margin: 0;
+}
+
+.record {
+    margin-bottom: 1em;
+}
+
+.record .header {
+    font-weight: bold;
+}
+
+.record .message {
+    white-space: pre-wrap;
 }
 
 a[href^="https://blueprints"]:after {
@@ -308,7 +315,7 @@ a[href^="https://launchpad"]:after {
 .statusInProgress, .statusInProgress a {
     color: #000000;
 }
-.statusFixCommitted, .statusFixCommitted a {
+.statusComplete, .statusComplete a, .statusFixCommitted, .statusFixCommitted a {
     color: #005500;
 }
 .statusFixReleased, .statusFixReleased a {

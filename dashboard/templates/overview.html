@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import '_macros/activity_log.html' as activity_log %}
 
 {% set show_company_breakdown = (not company) and (not user_id) %}
 {% set show_engineer_breakdown = (not user_id) %}
@@ -38,43 +39,6 @@
     renderTableAndChart("/api/1.0/stats/modules", "module_container", "module_table", "module_chart", "module");
     {% endif %}
 
-    {% if show_activity %}
-
-        var page_size = 10;
-        var start_record = 0;
-
-        function load_activity() {
-            $.ajax({
-                url: make_uri("/api/1.0/activity", {page_size: page_size, start_record: start_record}),
-                dataType: "json",
-                success: function (data) {
-                    if (data["activity"].length < page_size) {
-                        $('#activity_more').hide();
-                    }
-                    if ((start_record == 0) && (data["activity"].length == 0)) {
-                        $('#activity_header').hide();
-                    }
-                    $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
-                    $('.ext_link').click(function(event) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        window.open(this.href, '_blank');
-                    });
-                }
-            });
-        }
-        $(document).ready(function () {
-            load_activity();
-        });
-        $(document).ready(function () {
-            $('#activity_more')
-                .click(function() {
-                        start_record += page_size;
-                        load_activity() });
-        });
-
-    {% endif %}
-
     {% if show_user_profile %}
         $(document).ready(function () {
             $.ajax({
@@ -101,66 +65,6 @@
 </script>
 
 {# Templates #}
-<script id="activity_template" type="text/x-jquery-tmpl">
-    {% raw %}
-    <div style="margin-bottom: 1em;">
-    <div style='float: left; '><img src="${gravatar}" style="width: 32px; height: 32px;"></div>
-    <div style="margin-left: 40px;">
-        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} in {%html module_link%}</div>
-    </div>
-    <div style="margin-left: 40px;">
-        {%if record_type == "commit" %}
-            {%if correction_comment != "" %}
-            <div style='font-weight: bold; color: red;'>Commit corrected:
-                <span>${correction_comment}</span></div>
-            {%/if%}
-            <div style='font-weight: bold;'>${subject}</div>
-            <div style='white-space: pre-wrap; '>{%html message %}</div>
-            {%if commit_date_str != "" %}
-                <div>Commit date: ${commit_date_str}</div>
-            {%/if%}
-            <div><span style="color: green">+<span>${lines_added}</span></span>
-                <span style="color: blue">- <span>${lines_deleted}</span></span></div>
-        {%elif record_type == "mark" %}
-            <div>Review #${review_number} submitted by {%html parent_author_link %}</div>
-            <div style='font-weight: bold;'>${subject}</div>
-            <div>Change Id: <a href="${url}">${review_id}</a></div>
-            <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
-        {%elif record_type == "email" %}
-            <div style='font-weight: bold;'>
-            {%if email_link != "" %}
-            <a href='${email_link}'>
-            {%/if%}
-            ${subject}
-            {%if email_link != "" %}
-            </a>
-            {%/if%}
-            </div>
-            {%if blueprint_id_count %}
-            <div>Mentions blueprints:
-            {%each( index, value ) blueprint_id %}
-                ${value}
-            {%/each%}
-            </div>
-            {%/if%}
-        {%elif ((record_type == "bpd") || (record_type == "bpc")) %}
-            <div style='font-weight: bold;'>${title} ({%html blueprint_link %})</div>
-            <div style='white-space: pre-wrap;'>${summary}</div>
-
-            <div>Priority: <span class="specpriority${priority}">${priority}</span></div>
-            <div>Status: <span class="status${lifecycle_status}">${lifecycle_status}</span>
-                (<span class="specstatus${definition_status}">${definition_status}</span>,
-                <span class="specdelivery${implementation_status}">${implementation_status}</span>)</div>
-            {%if mention_count %}
-            <div><b>Mention count: ${mention_count}, last mention on ${mention_date_str}</b></div>
-            {%/if%}
-        {%/if%}
-    </div>
-    </div>
-    {% endraw %}
-</script>
-
 <script id="user_profile_template" type="text/x-jquery-tmpl">
     {% raw %}
     <div>
@@ -294,14 +198,7 @@
         <div id="user_profile_container" style="margin-bottom: 2em;"></div>
     {% endif %}
     {% if show_user_activity %}
-        <h2 id="activity_header">Activity log</h2>
-        <div id="activity_container"></div>
-
-        <div style="height: 44px;">
-        <div class="dataTables_paginate paging_full_numbers" id="activity_paginate">
-            <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
-        </div>
-        </div>
+        {{ activity_log.show_activity_log(gravatar_size=32, show_all=False) }}
     {% endif %}
 
     {% if show_module_contribution %}
@@ -365,14 +262,7 @@
     {% endif %}
 
     {% if show_module_activity %}
-        <h2 id="activity_header">Activity log</h2>
-        <div id="activity_container"></div>
-
-        <div style="height: 44px;">
-        <div class="dataTables_paginate paging_full_numbers" id="activity_paginate">
-            <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
-        </div>
-        </div>
+        {{ activity_log.show_activity_log(gravatar_size=32, show_all=False) }}
     {% endif %}
 
 {% endblock %}

@@ -1,9 +1,13 @@
-{% macro show_activity_log(user_id=None, company=None, blueprint_id=None, show_record_type=True, show_user_gravatar=True, gravatar_size=32) -%}
+{% macro show_activity_log(user_id=None, company=None, blueprint_id=None,
+show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True) -%}
 
 <script type="text/javascript">
     var page_size = 10;
     var start_record = 0;
-    var uri_options = {project_type: "all", release: "all", metric: "all"};
+    var uri_options = {};
+    {% if show_all %}
+        uri_options = {project_type: "all", release: "all", metric: "all"};
+    {% endif %}
     {% if user_id %}
         uri_options["user_id"] = "{{ user_id }}";
     {% endif %}
@@ -53,7 +57,7 @@
 </script>
 
 <script id="activity_template" type="text/x-jquery-tmpl">
-    <div style="margin-bottom: 1em;">
+    <div class="record">
     <div style='float: left; '>
         {% if show_user_gravatar %}
             <img src="${gravatar}" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
@@ -65,12 +69,12 @@
     <div style="margin-left: {{ gravatar_size * 1.4 }}px;">
 
     {% raw %}
-        <div style="font-weight: bold;">{%html author_link %} ({%html company_link %})</div>
-        <div style="font-weight: bold;">${date_str} in {%html module_link%}</div>
+        <div class="header">{%html author_link %} ({%html company_link %})</div>
+        <div class="header">${date_str} in {%html module_link%}</div>
 
         {%if record_type == "commit" %}
-            <div style='font-weight: bold;'>Commit &ldquo;${subject}&rdquo;</div>
-            <div style='white-space: pre-wrap; '>{%html message %}</div>
+            <div class="header">Commit &ldquo;${subject}&rdquo;</div>
+            <div class="message">{%html message %}</div>
             {%if commit_date_str != "" %}
                 <div>Commit date: ${commit_date_str}</div>
             {%/if%}
@@ -81,16 +85,16 @@
             <div><span style="color: green">+<span>${lines_added}</span></span>
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
-            <div style='font-weight: bold;'>Review &ldquo;${subject}&rdquo;</div>
-            <div>${review_number} review submitted by {%html parent_author_link %} ({%html parent_company_link %})</div>
+            <div class="header">Review &ldquo;${subject}&rdquo;</div>
+            <div>Submitted by: {%html parent_author_link %} ({%html parent_company_link %}) (#${review_number})</div>
             <div>Change Id: <a href="${url}">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
         {%elif record_type == "review" %}
-            <div style='font-weight: bold;'>Patch &ldquo;${subject}&rdquo;</div>
+            <div class="header">Patch &ldquo;${subject}&rdquo;</div>
             <div>Current Status: ${status}</div>
             <div>Change Id: <a href="${url}">${id}</a></div>
         {%elif record_type == "email" %}
-            <div style='font-weight: bold;'>
+            <div class="header">
             {%if email_link != "" %}
             <a href='${email_link}'>
             {%/if%}
@@ -111,8 +115,8 @@
             <div id="content-button-${record_id}" class="message" style="display:none;">${body}</div>
             {%/if%}
         {%elif ((record_type == "bpd") || (record_type == "bpc")) %}
-            <div style='font-weight: bold;'>Blueprint &ldquo;${title}&rdquo; ({%html blueprint_link %})</div>
-            <div style='white-space: pre-wrap;'>${summary}</div>
+            <div class="header">Blueprint &ldquo;${title}&rdquo; ({%html blueprint_link %})</div>
+            <div class="message">${summary}</div>
 
             <div>Priority: <span class="specpriority${priority}">${priority}</span></div>
             <div>Status: <span class="status${lifecycle_status}">${lifecycle_status}</span>
@@ -131,7 +135,7 @@
     <div id="activity_container"></div>
 
     <div style="height: 44px;">
-        <div class="dataTables_paginate paging_full_numbers" id="activity_paginate">
+        <div class="paging_full_numbers" id="activity_paginate" style="margin-left: {{ gravatar_size * 1.4 }}px;">
             <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
         </div>
     </div>
