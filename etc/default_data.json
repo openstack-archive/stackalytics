@@ -1772,6 +1772,17 @@
             "emails": ["ivoks@ubuntu.com", "ante.karamatic@canonical.com"]
         },
         {
+            "launchpad_id": "jackie-heitzer",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jackie Heitzer",
+            "emails": ["jackie_heitzer@cable.comcast.com "]
+        },
+        {
             "launchpad_id": "jaegerandi",
             "companies": [
                 {
