@@ -734,6 +734,44 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(user_2, utils.load_user(runtime_storage_inst,
                                                  'homer'))
 
+    def test_process_commit_with_coauthors(self):
+        record_processor_inst = self.make_record_processor(
+            lp_info={'jimi.hendrix@openstack.com':
+                     {'name': 'jimi', 'display_name': 'Jimi Hendrix'},
+                     'tupac.shakur@openstack.com':
+                     {'name': 'tupac', 'display_name': 'Tupac Shakur'},
+                     'bob.dylan@openstack.com':
+                     {'name': 'bob', 'display_name': 'Bob Dylan'}})
+        processed_commits = list(record_processor_inst.process([
+            {'record_type': 'commit',
+             'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
+             'author_name': 'Jimi Hendrix',
+             'author_email': 'jimi.hendrix@openstack.com', 'date': 1234567890,
+             'lines_added': 25, 'lines_deleted': 9, 'release_name': 'havana',
+             'coauthor': [{'author_name': 'Tupac Shakur',
+                           'author_email': 'tupac.shakur@openstack.com'},
+                          {'author_name': 'Bob Dylan',
+                           'author_email': 'bob.dylan@openstack.com'}]}]))
+
+        self.assertEqual(3, len(processed_commits))
+
+        self.assertRecordsMatch({
+            'launchpad_id': 'tupac',
+            'author_email': 'tupac.shakur@openstack.com',
+            'author_name': 'Tupac Shakur',
+        }, processed_commits[0])
+        self.assertRecordsMatch({
+            'launchpad_id': 'jimi',
+            'author_email': 'jimi.hendrix@openstack.com',
+            'author_name': 'Jimi Hendrix',
+        }, processed_commits[2])
+        self.assertEqual('tupac',
+                         processed_commits[0]['coauthor'][0]['user_id'])
+        self.assertEqual('bob',
+                         processed_commits[0]['coauthor'][1]['user_id'])
+        self.assertEqual('jimi',
+                         processed_commits[0]['coauthor'][2]['user_id'])
+
     # record post-processing
 
     def test_blueprint_mention_count(self):

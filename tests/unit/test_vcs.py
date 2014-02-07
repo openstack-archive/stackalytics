@@ -117,7 +117,7 @@ diff_stat:
             '''
 
         commits = list(self.git.log('dummy', 'dummy'))
-        commits_expected = 6 + 2  # authors + co-authors
+        commits_expected = 6
         self.assertEqual(commits_expected, len(commits))
 
         self.assertEqual(21, commits[0]['files_changed'])
@@ -144,8 +144,11 @@ diff_stat:
         self.assertEqual(0, commits[4]['files_changed'])
         self.assertEqual(0, commits[4]['lines_added'])
         self.assertEqual(0, commits[4]['lines_deleted'])
+        self.assertFalse('coauthor' in commits[4])
 
         self.assertEqual(
-            ['Tupac Shakur <tupac.shakur@openstack.com>',
-             'Bob Dylan <bob.dylan@openstack.com>'],
-            commits[5]['co-author'])
+            [{'author_name': 'Tupac Shakur',
+              'author_email': 'tupac.shakur@openstack.com'},
+             {'author_name': 'Bob Dylan',
+              'author_email': 'bob.dylan@openstack.com'}],
+            commits[5]['coauthor'])

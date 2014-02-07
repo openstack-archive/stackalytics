@@ -30,20 +30,27 @@ INFINITY_HTML = '&#x221E;'
 gravatar = gravatar_ext.Gravatar(None, size=64, rating='g', default='wavatar')
 
 
-def _extend_record_common_fields(record):
-    record['date_str'] = format_datetime(record['date'])
+def _extend_author_fields(record):
     record['author_link'] = make_link(
         record['author_name'], '/',
         {'user_id': record['user_id'], 'company': ''})
     record['company_link'] = make_link(
         record['company_name'], '/',
         {'company': record['company_name'], 'user_id': ''})
+    record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
+
+
+def _extend_record_common_fields(record):
+    _extend_author_fields(record)
+    record['date_str'] = format_datetime(record['date'])
     record['module_link'] = make_link(
         record['module'], '/',
         {'module': record['module'], 'company': '', 'user_id': ''})
-    record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
     record['blueprint_id_count'] = len(record.get('blueprint_id', []))
     record['bug_id_count'] = len(record.get('bug_id', []))
+
+    for coauthor in record.get('coauthor') or []:
+        _extend_author_fields(coauthor)
 
 
 def extend_record(record):
