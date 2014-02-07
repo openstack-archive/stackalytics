@@ -2195,6 +2195,17 @@
             "emails": ["jtran@attinteractive.com", "jhtran@att.com"]
         },
         {
+              "launchpad_id": "juan-perez",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Juan Perez",
+            "emails": ["Juan_Perez@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "jun-park-earth",
             "companies": [
                 {
