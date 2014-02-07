@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import bisect
+import copy
 import time
 
 import six
@@ -221,10 +222,25 @@ class RecordProcessor(object):
         record['author_email'] = record['author_email'].lower()
         record['commit_date'] = record['date']
 
-        self._update_record_and_user(record)
+        coauthors = record.get('coauthor')
+        if not coauthors:
+            self._update_record_and_user(record)
 
-        if record['company_name'] != '*robots':
-            yield record
+            if record['company_name'] != '*robots':
+                yield record
+        else:
+            coauthors.append({'author_name': record['author_name'],
+                              'author_email': record['author_email']})
+            for coauthor in coauthors:
+                coauthor['date'] = record['date']
+                self._update_record_and_user(coauthor)
+
+            for coauthor in coauthors:
+                new_record = copy.deepcopy(record)
+                new_record.update(coauthor)
+                new_record['primary_key'] += coauthor['author_email']
+
+                yield new_record
 
     def _spawn_review(self, record):
         # copy everything except patchsets and flatten user data

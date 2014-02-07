@@ -73,12 +73,12 @@ MESSAGE_PATTERNS = {
     'blueprint_id': re.compile(r'\b(?:blueprint|bp)\b[ \t]*[#:]?[ \t]*'
                                r'(?P<id>[a-z0-9-]+)', re.IGNORECASE),
     'change_id': re.compile('Change-Id: (?P<id>I[0-9a-f]{40})', re.IGNORECASE),
-    'co-author': re.compile(r'(?:Co-Authored|Also)-By:'
-                            r'\s*(?P<id>.*)\s', re.IGNORECASE)
+    'coauthor': re.compile(r'(?:Co-Authored|Also)-By:'
+                           r'\s*(?P<id>.*)\s', re.IGNORECASE)
 }
 
 CO_AUTHOR_PATTERN = re.compile(
-    r'(?P<author_name>.+)\s*<(?P<author_email>.+)>', re.IGNORECASE)
+    r'(?P<author_name>.+?)\s*<(?P<author_email>.+)>', re.IGNORECASE)
 
 
 class Git(Vcs):
@@ -86,7 +86,7 @@ class Git(Vcs):
     def __init__(self, repo, sources_root):
         super(Git, self).__init__(repo, sources_root)
         uri = self.repo['uri']
-        match = re.search(r'([^\/]+)\.git$', uri)
+        match = re.search(r'([^/]+)\.git$', uri)
         if match:
             self.folder = os.path.normpath(self.sources_root + '/' +
                                            match.group(1))
@@ -212,7 +212,8 @@ class Git(Vcs):
                 collection = set()
                 for item in re.finditer(pattern, commit['message']):
                     collection.add(item.group('id'))
-                commit[pattern_name] = list(collection)
+                if collection:
+                    commit[pattern_name] = list(collection)
 
             commit['date'] = int(commit['date'])
             commit['module'] = self.repo['module']
@@ -227,16 +228,16 @@ class Git(Vcs):
                                           for bp_name
                                           in commit['blueprint_id']]
 
-            yield commit
+            coauthors = []
+            for coauthor in commit.get('coauthor') or []:
+                m = re.match(CO_AUTHOR_PATTERN, coauthor)
+                if utils.check_email_validity(m.group("author_email")):
+                    coauthors.append(m.groupdict())
 
-            # Handles co-authors in the commit message. According to the bp
-            # we want to count contribution for authors and co-authors.
-            if 'co-author' in commit:
-                for coauthor in commit['co-author']:
-                    m = re.match(CO_AUTHOR_PATTERN, coauthor)
-                    if utils.check_email_validity(m.group("author_email")):
-                        commit.update(m.groupdict())
-                        yield commit
+            if coauthors:
+                commit['coauthor'] = coauthors
+
+            yield commit
 
     def get_last_id(self, branch):
         LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
