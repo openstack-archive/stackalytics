@@ -6090,7 +6090,7 @@
         },
         {
             "module_group_name": "murano-group",
-            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-common", "murano-conductor", "murano-dashboard", "murano-deployment", "murano-docs", "murano-tests"]
+            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-common", "murano-conductor", "murano-dashboard", "murano-deployment", "murano-docs", "murano-tests", "murano-metadataclient", "murano-repository"]
         },
         {
             "module_group_name": "puppet-group",
