@@ -905,6 +905,17 @@
             "emails": ["dave.walker@canonical.com", "davewalker@ubuntu.com"]
         },
         {
+            "launchpad_id": "david-deguzman",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Deguzman",
+            "emails": ["david_deguzman@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "david-goetz",
             "companies": [
                 {
@@ -1249,6 +1260,17 @@
                 }
             ],
             "emails": ["nmarkov@mirantis.com"]
+        },
+        {
+            "launchpad_id": "eric-martin4",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Martin",
+            "emails": ["eric_martin4@cable.comcast.com"]
         },
         {
             "launchpad_id": "eric-scholz1975",
@@ -4082,7 +4104,7 @@
                 }
             ],
             "user_name": "Victor Howard",
-            "emails": ["victor.r.howard@gmail.com"]
+            "emails": ["victor.r.howard@gmail.com", "victor_howard@cable.comcast.com"]
         },
         {
             "launchpad_id": "vipuls",
