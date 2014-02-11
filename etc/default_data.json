@@ -675,6 +675,18 @@
             "emails": ["chmouel@chmouel.com", "launchpad@chmouel.com", "chmouel.boudjnah@rackspace.co.uk", "chmouel@openstack.org", "chmouel@enovance.com"]
         },
         {
+            "launchpad_id": "chris-buccella",
+            "gerrit_id": "hdd",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Buccella",
+            "emails": ["chris@buccella.org", "buccella@linux.vnet.ibm.com"]
+        },
+        {
             "launchpad_id": "christophe.sauthier",
             "companies": [
                 {
