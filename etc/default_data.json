@@ -1,6 +1,17 @@
 {
     "users": [
         {
+            "launchpad_id": "0-doug",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Doug Shelley",
+            "emails": ["doug@parelastic.com", "doug@tesora.com"]
+        },
+        {
             "launchpad_id": "0x44",
             "companies": [
                 {
@@ -10,6 +21,17 @@
             ],
             "user_name": "Christopher MacGown",
             "emails": ["chris@pistoncloud.com", "chris@slicehost.com"]
+        },
+        {
+            "launchpad_id": "6-morgan",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Morgan Jones",
+            "emails": ["morgan@parelastic.com", "morgan@tesora.com"]
         },
         {
             "launchpad_id": "a-gorodnev",
@@ -168,6 +190,17 @@
             "emails": ["amcreynolds@ebaysf.com", "amcreynolds@ebay.com"]
         },
         {
+            "launchpad_id": "amrith",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Amrith Kumar",
+            "emails": ["amrith@parelastic.com", "amrith@tesora.com"]
+        },
+        {
             "launchpad_id": "andersonvom",
             "companies": [
                 {
@@ -202,6 +235,17 @@
             ],
             "user_name": "Andrew Bogott",
             "emails": ["abogott@wikimedia.org"]
+        },
+        {
+            "launchpad_id": "andrlw",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Bramley",
+            "emails": ["andrew@parelastic.com", "andrew@tesora.com"]
         },
         {
             "launchpad_id": "andy-edmonds",
@@ -1149,6 +1193,17 @@
             "emails": ["dt-github@xr7.org", "dtroyer@gmail.com"]
         },
         {
+            "launchpad_id": "duk",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Duk Loi",
+            "emails": ["duk@parelastic.com", "duk@tesora.com"]
+        },
+        {
             "launchpad_id": "duncan-thomas",
             "companies": [
                 {
@@ -1524,6 +1579,17 @@
             ],
             "user_name": "Harry",
             "emails": ["git-harry@live.co.uk"]
+        },
+        {
+            "launchpad_id": "glucas-q",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Greg Lucas",
+            "emails": ["glucas@parelastic.com", "glucas@tesora.com"]
         },
         {
             "launchpad_id": "gmb",
@@ -2553,6 +2619,17 @@
             "emails": ["iamljj@gmail.com", "jiajun@unitedstack.com"]
         },
         {
+            "launchpad_id": "lmichaels",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Laurel Michaels",
+            "emails": ["lmichaels@parelastic.com", "lmichaels@tesora.com"]
+        },
+        {
             "launchpad_id": "loganmc10",
             "companies": [
                 {
@@ -3167,6 +3244,17 @@
             "emails": ["raymond_pekowski@dell.com", "pekowski@gmail.com"]
         },
         {
+            "launchpad_id": "petel",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peter Stachowski",
+            "emails": ["peter@parelastic.com", "peter@tesora.com"]
+        },
+        {
             "launchpad_id": "peter-a-portante",
             "companies": [
                 {
@@ -3176,6 +3264,17 @@
             ],
             "user_name": "Peter Portante",
             "emails": ["peter.portante@redhat.com"]
+        },
+        {
+            "launchpad_id": "petr-malik",
+            "companies": [
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Petr Malik",
+            "emails": ["pmalik@parelastic.com", "pmalik@tesora.com", "petr.malik@hotmail.com"]
         },
         {
             "launchpad_id": "phongdly",
@@ -3583,6 +3682,17 @@
             ],
             "user_name": "Sean Dague",
             "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com"]
+        },
+        {
+            "launchpad_id": "sean-gossard",
+            "companies": [ 
+                {
+                    "company_name": "Tesora Corp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Gossard",
+            "emails": ["sgossard@parelastic.com", "sgossard@tesora.com", "seanGossard@usa.com"]
         },
         {
             "launchpad_id": "sean-mccully",
@@ -5065,6 +5175,10 @@
         {
             "domains": ["telekom.de"],
             "company_name": "Deutsche Telekom"
+        },
+        {
+            "domains": ["tesora.com", "parelastic.com"],
+            "company_name": "Tesora Corp"
         },
         {
             "domains": ["thalesgroup.com", "mythalesgroup.com"],
