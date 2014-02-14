@@ -1684,6 +1684,18 @@
             "emails": ["harlowja@gmail.com", "harlowja@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "hartsock",
+            "gerrit_id": "hartsocks",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shawn Hartsock",
+            "emails": ["hartsocks@vmware.com", "hartsock@acm.org"]
+        },
+        {
             "launchpad_id": "heckj",
             "companies": [
                 {
