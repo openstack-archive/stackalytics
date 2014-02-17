@@ -25,6 +25,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
 <!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
@@ -43,6 +44,9 @@
 
     $(document).ready(function () {
         init_selectors("");
+    });
+    $(function () {
+        $(document).tooltip();
     });
 
 </script>
@@ -66,32 +70,32 @@
         <div class="drops">
 
             <div class="drop">
-                <label for="release">Release</label>
+                <label for="release" title="Official releases of OpenStack">Release</label>
                 <input type="hidden" id="release" style="width: 140px" data-placeholder="Select release"/>
             </div>
 
             <div class="drop">
-                <label for="project_type">Projects</label>
+                <label for="project_type" title="Project type groups modules of same kind: official (integrated, incubated, other) or belonging to same organization (stackforge, infra)">Project Type</label>
                 <input type="hidden" id="project_type" style="width: 140px" data-placeholder="Select project type"/>
             </div>
 
             <div class="drop">
-                <label for="module">Module</label>
+                <label for="module" title="Module represents a repo (black), official program (violet) or pre-configured group of modules (cyan)">Module</label>
                 <input type="hidden" id="module" style="width: 140px" data-placeholder="Any module" value="{{ module }}"/>
             </div>
 
             <div class="drop">
-                <label for="company">Company</label>
+                <label for="company" title="Company name">Company</label>
                 <input type="hidden" id="company" style="width: 140px" data-placeholder="Any company" value="{{ company }}"/>
             </div>
 
             <div class="drop">
-                <label for="company">Engineer</label>
+                <label for="user" title="Name of engineer as configured in Launchpad or default_data.json">Engineer</label>
                 <input type="hidden" id="user" style="width: 140px" data-placeholder="Any engineer" value="{{ user_id }}"/>
             </div>
 
             <div class="drop">
-                <label for="metric">Metric</label>
+                <label for="metric" title="One of available metrics">Metric</label>
                 <input type="hidden" id="metric" style="width: 140px" data-placeholder="Select metric"/>
             </div>
 
