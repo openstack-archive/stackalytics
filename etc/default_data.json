@@ -6143,7 +6143,7 @@
         {
             "id": "all",
             "title": "All",
-            "modules": ["openstack", "openstack-infra", "openstack-dev", "stackforge"]
+            "modules": ["openstack", "openstack-infra", "openstack-dev", "stackforge", "unknown"]
         },
         {
             "id": "openstack",

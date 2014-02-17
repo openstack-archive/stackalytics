@@ -85,7 +85,7 @@ def init_releases(vault):
 
 def _make_module(module_id, text, modules, tag):
     return {'id': module_id, 'text': text,
-            'modules': modules, 'tag': tag}
+            'modules': set(modules), 'tag': tag}
 
 
 def init_module_groups(vault):

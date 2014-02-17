@@ -28,27 +28,45 @@ class TestAPIModules(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/glance.git'}],
                  'module_groups': {'nova-group': {
                      'module_group_name': 'nova-group',
-                     'modules': ['nova', 'python-novaclient']}},
+                     'modules': ['nova', 'nova-cli']}},
                  'project_types': [
                      {'id': 'all', 'title': 'All',
+                      'modules': ['nova', 'glance', 'nova-cli']},
+                     {'id': 'integrated', 'title': 'Integrated',
                       'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'],
-                                      module=['glance', 'nova'])):
+                                      module=['glance', 'nova', 'nova-cli'])):
 
             response = self.app.get('/api/1.0/modules?project_type=all')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
                  {'id': 'nova', 'text': 'nova', 'tag': 'module'},
+                 {'id': 'nova-cli', 'text': 'nova-cli', 'tag': 'module'},
                  {'id': 'nova-group', 'text': 'nova-group', 'tag': 'group'}],
-                modules)
+                modules,
+                message='Expected modules belonging to project type plus '
+                        'module groups that are completely within '
+                        'project type')
+
+            response = self.app.get('/api/1.0/modules?module=nova-group&'
+                                    'project_type=integrated')
+            modules = json.loads(response.data)['modules']
+            self.assertEqual(
+                [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
+                 {'id': 'nova', 'text': 'nova', 'tag': 'module'}],
+                modules,
+                message='Expected modules belonging to project type plus '
+                        'module groups that are completely within '
+                        'project type')
 
             response = self.app.get('/api/1.0/modules?query=glance&'
                                     'project_type=all')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'}],
-                modules)
+                modules,
+                message='Expected modules which name contains query')
 
     def test_get_module(self):
         with test_api.make_runtime_storage(
@@ -62,11 +80,10 @@ class TestAPIModules(test_api.TestAPI):
             response = self.app.get('/api/1.0/modules/nova')
             module = json.loads(response.data)['module']
             self.assertEqual(
-                {'id': 'nova', 'modules': ['nova'], 'text': 'nova',
-                 'tag': 'module'}, module)
+                {'id': 'nova', 'text': 'nova', 'tag': 'module'}, module)
 
             response = self.app.get('/api/1.0/modules/nova-group')
             module = json.loads(response.data)['module']
             self.assertEqual(
-                {'tag': 'group', 'id': 'nova-group', 'text': 'nova-group',
-                 'modules': ['nova', 'python-novaclient']}, module)
+                {'tag': 'group', 'id': 'nova-group', 'text': 'nova-group'},
+                module)

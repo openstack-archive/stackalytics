@@ -266,6 +266,12 @@ def get_modules_json(records):
     if tags:
         module_ids = set(module_id for module_id in module_ids
                          if module_id_index[module_id].get('tag') in tags)
+    # keep only modules that are in project type completely
+    pts = parameters.get_parameter({}, 'project_type', 'project_types')
+    if pts:
+        m = set(vault.resolve_project_types(pts))
+        module_ids = set(module_id for module_id in module_ids
+                         if module_id_index[module_id]['modules'] <= m)
 
     query = (flask.request.args.get('query') or '').lower()
     matched = []
@@ -300,7 +306,9 @@ def get_module(module):
     module_id_index = vault.get_vault()['module_id_index']
     module = module.lower()
     if module in module_id_index:
-        return module_id_index[module]
+        return {'id': module_id_index[module]['id'],
+                'text': module_id_index[module]['text'],
+                'tag': module_id_index[module]['tag']}
     flask.abort(404)
 
 
