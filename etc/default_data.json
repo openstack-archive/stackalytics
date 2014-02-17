@@ -1954,6 +1954,18 @@
             "emails": ["james.slagle@gmail.com"]
         },
         {
+            "launchpad_id": "jan-provaznik",
+            "gerrit_id": "jprovazn",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jan Provaznik",
+            "emails": ["jprovazn@redhat.com", "jan.provaznik@gmail.com"]
+        },
+        {
             "launchpad_id": "jason-koelker",
             "companies": [
                 {
@@ -3012,6 +3024,17 @@
             ],
             "user_name": "Michael Shuler",
             "emails": ["mshuler@rackspace.com"]
+        },
+        {
+            "launchpad_id": "mthompson-n",
+            "companies": [
+                {
+                    "company_name": "A10 Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Micheal Thompson",
+            "emails": ["mthompson@a10networks.com", "miket@a10networks.com"]
         },
         {
             "launchpad_id": "namei-unix",
@@ -4196,6 +4219,17 @@
             "emails": ["ttcl@mac.com", "troy.toman@rackspace.com"]
         },
         {
+            "launchpad_id": "ttrifonov",
+            "companies": [
+                {
+                    "company_name": "CloudRunner.io",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tihomir Trifonov",
+            "emails": ["t.trifonov@gmail.com"]
+        },
+        {
             "launchpad_id": "ttx",
             "companies": [
                 {
@@ -4609,6 +4643,10 @@
         {
             "domains": ["99cloud.net"],
             "company_name": "99cloud"
+        },
+        {
+            "domains": ["a10networks.com"],
+            "company_name": "A10 Networks"
         },
         {
             "domains": ["alcatel-lucent.com"],
