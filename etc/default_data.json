@@ -3808,6 +3808,17 @@
             "emails": ["simon.pasquier@bull.net", "pasquier.simon@gmail.com"]
         },
         {
+            "launchpad_id": "skanddh",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stephen Ahn",
+            "emails": ["skanddh@gmail.com", "seungkyu.ahn@samsung.com"]
+        },
+        {
             "launchpad_id": "sleepsonthefloor",
             "companies": [
                 {
