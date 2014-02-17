@@ -69,17 +69,14 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
     <div style="margin-left: {{ gravatar_size * 1.4 }}px;">
 
     {% raw %}
-        <div class="header">{%html author_link %} ({%html company_link %})</div>
-        <div class="header">${date_str} in {%html module_link%}</div>
-
         {%if coauthor %}
-        <div class="header">Co-Authors:
-            {%each(index,value) coauthor %}
-                {%if index>0 %},{%/if%}
-                {%html value.author_link %} ({%html value.company_link %})
-            {%/each%}
+        <div class="header">
+            {%each(index,value) coauthor %}{%if index>0 %}, {%/if%}{%html value.author_link %} ({%html value.company_link %}){%/each%}
         </div>
+        {%else%}
+            <div class="header">{%html author_link %} ({%html company_link %})</div>
         {%/if%}
+        <div class="header">${date_str} in {%html module_link%}</div>
 
         {%if record_type == "commit" %}
             <div class="header">Commit &ldquo;${subject}&rdquo;</div>

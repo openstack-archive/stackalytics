@@ -84,6 +84,7 @@ author_name:John Doe
 author_email:john.doe@dreamhost.com
 subject:add readme for 2.2.2
 message: implements blueprint fix-me.
+Co-Authored-By: Anonymous <wrong@email>
 Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 
 diff_stat:
@@ -95,6 +96,7 @@ author_name:Doug Hoffner
 author_email:mark.mcclain@dreamhost.com
 subject:add readme for 2.2.2
 message:Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
+Co-Authored-By: some friend of mine
 
 diff_stat:
 
@@ -109,6 +111,7 @@ subject:adds support off co-authors
 message:Change-Id: Id811c762ec1d13992b306c4a38e7360575e61451
 Co-Authored-By: Tupac Shakur <tupac.shakur@openstack.com>
 Also-By: Bob Dylan <bob.dylan@openstack.com>
+Also-By: Anonymous <wrong@email>
 
 diff_stat:
 
@@ -140,6 +143,7 @@ diff_stat:
         self.assertEqual(0, commits[3]['lines_deleted'])
         self.assertEqual(set(['dummy:fix-me']),
                          set(commits[3]['blueprint_id']))
+        self.assertFalse('coauthor' in commits[3])
 
         self.assertEqual(0, commits[4]['files_changed'])
         self.assertEqual(0, commits[4]['lines_added'])
