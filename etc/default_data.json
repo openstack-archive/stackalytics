@@ -1097,6 +1097,17 @@
             "emails": ["devvesa@gmail.com"]
         },
         {
+            "launchpad_id": "dflorea",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dan Florea",
+            "emails": ["dan.florea@gmail.com", "dflorea@vmware.com"]
+        },
+        {
             "launchpad_id": "dims-v",
             "companies": [
                 {
