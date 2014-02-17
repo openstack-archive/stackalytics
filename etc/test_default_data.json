@@ -55,7 +55,6 @@
 
     "repos": [
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -88,29 +87,24 @@
             ],
             "uri": "git://github.com/openstack/glance.git",
             "module": "glance",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
             "module": "python-glanceclient",
-            "project_group": "core",
-            "project_type": "openstack",
             "organization": "openstack",
             "uri": "git://github.com/openstack/python-glanceclient.git"
         },
         {
             "module": "stackalytics",
-            "project_type": "stackforge",
             "organization": "stackforge",
             "uri": "git://github.com/stackforge/stackalytics.git"
         }
     ],
 
-    "x-project_sources": [
+    "project_sources": [
         {
-            "organization": "openstack-dev",
-            "project_type": "openstack",
-            "project_group": null
+            "organization": "openstack-ops",
+            "module_group_name": "OpenStack-Ops"
         }
     ],
 

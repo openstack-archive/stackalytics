@@ -10,7 +10,7 @@
                 "properties": {
                     "launchpad_id": {
                         "type": "string",
-                        "pattern": "[a-z\\d-]+"
+                        "pattern": "^[a-z\\d\\.-]+$"
                     },
                     "gerrit_id": {
                         "type": "string"
@@ -22,7 +22,7 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "pattern": "[a-z\\d_\\.-]+@([a-z\\d_\\.-]+\\.)+[a-z]+"
+                            "pattern": "^[a-z\\d_\\.-]+@([a-z\\d\\.-]+\\.)+[a-z]+$"
                         },
                         "minItems": 1
                     },
@@ -36,7 +36,7 @@
                                 },
                                 "end_date": {
                                     "type": ["string", "null"],
-                                    "pattern": "20\\d{2}-\\w{3}-[0-3]\\d"
+                                    "pattern": "^20\\d{2}-\\w{3}-[0-3]\\d$"
                                 }
                             },
                             "required": ["company_name", "end_date"],
@@ -59,7 +59,7 @@
                     },
                     "end_date": {
                         "type": "string",
-                        "pattern": "20\\d{2}-\\w{3}-[0-3]\\d"
+                        "pattern": "^20\\d{2}-\\w{3}-[0-3]\\d$"
                     }
                 },
                 "required": ["release_name", "end_date"],
@@ -72,12 +72,6 @@
                 "type": "object",
                 "properties": {
                     "uri": {
-                        "type": "string"
-                    },
-                    "project_type": {
-                        "type": "string"
-                    },
-                    "project_group": {
                         "type": "string"
                     },
                     "organization": {
@@ -108,7 +102,7 @@
                         }
                     }
                 },
-                "required": ["uri", "project_type", "module", "organization"],
+                "required": ["uri", "module", "organization"],
                 "additionalProperties": false
             }
         },
@@ -124,7 +118,7 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "pattern": "[a-z\\d\\.]*"
+                            "pattern": "^[a-z\\d\\.-]*$"
                         }
                     }
                 },
@@ -140,11 +134,9 @@
                     "organization": {
                         "type": "string"
                     },
-                    "project_type": {
-                        "type": "string"
-                    },
-                    "project_group": {
-                        "type": ["string", "null"]
+                    "module_group_name": {
+                        "type": "string",
+                        "pattern": "^[\\w-]+$"
                     },
                     "exclude": {
                         "type": "array",
@@ -153,7 +145,7 @@
                         }
                     }
                 },
-                "required": ["organization", "project_type"],
+                "required": ["organization"],
                 "additionalProperties": false
             }
         },
@@ -163,7 +155,8 @@
                 "type": "object",
                 "properties": {
                     "module_group_name": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[\\w-]+$"
                     },
                     "modules": {
                         "type": ["array"],

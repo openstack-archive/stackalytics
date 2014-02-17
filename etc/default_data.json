@@ -323,7 +323,7 @@
                 }
             ],
             "user_name": "armando-migliaccio",
-            "emails": ["amigliaccio@nicira.com", "Armando.Migliaccio@eu.citrix.com", "amigliaccio@internap.com", "armamig@gmail.com", "armando.migliaccio@citrix.com", "armando.migliaccio@eu.citrix.com"]
+            "emails": ["amigliaccio@nicira.com", "armando.migliaccio@eu.citrix.com", "amigliaccio@internap.com", "armamig@gmail.com", "armando.migliaccio@citrix.com"]
         },
         {
             "launchpad_id": "arnaudleg",
@@ -2315,7 +2315,7 @@
                 }
             ],
             "user_name": "Juan Perez",
-            "emails": ["Juan_Perez@cable.comcast.com"]
+            "emails": ["juan_perez@cable.comcast.com"]
         },
         {
             "launchpad_id": "jun-park-earth",
@@ -3116,7 +3116,7 @@
                 }
             ],
             "user_name": "Zhenguo Niu",
-            "emails": ["zhenguo@unitedstack.com", "Niu.ZGlinux@gmail.com"]
+            "emails": ["zhenguo@unitedstack.com", "niu.zglinux@gmail.com"]
         },
         {
             "launchpad_id": "nobodycam",
@@ -3704,7 +3704,7 @@
                 }
             ],
             "user_name": "Sean Gossard",
-            "emails": ["sgossard@parelastic.com", "sgossard@tesora.com", "seanGossard@usa.com"]
+            "emails": ["sgossard@parelastic.com", "sgossard@tesora.com", "seangossard@usa.com"]
         },
         {
             "launchpad_id": "sean-mccully",
@@ -4304,7 +4304,7 @@
                 }
             ],
             "user_name": "Trevor R Jr",
-            "emails": ["vmtrooper@gmail.com", "Trevor.RobertsJr@vce.com"]
+            "emails": ["vmtrooper@gmail.com", "trevor.robertsjr@vce.com"]
         },
         {
             "launchpad_id": "vsharshov",
@@ -5307,7 +5307,6 @@
     ],
     "repos": [
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -5340,11 +5339,9 @@
             ],
             "uri": "git://github.com/openstack/nova.git",
             "module": "nova",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -5377,11 +5374,9 @@
             ],
             "uri": "git://github.com/openstack/keystone.git",
             "module": "keystone",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "branch": "stable/folsom",
@@ -5409,11 +5404,9 @@
             ],
             "uri": "git://github.com/openstack/cinder.git",
             "module": "cinder",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -5446,11 +5439,9 @@
             ],
             "uri": "git://github.com/openstack/glance.git",
             "module": "glance",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -5483,11 +5474,9 @@
             ],
             "uri": "git://github.com/openstack/neutron.git",
             "module": "neutron",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2012.1",
@@ -5520,11 +5509,9 @@
             ],
             "uri": "git://github.com/openstack/horizon.git",
             "module": "horizon",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "1.4.8",
@@ -5557,11 +5544,9 @@
             ],
             "uri": "git://github.com/openstack/swift.git",
             "module": "swift",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "0.2.0",
@@ -5586,11 +5571,9 @@
             ],
             "uri": "git://github.com/openstack/python-keystoneclient.git",
             "module": "python-keystoneclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2.9.0",
@@ -5615,11 +5598,9 @@
             ],
             "uri": "git://github.com/openstack/python-novaclient.git",
             "module": "python-novaclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "1.0.3",
@@ -5639,11 +5620,9 @@
             ],
             "uri": "git://github.com/openstack/python-cinderclient.git",
             "module": "python-cinderclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "0.9.0",
@@ -5663,11 +5642,9 @@
             ],
             "uri": "git://github.com/openstack/python-glanceclient.git",
             "module": "python-glanceclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "2.1",
@@ -5692,11 +5669,9 @@
             ],
             "uri": "git://github.com/openstack/python-neutronclient.git",
             "module": "python-neutronclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "1.3.0",
@@ -5716,11 +5691,9 @@
             ],
             "uri": "git://github.com/openstack/python-swiftclient.git",
             "module": "python-swiftclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "branch": "stable/grizzly",
@@ -5742,11 +5715,9 @@
             ],
             "uri": "git://github.com/openstack/heat.git",
             "module": "heat",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "0.2.2",
@@ -5766,11 +5737,9 @@
             ],
             "uri": "git://github.com/openstack/python-heatclient.git",
             "module": "python-heatclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "branch": "stable/grizzly",
@@ -5792,11 +5761,9 @@
             ],
             "uri": "git://github.com/openstack/ceilometer.git",
             "module": "ceilometer",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "tag_to": "1.0.6",
@@ -5811,11 +5778,9 @@
             ],
             "uri": "git://github.com/openstack/python-ceilometerclient.git",
             "module": "python-ceilometerclient",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "branch": "stable/havana",
@@ -5831,11 +5796,9 @@
             ],
             "uri": "git://github.com/openstack/oslo-incubator.git",
             "module": "oslo-incubator",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "core",
             "releases": [
                 {
                     "branch": "stable/havana",
@@ -5851,11 +5814,9 @@
             ],
             "uri": "git://github.com/openstack/oslo.config.git",
             "module": "oslo.config",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5870,11 +5831,9 @@
             ],
             "uri": "git://github.com/openstack/compute-api.git",
             "module": "compute-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5889,11 +5848,9 @@
             ],
             "uri": "git://github.com/openstack/identity-api.git",
             "module": "identity-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5908,11 +5865,9 @@
             ],
             "uri": "git://github.com/openstack/image-api.git",
             "module": "image-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5927,11 +5882,9 @@
             ],
             "uri": "git://github.com/openstack/netconn-api.git",
             "module": "netconn-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5946,11 +5899,9 @@
             ],
             "uri": "git://github.com/openstack/object-api.git",
             "module": "object-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -5965,11 +5916,9 @@
             ],
             "uri": "git://github.com/openstack/volume-api.git",
             "module": "volume-api",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "branch": "stable/folsom",
@@ -5997,11 +5946,9 @@
             ],
             "uri": "git://github.com/openstack/openstack-manuals.git",
             "module": "openstack-manuals",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -6011,11 +5958,9 @@
             ],
             "uri": "git://github.com/openstack/openstack-doc-tools.git",
             "module": "openstack-doc-tools",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -6030,11 +5975,9 @@
             ],
             "uri": "git://github.com/openstack/operations-guide.git",
             "module": "operations-guide",
-            "organization": "openstack",
-            "project_type": "openstack"
+            "organization": "openstack"
         },
         {
-            "project_group": "documentation",
             "releases": [
                 {
                     "tag_to": "HEAD",
@@ -6049,43 +5992,12 @@
             ],
             "uri": "git://github.com/openstack/api-site.git",
             "module": "api-site",
-            "organization": "openstack",
-            "project_type": "openstack"
-        },
-        {
-            "module": "trove",
-            "uri": "git://github.com/openstack/trove.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
-        },
-        {
-            "module": "trove-integration",
-            "uri": "git://github.com/openstack/trove-integration.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
-        },
-        {
-            "module": "python-troveclient",
-            "uri": "git://github.com/openstack/python-troveclient.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
-        },
-        {
-            "module": "ironic",
-            "uri": "git://github.com/openstack/ironic.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
+            "organization": "openstack"
         },
         {
             "module": "savanna",
             "uri": "git://github.com/openstack/savanna.git",
-            "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation",
             "releases": [
                 {
                     "tag_to": "0.3",
@@ -6102,9 +6014,7 @@
         {
             "module": "savanna-dashboard",
             "uri": "git://github.com/openstack/savanna-dashboard.git",
-            "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation",
             "releases": [
                 {
                     "tag_to": "0.3",
@@ -6121,9 +6031,7 @@
         {
             "module": "python-savannaclient",
             "uri": "git://github.com/openstack/python-savannaclient.git",
-            "project_type": "openstack",
             "organization": "openstack",
-            "project_group": "incubation",
             "releases": [
                 {
                     "tag_to": "0.3",
@@ -6136,58 +6044,44 @@
                     "tag_from": "0.3"
                 }
             ]
-        },
-        {
-            "module": "savanna-extra",
-            "uri": "git://github.com/openstack/savanna-extra.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
-        },
-        {
-            "module": "savanna-image-elements",
-            "uri": "git://github.com/openstack/savanna-image-elements.git",
-            "project_type": "openstack",
-            "organization": "openstack",
-            "project_group": "incubation"
-        },
-        {
-            "module": "puppet-savanna",
-            "uri": "git://github.com/stackforge/puppet-savanna.git",
-            "project_type": "openstack",
-            "organization": "stackforge",
-            "project_group": "incubation"
         }
     ],
     "project_sources": [
         {
             "organization": "openstack",
-            "project_type": "openstack",
-            "project_group": "other",
             "exclude": ["openstack"]
         },
         {
-            "organization": "openstack-dev",
-            "project_type": "openstack",
-            "project_group": "other"
+            "organization": "openstack-dev"
         },
         {
-            "organization": "openstack-infra",
-            "project_type": "openstack",
-            "project_group": "infrastructure"
+            "organization": "openstack-infra"
         },
         {
-            "organization": "openstack-ops",
-            "project_type": "stackforge",
-            "project_group": null
+            "organization": "openstack-ops"
         },
         {
-            "organization": "stackforge",
-            "project_type": "stackforge",
-            "project_group": null
+            "organization": "stackforge"
         }
     ],
     "module_groups": [
+        {
+            "module_group_name": "openstack-core",
+            "modules": [
+                "nova", "python-novaclient",
+                "neutron", "python-neutronclient",
+                "keystone", "python-keystoneclient",
+                "cinder", "python-cinderclient",
+                "glance", "python-glanceclient",
+                "swift", "python-swiftclient",
+                "horizon"
+            ]
+        },
+        {
+            "module_group_name": "openstack-docs",
+            "modules": ["openstack-manuals", "api-site", "operations-guide", "openstack-doc-tools",
+                "compute-api", "netconn-api", "identity-api", "volume-api", "image-api"]
+        },
         {
             "module_group_name": "nova-group",
             "modules": ["nova", "python-novaclient"]
@@ -6277,7 +6171,7 @@
         },
         {
             "release_name": "Icehouse",
-            "end_date": "2014-Apr-04"
+            "end_date": "2014-Apr-17"
         }
     ],
     "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"]

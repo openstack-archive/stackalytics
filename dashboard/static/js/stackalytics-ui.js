@@ -276,7 +276,6 @@ function make_std_options() {
     var options = {};
     options['release'] = $('#release').val();
     options['metric'] = $('#metric').val();
-    options['project_type'] = $('#project_type').val();
     options['module'] = $('#module').val() || '';
     options['company'] = $('#company').val() || '';
     options['user_id'] = $('#user').val() || '';
@@ -436,7 +435,7 @@ function init_selectors(base_url) {
         });
 
     $("#module").select2({
-        allowClear: true,
+        allowClear: false,
         ajax: {
             url: make_uri(base_url + "/api/1.0/modules"),
             dataType: 'jsonp',

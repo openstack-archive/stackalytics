@@ -56,18 +56,32 @@ class TestDefaultDataProcessor(testtools.TestCase):
         with mock.patch('stackalytics.processor.default_data_processor.'
                         '_retrieve_project_list_from_github') as retriever:
             retriever.return_value = [
-                {'module': 'nova', 'uri': 'git://github.com/openstack/nova'},
-                {'module': 'qa', 'uri': 'git://github.com/openstack/qa'},
+                {'module': 'nova', 'uri': 'git://github.com/openstack/nova',
+                 'organization': 'openstack'},
+                {'module': 'qa', 'uri': 'git://github.com/openstack/qa',
+                 'organization': 'openstack'},
             ]
             dd = {
                 'repos': [
-                    {'module': 'qa', 'uri': 'git://github.com/openstack/qa'},
+                    {'module': 'qa', 'uri': 'git://github.com/openstack/qa',
+                     'organization': 'openstack'},
+                    {'module': 'tux', 'uri': 'git://github.com/stackforge/tux',
+                     'organization': 'stackforge'},
                 ],
-                'project_sources': ['any']
+                'project_sources': [{'organization': 'openstack',
+                                     'module_group_name': 'OpenStack'}],
+                'module_groups': [],
             }
 
             default_data_processor._update_project_list(dd)
 
-            self.assertEqual(2, len(dd['repos']))
+            self.assertEqual(3, len(dd['repos']))
             self.assertIn('qa', set([r['module'] for r in dd['repos']]))
             self.assertIn('nova', set([r['module'] for r in dd['repos']]))
+            self.assertIn('tux', set([r['module'] for r in dd['repos']]))
+
+            self.assertEqual(2, len(dd['module_groups']))
+            self.assertIn({'module_group_name': 'OpenStack',
+                           'modules': ['qa', 'nova']}, dd['module_groups'])
+            self.assertIn({'module_group_name': 'stackforge',
+                           'modules': ['tux']}, dd['module_groups'])

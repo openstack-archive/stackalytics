@@ -166,3 +166,7 @@ def add_index(sequence, start=1, item_filter=lambda x: True):
         else:
             item['index'] = ''
     return sequence
+
+
+def safe_encode(s):
+    return urlutils.quote_plus(s.encode('utf-8'))

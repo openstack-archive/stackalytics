@@ -21,7 +21,6 @@ import six
 
 from dashboard import parameters
 from dashboard import vault
-from stackalytics.openstack.common.py3kcompat import urlutils
 from stackalytics.processor import utils
 
 
@@ -178,13 +177,8 @@ def format_launchpad_module_link(module):
     return '<a href="https://launchpad.net/%s">%s</a>' % (module, module)
 
 
-def safe_encode(s):
-    return urlutils.quote_plus(s.encode('utf-8'))
-
-
 def make_link(title, uri=None, options=None):
-    param_names = ('release', 'project_type', 'module', 'company', 'user_id',
-                   'metric')
+    param_names = ('release', 'module', 'company', 'user_id', 'metric')
     param_values = {}
     for param_name in param_names:
         v = parameters.get_parameter({}, param_name, param_name)
@@ -193,7 +187,7 @@ def make_link(title, uri=None, options=None):
     if options:
         param_values.update(options)
     if param_values:
-        uri += '?' + '&'.join(['%s=%s' % (n, safe_encode(v))
+        uri += '?' + '&'.join(['%s=%s' % (n, utils.safe_encode(v))
                                for n, v in six.iteritems(param_values)])
     return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
 
