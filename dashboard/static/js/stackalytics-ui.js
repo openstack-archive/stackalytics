@@ -276,6 +276,7 @@ function make_std_options() {
     var options = {};
     options['release'] = $('#release').val();
     options['metric'] = $('#metric').val();
+    options['project_type'] = $('#project_type').val();
     options['module'] = $('#module').val() || '';
     options['company'] = $('#company').val() || '';
     options['user_id'] = $('#user').val() || '';
@@ -370,11 +371,11 @@ function init_selectors(base_url) {
             results: function (data, page) {
                 const project_types = data["project_types"];
                 var result = [];
-                result.push({id: "all", text: "all", group: true});
                 for (var key in project_types) {
                     result.push({id: project_types[key].id, text: project_types[key].text, group: true});
                     for (var i in project_types[key].items) {
-                        result.push({id: project_types[key].items[i], text: project_types[key].items[i]});
+                        var item = project_types[key].items[i];
+                        result.push({id: item.id, text: item.text});
                     }
                 }
                 return {results: result};
@@ -435,13 +436,13 @@ function init_selectors(base_url) {
         });
 
     $("#module").select2({
-        allowClear: false,
+        allowClear: true,
         ajax: {
-            url: make_uri(base_url + "/api/1.0/modules"),
+            url: make_uri(base_url + "/api/1.0/modules", {tags: "module,program,group"}),
             dataType: 'jsonp',
             data: function (term, page) {
                 return {
-                    module_name: term
+                    query: term
                 };
             },
             results: function (data, page) {
@@ -459,8 +460,8 @@ function init_selectors(base_url) {
             }
         },
         formatResultCssClass: function (item) {
-            if (item.group) {
-                return "select_group"
+            if (item.tag) {
+                return "select_module_" + item.tag;
             }
             return "";
         }

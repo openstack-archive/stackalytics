@@ -26,8 +26,11 @@ class TestAPIStats(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/nova.git'},
                            {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': [
-                     {'module_group_name': 'openstack',
+                 'module_groups': {'openstack': {
+                     'module_group_name': 'openstack',
+                     'modules': ['nova', 'glance']}},
+                 'project_types': [
+                     {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
@@ -35,7 +38,8 @@ class TestAPIStats(test_api.TestAPI):
                 test_api.make_records(record_type=['commit'],
                                       loc=[100, 200, 300],
                                       module=['glance'])):
-            response = self.app.get('/api/1.0/stats/modules?metric=loc')
+            response = self.app.get('/api/1.0/stats/modules?metric=loc&'
+                                    'project_type=all')
             stats = json.loads(response.data)['stats']
             self.assertEqual(2, len(stats))
             self.assertEqual(600, stats[0]['metric'])
@@ -51,8 +55,11 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': [
-                     {'module_group_name': 'openstack',
+                 'module_groups': {'openstack': {
+                     'module_group_name': 'openstack',
+                     'modules': ['nova', 'glance']}},
+                 'project_types': [
+                     {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}],
                  'user:john_doe': {
                      'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
@@ -77,7 +84,8 @@ class TestAPIStats(test_api.TestAPI):
                                       review_id=['0123456789'],
                                       module=['glance'],
                                       user_id=['john_doe', 'bill'])):
-            response = self.app.get('/api/1.0/stats/engineers?metric=loc')
+            response = self.app.get('/api/1.0/stats/engineers?metric=loc&'
+                                    'project_type=all')
             stats = json.loads(response.data)['stats']
             self.assertEqual(1, len(stats))
             self.assertEqual(660, stats[0]['metric'])
@@ -90,8 +98,11 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': [
-                     {'module_group_name': 'openstack',
+                 'module_groups': {'openstack': {
+                     'module_group_name': 'openstack',
+                     'modules': ['nova', 'glance']}},
+                 'project_types': [
+                     {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}],
                  'user:john_doe': {
                      'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
@@ -120,7 +131,8 @@ class TestAPIStats(test_api.TestAPI):
                                       module=['glance'],
                                       author_name=['Bill Smith'],
                                       user_id=['smith'])):
-            response = self.app.get('/api/1.0/stats/engineers_extended')
+            response = self.app.get('/api/1.0/stats/engineers_extended?'
+                                    'project_type=all')
             stats = json.loads(response.data)['stats']
             self.assertEqual(2, len(stats))
             self.assertEqual(2, stats[0]['mark'])

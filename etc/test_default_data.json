@@ -146,6 +146,42 @@
         }
     ],
 
-    "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"]
+    "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"],
+
+    "project_types": [
+        {
+            "id": "all",
+            "title": "All",
+            "modules": ["openstack", "openstack-infra", "openstack-dev", "stackforge"]
+        },
+        {
+            "id": "openstack",
+            "title": "OpenStack",
+            "modules": ["openstack", "openstack-infra", "openstack-dev"]
+        },
+        {
+            "id": "integrated",
+            "title": "integrated",
+            "child": true,
+            "modules": ["official-integrated"]
+        },
+        {
+            "id": "incubated",
+            "title": "incubated",
+            "child": true,
+            "modules": ["official-incubated"]
+        },
+        {
+            "id": "other",
+            "title": "other",
+            "child": true,
+            "modules": ["official-other"]
+        },
+        {
+            "id": "stackforge",
+            "title": "Stackforge",
+            "modules": ["stackforge"]
+        }
+    ]
 
 }

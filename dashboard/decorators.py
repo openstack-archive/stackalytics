@@ -69,6 +69,14 @@ def record_filter(ignore=None, use_default=True):
                         memory_storage_inst.get_record_ids_by_modules(
                             vault.resolve_modules(param)))
 
+            if 'project_type' not in ignore:
+                param = parameters.get_parameter(kwargs, 'project_type',
+                                                 'project_types', use_default)
+                if param:
+                    record_ids &= (
+                        memory_storage_inst.get_record_ids_by_modules(
+                            vault.resolve_project_types(param)))
+
             if 'user_id' not in ignore:
                 param = parameters.get_parameter(kwargs, 'user_id', 'user_ids')
                 param = [u for u in param
@@ -157,22 +165,25 @@ def mark_finalize(record):
     new_record = record.copy()
 
     positive = 0
+    numeric = 0
     mark_distribution = []
     for key in [-2, -1, 1, 2, 'A']:
         if key in record:
             if key in [1, 2]:
                 positive += record[key]
+            if key in [-2, -1, 1, 2]:
+                numeric += record[key]
             mark_distribution.append(str(record[key]))
         else:
             mark_distribution.append('0')
             new_record[key] = 0
 
     new_record['disagreements'] = record.get('disagreements', 0)
-    if record['metric']:
+    if numeric:
         positive_ratio = '%.1f%%' % (
-            (positive * 100.0) / record['metric'])
+            (positive * 100.0) / numeric)
         new_record['disagreement_ratio'] = '%.1f%%' % (
-            (record.get('disagreements', 0) * 100.0) / record['metric'])
+            (record.get('disagreements', 0) * 100.0) / numeric)
     else:
         positive_ratio = helpers.INFINITY_HTML
         new_record['disagreement_ratio'] = helpers.INFINITY_HTML
@@ -251,6 +262,11 @@ def templated(template=None, return_code=200):
             ctx['metric'] = metric or parameters.get_default('metric')
             ctx['metric_label'] = parameters.METRIC_LABELS[ctx['metric']]
 
+            project_type = flask.request.args.get('project_type')
+            if not vault.is_project_type_valid(project_type):
+                project_type = parameters.get_default('project_type')
+            ctx['project_type'] = project_type
+
             release = flask.request.args.get('release')
             releases = vault_inst['releases']
             if release:
@@ -265,6 +281,7 @@ def templated(template=None, return_code=200):
             ctx['review_nth'] = (flask.request.args.get('review_nth') or
                                  parameters.get_default('review_nth'))
 
+            ctx['project_type_options'] = vault.get_project_types()
             ctx['release_options'] = vault.get_release_options()
             ctx['metric_options'] = sorted(parameters.METRIC_LABELS.items(),
                                            key=lambda x: x[0])
@@ -276,7 +293,8 @@ def templated(template=None, return_code=200):
 
             module = parameters.get_single_parameter(kwargs, 'module')
             ctx['module'] = module
-            ctx['module_inst'] = vault_inst['module_id_index'][module]
+            if module:
+                ctx['module_inst'] = vault_inst['module_id_index'][module]
 
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')
             ctx['page_title'] = helpers.make_page_title(

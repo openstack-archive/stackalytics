@@ -25,7 +25,7 @@ LOG = logging.getLogger(__name__)
 DEFAULTS = {
     'metric': 'commits',
     'release': 'icehouse',
-    'module': 'openstack',
+    'project_type': 'openstack',
     'review_nth': 5,
 }
 
