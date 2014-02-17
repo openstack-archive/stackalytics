@@ -385,3 +385,16 @@ a[href^="https://launchpad"]:after {
 .select2-results {
     max-height: 300px;
 }
+
+.ui-tooltip {
+    box-shadow: 0 0 5px #AAAAAA;
+    max-width: 300px;
+    padding: 8px;
+    position: absolute;
+    z-index: 9999;
+}
+body .ui-tooltip {
+    border-width: 2px;
+    background-color: white;
+    opacity: 0.8;
+}
