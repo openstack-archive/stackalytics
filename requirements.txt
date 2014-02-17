@@ -8,5 +8,6 @@ paramiko>=1.8.0
 psutil<=1.0.1
 PyGithub
 python-memcached>=1.48
+PyYAML>=3.1.0
 sh
 six>=1.4.1

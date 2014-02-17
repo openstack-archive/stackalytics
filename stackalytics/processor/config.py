@@ -40,4 +40,8 @@ OPTS = [
                help='SSH username for gerrit review system access'),
     cfg.BoolOpt('force-update', default=False,
                 help='Forcibly read default data and update records'),
+    cfg.StrOpt('program-list-uri',
+               default=('https://raw.github.com/openstack/governance/'
+                        'master/reference/programs.yaml'),
+               help='The address of file with list of programs'),
 ]

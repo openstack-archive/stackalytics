@@ -110,7 +110,7 @@
 
     "module_groups": [
         {
-            "module_group_name": "glance-group",
+            "module_group_name": "manual-glance-group",
             "modules": ["glance", "python-glanceclient"]
         }
     ],

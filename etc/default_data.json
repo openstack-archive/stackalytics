@@ -6066,70 +6066,12 @@
     ],
     "module_groups": [
         {
-            "module_group_name": "openstack-core",
-            "modules": [
-                "nova", "python-novaclient",
-                "neutron", "python-neutronclient",
-                "keystone", "python-keystoneclient",
-                "cinder", "python-cinderclient",
-                "glance", "python-glanceclient",
-                "swift", "python-swiftclient",
-                "horizon"
-            ]
-        },
-        {
-            "module_group_name": "openstack-docs",
-            "modules": ["openstack-manuals", "api-site", "operations-guide", "openstack-doc-tools",
-                "compute-api", "netconn-api", "identity-api", "volume-api", "image-api"]
-        },
-        {
-            "module_group_name": "nova-group",
-            "modules": ["nova", "python-novaclient"]
-        },
-        {
-            "module_group_name": "neutron-group",
-            "modules": ["neutron", "python-neutronclient"]
-        },
-        {
-            "module_group_name": "keystone-group",
-            "modules": ["keystone", "python-keystoneclient"]
-        },
-        {
-            "module_group_name": "cinder-group",
-            "modules": ["cinder", "python-cinderclient"]
-        },
-        {
-            "module_group_name": "glance-group",
-            "modules": ["glance", "python-glanceclient"]
-        },
-        {
-            "module_group_name": "swift-group",
-            "modules": ["swift", "python-swiftclient"]
-        },
-        {
             "module_group_name": "libra-group",
             "modules": ["libra", "python-libraclient"]
         },
         {
-            "module_group_name": "ironic-group",
-            "modules": ["ironic", "python-ironicclient", "pyghmi"]
-        },
-        {
-            "module_group_name": "tripleo-group",
-            "modules": ["tripleo-incubator", "tripleo-image-elements", "tripleo-heat-templates", "diskimage-builder",
-                "os-apply-config", "os-collect-config", "os-refresh-config", "tuskar", "tuskar-ui", "python-tuskarclient"]
-        },
-        {
-            "module_group_name": "oslo-group",
-            "modules": ["oslo-incubator", "oslo.config", "oslo.messaging", "oslo.sphinx", "hacking", "pbr"]
-        },
-        {
             "module_group_name": "fuel-group",
             "modules": ["fuel-main", "fuel-web", "fuel-astute", "fuel-ostf", "fuel-library", "fuel-docs", "fuel-devops"]
-        },
-        {
-            "module_group_name": "savanna-group",
-            "modules": ["savanna", "python-savannaclient", "savanna-dashboard", "savanna-extra", "savanna-image-elements", "puppet-savanna"]
         },
         {
             "module_group_name": "murano-group",

@@ -94,7 +94,7 @@ def init_module_groups(vault):
 
     for module_group in module_groups:
         module_group_name = module_group['module_group_name']
-        module_group_id = utils.safe_encode(module_group_name.lower())
+        module_group_id = module_group_name.lower()
 
         module_id_index[module_group_id] = {
             'group': True,
@@ -112,7 +112,7 @@ def init_module_groups(vault):
 
     for module in memory_storage_inst.get_modules():
         module_id_index[module] = {
-            'id': utils.safe_encode(module.lower()),
+            'id': module.lower(),
             'text': module,
             'modules': [module.lower()],
         }
