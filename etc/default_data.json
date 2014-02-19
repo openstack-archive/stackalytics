@@ -2091,6 +2091,21 @@
             "emails": ["jeladi@yahoo.com"]
         },
         {
+            "launchpad_id": "jerome-gallard",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-Feb-03"
+                },
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jérôme Gallard",
+            "emails": ["jerome.david.gallard@gmail.com", "jerome.gallard@orange.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
