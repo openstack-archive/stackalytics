@@ -5375,8 +5375,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
@@ -5410,8 +5409,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
@@ -5440,8 +5438,7 @@
         {
             "releases": [
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "c53d8e34"
                 },
@@ -5475,8 +5472,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
@@ -5510,8 +5506,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
@@ -5545,8 +5540,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
@@ -5580,8 +5574,7 @@
                     "tag_from": "1.4.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "1.4.8"
                 },
@@ -5982,8 +5975,7 @@
         {
             "releases": [
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
