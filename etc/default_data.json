@@ -3026,6 +3026,17 @@
             "emails": ["mshuler@rackspace.com"]
         },
         {
+            "launchpad_id": "msolanas",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marc Solanas",
+            "emails": ["msolanas@cisco.com","marc@solanas.cat"]
+        },
+        {
             "launchpad_id": "mthompson-n",
             "companies": [
                 {
