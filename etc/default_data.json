@@ -112,6 +112,17 @@
             "emails": ["adrian@17od.com", "adrian_f_smith@dell.com"]
         },
         {
+            "launchpad_id": "ailzhang",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ailing Zhang",
+            "emails": ["ailzhang@cisco.com", "zhangal1992@gmail.com"]
+        },
+        {
             "launchpad_id": "akscram",
             "companies": [
                 {
