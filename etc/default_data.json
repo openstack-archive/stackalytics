@@ -23,6 +23,17 @@
             "emails": ["chris@pistoncloud.com", "chris@slicehost.com"]
         },
         {
+            "launchpad_id": "1lex",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Holden",
+            "emails": ["a@lexholden.com","ajonasho@cisco.com","alex@alexjonasholden.com"]
+        },
+        {
             "launchpad_id": "6-morgan",
             "companies": [
                 {
