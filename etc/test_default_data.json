@@ -62,8 +62,7 @@
                     "tag_from": "2011.3"
                 },
                 {
-                    "branch": "stable/folsom",
-                    "tag_to": "HEAD",
+                    "tag_to": "folsom-eol",
                     "release_name": "Folsom",
                     "tag_from": "2012.1"
                 },
