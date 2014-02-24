@@ -165,6 +165,7 @@ def is_project_type_valid(project_type):
 
 
 def get_project_type(project_type_id):
+    project_type_id = project_type_id.lower()
     if not is_project_type_valid(project_type_id):
         return None
     return get_vault()['project_types_index'][project_type_id]
@@ -187,6 +188,7 @@ def resolve_modules(module_ids):
 def resolve_project_types(project_types):
     modules = set()
     for pt in project_types:
+        pt = pt.lower()
         if is_project_type_valid(pt):
             modules |= resolve_modules(
                 get_vault()['project_types_index'][pt]['modules'])

@@ -131,8 +131,10 @@ def _store_companies(runtime_storage_inst, companies):
 
 
 def _store_module_groups(runtime_storage_inst, module_groups):
-    mg_set = dict([(mg['module_group_name'], mg) for mg in module_groups])
-    runtime_storage_inst.set_by_key('module_groups', mg_set)
+    stored_mg = runtime_storage_inst.get_by_key('module_groups') or {}
+    for mg in module_groups:
+        stored_mg[mg['module_group_name']] = mg
+    runtime_storage_inst.set_by_key('module_groups', stored_mg)
 
 
 STORE_FUNCS = {
