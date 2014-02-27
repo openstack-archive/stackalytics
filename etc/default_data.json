@@ -160,11 +160,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2014-Feb-13"
+                },
+                {
+                    "company_name": "NetApp",
                     "end_date": null
                 }
             ],
             "user_name": "Alex Meade",
-            "emails": ["alex.meade@rackspace.com", "hatboy112@yahoo.com"]
+            "emails": ["alex.meade@rackspace.com", "hatboy112@yahoo.com", "mr.alex.meade@gmail.com"]
         },
         {
             "launchpad_id": "alexei-kornienko",
