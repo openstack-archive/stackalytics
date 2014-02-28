@@ -212,6 +212,17 @@
             "emails": ["amcreynolds@ebaysf.com", "amcreynolds@ebay.com"]
         },
         {
+            "launchpad_id": "amitry",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Mitry",
+            "emails": ["andrew_mitry@cable.comcast.com", "amitry@gmail.com"]
+        },
+        {
             "launchpad_id": "amrith",
             "companies": [
                 {
@@ -324,6 +335,28 @@
             ],
             "user_name": "Anita Kuno",
             "emails": ["akuno@lavabit.com", "anita.kuno@enovance.com", "anteaya@anteaya.info"]
+        },
+        {
+            "launchpad_id": "anthony-veiga",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anthony Veiga",
+            "emails": ["anthony_veiga@cable.comcast.com"]
+        },
+        {
+            "launchpad_id": "antont8443",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anton Thaker",
+            "emails": ["antont8443@gmail.com"]
         },
         {
             "launchpad_id": "antonym",
@@ -2367,7 +2400,7 @@
             "emails": ["jtran@attinteractive.com", "jhtran@att.com"]
         },
         {
-              "launchpad_id": "juan-perez",
+            "launchpad_id": "juan-perez",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -3107,6 +3140,17 @@
             "emails": ["namei.unix@gmail.com"]
         },
         {
+            "launchpad_id": "nathan-regola",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nathan Regola",
+            "emails": ["nathan_regola@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "nati-ueno",
             "companies": [
                 {
@@ -3482,6 +3526,17 @@
             ],
             "user_name": "Major Hayden",
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
+        },
+        {
+            "launchpad_id": "raphmraph",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Raphael Mondesir",
+            "emails": ["raphael_mondesir@cable.comcast.com", "raphmraph@gmail.com"]
         },
         {
             "launchpad_id": "rbowen",
