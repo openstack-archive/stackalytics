@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import itertools
+import time
 
 import mock
 import six
@@ -679,6 +680,7 @@ class TestRecordProcessor(testtools.TestCase):
         )
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
 
+        timestamp = int(time.time())
         runtime_storage_inst.set_records(record_processor_inst.process([
             {'record_type': 'review',
              'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
@@ -686,7 +688,7 @@ class TestRecordProcessor(testtools.TestCase):
              'owner': {'name': 'John Doe',
                        'email': 'john_doe@ibm.com',
                        'username': 'john_doe'},
-             'createdOn': 1379404951,
+             'createdOn': timestamp,
              'module': 'nova',
              'branch': 'master',
              'patchSets': [
@@ -697,16 +699,16 @@ class TestRecordProcessor(testtools.TestCase):
                       'name': 'Bill Smith',
                       'email': 'bill@smith.to',
                       'username': 'bsmith'},
-                  'createdOn': 1385470730,
+                  'createdOn': timestamp,
                   'approvals': [
                       {'type': 'CRVW', 'description': 'Code Review',
-                       'value': '2', 'grantedOn': 1385478464,
+                       'value': '2', 'grantedOn': timestamp,
                        'by': {
                            'name': 'John Doe',
                            'email': 'john_doe@ibm.com',
                            'username': 'john_doe'}},
                       {'type': 'CRVW', 'description': 'Code Review',
-                       'value': '-1', 'grantedOn': 1385478465,
+                       'value': '-1', 'grantedOn': timestamp - 1,  # differ
                        'by': {
                            'name': 'Homer Simpson',
                            'email': 'hsimpson@gmail.com',
@@ -859,6 +861,7 @@ class TestRecordProcessor(testtools.TestCase):
                  'companies': [{'company_name': 'IBM', 'end_date': 0}]}
             ],
         )
+        timestamp = int(time.time())
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
         runtime_storage_inst.set_records(record_processor_inst.process([
             {'record_type': 'review',
@@ -867,7 +870,7 @@ class TestRecordProcessor(testtools.TestCase):
              'owner': {'name': 'John Doe',
                        'email': 'john_doe@ibm.com',
                        'username': 'john_doe'},
-             'createdOn': 1379404951,
+             'createdOn': timestamp,
              'module': 'nova',
              'branch': 'master',
              'patchSets': [
@@ -878,16 +881,16 @@ class TestRecordProcessor(testtools.TestCase):
                       'name': 'Bill Smith',
                       'email': 'bill@smith.to',
                       'username': 'bsmith'},
-                  'createdOn': 1385470730,
+                  'createdOn': timestamp,
                   'approvals': [
                       {'type': 'CRVW', 'description': 'Code Review',
-                       'value': '1', 'grantedOn': 1385478465,
+                       'value': '1', 'grantedOn': timestamp - 1,
                        'by': {
                            'name': 'Homer Simpson',
                            'email': 'hsimpson@gmail.com',
                            'username': 'homer'}},
                       {'type': 'CRVW', 'description': 'Code Review',
-                       'value': '-2', 'grantedOn': 1385478466,
+                       'value': '-2', 'grantedOn': timestamp,
                        'by': {
                            'name': 'John Doe',
                            'email': 'john_doe@ibm.com',
@@ -900,7 +903,7 @@ class TestRecordProcessor(testtools.TestCase):
         marks = list([r for r in runtime_storage_inst.get_all_records()
                       if r['record_type'] == 'mark'])
         homer_mark = next(itertools.ifilter(
-            lambda x: x['date'] == 1385478465, marks), None)
+            lambda x: x['date'] == (timestamp - 1), marks), None)
         self.assertTrue(homer_mark['x'])  # disagreement
 
     def test_commit_merge_date(self):
