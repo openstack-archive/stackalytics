@@ -1625,6 +1625,22 @@
             "emails": ["git-harry@live.co.uk"]
         },
         {
+            "launchpad_id": "glongwave",
+            "gerrit_id": "gcb",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Feb-21"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ChangBo Guo(gcb)",
+            "emails": ["eric.guo@easystack.cn", "guochbo@cn.ibm.com", "glongwave@gmail.com"]
+        },
+        {
             "launchpad_id": "glucas-q",
             "companies": [
                 {
@@ -4944,6 +4960,10 @@
         {
             "domains": ["earthlink.net"],
             "company_name": "Earthlink"
+        },
+        {
+            "domains": ["easystack.cn"],
+            "company_name": "EasyStack"
         },
         {
             "domains": ["ebay.com", "ebaysf.com"],
