@@ -4643,6 +4643,17 @@
             "emails": ["chaochin@gmail.com", "zhaoqin@cn.ibm.com"]
         },
         {
+            "launchpad_id": "zhikunliu",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhi Kun Liu",
+            "emails": ["liuzhikun@gmail.com", "zhikunli@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "zhiteng-huang",
             "companies": [
                 {
