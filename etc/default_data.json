@@ -2448,10 +2448,14 @@
                 {
                     "company_name": "Izel Technologies",
                     "end_date": null
+                },
+                {
+                    "company_name": "NTT",
+                    "end_date": "2013-Oct-18"
                 }
             ],
             "user_name": "Rohan Kanade",
-            "emails": ["rohan.kanade@izeltech.com", "openstack@rohankanade.com"]
+            "emails": ["rohan.kanade@izeltech.com", "openstack@rohankanade.com", "rohan.kanade@nttdata.com"]
         },
         {
             "launchpad_id": "kannan",
