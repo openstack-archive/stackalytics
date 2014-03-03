@@ -2702,6 +2702,15 @@
             "emails": ["willowd878@gmail.com", "liudong78@huawei.com"]
         },
         {
+            "launchpad_id": "liusheng",
+            "companies": [{
+                "company_name": "Huawei",
+                "end_date": null
+            }],
+            "user_name": "Liusheng",
+            "emails": ["liusheng1175@126.com", "liusheng@huawei.com"]
+        },
+        {
             "launchpad_id": "ljjjustin",
             "companies": [
                 {
@@ -4664,6 +4673,17 @@
             ],
             "user_name": "Zang MingJie",
             "emails": ["zealot0630@gmail.com"]
+        },
+        {
+            "launchpad_id": "zengyunling",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ling-yun",
+            "emails": ["yunlingzeng@hotmail.com", "zengyunling@huawei.com"]
         },
         {
             "launchpad_id": "zhaoqin",
