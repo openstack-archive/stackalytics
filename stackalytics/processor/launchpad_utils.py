@@ -15,8 +15,9 @@
 
 import httplib
 
+from six.moves.urllib import parse
+
 from stackalytics.openstack.common import log as logging
-from stackalytics.openstack.common.py3kcompat import urlutils
 from stackalytics.processor import utils
 
 
@@ -41,7 +42,7 @@ def lp_profile_by_email(email):
 
 def lp_module_exists(module):
     uri = LP_URI_DEVEL % module
-    parsed_uri = urlutils.urlparse(uri)
+    parsed_uri = parse.urlparse(uri)
     conn = httplib.HTTPConnection(parsed_uri.netloc)
     conn.request('GET', parsed_uri.path)
     res = conn.getresponse()

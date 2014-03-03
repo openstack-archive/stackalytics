@@ -21,9 +21,10 @@ import time
 
 import iso8601
 import six
+from six.moves.urllib import parse
+from six.moves.urllib import request
 
 from stackalytics.openstack.common import log as logging
-from stackalytics.openstack.common.py3kcompat import urlutils
 
 
 LOG = logging.getLogger(__name__)
@@ -68,7 +69,7 @@ def check_email_validity(email):
 
 def read_uri(uri):
     try:
-        fd = urlutils.urlopen(uri)
+        fd = request.urlopen(uri)
         raw = fd.read()
         fd.close()
         return raw
@@ -169,4 +170,4 @@ def add_index(sequence, start=1, item_filter=lambda x: True):
 
 
 def safe_encode(s):
-    return urlutils.quote_plus(s.encode('utf-8'))
+    return parse.quote_plus(s.encode('utf-8'))
