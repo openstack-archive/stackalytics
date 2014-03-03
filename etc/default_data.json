@@ -2934,6 +2934,17 @@
             "emails": ["matt@mattfarina.com"]
         },
         {
+            "launchpad_id": "mattray",
+            "companies": [
+                {
+                    "company_name": "Chef",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Ray",
+            "emails": ["matt@opscode.com", "matt@getchef.com", "matthewhray@gmail.com"]
+        },
+        {
             "launchpad_id": "mattt416",
             "companies": [
                 {
@@ -3791,7 +3802,7 @@
         },
         {
             "launchpad_id": "sean-gossard",
-            "companies": [ 
+            "companies": [
                 {
                     "company_name": "Tesora Corp",
                     "end_date": null
