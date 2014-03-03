@@ -4165,6 +4165,18 @@
             "emails": ["tleontov@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "tchaypo",
+            "gerrit_id": "tchaypo",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "James Polley",
+            "emails": ["jp@jamezpolley.com", "james.polley@hp.com"]
+        },
+        {
             "launchpad_id": "termie",
             "companies": [
                 {
