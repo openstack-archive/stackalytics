@@ -3195,15 +3195,15 @@
             ]
         },
         {
-            "launchpad_id": "nick-ma-b",
+            "launchpad_id": "nick-ma-z",
             "companies": [
                 {
-                    "company_name": "Stackinsider",
+                    "company_name": "Awcloud",
                     "end_date": null
                 }
             ],
             "user_name": "Li Ma",
-            "emails": ["nick.ma@live.cn"]
+            "emails": ["skywalker.nick@gmail.com", "mali@awcloud.com", "nick.ma@live.cn"]
         },
         {
             "launchpad_id": "nijaba",
@@ -4804,6 +4804,10 @@
         {
             "domains": ["att.com", "attinteractive.com"],
             "company_name": "AT&T"
+        },
+        {
+            "domains": ["awcloud.com"],
+            "company_name": "Awcloud"
         },
         {
             "domains": ["b1-systems.de"],
