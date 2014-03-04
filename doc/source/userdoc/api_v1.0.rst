@@ -22,13 +22,13 @@ Example:
 
 .. sourcecode:: http
 
-    GET /v1.0/data/companies
+    GET /api/1.0/stats/companies
 
 or
 
 .. sourcecode:: http
 
-    GET /v1.0/data/companies?callback=myCallback
+    GET /api/1.0/stats/companies?callback=myCallback
     Accept: application/javascript
 
 1.3 Faults
