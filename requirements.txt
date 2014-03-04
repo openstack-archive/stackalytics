@@ -1,13 +1,13 @@
-pbr>=0.5.21,<1.0
+pbr>=0.6,<1.0
 
 Flask>=0.10,<1.0
 Flask-Gravatar
 iso8601>=0.1.8
 oslo.config>=1.2.0
 paramiko>=1.8.0
-psutil<=1.0.1
+psutil>=1.1.1
 PyGithub
 python-memcached>=1.48
 PyYAML>=3.1.0
 sh
-six>=1.4.1
+six>=1.5.2
