@@ -627,6 +627,17 @@
             "emails": ["c.kassen@telekom.de"]
         },
         {
+            "launchpad_id": "calebgroom",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Caleb Groom",
+            "emails": ["caleb@calebgroom.com", "cgroom@rackspace.com"]
+        },
+        {
             "launchpad_id": "cbehrens",
             "companies": [
                 {
