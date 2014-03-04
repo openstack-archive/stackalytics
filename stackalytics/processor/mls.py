@@ -15,11 +15,11 @@
 
 from email import utils as email_utils
 import gzip
-import httplib
 import re
 import StringIO
 
 import six
+from six.moves import http_client
 from six.moves.urllib import parse
 
 from stackalytics.openstack.common import log as logging
@@ -65,7 +65,7 @@ def _get_mail_archive_links(uri):
 def _link_content_changed(link, runtime_storage_inst):
     LOG.debug('Check changes for mail archive located at uri: %s', link)
     parsed_uri = parse.urlparse(link)
-    conn = httplib.HTTPConnection(parsed_uri.netloc)
+    conn = http_client.HTTPConnection(parsed_uri.netloc)
     conn.request('HEAD', parsed_uri.path)
     res = conn.getresponse()
     last_modified = res.getheader('last-modified')

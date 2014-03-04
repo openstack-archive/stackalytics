@@ -13,8 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import httplib
-
+from six.moves import http_client
 from six.moves.urllib import parse
 
 from stackalytics.openstack.common import log as logging
@@ -43,7 +42,7 @@ def lp_profile_by_email(email):
 def lp_module_exists(module):
     uri = LP_URI_DEVEL % module
     parsed_uri = parse.urlparse(uri)
-    conn = httplib.HTTPConnection(parsed_uri.netloc)
+    conn = http_client.HTTPConnection(parsed_uri.netloc)
     conn.request('GET', parsed_uri.path)
     res = conn.getresponse()
     LOG.debug('Checked uri: %(uri)s, status: %(status)s',
