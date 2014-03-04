@@ -1481,6 +1481,38 @@
             "primary_key": "87dac1562892d7c39cd9f2a738dbb7aaef21f645",
             "module": "compass-web",
             "subject": "Update UI to work with updated UI. Add demo config data."
+        },
+        {
+            "correction_comment": "Ignore Hadoop xml files from upstream",
+            "loc": 1873,
+            "change_id": ["I70363869b61d73222d247b566d499c2fd6fb9201"],
+            "primary_key": "e0ee4081491317ad19c9ce222753c889f28c176f",
+            "module": "savanna",
+            "subject": "Adding IDH plugin basic implementation"
+        },
+        {
+            "correction_comment": "Ignore Hadoop xml files from upstream",
+            "loc": 79,
+            "change_id": ["I34e032f81888fcdef358620ef075e5ea294f466f"],
+            "primary_key": "3ef58df198d9002e07b64a0345381bb2dea679b2",
+            "module": "savanna",
+            "subject": "Added 'oozie' service support to IDH plugin"
+        },
+        {
+            "correction_comment": "Ignore Hadoop xml files from upstream",
+            "loc": 621,
+            "change_id": ["I0c62050767e3c63bdfc9e1e0f3454abc4f070e26"],
+            "primary_key": "4e7bf07d1680da15c309b1f8323dbf7f79cbc24f",
+            "module": "savanna",
+            "subject": "Add Hadoop 2 vanilla plugin"
+        },
+        {
+            "correction_comment": "Ignore Hadoop xml files from upstream",
+            "loc": 1381,
+            "change_id": ["Ic9f3c54c2b28cc7c0bf12db4c9bacc42e313365f"],
+            "primary_key": "0145ebc98e8404639be4f2db8900037b690bc9f1",
+            "module": "savanna",
+            "subject": "[IDH] Added IDH 3.0.2 support"
         }
     ]
 }
