@@ -719,6 +719,22 @@
             "emails": ["nsokolov@griddynamics.com", "nsokolov@griddynamics.net", "chemikadze@gmail.com"]
         },
         {
+            "launchpad_id": "chen-zheng",
+            "gerrit_id": "jackychen",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Feb-21"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ChenZheng",
+            "emails": ["chen.zheng@easystack.cn", "czheng@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "chiradeep",
             "companies": [
                 {
