@@ -171,6 +171,17 @@
             "emails": ["alex.meade@rackspace.com", "hatboy112@yahoo.com", "mr.alex.meade@gmail.com"]
         },
         {
+            "launchpad_id": "alexandra-settle",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexandra Settle",
+            "emails": ["alexandra.settle@outlook.com", "alexandra.settle@rackspace.com"]
+        },
+        {
             "launchpad_id": "alexei-kornienko",
             "companies": [
                 {
