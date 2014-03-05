@@ -3938,6 +3938,17 @@
             "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com"]
         },
         {
+            "launchpad_id": "sdeaton2",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steven Deaton",
+            "emails": ["sdeaton2@gmail.com", "steven.deaton@rackspace.com"]
+        },
+        {
             "launchpad_id": "sean-gossard",
             "companies": [
                 {
