@@ -83,11 +83,15 @@
             "companies": [
                 {
                     "company_name": "UnitedStack",
+                    "end_date": "2014-Jan-21"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Kun Huang",
-            "emails": ["gareth@unitedstack.com", "academicgareth@gmail.com"]
+            "emails": ["gareth@openstacker.com", "academicgareth@gmail.com", "gareth@unitedstack.org"]
         },
         {
             "launchpad_id": "aditirav",
