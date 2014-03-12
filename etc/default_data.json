@@ -6312,8 +6312,8 @@
             "organization": "openstack"
         },
         {
-            "module": "savanna",
-            "uri": "git://github.com/openstack/savanna.git",
+            "module": "sahara",
+            "uri": "git://github.com/openstack/sahara.git",
             "organization": "openstack",
             "releases": [
                 {
@@ -6329,8 +6329,8 @@
             ]
         },
         {
-            "module": "savanna-dashboard",
-            "uri": "git://github.com/openstack/savanna-dashboard.git",
+            "module": "sahara-dashboard",
+            "uri": "git://github.com/openstack/sahara-dashboard.git",
             "organization": "openstack",
             "releases": [
                 {
@@ -6346,8 +6346,8 @@
             ]
         },
         {
-            "module": "python-savannaclient",
-            "uri": "git://github.com/openstack/python-savannaclient.git",
+            "module": "python-saharaclient",
+            "uri": "git://github.com/openstack/python-saharaclient.git",
             "organization": "openstack",
             "releases": [
                 {

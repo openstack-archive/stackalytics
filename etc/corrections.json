@@ -293,7 +293,7 @@
             "loc": 0,
             "change_id": "Ibccf83fb6e50b61a5e5ce77233d8221b299c54ba",
             "primary_key": "dde53a2ccc244a5e322c0d7a4c06575d7e5457c2",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "Oslo has been updated"
         },
         {
@@ -1271,7 +1271,7 @@
             "loc": 0,
             "change_id": ["I0f04694fdb5eb0c6e4b01e563fb3901af7796f72"],
             "primary_key": "f37ed674abfd2cd231e4d2fc97d254667268b53c",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "Remove unused oslo libs"
         },
         {
@@ -1487,7 +1487,7 @@
             "loc": 1873,
             "change_id": ["I70363869b61d73222d247b566d499c2fd6fb9201"],
             "primary_key": "e0ee4081491317ad19c9ce222753c889f28c176falazarev@mirantis.com",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "Adding IDH plugin basic implementation"
         },
         {
@@ -1495,7 +1495,7 @@
             "loc": 79,
             "change_id": ["I34e032f81888fcdef358620ef075e5ea294f466f"],
             "primary_key": "3ef58df198d9002e07b64a0345381bb2dea679b2",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "Added 'oozie' service support to IDH plugin"
         },
         {
@@ -1503,7 +1503,7 @@
             "loc": 621,
             "change_id": ["I0c62050767e3c63bdfc9e1e0f3454abc4f070e26"],
             "primary_key": "4e7bf07d1680da15c309b1f8323dbf7f79cbc24f",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "Add Hadoop 2 vanilla plugin"
         },
         {
@@ -1511,7 +1511,7 @@
             "loc": 1381,
             "change_id": ["Ic9f3c54c2b28cc7c0bf12db4c9bacc42e313365f"],
             "primary_key": "0145ebc98e8404639be4f2db8900037b690bc9f1",
-            "module": "savanna",
+            "module": "sahara",
             "subject": "[IDH] Added IDH 3.0.2 support"
         }
     ]
