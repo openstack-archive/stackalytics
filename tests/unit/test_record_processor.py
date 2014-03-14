@@ -1138,9 +1138,21 @@ class TestRecordProcessor(testtools.TestCase):
         with mock.patch('stackalytics.processor.utils.load_repos') as patch:
             patch.return_value = [{'module': 'nova'},
                                   {'module': 'python-novaclient'},
-                                  {'module': 'neutron'}]
-            modules = record_processor_inst._get_modules()
-            self.assertEqual(set(['nova', 'neutron']), set(modules))
+                                  {'module': 'neutron'},
+                                  {'module': 'sahara', 'aliases': ['savanna']}]
+            modules, module_alias_map = record_processor_inst._get_modules()
+            self.assertEqual(set(['nova', 'neutron', 'sahara', 'savanna']),
+                             set(modules))
+            self.assertEqual({'savanna': 'sahara'}, module_alias_map)
+
+    def test_guess_module(self):
+        record_processor_inst = self.make_record_processor()
+        with mock.patch('stackalytics.processor.utils.load_repos') as patch:
+            patch.return_value = [{'module': 'sahara', 'aliases': ['savanna']}]
+            record = {'subject': '[savanna] T'}
+            record_processor_inst._guess_module(record)
+            self.assertEqual({'subject': '[savanna] T', 'module': 'sahara'},
+                             record)
 
     def assertRecordsMatch(self, expected, actual):
         for key, value in six.iteritems(expected):

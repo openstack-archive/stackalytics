@@ -37,6 +37,7 @@ class RecordProcessor(object):
         self.releases_dates = [r['end_date'] for r in self.releases]
 
         self.modules = None
+        self.alias_module_map = None
 
     def _get_release(self, timestamp):
         release_index = bisect.bisect(self.releases_dates, timestamp)
@@ -45,20 +46,28 @@ class RecordProcessor(object):
     def _get_modules(self):
         if self.modules is None:
             self.modules = set()
+            self.alias_module_map = dict()
+
             for repo in utils.load_repos(self.runtime_storage_inst):
                 module = repo['module'].lower()
-                add = True
-                for m in self.modules:
-                    if module.find(m) >= 0:
-                        add = False
-                        break
-                    if m.find(module) >= 0:
-                        self.modules.remove(m)
-                        break
-                if add:
-                    self.modules.add(module)
+                module_aliases = filter(str.lower, repo.get('aliases') or [])
 
-        return self.modules
+                add = True
+                for module_name in ([module] + module_aliases):
+                    for m in self.modules:
+                        if module_name.find(m) >= 0:
+                            add = False
+                            break
+                        if m.find(module_name) >= 0:
+                            self.modules.remove(m)
+                            break
+                    if add:
+                        self.modules.add(module_name)
+
+                for alias in module_aliases:
+                    self.alias_module_map[alias] = module
+
+        return self.modules, self.alias_module_map
 
     def _find_company(self, companies, date):
         for r in companies:
@@ -328,7 +337,8 @@ class RecordProcessor(object):
         pos = len(subject)
         best_guess_module = None
 
-        for module in self._get_modules():
+        modules, alias_module_map = self._get_modules()
+        for module in modules:
             find = subject.find(module)
             if (find >= 0) and (find < pos):
                 pos = find
@@ -341,6 +351,8 @@ class RecordProcessor(object):
 
         if not record.get('module'):
             record['module'] = 'unknown'
+        elif record['module'] in alias_module_map:
+            record['module'] = alias_module_map[record['module']]
 
     def _process_email(self, record):
         record['primary_key'] = record['message_id']

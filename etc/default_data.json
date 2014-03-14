@@ -6328,6 +6328,9 @@
         },
         {
             "module": "sahara",
+            "aliases": [
+                "savanna"
+            ],
             "uri": "git://github.com/openstack/sahara.git",
             "organization": "openstack",
             "releases": [
