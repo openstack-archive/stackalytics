@@ -50,7 +50,7 @@ class RecordProcessor(object):
 
             for repo in utils.load_repos(self.runtime_storage_inst):
                 module = repo['module'].lower()
-                module_aliases = filter(str.lower, repo.get('aliases') or [])
+                module_aliases = repo.get('aliases') or []
 
                 add = True
                 for module_name in ([module] + module_aliases):
