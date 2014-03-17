@@ -2655,6 +2655,17 @@
             "emails": ["kiall@managedit.ie", "kiall@hp.com"]
         },
         {
+            "launchpad_id": "kiwik-chenrui",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rui Chen",
+            "emails": ["chenrui.momo@gmail.com", "kiwik.chenrui@huawei.com"]
+        },
+        {
             "launchpad_id": "kjharke",
             "companies": [
                 {
