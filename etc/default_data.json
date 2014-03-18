@@ -4940,6 +4940,10 @@
             "company_name": "Argonne National Laboratory"
         },
         {
+            "domains": ["apple.com"],
+            "company_name": "Apple, Inc."
+        },
+        {
             "domains": ["aptira.com"],
             "company_name": "Aptira"
         },
