@@ -4528,11 +4528,15 @@
             "companies": [
                 {
                     "company_name": "NTT",
+                    "end_date": "2013-Jan-18"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Unmesh Gurjar",
-            "emails": ["unmesh.gurjar@vertex.co.in", "unmesh.gurjar@nttdata.com"]
+            "emails": ["unmesh.gurjar@vertex.co.in", "unmesh.gurjar@nttdata.com", "unmesh.gurjar@hp.com"]
         },
         {
             "launchpad_id": "usrleon",
