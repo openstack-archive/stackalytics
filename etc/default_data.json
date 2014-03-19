@@ -2622,6 +2622,17 @@
             "emails": ["ken.pepple@cloudtp.com", "ken@pepple.info", "ken.pepple@rabbityard.com", "ken.pepple@gmail.com"]
         },
         {
+            "launchpad_id": "kevinbenton",
+            "user_name": "Kevin Benton",
+            "companies": [
+                {
+                    "company_name": "Big Switch Networks",
+                    "end_date": null
+                }
+            ],
+            "emails": ["blak111@gmail.com", "kevin.benton@bigswitch.com"]
+        },
+        {
             "launchpad_id": "kevinconway",
             "companies": [
                 {
