@@ -1638,11 +1638,15 @@
             "companies": [
                 {
                     "company_name": "Canonical",
+                    "end_date": "2014-Feb-14"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Adam Gandelman",
-            "emails": ["adam.gandelman@canonical.com", "adamg@canonical.com"]
+            "emails": ["adam.gandelman@canonical.com", "adamg@canonical.com", "adamg@ubuntu.com"]
         },
         {
             "launchpad_id": "garyk",
