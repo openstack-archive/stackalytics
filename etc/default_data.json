@@ -3124,6 +3124,21 @@
             "emails": ["michael.ogorman@gmail.com"]
         },
         {
+            "launchpad_id": "michaeltchapman",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": "2014-Jan-25"
+                },
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Chapman",
+            "emails": ["woppin@gmail.com","michchap@cisco.com"]
+        },
+        {
             "launchpad_id": "mihgen",
             "user_name": "Mike Scherbakov",
             "companies": [
