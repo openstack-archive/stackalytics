@@ -2488,6 +2488,17 @@
             "emails": ["juan_perez@cable.comcast.com"]
         },
         {
+            "launchpad_id": "julien-marinfrisonroche",
+            "companies": [
+                {
+                    "company_name": "Thales",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julien Marin-Frisonroche",
+            "emails": ["julien.marinfrisonroche@thalesgroup.com"]
+        },
+        {
             "launchpad_id": "jun-park-earth",
             "companies": [
                 {
