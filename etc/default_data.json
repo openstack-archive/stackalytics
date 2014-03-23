@@ -5355,6 +5355,10 @@
             "company_name": "Kungliga Tekniska h\u00f6gskolan"
         },
         {
+            "domains": ["kylin-cloud.com"],
+            "company_name": "Kylin Cloud"
+        },
+        {
             "domains": ["lahondaresearch.org"],
             "company_name": "La Honda Research"
         },
