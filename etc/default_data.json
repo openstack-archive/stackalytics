@@ -4687,6 +4687,17 @@
             "emails": ["vsharshov@gmail.com", "vsharshov@mirantis.com"]
         },
         {
+            "launchpad_id": "vvutharkar",
+            "companies": [
+                {
+                    "company_name": "eBay",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Viswa Vutharkar",
+            "emails": ["vpvutharkar@ebaysf.com"]
+        },
+        {
             "launchpad_id": "wanglong",
             "companies": [
                 {
