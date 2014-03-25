@@ -3322,6 +3322,17 @@
             "emails": ["openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
         },
         {
+            "launchpad_id": "neillc",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Neill Cox",
+            "emails": ["neill.cox@rackspace.com", "neill@ingenious.com.au"]
+        },
+        {
             "launchpad_id": "nelson-crynwr",
             "companies": [
                 {
