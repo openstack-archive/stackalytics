@@ -2109,6 +2109,17 @@
             "emails": ["jason@koelker.net", "jkoelker@rackspace.com"]
         },
         {
+            "launchpad_id": "jason-oldos",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jay Faulkner",
+            "emails": ["jay@jvf.cc", "jay.faulkner@rackspace.com"]
+        },
+        {
             "launchpad_id": "jason-smithss",
             "companies": [
                 {
