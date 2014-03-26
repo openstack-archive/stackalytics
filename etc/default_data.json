@@ -5599,6 +5599,10 @@
             "company_name": "Switch"
         },
         {
+            "domains": ["symantec.com"],
+            "company_name": "Symantec"
+        },
+        {
             "domains": ["taobao.com"],
             "company_name": "Taobao"
         },
