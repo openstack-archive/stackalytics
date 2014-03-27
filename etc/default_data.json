@@ -2260,6 +2260,17 @@
             "emails": ["wentian@unitedstack.com", "jiangwt100@gmail.com"]
         },
         {
+            "launchpad_id": "jim-rollenhagen",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jim Rollenhagen",
+            "emails": ["jim.rollenhagen@rackspace.com", "jim@jimrollenhagen.com"]
+        },
+        {
             "launchpad_id": "jing",
             "companies": [
                 {
