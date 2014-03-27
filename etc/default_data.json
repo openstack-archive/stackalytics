@@ -4550,6 +4550,17 @@
             "emails": ["ttcl@mac.com", "troy.toman@rackspace.com"]
         },
         {
+            "launchpad_id": "tteggel",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thom Leggett",
+            "emails": ["thomas.leggett@hp.com", "thom@tteggel.org", "thom@legge.tt"]
+        },
+        {
             "launchpad_id": "ttrifonov",
             "companies": [
                 {
