@@ -6518,7 +6518,7 @@
     "project_sources": [
         {
             "organization": "openstack",
-            "exclude": ["openstack"]
+            "exclude": ["openstack", "gantt", "python-ganttclient"]
         },
         {
             "organization": "openstack-dev"
