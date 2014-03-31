@@ -3677,6 +3677,17 @@
             "emails": ["pkilambi@cisco.com", "praddevel@gmail.com"]
         },
         {
+            "launchpad_id": "priti-desai",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Priti Desai",
+            "emails": ["priti_desai@symantec.com", "pritidesai8@gmail.com"]
+        },
+        {
             "launchpad_id": "prykhodchenko",
             "companies": [
                 {
