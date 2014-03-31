@@ -2422,6 +2422,17 @@
             "emails": ["joseph.robinson@rackspace.com", "joseph.r.email@gmail.com"]
         },
         {
+            "launchpad_id": "joshnang",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Josh Gachnang",
+            "emails": ["josh@pcsforeducation.com", "josh.gachnang@rackspace.com"]
+        },
+        {
             "launchpad_id": "joshua-mckenty",
             "companies": [
                 {
