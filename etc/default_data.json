@@ -3554,6 +3554,18 @@
             "emails": ["p@draigbrady.com", "pbrady@redhat.com"]
         },
         {
+            "launchpad_id": "pablo-a-fuente",
+            "gerrit_id": "pafuent",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pablo Andres Fuente",
+            "emails": ["pablo.a.fuente@intel.com"]
+        },
+        {
             "launchpad_id": "pandemicsyn",
             "companies": [
                 {
