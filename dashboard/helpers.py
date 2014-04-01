@@ -174,7 +174,7 @@ def format_datetime(timestamp):
 
 
 def format_date(timestamp):
-    return datetime.datetime.utcfromtimestamp(timestamp).strftime('%d-%b-%y')
+    return datetime.datetime.utcfromtimestamp(timestamp).strftime('%d %b %Y')
 
 
 def format_launchpad_module_link(module):

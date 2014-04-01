@@ -118,7 +118,7 @@ def get_modules(records, metric_filter, finalize_handler):
 
 def get_core_engineer_branch(user, modules):
     is_core = None
-    for (module, branch) in user['core']:
+    for (module, branch) in (user.get('core') or []):
         if module in modules:
             is_core = branch
             if branch == 'master':  # master is preferable, but stables are ok
@@ -313,6 +313,20 @@ def get_module(module):
                 'text': module_id_index[module]['text'],
                 'tag': module_id_index[module]['tag']}
     flask.abort(404)
+
+
+@app.route('/api/1.0/members')
+@decorators.jsonify('members')
+@decorators.exception_handler()
+@decorators.record_filter(ignore=['release', 'project_type', 'module'])
+def get_members(records):
+    response = []
+    for record in records:
+        nr = dict([(k, record[k]) for k in
+                   ['author_name', 'date', 'company_name', 'member_uri']])
+        nr['date_str'] = helpers.format_date(nr['date'])
+        response.append(nr)
+    return response
 
 
 @app.route('/api/1.0/stats/bp')

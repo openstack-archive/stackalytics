@@ -27,7 +27,7 @@ div.page {
     margin: 0 auto;
 }
 
-div.page h2 {
+h2 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
     font-size: 23px;
     font-weight: normal;

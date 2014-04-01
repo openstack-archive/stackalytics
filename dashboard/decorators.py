@@ -211,6 +211,7 @@ def aggregate_filter():
                 'emails': (incremental_filter, None),
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),
+                'members': (incremental_filter, None),
             }
             if metric not in metric_to_filters_map:
                 metric = parameters.get_default('metric')

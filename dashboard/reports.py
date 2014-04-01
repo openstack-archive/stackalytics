@@ -27,6 +27,8 @@ from dashboard import vault
 from stackalytics.processor import utils
 
 
+DEFAULT_DAYS_COUNT = 7
+
 blueprint = flask.Blueprint('reports', __name__, url_prefix='/report')
 
 
@@ -123,6 +125,16 @@ def contribution(module, days):
         'module': module,
         'days': days,
         'start_date': int(time.time()) - int(days) * 24 * 60 * 60
+    }
+
+
+@blueprint.route('/registrants')
+@decorators.exception_handler()
+@decorators.templated()
+def registrants():
+    days = int(flask.request.args.get('days') or DEFAULT_DAYS_COUNT)
+    return {
+        'days': days
     }
 
 

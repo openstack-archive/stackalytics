@@ -1,0 +1,348 @@
+{% extends "reports/base_report.html" %}
+
+{% block title %}
+    OpenStack foundation members
+{% endblock %}
+
+{% block scripts %}
+
+    <script type="text/javascript">
+
+    function get_start_date() {
+        var days = {{ days }};
+        var start_date = Math.round(new Date().getTime() / 1000) - days * 24 * 60 * 60;
+        return start_date;
+    }
+
+    function show_engineers_table(options) {
+        var table_column_names = ["index", "link", "date", "company"];
+        var table_id = "members_table";
+        var company = $('#company_selector').val();
+
+        $.ajax({
+            url: make_uri("/api/1.0/members", options),
+            dataType: "json",
+            success: function (data) {
+                var tableData = data["members"];
+
+                var tableColumns = [];
+                var sort_by_column = 0;
+                for (var i = 0; i < table_column_names.length; i++) {
+                    tableColumns.push({"mData": table_column_names[i]});
+                }
+
+                for (i = 0; i < tableData.length; i++) {
+                    var user_link = tableData[i].member_uri;
+                    tableData[i].index = i + 1;
+                    tableData[i].link = "<a href=\"" + user_link + "\">" + tableData[i].author_name + "</a>";
+
+                    tableData[i].date = tableData[i].date_str;
+                    tableData[i].company = tableData[i].company_name;
+                }
+
+                if (table_id) {
+                    $("#" + table_id).dataTable({
+                        "aaSorting": [
+                            [ sort_by_column, "asc" ]
+                        ],
+                        "bFilter": true,
+                        "bInfo": true,
+                        "bAutoWidth": false,
+                        "aaData": tableData,
+                        "aoColumns": tableColumns,
+                        "bDestroy": true,
+                        'bPaginate': true,
+                        "sPaginationType": "full_numbers",
+                        "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "iDisplayLength": 10
+                    });
+                }
+            }
+        });
+    }
+
+    function show_companies_table(options) {
+        var table_column_names = ["index", "link", "count"];
+        var table_id = "companies_table";
+
+        $.ajax({
+            url: make_uri("/api/1.0/stats/companies", options),
+            dataType: "json",
+            success: function (data) {
+                var tableData = data["stats"];
+
+                var tableColumns = [];
+                var sort_by_column = 2;
+                for (var i = 0; i < table_column_names.length; i++) {
+                    tableColumns.push({"mData": table_column_names[i]});
+                }
+
+                var wasIndependent = 0;
+
+                for (i = 0; i < tableData.length; i++) {
+                    if (tableData[i].name == '*independent')
+                        wasIndependent = 1;
+                    else
+                        tableData[i].index = i + 1 - wasIndependent;
+                    var company_link = make_uri('/report/registrants', {company:tableData[i].name});
+                    tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
+                    tableData[i].count = tableData[i].metric;
+                }
+
+                if (table_id) {
+                    $("#" + table_id).dataTable({
+                        "aaSorting": [
+                            [ sort_by_column, "desc" ]
+                        ],
+                        "bFilter": true,
+                        "bInfo": true,
+                        "bAutoWidth": false,
+                        "aaData": tableData,
+                        "aoColumns": tableColumns,
+                        "bDestroy": true,
+                        'bPaginate': true,
+                        "sPaginationType": "full_numbers",
+                        "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "iDisplayLength": 10
+                    });
+                }
+            }
+        });
+    }
+
+    function renderChart(url, container_id, chart_id, options) {
+        $('#members_chart').empty();
+
+        $(document).ready(function () {
+
+            $.ajax({
+                url: make_uri(url, options),
+                dataType: "jsonp",
+                success: function (data) {
+
+                    var chartData = [];
+
+                    const limit = 10;
+                    var aggregate = 0;
+                    var i;
+
+                    data = data["stats"];
+
+                    for (i = 0; i < data.length; i++) {
+                        if (i < limit - 1) {
+                            chartData.push([data[i].name, data[i].metric]);
+                        } else {
+                            aggregate += data[i].metric;
+                        }
+                    }
+
+                    if (i == limit) {
+                        chartData.push([data[i - 1].name, data[i - 1].metric]);
+                    } else if (i > limit) {
+                        chartData.push(["others", aggregate]);
+                    }
+
+                    if (chart_id) {
+                        var plot = $.jqplot(chart_id, [chartData], {
+                            seriesDefaults: {
+                                renderer: jQuery.jqplot.PieRenderer,
+                                rendererOptions: {
+                                    showDataLabels: true
+                                }
+                            },
+                            legend: { show: true, location: 'e' }
+                        });
+                    }
+                }
+            });
+        });
+    }
+
+    function make_options() {
+        var options = {};
+        options['release'] = 'all';
+        options['metric'] = 'members';
+        options['project_type'] = 'all';
+
+        options['company'] = $('#company_selector').val();
+        options['days'] = $('#days_selector').val();
+
+        return options;
+    }
+
+    function reload() {
+        window.location.search = $.map(make_options(),function (val, index) {
+            return index + "=" + val;
+        }).join("&")
+    }
+
+    function show_page() {
+
+        var start_date = get_start_date();
+        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+        renderTimeline(base_options);
+
+        show_engineers_table(base_options);
+
+        {% if company == '' %}
+            show_companies_table(base_options);
+            renderChart("/api/1.0/stats/companies", "members_container", "members_chart", base_options);
+        {% else %}
+            $('#companies_block').hide();
+        {% endif %}
+    }
+
+    $(document).ready(function () {
+
+        var start_date = get_start_date();
+        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+
+        $("#company_selector").select2({
+            allowClear: true,
+            ajax: {
+                url: make_uri("/api/1.0/companies", base_options),
+                dataType: 'jsonp',
+                data: function (term, page) {
+                    return {
+                        company_name: term
+                    };
+                },
+                results: function (data, page) {
+                    return {results: data["companies"]};
+                }
+            },
+            initSelection: function (element, callback) {
+                var id = $(element).val();
+                if (id !== "") {
+                    $.ajax(make_uri("/api/1.0/companies/" + id, base_options), {
+                        dataType: "jsonp"
+                    }).done(function (data) {
+                        callback(data["company"]);
+                    });
+                }
+            }
+        });
+    });
+
+    </script>
+
+    <style type="text/css">
+        table.dataTable tr.even {
+            background-color: #EEF1F4;
+        }
+
+        table.dataTable tr.even:hover, table.dataTable tr.odd:hover {
+            background-color: #F8FFEC;
+        }
+
+        table.dataTable tr.even td.sorting_1 {
+            background-color: #E0E8E8;
+        }
+    </style>
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="navigation">
+        <div id="timeline"
+             style="width: 100%; height: 120px; margin-top: 15px;"></div>
+    </div>
+
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            $('#days_selector').val({{ days }});
+            $("#days_selector").select2();
+            show_page();
+        });
+
+        $(document).on('change', '#days_selector', function (evt) {
+            reload();
+        });
+
+        $(document).on('change', '#company_selector', function (evt) {
+            reload();
+        });
+    </script>
+
+    <div class="drops">
+        <div class="drop" style="margin-top: 1em;">
+            <label for="days_selector">Joined during period</label>
+            <select id="days_selector" name="days_selector"
+                    style="min-width: 140px;"
+                    data-placeholder="Select date_period #">
+                <option value="7">week</option>
+                <option value="14">two weeks</option>
+                <option value="31">month</option>
+                <option value="93">quarter</option>
+                <option value="183">half year</option>
+                <option value="365">year</option>
+                <option value="730">two years</option>
+            </select>
+        </div>
+
+        <div class="drop" style="margin-top: 1em;">
+            <label for="company_selector">Company</label>
+            <input id="company_selector" style="width: 140px"
+                   data-placeholder="Any company" value="{{ company }}"/>
+        </div>
+    </div>
+
+
+    <table style="width: 100%" cellspacing="0" id="companies_block">
+        <tr>
+            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
+                <h2>OpenStack foundation member companies</h2>
+
+                <div class="body" style="margin-right: 1em;">
+                    <table id="companies_table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Company</th>
+                            <th>Members Count</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+            <td style="width: 50%; vertical-align: top; padding-left: 3em">
+                <h2>Members by company</h2>
+                <div class="body" style="margin-left: 1em;">
+                    <div id="members_container">
+
+                        <div id="members_chart"
+                             style="width: 100%; height: 350px; margin-bottom: 1em;"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width: 50%" cellspacing="0">
+        <tr>
+            <td style="width: 100%; vertical-align: top; padding-right: 3em;">
+                <h2>Individual Members</h2>
+
+                <div class="body" style="margin-right: 1em;">
+                    <table id="members_table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Engineer</th>
+                            <th>Date Joined</th>
+                            <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+{% endblock %}
