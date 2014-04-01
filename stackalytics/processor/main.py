@@ -26,6 +26,7 @@ from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
 from stackalytics.processor import lp
 from stackalytics.processor import mls
+from stackalytics.processor import mps
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
@@ -140,10 +141,24 @@ def process_mail_list(uri, runtime_storage_inst, record_processor_inst):
     runtime_storage_inst.set_records(processed_mail_iterator)
 
 
-def update_records(runtime_storage_inst):
+def process_member_list(uri, runtime_storage_inst, record_processor_inst):
+    member_iterator = mps.log(uri, runtime_storage_inst,
+                              cfg.CONF.days_to_update_members)
+    member_iterator_typed = _record_typer(member_iterator, 'member')
+    processed_member_iterator = record_processor_inst.process(
+        member_iterator_typed)
+    runtime_storage_inst.set_records(processed_member_iterator)
+
+
+def update_members(runtime_storage_inst, record_processor_inst):
+    member_lists = runtime_storage_inst.get_by_key('member_lists') or []
+    for member_list in member_lists:
+        process_member_list(member_list, runtime_storage_inst,
+                            record_processor_inst)
+
+
+def update_records(runtime_storage_inst, record_processor_inst):
     repos = utils.load_repos(runtime_storage_inst)
-    record_processor_inst = record_processor.RecordProcessor(
-        runtime_storage_inst)
 
     for repo in repos:
         process_repo(repo, runtime_storage_inst, record_processor_inst)
@@ -244,9 +259,15 @@ def main():
 
     update_pids(runtime_storage_inst)
 
-    update_records(runtime_storage_inst)
+    record_processor_inst = record_processor.RecordProcessor(
+        runtime_storage_inst)
+
+    update_records(runtime_storage_inst, record_processor_inst)
 
     apply_corrections(cfg.CONF.corrections_uri, runtime_storage_inst)
+
+    # long operation should be the last
+    update_members(runtime_storage_inst, record_processor_inst)
 
 
 if __name__ == '__main__':

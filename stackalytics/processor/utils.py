@@ -46,6 +46,13 @@ def date_to_timestamp_ext(d):
         return int(d)
 
 
+def member_date_to_timestamp(d):
+    if not d:
+        return 0
+    return int(time.mktime(
+        datetime.datetime.strptime(d, '%B %d, %Y ').timetuple()))
+
+
 def iso8601_to_timestamp(s):
     return int(time.mktime(iso8601.parse_date(s).timetuple()))
 

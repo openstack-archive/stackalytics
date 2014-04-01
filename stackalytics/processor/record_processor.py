@@ -397,6 +397,38 @@ class RecordProcessor(object):
 
             yield bpc
 
+    def _process_member(self, record):
+        user_id = "member:" + record['member_id']
+        record['primary_key'] = user_id
+        record['date'] = utils.member_date_to_timestamp(record['date_joined'])
+        record['author_name'] = record['member_name']
+        record['module'] = 'unknown'
+        company_draft = record['company_draft']
+
+        company_name = self.domains_index.get(company_draft) or company_draft
+
+        # author_email is a key to create new user
+        record['author_email'] = user_id
+        record['company_name'] = company_name
+        # _update_record_and_user function will create new user if needed
+        self._update_record_and_user(record)
+        record['company_name'] = company_name
+        user = utils.load_user(self.runtime_storage_inst, user_id)
+        del record['author_email']
+
+        user['user_name'] = record['author_name']
+        user['companies'] = [{
+            'company_name': company_name,
+            'end_date': 0,
+        }]
+        user['company_name'] = company_name
+
+        utils.store_user(self.runtime_storage_inst, user)
+
+        record['company_name'] = company_name
+
+        yield record
+
     def _apply_type_based_processing(self, record):
         if record['record_type'] == 'commit':
             for r in self._process_commit(record):
@@ -409,6 +441,9 @@ class RecordProcessor(object):
                 yield r
         elif record['record_type'] == 'bp':
             for r in self._process_blueprint(record):
+                yield r
+        elif record['record_type'] == 'member':
+            for r in self._process_member(record):
                 yield r
 
     def _renew_record_date(self, record):
