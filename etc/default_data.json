@@ -149,6 +149,18 @@
             "emails": ["ikharin@mirantis.com", "akscram@gmail.com"]
         },
         {
+            "launchpad_id": "al592b",
+            "gerrit_id": "alop",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abel Lopez",
+            "emails": ["alopgeek@gmail.com", "al592b@att.com"]
+        },
+        {
             "launchpad_id": "alex-gaynor",
             "companies": [
                 {
