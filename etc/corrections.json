@@ -1513,6 +1513,3055 @@
             "primary_key": "0145ebc98e8404639be4f2db8900037b690bc9f1",
             "module": "sahara",
             "subject": "[IDH] Added IDH 3.0.2 support"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "6211fb216bdb6f1231c1ec10c7142dd938049a06"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fd2f972bad93a4a40c9cd3ffc731503ce128fc01"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "398a5c118226c70b68fd24e944fe44883caa0b1e"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "9696c1eff0f98355bae6eb5bc75c724d16b6ad3e"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7ba72187ce30526614684ad33c5c271f018f44c5"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "73718d5f69f2d6b768cd7c3434ef718d7f15ee57"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d93a32e76699c65b8a6c63cb32977082db16fd0b"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "6d9e0edb1f4b31b22adc1035182562f1a79afc1d"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b955662e57d783b57eb042bedaacc78ea245f977"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ca88265ee646be7b6e252ebe03ce4f2be4491016"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8d80dc2fab4d610c8908cfa28c2319ade61911d0"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7b965fa5833cd060f1a5b42e40d29114532c620f"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7dad907a6054458470de51a1734356efb61e32ee"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7721e58ef52fdcba9205ad5184360dd703c958a0"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d36f0ceeafecbd1d70fa9b35a819febb3662a7b3"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "10215d097f6023b3c8113af45ea801094846ea4b"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "dc449b4d1972788579943b37b6070a1b9ab4e4b5"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4e29b306f4414636692aad8f905c1c69baa25827"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "0cb392c0ae9119128d37d7483f46bef8c84790fd"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "55a60ca0767cb10ebe139aedb6c2030fb7546c30"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "025a905ceef559413ad8137661ff9590fd300319"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "24ebadfd764ff35f98179d0fae0e362b8ba19ef5"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d44a4330381486b7fe63bed19e42af7541ab7e1d"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "01fbeec552981743397c7c4eac74c9ed9c3c000b"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "9e9f1156aa7040d2e49bd6924c89d263f2ca937f"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d27e17d3cbff21ac71dcdc12721ee0d45178f6e2"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "724bad6598cce3b9af7a2c9f2edf1e63be4c4f0d"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ea0f90e4412116b293141c00b0fafec64d759d71"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2ede66ce2014be0d2d510c3f09c68fa14c32f7f2"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "43cd6d9e87e2d309baa7bcfb011baa7d77dc5ec0"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e62c908e11a40395a138986a1aebf0b9d9990065"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "eb43facca288f1545695576654c990478ca7d906"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "30df1361c58fcf924208d4440a4cbfa2057b462c"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2b2af0abd3a9ee6f7768aea3613bd12fc84a5708"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "bb63a66e6f27081c0e81bd2ead25a4955460a600"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "59f6d993bf63acdfdd38d6b334f39b95ae157d13"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a17890797932cc94b3e7bf9eb4093845053578ff"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "76a1cd435004cc6a81d880cfec8460696d2eac66"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "10fee035817676940c93188ccded84bdf6308ed5"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7a1d5f70a73a360f619d730ae2743b709f5e627d"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "763434e3f72e07f37682d45f0de4dbddbb18238b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a4c6381d4b2cf6cb5d88decd4c00f5066272f001"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3cd4c85845db255f508087f7f383d132f3fb72ff"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "6f1ea4e2f96eda6113810f37c42e49177e18961f"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "be84209699cbe6c9af5c92e7fc84b280fc8bd512"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1f0a68820e2eec9e19e493c8a74145ad73edb039"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "57a2d388da4a43e839d79f2fddb55fa3c6215fe3"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "31ab29b23ee4a8b745c1c091208857dbeff3ed18"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2a4611df19b0f914f346ba116bc4796ebe94d69d"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fc6f46097375b1a375f16ec730a3efa5e182c495"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "6eb2b3b461de66dd3a1c7913488e1fed20a4a9f5"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "339c6ae5cfdc9859a2adba7cd602d4a9e4f2e592"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b1abe1eb9527e72c418f11615ba809633384740e"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "95f4b60d89b2ec08e3044f04b7ae8a4511de78b5"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4add26984c062b1f834e3628b15ae4a43efa2b12"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ec8de814a2ef5b289750132685ef5811b7cf79d3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e0de8a4030b2de875e426739a76a4b6028fad8e9"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7dd8fce5870a38d69a2a7a63be88e8d5decdb98e"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ed227603b4ad2330e262e8b82d4c4a725faa7d15"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "001be4d3e3094464cd2e30b9091ec785185f8cb7"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8b6b96574477eb3edb3d0b2fafa7d5d84e32ce46"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fce8b676028ae3b00e194b5287bbc97d5998d008"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d7a912ed44c009417fc6b2f28d0c6c066bd441d3"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "066048b3420a1d8d980e863aa4543f8759c8cddf"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "44818514aa4b8f7bd5a74bd79f973617b7082d3d"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ee2d5aed5955335fcb0571c185dcf0f0f1020118"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c61b9645c6bd0a99866a7baa14cf0d85e7f9f15a"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5086bb69d471fd899a8ef5ca91929874c676c05c"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4e42dfbe521643687c7dc2bc0344f26d0d5be9dd"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3ec6b7a5dd1edc446c0ebff6d2370d3e8efc9623"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8900d98d1def56c401cef1a5a0cb73e37ac343f0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "25cf8f89d746ae69566433b01a58cbb5f8c3abdc"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "bbf990bf10b6a2512639784f58e47fb08f1da985"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "187b97d2a7e7a446b6ac1e158053bfdf8a13dfa0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d85ebc866a4546889495562197b56929d3f8e882"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ae0845b20d0930bebb47e5390608900ab152760b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a4a78e0406c3d6d76cb494ffbd811da4b0b4eecf"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a4b220cc0c3f0f1c8a7a6948bb73c24573111737"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "89d516b10ee28fe60b180c29f069e433da0b4977"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d53f6c9b5417d0799567497dfe89fd5fa02cc818"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "cef2d864ecb3a4b33dec048702dc2496954ef6d6"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d1b95b1d1913710e655f6a807989890e8528e185"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c09e48541f865d8e7ed78d4e4fa47f3c273cfb30"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "20cbd53ff79576faa78f98446706f4c3a3e77a31"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5c98afc4104c0671f3bb24585915eb506750394b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "630ed94b43d94e3b7616ab17366f19ddc0f831aa"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5d25f40ccf4ff3f7e30528f6560e958665bf5acc"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d86a18c3a4423b3160b38e08f20348270b607ccc"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b9b8b31ac42ccba7629c2b629e41d37a59e2314f"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b0af130c3c62e5ee0be95e505126b7a4e9d3625f"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4a881276b740ba781690822e6e174dd2ce8ab9c8"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "980327ff268bbb2e292ee5e45a59b0c634c0dcb1"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b3a71ed05b2bf91f8389f0a56658204c4de2dde8"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fc80d11f9d5b0d3469759f959428b9a6486d4e28"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3909ab7af9ed0966f0822c49476a38fe0d59346d"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1ffae1c0e5a04e19b3e95e59c489bd69efa9e4a2"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7dd8cb4fe69f296aafb24676c457bbbbb2c6e66b"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "29b09d7c2a386af88b4c15d42581f5ba6d2f63a1"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "00a4cf0c3560d08f25f2f526fb168df264634730"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "77975774df1eb049475fd8b3cdc5024802ef557b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "cfed4a11357edfa7985af9dcfe23db9ce73092b8"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3b8a63081f3edf4c6f8dd8e0e3829d9ad8164d0a"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "134c4baf1454610d02306c723e0b6e28023c3444"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "670f491d6b5d9ba150b3fadaeec7788777157552"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ab2d0c8abe0bab88b70896d473873bae1932d845"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "f4bde54b48b08b2e97305daff675ffef8148517d"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c8a614a20a19668a23c44adb1d7bbda508f40e8f"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "90dc81e4d322d28b6c54d17f1153b6536ddf7f75"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "31a822ce5d4b7fc39ac028701352436dae6f3067"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "9566c0fe160c6160e4228a6ff5679f607a47d120"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5a77c2d6ab9bbf05d2da54830b83955d065c7890"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "f341d5f9fefa59e3888e7512d48ba014512976f0"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1301560f7f7deade78009c52793b365eeefe138a"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "f85a361011eb722c446647773c099c015156fcde"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fe60a40b422d088b05a403fd8e5921ec65ad87ac"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ddcf65beca48a9eb7259df55ca0eb2ead9d3ac04"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7cde12cf238fdc7b54b2b10972aaf0ff5a73b83a"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1788c45e12b2722758b9b243df4ebfc9b3ff2036"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2d305278e90b81da042f849d3fa0c3b32a13bc82"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2fa4df02e4f39ea57afe8062c8ef878e36680a2d"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "098db2462dabf5d0d9badefd001a13b2df25509c"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4d204a01af36c5e6a079d1b85f20392e0c4eaf6b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "bcab81691aa5983b17c6ab006cfdcada57d9ca33"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8dc13cb4c9308f699e02cfb36c18561d63a915fa"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "96add8f0a7860c5665af33a77d583f75bd556bd2"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c395a451dd58d7427b5416d77dea4d8b99ca719a"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b755957efce8b9e3181a896288e1b9b288d738a5"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b2a66c17aa5901f8ead276d2bdec71f28fea7948"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8a6b677f3350df3e8d0190eef3b03bc756aa9f12"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4cf90047e6832185e8b940c7bb0fabced1b89249"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8b98f1cd924467d9abe642c8487e29eb44f8b56c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a0400cb5aa7dc87788f14f2441ea2b3d79c1c4e7"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2597acab1672e983e1b05a83a0da740848226394"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3480fb564d8282bc3c0111be0d844dbece1e882d"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "9324b8f2f0909628e2b6ed4702cbc9b06f0e5ee3"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7077bc48655b9d419a28a2427eb6e44fc1ad8eeb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e7fdcd7c957ee1228e7f513511bba52f6764954b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "405edac3e8cc06d216e4a268d8fad985c2a12543"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b8c7015777e28c4fd97b9f32a7b4ef72957a878d"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "9be37cc452efb3402e8e685f991f830d8dd41719"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e52929f231537b6f1be2bdadb8266700ee650b65"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e9e775935dd49bbb0073903b6b8a57c948989bca"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "911cb9c726bb831451672aaacd2edfd6cf272575"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c5e9c890281c19a8ffe6ea4db3f867da1fe804fd"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2499202f8a729ae1abdbfa414fdcc92e729d2d68"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "13d2a2e85d64f1afbc7c965013816de30e77c8fe"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "58e3a1abd0c99dbc92375e7aaf3de7d64f8c5b3c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ece7a09f6ef5597c286fb62230d22c6c120f7bdb"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "94681ebb4d2a843ac452a8ee00553ba9058e5f3b"
+        },
+        {
+            "author_email": "mmaxur@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "063459cd8e5b4625fc98aa3707b39e43c7998c50"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "cbf786dbc6884d8e9e4cdbccbde19311fc4c4b21"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "379f1df23b162b7f7cb6a270ecb25dee581318b0"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "74f0971667f107993a3f2f57d370016cf258540e"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "93cf7ad834a351a0dfb0f5268189abb7326a2760"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4d2f1b02872b8948da5c5997cefc24b7064d28d6"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2035e6746b4ebf6b4d773cdcd593475de17d2732"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "580eba3f620cb94ef7ff7c01d10af42b05ad35de"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ceae5491c65b6990993fcbb279d2b391a1d8b800"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "29f259f44d828081939d08399985b86fffce232d"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1200eb55d4819195918de97fcc3856265a88c763"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "072a6a0f8bd814159c73cf0cd9674974d5509d03"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1a7766550490f8dc7098ea761639c5668c87ce14"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1cb3c7a0a4a1118a4a0f0632494ec8b9478f8071"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c841e5bb75cf81862562db705192ef700b8f9681"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "171fca81377990ce162efbe7ef248855a66c539b"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "aea91a08ffb5e6f92cc1a6afeb45091720e69d16"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "84eff1e3e69ce6cc39f90173d696c2e4ef149aff"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "352c92bb19af045d29378dd741820ae41ee69e3e"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8aa334eea3b4514c29e6a0e87c21e579be1ee17a"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fd32676e56d400f7aa53ff414ae44936e06bf299"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8994788e4eba18466c281a60e379b135015e046d"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "94f885dee00dc19b91b455bde6afb5fb136cf3b3"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "073b85cd2103206609f97189dcfe5dfa2cde7377"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "b24fbf68f74c0e5f0477bab656f5992dc1e641d7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "d70e1bfb05b00e2ca938d0c30e43bed52e113bc3"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "49486814236c9adb77ace84d2309b028ca9121d0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "43836756e688c108f3f2caaadf6ed3a6ae8e5fe5"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "7f6f9dde7f8f4f08d96af49678509b758ec6b8b2"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "4a9b1e1a874b0dab4379de22a1bd117a7a0c24e1"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "783d86b57ab27c8a3d034f53f6230cab823a5dc0"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c0fde1a63456a5a787532ef8436122aa8674b084"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "53066437fc7dec250e6c21ed9627a1f3d2a056b0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a16eb8e2289c3952fc6ed328fb38194ab97b796b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "cd3b450638c23ea0ee80e1a2288e37e89be26226"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "fa89c27ba3fda51c959ecf12dc121c74c50fe42e"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "1e9a2574df6525ce7c94259eb91d481328210f0b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5be6bbeb7da050df0270df203be082e2e5e263ae"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3d86f396227410ed2261db53bc2530c7949a2df5"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "3f348bf28e5d18967814e6908fa735d198183aec"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "0fa2050231099abbc7025dd53863a860943e58c9"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "f2ee5612f7d125b9f266d49d8b7a9e3dd0c2820a"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "6af5e051fa7f472114cd3db7f996ff4dab8adb51"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "cedeb879b615cff9b8597ad0928e870cd724be1f"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "532bcba35d045f144637692b3b83c6c8a6e06b2f"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a4b448f0d01c46afc803498dd5ee28928f665b92"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "2d9d4d2795b062cc782752b2dbc38b3fdaffdd20"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a9dedae2761a07d16fb5ce3257a1826157738142"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e06dc77df01847c8098a1572569bb58c2ec41696"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8f3c9855b101a3bdcef723635c67beb8d7bf2fc1"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "63629ef2117291872d1647d974175df0842a8119"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "f09a89653c091501407ed467569862454525c7e3"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "8cf25e5e5211c9a7f57345f61c2196a5a9cba5e4"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "495dccdbd36d7c4409c468dc628ea7ac7a79f2a5"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "5d3a8e0c0a0f93669455afec14f802493d6b39b7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "47713992dacd05f08f5e1baa881f98cc2ceb2a09"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "630a0d49b12f25059ae7bf9806426c9741f0a3c5"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "e5b440757ed13c0bb1422a78c3ec4d1a6eb418de"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "0ae36905ac06e292ba4b8f9c93889a8721956ffd"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "0b809d7d96fedbf136ca72b6cefbc699b93a51a7"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "18b086552135bfdefdfeb5f0c881a11c4a04915c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "a5d099fb5344063adea8c99099fd3166d41ed0bf"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "ce4f8241c837cc289d1bf06a69b5312dbcddb9a9"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c0588fe85247661c3692d15271c866d6488e90dd"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "52c8f0b1cccbe615b2f2d3e75265f1f4fef44562"
+        },
+        {
+            "author_email": "ishakhat@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "c38fabd3834ecaf5fb39c4b438f168abae99ea09"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "bd156102a0bd6601f118443b3df23c19b9c8cb01"
+        },
+
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If0916e713eace8523968cd2fbb8c4bc893c978b0"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5bb799e9d0ad2896325c04b881995588b738636e"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5bb799e9d0ad2896325c04b881995588b738636e"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5bb799e9d0ad2896325c04b881995588b738636e"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8c325770b11ed3c9257599c6fe0d734f0bbfb9ea"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8c325770b11ed3c9257599c6fe0d734f0bbfb9ea"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8c325770b11ed3c9257599c6fe0d734f0bbfb9ea"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I38fc83eadc3461240b1ac1204af02ffbbf355f99"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I4272b659c922040d9c767841975fb8016944c4f9"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5bb799e9d0ad2896325c04b881995588b738636e"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9d6ff4f8c554e8a759de8d0f1641365092f246bf"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I613eb528d9be6d854346c6f9bfe3f39ef2247224"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iba7774b27c9a7cdaabc20efa9d02488671529419"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8c325770b11ed3c9257599c6fe0d734f0bbfb9ea"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5bb799e9d0ad2896325c04b881995588b738636e"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I592a6943322d1201741027c8779c1ffe61948769"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I592a6943322d1201741027c8779c1ffe61948769"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I592a6943322d1201741027c8779c1ffe61948769"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c4518"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca583"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iff98999e940661d0e18f9eb6a196e7cca6d298e9"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iff98999e940661d0e18f9eb6a196e7cca6d298e9"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iff98999e940661d0e18f9eb6a196e7cca6d298e9"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I83620ae2ed0d63ce9cbc81db9423bc5e538125e0"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I83620ae2ed0d63ce9cbc81db9423bc5e538125e0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I83620ae2ed0d63ce9cbc81db9423bc5e538125e0"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I83620ae2ed0d63ce9cbc81db9423bc5e538125e0"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I83620ae2ed0d63ce9cbc81db9423bc5e538125e0"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifbb4b10b198820e06675e1b053bd1289beb3a3ca"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifbb4b10b198820e06675e1b053bd1289beb3a3ca"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifbb4b10b198820e06675e1b053bd1289beb3a3ca"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Icd3427fc39cfae60beb6d516a25c216d91b659b7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Icd3427fc39cfae60beb6d516a25c216d91b659b7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Icd3427fc39cfae60beb6d516a25c216d91b659b7"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Id02bc8ba5a2652ab3bc9c71e4e9cdb13a7dfc287"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Id02bc8ba5a2652ab3bc9c71e4e9cdb13a7dfc287"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe22"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f7"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f7"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Id02bc8ba5a2652ab3bc9c71e4e9cdb13a7dfc287"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Id02bc8ba5a2652ab3bc9c71e4e9cdb13a7dfc287"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Id02bc8ba5a2652ab3bc9c71e4e9cdb13a7dfc287"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Icd3427fc39cfae60beb6d516a25c216d91b659b7"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d758539"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "avinogradov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iadb264d3923c5834daadbe4be72fd4524cbb80cb"
+        },
+        {
+            "author_email": "ipekelny@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e2084"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e2084"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e2084"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "mdurnosvistov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I1bd5566395b00413593192f90bf2e756af01df26"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e2084"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e2084"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifb9c27b4ce375465b8897b4c8abb783e109acafb"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6fa056adb205f9979bf8fa6803bcc5e949f56d09"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6fa056adb205f9979bf8fa6803bcc5e949f56d09"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6fa056adb205f9979bf8fa6803bcc5e949f56d09"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I6fa056adb205f9979bf8fa6803bcc5e949f56d09"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c45"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iacd3b344db0dbf1f0bdfbdf195902c862d3698db"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Iacd3b344db0dbf1f0bdfbdf195902c862d3698db"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f11"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8b8cef021804db8b856c1785ee547537e017a22b"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8b8cef021804db8b856c1785ee547537e017a22b"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I8b8cef021804db8b856c1785ee547537e017a22b"
+        },
+        {
+            "author_email": "achuprin@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a7"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a7"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a7"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a7"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a7"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc3623"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd74"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9d793f0a6f27ca6cad8568ee07f96926748b4074"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9d793f0a6f27ca6cad8568ee07f96926748b4074"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "vnaboychenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I71dc4d7d72f489b8609843e78feba97213ff0f42"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If6beba2ea53bac36c61ef1ecf50295e2ec957a2e"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If6beba2ea53bac36c61ef1ecf50295e2ec957a2e"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If6beba2ea53bac36c61ef1ecf50295e2ec957a2e"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "If6beba2ea53bac36c61ef1ecf50295e2ec957a2e"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "achudnovets@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa1765"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca7028"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I184f0951f4afe8af8da6ede13a723599ef84309b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I184f0951f4afe8af8da6ede13a723599ef84309b"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f32"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f32"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f32"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f32"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic74649667a7fbee517b03ec27014f4b0dae6ed23"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic74649667a7fbee517b03ec27014f4b0dae6ed23"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9d793f0a6f27ca6cad8568ee07f96926748b4074"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I37bd04efccc0829c51738f2f9cfa78c3d875d2c3"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Idd3f6279ba451ce18f25477418cbcec03b0d2278"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Idd3f6279ba451ce18f25477418cbcec03b0d2278"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Idd3f6279ba451ce18f25477418cbcec03b0d2278"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Idd3f6279ba451ce18f25477418cbcec03b0d2278"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic74649667a7fbee517b03ec27014f4b0dae6ed23"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I9d793f0a6f27ca6cad8568ee07f96926748b4074"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e9"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e9"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e9"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e9"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e9"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I180072856b030987fac582aac66877277e35f644"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "aminakov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "yyekovenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae05"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae05"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae05"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae05"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae05"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic1445603eb4fcc476d1b3d2ee72c13307ebaebcc"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "Ic1445603eb4fcc476d1b3d2ee72c13307ebaebcc"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I46cc5f2689862c25680700495ca5721518e16890"
+        },
+        {
+            "author_email": "ikhudoshyn@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I46cc5f2689862c25680700495ca5721518e16890"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I46cc5f2689862c25680700495ca5721518e16890"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "aostapenko@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "dukhlov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "dmakogon@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I5d182644f692f4ca874185139cb72990040215eb"
+        },
+        {
+            "author_email": "isviridov@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I576066c79a164288771e4faecb4c9cfb7ff6f14c"
+        },
+        {
+            "author_email": "miarmak@symantec.com",
+            "correction_comment": "Affiliate to Symantec",
+            "company": "Symantec",
+            "primary_key": "I576066c79a164288771e4faecb4c9cfb7ff6f14c"
         }
     ]
 }

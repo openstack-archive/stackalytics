@@ -24,7 +24,7 @@
                         "type": "string"
                     }
                 },
-                "required": ["primary_key", "correction_comment", "module", "subject"]
+                "required": ["primary_key", "correction_comment"]
             }
         }
     }
