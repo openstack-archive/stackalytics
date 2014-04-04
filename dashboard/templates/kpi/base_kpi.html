@@ -38,8 +38,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
 
     <script type="text/javascript">
-
-        function process_stats(container_id, url, query_options, item_id, goal, comparator, data_filter) {
+        'use strict';
+        function process_stats(container_id, url, query_options, item_id, metric, text_goal, comparator, data_filter) {
             $.ajax({
                 url: make_uri(url, query_options),
                 dataType: "jsonp",
@@ -55,7 +55,7 @@
                                 continue;
                             }
                         }
-                        sum += data[i].metric;
+                        sum += data[i][metric];
                         data[i].index = ++ index;  // re-index
                         if (data[i].id == item_id) {
                             position = i;
@@ -64,7 +64,7 @@
 
                     var result = {
                         mark: false,
-                        goal: goal
+                        text_goal: text_goal
                     };
 
                     if (position < 0) {
@@ -80,9 +80,9 @@
             });
         }
 
-        function goal_position_in_top(container_id, query_options, item_type, item_id, position, goal, data_filter) {
+        function goal_position_in_top(container_id, query_options, item_type, item_id, position, text_goal, data_filter) {
             $(document).ready(function () {
-                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, "metric", text_goal,
                         function(item, sum) {
                             var mark = item.index <= position;
                             return {
@@ -95,29 +95,29 @@
             });
         }
 
-        function goal_metric(container_id, query_options, item_type, item_id, metric, goal) {
+        function goal_metric(container_id, query_options, item_type, item_id, target, text_goal) {
             $(document).ready(function () {
-                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, "metric", text_goal,
                         function(item, sum) {
-                            var mark = item.metric > metric;
+                            var mark = item.metric >= target;
                             return {
                                 mark: mark,
                                 info: mark? "Achieved metric " + item.metric:
-                                            "Metric " + item.metric + " is worse than the goal in " + metric,
+                                            "Metric " + item.metric + " is worse than the goal in " + target,
                                 value: item.index
                             }
                         });
             });
         }
 
-        function goal_percentage_in_top_less_than(container_id, query_options, item_type, item_id, goal_percentage, goal) {
+        function goal_percentage_in_top_less_than(container_id, query_options, item_type, item_id, target_percentage, text_goal) {
             $(document).ready(function () {
-                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, goal,
+                process_stats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, "metric", text_goal,
                         function(item, sum) {
                             var percentage = item.metric / sum;
-                            var mark = percentage < goal_percentage;
+                            var mark = percentage <= target_percentage;
                             var percentage_formatted = Math.round(percentage * 100) + "%";
-                            var goal_percentage_formatted = Math.round(goal_percentage * 100) + "%";
+                            var goal_percentage_formatted = Math.round(target_percentage * 100) + "%";
                             return {
                                 mark: mark,
                                 info: mark? "Achieved percentage " + percentage_formatted:
@@ -128,13 +128,64 @@
             });
         }
 
+        function goal_disagreement_ratio_less_than(container_id, query_options, item_id, target_percentage, text_goal) {
+            $(document).ready(function () {
+                process_stats(container_id, "/api/1.0/stats/engineers", query_options, item_id, "disagreement_ratio", text_goal,
+                        function(item, sum) {
+                            var percentage = parseFloat(item["disagreement_ratio"]);
+                            var mark = percentage < target_percentage * 100;
+                            var goal_percentage_formatted = Math.round(target_percentage * 100) + "%";
+                            return {
+                                mark: mark,
+                                info: mark? "Achieved percentage " + item["disagreement_ratio"]:
+                                            "Value " + item["disagreement_ratio"] + " is more than the goal " + goal_percentage_formatted,
+                                value: percentage
+                            }
+                        });
+            });
+        }
+
+        function goal_core_engineer_in_project(container_id, user_id, project, text_goal) {
+            $(document).ready(function () {
+                $.ajax({
+                    url: make_uri("/api/1.0/users/" + user_id),
+                    dataType: "jsonp",
+                    success: function (data) {
+                        var user = data.user;
+                        var is_core = false;
+                        if (user.core) {
+                            for (var i in user.core) {
+                                if (user.core[i][0] == project) {
+                                    is_core = true;
+                                }
+                            }
+                        }
+                        var result = {
+                            mark: is_core,
+                            text_goal: text_goal,
+                            info: user.user_name + " (" + user_id + ") is " + (is_core? "": "not ") + "core engineer in " + project
+                        };
+                        $("#kpi_block_template").tmpl(result).appendTo("#" + container_id);
+                    },
+                    error: function() {
+                        var result = {
+                            mark: false,
+                            text_goal: text_goal,
+                            info: "Item " + user_id + " is not found in the stats"
+                        };
+                        $("#kpi_block_template").tmpl(result).appendTo("#" + container_id);
+                    }
+                });
+            });
+        }
+
     </script>
 
     <script id="kpi_block_template" type="text/x-jquery-tmpl">
     <div class="kpi_block">
         <div class="kpi_marker ${(mark ? "kpi_good" : "kpi_bad")} ">${(mark ? "&#x2714;" : "&#x2716;")}</div>
         <div class="kpi_title_block">
-            <div class="kpi_title">Goal: ${goal}</div>
+            <div class="kpi_title">Goal: ${text_goal}</div>
             <div class="kpi_info">Result: ${info}</div>
         </div>
     </div>
