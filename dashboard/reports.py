@@ -201,8 +201,10 @@ def get_commit_report(records):
     response = []
     for record in records:
         if ('loc' in record) and (record['loc'] > loc_threshold):
-            nr = dict([(k, record[k]) for k in ['loc', 'subject', 'module',
-                                                'primary_key', 'change_id']])
+            nr = dict([(k, record[k])
+                       for k in ['loc', 'subject', 'module', 'primary_key',
+                                 'change_id']
+                       if k in record])
             response.append(nr)
     return response
 
