@@ -3600,6 +3600,17 @@
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
         },
         {
+            "launchpad_id": "paulmontgomery-code",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paul Montgomery",
+            "emails": ["paulmontgomery.code@gmail.com", "paul.montgomery@rackspace.com"]
+        },
+        {
             "launchpad_id": "pblaho",
             "companies": [
                 {
