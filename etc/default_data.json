@@ -460,6 +460,21 @@
             "emails": ["avinash.prasad@nttdata.com"]
         },
         {
+            "launchpad_id": "avishay-il",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Mar-01"
+                },
+                {
+                    "company_name": "Stratoscale",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Avishay Traeger",
+            "emails": ["avishay@gmail.com", "avishay@stratoscale.com", "avishay@il.ibm.com"]
+        },
+        {
             "launchpad_id": "azilli",
             "companies": [
                 {
@@ -766,6 +781,17 @@
             ],
             "user_name": "Chad Lung",
             "emails": ["chad.lung@gmail.com", "chad.lung@rackspace.com"]
+        },
+        {
+            "launchpad_id": "chandankumar-093047",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chandan Kumar",
+            "emails": ["chandankumar.093047@gmail.com", "chkumar@redhat.com"]
         },
         {
             "launchpad_id": "changbl",
@@ -3191,6 +3217,17 @@
             "emails": ["maty.grosz@alcatel-lucent.com", "imdg24@gmail.com"]
         },
         {
+            "launchpad_id": "max-lobur",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Max Lobur",
+            "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
+        },
+        {
             "launchpad_id": "michael-ogorman",
             "companies": [
                 {
@@ -4162,6 +4199,17 @@
             "emails": ["sergey.vilgelm@gmail.com", "svilgelm@mirantis.com"]
         },
         {
+            "launchpad_id": "shaunm-gnome",
+            "companies": [
+                {
+                    "company_name": "Cisco",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shaun McCance",
+            "emails": ["shaunm@gnome.org"]
+        },
+        {
             "launchpad_id": "shilla-saebi",
             "companies": [
                 {
@@ -4595,6 +4643,17 @@
             ],
             "user_name": "Tim Simpson",
             "emails": ["tim.simpson@rackspace.com", "tim.simpson4@gmail.com"]
+        },
+        {
+            "launchpad_id": "tmazur",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tatiana Ovchinnikova",
+            "emails": ["tmazur@mirantis.com", "t.v.ovtchinnikova@gmail.com"]
         },
         {
             "launchpad_id": "toabctl",
@@ -5218,6 +5277,10 @@
             "company_name": "Canonical"
         },
         {
+            "domains": ["centraldesktop.com"],
+            "company_name": "Central Desktop"
+        },
+        {
             "domains": ["cern.ch"],
             "company_name": "CERN"
         },
@@ -5264,6 +5327,10 @@
         {
             "domains": ["coraid.com"],
             "company_name": "Coraid"
+        },
+        {
+            "domains": ["corvisa.com"],
+            "company_name": "Corvisa"
         },
         {
             "domains": ["crs4.it"],
@@ -5722,6 +5789,10 @@
             "company_name": "StackOps"
         },
         {
+            "domains": ["stratoscale.com"],
+            "company_name": "Stratoscale"
+        },
+        {
             "domains": ["stsci.edu"],
             "company_name": "Space Telescope Science Institute"
         },
@@ -5844,6 +5915,10 @@
         {
             "domains": ["yahoo-inc.com"],
             "company_name": "Yahoo!"
+        },
+        {
+            "domains": ["yandex-team.ru"],
+            "company_name": "Yandex"
         },
         {
             "domains": ["ysance.com"],
