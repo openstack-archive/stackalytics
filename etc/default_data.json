@@ -1690,6 +1690,10 @@
             "launchpad_id": "garyk",
             "companies": [
                 {
+                    "company_name": "Radware",
+                    "end_date": "2012-Feb-20"
+                },
+                {
                     "company_name": "Red Hat",
                     "end_date": "2013-Jul-17"
                 },
@@ -1699,7 +1703,7 @@
                 }
             ],
             "user_name": "Gary Kotton",
-            "emails": ["gkotton@vmware.com"]
+            "emails": ["gkotton@vmware.com", "gkotton@redhat.com", "garyk@radware.com"]
         },
         {
             "launchpad_id": "geekinutah",
