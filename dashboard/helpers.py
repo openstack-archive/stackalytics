@@ -114,7 +114,11 @@ def extend_user(user):
     return user
 
 
-def get_activity(records, start_record, page_size):
+def get_activity(records, start_record, page_size, query_message=None):
+    if query_message:
+        records = [r for r in records
+                   if (r.get('message') and
+                       r.get('message').find(query_message) > 0)]
     records_sorted = sorted(records, key=lambda x: x['date'], reverse=True)
 
     result = []

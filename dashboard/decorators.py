@@ -293,7 +293,7 @@ def templated(template=None, return_code=200):
 
             module = parameters.get_single_parameter(kwargs, 'module')
             ctx['module'] = module
-            if module:
+            if module and module in vault_inst['module_id_index']:
                 ctx['module_inst'] = vault_inst['module_id_index'][module]
 
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')

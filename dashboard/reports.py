@@ -192,6 +192,13 @@ def company_activity(company):
     }
 
 
+@blueprint.route('/activity')
+@decorators.templated()
+@decorators.exception_handler()
+def activity():
+    pass
+
+
 @blueprint.route('/large_commits')
 @decorators.jsonify('commits')
 @decorators.exception_handler()

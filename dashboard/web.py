@@ -218,7 +218,9 @@ def get_activity_json(records):
     start_record = int(flask.request.args.get('start_record') or 0)
     page_size = int(flask.request.args.get('page_size') or
                     parameters.DEFAULT_RECORDS_LIMIT)
-    return helpers.get_activity(records, start_record, page_size)
+    query_message = flask.request.args.get('query_message')
+    return helpers.get_activity(records, start_record, page_size,
+                                query_message)
 
 
 @app.route('/api/1.0/contribution')
