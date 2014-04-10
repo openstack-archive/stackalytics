@@ -323,6 +323,17 @@
             "emails": ["andy.edmonds@gmail.com", "andy@edmonds.be"]
         },
         {
+            "launchpad_id": "ankurrishi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ankur Rishi",
+            "emails": ["ankur.rishi@gmail.com", "ankur.rishi@hp.com"]
+        },
+        {
             "launchpad_id": "annegentle",
             "companies": [
                 {
