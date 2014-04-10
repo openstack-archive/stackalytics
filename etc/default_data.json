@@ -1881,6 +1881,17 @@
             "emails": ["hartsocks@vmware.com", "hartsock@acm.org"]
         },
         {
+            "launchpad_id": "hashar",
+            "companies": [
+                {
+                    "company_name": "Wikimedia Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Antoine Musso",
+            "emails": ["hashar@free.fr"]
+        },
+        {
             "launchpad_id": "heckj",
             "companies": [
                 {
