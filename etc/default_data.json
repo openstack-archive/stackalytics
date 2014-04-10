@@ -3232,6 +3232,17 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "miarmak",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maksym Iarmak",
+            "emails": ["maksym_iarmak@symantec.com", "miarmak@mirantis.com"]
+        },
+        {
             "launchpad_id": "michael-ogorman",
             "companies": [
                 {
