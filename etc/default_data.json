@@ -669,6 +669,17 @@
             "emails": ["joseph.breu@rackspace.com", "breu@breu.org"]
         },
         {
+            "launchpad_id": "brian-tully",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Tully",
+            "emails": ["brian.tully@hp.com", "brian.tully@gmail.com"]
+        },
+        {
             "launchpad_id": "broskos",
             "companies": [
                 {
