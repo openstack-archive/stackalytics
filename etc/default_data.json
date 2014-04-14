@@ -962,6 +962,22 @@
             "emails": ["colette.alexander@hp.com", "colettealexander@gmail.com"]
         },
         {
+           "launchpad_id": "coolsvap",
+           "gerrit_id": "coolsvap",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": "2014-Mar-31"
+               },
+               {
+                   "company_name": "Red Hat",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Swapnil Kulkarni",
+           "emails": ["swapnilkulkarni2608@gmail.com", "coolsvap@redhat.com", "coolsvap@gmail.com"]
+        },
+        {
             "launchpad_id": "corvus",
             "companies": [
                 {
