@@ -46,4 +46,10 @@ OPTS = [
                default=('https://raw.github.com/openstack/governance/'
                         'master/reference/programs.yaml'),
                help='The address of file with list of programs'),
+    cfg.StrOpt('default-metric', default='marks',
+               help='Default metric'),
+    cfg.StrOpt('default-release',
+               help='Default release, the most recent if not set'),
+    cfg.StrOpt('default-project-type', default='openstack',
+               help='Default project type'),
 ]

@@ -34,7 +34,8 @@ class TestAPIUsers(test_api.TestAPI):
                       'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_id=['john_doe', 'bill_smith'])):
-            response = self.app.get('/api/1.0/users?module=nova')
+            response = self.app.get('/api/1.0/users?'
+                                    'module=nova&metric=commits')
             users = json.loads(response.data)['users']
             self.assertEqual(2, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
@@ -49,7 +50,8 @@ class TestAPIUsers(test_api.TestAPI):
                       'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_name=['John Doe', 'Bill Smith'])):
-            response = self.app.get('/api/1.0/users?module=nova&query=doe')
+            response = self.app.get('/api/1.0/users?'
+                                    'module=nova&query=doe&metric=commits')
             users = json.loads(response.data)['users']
             self.assertEqual(1, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)

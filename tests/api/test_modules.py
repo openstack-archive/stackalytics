@@ -37,7 +37,8 @@ class TestAPIModules(test_api.TestAPI):
                 test_api.make_records(record_type=['commit'],
                                       module=['glance', 'nova', 'nova-cli'])):
 
-            response = self.app.get('/api/1.0/modules?project_type=all')
+            response = self.app.get('/api/1.0/modules?'
+                                    'project_type=all&metric=commits')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
@@ -50,7 +51,7 @@ class TestAPIModules(test_api.TestAPI):
                         'project type')
 
             response = self.app.get('/api/1.0/modules?module=nova-group&'
-                                    'project_type=integrated')
+                                    'project_type=integrated&metric=commits')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
@@ -61,7 +62,7 @@ class TestAPIModules(test_api.TestAPI):
                         'project type')
 
             response = self.app.get('/api/1.0/modules?query=glance&'
-                                    'project_type=all')
+                                    'project_type=all&metric=commits')
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'}],

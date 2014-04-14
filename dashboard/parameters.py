@@ -14,8 +14,10 @@
 # limitations under the License.
 
 import flask
+from oslo.config import cfg
 from six.moves.urllib import parse
 
+from dashboard import vault
 from stackalytics.openstack.common import log as logging
 
 
@@ -23,9 +25,6 @@ LOG = logging.getLogger(__name__)
 
 
 DEFAULTS = {
-    'metric': 'commits',
-    'release': 'icehouse',
-    'project_type': 'openstack',
     'review_nth': 5,
 }
 
@@ -33,7 +32,6 @@ METRIC_LABELS = {
     'loc': 'Lines of code',
     'commits': 'Commits',
     'marks': 'Reviews',
-    'tm_marks': 'Top Mentors',
     'emails': 'Emails',
     'bpd': 'Drafted Blueprints',
     'bpc': 'Completed Blueprints',
@@ -43,7 +41,6 @@ METRIC_TO_RECORD_TYPE = {
     'loc': 'commit',
     'commits': 'commit',
     'marks': 'mark',
-    'tm_marks': 'mark',
     'emails': 'email',
     'bpd': 'bpd',
     'bpc': 'bpc',
@@ -54,6 +51,19 @@ DEFAULT_STATIC_ACTIVITY_SIZE = 100
 
 
 def get_default(param_name):
+    if 'release' not in DEFAULTS:
+        release = cfg.CONF.default_release
+        if not release:
+            runtime_storage_inst = vault.get_vault()['runtime_storage']
+            releases = runtime_storage_inst.get_by_key('releases')
+            if releases:
+                release = releases[-1]['release_name']
+            else:
+                release = 'all'
+        DEFAULTS['release'] = release.lower()
+        DEFAULTS['metric'] = cfg.CONF.default_metric.lower()
+        DEFAULTS['project_type'] = cfg.CONF.default_project_type.lower()
+
     if param_name in DEFAULTS:
         return DEFAULTS[param_name]
     else:
