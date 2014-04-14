@@ -1155,6 +1155,17 @@
             "emails": ["davidh@il.ibm.com", "david.hadas@gmail.com"]
         },
         {
+            "launchpad_id": "daz",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Darren Chan",
+            "emails": ["dazzachan@yahoo.com.au", "darren.chan@rackspace.com"]
+        },
+        {
             "launchpad_id": "dazworrall",
             "companies": [
                 {
