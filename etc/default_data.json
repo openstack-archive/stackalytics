@@ -1019,6 +1019,18 @@
             "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com"]
         },
         {
+            "launchpad_id": "cristian-a-sanchez",
+            "gerrit_id": "casanch1",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cristian A Sanchez",
+            "emails": ["cristian.a.sanchez@intel.com"]
+        },
+        {
             "launchpad_id": "cthiel-suse",
             "companies": [
                 {
