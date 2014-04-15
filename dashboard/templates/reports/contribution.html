@@ -68,7 +68,8 @@ Contribution into {{ module }} for the last {{ days }} days
                     if (table_id) {
                         $("#" + table_id).dataTable({
                             "aaSorting": [
-                                [ sort_by_column, "desc" ]
+                                [ sort_by_column, "desc" ],
+                                [ 0, "asc"]
                             ],
                             "bFilter": true,
                             "bInfo": false,

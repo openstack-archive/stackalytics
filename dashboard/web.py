@@ -116,12 +116,12 @@ def get_modules(records, metric_filter, finalize_handler):
                                  'module')
 
 
-def is_engineer_core_in_modules(user, modules):
-    is_core = False
+def get_core_engineer_branch(user, modules):
+    is_core = None
     for (module, branch) in user['core']:
         if module in modules:
             is_core = branch
-            if branch == 'master':  # we need master, but stables are ok
+            if branch == 'master':  # master is preferable, but stables are ok
                 break
     return is_core
 
@@ -140,7 +140,7 @@ def get_engineers(records, metric_filter, finalize_handler):
         if finalize_handler:
             record = finalize_handler(record)
         user = vault.get_user_from_runtime_storage(record['id'])
-        record['core'] = is_engineer_core_in_modules(user, modules)
+        record['core'] = get_core_engineer_branch(user, modules)
         return record
 
     return _get_aggregated_stats(records, metric_filter,
@@ -166,7 +166,7 @@ def get_engineers_extended(records):
 
         user = vault.get_user_from_runtime_storage(record['id'])
         record['company'] = user['companies'][-1]['company_name']
-        record['core'] = is_engineer_core_in_modules(user, modules)
+        record['core'] = get_core_engineer_branch(user, modules)
         return record
 
     def record_processing(result, record, param_id):
@@ -179,18 +179,19 @@ def get_engineers_extended(records):
             result_row['patch_count'] = (result_row.get('patch_count', 0) +
                                          record['patch_count'])
 
-    result = dict((user_id, {'id': user_id, 'mark': 0, 'review': 0,
-                             'commit': 0, 'email': 0, 'patch_count': 0,
-                             'metric': 0})
-                  for user_id in vault.get_memory_storage().get_user_ids())
-
+    result = {}
     for record in records:
+        user_id = record['user_id']
+        if user_id not in result:
+            result[user_id] = {'id': user_id, 'mark': 0, 'review': 0,
+                               'commit': 0, 'email': 0, 'patch_count': 0,
+                               'metric': 0}
         record_processing(result, record, 'user_id')
-        result[record['user_id']]['name'] = record['author_name']
+        result[user_id]['name'] = record['author_name']
 
     response = result.values()
-    response.sort(key=lambda x: x['mark'], reverse=True)
     response = [item for item in map(postprocessing, response) if item]
+    response.sort(key=lambda x: x['metric'], reverse=True)
     utils.add_index(response)
 
     return response
