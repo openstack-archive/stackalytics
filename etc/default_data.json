@@ -5290,11 +5290,13 @@
     "companies": [
         {
             "domains": [""],
-            "company_name": "*independent"
+            "company_name": "*independent",
+            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-"]
         },
         {
             "domains": ["360.cn"],
-            "company_name": "Qihoo 360 Technology Co"
+            "company_name": "Qihoo 360 Technology Co",
+            "aliases": ["Qihoo 360 Technology Co. Ltd."]
         },
         {
             "domains": ["3ds.com"],
@@ -5310,11 +5312,13 @@
         },
         {
             "domains": ["alcatel-lucent.com"],
-            "company_name": "Alcatel-Lucent"
+            "company_name": "Alcatel-Lucent",
+            "aliases": ["Alcatel-Lucent, Nuage Networks"]
         },
         {
             "domains": ["alyseo.com"],
-            "company_name": "Alyseo"
+            "company_name": "Alyseo",
+            "aliases": ["ALYSEO"]
         },
         {
             "domains": ["anl.gov"],
@@ -5330,11 +5334,13 @@
         },
         {
             "domains": ["aristanetworks.com"],
-            "company_name": "Arista Networks"
+            "company_name": "Arista Networks",
+            "aliases": ["Arista Networks Inc"]
         },
         {
             "domains": ["askbot.com"],
-            "company_name": "Askbot"
+            "company_name": "Askbot",
+            "aliases": ["Askbot, S.p.A."]
         },
         {
             "domains": ["atomia.com"],
@@ -5346,11 +5352,13 @@
         },
         {
             "domains": ["awcloud.com"],
-            "company_name": "Awcloud"
+            "company_name": "Awcloud",
+            "aliases": ["awcloud"]
         },
         {
             "domains": ["b1-systems.de"],
-            "company_name": "B1 Systems"
+            "company_name": "B1 Systems",
+            "aliases": ["B1 Systems GmbH"]
         },
         {
             "domains": ["bacoosta.com"],
@@ -5366,7 +5374,8 @@
         },
         {
             "domains": ["bluebox.net"],
-            "company_name": "Blue Box"
+            "company_name": "Blue Box",
+            "aliases": ["Blue Box Group"]
         },
         {
             "domains": ["bluehost.com"],
@@ -5374,15 +5383,18 @@
         },
         {
             "domains": ["brinkster.com"],
-            "company_name": "Brinkster"
+            "company_name": "Brinkster",
+            "aliases": ["Brinkster Communications"]
         },
         {
             "domains": ["brocade.com"],
-            "company_name": "Brocade"
+            "company_name": "Brocade",
+            "aliases": ["Brocade Communication", "Brocade Communications", "Brocade Communications Systems"]
         },
         {
             "domains": ["bull.net"],
-            "company_name": "Bull"
+            "company_name": "Bull",
+            "aliases": ["Bull SAS"]
         },
         {
             "domains": ["cable.comcast.com"],
@@ -5394,7 +5406,8 @@
         },
         {
             "domains": ["canonical.com"],
-            "company_name": "Canonical"
+            "company_name": "Canonical",
+            "aliases": ["Canonical Ltd"]
         },
         {
             "domains": ["centraldesktop.com"],
@@ -5410,7 +5423,8 @@
         },
         {
             "domains": ["cisco.com"],
-            "company_name": "Cisco Systems"
+            "company_name": "Cisco Systems",
+            "aliases": ["Cisco Systems Inc.", "Cisco Systems, Inc.", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz"]
         },
         {
             "domains": ["citrix.com"],
@@ -5422,11 +5436,13 @@
         },
         {
             "domains": ["cloudbasesolutions.com"],
-            "company_name": "Cloudbase Solutions"
+            "company_name": "Cloudbase Solutions",
+            "aliases": ["Cloudbase Solutions Srl"]
         },
         {
             "domains": ["cloudbau.de"],
-            "company_name": "Cloudbau"
+            "company_name": "Cloudbau",
+            "aliases": ["cloudbau GmbH"]
         },
         {
             "domains": ["cloudscaling.com"],
@@ -5450,7 +5466,8 @@
         },
         {
             "domains": ["corvisa.com"],
-            "company_name": "Corvisa"
+            "company_name": "Corvisa",
+            "aliases": ["Corvisa Services"]
         },
         {
             "domains": ["crs4.it"],
@@ -5458,7 +5475,8 @@
         },
         {
             "domains": ["cs2c.com.cn"],
-            "company_name": "cs2c"
+            "company_name": "cs2c",
+            "aliases": ["CS2C"]
         },
         {
             "domains": ["csail.mit.edu"],
@@ -5466,15 +5484,18 @@
         },
         {
             "domains": ["cybera.ca"],
-            "company_name": "Cybera"
+            "company_name": "Cybera",
+            "aliases": ["Cybera Inc"]
         },
         {
             "domains": ["debian.org"],
-            "company_name": "Debian"
+            "company_name": "Debian",
+            "aliases": ["debian.org"]
         },
         {
             "domains": ["dell.com", "software.dell.com"],
-            "company_name": "Dell"
+            "company_name": "Dell",
+            "aliases": ["Dell  &amp; Ganette Publishing", "Dell Inc", "Dell, Inc., Cabarrus County Schools"]
         },
         {
             "domains": ["denali-systems.com"],
@@ -5486,7 +5507,8 @@
         },
         {
             "domains": ["dreamhost.com"],
-            "company_name": "DreamHost"
+            "company_name": "DreamHost",
+            "aliases": ["DreamHost, Inktank"]
         },
         {
             "domains": ["earthlink.net"],
@@ -5498,7 +5520,8 @@
         },
         {
             "domains": ["ebay.com", "ebaysf.com"],
-            "company_name": "eBay"
+            "company_name": "eBay",
+            "aliases": ["ebay inc", "eBay Inc.", "eBay, Inc."]
         },
         {
             "domains": ["embrane.com"],
@@ -5506,7 +5529,8 @@
         },
         {
             "domains": ["emc.com"],
-            "company_name": "EMC"
+            "company_name": "EMC",
+            "aliases": ["EMC corp", "EMC Corporation", "EMC Corportion", "EMC employee; Russian Cloud Computing Professional Association - Head of executive commitee", "EMC, VMWare"]
         },
         {
             "domains": ["endurancewindpower.com"],
@@ -5514,7 +5538,8 @@
         },
         {
             "domains": ["enovance.com"],
-            "company_name": "eNovance"
+            "company_name": "eNovance",
+            "aliases": ["eNovance Inc"]
         },
         {
             "domains": ["epam.com"],
@@ -5522,7 +5547,8 @@
         },
         {
             "domains": ["ericsson.com"],
-            "company_name": "Ericsson"
+            "company_name": "Ericsson",
+            "aliases": ["Ericsson AB"]
         },
         {
             "domains": ["fathomdb.com"],
@@ -5534,11 +5560,13 @@
         },
         {
             "domains": ["freescale.com"],
-            "company_name": "Freescale"
+            "company_name": "Freescale",
+            "aliases": ["Freescale (I) Pvt Ltd", "Freescale Semiconductors"]
         },
         {
             "domains": ["fujitsu.com"],
-            "company_name": "Fujitsu"
+            "company_name": "Fujitsu",
+            "aliases": ["Fujitsu Limited"]
         },
         {
             "domains": ["getchef.com", "opscode.com"],
@@ -5570,15 +5598,18 @@
         },
         {
             "domains": ["hastexo.com"],
-            "company_name": "Hastexo"
+            "company_name": "Hastexo",
+            "aliases": ["hastexo Professional Services GmbH"]
         },
         {
             "domains": ["hcl.com"],
-            "company_name": "HCL"
+            "company_name": "HCL",
+            "aliases": ["HCL Technologies"]
         },
         {
             "domains": ["hds.com"],
-            "company_name": "Hitachi"
+            "company_name": "Hitachi",
+            "aliases": ["Hitachi Data Systems", "Hitachi, Ltd.", "Hitachi,Ltd."]
         },
         {
             "domains": ["hortonworks.com"],
@@ -5586,15 +5617,18 @@
         },
         {
             "domains": ["hp.com"],
-            "company_name": "HP"
+            "company_name": "HP",
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division"]
         },
         {
             "domains": ["huawei.com"],
-            "company_name": "Huawei"
+            "company_name": "Huawei",
+            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd."]
         },
         {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
-            "company_name": "IBM"
+            "company_name": "IBM",
+            "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India Pvt Ltd", "IBM India Pvt. Ltd.", "IBM Japan, Ltd.", "IBM Research", "IBM Research - China", "IBM Research Lab, India"]
         },
         {
             "domains": ["ifca.unican.es"],
@@ -5602,7 +5636,8 @@
         },
         {
             "domains": ["igbmc.fr"],
-            "company_name": "IGBMC"
+            "company_name": "IGBMC",
+            "aliases": ["IGBMC biological research lab"]
         },
         {
             "domains": ["inktank.com"],
@@ -5610,11 +5645,13 @@
         },
         {
             "domains": ["inria.fr"],
-            "company_name": "Inria"
+            "company_name": "Inria",
+            "aliases": ["INRIA"]
         },
         {
             "domains": ["intel.com"],
-            "company_name": "Intel"
+            "company_name": "Intel",
+            "aliases": ["Intel Corp.", "Intel Corporation", "Intel Media", "Intel OTC"]
         },
         {
             "domains": ["interhost.no"],
@@ -5626,7 +5663,8 @@
         },
         {
             "domains": ["iomart.com"],
-            "company_name": "iomart"
+            "company_name": "iomart",
+            "aliases": ["iomart group"]
         },
         {
             "domains": ["iroquoisystems.com"],
@@ -5646,15 +5684,18 @@
         },
         {
             "domains": ["iweb.com", "iweb.co.uk"],
-            "company_name": "iWeb"
+            "company_name": "iWeb",
+            "aliases": ["iweb.com nuisoft.com"]
         },
         {
             "domains": ["izeltech.com"],
-            "company_name": "Izel Technologies"
+            "company_name": "Izel Technologies",
+            "aliases": ["Izel Technologies Inc."]
         },
         {
             "domains": ["jhuapl.edu"],
-            "company_name": "Johns Hopkins University"
+            "company_name": "Johns Hopkins University",
+            "aliases": ["Johns Hopkins University Applied Physics Lab", "Johns Hopkins University Applied Physics Laboratory"]
         },
         {
             "domains": ["jpberlin.de"],
@@ -5662,11 +5703,13 @@
         },
         {
             "domains": ["juniper.com", "juniper.net"],
-            "company_name": "Juniper"
+            "company_name": "Juniper",
+            "aliases": ["Juniper Networks", "Juniper Networks Inc."]
         },
         {
             "domains": ["kent.ac.uk"],
-            "company_name": "University of Kent"
+            "company_name": "University of Kent",
+            "aliases": ["University of Kent"]
         },
         {
             "domains": ["kt.com"],
@@ -5682,7 +5725,8 @@
         },
         {
             "domains": ["lahondaresearch.org"],
-            "company_name": "La Honda Research"
+            "company_name": "La Honda Research",
+            "aliases": ["La Honda Research Center"]
         },
         {
             "domains": ["lavabit.com"],
@@ -5690,7 +5734,7 @@
         },
         {
             "domains": ["limilo.com"],
-            "company_name": "Limilo "
+            "company_name": "Limilo"
         },
         {
             "domains": ["linagora.com"],
@@ -5702,7 +5746,8 @@
         },
         {
             "domains": ["maginatics.com"],
-            "company_name": "Maginatics"
+            "company_name": "Maginatics",
+            "aliases": ["Maginatics, Inc."]
         },
         {
             "domains": ["managedit.ie"],
@@ -5714,7 +5759,8 @@
         },
         {
             "domains": ["memset.com"],
-            "company_name": "Memset"
+            "company_name": "Memset",
+            "aliases": ["Memset Ltd"]
         },
         {
             "domains": ["metacloud.com"],
@@ -5726,7 +5772,8 @@
         },
         {
             "domains": ["mirantis.com", "mirantis.ru"],
-            "company_name": "Mirantis"
+            "company_name": "Mirantis",
+            "aliases": ["Mirantis Inc", "Mirantis Inc.", "Mirantis, Inc", "Mirantis, Inc.", "Mirantis IT"]
         },
         {
             "domains": ["mit.edu"],
@@ -5734,11 +5781,13 @@
         },
         {
             "domains": ["momentumsi.com"],
-            "company_name": "MomentumSI"
+            "company_name": "MomentumSI",
+            "aliases": ["MomentumSI, Transcend Computing"]
         },
         {
             "domains": ["mynet.at"],
-            "company_name": "myNET"
+            "company_name": "myNET",
+            "aliases": ["MYNETWORK TECHNOLOGY"]
         },
         {
             "domains": ["nasa.gov"],
@@ -5746,15 +5795,18 @@
         },
         {
             "domains": ["nebula.com", "ansolabs.com"],
-            "company_name": "Nebula"
+            "company_name": "Nebula",
+            "aliases": ["Nebula Inc.", "Nebula, Inc. ; CFO Tools"]
         },
         {
             "domains": ["nec.com", "nec.co.jp", "nectechnologies.in"],
-            "company_name": "NEC"
+            "company_name": "NEC",
+            "aliases": ["NEC Europe Ltd.", "NEC Soft, Ltd.", "NEC Technologies India Ltd."]
         },
         {
             "domains": ["netapp.com"],
-            "company_name": "NetApp"
+            "company_name": "NetApp",
+            "aliases": ["NetApp Inc", "NetApp, Inc."]
         },
         {
             "domains": ["netease.com"],
@@ -5774,11 +5826,13 @@
         },
         {
             "domains": ["ntt.com", "nttmcl.com", "nttdata.co.jp", "ntt.co.jp", "nttdata.com", "vertex.co.in", "ntts.co.jp"],
-            "company_name": "NTT"
+            "company_name": "NTT",
+            "aliases": ["NTT CORPORATION", "NTT DATA", "NTT DATA INTELLILINK CORPORATION", "NTT DATA INTELLILINK Corpration"]
         },
         {
             "domains": ["nuagenetworks.net"],
-            "company_name": "Nuage Networks"
+            "company_name": "Nuage Networks",
+            "aliases": ["nuage networks"]
         },
         {
             "domains": ["numergy.com", "numergy.fr"],
@@ -5790,7 +5844,8 @@
         },
         {
             "domains": ["orange.com"],
-            "company_name": "Orange"
+            "company_name": "Orange",
+            "aliases": ["Orange Labs"]
         },
         {
             "domains": ["pdx.edu"],
@@ -5802,11 +5857,13 @@
         },
         {
             "domains": ["persistent.co.in"],
-            "company_name": "Persistent Systems"
+            "company_name": "Persistent Systems",
+            "aliases": ["Persistent Systems Limited"]
         },
         {
             "domains": ["pistoncloud.com"],
-            "company_name": "Piston Cloud"
+            "company_name": "Piston Cloud",
+            "aliases": ["Piston Cloud Computing, Inc."]
         },
         {
             "domains": ["playhaven.com"],
@@ -5814,7 +5871,8 @@
         },
         {
             "domains": ["plumgrid.com"],
-            "company_name": "PLUMgrid"
+            "company_name": "PLUMgrid",
+            "aliases": ["Plumgrid inc", "Plumgrid Inc."]
         },
         {
             "domains": ["pubyun.com"],
@@ -5834,7 +5892,8 @@
         },
         {
             "domains": ["rackspace.co.uk", "rackspace.com", "slicehost.com", "mailtrust.com"],
-            "company_name": "Rackspace"
+            "company_name": "Rackspace",
+            "aliases": ["Rackspace, Cloudscaling, Korea Telcom, friends with lots of people", "Rackspace.com", "Rackspace Hosting"]
         },
         {
             "domains": ["radisys.com"],
@@ -5842,7 +5901,8 @@
         },
         {
             "domains": ["radware.com"],
-            "company_name": "Radware"
+            "company_name": "Radware",
+            "aliases": ["Radware Ltd."]
         },
         {
             "domains": ["ravellosystems.com"],
@@ -5850,7 +5910,8 @@
         },
         {
             "domains": ["redhat.com", "gluster.com"],
-            "company_name": "Red Hat"
+            "company_name": "Red Hat",
+            "aliases": ["Red Hat Canada, Inc", "Red Hat Czech, s.r.o.", "Red Hat Inc.", "Red Hat, Inc., Bloomberg L.P.", "Red Hat India Pvt. Ltd.", "Red Hat Software"]
         },
         {
             "domains": ["rizu.mu"],
@@ -5862,11 +5923,13 @@
         },
         {
             "domains": ["samsung.com"],
-            "company_name": "Samsung"
+            "company_name": "Samsung",
+            "aliases": ["Samsung SDS"]
         },
         {
             "domains": ["scality.com"],
-            "company_name": "Scality"
+            "company_name": "Scality",
+            "aliases": ["Scality Inc"]
         },
         {
             "domains": ["sdsc.edu"],
@@ -5874,7 +5937,8 @@
         },
         {
             "domains": ["sina.com"],
-            "company_name": "SINA"
+            "company_name": "SINA",
+            "aliases": ["SINA Weibo Fund"]
         },
         {
             "domains": ["siu.edu"],
@@ -5882,11 +5946,13 @@
         },
         {
             "domains": ["snabb.co"],
-            "company_name": "Snabb"
+            "company_name": "Snabb",
+            "aliases": ["Snabb GmbH"]
         },
         {
             "domains": ["softlayer.com"],
-            "company_name": "SoftLayer"
+            "company_name": "SoftLayer",
+            "aliases": ["SoftLayer, an IBM Company"]
         },
         {
             "domains": ["solidfire.com"],
@@ -5898,7 +5964,8 @@
         },
         {
             "domains": ["spilgames.com"],
-            "company_name": "Spil Games"
+            "company_name": "Spil Games",
+            "aliases": ["Spil Games B.V."]
         },
         {
             "domains": ["stackinsider.com"],
@@ -5922,11 +5989,13 @@
         },
         {
             "domains": ["swiftstack.com"],
-            "company_name": "SwiftStack"
+            "company_name": "SwiftStack",
+            "aliases": ["SwiftStack Inc."]
         },
         {
             "domains": ["switch.ch"],
-            "company_name": "Switch"
+            "company_name": "Switch",
+            "aliases": ["SWITCH"]
         },
         {
             "domains": ["symantec.com"],
@@ -5938,11 +6007,13 @@
         },
         {
             "domains": ["tcs.com"],
-            "company_name": "Tata"
+            "company_name": "Tata",
+            "aliases": ["Tata Consultancy Services", "Tata Consultancy Services Limited"]
         },
         {
             "domains": ["telekom.de"],
-            "company_name": "Deutsche Telekom"
+            "company_name": "Deutsche Telekom",
+            "aliases": ["Deutsche Telekom AG"]
         },
         {
             "domains": ["tesora.com", "parelastic.com"],
@@ -5950,7 +6021,8 @@
         },
         {
             "domains": ["thalesgroup.com", "mythalesgroup.com"],
-            "company_name": "Thales"
+            "company_name": "Thales",
+            "aliases": ["Thales Group"]
         },
         {
             "domains": ["thoughtworks.com"],
@@ -5962,11 +6034,13 @@
         },
         {
             "domains": ["tunnelvisionlabs.com"],
-            "company_name": "Tunnel Vision Laboratories"
+            "company_name": "Tunnel Vision Laboratories",
+            "aliases": ["Tunnel Vision Laboratories, LLC"]
         },
         {
             "domains": ["ubisoft.com"],
-            "company_name": "Ubisoft"
+            "company_name": "Ubisoft",
+            "aliases": ["Ubisoft Entertainment"]
         },
         {
             "domains": ["umd.edu"],
@@ -5982,7 +6056,8 @@
         },
         {
             "domains": ["unimelb.edu.au"],
-            "company_name": "University of Melbourne"
+            "company_name": "University of Melbourne",
+            "aliases": ["The University of Melbourne"]
         },
         {
             "domains": ["ustack.com", "unitedstack.com"],
@@ -5990,11 +6065,13 @@
         },
         {
             "domains": ["valinux.co.jp"],
-            "company_name": "VA Linux"
+            "company_name": "VA Linux",
+            "aliases": ["VA Linux Systems Japan K.K."]
         },
         {
             "domains": ["varmour.com"],
-            "company_name": "vArmour"
+            "company_name": "vArmour",
+            "aliases": ["vArmour Networks"]
         },
         {
             "domains": ["vbridges.com"],
@@ -6010,11 +6087,13 @@
         },
         {
             "domains": ["virtualtech.jp"],
-            "company_name": "Virtualtech"
+            "company_name": "Virtualtech",
+            "aliases": ["VirtualTech Japan Inc."]
         },
         {
             "domains": ["vmware.com", "nicira.com"],
-            "company_name": "VMware"
+            "company_name": "VMware",
+            "aliases": ["CYSO VMWARE DHPA"]
         },
         {
             "domains": ["wikimedia.org"],
@@ -6022,7 +6101,8 @@
         },
         {
             "domains": ["windriver.com"],
-            "company_name": "Wind River"
+            "company_name": "Wind River",
+            "aliases": ["Wind River Systems"]
         },
         {
             "domains": ["x-ion.de"],
@@ -6030,7 +6110,8 @@
         },
         {
             "domains": ["xlab.si"],
-            "company_name": "Xlab"
+            "company_name": "Xlab",
+            "aliases": ["XLAB d.o.o."]
         },
         {
             "domains": ["yahoo-inc.com"],
@@ -6050,7 +6131,8 @@
         },
         {
             "domains": ["zelin.io"],
-            "company_name": "Zelin"
+            "company_name": "Zelin",
+            "aliases": ["zelin.io"]
         },
         {
             "domains": ["zhaw.ch"],
@@ -6058,7 +6140,8 @@
         },
         {
             "domains": ["zinux.com"],
-            "company_name": "Zinux"
+            "company_name": "Zinux",
+            "aliases": ["ZinuX"]
         },
         {
             "domains": ["zmanda.com"],

@@ -430,7 +430,6 @@ class RecordProcessor(object):
         self._update_record_and_user(record)
         record['company_name'] = company_name
         user = utils.load_user(self.runtime_storage_inst, user_id)
-        del record['author_email']
 
         user['user_name'] = record['author_name']
         user['companies'] = [{

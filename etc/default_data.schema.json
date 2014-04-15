@@ -126,6 +126,12 @@
                             "type": "string",
                             "pattern": "^[a-z\\d\\.-]*$"
                         }
+                    },
+                    "aliases": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
                     }
                 },
                 "required": ["company_name", "domains"],

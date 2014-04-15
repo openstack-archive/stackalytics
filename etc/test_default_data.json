@@ -45,7 +45,8 @@
         },
         {
             "company_name": "Mirantis",
-            "domains": ["mirantis.com"]
+            "domains": ["mirantis.com"],
+            "aliases": ["Mirantis Inc", "Mirantis Inc.", "Mirantis, Inc", "Mirantis, Inc.", "Mirantis IT"]
         },
         {
             "domains": ["robots"],
