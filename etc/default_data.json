@@ -3662,6 +3662,17 @@
             "emails": ["bogorodskiy@gmail.com", "rbogorodskiy@mirantis.com"]
         },
         {
+            "launchpad_id": "oleksandr-minakov",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Oleksandr Minakov",
+            "emails": ["alexander_minakov@symantec.com", "aminakov@mirantis.com", "oleksandr.minakov@gmail.com"]
+        },
+        {
             "launchpad_id": "olkonami",
             "companies": [
                 {
