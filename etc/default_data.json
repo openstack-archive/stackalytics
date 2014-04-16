@@ -3559,6 +3559,17 @@
             ]
         },
         {
+            "launchpad_id": "nibalizer",
+            "companies": [
+                {
+                    "company_name": "Portland State University",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Spencer Krum",
+            "emails": ["krum.spencer@gmail.com", "nibz@cat.pdx.edu", "nibalizer@gmail.com"]
+        },
+        {
             "launchpad_id": "nick-ma-z",
             "companies": [
                 {
