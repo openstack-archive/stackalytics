@@ -256,13 +256,11 @@ class RecordProcessor(object):
 
                 yield new_record
 
-    def _spawn_review(self, record):
+    def _make_review_record(self, record):
         # copy everything except patchsets and flatten user data
         review = dict([(k, v) for k, v in six.iteritems(record)
                        if k not in ['patchSets', 'owner', 'createdOn']])
         owner = record['owner']
-        if 'email' not in owner or 'username' not in owner:
-            return  # ignore
 
         review['primary_key'] = review['id']
         review['launchpad_id'] = owner['username']
@@ -286,56 +284,74 @@ class RecordProcessor(object):
             review['value'] = 0
 
         self._update_record_and_user(review)
+        return review
 
-        yield review
+    def _make_patch_record(self, review, patch):
+        patch_record = dict()
+        patch_record['record_type'] = 'patch'
+        patch_record['primary_key'] = utils.get_patch_id(
+            review['id'], patch['number'])
+        patch_record['number'] = patch['number']
+        patch_record['date'] = patch['createdOn']
+        uploader = patch['uploader']
+        patch_record['launchpad_id'] = uploader['username']
+        patch_record['author_name'] = uploader['name']
+        patch_record['author_email'] = uploader['email'].lower()
+        patch_record['module'] = review['module']
+        patch_record['branch'] = review['branch']
+        patch_record['review_id'] = review['id']
 
-    def _spawn_marks(self, record):
-        review_id = record['id']
-        module = record['module']
-        branch = record['branch']
+        self._update_record_and_user(patch_record)
+        return patch_record
 
-        for patch in record.get('patchSets', []):
-            if 'approvals' not in patch:
-                continue  # not reviewed by anyone
-            for approval in patch['approvals']:
-                if approval['type'] not in ('CRVW', 'APRV'):
-                    continue  # keep only Code-Review and Approved
+    def _make_mark_record(self, review, patch, approval):
+        # copy everything and flatten user data
+        mark = dict([(k, v) for k, v in six.iteritems(approval)
+                     if k not in ['by', 'grantedOn', 'value']])
+        reviewer = approval['by']
 
-                # copy everything and flatten user data
-                mark = dict([(k, v) for k, v in six.iteritems(approval)
-                             if k not in ['by', 'grantedOn', 'value']])
-                reviewer = approval['by']
+        mark['record_type'] = 'mark'
+        mark['value'] = int(approval['value'])
+        mark['date'] = approval['grantedOn']
+        mark['primary_key'] = (review['id'] + str(mark['date']) + mark['type'])
+        mark['launchpad_id'] = reviewer['username']
+        mark['author_name'] = reviewer['name']
+        mark['author_email'] = reviewer['email'].lower()
+        mark['module'] = review['module']
+        mark['branch'] = review['branch']
+        mark['review_id'] = review['id']
+        mark['patch'] = int(patch['number'])
 
-                if 'email' not in reviewer or 'username' not in reviewer:
-                    continue  # ignore
-
-                mark['record_type'] = 'mark'
-                mark['value'] = int(approval['value'])
-                mark['date'] = approval['grantedOn']
-                mark['primary_key'] = (record['id'] +
-                                       str(mark['date']) +
-                                       mark['type'])
-                mark['launchpad_id'] = reviewer['username']
-                mark['author_name'] = reviewer['name']
-                mark['author_email'] = reviewer['email'].lower()
-                mark['module'] = module
-                mark['branch'] = branch
-                mark['review_id'] = review_id
-                mark['patch'] = int(patch['number'])
-
-                self._update_record_and_user(mark)
-
-                yield mark
+        self._update_record_and_user(mark)
+        return mark
 
     def _process_review(self, record):
         """
-         Process a review. Review spawns into records of two types:
+         Process a review. Review spawns into records of three types:
           * review - records that a user created review request
+          * patch - records that a user submitted another patch set
           * mark - records that a user set approval mark to given review
         """
-        for gen in [self._spawn_review, self._spawn_marks]:
-            for r in gen(record):
-                yield r
+        owner = record['owner']
+        if 'email' not in owner or 'username' not in owner:
+            return  # ignore
+
+        yield self._make_review_record(record)
+
+        for patch in record.get('patchSets', []):
+            yield self._make_patch_record(record, patch)
+
+            if 'approvals' not in patch:
+                continue  # not reviewed by anyone
+
+            for approval in patch['approvals']:
+                if approval['type'] not in ('CRVW', 'APRV'):
+                    continue  # keep only Code-Review and Approved
+                if ('email' not in approval['by'] or
+                        'username' not in approval['by']):
+                    continue  # ignore
+
+                yield self._make_mark_record(record, patch, approval)
 
     def _guess_module(self, record):
         subject = record['subject'].lower()

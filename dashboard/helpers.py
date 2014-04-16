@@ -52,6 +52,13 @@ def _extend_record_common_fields(record):
         _extend_author_fields(coauthor)
 
 
+def _extend_by_parent_info(record, parent):
+    parent = parent.copy()
+    _extend_record_common_fields(parent)
+    for k, v in six.iteritems(parent):
+        record['parent_' + k] = v
+
+
 def extend_record(record):
     record = record.copy()
     _extend_record_common_fields(record)
@@ -69,14 +76,11 @@ def extend_record(record):
         if not parent:
             return None
 
-        parent = parent.copy()
-        _extend_record_common_fields(parent)
-        for k, v in six.iteritems(parent):
-            record['parent_%s' % k] = v
-
-        record['review_number'] = parent.get('review_number')
-        record['subject'] = parent['subject']
-        record['url'] = parent['url']
+        _extend_by_parent_info(record, parent)
+    elif record['record_type'] == 'patch':
+        parent = vault.get_memory_storage().get_record_by_primary_key(
+            record['review_id'])
+        _extend_by_parent_info(record, parent)
     elif record['record_type'] == 'email':
         record['email_link'] = record.get('email_link') or ''
         record['blueprint_links'] = []

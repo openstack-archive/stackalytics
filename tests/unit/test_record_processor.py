@@ -776,7 +776,7 @@ class TestRecordProcessor(testtools.TestCase):
                   'emails': ['john_doe@ibm.com'],
                   'core': [('nova', 'master')],
                   'companies': [{'company_name': 'IBM', 'end_date': 0}]}
-        user_2 = {'seq': 2, 'user_id': 'homer',
+        user_2 = {'seq': 3, 'user_id': 'homer',
                   'launchpad_id': 'homer', 'user_name': 'Homer Simpson',
                   'emails': ['hsimpson@gmail.com'],
                   'core': [],
