@@ -165,6 +165,10 @@ def get_blueprint_id(module, name):
     return module + ':' + name
 
 
+def get_patch_id(review_id, patch_number):
+    return review_id + ':' + patch_number
+
+
 def add_index(sequence, start=1, item_filter=lambda x: True):
     n = start
     for item in sequence:
