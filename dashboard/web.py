@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import collections
 import operator
 import os
 import re
@@ -88,8 +89,8 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
         result[record[param_id]]['name'] = record[param_title]
 
     response = [r for r in result.values() if r['metric']]
-    response.sort(key=lambda x: x['metric'], reverse=True)
     response = [item for item in map(finalize_handler, response) if item]
+    response.sort(key=lambda x: x['metric'], reverse=True)
     utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
     return response
 
@@ -102,7 +103,8 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
 def get_companies(records, metric_filter, finalize_handler):
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_companies(),
-                                 'company_name')
+                                 'company_name',
+                                 finalize_handler=finalize_handler)
 
 
 @app.route('/api/1.0/stats/modules')
@@ -113,7 +115,7 @@ def get_companies(records, metric_filter, finalize_handler):
 def get_modules(records, metric_filter, finalize_handler):
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_modules(),
-                                 'module')
+                                 'module', finalize_handler=finalize_handler)
 
 
 def get_core_engineer_branch(user, modules):
@@ -492,20 +494,44 @@ def timeline(records, **kwargs):
     week_stat_commits = dict((c, 0) for c in weeks)
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
-    param = parameters.get_parameter(kwargs, 'metric')
-    if ('commits' in param) or ('loc' in param):
+    metric = parameters.get_parameter(kwargs, 'metric')
+    if ('commits' in metric) or ('loc' in metric):
         handler = lambda record: record['loc']
     else:
         handler = lambda record: 0
 
     # fill stats with the data
-    for record in records:
-        week = record['week']
-        if week in weeks:
-            week_stat_loc[week] += handler(record)
-            week_stat_commits[week] += 1
-            if 'all' == release_name or record['release'] == release_name:
-                week_stat_commits_hl[week] += 1
+    if 'man-days' in metric:
+        # special case for man-day effort metric
+        release_stat = collections.defaultdict(set)
+        all_stat = collections.defaultdict(set)
+        for record in records:
+            if ((record['record_type'] == 'commit') or
+                    (record['week'] not in weeks)):
+                continue
+
+            day = record['date'] // (24 * 3600)
+            user = vault.get_user_from_runtime_storage(record['user_id'])
+            if record['release'] == release_name:
+                release_stat[day] |= set([user['seq']])
+            all_stat[day] |= set([user['seq']])
+        for day, users in six.iteritems(release_stat):
+            week = utils.timestamp_to_week(day * 24 * 3600)
+            week_stat_commits_hl[week] += len(users)
+        for day, users in six.iteritems(all_stat):
+            week = utils.timestamp_to_week(day * 24 * 3600)
+            week_stat_commits[week] += len(users)
+    else:
+        for record in records:
+            week = record['week']
+            if week in weeks:
+                week_stat_loc[week] += handler(record)
+                week_stat_commits[week] += 1
+                if record['release'] == release_name:
+                    week_stat_commits_hl[week] += 1
+
+    if 'all' == release_name:
+        week_stat_commits_hl = week_stat_commits
 
     # form arrays in format acceptable to timeline plugin
     array_loc = []
