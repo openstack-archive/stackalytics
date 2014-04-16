@@ -39,7 +39,7 @@ def get_vault():
             vault['memory_storage'] = memory_storage.get_memory_storage(
                 memory_storage.MEMORY_STORAGE_CACHED)
 
-            init_releases(vault)
+            _init_releases(vault)
 
             flask.current_app.stackalytics_vault = vault
         except Exception as e:
@@ -54,9 +54,10 @@ def get_vault():
             vault['runtime_storage'].get_update(os.getpid()))
 
         if have_updates:
-            init_releases(vault)
-            init_module_groups(vault)
-            init_project_types(vault)
+            _init_releases(vault)
+            _init_module_groups(vault)
+            _init_project_types(vault)
+            _init_user_index(vault)
 
     return vault
 
@@ -65,7 +66,7 @@ def get_memory_storage():
     return get_vault()['memory_storage']
 
 
-def init_releases(vault):
+def _init_releases(vault):
     runtime_storage_inst = vault['runtime_storage']
     releases = runtime_storage_inst.get_by_key('releases')
     releases_map = {}
@@ -88,7 +89,7 @@ def _make_module(module_id, text, modules, tag):
             'modules': set(modules), 'tag': tag}
 
 
-def init_module_groups(vault):
+def _init_module_groups(vault):
     runtime_storage_inst = vault['runtime_storage']
     memory_storage_inst = vault['memory_storage']
 
@@ -119,7 +120,7 @@ def init_module_groups(vault):
     vault['module_id_index'] = module_id_index
 
 
-def init_project_types(vault):
+def _init_project_types(vault):
     runtime_storage_inst = vault['runtime_storage']
     project_types = runtime_storage_inst.get_by_key('project_types') or {}
 
@@ -140,6 +141,10 @@ def init_project_types(vault):
     vault['project_types'] = result
     vault['project_types_index'] = dict([(pt['id'], pt)
                                          for pt in project_types])
+
+
+def _init_user_index(vault):
+    vault['user_index'] = {}
 
 
 def get_project_types():
@@ -173,7 +178,10 @@ def get_project_type(project_type_id):
 
 def get_user_from_runtime_storage(user_id):
     runtime_storage_inst = get_vault()['runtime_storage']
-    return utils.load_user(runtime_storage_inst, user_id)
+    user_index = get_vault()['user_index']
+    if user_id not in user_index:
+        user_index[user_id] = utils.load_user(runtime_storage_inst, user_id)
+    return user_index[user_id]
 
 
 def resolve_modules(module_ids):
