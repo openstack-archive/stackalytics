@@ -6373,8 +6373,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6385,9 +6384,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/nova.git",
@@ -6407,8 +6412,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6419,9 +6423,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/keystone.git",
@@ -6436,8 +6446,7 @@
                     "tag_from": "c53d8e34"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6448,9 +6457,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/cinder.git",
@@ -6470,8 +6485,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6482,9 +6496,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/glance.git",
@@ -6504,8 +6524,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6516,9 +6535,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/neutron.git",
@@ -6538,8 +6563,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -6550,9 +6574,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/horizon.git",
@@ -6572,8 +6602,7 @@
                     "tag_from": "1.4.8"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "1.7.4"
                 },
@@ -6584,9 +6613,15 @@
                     "tag_from": "1.8.0"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "1.10.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "1.13.0"
                 }
             ],
             "uri": "git://github.com/openstack/swift.git",
@@ -6611,9 +6646,14 @@
                     "tag_from": "0.2.3"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "0.8.0",
                     "release_name": "Icehouse",
                     "tag_from": "0.4.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "0.8.0"
                 }
             ],
             "uri": "git://github.com/openstack/python-keystoneclient.git",
@@ -6638,9 +6678,14 @@
                     "tag_from": "2.13.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2.17.0",
                     "release_name": "Icehouse",
                     "tag_from": "2.15.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2.17.0"
                 }
             ],
             "uri": "git://github.com/openstack/python-novaclient.git",
@@ -6660,9 +6705,14 @@
                     "tag_from": "1.0.3"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "1.0.8",
                     "release_name": "Icehouse",
                     "tag_from": "1.0.6"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "1.0.8"
                 }
             ],
             "uri": "git://github.com/openstack/python-cinderclient.git",
@@ -6743,10 +6793,9 @@
         {
             "releases": [
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
-                    "tag_from": "v7.release"
+                    "tag_from": "2012.2"
                 },
                 {
                     "branch": "stable/havana",
@@ -6755,9 +6804,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/heat.git",
@@ -6789,10 +6844,9 @@
         {
             "releases": [
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
-                    "tag_from": "grizzly-2"
+                    "tag_from": "2012.2"
                 },
                 {
                     "branch": "stable/havana",
@@ -6801,9 +6855,15 @@
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/ceilometer.git",
@@ -6830,15 +6890,26 @@
         {
             "releases": [
                 {
+                    "tag_to": "grizzly-eol",
+                    "release_name": "Grizzly",
+                    "tag_from": "2012.2"
+                },
+                {
                     "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ],
             "uri": "git://github.com/openstack/oslo-incubator.git",
@@ -7054,9 +7125,15 @@
                     "tag_from": "0.1"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "0.3"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
                 }
             ]
         },
