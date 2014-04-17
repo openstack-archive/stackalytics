@@ -5291,7 +5291,7 @@
         {
             "domains": [""],
             "company_name": "*independent",
-            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-"]
+            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home"]
         },
         {
             "domains": ["360.cn"],
@@ -5618,7 +5618,7 @@
         {
             "domains": ["hp.com"],
             "company_name": "HP",
-            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division"]
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard"]
         },
         {
             "domains": ["huawei.com"],
