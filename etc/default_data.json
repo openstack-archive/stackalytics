@@ -91,7 +91,7 @@
                 }
             ],
             "user_name": "Kun Huang",
-            "emails": ["gareth@openstacker.com", "academicgareth@gmail.com", "gareth@unitedstack.org"]
+            "emails": ["gareth@openstacker.com", "academicgareth@gmail.com", "gareth@unitedstack.org", "gareth@unitedstack.com"]
         },
         {
             "launchpad_id": "aditirav",
@@ -125,6 +125,17 @@
             ],
             "user_name": "Adrian Smith",
             "emails": ["adrian@17od.com", "adrian_f_smith@dell.com"]
+        },
+        {
+            "launchpad_id": "aignatov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Ignatov",
+            "emails": ["aignatov@mirantis.com", "aignatov@miranits.com"]
         },
         {
             "launchpad_id": "ailzhang",
@@ -460,6 +471,32 @@
             "emails": ["asomya@cisco.com"]
         },
         {
+            "launchpad_id": "aswad-r",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": "2014-Feb-01"
+                },
+                {
+                    "company_name": "Wanclouds",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aswad Rangnekar",
+            "emails": ["aswad.rangnekar@nttdata.com", "aswad@wanclouds.net", "aswad.r@gmail.com", "aswad.rangnekar@gmail.com"]
+        },
+        {
+            "launchpad_id": "aurlapova",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nastya Urlapova",
+            "emails": ["aurlapova@mirantis.com", "a.urlapova@gmail.com"]
+        },
+        {
             "launchpad_id": "avinash-prasad",
             "companies": [
                 {
@@ -655,7 +692,7 @@
                 }
             ],
             "user_name": "Boris Pavlovic",
-            "emails": ["boris@pavlovic.me"]
+            "emails": ["boris@pavlovic.me", "bpavlovic@mirantis.com"]
         },
         {
             "launchpad_id": "breu",
@@ -1102,6 +1139,17 @@
             "emails": ["dprince@redhat.com", "dan.prince@rackspace.com"]
         },
         {
+            "launchpad_id": "daniel-kuffner",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Kuffner",
+            "emails": ["daniel.kuffner@gmail.com", "dkuffner@chilicat.net"]
+        },
+        {
             "launchpad_id": "danms",
             "companies": [
                 {
@@ -1308,6 +1356,17 @@
             "emails": ["dan.florea@gmail.com", "dflorea@vmware.com"]
         },
         {
+            "launchpad_id": "dguitarbite",
+            "companies": [
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pranav Salunke",
+            "emails": ["pranav@aptira.com", "pps.pranav@gmail.com", "dguitarbite@gmail.com"]
+        },
+        {
             "launchpad_id": "dims-v",
             "companies": [
                 {
@@ -1365,6 +1424,32 @@
             ],
             "user_name": "Doug Hellmann",
             "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com"]
+        },
+        {
+            "launchpad_id": "dreidellhasa",
+            "companies": [
+                {
+                    "company_name": "Sencha",
+                    "end_date": "2014-Feb-12"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Meg McRoberts",
+            "emails": ["dreidellhasa@yahoo.com", "mmcroberts@mirantis.com"]
+        },
+        {
+            "launchpad_id": "dricco",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cian O'Driscoll",
+            "emails": ["cian@hp.com", "cian.o-driscoll@hp.com"]
         },
         {
             "launchpad_id": "dshrews",
@@ -1426,6 +1511,17 @@
             "emails": ["duncan.thomas@hp.com", "duncan.thomas@gmail.com"]
         },
         {
+            "launchpad_id": "dustin",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dustin J. Mitchell",
+            "emails": ["dustin@v.igoro.us", "dustin@mozilla.com"]
+        },
+        {
             "launchpad_id": "dweimer",
             "companies": [
                 {
@@ -1445,7 +1541,7 @@
                 }
             ],
             "user_name": "Ivan Kolodyazhny",
-            "emails": ["e0ne@e0ne.info", "ikolodyazhny@mirantis.com"]
+            "emails": ["e0ne@e0ne.info", "ikolodyazhny@mirantis.com", "ikolodyazhny@mos-docs.vm.mirantis.net"]
         },
         {
             "launchpad_id": "eafonichev",
@@ -1917,6 +2013,17 @@
             ],
             "user_name": "TianTian Gao",
             "emails": ["hzgaott@corp.netease.com", "gtt116@gmail.com", "gtt116@126.com"]
+        },
+        {
+            "launchpad_id": "guilhem-fr",
+            "companies": [
+                {
+                    "company_name": "Optiflows",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guilhem Lettron",
+            "emails": ["guilhem.lettron@optiflows.com", "guilhem.lettron@gmail.com", "guilhem@lettron.fr"]
         },
         {
             "launchpad_id": "harlowja",
@@ -2522,7 +2629,7 @@
                 }
             ],
             "user_name": "Jordan Pittier",
-            "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com"]
+            "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com", "jordan.pittier@cloudwatt.com"]
         },
         {
             "launchpad_id": "joseph-r-email",
@@ -2906,6 +3013,17 @@
             ],
             "user_name": "Kieran Spear",
             "emails": ["kispear@gmail.com"]
+        },
+        {
+            "launchpad_id": "kzqdnsw4i20a5pz-peter",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peter Balland",
+            "emails": ["peter@balland.net", "pballand@vmware.com", "peter@congress-dev.localdomain"]
         },
         {
             "launchpad_id": "lakhindr",
@@ -3604,7 +3722,7 @@
                 }
             ],
             "user_name": "Nikhil Komawar",
-            "emails": ["nikhil.komawar@rackspace.com"]
+            "emails": ["nikhil.komawar@rackspace.com", "nikhilskomawar@gmail.com"]
         },
         {
             "launchpad_id": "niu-zglinux",
@@ -3616,6 +3734,17 @@
             ],
             "user_name": "Zhenguo Niu",
             "emails": ["zhenguo@unitedstack.com", "niu.zglinux@gmail.com"]
+        },
+        {
+            "launchpad_id": "nmarkov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nikolay Markov",
+            "emails": ["nmarkov@mirantis.com", "enchantner@gmail.com"]
         },
         {
             "launchpad_id": "nobodycam",
@@ -3744,6 +3873,17 @@
             ],
             "user_name": "Florian Hines",
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
+        },
+        {
+            "launchpad_id": "paulcz",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paul Czarkowski",
+            "emails": ["paul@paulcz.net", "paul.czarkowski@rackspace.com"]
         },
         {
             "launchpad_id": "paulmontgomery-code",
@@ -4014,6 +4154,17 @@
             ],
             "user_name": "Riddhi Shah",
             "emails": ["riddhi.shah@rackspace.com", "ridhi.j.shah@gmail.com"]
+        },
+        {
+            "launchpad_id": "ripal-nathuji",
+            "companies": [
+                {
+                    "company_name": "Calxeda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ripal Nathuji",
+            "emails": ["ripal.nathuji@calxeda.com", "ripal@nathuji.com"]
         },
         {
             "launchpad_id": "rjuvvadi",
@@ -4532,7 +4683,7 @@
                 }
             ],
             "user_name": "Soren Hansen",
-            "emails": ["soren.hansen@rackspace.com", "soren@openstack.org", "sorenhansen@rackspace.com", "soren@linux2go.dk", "sorhanse@cisco.com"]
+            "emails": ["soren.hansen@rackspace.com", "soren@openstack.org", "sorenhansen@rackspace.com", "soren@linux2go.dk", "sorhanse@cisco.com", "soren.hansen@ril.com"]
         },
         {
             "launchpad_id": "sorrison",
@@ -4688,6 +4839,21 @@
             "emails": ["termie@preciousroy.local", "github@anarkystic.com", "code@term.ie"]
         },
         {
+            "launchpad_id": "therve",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2014-Dec-01"
+                },
+                {
+                    "company_name": "eNovance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thomas Herve",
+            "emails": ["therve@gmail.com", "thomas.herve@enovance.com", "th@rackspace.com"]
+        },
+        {
             "launchpad_id": "thesheep",
             "companies": [
                 {
@@ -4729,7 +4895,7 @@
                 }
             ],
             "user_name": "Terry Howe",
-            "emails": ["terrylhowe@gmail.com"]
+            "emails": ["terrylhowe@gmail.com", "thowe@hp.com"]
         },
         {
             "launchpad_id": "throughnothing",
@@ -4979,6 +5145,17 @@
             "emails": ["vasiliyk@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "vkuklin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vladimir Kuklin",
+            "emails": ["vkuklin@mirantis.com", "aglar@aglar.ru"]
+        },
+        {
             "launchpad_id": "vmtrooper",
             "companies": [
                 {
@@ -5043,6 +5220,21 @@
                 }
             ],
             "emails": ["andrey@xdel.ru", "akorolev@mirantis.com"]
+        },
+        {
+            "launchpad_id": "xianghui",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Dec-01"
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiang Hui",
+            "emails": ["xianghui@cn.ibm.com", "hui.xiang@canonical.com"]
         },
         {
             "launchpad_id": "xtoddx",
@@ -5854,6 +6046,10 @@
             "company_name": "Objectif Libre"
         },
         {
+            "domains": ["optiflows.com"],
+            "company_name": "Optiflows"
+        },
+        {
             "domains": ["orange.com"],
             "company_name": "Orange",
             "aliases": ["Orange Labs"]
@@ -6105,6 +6301,10 @@
             "domains": ["vmware.com", "nicira.com"],
             "company_name": "VMware",
             "aliases": ["CYSO VMWARE DHPA"]
+        },
+        {
+            "domains": ["wanclouds.net"],
+            "company_name": "Wanclouds"
         },
         {
             "domains": ["wikimedia.org"],
