@@ -6963,6 +6963,10 @@
         {
             "release_name": "Icehouse",
             "end_date": "2014-Apr-17"
+        },
+        {
+            "release_name": "Juno",
+            "end_date": "2014-Oct-17"
         }
     ],
     "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"],
