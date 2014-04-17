@@ -3935,6 +3935,17 @@
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
         },
         {
+            "launchpad_id": "rajdeepd",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rajdeep Dua",
+            "emails": ["dua_rajdeep@yahoo.com", "rajdeepd@vmware.com"]
+        },
+        {
             "launchpad_id": "raphmraph",
             "companies": [
                 {
