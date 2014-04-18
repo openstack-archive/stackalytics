@@ -4167,6 +4167,17 @@
             "emails": ["ripal.nathuji@calxeda.com", "ripal@nathuji.com"]
         },
         {
+            "launchpad_id": "rjpeter2",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ryan Peters",
+            "emails": ["rjpeter2@gmail.com", "ryan.peters@hp.com"]
+        },
+        {
             "launchpad_id": "rjuvvadi",
             "companies": [
                 {
