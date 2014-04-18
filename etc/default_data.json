@@ -6795,7 +6795,7 @@
                 {
                     "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
-                    "tag_from": "2012.2"
+                    "tag_from": "v7.release"
                 },
                 {
                     "branch": "stable/havana",
@@ -6844,11 +6844,6 @@
         {
             "releases": [
                 {
-                    "tag_to": "grizzly-eol",
-                    "release_name": "Grizzly",
-                    "tag_from": "2012.2"
-                },
-                {
                     "branch": "stable/havana",
                     "tag_to": "HEAD",
                     "release_name": "Havana",
@@ -6889,11 +6884,6 @@
         },
         {
             "releases": [
-                {
-                    "tag_to": "grizzly-eol",
-                    "release_name": "Grizzly",
-                    "tag_from": "2012.2"
-                },
                 {
                     "branch": "stable/havana",
                     "tag_to": "HEAD",
