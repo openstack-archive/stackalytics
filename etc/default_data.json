@@ -7207,7 +7207,7 @@
         },
         {
             "module_group_name": "murano-group",
-            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-common", "murano-conductor", "murano-dashboard", "murano-deployment", "murano-docs", "murano-tests", "murano-metadataclient", "murano-repository"]
+            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-dashboard", "murano-deployment", "murano-docs"]
         },
         {
             "module_group_name": "puppet-group",
