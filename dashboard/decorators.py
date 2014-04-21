@@ -57,27 +57,49 @@ def record_filter(ignore=None, use_default=True):
         ignore = []
 
     def decorator(f):
+        def _filter_records_by_modules(memory_storage_inst, modules, releases):
+            selected = set([])
+            for m, r in vault.resolve_modules(modules, releases):
+                y = memory_storage_inst.get_record_ids_by_modules([m])
+                if r:
+                    x = memory_storage_inst.get_record_ids_by_releases([r])
+                    selected |= x & y
+                else:
+                    selected |= y
+            return selected
+
         @functools.wraps(f)
         def record_filter_decorated_function(*args, **kwargs):
 
             memory_storage_inst = vault.get_memory_storage()
             record_ids = set(memory_storage_inst.get_record_ids())  # a copy
 
-            if 'module' not in ignore:
-                param = parameters.get_parameter(kwargs, 'module', 'modules',
-                                                 use_default)
-                if param:
-                    record_ids &= (
-                        memory_storage_inst.get_record_ids_by_modules(
-                            vault.resolve_modules(param)))
+            releases = []
+            if 'release' not in ignore:
+                releases = parameters.get_parameter(kwargs, 'release',
+                                                    'releases', use_default)
+                if releases:
+                    if 'all' not in releases:
+                        record_ids &= (
+                            memory_storage_inst.get_record_ids_by_releases(
+                                c.lower() for c in releases))
+
+            modules = parameters.get_parameter(kwargs, 'module', 'modules',
+                                               use_default)
 
             if 'project_type' not in ignore:
                 param = parameters.get_parameter(kwargs, 'project_type',
                                                  'project_types', use_default)
                 if param:
-                    record_ids &= (
-                        memory_storage_inst.get_record_ids_by_modules(
-                            vault.resolve_project_types(param)))
+                    record_ids &= _filter_records_by_modules(
+                        memory_storage_inst,
+                        vault.resolve_project_types(param),
+                        releases)
+
+            if 'module' not in ignore:
+                if modules:
+                    record_ids &= _filter_records_by_modules(
+                        memory_storage_inst, modules, releases)
 
             if 'user_id' not in ignore:
                 param = parameters.get_parameter(kwargs, 'user_id', 'user_ids')
@@ -93,15 +115,6 @@ def record_filter(ignore=None, use_default=True):
                 if param:
                     record_ids &= (
                         memory_storage_inst.get_record_ids_by_companies(param))
-
-            if 'release' not in ignore:
-                param = parameters.get_parameter(kwargs, 'release', 'releases',
-                                                 use_default)
-                if param:
-                    if 'all' not in param:
-                        record_ids &= (
-                            memory_storage_inst.get_record_ids_by_releases(
-                                c.lower() for c in param))
 
             if 'metric' not in ignore:
                 metrics = parameters.get_parameter(kwargs, 'metric')

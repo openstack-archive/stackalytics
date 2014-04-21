@@ -13,11 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import collections
 import os
 
 import flask
 from oslo.config import cfg
+import six
 
 from dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
@@ -84,40 +84,11 @@ def _init_releases(vault):
     vault['releases'] = releases_map
 
 
-def _make_module(module_id, text, modules, tag):
-    return {'id': module_id, 'text': text,
-            'modules': set(modules), 'tag': tag}
-
-
 def _init_module_groups(vault):
     runtime_storage_inst = vault['runtime_storage']
-    memory_storage_inst = vault['memory_storage']
-
-    module_group_index = collections.defaultdict(set)
-    module_id_index = {}
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
 
-    for module_group in module_groups.values():
-        module_group_name = module_group['module_group_name']
-        module_group_id = module_group.get('id') or module_group_name.lower()
-
-        module_id_index[module_group_id] = _make_module(
-            module_group_id, module_group_name, module_group['modules'],
-            module_group.get('tag') or 'group')
-
-        for module in module_group['modules']:
-            module_group_index[module].add(module_group_id)
-
-    for module in memory_storage_inst.get_modules():
-        module_id_index[module] = _make_module(module.lower(), module,
-                                               [module.lower()], 'module')
-
-    module_id_index['all'] = _make_module('all', 'All',
-                                          memory_storage_inst.get_modules(),
-                                          'project_type')
-
-    vault['module_group_index'] = module_group_index
-    vault['module_id_index'] = module_id_index
+    vault['module_id_index'] = module_groups
 
 
 def _init_project_types(vault):
@@ -184,20 +155,37 @@ def get_user_from_runtime_storage(user_id):
     return user_index[user_id]
 
 
-def resolve_modules(module_ids):
+def resolve_modules(module_ids, releases):
     module_id_index = get_vault().get('module_id_index') or {}
-    modules = set()
+
     for module_id in module_ids:
         if module_id in module_id_index:
-            modules |= set(module_id_index[module_id]['modules'])
-    return modules
+            module_group = module_id_index[module_id]
+
+            if not releases or 'all' in releases:
+                if 'releases' in module_group:
+                    for release, modules in six.iteritems(
+                            module_group['releases']):
+                        for module in modules:
+                            yield module, release
+                if 'modules' in module_group:
+                    for module in module_group['modules']:
+                        yield module, None
+            else:
+                for release in releases:
+                    if 'releases' in module_group:
+                        for module in module_group['releases'][release]:
+                            yield module, release
+                    if 'modules' in module_group:
+                        for module in module_group['modules']:
+                            yield module, release
 
 
 def resolve_project_types(project_types):
     modules = set()
+    project_types_index = get_vault()['project_types_index']
     for pt in project_types:
         pt = pt.lower()
-        if is_project_type_valid(pt):
-            modules |= resolve_modules(
-                get_vault()['project_types_index'][pt]['modules'])
+        if pt in project_types_index:
+            modules |= set(project_types_index[pt]['modules'])
     return modules

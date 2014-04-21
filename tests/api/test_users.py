@@ -20,18 +20,16 @@ from tests.api import test_api
 
 class TestAPIUsers(test_api.TestAPI):
 
-    def test_users_empty(self):
-        with test_api.make_runtime_storage({}):
-            response = self.app.get('/api/1.0/users')
-            self.assertEqual(200, response.status_code)
-
     def test_users(self):
         with test_api.make_runtime_storage(
                 {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}],
                  'project_types': [
                      {'id': 'openstack', 'title': 'openstack',
-                      'modules': ['nova', 'glance']}]},
+                      'modules': ['nova', 'glance']}],
+                 'module_groups': {
+                     'nova': test_api.make_module('nova'),
+                     'glance': test_api.make_module('glance')}},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_id=['john_doe', 'bill_smith'])):
             response = self.app.get('/api/1.0/users?'
@@ -47,7 +45,10 @@ class TestAPIUsers(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/nova.git'}],
                  'project_types': [
                      {'id': 'openstack', 'title': 'openstack',
-                      'modules': ['nova', 'glance']}]},
+                      'modules': ['nova', 'glance']}],
+                 'module_groups': {
+                     'nova': test_api.make_module('nova'),
+                     'glance': test_api.make_module('glance')}},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users?'

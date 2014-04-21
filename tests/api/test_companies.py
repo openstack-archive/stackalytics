@@ -34,7 +34,11 @@ class TestAPICompanies(test_api.TestAPI):
                     ],
                     'module_groups': {
                         'openstack': {'module_group_name': 'openstack',
-                                      'modules': ['nova', 'glance']}
+                                      'modules': ['nova', 'glance']},
+                        'nova': {'module_group_name': 'nova',
+                                 'modules': ['nova']},
+                        'glance': {'module_group_name': 'glance',
+                                   'modules': ['glance']},
                     }},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],

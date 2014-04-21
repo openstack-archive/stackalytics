@@ -7376,11 +7376,23 @@
     "releases": [
         {
             "release_name": "prehistory",
-            "end_date": "2011-Apr-21"
+            "end_date": "2010-Jan-01"
+        },
+        {
+            "release_name": "Austin",
+            "end_date": "2010-Oct-21"
+        },
+        {
+            "release_name": "Bexar",
+            "end_date": "2011-Feb-03"
+        },
+        {
+            "release_name": "Cactus",
+            "end_date": "2011-Apr-15"
         },
         {
             "release_name": "Diablo",
-            "end_date": "2011-Sep-08"
+            "end_date": "2011-Sep-22"
         },
         {
             "release_name": "Essex",

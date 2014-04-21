@@ -21,7 +21,6 @@ import time
 
 import flask
 from flask.ext import gravatar as gravatar_ext
-import itertools
 from oslo.config import cfg
 import six
 
@@ -136,7 +135,7 @@ def get_core_engineer_branch(user, modules):
 def get_engineers(records, metric_filter, finalize_handler):
 
     modules_names = parameters.get_parameter({}, 'module', 'modules')
-    modules = vault.resolve_modules(modules_names)
+    modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
     def postprocessing(record):
         if finalize_handler:
@@ -157,7 +156,7 @@ def get_engineers(records, metric_filter, finalize_handler):
 @decorators.record_filter(ignore='metric')
 def get_engineers_extended(records):
     modules_names = parameters.get_parameter({}, 'module', 'modules')
-    modules = vault.resolve_modules(modules_names)
+    modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
     def postprocessing(record):
         record = decorators.mark_finalize(record)
@@ -257,26 +256,24 @@ def get_companies_json(records):
 @decorators.exception_handler()
 @decorators.record_filter(ignore='module')
 def get_modules_json(records):
-    module_group_index = vault.get_vault()['module_group_index']
     module_id_index = vault.get_vault()['module_id_index']
 
     tags = parameters.get_parameter({}, 'tag', 'tags')
 
     # all modules mentioned in records
-    module_ids = set(record['module'] for record in records)
-    # plus all module groups that hold these modules
-    module_ids |= set(itertools.chain.from_iterable(
-        module_group_index.get(module, []) for module in module_ids))
+    module_ids = set(record['module'] for record in records
+                     if record['module'] in module_id_index)
+
+    add_modules = set([])
+    for module in six.itervalues(module_id_index):
+        if set(module['modules']) <= module_ids:
+            add_modules.add(module['id'])
+    module_ids |= add_modules
+
     # keep only modules with specified tags
     if tags:
         module_ids = set(module_id for module_id in module_ids
                          if module_id_index[module_id].get('tag') in tags)
-    # keep only modules that are in project type completely
-    pts = parameters.get_parameter({}, 'project_type', 'project_types')
-    if pts:
-        m = set(vault.resolve_project_types(pts))
-        module_ids = set(module_id for module_id in module_ids
-                         if module_id_index[module_id]['modules'] <= m)
 
     query = (flask.request.args.get('query') or '').lower()
     matched = []
@@ -286,6 +283,8 @@ def get_modules_json(records):
             module = dict([(k, v) for k, v in
                            six.iteritems(module_id_index[module_id])
                            if k not in ['modules']])
+            module['text'] = module['module_group_name']
+            del module['module_group_name']
             matched.append(module)
 
     return sorted(matched, key=operator.itemgetter('text'))
@@ -312,7 +311,7 @@ def get_module(module):
     module = module.lower()
     if module in module_id_index:
         return {'id': module_id_index[module]['id'],
-                'text': module_id_index[module]['text'],
+                'text': module_id_index[module]['module_group_name'],
                 'tag': module_id_index[module]['tag']}
     flask.abort(404)
 
