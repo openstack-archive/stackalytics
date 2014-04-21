@@ -5558,6 +5558,10 @@
             "company_name": "Aptira"
         },
         {
+            "domains": ["aricent.com"],
+            "company_name": "Aricent"
+        },
+        {
             "domains": ["aristanetworks.com"],
             "company_name": "Arista Networks",
             "aliases": ["Arista Networks Inc"]
@@ -5818,8 +5822,16 @@
             "company_name": "GRNET"
         },
         {
-            "domains": ["guardian.co.uk"],
+            "domains": ["gslab.com"],
+            "company_name": "Great Software Laboratory"
+        },
+        {
+            "domains": ["guardian.co.uk", "theguardian.com"],
             "company_name": "The Guardian"
+        },
+        {
+            "domains": ["harmonicinc.com"],
+            "company_name": "Harmonic"
         },
         {
             "domains": ["hastexo.com"],
@@ -5906,6 +5918,10 @@
         {
             "domains": ["it.pt"],
             "company_name": "Instituto de Telecomunicacoes"
+        },
+        {
+            "domains": ["itsyn.com"],
+            "company_name": "IT Synergy"
         },
         {
             "domains": ["iweb.com", "iweb.co.uk"],
@@ -6068,6 +6084,10 @@
             "company_name": "Objectif Libre"
         },
         {
+            "domains": ["oneconvergence.com"],
+            "company_name": "One Convergence"
+        },
+        {
             "domains": ["optiflows.com"],
             "company_name": "Optiflows"
         },
@@ -6143,6 +6163,10 @@
             "aliases": ["Red Hat Canada, Inc", "Red Hat Czech, s.r.o.", "Red Hat Inc.", "Red Hat, Inc., Bloomberg L.P.", "Red Hat India Pvt. Ltd.", "Red Hat Software"]
         },
         {
+            "domains": ["reduxio.com"],
+            "company_name": "Reduxio"
+        },
+        {
             "domains": ["rizu.mu"],
             "company_name": "Rizumu"
         },
@@ -6163,6 +6187,10 @@
         {
             "domains": ["sdsc.edu"],
             "company_name": "San Diego Supercomputer Center"
+        },
+        {
+            "domains": ["seagate.com"],
+            "company_name": "Seagate"
         },
         {
             "domains": ["sina.com"],
@@ -6258,6 +6286,10 @@
             "company_name": "ThoughtWorks"
         },
         {
+            "domains": ["tieto.com"],
+            "company_name": "Tieto"
+        },
+        {
             "domains": ["toronto.edu"],
             "company_name": "University of Toronto"
         },
@@ -6311,6 +6343,10 @@
             "company_name": "VCE"
         },
         {
+            "domains": ["versa-networks.com"],
+            "company_name": "Versa Networks"
+        },
+        {
             "domains": ["vexxhost.com"],
             "company_name": "VexxHost"
         },
@@ -6327,6 +6363,10 @@
         {
             "domains": ["wanclouds.net"],
             "company_name": "Wanclouds"
+        },
+        {
+            "domains": ["wdc.com"],
+            "company_name": "Western Digital"
         },
         {
             "domains": ["wikimedia.org"],
