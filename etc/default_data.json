@@ -4267,6 +4267,17 @@
             "emails": ["romcheg@romcheg.org"]
         },
         {
+            "launchpad_id": "rossetti-megan18",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Megan Rossetti",
+            "emails": ["megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
+        },
+        {
             "launchpad_id": "rsokolkov",
             "companies": [
                 {
