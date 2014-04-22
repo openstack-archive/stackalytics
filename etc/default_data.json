@@ -7120,9 +7120,14 @@
         {
             "releases": [
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "0.11",
                     "release_name": "Icehouse",
                     "tag_from": "95617e3"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "0.11"
                 }
             ],
             "uri": "git://github.com/openstack/openstack-doc-tools.git",
