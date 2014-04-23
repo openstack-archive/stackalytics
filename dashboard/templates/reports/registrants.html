@@ -26,14 +26,13 @@
                 var tableData = data["members"];
 
                 var tableColumns = [];
-                var sort_by_column = 0;
+                var sort_by_column = 2;
                 for (var i = 0; i < table_column_names.length; i++) {
                     tableColumns.push({"mData": table_column_names[i]});
                 }
 
                 for (i = 0; i < tableData.length; i++) {
                     var user_link = tableData[i].member_uri;
-                    tableData[i].index = i + 1;
                     tableData[i].link = "<a href=\"" + user_link + "\">" + tableData[i].author_name + "</a>";
 
                     tableData[i].date = tableData[i].date_str;
@@ -43,7 +42,7 @@
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aaSorting": [
-                            [ sort_by_column, "asc" ]
+                            [ sort_by_column, "desc" ]
                         ],
                         "bFilter": true,
                         "bInfo": true,
@@ -277,7 +276,7 @@
                 <option value="93">quarter</option>
                 <option value="183">half year</option>
                 <option value="365">year</option>
-                <option value="730">two years</option>
+                <option value="{{ all_days }}">all</option>
             </select>
         </div>
 

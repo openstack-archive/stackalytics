@@ -28,6 +28,7 @@ from stackalytics.processor import utils
 
 
 DEFAULT_DAYS_COUNT = 7
+FIRST_MEMBER_DATE = "2012-Jul-18"
 
 blueprint = flask.Blueprint('reports', __name__, url_prefix='/report')
 
@@ -133,8 +134,12 @@ def contribution(module, days):
 @decorators.templated()
 def registrants():
     days = int(flask.request.args.get('days') or DEFAULT_DAYS_COUNT)
+    all_days = int(time.time() - utils.date_to_timestamp_ext(
+        FIRST_MEMBER_DATE)) / (24 * 60 * 60) + 1
+
     return {
-        'days': days
+        'days': days,
+        'all_days': all_days
     }
 
 

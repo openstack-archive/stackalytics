@@ -328,6 +328,10 @@ def get_members(records):
                    ['author_name', 'date', 'company_name', 'member_uri']])
         nr['date_str'] = helpers.format_date(nr['date'])
         response.append(nr)
+
+    response.sort(key=lambda x: x['date'], reverse=True)
+    utils.add_index(response)
+
     return response
 
 
