@@ -680,6 +680,17 @@
             "emails": ["bogdando@mail.ru", "bdobrelia@mirantis.com"]
         },
         {
+            "launchpad_id": "bohai",
+            "user_name": "boh.ricky",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "emails": ["bohai@huawei.com", "boh.ricky@gmail.com"]
+        },
+        {
             "launchpad_id": "boris-42",
             "companies": [
                 {
