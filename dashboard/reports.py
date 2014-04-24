@@ -129,10 +129,10 @@ def contribution(module, days):
     }
 
 
-@blueprint.route('/registrants')
+@blueprint.route('/members')
 @decorators.exception_handler()
 @decorators.templated()
-def registrants():
+def members():
     days = int(flask.request.args.get('days') or DEFAULT_DAYS_COUNT)
     all_days = int(time.time() - utils.date_to_timestamp_ext(
         FIRST_MEMBER_DATE)) / (24 * 60 * 60) + 1
