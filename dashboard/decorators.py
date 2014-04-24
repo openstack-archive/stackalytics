@@ -32,14 +32,14 @@ from stackalytics import version as stackalytics_version
 LOG = logging.getLogger(__name__)
 
 
-def _get_time_filter(kwargs):
+def _get_time_filter(kwargs, ignore):
     start_date = parameters.get_single_parameter(kwargs, 'start_date')
-    if start_date:
+    if start_date and 'start_date' not in ignore:
         start_date = utils.date_to_timestamp_ext(start_date)
     else:
         start_date = 0
     end_date = parameters.get_single_parameter(kwargs, 'end_date')
-    if end_date:
+    if end_date and 'end_date' not in ignore:
         end_date = utils.date_to_timestamp_ext(end_date)
     else:
         end_date = utils.date_to_timestamp_ext('now')
@@ -131,7 +131,7 @@ def record_filter(ignore=None, use_default=True):
                         memory_storage_inst.get_record_ids_by_blueprint_ids(
                             param))
 
-            time_filter = _get_time_filter(kwargs)
+            time_filter = _get_time_filter(kwargs, ignore)
 
             kwargs['records'] = time_filter(
                 memory_storage_inst.get_records(record_ids))

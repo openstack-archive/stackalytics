@@ -453,7 +453,7 @@ def get_project_type_json(project_type):
     return {'id': pt['id'], 'text': pt['title']}
 
 
-def _get_date(kwargs, param_name):
+def _get_week(kwargs, param_name):
     date_param = parameters.get_single_parameter(kwargs, param_name)
     if date_param:
         ts = utils.date_to_timestamp_ext(date_param)
@@ -465,40 +465,42 @@ def _get_date(kwargs, param_name):
 @app.route('/api/1.0/stats/timeline')
 @decorators.jsonify('timeline')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='release')
+@decorators.record_filter(ignore=['release', 'start_date'])
 def timeline(records, **kwargs):
     # find start and end dates
+    metric = parameters.get_parameter(kwargs, 'metric')
+    start_date = int(parameters.get_single_parameter(kwargs, 'start_date')
+                     or 0)
     release_name = parameters.get_single_parameter(kwargs, 'release') or 'all'
     releases = vault.get_vault()['releases']
 
     if 'all' in release_name:
-        start_date = release_start_date = _get_date(kwargs, 'start_date')
-        end_date = release_end_date = _get_date(kwargs, 'end_date')
+        start_week = release_start_week = _get_week(kwargs, 'start_date')
+        end_week = release_end_week = _get_week(kwargs, 'end_date')
     else:
         release = releases[release_name]
-        start_date = release_start_date = utils.timestamp_to_week(
+        start_week = release_start_week = utils.timestamp_to_week(
             release['start_date'])
-        end_date = release_end_date = utils.timestamp_to_week(
+        end_week = release_end_week = utils.timestamp_to_week(
             release['end_date'])
 
     now = utils.timestamp_to_week(int(time.time())) + 1
 
     # expand start-end to year if needed
-    if release_end_date - release_start_date < 52:
-        expansion = (52 - (release_end_date - release_start_date)) // 2
-        if release_end_date + expansion < now:
-            end_date += expansion
+    if release_end_week - release_start_week < 52:
+        expansion = (52 - (release_end_week - release_start_week)) // 2
+        if release_end_week + expansion < now:
+            end_week += expansion
         else:
-            end_date = now
-        start_date = end_date - 52
+            end_week = now
+        start_week = end_week - 52
 
     # empty stats for all weeks in range
-    weeks = range(start_date, end_date)
+    weeks = range(start_week, end_week)
     week_stat_loc = dict((c, 0) for c in weeks)
     week_stat_commits = dict((c, 0) for c in weeks)
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
-    metric = parameters.get_parameter(kwargs, 'metric')
     if ('commits' in metric) or ('loc' in metric):
         handler = lambda record: record['loc']
     else:
@@ -531,10 +533,14 @@ def timeline(records, **kwargs):
             if week in weeks:
                 week_stat_loc[week] += handler(record)
                 week_stat_commits[week] += 1
-                if record['release'] == release_name:
-                    week_stat_commits_hl[week] += 1
+                if 'members' in metric:
+                    if record['date'] >= start_date:
+                        week_stat_commits_hl[week] += 1
+                else:
+                    if record['release'] == release_name:
+                        week_stat_commits_hl[week] += 1
 
-    if 'all' == release_name:
+    if 'all' == release_name and 'members' not in metric:
         week_stat_commits_hl = week_stat_commits
 
     # form arrays in format acceptable to timeline plugin
