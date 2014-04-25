@@ -7338,6 +7338,10 @@
             "modules": ["fuel-main", "fuel-web", "fuel-astute", "fuel-ostf", "fuel-library", "fuel-docs", "fuel-devops"]
         },
         {
+            "module_group_name": "mistral-group",
+            "modules": ["python-mistralclient", "mistral", "mistral-extra"]
+        },
+        {
             "module_group_name": "murano-group",
             "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-dashboard", "murano-deployment", "murano-docs"]
         },
