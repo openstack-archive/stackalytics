@@ -5034,6 +5034,21 @@
             "emails": ["trey.morris@rackspace.com", "treyemorris@gmail.com"]
         },
         {
+            "launchpad_id": "treinish",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Apr-25"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Treinish",
+            "emails": ["mtreinish@kortar.org", "treinish@linux.vnet.ibm.com"]
+        },
+        {
             "launchpad_id": "troy-toman",
             "companies": [
                 {
