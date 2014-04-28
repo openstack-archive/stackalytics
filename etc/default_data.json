@@ -2037,6 +2037,17 @@
             "emails": ["guilhem.lettron@optiflows.com", "guilhem.lettron@gmail.com", "guilhem@lettron.fr"]
         },
         {
+            "launchpad_id": "gus",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Angus Lees",
+            "emails": ["guslees@gmail.com", "angus.lees@rackspace.com"]
+        },
+        {
             "launchpad_id": "harlowja",
             "companies": [
                 {
