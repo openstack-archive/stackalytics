@@ -339,6 +339,10 @@ class RecordProcessor(object):
         yield self._make_review_record(record)
 
         for patch in record.get('patchSets', []):
+            if (('email' not in patch['uploader']) or
+                    ('username' not in patch['uploader'])):
+                continue  # ignore
+
             yield self._make_patch_record(record, patch)
 
             if 'approvals' not in patch:
