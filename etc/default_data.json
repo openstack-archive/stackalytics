@@ -2181,6 +2181,17 @@
             "emails": ["ipekelny@mirantis.com", "ipekelny@griddynamics.com", "pekelny@gmail.com"]
         },
         {
+           "launchpad_id": "idegtiarov",
+           "companies": [
+               {
+                   "company_name": "Mirantis",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Igor Degtiarov",
+           "emails": ["idegtiarov@mirantis.com"]
+        },
+        {
             "launchpad_id": "idv1985",
             "user_name": "Dmitry Ilyin",
             "companies": [
