@@ -162,7 +162,7 @@ def get_engineers_extended(records):
         record = decorators.mark_finalize(record)
 
         if not (record['mark'] or record['review'] or record['commit'] or
-                record['email'] or record['patch_count']):
+                record['email'] or record['patch']):
             return
 
         user = vault.get_user_from_runtime_storage(record['id'])
@@ -176,16 +176,13 @@ def get_engineers_extended(records):
         result_row[record_type] = result_row.get(record_type, 0) + 1
         if record_type == 'mark':
             decorators.mark_filter(result, record, param_id)
-        if record_type == 'review':
-            result_row['patch_count'] = (result_row.get('patch_count', 0) +
-                                         record['patch_count'])
 
     result = {}
     for record in records:
         user_id = record['user_id']
         if user_id not in result:
             result[user_id] = {'id': user_id, 'mark': 0, 'review': 0,
-                               'commit': 0, 'email': 0, 'patch_count': 0,
+                               'commit': 0, 'email': 0, 'patch': 0,
                                'metric': 0}
         record_processing(result, record, 'user_id')
         result[user_id]['name'] = record['author_name']
@@ -342,6 +339,7 @@ def get_bpd(records):
     result = []
     for record in records:
         if record['record_type'] in ['bpd', 'bpc']:
+            record = vault.extend_record(record)
             mention_date = record.get('mention_date')
             if mention_date:
                 date = helpers.format_date(mention_date)

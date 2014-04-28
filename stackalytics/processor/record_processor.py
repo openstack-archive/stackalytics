@@ -270,7 +270,6 @@ class RecordProcessor(object):
 
         patch_sets = record.get('patchSets', [])
         review['updated_on'] = review['date']
-        review['patch_count'] = len(patch_sets)
         if patch_sets:
             patch = patch_sets[-1]
             if 'approvals' in patch:

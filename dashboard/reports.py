@@ -105,7 +105,7 @@ def open_reviews(module):
         if review['status'] == 'NEW':
             total_open += 1
             if review['value'] in [1, 2]:
-                waiting_on_reviewer.append(review)
+                waiting_on_reviewer.append(vault.extend_record(review))
 
     return {
         'module': module,
@@ -167,6 +167,28 @@ def _get_punch_card_data(records):
     return json.dumps(punch_card_data)
 
 
+def _get_activity_summary(record_ids):
+    memory_storage_inst = vault.get_memory_storage()
+
+    types = ['mark', 'patch', 'email', 'bpd', 'bpc', 'commit']
+    record_ids_by_type = set()
+    for t in types:
+        record_ids_by_type |= memory_storage_inst.get_record_ids_by_type(t)
+
+    record_ids &= record_ids_by_type
+    contribution_summary = helpers.get_contribution_summary(
+        memory_storage_inst.get_records(record_ids))
+
+    record_ids -= memory_storage_inst.get_record_ids_by_type('commit')
+    punch_card_data = _get_punch_card_data(
+        memory_storage_inst.get_records(record_ids))
+
+    return {
+        'contribution': contribution_summary,
+        'punch_card_data': punch_card_data,
+    }
+
+
 @blueprint.route('/users/<user_id>')
 @decorators.templated()
 @decorators.exception_handler()
@@ -177,16 +199,11 @@ def user_activity(user_id):
     user = helpers.extend_user(user)
 
     memory_storage_inst = vault.get_memory_storage()
-    records = memory_storage_inst.get_records(
+    result = _get_activity_summary(
         memory_storage_inst.get_record_ids_by_user_ids([user_id]))
-    records = sorted(records, key=operator.itemgetter('date'), reverse=True)
+    result['user'] = user
 
-    return {
-        'user': user,
-        'total_records': len(records),
-        'contribution': helpers.get_contribution_summary(records),
-        'punch_card_data': _get_punch_card_data(records),
-    }
+    return result
 
 
 @blueprint.route('/companies/<company>')
@@ -196,17 +213,11 @@ def company_activity(company):
     memory_storage_inst = vault.get_memory_storage()
     original_name = memory_storage_inst.get_original_company_name(company)
 
-    memory_storage_inst = vault.get_memory_storage()
-    records = memory_storage_inst.get_records(
+    result = _get_activity_summary(
         memory_storage_inst.get_record_ids_by_companies([original_name]))
-    records = sorted(records, key=operator.itemgetter('date'), reverse=True)
+    result['company_name'] = original_name
 
-    return {
-        'company_name': original_name,
-        'total_records': len(records),
-        'contribution': helpers.get_contribution_summary(records),
-        'punch_card_data': _get_punch_card_data(records),
-    }
+    return result
 
 
 @blueprint.route('/activity')
