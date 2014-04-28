@@ -2318,6 +2318,17 @@
             "emails": ["admin@jakedahn.com", "jake@ansolabs.com"]
         },
         {
+            "launchpad_id": "james-li-3",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "James Li",
+            "emails": ["yueli.m@gmail.com", "james.li@rackspace.com"]
+        },
+        {
             "launchpad_id": "james-slagle",
             "companies": [
                 {
