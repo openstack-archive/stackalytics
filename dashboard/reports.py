@@ -170,21 +170,16 @@ def _get_punch_card_data(records):
 def _get_activity_summary(record_ids):
     memory_storage_inst = vault.get_memory_storage()
 
-    types = ['mark', 'patch', 'email', 'bpd', 'bpc', 'commit']
+    types = ['mark', 'patch', 'email', 'bpd', 'bpc']
     record_ids_by_type = set()
     for t in types:
         record_ids_by_type |= memory_storage_inst.get_record_ids_by_type(t)
 
     record_ids &= record_ids_by_type
-    contribution_summary = helpers.get_contribution_summary(
-        memory_storage_inst.get_records(record_ids))
-
-    record_ids -= memory_storage_inst.get_record_ids_by_type('commit')
     punch_card_data = _get_punch_card_data(
         memory_storage_inst.get_records(record_ids))
 
     return {
-        'contribution': contribution_summary,
         'punch_card_data': punch_card_data,
     }
 
