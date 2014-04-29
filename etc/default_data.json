@@ -7228,7 +7228,7 @@
                 {
                     "tag_to": "HEAD",
                     "release_name": "Juno",
-                    "tag_from": "1e25f30"
+                    "tag_from": "5b33af5"
                 }
             ],
             "uri": "git://github.com/openstack/volume-api.git",
