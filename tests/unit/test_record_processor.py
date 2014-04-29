@@ -925,6 +925,7 @@ class TestRecordProcessor(testtools.TestCase):
              'createdOn': timestamp,
              'module': 'nova',
              'branch': 'master',
+             'status': 'NEW',
              'patchSets': [
                  {'number': '1',
                   'revision': '4d8984e92910c37b7d101c1ae8c8283a2e6f4a76',
@@ -936,7 +937,7 @@ class TestRecordProcessor(testtools.TestCase):
                   'createdOn': timestamp,
                   'approvals': [
                       {'type': 'CRVW', 'description': 'Code Review',
-                       'value': '1', 'grantedOn': timestamp - 1,
+                       'value': '2', 'grantedOn': timestamp - 1,
                        'by': {
                            'name': 'Homer Simpson',
                            'email': 'hsimpson@gmail.com',
@@ -948,15 +949,57 @@ class TestRecordProcessor(testtools.TestCase):
                            'email': 'john_doe@ibm.com',
                            'username': 'john_doe'}}
                   ]
-                  }]}
+                  },
+                 {'number': '2',
+                  'revision': '4d8984e92910c37b7d101c1ae8c8283a2e6f4a76',
+                  'ref': 'refs/changes/16/58516/1',
+                  'uploader': {
+                      'name': 'Bill Smith',
+                      'email': 'bill@smith.to',
+                      'username': 'bsmith'},
+                  'createdOn': timestamp + 1,
+                  'approvals': [
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '1', 'grantedOn': timestamp + 2,
+                       'by': {
+                           'name': 'Homer Simpson',
+                           'email': 'hsimpson@gmail.com',
+                           'username': 'homer'}},
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '-1', 'grantedOn': timestamp + 3,
+                       'by': {
+                           'name': 'Bart Simpson',
+                           'email': 'bsimpson@gmail.com',
+                           'username': 'bart'}},
+                      {'type': 'CRVW', 'description': 'Code Review',
+                       'value': '2', 'grantedOn': timestamp + 4,
+                       'by': {
+                           'name': 'John Doe',
+                           'email': 'john_doe@ibm.com',
+                           'username': 'john_doe'}}
+                  ]
+                  }
+             ]}
         ]))
         record_processor_inst.update()
 
         marks = list([r for r in runtime_storage_inst.get_all_records()
                       if r['record_type'] == 'mark'])
+
         homer_mark = next(itertools.ifilter(
             lambda x: x['date'] == (timestamp - 1), marks), None)
-        self.assertTrue(homer_mark['x'])  # disagreement
+        self.assertTrue(homer_mark.get('x'),
+                        msg='Disagreement: core set -2 after +2')
+
+        homer_mark = next(itertools.ifilter(
+            lambda x: x['date'] == (timestamp + 2), marks), None)
+        self.assertFalse(homer_mark.get('x'),
+                         msg='No disagreement: core set +2 after +1')
+
+        bart_mark = next(itertools.ifilter(
+            lambda x: x['date'] == (timestamp + 3), marks), None)
+        self.assertTrue(bart_mark.get('x'),
+                        msg='Disagreement: core set +2 after -1')
 
     def test_commit_merge_date(self):
         record_processor_inst = self.make_record_processor()
@@ -1260,7 +1303,7 @@ def generate_emails(author_name='John Doe', author_email='johndoe@gmail.com',
 def make_runtime_storage(users=None, companies=None, releases=None,
                          repos=None):
     runtime_storage_cache = {}
-    runtime_storage_record_keys = set([])
+    runtime_storage_record_keys = []
 
     def get_by_key(key):
         if key == 'companies':
@@ -1297,7 +1340,7 @@ def make_runtime_storage(users=None, companies=None, releases=None,
     def set_records(records_iterator):
         for record in records_iterator:
             runtime_storage_cache[record['primary_key']] = record
-            runtime_storage_record_keys.add(record['primary_key'])
+            runtime_storage_record_keys.append(record['primary_key'])
 
     def get_all_records():
         return [runtime_storage_cache[key]
