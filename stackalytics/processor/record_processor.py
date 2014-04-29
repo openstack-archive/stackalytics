@@ -322,6 +322,10 @@ class RecordProcessor(object):
         mark['review_id'] = review['id']
         mark['patch'] = int(patch['number'])
 
+        # map type from new Gerrit to old
+        mark['type'] = {'Approved': 'APRV', 'Code-Review': 'CRVW',
+                        'Verified': 'VRIF'}.get(mark['type'], mark['type'])
+
         self._update_record_and_user(mark)
         return mark
 
