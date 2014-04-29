@@ -28,6 +28,28 @@ from stackalytics.processor import utils
 LOG = logging.getLogger(__name__)
 
 
+RECORD_FIELDS_FOR_AGGREGATE = ['record_id', 'primary_key', 'record_type',
+                               'company_name', 'module', 'user_id', 'release',
+                               'date', 'week', 'author_name', 'loc', 'type',
+                               'x', 'value', 'status', 'blueprint_id']
+
+
+def compact_records(records):
+    for record in records:
+        compact = dict([(k, record[k]) for k in RECORD_FIELDS_FOR_AGGREGATE
+                        if k in record])
+        yield compact
+
+        if 'blueprint_id' in compact:
+            del compact['blueprint_id']
+
+
+def extend_record(record):
+    runtime_storage_inst = get_vault()['runtime_storage']
+    return runtime_storage_inst.get_by_key(
+        runtime_storage_inst._get_record_name(record['record_id']))
+
+
 def get_vault():
     vault = getattr(flask.current_app, 'stackalytics_vault', None)
     if not vault:
@@ -51,7 +73,7 @@ def get_vault():
         flask.request.stackalytics_updated = True
         memory_storage_inst = vault['memory_storage']
         have_updates = memory_storage_inst.update(
-            vault['runtime_storage'].get_update(os.getpid()))
+            compact_records(vault['runtime_storage'].get_update(os.getpid())))
 
         if have_updates:
             _init_releases(vault)

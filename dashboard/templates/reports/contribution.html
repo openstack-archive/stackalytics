@@ -33,7 +33,7 @@ Contribution into {{ module }} for the last {{ days }} days
                         'core_reviewers': 0,
                         'commits': 0,
                         'reviews': 0,
-                        'patch_count': 0,
+                        'patch': 0,
                         'emails': 0
                     };
 
@@ -57,11 +57,11 @@ Contribution into {{ module }} for the last {{ days }} days
                         if (tableData[i].mark > 0) {
                             summary.reviewers ++;
                         }
-                        tableData[i].review_ratio = tableData[i].review + " / " + tableData[i].patch_count;
+                        tableData[i].review_ratio = tableData[i].review + " / " + tableData[i].patch;
                         summary.marks += tableData[i].mark;
                         summary.commits += tableData[i].commit;
                         summary.reviews += tableData[i].review;
-                        summary.patch_count += tableData[i].patch_count;
+                        summary.patch += tableData[i].patch;
                         summary.emails += tableData[i].email;
                     }
 
@@ -111,7 +111,7 @@ Contribution into {{ module }} for the last {{ days }} days
 <div>Core team size: <b>${core_reviewers}</b> (${(core_marks / core_reviewers / {{ days }}).toFixed(1) } per core per day)</div>
 <h2>Contribution Summary</h2>
 <div>On review: <b>${reviews}</b> (${(reviews / {{ days }}).toFixed(1) } per day)</div>
-<div>Patch sets: <b>${patch_count}</b> (${(patch_count / {{ days }}).toFixed(1) } per day)</div>
+<div>Patch sets: <b>${patch}</b> (${(patch / {{ days }}).toFixed(1) } per day)</div>
 <div>Commits: <b>${commits}</b> (${(commits / {{ days }}).toFixed(1) } per day)</div>
 <div>Emails: <b>${emails}</b> (${(emails / {{ days }}).toFixed(1) } per day)</div>
 </script>

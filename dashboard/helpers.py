@@ -53,14 +53,14 @@ def _extend_record_common_fields(record):
 
 
 def _extend_by_parent_info(record, parent):
-    parent = parent.copy()
+    parent = vault.extend_record(parent)
     _extend_record_common_fields(parent)
     for k, v in six.iteritems(parent):
         record['parent_' + k] = v
 
 
 def extend_record(record):
-    record = record.copy()
+    record = vault.extend_record(record)
     _extend_record_common_fields(record)
 
     if record['record_type'] == 'commit':
@@ -120,6 +120,7 @@ def extend_user(user):
 
 def get_activity(records, start_record, page_size, query_message=None):
     if query_message:
+        records = [vault.extend_record(r) for r in records]
         records = [r for r in records
                    if (r.get('message') and
                        r.get('message').find(query_message) > 0)]

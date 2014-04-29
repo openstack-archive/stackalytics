@@ -144,7 +144,7 @@ def _generate_review():
         'branch': 'master',
         'launchpad_id': 'john_doe', 'lastUpdated': 1387865203,
         'author_name': 'John Doe', 'date': 1386547707,
-        'url': 'https://review.openstack.org/60721', 'patch_count': 2,
+        'url': 'https://review.openstack.org/60721',
         'sortKey': '0029f92e0000ed31', 'project': 'openstack/glance',
         'week': 2292, 'release': 'icehouse', 'updated_on': 1387865147
     }
