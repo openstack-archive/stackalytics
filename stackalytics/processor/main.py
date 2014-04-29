@@ -19,9 +19,11 @@ from oslo.config import cfg
 import psutil
 import six
 from six.moves.urllib import parse
+import time
 import yaml
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import bps
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
 from stackalytics.processor import lp
@@ -76,7 +78,8 @@ def _record_typer(record_iterator, record_type):
         yield record
 
 
-def process_repo(repo, runtime_storage_inst, record_processor_inst):
+def process_repo(repo, runtime_storage_inst, record_processor_inst,
+                 last_bug_date):
     uri = repo['uri']
     LOG.debug('Processing repo uri %s' % uri)
 
@@ -85,6 +88,13 @@ def process_repo(repo, runtime_storage_inst, record_processor_inst):
     processed_bp_iterator = record_processor_inst.process(
         bp_iterator_typed)
     runtime_storage_inst.set_records(processed_bp_iterator,
+                                     utils.merge_records)
+
+    bug_iterator = bps.log(repo, last_bug_date)
+    bug_iterator_typed = _record_typer(bug_iterator, 'bug')
+    processed_bug_iterator = record_processor_inst.process(
+        bug_iterator_typed)
+    runtime_storage_inst.set_records(processed_bug_iterator,
                                      utils.merge_records)
 
     vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
@@ -158,8 +168,12 @@ def update_members(runtime_storage_inst, record_processor_inst):
 def update_records(runtime_storage_inst, record_processor_inst):
     repos = utils.load_repos(runtime_storage_inst)
 
+    current_date = utils.timestamp_to_utc_date(int(time.time()))
+    last_bug_date = runtime_storage_inst.get_by_key('last_bug_date')
     for repo in repos:
-        process_repo(repo, runtime_storage_inst, record_processor_inst)
+        process_repo(repo, runtime_storage_inst, record_processor_inst,
+                     last_bug_date)
+    runtime_storage_inst.set_by_key('last_bug_date', current_date)
 
     mail_lists = runtime_storage_inst.get_by_key('mail_lists') or []
     for mail_list in mail_lists:

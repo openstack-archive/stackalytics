@@ -310,6 +310,8 @@ def aggregate_filter():
                 'emails': (incremental_filter, None),
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),
+                'filed-bugs': (incremental_filter, None),
+                'resolved-bugs': (incremental_filter, None),
                 'members': (incremental_filter, None),
                 'person-day': (person_day_filter, None),
             }

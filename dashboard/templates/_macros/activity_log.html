@@ -145,6 +145,10 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             {%if mention_count %}
             <div><b>Mention count: ${mention_count}, last mention on ${mention_date_str}</b></div>
             {%/if%}
+        {%elif ((record_type == "bugf") || (record_type == "bugr")) %}
+            <div class="header">&ldquo;${title}&rdquo;</div>
+            <div>Status: <span class="status${status}">${status}</span></div>
+            <div>Importance: ${importance}</div>
         {%/if%}
     </div>
     </div>
