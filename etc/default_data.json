@@ -7110,7 +7110,13 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "65683ea"
                 }
+
             ],
             "uri": "git://github.com/openstack/compute-api.git",
             "module": "compute-api",
@@ -7127,6 +7133,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "d000b31"
                 }
             ],
             "uri": "git://github.com/openstack/identity-api.git",
@@ -7144,7 +7155,13 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "e1060a0"
                 }
+
             ],
             "uri": "git://github.com/openstack/image-api.git",
             "module": "image-api",
@@ -7161,7 +7178,13 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "9accded"
                 }
+
             ],
             "uri": "git://github.com/openstack/netconn-api.git",
             "module": "netconn-api",
@@ -7178,7 +7201,13 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "f82c4e1"
                 }
+
             ],
             "uri": "git://github.com/openstack/object-api.git",
             "module": "object-api",
@@ -7195,6 +7224,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "1e25f30"
                 }
             ],
             "uri": "git://github.com/openstack/volume-api.git",
@@ -7275,6 +7309,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "b951d9651"
                 }
             ],
             "uri": "git://github.com/openstack/api-site.git",
