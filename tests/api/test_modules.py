@@ -26,9 +26,15 @@ class TestAPIModules(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/nova.git'},
                            {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': {'nova-group': {
-                     'module_group_name': 'nova-group',
-                     'modules': ['nova', 'nova-cli']}},
+                 'module_groups': {
+                     'nova-group': {'id': 'nova-group',
+                                    'module_group_name': 'nova-group',
+                                    'modules': ['nova', 'nova-cli'],
+                                    'tag': 'group'},
+                     'nova': test_api.make_module('nova'),
+                     'nova-cli': test_api.make_module('nova-cli'),
+                     'glance': test_api.make_module('glance'),
+                 },
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance', 'nova-cli']},
@@ -73,9 +79,14 @@ class TestAPIModules(test_api.TestAPI):
         with test_api.make_runtime_storage(
                 {'repos': [{'module': 'nova', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/nova.git'}],
-                 'module_groups': {'nova-group': {
-                     'module_group_name': 'nova-group',
-                     'modules': ['nova', 'python-novaclient']}}},
+                 'module_groups': {
+                     'nova-group': {'id': 'nova-group',
+                                    'module_group_name': 'nova-group',
+                                    'modules': ['nova', 'nova-cli'],
+                                    'tag': 'group'},
+                     'nova': test_api.make_module('nova'),
+                     'nova-cli': test_api.make_module('nova-cli'),
+                 }},
                 test_api.make_records(record_type=['commit'])):
 
             response = self.app.get('/api/1.0/modules/nova')

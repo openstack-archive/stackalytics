@@ -3,7 +3,7 @@ Image Service:
   ptl: Mark Washenberger (markwash)
   url: https://wiki.openstack.org/wiki/Glance
   projects:
-    integrated:
-    - openstack/glance
-    other:
-    - openstack/python-glanceclient
+    - repo: openstack/glance
+      integrated-since: havana
+      incubated-since: grizzly
+    - repo: openstack/python-glanceclient

@@ -66,6 +66,13 @@ def make_records(**kwargs):
     return generate_records
 
 
+def make_module(module_name):
+    return {'id': module_name,
+            'module_group_name': module_name,
+            'modules': [module_name],
+            'tag': 'module'}
+
+
 class TestStorage(runtime_storage.RuntimeStorage):
 
     def __init__(self, data):

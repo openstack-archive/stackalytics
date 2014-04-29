@@ -138,7 +138,8 @@ def _store_companies(runtime_storage_inst, companies):
 def _store_module_groups(runtime_storage_inst, module_groups):
     stored_mg = runtime_storage_inst.get_by_key('module_groups') or {}
     for mg in module_groups:
-        stored_mg[mg['module_group_name']] = mg
+        mg['id'] = mg['module_group_name']
+        stored_mg[mg['id']] = mg
     runtime_storage_inst.set_by_key('module_groups', stored_mg)
 
 

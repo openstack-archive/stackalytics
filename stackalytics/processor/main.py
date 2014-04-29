@@ -194,42 +194,86 @@ def _make_module_group(group_id, name, modules, tag=None):
     return module_group
 
 
-def _read_module_groups(program_list_uri):
+def _read_official_programs_yaml(program_list_uri, release_names):
     LOG.debug('Process list of programs from uri: %s', program_list_uri)
     content = yaml.safe_load(utils.read_uri(program_list_uri))
-    module_groups = []
-    modules_by_types = collections.defaultdict(list)
+    module_groups = collections.defaultdict(
+        lambda: {'modules': [], 'releases': collections.defaultdict(list)})
+
+    official_integrated = module_groups['official-integrated']
+    official_integrated['tag'] = 'project_type'
+    official_integrated['module_group_name'] = 'official-integrated'
+    official_incubated = module_groups['official-incubated']
+    official_incubated['tag'] = 'project_type'
+    official_incubated['module_group_name'] = 'official-incubated'
+    official_other = module_groups['official-other']
+    official_other['tag'] = 'project_type'
+    official_other['module_group_name'] = 'official-other'
+
     for name, info in six.iteritems(content):
+        # for one program
         group_id = name.lower()
         if 'codename' in info:
             name = '%s (%s)' % (info['codename'], name)
             group_id = '%s-group' % info['codename'].lower()
 
-        all_modules = []
-        for project_type, project_list in six.iteritems(info['projects']):
-            module_list = [s.split('/')[1] for s in project_list]
-            modules_by_types[project_type] += module_list
-            all_modules += module_list
+        module_groups[group_id]['module_group_name'] = name
+        module_groups[group_id]['tag'] = 'program'
 
-        module_groups.append(_make_module_group(
-            group_id, name, all_modules, 'program'))
+        for module in info['projects']:
+            module_name = module['repo'].split('/')[1]
 
-    all_modules = []
-    for project_type, modules_list in six.iteritems(modules_by_types):
-        all_modules += modules_list
-        module_groups.append(
-            _make_module_group(
-                'official-%s' % project_type, project_type.capitalize(),
-                modules_list, 'project_type'))
-    module_groups.append(_make_module_group(
-        'official-all', 'OpenStack', all_modules, 'project_type'))
+            module_groups[group_id]['modules'].append(module_name)
+
+            if ('integrated-since' in module) or ('incubated-since' in module):
+                project_type = 'official-other'
+                for release_name in release_names:
+                    if release_name == module.get('incubated-since'):
+                        project_type = 'official-incubated'
+                    elif release_name == module.get('integrated-since'):
+                        project_type = 'official-integrated'
+
+                    module_groups[project_type]['releases'][
+                        release_name].append(module_name)
+            else:
+                module_groups['official-other']['modules'].append(module_name)
+
+    # set ids for module groups
+    for group_id, group in six.iteritems(module_groups):
+        group['id'] = group_id
+
     return module_groups
 
 
 def process_program_list(runtime_storage_inst, program_list_uri):
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
-    for mg in _read_module_groups(program_list_uri):
-        module_groups[mg['module_group_name']] = mg
+    release_names = [r['release_name'].lower()
+                     for r in runtime_storage_inst.get_by_key('releases')[1:]]
+
+    official_module_groups = _read_official_programs_yaml(
+        program_list_uri, release_names)
+    LOG.debug('Update module groups with official: %s', official_module_groups)
+    module_groups.update(official_module_groups)
+
+    # register modules as module groups
+    repos = runtime_storage_inst.get_by_key('repos') or []
+    for repo in repos:
+        module = repo['module']
+        module_groups[module] = {
+            'id': module,
+            'module_group_name': module,
+            'modules': [module],
+            'tag': 'module'
+        }
+
+    # register module 'unknown' - used for emails not mapped to any module
+    module_groups['unknown'] = {
+        'id': 'unknown',
+        'module_group_name': 'unknown',
+        'modules': ['unknown'],
+        'tag': 'module'
+    }
+
     runtime_storage_inst.set_by_key('module_groups', module_groups)
 
 

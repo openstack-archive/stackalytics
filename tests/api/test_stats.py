@@ -26,9 +26,14 @@ class TestAPIStats(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/nova.git'},
                            {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': {'openstack': {
-                     'module_group_name': 'openstack',
-                     'modules': ['nova', 'glance']}},
+                 'module_groups': {
+                     'openstack': {'id': 'openstack',
+                                   'module_group_name': 'openstack',
+                                   'modules': ['nova', 'glance'],
+                                   'tag': 'group'},
+                     'nova': test_api.make_module('nova'),
+                     'glance': test_api.make_module('glance'),
+                 },
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}]},
@@ -55,9 +60,14 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': {'openstack': {
-                     'module_group_name': 'openstack',
-                     'modules': ['nova', 'glance']}},
+                 'module_groups': {
+                     'openstack': {'id': 'openstack',
+                                   'module_group_name': 'openstack',
+                                   'modules': ['nova', 'glance'],
+                                   'tag': 'group'},
+                     'nova': test_api.make_module('nova'),
+                     'glance': test_api.make_module('glance'),
+                 },
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}],
@@ -98,9 +108,14 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
-                 'module_groups': {'openstack': {
-                     'module_group_name': 'openstack',
-                     'modules': ['nova', 'glance']}},
+                 'module_groups': {
+                     'openstack': {'id': 'openstack',
+                                   'module_group_name': 'openstack',
+                                   'modules': ['nova', 'glance'],
+                                   'tag': 'group'},
+                     'nova': test_api.make_module('nova'),
+                     'glance': test_api.make_module('glance'),
+                 },
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance']}],
