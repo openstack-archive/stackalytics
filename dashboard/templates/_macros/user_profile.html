@@ -1,0 +1,47 @@
+{% macro show_user_profile(user_id) -%}
+
+<script type="text/javascript">
+    function load_user_profile(extra_options) {
+        $.ajax({
+            url: make_uri("/api/1.0/users/{{ user_id }}", extra_options),
+            dataType: "json",
+            success: function (data) {
+                $("#user_profile_template").tmpl(data["user"]).appendTo("#user_profile_container");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        var uri_options = {};
+        load_user_profile(uri_options);
+    });
+</script>
+
+<script id="user_profile_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div>
+        <div style="float: left;"><img src="${gravatar}"></div>
+        <div style="margin-left: 90px;">
+            <h2>${user_name}</h2>
+            <div>Company: {%html company_link %}
+                    [<span style="font-style: italic;"><a
+                        href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change↗</a></span>]
+            </div>
+            {%if launchpad_id != '' %}
+                <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}">${launchpad_id}</a></div>
+            {%/if%}
+            {%if core != '' %}
+                <div>Core in:
+                    {%each( index, value ) core %}
+                        ${value[0]} (<small>${value[1]}</small>)
+                    {%/each%}
+                </div>
+            {%/if%}
+        </div>
+    </div>
+    {% endraw %}
+</script>
+
+<div id="user_profile_container" style="margin-bottom: 2em;"></div>
+
+{%- endmacro %}

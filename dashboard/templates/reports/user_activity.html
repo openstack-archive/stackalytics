@@ -1,6 +1,7 @@
 {% extends "reports/base_report.html" %}
 {% import '_macros/activity_log.html' as activity_log %}
 {% import '_macros/contribution_summary.html' as contribution_summary %}
+{% import '_macros/user_profile.html' as user_profile %}
 
 {% block title %}
 {{ user.user_name }} activity in OpenStack
@@ -17,20 +18,7 @@
 {% block content %}
 <h1>{{ user.user_name }} activity report</h1>
 
-<h2>Profile</h2>
-<ul>
-    {% if user.launchpad_id %}
-    <li>Launchpad: {{ user.launchpad_id }}</li>
-    {% endif %}
-    {% if user.core %}
-    <li>Core in:
-        {% for item in user.core %}
-        {{ item[0] }} ({{ item[1] }})
-        {% endfor %}
-    </li>
-    {% endif %}
-</ul>
-
+{{ user_profile.show_user_profile(user_id=user.user_id) }}
 {{ contribution_summary.show_contribution_summary(user_id=user.user_id) }}
 
 <div id="punch_card" style="width: 100%; height: 350px;"></div>
