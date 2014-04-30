@@ -322,10 +322,6 @@ class RecordProcessor(object):
         mark['review_id'] = review['id']
         mark['patch'] = int(patch['number'])
 
-        # map type from new Gerrit to old
-        mark['type'] = {'Approved': 'APRV', 'Code-Review': 'CRVW',
-                        'Verified': 'VRIF'}.get(mark['type'], mark['type'])
-
         self._update_record_and_user(mark)
         return mark
 
@@ -353,7 +349,7 @@ class RecordProcessor(object):
                 continue  # not reviewed by anyone
 
             for approval in patch['approvals']:
-                if approval['type'] not in ('CRVW', 'APRV'):
+                if approval['type'] not in ('Code-Review', 'Approved'):
                     continue  # keep only Code-Review and Approved
                 if ('email' not in approval['by'] or
                         'username' not in approval['by']):
@@ -681,7 +677,8 @@ class RecordProcessor(object):
             lambda: {'patch_number': 0, 'marks': []})
 
         for record in self.runtime_storage_inst.get_all_records():
-            if record['record_type'] == 'mark' and record['type'] == 'CRVW':
+            if ((record['record_type'] == 'mark') and
+                    (record['type'] == 'Code-Review')):
                 review_id = record['review_id']
                 patch_number = record['patch']
 

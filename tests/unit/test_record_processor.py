@@ -648,7 +648,7 @@ class TestRecordProcessor(testtools.TestCase):
                                'username': 'bsmith'},
                   'createdOn': 1385470730,
                   'approvals': [
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '1', 'grantedOn': 1385478464,
                        'by': {'name': 'John Doe', 'email': 'john_doe@ibm.com',
                               'username': 'john_doe'}}]}]}
@@ -753,13 +753,13 @@ class TestRecordProcessor(testtools.TestCase):
                       'username': 'bsmith'},
                   'createdOn': timestamp,
                   'approvals': [
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '2', 'grantedOn': timestamp,
                        'by': {
                            'name': 'John Doe',
                            'email': 'john_doe@ibm.com',
                            'username': 'john_doe'}},
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '-1', 'grantedOn': timestamp - 1,  # differ
                        'by': {
                            'name': 'Homer Simpson',
@@ -936,13 +936,13 @@ class TestRecordProcessor(testtools.TestCase):
                       'username': 'bsmith'},
                   'createdOn': timestamp,
                   'approvals': [
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '2', 'grantedOn': timestamp - 1,
                        'by': {
                            'name': 'Homer Simpson',
                            'email': 'hsimpson@gmail.com',
                            'username': 'homer'}},
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '-2', 'grantedOn': timestamp,
                        'by': {
                            'name': 'John Doe',
@@ -959,19 +959,19 @@ class TestRecordProcessor(testtools.TestCase):
                       'username': 'bsmith'},
                   'createdOn': timestamp + 1,
                   'approvals': [
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '1', 'grantedOn': timestamp + 2,
                        'by': {
                            'name': 'Homer Simpson',
                            'email': 'hsimpson@gmail.com',
                            'username': 'homer'}},
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '-1', 'grantedOn': timestamp + 3,
                        'by': {
                            'name': 'Bart Simpson',
                            'email': 'bsimpson@gmail.com',
                            'username': 'bart'}},
-                      {'type': 'CRVW', 'description': 'Code Review',
+                      {'type': 'Code-Review', 'description': 'Code Review',
                        'value': '2', 'grantedOn': timestamp + 4,
                        'by': {
                            'name': 'John Doe',
