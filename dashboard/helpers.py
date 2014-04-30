@@ -151,7 +151,7 @@ def get_contribution_summary(records):
             commit_count += 1
             loc += record['loc']
         elif record['record_type'] == 'mark':
-            if record['type'] == 'APRV':
+            if record['type'] == 'Approved':
                 marks['A'] += 1
             else:
                 marks[record['value']] += 1
