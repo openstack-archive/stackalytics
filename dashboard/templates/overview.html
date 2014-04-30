@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% import '_macros/activity_log.html' as activity_log %}
+{% import '_macros/contribution_summary.html' as contribution_summary %}
 
 {% set show_company_breakdown = (not company) and (not user_id) %}
 {% set show_engineer_breakdown = (not user_id) %}
@@ -10,10 +11,23 @@
 {% set show_activity = (show_user_activity) or (show_module_activity) %}
 {% set show_user_contribution = (user_id) or (company) %}
 {% set show_module_contribution = (module) and (not user_id) %}
-{% set show_contribution = (show_user_contribution) or (show_module_contribution) %}
 {% set show_user_profile = (user_id) %}
 {% set show_top_mentors_options = (metric == 'tm_marks') %}
 {% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
+
+{% macro show_report_links(module=None, company=None, user_id=None) -%}
+    {% if module %}
+        <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
+        <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module }}↗</a></b></div>
+        <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module }}↗</a></b></div>
+    {% endif %}
+    {% if company %}
+        <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}↗</a></b></div>
+    {% endif %}
+    {% if user_id %}
+        <div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_id }}↗</a></b></div>
+    {% endif %}
+{%- endmacro %}
 
 {% block scripts %}
 <script type="text/javascript">
@@ -51,17 +65,6 @@
         });
     {% endif %}
 
-    {% if show_contribution %}
-        $(document).ready(function () {
-            $.ajax({
-                url: make_uri("/api/1.0/contribution"),
-                dataType: "json",
-                success: function (data) {
-                    $("#contribution_template").tmpl(data["contribution"]).appendTo("#contribution_container");
-                }
-            });
-        });
-    {% endif %}
 </script>
 
 {# Templates #}
@@ -81,29 +84,6 @@
         </div>
     </div>
     {% endraw %}
-</script>
-
-<script id="contribution_template" type="text/x-jquery-tmpl">
-    {% raw %}
-<h2>Contribution Summary</h2>
-<div>Total commits: <b>${commit_count}</b></div>
-<div>Total LOC: <b>${loc}</b></div>
-<div>Review stat (-2, -1, +1, +2, A): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}, ${marks["A"]}</b></div>
-    {% endraw %}
-<div>Draft Blueprints: <b>${drafted_blueprint_count}</b></div>
-<div>Completed Blueprints: <b>${completed_blueprint_count}</b></div>
-<div>Emails: <b>${email_count}</b></div>
-{% if module %}
-<div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
-<div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module }}↗</a></b></div>
-<div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module }}↗</a></b></div>
-{% endif %}
-{% if company %}
-<div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}↗</a></b></div>
-{% endif %}
-{% if user_id %}
-<div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_id }}↗</a></b></div>
-{% endif %}
 </script>
 
 {% endblock %}
@@ -202,7 +182,8 @@
     {% endif %}
 
     {% if show_module_contribution %}
-        <div id="contribution_container"></div>
+        {{ contribution_summary.show_contribution_summary(show_all=False) }}
+        {{ show_report_links(module, company, user_id) }}
     {% endif %}
 
 {% endblock %}
@@ -258,7 +239,8 @@
     {% endif %}
 
     {% if show_user_contribution %}
-        <div id="contribution_container"></div>
+        {{ contribution_summary.show_contribution_summary(show_all=False) }}
+        {{ show_report_links(module, company, user_id) }}
     {% endif %}
 
     {% if show_module_activity %}

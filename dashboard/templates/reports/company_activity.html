@@ -1,5 +1,6 @@
 {% extends "reports/base_report.html" %}
 {% import '_macros/activity_log.html' as activity_log %}
+{% import '_macros/contribution_summary.html' as contribution_summary %}
 
 {% block title %}
 {{ company_name }} activity in OpenStack
@@ -16,7 +17,7 @@
 {% block content %}
 <h1>{{ company_name }} activity report</h1>
 
-{{ show_contribution_summary(contribution) }}
+{{ contribution_summary.show_contribution_summary(company=company_name) }}
 
 <div id="punch_card" style="width: 100%; height: 350px;"></div>
 

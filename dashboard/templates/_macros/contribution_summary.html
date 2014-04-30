@@ -1,0 +1,44 @@
+{% macro show_contribution_summary(user_id=None, company=None, show_all=True) -%}
+
+<script type="text/javascript">
+    function load_contribution_summary(extra_options) {
+        $.ajax({
+            url: make_uri("/api/1.0/contribution", extra_options),
+            dataType: "json",
+            success: function (data) {
+                $("#contribution_template").tmpl(data["contribution"]).appendTo("#contribution_container");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        var uri_options = {};
+        {% if show_all %}
+            uri_options = {project_type: "all", release: "all", metric: "all"};
+        {% endif %}
+        {% if user_id %}
+            uri_options["user_id"] = "{{ user_id }}";
+        {% endif %}
+        {% if company %}
+            uri_options["company"] = "{{ company|safe }}";
+        {% endif %}
+
+        load_contribution_summary(uri_options);
+    });
+</script>
+
+<script id="contribution_template" type="text/x-jquery-tmpl">
+{% raw %}
+<div>Total commits: <b>${commit_count}</b></div>
+<div>Total LOC: <b>${loc}</b></div>
+<div>Review stat (-2, -1, +1, +2, A): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}, ${marks["A"]}</b></div>
+<div>Draft Blueprints: <b>${drafted_blueprint_count}</b></div>
+<div>Completed Blueprints: <b>${completed_blueprint_count}</b></div>
+<div>Emails: <b>${email_count}</b></div>
+{% endraw %}
+</script>
+
+    <h2>Contribution Summary</h2>
+    <div id="contribution_container"></div>
+
+{%- endmacro %}

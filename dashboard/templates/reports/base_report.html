@@ -40,21 +40,6 @@
     {% block scripts %}{% endblock %}
 {% endblock %}
 
-{% macro show_contribution_summary(contribution) -%}
-
-    <h2>Contribution summary</h2>
-    <ul>
-        <li>Total commits: {{ contribution.commit_count }}</li>
-        <li>Total LOC: {{ contribution.loc }}</li>
-        <li>Review stat (-2, -1, +1, +2): {{ contribution.marks[-2] }}, {{ contribution.marks[-1] }},
-            {{ contribution.marks[1] }}, {{ contribution.marks[2] }}</li>
-        <li>Draft Blueprints: {{ contribution.drafted_blueprint_count }}</li>
-        <li>Completed Blueprints: {{ contribution.completed_blueprint_count }}</li>
-        <li>Emails: {{ contribution.email_count }}</li>
-    </ul>
-
-{%- endmacro %}
-
 {% block body %}
 
 <div style="margin: 2em;">
