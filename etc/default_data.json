@@ -2363,6 +2363,17 @@
             "emails": ["jprovazn@redhat.com", "jan.provaznik@gmail.com"]
         },
         {
+            "launchpad_id": "jasmeet-sidhu",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jasmeet sidhu",
+            "emails": ["jasmeet_sidhu@symantec.com", "sidhuj@gmail.com"]
+        },
+        {
             "launchpad_id": "jason-koelker",
             "companies": [
                 {
