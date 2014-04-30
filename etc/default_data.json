@@ -6084,6 +6084,10 @@
             "domains": ["locaweb.com.br"],
             "company_name": "Locaweb"
         },
+        {    
+            "domains": ["lsd.ufcg.edu.br"],
+            "company_name": "Universidade Federal de Campina Grande"
+        },
         {
             "domains": ["maginatics.com"],
             "company_name": "Maginatics",
