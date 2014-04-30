@@ -5747,7 +5747,7 @@
         {
             "domains": ["cisco.com"],
             "company_name": "Cisco Systems",
-            "aliases": ["Cisco System", "Cisco Systems", "Cisco Systems Inc.", "Cisco Systems, Inc.", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc."]
+            "aliases": ["Cisco System", "Cisco Systems", "Cisco Systems Inc.", "Cisco Systems, Inc.", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.", "Cisco", "Cisco Inc"]
         },
         {
             "domains": ["citrix.com"],
@@ -5987,7 +5987,7 @@
         {
             "domains": ["intel.com"],
             "company_name": "Intel",
-            "aliases": ["Intel Corp.", "Intel Corporation", "Intel Media", "Intel OTC"]
+            "aliases": ["Intel Corp.", "Intel Corporation", "Intel Media", "Intel OTC", "Intern at intel"]
         },
         {
             "domains": ["interhost.no"],
@@ -6348,7 +6348,8 @@
         },
         {
             "domains": ["suse.cz", "suse.de", "suse.com"],
-            "company_name": "SUSE"
+            "company_name": "SUSE",
+            "aliases": ["SUSE Linux Products GmbH"]
         },
         {
             "domains": ["swiftstack.com"],

@@ -60,6 +60,49 @@
         });
     }
 
+    function show_new_companies_table(options) {
+        var table_column_names = ["index", "link", "date"];
+        var table_id = "new_companies_table";
+
+        $.ajax({
+            url: make_uri("/api/1.0/new_companies", options),
+            dataType: "json",
+            success: function (data) {
+                var tableData = data["stats"];
+
+                var tableColumns = [];
+                var sort_by_column = 2;
+                for (var i = 0; i < table_column_names.length; i++) {
+                    tableColumns.push({"mData": table_column_names[i]});
+                }
+
+                for (i = 0; i < tableData.length; i++) {
+                    var company_link = make_uri('/report/members', {company:tableData[i].name});
+                    tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
+                    tableData[i].date = tableData[i].date_str;
+                }
+
+                if (table_id) {
+                    $("#" + table_id).dataTable({
+                        "aaSorting": [
+                            [ sort_by_column, "desc" ]
+                        ],
+                        "bFilter": true,
+                        "bInfo": true,
+                        "bAutoWidth": false,
+                        "aaData": tableData,
+                        "aoColumns": tableColumns,
+                        "bDestroy": true,
+                        'bPaginate': true,
+                        "sPaginationType": "full_numbers",
+                        "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "iDisplayLength": 10
+                    });
+                }
+            }
+        });
+    }
+
     function show_companies_table(options) {
         var table_column_names = ["index", "link", "count"];
         var table_id = "companies_table";
@@ -76,14 +119,8 @@
                     tableColumns.push({"mData": table_column_names[i]});
                 }
 
-                var wasIndependent = 0;
-
                 for (i = 0; i < tableData.length; i++) {
-                    if (tableData[i].name == '*independent')
-                        wasIndependent = 1;
-                    else
-                        tableData[i].index = i + 1 - wasIndependent;
-                    var company_link = make_uri('/report/registrants', {company:tableData[i].name});
+                    var company_link = make_uri('/report/members', {company:tableData[i].name});
                     tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
                     tableData[i].count = tableData[i].metric;
                 }
@@ -184,9 +221,12 @@
 
         {% if company == '' %}
             show_companies_table(base_options);
+            show_new_companies_table(base_options);
             renderChart("/api/1.0/stats/companies", "members_container", "members_chart", base_options);
         {% else %}
             $('#companies_block').hide();
+            $('#new_companies_table_header').hide();
+            $('#new_companies_table').hide();
         {% endif %}
     }
 
@@ -320,9 +360,9 @@
         </tr>
     </table>
 
-    <table style="width: 50%" cellspacing="0">
+    <table style="width: 100%" cellspacing="0">
         <tr>
-            <td style="width: 100%; vertical-align: top; padding-right: 3em;">
+            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
                 <h2>Individual Members</h2>
 
                 <div class="body" style="margin-right: 1em;">
@@ -333,6 +373,26 @@
                             <th>Engineer</th>
                             <th>Date Joined</th>
                             <th>Company</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
+                <div id="new_companies_table_header">
+                    <h2>New Companies</h2>
+                </div>
+
+                <div class="body" style="margin-right: 1em;">
+
+                    <table id="new_companies_table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Company</th>
+                            <th>First Member Joined</th>
                         </tr>
                         </thead>
                         <tbody>
