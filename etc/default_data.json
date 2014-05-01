@@ -1370,12 +1370,20 @@
             "launchpad_id": "dguitarbite",
             "companies": [
                 {
+                    "company_name": "*independent",
+                    "end_date": "2013-Jun-15"
+                },
+                {
                     "company_name": "Aptira",
+                    "end_date": "2014-Apr-15"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Pranav Salunke",
-            "emails": ["pranav@aptira.com", "pps.pranav@gmail.com", "dguitarbite@gmail.com"]
+            "emails": ["pranav@aptira.com","pps.pranav@gmail.com", "dguitarbite@gmail.com"]
         },
         {
             "launchpad_id": "dims-v",
