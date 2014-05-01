@@ -250,8 +250,8 @@ def get_single_plus_two_reviews_report(records):
         if record['record_type'] != 'mark':
             continue
 
-        if ((record['branch'] == 'master') and
-                (record['type'] == 'Code-Review') and (record['value'] == +2)):
+        if (record['branch'] == 'master' and record['type'] == 'CRVW' and
+                record['value'] == +2):
             review_id = record['review_id']
             review = memory_storage_inst.get_record_by_primary_key(review_id)
             if review and review['status'] == 'MERGED':

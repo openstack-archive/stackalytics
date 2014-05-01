@@ -138,7 +138,7 @@ class TestAPIStats(test_api.TestAPI):
                                       review_id=['0123456789', '9876543210'],
                                       module=['glance'],
                                       value=[1],
-                                      type=['Code-Review'],
+                                      type=['CRVW'],
                                       author_name=['John Doe'],
                                       user_id=['john_doe']),
                 test_api.make_records(record_type=['mark'],

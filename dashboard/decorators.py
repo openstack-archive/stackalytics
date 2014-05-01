@@ -165,7 +165,7 @@ def loc_filter(result, record, param_id):
 
 def mark_filter(result, record, param_id):
     result_by_param = result[record[param_id]]
-    if record['type'] == 'Approved':
+    if record['type'] == 'APRV':
         value = 'A'
     else:
         value = record['value']
