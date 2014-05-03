@@ -172,7 +172,7 @@ def mark_filter(result, record, param_id):
         result_by_param['metric'] += 1
     result_by_param[value] = result_by_param.get(value, 0) + 1
 
-    if record.get('x'):
+    if record.get('disagreement'):
         result_by_param['disagreements'] = (
             result_by_param.get('disagreements', 0) + 1)
 

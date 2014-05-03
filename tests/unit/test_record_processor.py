@@ -988,17 +988,17 @@ class TestRecordProcessor(testtools.TestCase):
 
         homer_mark = next(itertools.ifilter(
             lambda x: x['date'] == (timestamp - 1), marks), None)
-        self.assertTrue(homer_mark.get('x'),
+        self.assertTrue(homer_mark.get('disagreement'),
                         msg='Disagreement: core set -2 after +2')
 
         homer_mark = next(itertools.ifilter(
             lambda x: x['date'] == (timestamp + 2), marks), None)
-        self.assertFalse(homer_mark.get('x'),
+        self.assertFalse(homer_mark.get('disagreement'),
                          msg='No disagreement: core set +2 after +1')
 
         bart_mark = next(itertools.ifilter(
             lambda x: x['date'] == (timestamp + 3), marks), None)
-        self.assertTrue(bart_mark.get('x'),
+        self.assertTrue(bart_mark.get('disagreement'),
                         msg='Disagreement: core set +2 after -1')
 
     def test_commit_merge_date(self):

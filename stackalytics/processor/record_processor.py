@@ -664,8 +664,8 @@ class RecordProcessor(object):
             disagreement = ((core_mark != 0) and
                             ((core_mark < 0 < mark['value']) or
                              (core_mark > 0 > mark['value'])))
-            old_disagreement = mark.get('x')
-            mark['x'] = disagreement
+            old_disagreement = mark.get('disagreement', False)
+            mark['disagreement'] = disagreement
             if old_disagreement != disagreement:
                 yield mark
 
