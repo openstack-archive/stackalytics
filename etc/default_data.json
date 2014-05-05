@@ -5263,6 +5263,18 @@
             "emails": ["vmtrooper@gmail.com", "trevor.robertsjr@vce.com"]
         },
         {
+            "launchpad_id": "vnaboychenko",
+            "gerrit_id": "vnaboichenko",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vlad Naboichenko",
+            "emails": ["vnaboichenko@mirantis.com", "spitekh@gmail.com"]
+        },
+        {
             "launchpad_id": "vsharshov",
             "user_name": "Vladimir Sharshov",
             "companies": [
