@@ -2182,6 +2182,7 @@
         },
         {
            "launchpad_id": "idegtiarov",
+           "gerrit_id": "tovstun",
            "companies": [
                {
                    "company_name": "Mirantis",
