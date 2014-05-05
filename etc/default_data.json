@@ -276,6 +276,17 @@
             "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith.kumar@gmail.com"]
         },
         {
+            "launchpad_id": "anastasia-martynova",
+            "companies": [
+                {
+                "company_name": "Symantec",
+                "end_date": null
+                }
+            ],
+            "user_name": "Anastasia Martynova",
+            "emails": ["anastasia_martynova@symantec.com"]
+        },
+        {
             "launchpad_id": "andersonvom",
             "companies": [
                 {
