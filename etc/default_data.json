@@ -7298,6 +7298,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "7dcdb23"
                 }
             ],
             "uri": "git://github.com/openstack/openstack-manuals.git",
@@ -7332,6 +7337,11 @@
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "1883cbb"
                 }
             ],
             "uri": "git://github.com/openstack/operations-guide.git",
