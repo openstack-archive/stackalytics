@@ -141,7 +141,7 @@ def unwrap_text(text):
 
 def format_text(s):
     s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
-    s = re.sub(r'([/\/\*=]{1,2}|--|\+\+)', r'\1&#8203;', s)
+    s = re.sub(r'([/\/\*=~]{1,2}|--|\+\+)', r'\1&#8203;', s)
     return s
 
 
