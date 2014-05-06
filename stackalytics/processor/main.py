@@ -187,13 +187,6 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 
-def _make_module_group(group_id, name, modules, tag=None):
-    module_group = {'id': group_id, 'module_group_name': name,
-                    'modules': modules, 'tag': tag}
-    LOG.debug('New module group: %s', module_group)
-    return module_group
-
-
 def _read_official_programs_yaml(program_list_uri, release_names):
     LOG.debug('Process list of programs from uri: %s', program_list_uri)
     content = yaml.safe_load(utils.read_uri(program_list_uri))
@@ -259,20 +252,10 @@ def process_program_list(runtime_storage_inst, program_list_uri):
     repos = runtime_storage_inst.get_by_key('repos') or []
     for repo in repos:
         module = repo['module']
-        module_groups[module] = {
-            'id': module,
-            'module_group_name': module,
-            'modules': [module],
-            'tag': 'module'
-        }
+        module_groups[module] = utils.make_module_group(module, tag='module')
 
     # register module 'unknown' - used for emails not mapped to any module
-    module_groups['unknown'] = {
-        'id': 'unknown',
-        'module_group_name': 'unknown',
-        'modules': ['unknown'],
-        'tag': 'module'
-    }
+    module_groups['unknown'] = utils.make_module_group('unknown', tag='module')
 
     runtime_storage_inst.set_by_key('module_groups', module_groups)
 

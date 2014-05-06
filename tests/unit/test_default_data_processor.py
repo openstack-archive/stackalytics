@@ -81,9 +81,11 @@ class TestDefaultDataProcessor(testtools.TestCase):
             self.assertIn('tux', set([r['module'] for r in dd['repos']]))
 
             self.assertEqual(2, len(dd['module_groups']))
-            self.assertIn({'module_group_name': 'OpenStack',
+            self.assertIn({'id': 'openstack',
+                           'module_group_name': 'OpenStack',
                            'modules': ['qa', 'nova'],
                            'tag': 'organization'}, dd['module_groups'])
-            self.assertIn({'module_group_name': 'stackforge',
+            self.assertIn({'id': 'stackforge',
+                           'module_group_name': 'stackforge',
                            'modules': ['tux'],
                            'tag': 'organization'}, dd['module_groups'])

@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import collections
 import hashlib
 import json
 
@@ -74,14 +75,10 @@ def _retrieve_project_list_from_github(project_sources):
     return repos
 
 
-def _create_module_groups(project_sources, repos):
-    organizations = {}
+def _create_module_groups_for_project_sources(project_sources, repos):
+    organizations = collections.defaultdict(list)
     for repo in repos:
-        ogn = repo['organization']
-        if ogn in organizations:
-            organizations[ogn].append(repo['module'])
-        else:
-            organizations[ogn] = [repo['module']]
+        organizations[repo['organization']].append(repo['module'])
 
     ps_organizations = dict([(ps.get('organization'),
                               ps.get('module_group_name') or
@@ -90,12 +87,9 @@ def _create_module_groups(project_sources, repos):
 
     module_groups = []
     for ogn, modules in six.iteritems(organizations):
-        if ogn in ps_organizations:
-            module_group_name = ps_organizations[ogn]
-        else:
-            module_group_name = ogn
-        module_groups.append({'module_group_name': module_group_name,
-                              'modules': modules, 'tag': 'organization'})
+        module_groups.append(utils.make_module_group(
+            ogn, name=ps_organizations.get(ogn, ogn), modules=modules,
+            tag='organization'))
 
     return module_groups
 
@@ -109,7 +103,7 @@ def _update_project_list(default_data):
         default_data['repos'] += [r for r in repos
                                   if r['uri'] not in configured_repos]
 
-    default_data['module_groups'] += _create_module_groups(
+    default_data['module_groups'] += _create_module_groups_for_project_sources(
         default_data['project_sources'], default_data['repos'])
 
 
@@ -138,8 +132,11 @@ def _store_companies(runtime_storage_inst, companies):
 def _store_module_groups(runtime_storage_inst, module_groups):
     stored_mg = runtime_storage_inst.get_by_key('module_groups') or {}
     for mg in module_groups:
-        mg['id'] = mg['module_group_name']
-        stored_mg[mg['id']] = mg
+        name = mg['module_group_name']
+        module_group_id = mg.get('id') or name
+        stored_mg[module_group_id] = utils.make_module_group(
+            module_group_id, name=name, modules=mg['modules'],
+            tag=mg.get('tag', 'group'))
     runtime_storage_inst.set_by_key('module_groups', stored_mg)
 
 

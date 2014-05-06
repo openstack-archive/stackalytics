@@ -182,3 +182,10 @@ def add_index(sequence, start=1, item_filter=lambda x: True):
 
 def safe_encode(s):
     return parse.quote_plus(s.encode('utf-8'))
+
+
+def make_module_group(module_group_id, name=None, modules=None, tag='module'):
+    return {'id': module_group_id,
+            'module_group_name': name or module_group_id,
+            'modules': modules or [module_group_id],
+            'tag': tag}
