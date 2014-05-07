@@ -98,7 +98,7 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
 @decorators.jsonify('stats')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='start_date')
-def get_new_companies(records):
+def get_new_companies(records, **kwargs):
 
     days = int(flask.request.args.get('days') or reports.DEFAULT_DAYS_COUNT)
     start_date = int(time.time()) - days * 24 * 60 * 60
@@ -128,7 +128,7 @@ def get_new_companies(records):
 @decorators.exception_handler()
 @decorators.record_filter()
 @decorators.aggregate_filter()
-def get_companies(records, metric_filter, finalize_handler):
+def get_companies(records, metric_filter, finalize_handler, **kwargs):
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_companies(),
                                  'company_name',
@@ -140,7 +140,7 @@ def get_companies(records, metric_filter, finalize_handler):
 @decorators.exception_handler()
 @decorators.record_filter()
 @decorators.aggregate_filter()
-def get_modules(records, metric_filter, finalize_handler):
+def get_modules(records, metric_filter, finalize_handler, **kwargs):
     return _get_aggregated_stats(records, metric_filter,
                                  vault.get_memory_storage().get_modules(),
                                  'module', finalize_handler=finalize_handler)
@@ -161,7 +161,7 @@ def get_core_engineer_branch(user, modules):
 @decorators.exception_handler()
 @decorators.record_filter()
 @decorators.aggregate_filter()
-def get_engineers(records, metric_filter, finalize_handler):
+def get_engineers(records, metric_filter, finalize_handler, **kwargs):
 
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
@@ -183,7 +183,7 @@ def get_engineers(records, metric_filter, finalize_handler):
 @decorators.jsonify('stats')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='metric')
-def get_engineers_extended(records):
+def get_engineers_extended(records, **kwargs):
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
@@ -228,7 +228,7 @@ def get_engineers_extended(records):
 @decorators.jsonify('stats')
 @decorators.exception_handler()
 @decorators.record_filter()
-def get_distinct_engineers(records):
+def get_distinct_engineers(records, **kwargs):
     result = {}
     for record in records:
         result[record['user_id']] = {
@@ -242,7 +242,7 @@ def get_distinct_engineers(records):
 @decorators.jsonify('activity')
 @decorators.exception_handler()
 @decorators.record_filter()
-def get_activity_json(records):
+def get_activity_json(records, **kwargs):
     start_record = int(flask.request.args.get('start_record') or 0)
     page_size = int(flask.request.args.get('page_size') or
                     parameters.DEFAULT_RECORDS_LIMIT)
@@ -255,7 +255,7 @@ def get_activity_json(records):
 @decorators.jsonify('contribution')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='metric')
-def get_contribution_json(records):
+def get_contribution_json(records, **kwargs):
     return helpers.get_contribution_summary(records)
 
 
@@ -263,32 +263,34 @@ def get_contribution_json(records):
 @decorators.jsonify('companies')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='company')
-def get_companies_json(records):
-    query = flask.request.args.get('company_name') or ''
-    options = set()
-    for record in records:
-        name = record['company_name']
-        if name in options:
-            continue
-        if name.lower().find(query.lower()) >= 0:
-            options.add(name)
-    result = [{'id': utils.safe_encode(c.lower()), 'text': c}
-              for c in sorted(options)]
-    return result
+@decorators.query_filter(query_param='company_name')
+def get_companies_json(record_ids, query_filter, **kwargs):
+    memory_storage = vault.get_memory_storage()
+    companies = memory_storage.get_index_keys_by_record_ids(
+        'company_name', record_ids)
+
+    result = []
+    for company in companies:
+        if query_filter(company):
+            result.append(memory_storage.get_original_company_name(company))
+
+    return [{'id': utils.safe_encode(c.lower()), 'text': c}
+            for c in sorted(result)]
 
 
 @app.route('/api/1.0/modules')
 @decorators.jsonify('modules')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='module')
-def get_modules_json(records):
+@decorators.query_filter(query_param='query')
+def get_modules_json(record_ids, query_filter, **kwargs):
     module_id_index = vault.get_vault()['module_id_index']
 
     tags = parameters.get_parameter({}, 'tag', 'tags')
 
     # all modules mentioned in records
-    module_ids = set(record['module'] for record in records
-                     if record['module'] in module_id_index)
+    module_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
+        'module', record_ids)
 
     add_modules = set([])
     for module in six.itervalues(module_id_index):
@@ -301,19 +303,15 @@ def get_modules_json(records):
         module_ids = set(module_id for module_id in module_ids
                          if module_id_index[module_id].get('tag') in tags)
 
-    query = (flask.request.args.get('query') or '').lower()
-    matched = []
-
+    result = []
     for module_id in module_ids:
-        if module_id.find(query) >= 0:
-            module = dict([(k, v) for k, v in
-                           six.iteritems(module_id_index[module_id])
-                           if k not in ['modules']])
-            module['text'] = module['module_group_name']
-            del module['module_group_name']
-            matched.append(module)
+        module = module_id_index[module_id]
+        if query_filter(module['module_group_name']):
+            result.append({'id': module['id'],
+                           'text': module['module_group_name'],
+                           'tag': module['tag']})
 
-    return sorted(matched, key=operator.itemgetter('text'))
+    return sorted(result, key=operator.itemgetter('text'))
 
 
 @app.route('/api/1.0/companies/<company_name>')
@@ -346,7 +344,7 @@ def get_module(module):
 @decorators.jsonify('members')
 @decorators.exception_handler()
 @decorators.record_filter(ignore=['release', 'project_type', 'module'])
-def get_members(records):
+def get_members(records, **kwargs):
     response = []
     for record in records:
         record = vault.extend_record(record)
@@ -365,7 +363,7 @@ def get_members(records):
 @decorators.jsonify('stats')
 @decorators.exception_handler()
 @decorators.record_filter()
-def get_bpd(records):
+def get_bpd(records, **kwargs):
     result = []
     for record in records:
         if record['record_type'] in ['bpd', 'bpc']:
@@ -395,18 +393,17 @@ def get_bpd(records):
 @decorators.jsonify('users')
 @decorators.exception_handler()
 @decorators.record_filter(ignore='user_id')
-def get_users_json(records):
-    user_name_query = flask.request.args.get('user_name') or ''
-    user_ids = set()
+@decorators.query_filter(query_param='user_name')
+def get_users_json(record_ids, query_filter, **kwargs):
+    user_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
+        'user_id', record_ids)
+
     result = []
-    for record in records:
-        user_id = record['user_id']
-        if user_id in user_ids:
-            continue
-        user_name = record['author_name']
-        if user_name.lower().find(user_name_query.lower()) >= 0:
-            user_ids.add(user_id)
+    for user_id in user_ids:
+        user_name = vault.get_user_from_runtime_storage(user_id)['user_name']
+        if query_filter(user_name):
             result.append({'id': user_id, 'text': user_name})
+
     result.sort(key=lambda x: x['text'])
     return result
 
@@ -424,11 +421,11 @@ def get_user(user_id):
 @app.route('/api/1.0/releases')
 @decorators.jsonify('releases')
 @decorators.exception_handler()
-def get_releases_json():
-    query = (flask.request.args.get('query') or '').lower()
+@decorators.query_filter(query_param='query')
+def get_releases_json(query_filter):
     return [{'id': r['release_name'], 'text': r['release_name'].capitalize()}
             for r in vault.get_release_options()
-            if r['release_name'].find(query) >= 0]
+            if query_filter(r['release_name'])]
 
 
 @app.route('/api/1.0/releases/<release>')
@@ -444,11 +441,11 @@ def get_release_json(release):
 @app.route('/api/1.0/metrics')
 @decorators.jsonify('metrics')
 @decorators.exception_handler()
-def get_metrics_json():
-    query = (flask.request.args.get('query') or '').lower()
+@decorators.query_filter(query_param='query')
+def get_metrics_json(query_filter):
     return sorted([{'id': m, 'text': t}
                    for m, t in six.iteritems(parameters.METRIC_LABELS)
-                   if t.lower().find(query) >= 0],
+                   if query_filter(t)],
                   key=operator.itemgetter('text'))
 
 
@@ -464,9 +461,10 @@ def get_metric_json(metric):
 @app.route('/api/1.0/project_types')
 @decorators.jsonify('project_types')
 @decorators.exception_handler()
-def get_project_types_json():
+@decorators.query_filter(query_param='query')
+def get_project_types_json(query_filter):
     return [{'id': pt['id'], 'text': pt['title'], 'items': pt.get('items', [])}
-            for pt in vault.get_project_types()]
+            for pt in vault.get_project_types() if query_filter(pt['title'])]
 
 
 @app.route('/api/1.0/project_types/<project_type>')

@@ -29,7 +29,9 @@ class TestAPIUsers(test_api.TestAPI):
                       'modules': ['nova', 'glance']}],
                  'module_groups': {
                      'nova': test_api.make_module('nova'),
-                     'glance': test_api.make_module('glance')}},
+                     'glance': test_api.make_module('glance')},
+                 'user:john_doe': {'user_name': 'John Doe'},
+                 'user:bill_smith': {'user_name': 'Bill Smith'}},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_id=['john_doe', 'bill_smith'])):
             response = self.app.get('/api/1.0/users?'
@@ -37,7 +39,7 @@ class TestAPIUsers(test_api.TestAPI):
             users = json.loads(response.data)['users']
             self.assertEqual(2, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
-            self.assertIn({'id': 'bill_smith', 'text': 'John Doe'}, users)
+            self.assertIn({'id': 'bill_smith', 'text': 'Bill Smith'}, users)
 
     def test_users_search(self):
         with test_api.make_runtime_storage(
@@ -48,7 +50,9 @@ class TestAPIUsers(test_api.TestAPI):
                       'modules': ['nova', 'glance']}],
                  'module_groups': {
                      'nova': test_api.make_module('nova'),
-                     'glance': test_api.make_module('glance')}},
+                     'glance': test_api.make_module('glance')},
+                 'user:john_doe': {'user_name': 'John Doe'},
+                 'user:bill_smith': {'user_name': 'Bill Smith'}},
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users?'

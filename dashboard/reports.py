@@ -226,7 +226,7 @@ def activity():
 @decorators.jsonify('commits')
 @decorators.exception_handler()
 @decorators.record_filter()
-def get_commit_report(records):
+def get_commit_report(records, **kwargs):
     loc_threshold = int(flask.request.args.get('loc_threshold') or 0)
     response = []
     for record in records:
@@ -243,7 +243,7 @@ def get_commit_report(records):
 @decorators.jsonify()
 @decorators.exception_handler()
 @decorators.record_filter(ignore='metric')
-def get_single_plus_two_reviews_report(records):
+def get_single_plus_two_reviews_report(records, **kwargs):
     memory_storage_inst = vault.get_memory_storage()
     plus_twos = collections.defaultdict(list)
     for record in records:

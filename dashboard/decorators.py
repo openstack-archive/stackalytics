@@ -146,6 +146,7 @@ def record_filter(ignore=None, use_default=True):
 
             time_filter = _get_time_filter(kwargs, ignore)
 
+            kwargs['record_ids'] = record_ids
             kwargs['records'] = time_filter(
                 memory_storage_inst.get_records(record_ids))
             return f(*args, **kwargs)
@@ -370,5 +371,23 @@ def jsonify(root='data'):
             return flask.current_app.response_class(data, mimetype=mimetype)
 
         return jsonify_decorated_function
+
+    return decorator
+
+
+def query_filter(query_param='query'):
+    def decorator(f):
+        @functools.wraps(f)
+        def query_filter_decorated_function(*args, **kwargs):
+
+            query = flask.request.args.get(query_param)
+            if query:
+                kwargs['query_filter'] = lambda x: x.lower().find(query) >= 0
+            else:
+                kwargs['query_filter'] = lambda x: True
+
+            return f(*args, **kwargs)
+
+        return query_filter_decorated_function
 
     return decorator

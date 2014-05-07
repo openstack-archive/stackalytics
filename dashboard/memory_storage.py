@@ -114,6 +114,11 @@ class CachedMemoryStorage(MemoryStorage):
         return self._get_record_ids_from_index(blueprint_ids,
                                                self.blueprint_id_index)
 
+    def get_index_keys_by_record_ids(self, index_name, record_ids):
+        return set([key
+                    for key, value in six.iteritems(self.indexes[index_name])
+                    if value & record_ids])
+
     def get_record_ids(self):
         return self.records.keys()
 
@@ -133,9 +138,7 @@ class CachedMemoryStorage(MemoryStorage):
 
     def get_original_company_name(self, company_name):
         normalized = company_name.lower()
-        if normalized not in self.company_name_mapping:
-            return normalized
-        return self.company_name_mapping[normalized]
+        return self.company_name_mapping.get(normalized, normalized)
 
     def get_companies(self):
         return self.company_index.keys()
