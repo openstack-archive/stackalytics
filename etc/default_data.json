@@ -4088,6 +4088,18 @@
             "emails": ["pkilambi@cisco.com", "praddevel@gmail.com"]
         },
         {
+            "launchpad_id": "praneshpg",
+            "gerrit_id": "pran1990",
+            "companies": [
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pranesh Pandurangan",
+            "emails": ["praneshpg@gmail.com", "praneshp@yahoo-inc.com"]
+        },
+        {
             "launchpad_id": "priti-desai",
             "companies": [
                 {
