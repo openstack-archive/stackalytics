@@ -162,6 +162,7 @@ class MemcachedStorage(RuntimeStorage):
         stored_pids = self.memcached.get('pids') or set()
         for pid in stored_pids:
             if pid not in pids:
+                LOG.debug('Purge dead uwsgi pid %s from pids list', pid)
                 self.memcached.delete('pid:%s' % pid)
 
         self.memcached.set('pids', pids)
@@ -175,11 +176,15 @@ class MemcachedStorage(RuntimeStorage):
                     min_update = n
 
         first_valid_update = self.memcached.get('first_valid_update') or 0
+        LOG.debug('Purge polled updates from %(first)s to %(min)s',
+                  {'first': first_valid_update, 'min': min_update})
+
         for delete_id_set in utils.make_range(first_valid_update, min_update,
                                               BULK_DELETE_SIZE):
             if not self.memcached.delete_multi(delete_id_set,
                                                key_prefix=UPDATE_ID_PREFIX):
                 raise Exception('Failed to delete from memcache')
+
         self.memcached.set('first_valid_update', min_update)
 
     def _get_update_count(self):

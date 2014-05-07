@@ -38,21 +38,19 @@ LOG = logging.getLogger(__name__)
 
 
 def get_pids():
-    uwsgi_dict = {}
+    # needs to be compatible with psutil >= 1.1.1 since it's a global req.
+    PSUTIL2 = psutil.version_info >= (2, 0)
+    result = set([])
     for pid in psutil.get_pid_list():
         try:
             p = psutil.Process(pid)
-            if p.cmdline and p.cmdline[0].find('/uwsgi'):
-                if p.parent:
-                    uwsgi_dict[p.pid] = p.parent.pid
+            name = p.name() if PSUTIL2 else p.name
+            if name == 'uwsgi':
+                LOG.debug('Found uwsgi process, pid: %s', pid)
+                result.add(pid)
         except Exception as e:
             LOG.debug('Exception while iterating process list: %s', e)
             pass
-
-    result = set()
-    for pid in uwsgi_dict:
-        if uwsgi_dict[pid] in uwsgi_dict:
-            result.add(pid)
 
     return result
 
