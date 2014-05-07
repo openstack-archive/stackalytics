@@ -6,6 +6,24 @@ Contribution into {{ module }} for the last {{ days }} days
 
 {% block scripts %}
     <script type="text/javascript">
+
+        jQuery.extend(jQuery.fn.dataTableExt.oSort, {
+            "ratio-pre": function (a) {
+                if (a == "&#x221E;")
+                    return -1.0;
+                a = a.substr(0, a.length - 1);
+                return parseFloat(a);
+            },
+
+            "ratio-asc": function (a, b) {
+                return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+            },
+
+            "ratio-desc": function (a, b) {
+                return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+            }
+        });
+
         $(document).ready(function () {
             var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
                                       "review_ratio", "commit", "email"];
@@ -79,7 +97,8 @@ Contribution into {{ module }} for the last {{ days }} days
                             "aaData": tableData,
                             "aoColumns": tableColumns,
                             "aoColumnDefs": [
-                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] }
+                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
+                                { "sType": "ratio", "aTargets": [8, 10]}
                             ]
                         });
                     }
