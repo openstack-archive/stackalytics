@@ -52,12 +52,16 @@ def import_data(runtime_storage_inst, fd):
         if len(bucket) < runtime_storage.RECORD_ID_PREFIX:
             bucket[record['record_id']] = record
         else:
-            runtime_storage_inst.memcached.set_multi(
-                bucket, key_prefix=runtime_storage.RECORD_ID_PREFIX)
+            if not runtime_storage_inst.memcached.set_multi(
+                    bucket, key_prefix=runtime_storage.RECORD_ID_PREFIX):
+                LOG.critical('Failed to set_multi in memcached')
+                raise Exception('Failed to set_multi in memcached')
             bucket = {}
     if bucket:
-        runtime_storage_inst.memcached.set_multi(
-            bucket, key_prefix=runtime_storage.RECORD_ID_PREFIX)
+        if not runtime_storage_inst.memcached.set_multi(
+                bucket, key_prefix=runtime_storage.RECORD_ID_PREFIX):
+            LOG.critical('Failed to set_multi in memcached')
+            raise Exception('Failed to set_multi in memcached')
 
     runtime_storage_inst._set_record_count(count)
 
