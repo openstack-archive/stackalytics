@@ -68,6 +68,10 @@ def week_to_date(week):
             strftime('%Y-%m-%d %H:%M:%S'))
 
 
+def timestamp_to_day(timestamp):
+    return timestamp // (24 * 3600)
+
+
 def check_email_validity(email):
     if email:
         return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)

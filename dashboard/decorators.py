@@ -32,24 +32,21 @@ from stackalytics import version as stackalytics_version
 LOG = logging.getLogger(__name__)
 
 
-def _get_time_filter(kwargs, ignore):
-    start_date = parameters.get_single_parameter(kwargs, 'start_date')
+def _filter_records_by_days(ignore, start_date, end_date, memory_storage_inst):
     if start_date and 'start_date' not in ignore:
         start_date = utils.date_to_timestamp_ext(start_date)
     else:
-        start_date = 0
-    end_date = parameters.get_single_parameter(kwargs, 'end_date')
+        start_date = memory_storage_inst.get_first_record_day()
     if end_date and 'end_date' not in ignore:
         end_date = utils.date_to_timestamp_ext(end_date)
     else:
         end_date = utils.date_to_timestamp_ext('now')
 
-    def time_filter(records):
-        for record in records:
-            if start_date <= record['date'] <= end_date:
-                yield record
+    start_day = utils.timestamp_to_day(start_date)
+    end_day = utils.timestamp_to_day(end_date)
 
-    return time_filter
+    return memory_storage_inst.get_record_ids_by_days(
+        six.moves.range(start_day, end_day + 1))
 
 
 def record_filter(ignore=None, use_default=True):
@@ -144,11 +141,17 @@ def record_filter(ignore=None, use_default=True):
                         memory_storage_inst.get_record_ids_by_blueprint_ids(
                             param))
 
-            time_filter = _get_time_filter(kwargs, ignore)
+            start_date = parameters.get_single_parameter(kwargs, 'start_date')
+            end_date = parameters.get_single_parameter(kwargs, 'end_date')
+
+            if (start_date and 'start_date' not in ignore) or (
+                end_date and 'end_date' not in ignore):
+                record_ids &= _filter_records_by_days(ignore,
+                                                      start_date, end_date,
+                                                      memory_storage_inst)
 
             kwargs['record_ids'] = record_ids
-            kwargs['records'] = time_filter(
-                memory_storage_inst.get_records(record_ids))
+            kwargs['records'] = memory_storage_inst.get_records(record_ids)
             return f(*args, **kwargs)
 
         return record_filter_decorated_function
@@ -217,7 +220,7 @@ def man_days_filter(result, record, param_id):
         # effort of the author (author's effort is represented in patches)
         return
 
-    day = record['date'] // (24 * 3600)
+    day = utils.timestamp_to_day(record['date'])
 
     result_by_param = result[record[param_id]]
     if 'days' not in result_by_param:

@@ -541,7 +541,7 @@ def timeline(records, **kwargs):
                     (record['week'] not in weeks)):
                 continue
 
-            day = record['date'] // (24 * 3600)
+            day = utils.timestamp_to_day(record['date'])
             user = vault.get_user_from_runtime_storage(record['user_id'])
             if record['release'] == release_name:
                 release_stat[day] |= set([user['seq']])
