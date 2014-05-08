@@ -6402,6 +6402,10 @@
             "company_name": "StackOps"
         },
         {
+            "domains": ["stackstorm.com"],
+            "company_name": "StackStorm"
+        },
+        {
             "domains": ["stratoscale.com"],
             "company_name": "Stratoscale"
         },
