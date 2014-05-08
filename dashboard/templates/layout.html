@@ -12,6 +12,8 @@
 <meta name="description" content="Full commits and review statistics of {{ page_title }}"/>
 {% endif %}
 <meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
+<meta name="version" content="{{ stackalytics_version }}"/>
+<meta name="build" content="{{ stackalytics_release }}"/>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
@@ -60,7 +62,7 @@
     <div class="page">
     <div class="aheader">
         <div style="float: right; margin-top: 10px; margin-right: 20px;">
-            <a href="https://wiki.openstack.org/wiki/Stackalytics" title="Version {{ stackalytics_version }} ({{ stackalytics_release }})">About ↗</a>
+            <a href="https://wiki.openstack.org/wiki/Stackalytics">About ↗</a>
         </div>
         <div id="analytics_header">
             <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
