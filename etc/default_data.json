@@ -434,6 +434,17 @@
             "emails": ["root@debian.ohthree.com", "ant@openstack.org", "amesserl@rackspace.com"]
         },
         {
+            "launchpad_id": "aostapenko",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrei V. Ostapenko",
+            "emails": ["andrey_ostapenko@symantec.com", "aostapenko@mirantis.com"]
+        },
+        {
             "launchpad_id": "armando-migliaccio",
             "companies": [
                 {
