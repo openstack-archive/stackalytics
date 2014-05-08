@@ -18,7 +18,8 @@ from oslo.config import cfg
 
 OPTS = [
     cfg.StrOpt('default-data-uri',
-               default='file:///usr/local/etc/default_data.json',
+               default='https://raw.github.com/stackforge/stackalytics/'
+                       'master/etc/default_data.json',
                help='URI for default data'),
     cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
