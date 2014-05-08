@@ -4847,6 +4847,17 @@
             "emails": ["soulascedric@gmail.com", "cedric.soulas@cloudwatt.com"]
         },
         {
+            "launchpad_id": "spyray",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexei V. Vinogradov",
+            "emails": ["alexei_vinogradov@symantec.com", "avinogradov@mirantis.com"]
+        },
+        {
             "launchpad_id": "starodubcevna",
             "companies": [
                 {
