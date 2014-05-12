@@ -1,0 +1,74 @@
+{% extends "reports/base_report.html" %}
+
+{% block title %}Vendor Drivers{% endblock %}
+
+{% block body %}
+
+<div class="page">
+<div class="aheader">
+        <div style="float: right; margin-top: 10px; margin-right: 20px;">
+            <a href="https://wiki.openstack.org/wiki/DriverLog">About ↗</a>
+        </div>
+        <div id="analytics_header">
+            <div style="float: left;">
+                <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
+            </div>
+            <div class="stackamenu">
+                <ul id="menu-stackamenu">
+                    <li class="menu-item"><a href="/"><span class="icon-pie"></span>Code Contribution</a></li>
+{#                    <li class="menu-item"><a href="/report/members"><span class="icon-users"></span>Member Directory</a></li>#}
+                    <li class="menu-item current-menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    <script type="text/javascript" src="http://stackalytics.com/driverlog/static/js/driverlog-ui.js"></script>
+
+    <script type="text/javascript">
+        var base_url = "http://stackalytics.com/driverlog/";
+
+        $(document).ready(function () {
+            init_selectors(base_url);
+            show_summary(base_url);
+        });
+    </script>
+
+    <div class="drops">
+
+        <div class="drop">
+            <label for="release_selector" title="OpenStack Release">Release</label>
+            <input type="hidden" id="release_selector" style="width:240px"/>
+        </div>
+
+        <div class="drop">
+            <label for="project_selector" title="OpenStack Project">Project</label>
+            <input type="hidden" id="project_selector" style="width:240px"/>
+        </div>
+
+        <div class="drop">
+            <label for="vendor_selector" title="Vendor">Vendor</label>
+            <input type="hidden" id="vendor_selector" style="width:240px"/>
+        </div>
+
+    </div>
+
+    <div style="margin-top: 2em;">
+        <table id="data_table" class="display">
+            <thead>
+            <tr>
+                <th>Project</th>
+                <th>Vendor</th>
+                <th>Driver</th>
+                <th>In Trunk?</th>
+                <th>CI tested?</th>
+                <th>Maintainer</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

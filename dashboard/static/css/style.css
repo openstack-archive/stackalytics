@@ -95,20 +95,21 @@ div.drop label {
 
 div.aheader {
     margin-top: 23px;
-    text-shadow: 1px 1px 0 #fff;
+    padding-bottom: 10px;
+    /*text-shadow: 1px 1px 0 #fff;*/
 }
 
 div.aheader h1 {
     font-size: 36px;
     color: #a8b3bd;
-    text-shadow: 1px 1px 0 #fff;
+    /*text-shadow: 1px 1px 0 #fff;*/
 }
 
 div.aheader h1 a {
     font-weight: bold;
     color: #637f99;
     text-decoration: none;
-    text-shadow: 1px 1px 0 #fff;
+    /*text-shadow: 1px 1px 0 #fff;*/
 }
 
 div.page div.navigation {
@@ -397,4 +398,73 @@ body .ui-tooltip {
     border-width: 2px;
     background-color: white;
     opacity: 0.8;
+}
+
+/* new top menu */
+ul#menu-stackamenu {
+    margin: 0;
+    padding: 0;
+    list-style-image: none;
+    list-style-type: none;
+    font-family: 'PT Sans Narrow', arial, sans-serif;
+}
+
+ul#menu-stackamenu li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+div.stackamenu {
+    text-align: left;
+    padding-bottom: 10px;
+    margin-left: 300px;
+}
+
+div.stackamenu a {
+    display: inline-block;
+    color: #972D24;
+    border-radius: 0;
+    font-size: 18px;
+    /*text-transform: uppercase;*/
+    margin: 5px 0;
+    padding: 5px 20px;
+    background: #eceef3;
+    /*box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.7);*/
+}
+
+div.stackamenu a span {
+    color: #943a3a;
+    font-size: 110%;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+div.stackamenu a:hover {
+    background: #c8e7ed;
+    /*color: white;*/
+}
+
+div.stackamenu a:hover span {
+    /*background: #c8e7ed;*/
+    /*color: white;*/
+    /*text-shadow: 0 -1px 0 #2c96c5;*/
+}
+
+div.stackamenu li.current-menu-item a {
+    background: #4bb2c5;
+    color: white;
+    /*box-shadow: 0 3px 0 #436281;*/
+}
+
+div.stackamenu li.current-menu-item a:hover {
+    background: #4bb2c5;
+    /*color: white;*/
+    /*box-shadow: 0 3px 0 #2b99ca;*/
+}
+
+div.stackamenu li.current-menu-item a span {
+    color: white;
+    /*text-shadow: 0 -1px 0 #436281;*/
 }

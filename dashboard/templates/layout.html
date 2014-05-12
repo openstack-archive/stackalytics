@@ -25,6 +25,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/moonfonts.css') }}">
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
@@ -65,8 +66,16 @@
             <a href="https://wiki.openstack.org/wiki/Stackalytics">About ↗</a>
         </div>
         <div id="analytics_header">
-            <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
-            <span id="slogan">| community heartbeat</span>
+            <div style="float: left;">
+                <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
+            </div>
+            <div class="stackamenu">
+                <ul id="menu-stackamenu">
+                    <li class="menu-item current-menu-item"><a href="/"><span class="icon-pie"></span>Code Contribution</a></li>
+{#                    <li class="menu-item"><a href="/report/members"><span class="icon-users"></span>Member Directory</a></li>#}
+                    <li class="menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers</a></li>
+                </ul>
+            </div>
         </div>
 
         <div class="drops">
