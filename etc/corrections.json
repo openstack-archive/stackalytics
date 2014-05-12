@@ -1521,10 +1521,16 @@
             "primary_key": "6211fb216bdb6f1231c1ec10c7142dd938049a06"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "fd2f972bad93a4a40c9cd3ffc731503ce128fc01"
+        },
+        {
+            "author_email": "maksym_iarmak@symantec.com",
+            "correction_comment": "",
+            "company_name": "Symantec",
+            "primary_key": "66106d25f8ba7b3e0c3c5513d2a66f2b4a2ca30c"
         },
         {
             "author_email": "achudnovets@symantec.com",
@@ -1629,7 +1635,7 @@
             "primary_key": "d44a4330381486b7fe63bed19e42af7541ab7e1d"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "01fbeec552981743397c7c4eac74c9ed9c3c000b"
@@ -1677,7 +1683,7 @@
             "primary_key": "2b2af0abd3a9ee6f7768aea3613bd12fc84a5708"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "bb63a66e6f27081c0e81bd2ead25a4955460a600"
@@ -1707,7 +1713,7 @@
             "primary_key": "763434e3f72e07f37682d45f0de4dbddbb18238b"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "6f1ea4e2f96eda6113810f37c42e49177e18961f"
@@ -1719,7 +1725,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I8c325770b11ed3c9257599c6fe0d734f0bbfb9ea1396521587CRVW",
             "company_name": "Symantec"
@@ -1731,7 +1737,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca5831396365207CRVW",
             "company_name": "Symantec"
@@ -1761,7 +1767,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ifda2f9a9e315d08c944732a4aa4bcc59cb3ca5831396275201CRVW",
             "company_name": "Symantec"
@@ -1779,7 +1785,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe221396016546CRVW",
             "company_name": "Symantec"
@@ -1815,7 +1821,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "If74c1321e44e29650f9384ef4d46e1737c4fbe221395944886CRVW",
             "company_name": "Symantec"
@@ -1869,7 +1875,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b1395850504CRVW",
             "company_name": "Symantec"
@@ -1887,19 +1893,19 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d7585391395835874CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I1bd5566395b00413593192f90bf2e756af01df261395831091CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b1395830850CRVW",
             "company_name": "Symantec"
@@ -1917,7 +1923,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f1395758455CRVW",
             "company_name": "Symantec"
@@ -1935,19 +1941,19 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f1395750271CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f111395745101CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I1bd5566395b00413593192f90bf2e756af01df261395744582CRVW",
             "company_name": "Symantec"
@@ -1977,7 +1983,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c451395678142CRVW",
             "company_name": "Symantec"
@@ -1989,31 +1995,31 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I1bd5566395b00413593192f90bf2e756af01df261395672087CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ie53854094b80dfd16c6fbdd9c2bd2ebf0e4e20841395670496CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f111395661022CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ifc20bd3b8b0310b94077c3559d4970b156ed09cb1395655553CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c451395420776CRVW",
             "company_name": "Symantec"
@@ -2025,13 +2031,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic21246c3fd06a1957dd89df86422702212e06c451395410571CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I642382b3d4bc91b94336ff5c19c175ef242b4f111395399394CRVW",
             "company_name": "Symantec"
@@ -2043,7 +2049,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I644b0e4832aa4466906747bd440b302bd47d68a71395331103CRVW",
             "company_name": "Symantec"
@@ -2061,19 +2067,19 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I9c3dde735ce777cd069e49bfee442c6593a9cd741395326349CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc36231395322146CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ia57bd5f59040ef31936abe4433fa200c2ecc36231395321138CRVW",
             "company_name": "Symantec"
@@ -2097,13 +2103,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa17651395317066CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa17651395314381CRVW",
             "company_name": "Symantec"
@@ -2115,7 +2121,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa17651395254777CRVW",
             "company_name": "Symantec"
@@ -2133,7 +2139,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I452488b3c9fe9aa8dfb021b4093e5793fbaa17651395251827CRVW",
             "company_name": "Symantec"
@@ -2157,7 +2163,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca70281395244932CRVW",
             "company_name": "Symantec"
@@ -2169,19 +2175,19 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I04ccd5ceada67f7ffa6da1f7c6b435bf39ca70281395238377CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f321395171843CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "Ie5ce0238f4c589aa7cefaa3f60477601df682f321395165923CRVW",
             "company_name": "Symantec"
@@ -2193,7 +2199,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e91395058614CRVW",
             "company_name": "Symantec"
@@ -2211,25 +2217,25 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c1394201717CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae051394119737CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I883c24b7f56b11d586eb7d307444396a2d5aae051394111179CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c1394027087CRVW",
             "company_name": "Symantec"
@@ -2241,7 +2247,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "miarmak@symantec.com",
+            "author_email": "maksym_iarmak@symantec.com",
             "correction_comment": "",
             "primary_key": "I576066c79a164288771e4faecb4c9cfb7ff6f14c1393841154CRVW",
             "company_name": "Symantec"
