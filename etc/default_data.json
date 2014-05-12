@@ -94,6 +94,17 @@
             "emails": ["gareth@openstacker.com", "academicgareth@gmail.com", "gareth@unitedstack.org", "gareth@unitedstack.com"]
         },
         {
+            "launchpad_id": "achudnovets",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Chudnovets",
+            "emails": ["alexander_chudnovets@symantec.com", "achudnovets@mirantis.com"]
+        },
+        {
             "launchpad_id": "aditirav",
             "companies": [
                 {
