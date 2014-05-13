@@ -77,3 +77,16 @@ class TestUtils(testtools.TestCase):
                     {'index': 1, 'name': 'C'}]
         self.assertEqual(expected, utils.add_index(
             sequence, start=0, item_filter=lambda x: x['name'] != 'B'))
+
+    def test_normalize_company_name(self):
+        company_names = ['EMC Corporation', 'Abc, corp..', 'Mirantis IT.',
+                         'Red Hat, Inc.', 'abc s.r.o. ABC', '2s.r.o. co',
+                         'AL.P.B L.P. s.r.o. s.r.o. C ltd.']
+        correct_normalized_company_names = ['emc', 'abc', 'mirantis',
+                                            'redhat', 'abcabc', '2sro',
+                                            'alpbc']
+        normalized_company_names = [utils.normalize_company_name(name)
+                                    for name in company_names]
+
+        self.assertEqual(normalized_company_names,
+                         correct_normalized_company_names)

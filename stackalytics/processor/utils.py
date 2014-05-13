@@ -189,3 +189,16 @@ def make_module_group(module_group_id, name=None, modules=None, tag='module'):
             'module_group_name': name or module_group_id,
             'modules': modules or [module_group_id],
             'tag': tag}
+
+BAD_NAME_SUFFIXES = ['Ltd', 'Pvt', 'Inc', 'GmbH', 'AG', 'Corporation', 'Corp',
+                     'Company', 'Co', 'Group', 'Srl', 'Limited', 'LLC', 'IT']
+
+BAD_NAME_SUFFIXES_WITH_STOPS = ['S.p.A.', 's.r.o.', 'L.P.', 'B.V.', 'K.K.',
+                                'd.o.o.']
+
+
+def normalize_company_name(name):
+    regex = '(\\b(' + '|'.join(BAD_NAME_SUFFIXES) + ')\\b)'
+    regex += '|' + '((^|\\s)(' + '|'.join(BAD_NAME_SUFFIXES_WITH_STOPS) + '))'
+    name = re.sub(re.compile(regex, re.IGNORECASE), '', name)
+    return ''.join([c.lower() for c in name if c.isalnum()])

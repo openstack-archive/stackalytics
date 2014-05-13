@@ -124,7 +124,11 @@ def _store_companies(runtime_storage_inst, companies):
 
         if 'aliases' in company:
             for alias in company['aliases']:
-                domains_index[alias] = company['company_name']
+                normalized_alias = utils.normalize_company_name(alias)
+                domains_index[normalized_alias] = company['company_name']
+        normalized_company_name = utils.normalize_company_name(
+            company['company_name'])
+        domains_index[normalized_company_name] = company['company_name']
 
     runtime_storage_inst.set_by_key('companies', domains_index)
 
@@ -175,7 +179,7 @@ def _get_changed_member_records(runtime_storage_inst, record_processor_inst):
         if record['record_type'] == 'member' and 'company_name' in record:
             company_draft = record['company_draft']
             company_name = record_processor_inst.domains_index.get(
-                company_draft) or company_draft
+                utils.normalize_company_name(company_draft)) or company_draft
 
             if company_name != record['company_name']:
                 record['company_name'] = company_name
