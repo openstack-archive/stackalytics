@@ -6071,7 +6071,8 @@
         },
         {
             "domains": ["ifca.unican.es"],
-            "company_name": "Instituto de Fisica de Cantabria"
+            "company_name": "CSIC",
+            "aliases": ["Spanish National Research Council", "CSIC - Spanish National Research Council"]
         },
         {
             "domains": ["igbmc.fr"],
