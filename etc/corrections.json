@@ -1599,7 +1599,7 @@
             "primary_key": "10215d097f6023b3c8113af45ea801094846ea4b"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "dc449b4d1972788579943b37b6070a1b9ab4e4b5"
@@ -1647,7 +1647,7 @@
             "primary_key": "9e9f1156aa7040d2e49bd6924c89d263f2ca937f"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "d27e17d3cbff21ac71dcdc12721ee0d45178f6e2"
@@ -1731,7 +1731,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
+            "correction_comment": "",
+            "primary_key": "528caff6bf2d07d792e986a0461a80676a30f128",
+            "company_name": "Symantec"
+        },
+        {
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd1396367639CRVW",
             "company_name": "Symantec"
@@ -1749,7 +1755,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "I8bcce82c92f9de2aebae33c5cbf024f7745dd0bd1396357218CRVW",
             "company_name": "Symantec"
@@ -1761,7 +1767,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "I3c8b9940dd32e7ec5947f39b6ce0439dee2c45181396283729CRVW",
             "company_name": "Symantec"
@@ -1869,7 +1875,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "If280b3380e8defa32425aa033a5fe6dc0d7585391395850851CRVW",
             "company_name": "Symantec"
@@ -1881,13 +1887,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b1395848925CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b1395842632CRVW",
             "company_name": "Symantec"
@@ -1935,7 +1941,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "avinogradov@symantec.com",
+            "author_email": "alexei_vinogradov@symantec.com",
             "correction_comment": "",
             "primary_key": "I3e9f8a43a3212f7f821cf9d06b65d17625981b6f1395756647CRVW",
             "company_name": "Symantec"
