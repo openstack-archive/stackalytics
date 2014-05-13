@@ -1515,6 +1515,18 @@
             "subject": "[IDH] Added IDH 3.0.2 support"
         },
         {
+            "author_email": "alexander_minakov@symantec.com",
+            "correction_comment": "",
+            "company_name": "Symantec",
+            "primary_key": "8c6e1137c459ac2f8b2d0a8c3179c7e9c58ddeaf"
+        },
+        {
+            "author_email": "alexander_minakov@symantec.com",
+            "correction_comment": "",
+            "company_name": "Symantec",
+            "primary_key": "66a7efb2ffc9dbd97282d4e739cb55e233d62590"
+        },
+        {
             "author_email": "andrey_ostapenko@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
@@ -1641,7 +1653,7 @@
             "primary_key": "01fbeec552981743397c7c4eac74c9ed9c3c000b"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "9e9f1156aa7040d2e49bd6924c89d263f2ca937f"
@@ -1677,7 +1689,7 @@
             "primary_key": "30df1361c58fcf924208d4440a4cbfa2057b462c"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "company_name": "Symantec",
             "primary_key": "2b2af0abd3a9ee6f7768aea3613bd12fc84a5708"
@@ -1803,13 +1815,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab1396003876CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I1628b23677713330ba665d124f98b228f36d9a0f1395951743CRVW",
             "company_name": "Symantec"
@@ -1821,7 +1833,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I6a7812d4b36c2e9c70d6d1b87fe014f72ce9d0ab1395946835CRVW",
             "company_name": "Symantec"
@@ -1851,7 +1863,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I6e3636ffc4f6505e206b2c319185f2a67fdd73f71395926647CRVW",
             "company_name": "Symantec"
@@ -1869,7 +1881,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "Ic8c96748144c05ee4e1fb4ce4feade12d2b6da9b1395858656CRVW",
             "company_name": "Symantec"
@@ -2211,7 +2223,7 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I5cd00217cc9eb0eae641f8da40259257b73140e91395059283CRVW",
             "company_name": "Symantec"
@@ -2223,13 +2235,13 @@
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I180072856b030987fac582aac66877277e35f6441394559521CRVW",
             "company_name": "Symantec"
         },
         {
-            "author_email": "aminakov@symantec.com",
+            "author_email": "alexander_minakov@symantec.com",
             "correction_comment": "",
             "primary_key": "I7dace4e3f584188fda02755304c08a460c46e07c1394204796CRVW",
             "company_name": "Symantec"
