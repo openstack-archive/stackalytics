@@ -2160,6 +2160,17 @@
             "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com"]
         },
         {
+            "launchpad_id": "hodosmb",
+            "companies": [
+                {
+                    "company_name": "Nexenta",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mikhail Khodos",
+            "emails": ["hodosmb@gmail.com", "mikhail.khodos@nexenta.com"]
+        },
+        {
             "launchpad_id": "hovyakov",
             "companies": [
                 {
@@ -4400,6 +4411,17 @@
             ],
             "user_name": "Roman Prykhodchenko",
             "emails": ["romcheg@romcheg.org"]
+        },
+        {
+            "launchpad_id": "ronak-malav-shah",
+            "companies": [
+                {
+                    "company_name": "Nuage Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ronak Shah",
+            "emails": ["ronak.malav.shah@gmail.com", "ronak@nuagenetworks.net"]
         },
         {
             "launchpad_id": "rossetti-megan18",
