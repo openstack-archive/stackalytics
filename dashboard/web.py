@@ -81,8 +81,9 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
                           param_title=None, finalize_handler=None):
     param_title = param_title or param_id
     result = dict((c, {'metric': 0, 'id': c}) for c in keys)
+    context = {}
     for record in records:
-        metric_filter(result, record, param_id)
+        metric_filter(result, record, param_id, context)
         result[record[param_id]]['name'] = record[param_title]
 
     response = [r for r in result.values() if r['metric']]
@@ -167,7 +168,6 @@ def get_core_engineer_branch(user, modules):
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler, **kwargs):
-
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
@@ -211,7 +211,7 @@ def get_engineers_extended(records, **kwargs):
         record_type = record['record_type']
         result_row[record_type] = result_row.get(record_type, 0) + 1
         if record_type == 'mark':
-            decorators.mark_filter(result, record, param_id)
+            decorators.mark_filter(result, record, param_id, {})
 
     result = {}
     for record in records:
@@ -534,12 +534,12 @@ def timeline(records, **kwargs):
         handler = lambda record: 0
 
     # fill stats with the data
-    if 'man-days' in metric:
+    if 'person-day' in metric:
         # special case for man-day effort metric
         release_stat = collections.defaultdict(set)
         all_stat = collections.defaultdict(set)
         for record in records:
-            if ((record['record_type'] == 'commit') or
+            if ((record['record_type'] in ['commit', 'member']) or
                     (record['week'] not in weeks)):
                 continue
 
