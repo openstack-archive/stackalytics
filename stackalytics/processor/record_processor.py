@@ -430,7 +430,8 @@ class RecordProcessor(object):
         record['module'] = 'unknown'
         company_draft = record['company_draft']
 
-        company_name = self.domains_index.get(company_draft) or company_draft
+        company_name = self.domains_index.get(utils.normalize_company_name(
+            company_draft)) or company_draft
 
         # author_email is a key to create new user
         record['author_email'] = user_id
