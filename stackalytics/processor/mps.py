@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
 import re
 import time
 
@@ -41,7 +42,7 @@ def _convert_str_fields_to_unicode(result):
                 pass
 
 
-def _retrieve_member(uri, member_id):
+def _retrieve_member(uri, member_id, html_parser):
 
     content = utils.read_uri(uri)
 
@@ -63,7 +64,7 @@ def _retrieve_member(uri, member_id):
     for rec in re.finditer(COMPANY_PATTERN, content):
         result = rec.groupdict()
 
-        member['company_draft'] = result['company_draft']
+        member['company_draft'] = html_parser.unescape(result['company_draft'])
 
     return member
 
@@ -87,11 +88,12 @@ def log(uri, runtime_storage_inst, days_to_update_members):
 
     cnt_empty = 0
     cur_index = last_member_index + 1
+    html_parser = six.moves.html_parser.HTMLParser()
 
     while cnt_empty < CNT_EMPTY_MEMBERS:
 
         profile_uri = uri + str(cur_index)
-        member = _retrieve_member(profile_uri, str(cur_index))
+        member = _retrieve_member(profile_uri, str(cur_index), html_parser)
 
         if 'member_name' not in member:
             cnt_empty += 1
