@@ -4957,6 +4957,17 @@
             "emails": ["sulochan@gmail.com", "sulochan.acharya@rackspace.co.uk"]
         },
         {
+            "launchpad_id": "susanne-balle",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Susanne Balle",
+            "emails": ["sleipnir012@gmail.com", "susanne.balle@hp.com"]
+        },
+        {
             "launchpad_id": "swann-w",
             "companies": [
                 {
