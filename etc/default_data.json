@@ -5432,6 +5432,17 @@
             "emails": ["jian.wen@canonical.com", "wenjianhn@gmail.com", "jian.wen@ubuntu.com"]
         },
         {
+            "launchpad_id": "wingwj",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wingwj",
+            "emails": ["wingwj@gmail.com", "wingwj.wu@huawei.com"]
+        },
+        {
             "launchpad_id": "xdeller",
             "user_name": "Andrey Korolyov",
             "companies": [
