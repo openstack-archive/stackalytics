@@ -61,7 +61,8 @@ class TestAPIModules(test_api.TestAPI):
             modules = json.loads(response.data)['modules']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
-                 {'id': 'nova', 'text': 'nova', 'tag': 'module'}],
+                 {'id': 'nova', 'text': 'nova', 'tag': 'module'},
+                 {'id': 'nova-group', 'text': 'nova-group', 'tag': 'group'}],
                 modules,
                 message='Expected modules belonging to project type plus '
                         'module groups that are completely within '
