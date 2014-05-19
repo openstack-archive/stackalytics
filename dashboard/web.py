@@ -294,7 +294,7 @@ def get_modules_json(record_ids, query_filter, **kwargs):
 
     add_modules = set([])
     for module in six.itervalues(module_id_index):
-        if set(module['modules']) <= module_ids:
+        if set(module['modules']) & module_ids:
             add_modules.add(module['id'])
     module_ids |= add_modules
 
