@@ -42,7 +42,7 @@ def date_to_timestamp(d):
 def date_to_timestamp_ext(d):
     try:
         return date_to_timestamp(d)
-    except ValueError:
+    except (ValueError, TypeError):
         return int(d)
 
 
@@ -70,6 +70,10 @@ def week_to_date(week):
 
 def timestamp_to_day(timestamp):
     return timestamp // (24 * 3600)
+
+
+def round_timestamp_to_day(timestamp):
+    return (int(timestamp) // (24 * 3600)) * (24 * 3600)
 
 
 def check_email_validity(email):

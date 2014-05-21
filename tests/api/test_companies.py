@@ -70,11 +70,6 @@ class TestAPICompanies(test_api.TestAPI):
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'}], companies)
 
-            response = self.app.get('/api/1.0/companies?metric=commits&'
-                                    'company_name=ib&module=glance')
-            companies = json.loads(response.data)['companies']
-            self.assertEqual([{'id': 'ibm', 'text': 'IBM'}], companies)
-
     def test_get_company(self):
         with test_api.make_runtime_storage(
                 {'repos': [{'module': 'nova', 'project_type': 'openstack',

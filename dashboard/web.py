@@ -46,15 +46,14 @@ LOG = logging.getLogger(__name__)
 
 conf = cfg.CONF
 conf.register_opts(config.OPTS)
-logging.setup('dashboard')
-LOG.info('Logging enabled')
 
 conf_file = os.getenv('STACKALYTICS_CONF')
 if conf_file and os.path.isfile(conf_file):
     conf(default_config_files=[conf_file])
     app.config['DEBUG'] = cfg.CONF.debug
-else:
-    LOG.info('Conf file is empty or not exist')
+
+logging.setup('dashboard')
+LOG.info('Stackalytics.dashboard is configured via "%s"', conf_file)
 
 
 # Handlers ---------
@@ -94,9 +93,10 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
 
 
 @app.route('/api/1.0/new_companies')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='start_date')
+@decorators.response()
+@decorators.jsonify('stats')
+@decorators.record_filter(ignore=['start_date'])
 def get_new_companies(records, **kwargs):
 
     days = int(flask.request.args.get('days') or reports.DEFAULT_DAYS_COUNT)
@@ -123,8 +123,10 @@ def get_new_companies(records, **kwargs):
 
 
 @app.route('/api/1.0/stats/companies')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_companies(records, metric_filter, finalize_handler, **kwargs):
@@ -135,8 +137,10 @@ def get_companies(records, metric_filter, finalize_handler, **kwargs):
 
 
 @app.route('/api/1.0/stats/modules')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_modules(records, metric_filter, finalize_handler, **kwargs):
@@ -156,8 +160,10 @@ def get_core_engineer_branch(user, modules):
 
 
 @app.route('/api/1.0/stats/engineers')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler, **kwargs):
@@ -179,9 +185,11 @@ def get_engineers(records, metric_filter, finalize_handler, **kwargs):
 
 
 @app.route('/api/1.0/stats/engineers_extended')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='metric')
+@decorators.response()
+@decorators.cached(ignore=['metric'])
+@decorators.jsonify('stats')
+@decorators.record_filter(ignore=['metric'])
 def get_engineers_extended(records, **kwargs):
     modules_names = parameters.get_parameter({}, 'module', 'modules')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
@@ -224,8 +232,10 @@ def get_engineers_extended(records, **kwargs):
 
 
 @app.route('/api/1.0/stats/distinct_engineers')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
 @decorators.record_filter()
 def get_distinct_engineers(records, **kwargs):
     result = {}
@@ -238,8 +248,9 @@ def get_distinct_engineers(records, **kwargs):
 
 
 @app.route('/api/1.0/activity')
-@decorators.jsonify('activity')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.jsonify('activity')
 @decorators.record_filter()
 def get_activity_json(records, **kwargs):
     start_record = int(flask.request.args.get('start_record') or 0)
@@ -251,38 +262,40 @@ def get_activity_json(records, **kwargs):
 
 
 @app.route('/api/1.0/contribution')
-@decorators.jsonify('contribution')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='metric')
+@decorators.response()
+@decorators.cached(ignore=['metric'])
+@decorators.jsonify('contribution')
+@decorators.record_filter(ignore=['metric'])
 def get_contribution_json(records, **kwargs):
     return helpers.get_contribution_summary(records)
 
 
 @app.route('/api/1.0/companies')
-@decorators.jsonify('companies')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='company')
-@decorators.query_filter(query_param='company_name')
-def get_companies_json(record_ids, query_filter, **kwargs):
+@decorators.response()
+@decorators.cached(ignore=['company'])
+@decorators.jsonify('companies')
+@decorators.record_filter(ignore=['company'])
+def get_companies_json(record_ids, **kwargs):
     memory_storage = vault.get_memory_storage()
     companies = memory_storage.get_index_keys_by_record_ids(
         'company_name', record_ids)
 
-    result = []
-    for company in companies:
-        if query_filter(company):
-            result.append(memory_storage.get_original_company_name(company))
+    result = [memory_storage.get_original_company_name(company)
+              for company in companies]
 
     return [{'id': utils.safe_encode(c.lower()), 'text': c}
             for c in sorted(result)]
 
 
 @app.route('/api/1.0/modules')
-@decorators.jsonify('modules')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='module')
-@decorators.query_filter(query_param='query')
-def get_modules_json(record_ids, query_filter, **kwargs):
+@decorators.response()
+@decorators.cached(ignore=['module'])
+@decorators.jsonify('modules')
+@decorators.record_filter(ignore=['module'])
+def get_modules_json(record_ids, **kwargs):
     module_id_index = vault.get_vault()['module_id_index']
 
     tags = parameters.get_parameter({}, 'tag', 'tags')
@@ -305,15 +318,15 @@ def get_modules_json(record_ids, query_filter, **kwargs):
     result = []
     for module_id in module_ids:
         module = module_id_index[module_id]
-        if query_filter(module['module_group_name']):
-            result.append({'id': module['id'],
-                           'text': module['module_group_name'],
-                           'tag': module['tag']})
+        result.append({'id': module['id'],
+                       'text': module['module_group_name'],
+                       'tag': module['tag']})
 
     return sorted(result, key=operator.itemgetter('text'))
 
 
 @app.route('/api/1.0/companies/<company_name>')
+@decorators.response()
 @decorators.jsonify('company')
 def get_company(company_name):
     memory_storage_inst = vault.get_memory_storage()
@@ -328,6 +341,7 @@ def get_company(company_name):
 
 
 @app.route('/api/1.0/modules/<module>')
+@decorators.response()
 @decorators.jsonify('module')
 def get_module(module):
     module_id_index = vault.get_vault()['module_id_index']
@@ -340,8 +354,10 @@ def get_module(module):
 
 
 @app.route('/api/1.0/members')
-@decorators.jsonify('members')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached(ignore=['release', 'project_type', 'module'])
+@decorators.jsonify('members')
 @decorators.record_filter(ignore=['release', 'project_type', 'module'])
 def get_members(records, **kwargs):
     response = []
@@ -359,8 +375,10 @@ def get_members(records, **kwargs):
 
 
 @app.route('/api/1.0/stats/bp')
-@decorators.jsonify('stats')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
 @decorators.record_filter()
 def get_bpd(records, **kwargs):
     result = []
@@ -389,25 +407,26 @@ def get_bpd(records, **kwargs):
 
 
 @app.route('/api/1.0/users')
-@decorators.jsonify('users')
 @decorators.exception_handler()
-@decorators.record_filter(ignore='user_id')
-@decorators.query_filter(query_param='user_name')
-def get_users_json(record_ids, query_filter, **kwargs):
+@decorators.response()
+@decorators.cached(ignore=['user_id'])
+@decorators.jsonify('users')
+@decorators.record_filter(ignore=['user_id'])
+def get_users_json(record_ids, **kwargs):
     user_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
         'user_id', record_ids)
 
-    result = []
-    for user_id in user_ids:
-        user_name = vault.get_user_from_runtime_storage(user_id)['user_name']
-        if query_filter(user_name):
-            result.append({'id': user_id, 'text': user_name})
+    result = [{'id': user_id,
+               'text': (vault.get_user_from_runtime_storage(user_id)
+                        ['user_name'])}
+              for user_id in user_ids]
 
     result.sort(key=lambda x: x['text'])
     return result
 
 
 @app.route('/api/1.0/users/<user_id>')
+@decorators.response()
 @decorators.jsonify('user')
 def get_user(user_id):
     user = vault.get_user_from_runtime_storage(user_id)
@@ -418,16 +437,17 @@ def get_user(user_id):
 
 
 @app.route('/api/1.0/releases')
-@decorators.jsonify('releases')
 @decorators.exception_handler()
-@decorators.query_filter(query_param='query')
-def get_releases_json(query_filter):
+@decorators.response()
+@decorators.cached(ignore=parameters.FILTER_PARAMETERS)
+@decorators.jsonify('releases')
+def get_releases_json(**kwargs):
     return [{'id': r['release_name'], 'text': r['release_name'].capitalize()}
-            for r in vault.get_release_options()
-            if query_filter(r['release_name'])]
+            for r in vault.get_release_options()]
 
 
 @app.route('/api/1.0/releases/<release>')
+@decorators.response()
 @decorators.jsonify('release')
 def get_release_json(release):
     if release != 'all':
@@ -438,17 +458,18 @@ def get_release_json(release):
 
 
 @app.route('/api/1.0/metrics')
-@decorators.jsonify('metrics')
 @decorators.exception_handler()
-@decorators.query_filter(query_param='query')
-def get_metrics_json(query_filter):
+@decorators.response()
+@decorators.cached(ignore=parameters.FILTER_PARAMETERS)
+@decorators.jsonify('metrics')
+def get_metrics_json(**kwargs):
     return sorted([{'id': m, 'text': t}
-                   for m, t in six.iteritems(parameters.METRIC_LABELS)
-                   if query_filter(t)],
+                   for m, t in six.iteritems(parameters.METRIC_LABELS)],
                   key=operator.itemgetter('text'))
 
 
 @app.route('/api/1.0/metrics/<metric>')
+@decorators.response()
 @decorators.jsonify('metric')
 @decorators.exception_handler()
 def get_metric_json(metric):
@@ -458,15 +479,17 @@ def get_metric_json(metric):
 
 
 @app.route('/api/1.0/project_types')
-@decorators.jsonify('project_types')
+@decorators.response()
 @decorators.exception_handler()
-@decorators.query_filter(query_param='query')
-def get_project_types_json(query_filter):
+@decorators.cached(ignore=parameters.FILTER_PARAMETERS)
+@decorators.jsonify('project_types')
+def get_project_types_json(**kwargs):
     return [{'id': pt['id'], 'text': pt['title'], 'items': pt.get('items', [])}
-            for pt in vault.get_project_types() if query_filter(pt['title'])]
+            for pt in vault.get_project_types()]
 
 
 @app.route('/api/1.0/project_types/<project_type>')
+@decorators.response()
 @decorators.jsonify('project_type')
 @decorators.exception_handler()
 def get_project_type_json(project_type):
@@ -487,8 +510,10 @@ def _get_week(kwargs, param_name):
 
 
 @app.route('/api/1.0/stats/timeline')
-@decorators.jsonify('timeline')
 @decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('timeline')
 @decorators.record_filter(ignore=['release', 'start_date'])
 def timeline(records, **kwargs):
     # find start and end dates

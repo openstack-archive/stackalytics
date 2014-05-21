@@ -223,6 +223,7 @@ def activity():
 
 
 @blueprint.route('/large_commits')
+@decorators.response()
 @decorators.jsonify('commits')
 @decorators.exception_handler()
 @decorators.record_filter()
@@ -240,6 +241,7 @@ def get_commit_report(records, **kwargs):
 
 
 @blueprint.route('/single_plus_two_reviews')
+@decorators.response()
 @decorators.jsonify()
 @decorators.exception_handler()
 @decorators.record_filter(ignore='metric')
