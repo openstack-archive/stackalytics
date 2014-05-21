@@ -2422,6 +2422,63 @@
             "primary_key": "c72cc4b2345e9e271205d1de00c9812d0a2684ec",
             "module": "cinder",
             "subject": "Fix Jenkins translation jobs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I7f51922472f12f3a13feb71a6fb344076781d7e9"],
+            "primary_key": "79fe7a509cd3bebf513fd24939954df53e7d8a52",
+            "module": "nova",
+            "subject": "Fix Jenkins translation jobs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I1bae1c1bf27bf664b24cf75fc96efb0fcfddc392"],
+            "primary_key": "977766080993c22ed279889c904bcc19883ff8b9",
+            "module": "glance",
+            "subject": "Fix Jenkins translation jobs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I3d7d04a7d5d073d5123f1f7b1e16fd3ef167acfb"],
+            "primary_key": "faada69444988c66a09ade812e10fa2ab5a0adae",
+            "module": "ceilometer",
+            "subject": "Fix Jenkins translation jobs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ib26bc5147f0dc3d49f9b97bc0b8682a8c62c81b8"],
+            "primary_key": "471795aa6c9ccc5acc2e63ff5fcf6b724fb67361",
+            "module": "keystone",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Iaea7a29267ee554d0d20b5cd050d453cea3798ba"],
+            "primary_key": "aa7a7cd794f7f5244107d888b5add366ff5920f4",
+            "module": "openstack-manuals",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I1c45fb62bd2bd25fc2b0188be8f9d6903e743851"],
+            "primary_key": "ed5cd347be2b667bf908df7b613b1583f55c3965",
+            "module": "nova",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie5d8071817543f064873532ae2d0f7a395d4e316"],
+            "primary_key": "0baeb0ee5a02bd3cb517fc13240675a4d16ef433",
+            "module": "sahara",
+            "subject": "Remove all mostly untranslated PO files"
         }
+
     ]
 }
