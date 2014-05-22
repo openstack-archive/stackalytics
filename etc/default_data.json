@@ -2925,15 +2925,19 @@
             "companies": [
                 {
                     "company_name": "Izel Technologies",
-                    "end_date": null
+                    "end_date": "2014-May-16"
                 },
                 {
                     "company_name": "NTT",
                     "end_date": "2013-Oct-18"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
                 }
             ],
             "user_name": "Rohan Kanade",
-            "emails": ["rohan.kanade@izeltech.com", "openstack@rohankanade.com", "rohan.kanade@nttdata.com"]
+            "emails": ["rkanade@redhat.com", "rohan.kanade@izeltech.com", "openstack@rohankanade.com", "rohan.kanade@nttdata.com"]
         },
         {
             "launchpad_id": "kannan",
