@@ -32,6 +32,10 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 if ((start_record == 0) && (data["activity"].length == 0)) {
                     $('#activity_header').hide();
                 }
+                $.each(data["activity"], function() {
+                    console.log(this);
+                    extendWithGravatar(this, {{ gravatar_size }});
+                });
                 $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
                 $('.ext_link').click(function (event) {
                     event.preventDefault();
@@ -60,7 +64,7 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
     <div class="record">
     <div style='float: left; '>
         {% if show_user_gravatar %}
-            <img src="${gravatar}" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+            <img src="${gravatar}">
         {% else %}
             <img src="http://www.gravatar.com/avatar/a${parseInt(record_type,36)}?s={{ gravatar_size }}&d=identicon" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
         {% endif %}

@@ -16,7 +16,6 @@
 import datetime
 import re
 
-from flask.ext import gravatar as gravatar_ext
 import six
 
 from dashboard import parameters
@@ -26,8 +25,6 @@ from stackalytics.processor import utils
 
 INFINITY_HTML = '&#x221E;'
 
-gravatar = gravatar_ext.Gravatar(None, size=64, rating='g', default='wavatar')
-
 
 def _extend_author_fields(record):
     record['author_link'] = make_link(
@@ -36,7 +33,6 @@ def _extend_author_fields(record):
     record['company_link'] = make_link(
         record['company_name'], '/',
         {'company': record['company_name'], 'user_id': ''})
-    record['gravatar'] = gravatar(record.get('author_email', 'stackalytics'))
 
 
 def _extend_record_common_fields(record):
@@ -110,10 +106,6 @@ def extend_user(user):
             company_name, '/', {'company': company_name, 'user_id': ''})
     else:
         user['company_link'] = ''
-    if user['emails']:
-        user['gravatar'] = gravatar(user['emails'][0])
-    else:
-        user['gravatar'] = gravatar(user['user_id'])
 
     return user
 

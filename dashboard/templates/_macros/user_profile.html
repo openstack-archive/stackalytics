@@ -6,6 +6,8 @@
             url: make_uri("/api/1.0/users/{{ user_id }}", extra_options),
             dataType: "json",
             success: function (data) {
+                var user = data["user"];
+                extendWithGravatar(user, 64);
                 $("#user_profile_template").tmpl(data["user"]).appendTo("#user_profile_container");
             }
         });

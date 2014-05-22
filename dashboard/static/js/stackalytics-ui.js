@@ -244,6 +244,22 @@ function render_punch_card(chart_id, chart_data) {
     });
 }
 
+function extendWithGravatar(record, image_size) {
+    var gravatar = "stackalytics";
+    if (record.author_email) {
+        gravatar = record.author_email;
+    } else if (record.emails && record.emails.length > 0) {
+        gravatar = record.emails[0];
+    } else if (record.user_id) {
+        gravatar = record.user_id;
+    }
+    record.gravatar = $.gravatarImageURI(gravatar, {
+        "image": "wavatar",
+        "rating": "g",
+        "size": image_size? image_size: 64
+    });
+}
+
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {

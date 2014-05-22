@@ -20,7 +20,6 @@ import re
 import time
 
 import flask
-from flask.ext import gravatar as gravatar_ext
 from oslo.config import cfg
 import six
 
@@ -580,9 +579,6 @@ def timeline(records, **kwargs):
         array_commits_hl.append([week_str, week_stat_commits_hl[week]])
 
     return [array_commits, array_commits_hl, array_loc]
-
-
-gravatar = gravatar_ext.Gravatar(app, size=64, rating='g', default='wavatar')
 
 
 @app.template_filter('make_url')
