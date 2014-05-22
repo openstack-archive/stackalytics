@@ -3,7 +3,7 @@
 <script type="text/javascript">
     function load_contribution_summary(extra_options) {
         $.ajax({
-            url: make_uri("/api/1.0/contribution", extra_options),
+            url: makeURI("/api/1.0/contribution", extra_options),
             dataType: "json",
             success: function (data) {
                 $("#contribution_template").tmpl(data["contribution"]).appendTo("#contribution_container");

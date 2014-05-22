@@ -397,7 +397,14 @@ def jsonify(root='data'):
     def decorator(func):
         @functools.wraps(func)
         def jsonify_decorated_function(*args, **kwargs):
-            return json.dumps({root: func(*args, **kwargs)})
+            value = func(*args, **kwargs)
+            if isinstance(value, tuple):
+                result = dict([(root[i], value[i])
+                               for i in six.moves.range(min(len(value),
+                                                            len(root)))])
+            else:
+                result = {root: value}
+            return json.dumps(result)
 
         return jsonify_decorated_function
 

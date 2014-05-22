@@ -67,7 +67,7 @@
             });
 
             function make_options() {
-                var options = make_std_options();
+                var options = getUrlVars();
                 options['review_nth'] = $('#review_nth').val();
                 return options;
             }

@@ -45,7 +45,7 @@ class TestAPIModules(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/modules?'
                                     'project_type=all&metric=commits')
-            modules = json.loads(response.data)['modules']
+            modules = json.loads(response.data)['data']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
                  {'id': 'nova', 'text': 'nova', 'tag': 'module'},
@@ -58,7 +58,7 @@ class TestAPIModules(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/modules?module=nova-group&'
                                     'project_type=integrated&metric=commits')
-            modules = json.loads(response.data)['modules']
+            modules = json.loads(response.data)['data']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
                  {'id': 'nova', 'text': 'nova', 'tag': 'module'},

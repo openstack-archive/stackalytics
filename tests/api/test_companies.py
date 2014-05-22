@@ -59,14 +59,14 @@ class TestAPICompanies(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/companies?metric=commits&'
                                     'module=glance')
-            companies = json.loads(response.data)['companies']
+            companies = json.loads(response.data)['data']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'},
                               {'id': 'ntt', 'text': 'NTT'}], companies)
 
             response = self.app.get('/api/1.0/companies?metric=marks&'
                                     'module=glance')
-            companies = json.loads(response.data)['companies']
+            companies = json.loads(response.data)['data']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'}], companies)
 

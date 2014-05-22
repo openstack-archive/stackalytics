@@ -28,17 +28,7 @@ class TestAPIReleases(test_api.TestAPI):
                     {'release_name': 'icehouse', 'end_date': 1397692800}]},
                 test_api.make_records(record_type=['commit'])):
             response = self.app.get('/api/1.0/releases')
-            releases = json.loads(response.data)['releases']
+            releases = json.loads(response.data)['data']
             self.assertEqual(3, len(releases))
             self.assertIn({'id': 'all', 'text': 'All'}, releases)
             self.assertIn({'id': 'icehouse', 'text': 'Icehouse'}, releases)
-
-    def test_release_details(self):
-        with test_api.make_runtime_storage(
-                {'releases': [
-                    {'release_name': 'prehistory', 'end_date': 1365033600},
-                    {'release_name': 'icehouse', 'end_date': 1397692800}]},
-                test_api.make_records(record_type=['commit'])):
-            response = self.app.get('/api/1.0/releases/icehouse')
-            release = json.loads(response.data)['release']
-            self.assertEqual({'id': 'icehouse', 'text': 'Icehouse'}, release)

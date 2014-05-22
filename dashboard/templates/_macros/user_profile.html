@@ -3,7 +3,7 @@
 <script type="text/javascript">
     function load_user_profile(extra_options) {
         $.ajax({
-            url: make_uri("/api/1.0/users/{{ user_id }}", extra_options),
+            url: makeURI("/api/1.0/users/{{ user_id }}", extra_options),
             dataType: "json",
             success: function (data) {
                 var user = data["user"];

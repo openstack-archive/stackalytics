@@ -7,8 +7,8 @@ Open reviews report for {{ module }}
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            render_bar_chart("latest_revision_chart", [{{ latest_revision.chart_data }}]);
-            render_bar_chart("first_revision_chart", [{{ first_revision.chart_data }}]);
+            renderBarChart("latest_revision_chart", [{{ latest_revision.chart_data }}]);
+            renderBarChart("first_revision_chart", [{{ first_revision.chart_data }}]);
         });
     </script>
 {% endblock %}

@@ -36,132 +36,66 @@ function make_uri(uri, options) {
     return (str == "") ? uri : uri + "?" + str;
 }
 
-function make_std_options() {
-    var options = {};
-    options['project_id'] = $('#project_selector').val();
-    options['vendor'] = $('#vendor_selector').val();
-    options['release_id'] = $('#release_selector').val();
-
-    return options;
+function getPageState() {
+    return {
+        project_id: $('#project_id').val(),
+        vendor: $('#vendor').val(),
+        release_id: $('#release_id').val()
+    };
 }
 
-function reload() {
-    var ops = {};
-    $.extend(ops, getUrlVars());
-    $.extend(ops, make_std_options());
-    window.location.search = $.map(ops,function (val, index) {
-        return index + "=" + encodeURIComponent(val);
+function reload(extra) {
+    window.location.search = $.map($.extend(getPageState(), extra), function (val, index) {
+        return val? (index + "=" + encodeURIComponent(val)) : null;
     }).join("&")
 }
 
-function init_selectors(base_url) {
-    $(document).tooltip();
+function initSelectors(base_url) {
 
-    var project_id = getUrlVars()["project_id"];
+    function initSingleSelector(name, data_container, api_url, select2_extra_options, change_handler) {
+        $("#" + name).val(0).select2({
+            data: [{id: 0, text: "Loading..." }],
+            formatSelection: function(item) { return "<div class=\"select2-loading\">" + item.text + "</div>"}
+        }).select2("enable", false);
 
-    $("#project_selector").val(project_id).select2({
-        allowClear: true,
-        placeholder: "Select Project",
-        ajax: {
-            url: make_uri(base_url + "api/1.0/list/project_ids"),
-            dataType: 'jsonp',
-            data: function (term, page) {
-                return {
-                    query: term
-                };
-            },
-            results: function (data, page) {
-                return {results: data["project_ids"]};
+        $.ajax({
+            url: api_url,
+            dataType: "jsonp",
+            success: function (data) {
+                var initial_value = getUrlVars()[name];
+                if (!initial_value && data["default"]) {
+                    initial_value = data["default"];
+                }
+                $("#" + name).
+                    val(initial_value).
+                    select2($.extend({
+                        data: data[data_container]
+                    }, select2_extra_options)).
+                    on("select2-selecting",function (e) { /* don't use 'change' event, because it changes value and then refreshes the page */
+                        var options = {};
+                        options[name] = e.val;
+                        if (change_handler) {
+                            change_handler(options);
+                            console.log(options);
+                        }
+                        reload(options);
+                    }).
+                    on("select2-removed",function (e) {
+                        var options = {};
+                        options[name] = '';
+                        reload(options);
+                    }).
+                    select2("enable", true);
             }
-        },
-        initSelection: function (element, callback) {
-            var id = $(element).val();
-            if (id !== "") {
-                $.ajax(make_uri(base_url + "api/1.0/list/project_ids/" + id), {
-                    dataType: "jsonp"
-                }).done(function (data) {
-                        callback(data["project_id"]);
-                    });
-            }
-        }
-    });
-
-    $('#project_selector')
-        .on("change", function (e) {
-            reload();
         });
+    }
 
-    var vendor = getUrlVars()["vendor"];
-
-    $("#vendor_selector").val(vendor).select2({
-        allowClear: true,
-        placeholder: "Select Vendor",
-        ajax: {
-            url: make_uri(base_url + "api/1.0/list/vendors"),
-            dataType: 'jsonp',
-            data: function (term, page) {
-                return {
-                    query: term
-                };
-            },
-            results: function (data, page) {
-                return {results: data["vendors"]};
-            }
-        },
-        initSelection: function (element, callback) {
-            var id = $(element).val();
-            if (id !== "") {
-                $.ajax(make_uri(base_url + "api/1.0/list/vendors/" + id), {
-                    dataType: "jsonp"
-                }).done(function (data) {
-                        callback(data["vendor"]);
-                    });
-            }
-        }
-    });
-
-    $('#vendor_selector')
-        .on("change", function (e) {
-            reload();
-        });
-
-    var release_id = getUrlVars()["release_id"];
-
-    $("#release_selector").val(release_id).select2({
-        allowClear: true,
-        placeholder: "Select Release",
-        ajax: {
-            url: make_uri(base_url + "api/1.0/list/releases"),
-            dataType: 'jsonp',
-            data: function (term, page) {
-                return {
-                    query: term
-                };
-            },
-            results: function (data, page) {
-                return {results: data["releases"]};
-            }
-        },
-        initSelection: function (element, callback) {
-            var id = $(element).val();
-            if (id !== "") {
-                $.ajax(make_uri(base_url + "api/1.0/list/releases/" + id), {
-                    dataType: "jsonp"
-                }).done(function (data) {
-                        callback(data["release"]);
-                    });
-            }
-        }
-    });
-
-    $('#release_selector')
-        .on("change", function (e) {
-            reload();
-        });
-
+    initSingleSelector("project_id", "project_ids", make_uri(base_url + "api/1.0/list/project_ids"), {allowClear: true});
+    initSingleSelector("vendor", "vendors", make_uri(base_url + "api/1.0/list/vendors"), {allowClear: true});
+    initSingleSelector("release", "releases", make_uri(base_url + "api/1.0/list/releases"), {allowClear: true});
 }
 
-function show_driver_info(driver) {
+function showDriverInfo(driver) {
     $("#driver_info_container").empty();
     $("#driver_info_template").tmpl(driver).appendTo("#driver_info_container");
 
@@ -194,7 +128,7 @@ function show_driver_info(driver) {
     $("#driver_info_dialog").dialog("open");
 }
 
-function setup_driver_info_handler(table_id, element_id, driver) {
+function setupDriverInfoHandler(table_id, element_id, driver) {
     $("#driver_info_dialog").dialog({
         autoOpen: false,
         width: "70%",
@@ -212,11 +146,11 @@ function setup_driver_info_handler(table_id, element_id, driver) {
         event.preventDefault();
         event.stopPropagation();
 
-        show_driver_info(driver);
+        showDriverInfo(driver);
     });
 }
 
-function show_summary(base_url) {
+function showSummary(base_url) {
     var table_column_names = ["project_name", "vendor", "driver_info", "in_trunk", "ci_tested", "maintainers_info"];
     var table_id = "data_table";
 
@@ -240,7 +174,7 @@ function show_summary(base_url) {
                     tableData[i].driver_info += "<div>" + tableData[i].description + "</div>";
                 }
 
-                setup_driver_info_handler(table_id, "driver_" + i, tableData[i]);
+                setupDriverInfoHandler(table_id, "driver_" + i, tableData[i]);
 
                 var releases_list = [];
                 for (var j = 0; j < tableData[i].releases_info.length; j++) {
@@ -300,6 +234,7 @@ function show_summary(base_url) {
                     ],
                     "iDisplayLength": -1,
                     "bAutoWidth": false,
+                    "bPaginate": false,
                     "aaData": tableData,
                     "aoColumns": tableColumns
                 });

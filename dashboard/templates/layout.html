@@ -48,7 +48,7 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        init_selectors("");
+        initSelectors("");
     });
     $(function () {
         $(document).tooltip();
@@ -69,7 +69,7 @@
         </div>
         <div id="analytics_header">
             <div style="float: left;">
-                <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
+                <span id="logo"><a href="{{ url_for('overview') }}">Stackalytics</a></span>
             </div>
             <div class="stackamenu">
                 <ul id="menu-stackamenu">
@@ -83,33 +83,33 @@
         <div class="drops">
 
             <div class="drop">
-                <label for="release" title="Official releases of OpenStack">Release</label>
-                <input type="hidden" id="release" style="width: 140px" data-placeholder="Select release"/>
+                <label for="release_selector" title="Official releases of OpenStack">Release</label>
+                <input type="hidden" id="release_selector" style="width: 140px" data-placeholder="Select release"/>
             </div>
 
             <div class="drop">
-                <label for="project_type" title="Project type groups modules of same kind: official (integrated, incubated, other) or belonging to same organization (stackforge, infra)">Project Type</label>
-                <input type="hidden" id="project_type" style="width: 140px" data-placeholder="Select project type"/>
+                <label for="project_type_selector" title="Project type groups modules of same kind: official (integrated, incubated, other) or belonging to same organization (stackforge, infra)">Project Type</label>
+                <input type="hidden" id="project_type_selector" style="width: 140px" data-placeholder="Select project type"/>
             </div>
 
             <div class="drop">
-                <label for="module" title="Module represents a repo (black), official program (violet) or pre-configured group of modules (cyan)">Module</label>
-                <input type="hidden" id="module" style="width: 140px" data-placeholder="Any module" value="{{ module }}"/>
+                <label for="module_selector" title="Module represents a repo (black), official program (violet) or pre-configured group of modules (cyan)">Module</label>
+                <input type="hidden" id="module_selector" style="width: 140px" data-placeholder="Any module"/>
             </div>
 
             <div class="drop">
-                <label for="company" title="Company name">Company</label>
-                <input type="hidden" id="company" style="width: 140px" data-placeholder="Any company" value="{{ company }}"/>
+                <label for="company_selector" title="Company name">Company</label>
+                <input type="hidden" id="company_selector" style="width: 140px" data-placeholder="Any company"/>
             </div>
 
             <div class="drop">
-                <label for="user" title="Name of engineer as configured in Launchpad or default_data.json">Engineer</label>
-                <input type="hidden" id="user" style="width: 140px" data-placeholder="Any engineer" value="{{ user_id }}"/>
+                <label for="user_id_selector" title="Name of engineer as configured in Launchpad or default_data.json">Engineer</label>
+                <input type="hidden" id="user_id_selector" style="width: 140px" data-placeholder="Any engineer"/>
             </div>
 
             <div class="drop">
-                <label for="metric" title="One of available metrics">Metric</label>
-                <input type="hidden" id="metric" style="width: 140px" data-placeholder="Select metric"/>
+                <label for="metric_selector" title="One of available metrics">Metric</label>
+                <input type="hidden" id="metric_selector" style="width: 140px" data-placeholder="Select metric"/>
             </div>
 
         </div>

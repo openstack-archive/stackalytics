@@ -275,12 +275,14 @@ def get_contribution_json(records, **kwargs):
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached(ignore=['company'])
-@decorators.jsonify('companies')
+@decorators.jsonify()
 @decorators.record_filter(ignore=['company'])
 def get_companies_json(record_ids, **kwargs):
     memory_storage = vault.get_memory_storage()
     companies = memory_storage.get_index_keys_by_record_ids(
         'company_name', record_ids)
+    if kwargs['_params']['company']:
+        companies.add(kwargs['_params']['company'][0])
 
     result = [memory_storage.get_original_company_name(company)
               for company in companies]
@@ -293,7 +295,7 @@ def get_companies_json(record_ids, **kwargs):
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached(ignore=['module'])
-@decorators.jsonify('modules')
+@decorators.jsonify()
 @decorators.record_filter(ignore=['module'])
 def get_modules_json(record_ids, **kwargs):
     module_id_index = vault.get_vault()['module_id_index']
@@ -313,7 +315,8 @@ def get_modules_json(record_ids, **kwargs):
     # keep only modules with specified tags
     if tags:
         module_ids = set(module_id for module_id in module_ids
-                         if module_id_index[module_id].get('tag') in tags)
+                         if ((module_id in module_id_index) and
+                             (module_id_index[module_id].get('tag') in tags)))
 
     result = []
     for module_id in module_ids:
@@ -327,8 +330,9 @@ def get_modules_json(record_ids, **kwargs):
 
 @app.route('/api/1.0/companies/<company_name>')
 @decorators.response()
+@decorators.cached()
 @decorators.jsonify('company')
-def get_company(company_name):
+def get_company(company_name, **kwargs):
     memory_storage_inst = vault.get_memory_storage()
     for company in memory_storage_inst.get_companies():
         if company.lower() == company_name.lower():
@@ -342,8 +346,9 @@ def get_company(company_name):
 
 @app.route('/api/1.0/modules/<module>')
 @decorators.response()
+@decorators.cached()
 @decorators.jsonify('module')
-def get_module(module):
+def get_module(module, **kwargs):
     module_id_index = vault.get_vault()['module_id_index']
     module = module.lower()
     if module in module_id_index:
@@ -410,11 +415,13 @@ def get_bpd(records, **kwargs):
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached(ignore=['user_id'])
-@decorators.jsonify('users')
+@decorators.jsonify()
 @decorators.record_filter(ignore=['user_id'])
 def get_users_json(record_ids, **kwargs):
     user_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
         'user_id', record_ids)
+    if kwargs['_params']['user_id']:
+        user_ids.add(kwargs['_params']['user_id'][0])
 
     result = [{'id': user_id,
                'text': (vault.get_user_from_runtime_storage(user_id)
@@ -440,64 +447,35 @@ def get_user(user_id):
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached(ignore=parameters.FILTER_PARAMETERS)
-@decorators.jsonify('releases')
+@decorators.jsonify(root=('data', 'default'))
 def get_releases_json(**kwargs):
-    return [{'id': r['release_name'], 'text': r['release_name'].capitalize()}
-            for r in vault.get_release_options()]
-
-
-@app.route('/api/1.0/releases/<release>')
-@decorators.response()
-@decorators.jsonify('release')
-def get_release_json(release):
-    if release != 'all':
-        if release not in vault.get_vault()['releases']:
-            release = parameters.get_default('release')
-
-    return {'id': release, 'text': release.capitalize()}
+    return ([{'id': r['release_name'], 'text': r['release_name'].capitalize()}
+            for r in vault.get_release_options()],
+            parameters.get_default('release'))
 
 
 @app.route('/api/1.0/metrics')
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached(ignore=parameters.FILTER_PARAMETERS)
-@decorators.jsonify('metrics')
+@decorators.jsonify(root=('data', 'default'))
 def get_metrics_json(**kwargs):
-    return sorted([{'id': m, 'text': t}
-                   for m, t in six.iteritems(parameters.METRIC_LABELS)],
-                  key=operator.itemgetter('text'))
-
-
-@app.route('/api/1.0/metrics/<metric>')
-@decorators.response()
-@decorators.jsonify('metric')
-@decorators.exception_handler()
-def get_metric_json(metric):
-    if metric not in parameters.METRIC_LABELS:
-        metric = parameters.get_default('metric')
-    return {'id': metric, 'text': parameters.METRIC_LABELS[metric]}
+    return (sorted([{'id': m, 'text': t} for m, t in
+                    six.iteritems(parameters.METRIC_LABELS)],
+                   key=operator.itemgetter('text')),
+            parameters.get_default('metric'))
 
 
 @app.route('/api/1.0/project_types')
 @decorators.response()
 @decorators.exception_handler()
 @decorators.cached(ignore=parameters.FILTER_PARAMETERS)
-@decorators.jsonify('project_types')
+@decorators.jsonify(root=('data', 'default'))
 def get_project_types_json(**kwargs):
-    return [{'id': pt['id'], 'text': pt['title'], 'items': pt.get('items', [])}
-            for pt in vault.get_project_types()]
-
-
-@app.route('/api/1.0/project_types/<project_type>')
-@decorators.response()
-@decorators.jsonify('project_type')
-@decorators.exception_handler()
-def get_project_type_json(project_type):
-    if not vault.is_project_type_valid(project_type):
-        project_type = parameters.get_default('project_type')
-
-    pt = vault.get_project_type(project_type)
-    return {'id': pt['id'], 'text': pt['title']}
+    return ([{'id': pt['id'], 'text': pt['title'],
+             'child': pt.get('child', False)}
+             for pt in vault.get_project_types()],
+            parameters.get_default('project_type'))
 
 
 def _get_week(kwargs, param_name):
