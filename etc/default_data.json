@@ -7633,7 +7633,13 @@
             "end_date": "2014-Oct-17"
         }
     ],
-    "mail_lists": ["http://lists.openstack.org/pipermail/openstack-dev/"],
+    "mail_lists": [
+        "http://lists.openstack.org/pipermail/openstack-dev/",
+        "http://lists.openstack.org/pipermail/openstack-docs/",
+        "http://lists.openstack.org/pipermail/openstack-infra/",
+        "http://lists.openstack.org/pipermail/openstack-operators/",
+        "http://lists.openstack.org/pipermail/openstack/"
+    ],
     "member_lists": ["http://www.openstack.org/community/members/profile/"],
     "project_types": [
         {
