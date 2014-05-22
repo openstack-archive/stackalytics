@@ -4840,6 +4840,10 @@
                 },
                 {
                     "company_name": "Big Switch Networks",
+                    "end_date": "2014-Feb-07"
+                },
+               {
+                    "company_name": "Cisco Systems",
                     "end_date": null
                 }
             ],
