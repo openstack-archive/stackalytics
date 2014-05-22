@@ -5033,6 +5033,18 @@
             "emails": ["jp@jamezpolley.com", "james.polley@hp.com"]
         },
         {
+            "launchpad_id": "tellesmvn",
+            "gerrit_id": "tellesnobrega",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Telles Mota Vidal Nóbrega",
+            "emails": ["tellesmvn@lsd.ufcg.edu.br", "tellesnobrega@gmail.com"]
+        },
+        {
             "launchpad_id": "termie",
             "companies": [
                 {
