@@ -3018,6 +3018,17 @@
             "emails": ["ke.wu@nebula.com", "ke.wu@ibeca.me"]
         },
         {
+            "launchpad_id": "keith-newstadt",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Keith Newstadt",
+            "emails": ["keith_newstadt@symantec.com", "kngh@newstadt.org"]
+        },
+        {
             "launchpad_id": "ken-pepple",
             "companies": [
                 {
@@ -3093,17 +3104,6 @@
             ],
             "user_name": "K Jonathan Harker",
             "emails": ["k.jonathan.harker@hp.com"]
-        },
-        {
-            "launchpad_id": "knewstadt",
-            "companies": [
-                {
-                    "company_name": "Symantec",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Keith Newstadt",
-            "emails": ["keith_newstadt@symantec.com", "kngh@newstadt.org"]
         },
         {
             "launchpad_id": "kozhukalov",
