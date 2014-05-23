@@ -2499,7 +2499,7 @@
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
             "change_id": ["Ic6d9b36a04260a2dd2f605379b847e0165449ce8"],
-            "primary_key": "commit b9b51a0f1b9a1d9e3daa89835684ac2dc2435887",
+            "primary_key": "b9b51a0f1b9a1d9e3daa89835684ac2dc2435887",
             "module": "ceilometer",
             "subject": "Remove all mostly untranslated PO files"
         },
