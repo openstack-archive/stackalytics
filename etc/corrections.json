@@ -2478,6 +2478,70 @@
             "primary_key": "0baeb0ee5a02bd3cb517fc13240675a4d16ef433",
             "module": "sahara",
             "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie5d98c0f56d3f79dee6453bacca7b76c110d249e"],
+            "primary_key": "e13ea8b3cdcc0add03ced0261910ad8609c05521",
+            "module": "ironic",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I90416726e72e1daeda4e5aba41972a74c2cb8647"],
+            "primary_key": "9cf2e8ad27b4726673ad6ec29fae27cc6a8aac99",
+            "module": "operations-guide",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ic6d9b36a04260a2dd2f605379b847e0165449ce8"],
+            "primary_key": "commit b9b51a0f1b9a1d9e3daa89835684ac2dc2435887",
+            "module": "ceilometer",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia2953a0e78afc4b440f3a42363184aad629c9434"],
+            "primary_key": "4916c2ce7696182b655123a490d1cf1d98c9f91a",
+            "module": "trove",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I9b0eaa3d137c3728dc95d1559debae1ba57974f2"],
+            "primary_key": "72fe3f9af64b412c522c6050eabf07e654d1507b",
+            "module": "api-site",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If531d2d262abc7f0e05686a0b8b2869954241c3d"],
+            "primary_key": "f8d5cc9f1de8673f89a934332a77fda3bbd81880",
+            "module": "openstack-manuals",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I56c85a63888d0edd81895fb213e5967b0e799013"],
+            "primary_key": "1a1931beba835b06b8bc492d9f6b167c52bf6519",
+            "module": "cinder",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Id81eb9f3a4bb11fe0026d06bef67eb285128edf1"],
+            "primary_key": "5b29bb14a8c2ae7789a759532b7b6fefc8ba83d1",
+            "module": "heat",
+            "subject": "Remove all mostly untranslated PO files"
         }
 
     ]
