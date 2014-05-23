@@ -3091,6 +3091,17 @@
             "emails": ["k.jonathan.harker@hp.com"]
         },
         {
+            "launchpad_id": "knewstadt",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Keith Newstadt",
+            "emails": ["keith_newstadt@symantec.com", "kngh@newstadt.org"]
+        },
+        {
             "launchpad_id": "kozhukalov",
             "user_name": "Vladimir Kozhukalov",
             "companies": [
