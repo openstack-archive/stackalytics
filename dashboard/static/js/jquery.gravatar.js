@@ -42,7 +42,7 @@
     {
         return $('<img src="' + $.gravatarImageURI(emailAddress, overrides) +
             '"' +
-            (options.classes ? ' class="' + options.classes + '"' : '') +
+            (overrides.classes ? ' class="' + overrides.classes + '"' : '') +
             ' />').bind('error', function()
             {
                 $(this).remove();

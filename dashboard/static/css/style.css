@@ -37,10 +37,23 @@ h2 {
     text-shadow: 1px 1px 0 #fff;
 }
 
-div.page h3 {
+h3 {
     font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
-    font-size: 18px;
+    font-size: 19px;
+    font-weight: normal;
+    font-style: normal;
     margin-bottom: 10px;
+    color: #a41200;
+}
+
+h4 {
+    font-family: 'PT Sans Narrow', 'Arial Narrow', arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+    color: #a41200;
 }
 
 input[type="text"],
@@ -189,6 +202,10 @@ div#right_list_wrapper {
     white-space: pre-wrap;
 }
 
+.line {
+    margin-bottom: 0.3em;
+}
+
 a[href^="https://blueprints"]:after {
     content: "↗";
     opacity: 0.3;
@@ -205,6 +222,11 @@ a[href^="https://bugs"]:after {
 }
 
 a[href^="https://launchpad"]:after {
+    content: "↗";
+    opacity: 0.3;
+}
+
+a[target]:not([target='']):after {
     content: "↗";
     opacity: 0.3;
 }
