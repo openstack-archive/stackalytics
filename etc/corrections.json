@@ -2542,6 +2542,22 @@
             "primary_key": "5b29bb14a8c2ae7789a759532b7b6fefc8ba83d1",
             "module": "heat",
             "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ib630d5e89ee6bca8b554110b2703cca85fb70c3b"],
+            "primary_key": "371533be00e2de3062110ee2ca46454c695b1db0",
+            "module": "glance",
+            "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If1700477e01b8ccf515c140597f47caf2b81c803"],
+            "primary_key": "656f2cd02083058c037c160f4c1b78d4c6eb877b",
+            "module": "neutron",
+            "subject": "Remove all mostly untranslated PO files"
         }
 
     ]
