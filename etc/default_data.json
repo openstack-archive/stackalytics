@@ -4013,6 +4013,17 @@
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
         },
         {
+            "launchpad_id": "patrick-crews",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Patrick Crews",
+            "emails": ["gleebix@gmail.com"]
+        },
+        {
             "launchpad_id": "paulcz",
             "companies": [
                 {
