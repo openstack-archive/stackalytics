@@ -3951,6 +3951,17 @@
             "emails": ["bogorodskiy@gmail.com", "rbogorodskiy@mirantis.com"]
         },
         {
+            "launchpad_id": "ogazitt",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Omri Gazitt",
+            "emails": ["ogazitt@gmail.com", "omri.gazitt@hp.com"]
+        },
+        {
             "launchpad_id": "oleksandr-minakov",
             "companies": [
                 {
