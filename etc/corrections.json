@@ -3,7 +3,7 @@
         {
             "correction_comment": "Reset LOC to 3k",
             "loc": 3000,
-            "change_id": "Ie7d07ba7c89857e13d4ddc8f0e9b68de020a3d19",
+            "change_id": ["Ie7d07ba7c89857e13d4ddc8f0e9b68de020a3d19"],
             "primary_key": "ee3fe4e836ca1c81e50a8324a9b5f982de4fa97f",
             "module": "neutron",
             "subject": "Rename Quantum to Neutron"
@@ -11,7 +11,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ic590f52f14d000d07be6ee9a8da3df976b58c302",
+            "change_id": ["Ic590f52f14d000d07be6ee9a8da3df976b58c302"],
             "primary_key": "c519f12729002b70de4fd4c58134601df0abbd06",
             "module": "horizon",
             "subject": "Add openstack-common"
@@ -19,7 +19,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Icdee121c28a2fce0261b567eceaab4d46fd0b64c",
+            "change_id": ["Icdee121c28a2fce0261b567eceaab4d46fd0b64c"],
             "primary_key": "c799676a386018550803cab8551ce93c1a0c81a8",
             "module": "cookbook-openstack-object-storage",
             "subject": "Pull in att-cloud swift cookbook (forked from rcbops)"
@@ -91,7 +91,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I4c6e3a997e7d4dc6cf42c6af2e7ed4e4ec98ee2f",
+            "change_id": ["I4c6e3a997e7d4dc6cf42c6af2e7ed4e4ec98ee2f"],
             "primary_key": "6673ceeb3a2971ec9a4e66c7fc30faf7ba8f8b6b",
             "module": "murano-api",
             "subject": "Change oslo.config dependacy declaration"
@@ -131,7 +131,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I099710988880d33e4516f54cdf1d3e3cf048f97c",
+            "change_id": ["I099710988880d33e4516f54cdf1d3e3cf048f97c"],
             "primary_key": "306ec988c7c388f80249d3776451da14ad203860",
             "module": "murano-docs",
             "subject": "Restore broken murano manual"
@@ -139,7 +139,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ieaf61384defed0d4e85d342325aa375050025a00",
+            "change_id": ["Ieaf61384defed0d4e85d342325aa375050025a00"],
             "primary_key": "8bd5d3b75de3470e628bd49c014e8bd64ff1f53c",
             "module": "murano-docs",
             "subject": "Fixed a few small bugs."
@@ -147,7 +147,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I979c55f9c45797e40fc8456cd898351bb94cceb2",
+            "change_id": ["I979c55f9c45797e40fc8456cd898351bb94cceb2"],
             "primary_key": "bd92cadeb9f1e7559a6ffb264905b0e08941cd00",
             "module": "murano-docs",
             "subject": "Restructured manual"
@@ -187,7 +187,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I0f43f228046b82f9688c4b31b2e14f3680d8c364",
+            "change_id": ["I0f43f228046b82f9688c4b31b2e14f3680d8c364"],
             "primary_key": "b60e037e28b2a89a75066275d7ce2226b2e8dca5",
             "module": "stackalytics",
             "subject": "Removed independent users which could be resolved automatically"
@@ -195,7 +195,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I26416d87f05ec5d9c76750e9c63d73cab457d85f",
+            "change_id": ["I26416d87f05ec5d9c76750e9c63d73cab457d85f"],
             "primary_key": "b8283eda4e5e3c46cd7b32ab00578db39974c8ef",
             "module": "stackalytics",
             "subject": "Default data is cleared"
@@ -203,7 +203,7 @@
         {
             "correction_comment": "Removed 13k LOC for default data",
             "loc": 5000,
-            "change_id": "I0cc61c6d344ba24442ec954635010b518c0efa95",
+            "change_id": ["I0cc61c6d344ba24442ec954635010b518c0efa95"],
             "primary_key": "b7f19335f6c6a710d1e8925f8a9675d9e7115741",
             "module": "stackalytics",
             "subject": "Implementation of blueprint stackalytics-core"
@@ -235,7 +235,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I4810c45d15413bdf21b9f68f59096c907bb1e624",
+            "change_id": ["I4810c45d15413bdf21b9f68f59096c907bb1e624"],
             "primary_key": "b7e36244c09f4b436478ff966a1715fc9b20b895",
             "module": "horizon",
             "subject": "Updated translations from Transifex"
@@ -243,7 +243,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I4f0538d5a42c52099feb523231a7f3f1441fcf2b",
+            "change_id": ["I4f0538d5a42c52099feb523231a7f3f1441fcf2b"],
             "primary_key": "214eb90d4f5a0cba88bf3484fe75d67e91ded94e",
             "module": "publications",
             "subject": "Remove everything."
@@ -251,7 +251,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ie7224fd0699b8e8541ec37070da4302e2fab7453",
+            "change_id": ["Ie7224fd0699b8e8541ec37070da4302e2fab7453"],
             "primary_key": "66ad0ed88ed9412739ba8e1dacd3f0a50c48d0b1",
             "module": "netconn-api",
             "subject": "Updates pom.xml to use 1.5.2 of plugin and new Google Analytics code."
@@ -259,7 +259,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ib30729297f0e05cb85d79ba6780a9d0ff1b8daf7",
+            "change_id": ["Ib30729297f0e05cb85d79ba6780a9d0ff1b8daf7"],
             "primary_key": "421a8d732ef91eff1dc54927113b1aa7ad037311",
             "module": "openstack-manuals",
             "subject": "removed unnecessary spaces"
@@ -267,7 +267,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ic8595278a91a2b979da54e7c7a61a483f399643b",
+            "change_id": ["Ic8595278a91a2b979da54e7c7a61a483f399643b"],
             "primary_key": "f81343617ab23ec9c4084258970d0430359b0e46",
             "module": "openstack-manuals",
             "subject": "Delete openstack-ops from openstack-manuals repo"
@@ -275,7 +275,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I82b10aaf6bf8e53ed522405501263843d381bb1e",
+            "change_id": ["I82b10aaf6bf8e53ed522405501263843d381bb1e"],
             "primary_key": "578a49860a12b45c5bac35672502bfb0e86ffa65",
             "module": "anvil",
             "subject": "Doc cleanups"
@@ -283,7 +283,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I70fc4846252d1a0612007e7140ba2c21ca891bb2",
+            "change_id": ["I70fc4846252d1a0612007e7140ba2c21ca891bb2"],
             "primary_key": "83a76bff677b17f7a483bd5d651f65841322df8a",
             "module": "climate",
             "subject": "Update Oslo"
@@ -291,7 +291,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ibccf83fb6e50b61a5e5ce77233d8221b299c54ba",
+            "change_id": ["Ibccf83fb6e50b61a5e5ce77233d8221b299c54ba"],
             "primary_key": "dde53a2ccc244a5e322c0d7a4c06575d7e5457c2",
             "module": "sahara",
             "subject": "Oslo has been updated"
@@ -299,7 +299,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ia9ee609bbc06a1d8b9d6917642529f30347541fd",
+            "change_id": ["Ia9ee609bbc06a1d8b9d6917642529f30347541fd"],
             "primary_key": "7ab80b554dde5f1f1e61b6a8c45492c5ac27ed6b",
             "module": "trove",
             "subject": "Rename from reddwarf to trove."
@@ -307,7 +307,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I61af7a54d09f3d1d6b6efe470ea6308be8ace2e7",
+            "change_id": ["I61af7a54d09f3d1d6b6efe470ea6308be8ace2e7"],
             "primary_key": "770c0fd83b19ef2b55a032f750f9e22b9c4c5ea1",
             "module": "trove",
             "subject": "Refreshed Oslo Code"
@@ -315,7 +315,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I85b379dbf5202136cbb987c3f176b9cc7b7ff666",
+            "change_id": ["I85b379dbf5202136cbb987c3f176b9cc7b7ff666"],
             "primary_key": "f754d1d53dd6a9b14b96f9d165ed687aa5326d87",
             "module": "heat",
             "subject": "templates : remove in-tree templates"
@@ -331,7 +331,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I02ef05391f14b489fe8510e80cd4a9b9a516e773",
+            "change_id": ["I02ef05391f14b489fe8510e80cd4a9b9a516e773"],
             "primary_key": "6add13cf631306420ee13e2e8cb0978e65885509",
             "module": "murano-conductor",
             "subject": "Migrate to Murano Common"
@@ -349,7 +349,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I0b540e54dbabd26901a7530035a38583bb521fda",
+            "change_id": ["I0b540e54dbabd26901a7530035a38583bb521fda"],
             "primary_key": "7e2b93acc59dea81d52684f7f659fcff32507e14",
             "module": "nova",
             "subject": "removes the nova-volume code from nova"
@@ -389,7 +389,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Id401feea7ed7d0a7861a44f9ccc294615617f928",
+            "change_id": ["Id401feea7ed7d0a7861a44f9ccc294615617f928"],
             "primary_key": "59a193789ddd7a700e8ab9e781da94997b65a99a",
             "module": "ceilometer",
             "subject": "api: replace minified files by complete version"
@@ -397,7 +397,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I06d4e9834d66d834e9e636ffcd80ae5e4afa34d7",
+            "change_id": ["I06d4e9834d66d834e9e636ffcd80ae5e4afa34d7"],
             "primary_key": "8a6c81ad277756cfce5b7bf088a603874f425a57",
             "module": "horizon",
             "subject": "Updated translations from transifex for Grizzly RC."
@@ -405,7 +405,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I7235b41d449b26c980668fc3eb4360b24508717b",
+            "change_id": ["I7235b41d449b26c980668fc3eb4360b24508717b"],
             "primary_key": "cb8e7c1f8f0b238b88253cd6d82092cbe530ba9e",
             "module": "horizon",
             "subject": "Splits OpenStack Dashboard bits from framework app code."
@@ -413,7 +413,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "Ic3d7b73d0b7ad0fcb5841a6ac90a2a21653d05be",
+            "change_id": ["Ic3d7b73d0b7ad0fcb5841a6ac90a2a21653d05be"],
             "primary_key": "175efb4f735a181b60d5ed18d72b5e37b139c14b",
             "module": "horizon",
             "subject": "Final translations for Folsom."
@@ -421,7 +421,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I2140035f98bd332f25d7dd7569993bcd960a869e",
+            "change_id": ["I2140035f98bd332f25d7dd7569993bcd960a869e"],
             "primary_key": "762f2e19cf60f1de2bb45b6f67c1bee762804712",
             "module": "cinder",
             "subject": "Cinder devref doc cleanups"
@@ -429,7 +429,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I55f5eaca73e7962bbf48903786ec3d3665ba01e0",
+            "change_id": ["I55f5eaca73e7962bbf48903786ec3d3665ba01e0"],
             "primary_key": "4d8e331635a1d9ed9ea1ae574a79a370265aef0b",
             "module": "horizon",
             "subject": "Updating .po files for translation."
@@ -437,7 +437,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I9ad1b441eca855a4304454014ae746ec51bef8f3",
+            "change_id": ["I9ad1b441eca855a4304454014ae746ec51bef8f3"],
             "primary_key": "c8a5bc39dccd513d879ad042165e4713fc2a3878",
             "module": "trove",
             "subject": "Update oslo codebase within reddwarf."
@@ -445,7 +445,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I4d559b25413a6138cd7d2fb94c028f8cafde100c",
+            "change_id": ["I4d559b25413a6138cd7d2fb94c028f8cafde100c"],
             "primary_key": "e434448adb7b92701348eeeb5bee6b1abae31923",
             "module": "database-api",
             "subject": "Gerrit Review for Database Developer Guide"
@@ -509,7 +509,7 @@
         {
             "correction_comment": "Reset LOC to 0",
             "loc": 0,
-            "change_id": "I49c5d46cc16696c4c719ee2c6d65c42b03183ba9",
+            "change_id": ["I49c5d46cc16696c4c719ee2c6d65c42b03183ba9"],
             "primary_key": "dbfa71f490487c4fabc5be71dfb8426e5d651055",
             "module": "tuskar-ui",
             "subject": "Reorganise the tuskar files"

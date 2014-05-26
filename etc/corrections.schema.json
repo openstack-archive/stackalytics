@@ -9,19 +9,34 @@
                 "type": "object",
                 "properties": {
                     "primary_key": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[\\S]+$"
                     },
                     "loc": {
-                        "type": "integer"
+                        "type": "integer",
+                        "minimum": 0
                     },
                     "correction_comment": {
                         "type": "string"
                     },
                     "module": {
-                        "type": "string"
+                        "type": "string",
+                        "pattern": "^[a-z-]+$"
                     },
                     "subject": {
                         "type": "string"
+                    },
+                    "change_id": {
+                        "type": ["array", "null"],
+                        "items": {
+                            "type": "string",
+                            "pattern": "^I[a-z0-f]{40}$"
+                        },
+                        "minItems": 0
+                    },
+                    "author_email": {
+                        "type": "string",
+                        "pattern": "^[a-z\\d_\\.-]+@([a-z\\d\\.-]+\\.)+[a-z]+$"
                     }
                 },
                 "required": ["primary_key", "correction_comment"]
