@@ -3560,6 +3560,17 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "mestery",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kyle Mestery",
+            "emails": ["kmestery@cisco.com", "mestery@noironetworks.com"]
+        },
+        {
             "launchpad_id": "miarmak",
             "companies": [
                 {
@@ -7561,14 +7572,6 @@
             ]
         },
         {
-            "module": "murano-api",
-            "aliases": [
-                "murano"
-            ],
-            "uri": "git://github.com/stackforge/murano-api.git",
-            "organization": "stackforge"
-        },
-        {
             "module": "fuel-main",
             "aliases": [
                 "fuel"
@@ -7610,7 +7613,7 @@
         },
         {
             "module_group_name": "murano-group",
-            "modules": ["murano-agent", "python-muranoclient", "murano-api", "murano-dashboard", "murano-deployment", "murano-docs"]
+            "modules": ["murano-agent", "python-muranoclient", "murano", "murano-dashboard", "murano-deployment", "murano-docs"]
         },
         {
             "module_group_name": "solum-group",
