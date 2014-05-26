@@ -18,15 +18,15 @@
 
 {% macro show_report_links(module=None, company=None, user_id=None) -%}
     {% if module %}
-        <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module }}↗</a></b></div>
-        <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module }}↗</a></b></div>
-        <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module }}↗</a></b></div>
+        <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module }}</a></b></div>
+        <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module }}</a></b></div>
+        <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module }}</a></b></div>
     {% endif %}
     {% if company %}
-        <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}↗</a></b></div>
+        <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}</a></b></div>
     {% endif %}
     {% if user_id %}
-        <div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_id }}↗</a></b></div>
+        <div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_id }}</a></b></div>
     {% endif %}
 {%- endmacro %}
 

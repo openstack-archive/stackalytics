@@ -27,10 +27,10 @@
             <h2>${user_name}</h2>
             <div>Company: {%html company_link %}
                     [<span style="font-style: italic;"><a
-                        href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change↗</a></span>]
+                        href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change</a></span>]
             </div>
             {%if launchpad_id != '' %}
-                <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}">${launchpad_id}</a></div>
+                <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}" target="_blank">${launchpad_id}</a></div>
             {%/if%}
             {%if core != '' %}
                 <div>Core in:

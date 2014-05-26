@@ -206,27 +206,7 @@ div#right_list_wrapper {
     margin-bottom: 0.3em;
 }
 
-a[href^="https://blueprints"]:after {
-    content: "↗";
-    opacity: 0.3;
-}
-
-a[href^="https://review"]:after {
-    content: "↗";
-    opacity: 0.3;
-}
-
-a[href^="https://bugs"]:after {
-    content: "↗";
-    opacity: 0.3;
-}
-
-a[href^="https://launchpad"]:after {
-    content: "↗";
-    opacity: 0.3;
-}
-
-a[target]:not([target='']):after {
+a[target]:not([target='']):after, .ext_link:after {
     content: "↗";
     opacity: 0.3;
 }

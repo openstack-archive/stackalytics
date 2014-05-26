@@ -97,15 +97,15 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
         {%elif record_type == "mark" %}
             <div class="header">Review &ldquo;${parent_subject}&rdquo;</div>
             <div>Submitted by: {%html parent_author_link %} ({%html parent_company_link %}) (#${parent_review_number})</div>
-            <div>Change Id: <a href="${parent_url}">${review_id}</a></div>
+            <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
         {%elif record_type == "review" %}
             <div class="header">New change request &ldquo;${subject}&rdquo;</div>
             <div>Current Status: ${status}</div>
-            <div>Change Id: <a href="${url}">${id}</a></div>
+            <div>Change Id: <a href="${url}" target="_blank">${id}</a></div>
         {%elif record_type == "patch" %}
             <div class="header">Patch #${number} &ldquo;${parent_subject}&rdquo;</div>
-            <div>Change Id: <a href="${parent_url}">${review_id}</a></div>
+            <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
         {%elif record_type == "email" %}
             <div class="header">
             {%if email_link != "" %}
