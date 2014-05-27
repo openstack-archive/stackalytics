@@ -3560,6 +3560,21 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "mdrnstm",
+            "companies": [
+                {
+                    "company_name": "Metacloud",
+                    "end_date": "2014-May-23"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Morgan Fainberg",
+            "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com"]
+        },
+        {
             "launchpad_id": "mestery",
             "companies": [
                 {
