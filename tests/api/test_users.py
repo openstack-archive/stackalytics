@@ -36,7 +36,7 @@ class TestAPIUsers(test_api.TestAPI):
                                       user_id=['john_doe', 'bill_smith'])):
             response = self.app.get('/api/1.0/users?'
                                     'module=nova&metric=commits')
-            users = json.loads(response.data)['users']
+            users = json.loads(response.data)['data']
             self.assertEqual(2, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
             self.assertIn({'id': 'bill_smith', 'text': 'Bill Smith'}, users)

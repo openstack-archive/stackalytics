@@ -23,7 +23,7 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
         $.extend(options, extra_options);
 
         $.ajax({
-            url: make_uri("/api/1.0/activity", options),
+            url: makeURI("/api/1.0/activity", options),
             dataType: "json",
             success: function (data) {
                 if (data["activity"].length < page_size) {
@@ -33,7 +33,6 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                     $('#activity_header').hide();
                 }
                 $.each(data["activity"], function() {
-                    console.log(this);
                     extendWithGravatar(this, {{ gravatar_size }});
                 });
                 $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");

@@ -470,3 +470,13 @@ div.stackamenu li.current-menu-item a span {
     color: white;
     /*text-shadow: 0 -1px 0 #436281;*/
 }
+
+.select2-loading {
+    font-style: italic;
+    color: dimgray;
+    background: url('../images/select2-spinner.gif') no-repeat 100% !important;
+}
+
+.ui-widget-overlay {
+    opacity: 0.6;
+}

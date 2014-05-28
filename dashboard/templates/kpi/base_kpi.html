@@ -41,7 +41,7 @@
         'use strict';
         function process_stats(container_id, url, query_options, item_id, metric, text_goal, comparator, data_filter) {
             $.ajax({
-                url: make_uri(url, query_options),
+                url: makeURI(url, query_options),
                 dataType: "jsonp",
                 success: function (data) {
                     data = data["stats"];
@@ -148,7 +148,7 @@
         function goal_core_engineer_in_project(container_id, user_id, project, text_goal) {
             $(document).ready(function () {
                 $.ajax({
-                    url: make_uri("/api/1.0/users/" + user_id),
+                    url: makeURI("/api/1.0/users/" + user_id),
                     dataType: "jsonp",
                     success: function (data) {
                         var user = data.user;

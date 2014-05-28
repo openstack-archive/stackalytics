@@ -1,17 +1,52 @@
-{% extends "reports/base_report.html" %}
+{% extends "base.html" %}
 
-{% block title %}
-    OpenStack foundation members
-{% endblock %}
+{% block head %}
+    <title>Members of OpenStack Foundation</title>
 
-{% block scripts %}
+    <meta name="keywords" content="openstack, contribution, statistics, community, review, commit, report, havana, grizzly, icehouse, members"/>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/moonfonts.css') }}">
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
+    <!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.barRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.bubbleRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.categoryAxisRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisLabelRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/md5.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.gravatar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.timeago.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
 
     <script type="text/javascript">
 
     function get_start_date() {
         var days = {{ days }};
-        var start_date = Math.round(new Date().getTime() / 1000) - days * 24 * 60 * 60;
-        return start_date;
+        return Math.round(new Date().getTime() / 1000) - days * 24 * 60 * 60;
     }
 
     function show_engineers_table(options) {
@@ -20,7 +55,7 @@
         var company = $('#company_selector').val();
 
         $.ajax({
-            url: make_uri("/api/1.0/members", options),
+            url: makeURI("/api/1.0/members", options),
             dataType: "json",
             success: function (data) {
                 var tableData = data["members"];
@@ -65,7 +100,7 @@
         var table_id = "new_companies_table";
 
         $.ajax({
-            url: make_uri("/api/1.0/new_companies", options),
+            url: makeURI("/api/1.0/new_companies", options),
             dataType: "json",
             success: function (data) {
                 var tableData = data["stats"];
@@ -77,7 +112,7 @@
                 }
 
                 for (i = 0; i < tableData.length; i++) {
-                    var company_link = make_uri('/report/members', {company:tableData[i].name});
+                    var company_link = makeURI('/report/members', {company:tableData[i].name});
                     tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
                     tableData[i].date = tableData[i].date_str;
                 }
@@ -108,7 +143,7 @@
         var table_id = "companies_table";
 
         $.ajax({
-            url: make_uri("/api/1.0/stats/companies", options),
+            url: makeURI("/api/1.0/stats/companies", options),
             dataType: "json",
             success: function (data) {
                 var tableData = data["stats"];
@@ -120,7 +155,7 @@
                 }
 
                 for (i = 0; i < tableData.length; i++) {
-                    var company_link = make_uri('/report/members', {company:tableData[i].name});
+                    var company_link = makeURI('/report/members', {company:tableData[i].name});
                     tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
                     tableData[i].count = tableData[i].metric;
                 }
@@ -146,12 +181,12 @@
         });
     }
 
-    function renderChart(url, container_id, chart_id, options) {
+    function renderChart(url, chart_id, options) {
 
         $(document).ready(function () {
 
             $.ajax({
-                url: make_uri(url, options),
+                url: makeURI(url, options),
                 dataType: "jsonp",
                 success: function (data) {
 
@@ -222,7 +257,7 @@
         {% if company == '' %}
             show_companies_table(base_options);
             show_new_companies_table(base_options);
-            renderChart("/api/1.0/stats/companies", "members_container", "members_chart", base_options);
+            renderChart("/api/1.0/stats/companies", "members_chart", base_options);
         {% else %}
             $('#companies_block').hide();
             $('#new_companies_table_header').hide();
@@ -235,31 +270,13 @@
         var start_date = get_start_date();
         var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
 
-        $("#company_selector").select2({
-            allowClear: true,
-            ajax: {
-                url: make_uri("/api/1.0/companies", base_options),
-                dataType: 'jsonp',
-                data: function (term, page) {
-                    return {
-                        company_name: term
-                    };
-                },
-                results: function (data, page) {
-                    return {results: data["companies"]};
-                }
-            },
-            initSelection: function (element, callback) {
-                var id = $(element).val();
-                if (id !== "") {
-                    $.ajax(make_uri("/api/1.0/companies/" + id, base_options), {
-                        dataType: "jsonp"
-                    }).done(function (data) {
-                        callback(data["company"]);
-                    });
-                }
-            }
+        initSingleSelector("company", makeURI("/api/1.0/companies", base_options), {allowClear: true});
+
+        $("#days_selector").val({{ days }}).select2().on('change', function (evt) {
+            reload();
         });
+
+        show_page();
     });
 
     </script>
@@ -278,16 +295,6 @@
         }
     </style>
 
-{% endblock %}
-
-
-{% block content %}
-
-    <div class="navigation">
-        <div id="timeline"
-             style="width: 100%; height: 120px; margin-top: 15px;"></div>
-    </div>
-
     <script type='text/javascript'>
         $(document).ready(function () {
             $('#days_selector').val({{ days }});
@@ -304,12 +311,39 @@
         });
     </script>
 
+{% endblock %}
+
+{% block body %}
+
+<div class="page">
+<div class="aheader">
+        <div style="float: right; margin-top: 10px; margin-right: 20px;">
+            <a href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank">About ↗</a>
+        </div>
+        <div id="analytics_header">
+            <div style="float: left;">
+                <span id="logo"><a href="/?metric={{ metric }}&release={{ release }}&project_type={{ project_type }}">Stackalytics</a></span>
+            </div>
+            <div class="stackamenu" style="margin-left: 240px;">
+                <ul id="menu-stackamenu">
+                    <li class="menu-item"><a href="{{ url_for('overview') }}"><span class="icon-pie"></span>Code Contribution</a></li>
+                    <li class="menu-item current-menu-item"><a href="/report/members"><span class="icon-users"></span>Member Directory</a></li>
+                    <li class="menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="navigation">
+        <div id="timeline"
+             style="width: 100%; height: 120px; margin-top: 15px;"></div>
+    </div>
+
     <div class="drops">
         <div class="drop" style="margin-top: 1em;">
             <label for="days_selector">Joined during period</label>
             <select id="days_selector" name="days_selector"
                     style="min-width: 140px;"
-                    data-placeholder="Select date_period #">
+                    data-placeholder="Select period">
                 <option value="7">week</option>
                 <option value="14">two weeks</option>
                 <option value="31">month</option>
@@ -323,7 +357,7 @@
         <div class="drop" style="margin-top: 1em;">
             <label for="company_selector">Company</label>
             <input id="company_selector" style="width: 140px"
-                   data-placeholder="Any company" value="{{ company }}"/>
+                   data-placeholder="Any company"/>
         </div>
     </div>
 
@@ -402,5 +436,8 @@
             </td>
         </tr>
     </table>
+
+</div>
+</div>
 
 {% endblock %}

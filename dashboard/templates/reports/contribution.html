@@ -30,7 +30,7 @@ Contribution into {{ module }} for the last {{ days }} days
             var table_id = "review_stats_table";
 
             $.ajax({
-                url: make_uri("/api/1.0/stats/engineers_extended?project_type=all&metric=marks&module={{ module }}&release=all&start_date={{ start_date }}"),
+                url: makeURI("/api/1.0/stats/engineers_extended?project_type=all&metric=marks&module={{ module }}&release=all&start_date={{ start_date }}"),
                 dataType: "json",
                 success: function (data) {
                     var tableData = data["stats"];
@@ -57,8 +57,8 @@ Contribution into {{ module }} for the last {{ days }} days
 
                     for (i = 0; i < tableData.length; i++) {
                         if (tableData[i].id) {
-                            var user_link = make_uri("/", {user_id: tableData[i].id, metric: "marks"});
-                            var company_link = make_uri("/", {company: tableData[i].company, metric: "marks"});
+                            var user_link = makeURI("/", {user_id: tableData[i].id, metric: "marks"});
+                            var company_link = makeURI("/", {company: tableData[i].company, metric: "marks"});
                             tableData[i].link = "<a href=\"" + user_link + "\">" + tableData[i].name + "</a>" +
                                     " <a href=\"" + company_link + "\">" + "(" + tableData[i].company + ")</a>"
                         } else {

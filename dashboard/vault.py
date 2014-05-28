@@ -118,21 +118,7 @@ def _init_project_types(vault):
     runtime_storage_inst = vault['runtime_storage']
     project_types = runtime_storage_inst.get_by_key('project_types') or {}
 
-    result = []
-    parent = None
-    for pt in project_types:
-        is_child = pt.get('child', False)
-        if parent and is_child:
-            item = {'id': pt['id'], 'text': pt['title']}
-            if 'items' in parent:
-                parent['items'].append(item)
-            else:
-                parent['items'] = [item]
-        else:
-            parent = pt
-            result.append(parent)
-
-    vault['project_types'] = result
+    vault['project_types'] = project_types
     vault['project_types_index'] = dict([(pt['id'], pt)
                                          for pt in project_types])
 
