@@ -68,14 +68,6 @@ class TestAPIModules(test_api.TestAPI):
                         'module groups that are completely within '
                         'project type')
 
-            response = self.app.get('/api/1.0/modules?query=glance&'
-                                    'project_type=all&metric=commits')
-            modules = json.loads(response.data)['modules']
-            self.assertEqual(
-                [{'id': 'glance', 'text': 'glance', 'tag': 'module'}],
-                modules,
-                message='Expected modules which name contains query')
-
     def test_get_module(self):
         with test_api.make_runtime_storage(
                 {'repos': [{'module': 'nova', 'organization': 'openstack',

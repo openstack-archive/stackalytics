@@ -48,6 +48,9 @@ METRIC_TO_RECORD_TYPE = {
     'members': 'member',
 }
 
+FILTER_PARAMETERS = ['release', 'project_type', 'module', 'company', 'user_id',
+                     'metric', 'start_date', 'end_date', 'blueprint_id']
+
 DEFAULT_RECORDS_LIMIT = 10
 DEFAULT_STATIC_ACTIVITY_SIZE = 100
 

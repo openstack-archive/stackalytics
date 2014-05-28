@@ -41,26 +41,6 @@ class TestAPIUsers(test_api.TestAPI):
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
             self.assertIn({'id': 'bill_smith', 'text': 'Bill Smith'}, users)
 
-    def test_users_search(self):
-        with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'}],
-                 'project_types': [
-                     {'id': 'openstack', 'title': 'openstack',
-                      'modules': ['nova', 'glance']}],
-                 'module_groups': {
-                     'nova': test_api.make_module('nova'),
-                     'glance': test_api.make_module('glance')},
-                 'user:john_doe': {'user_name': 'John Doe'},
-                 'user:bill_smith': {'user_name': 'Bill Smith'}},
-                test_api.make_records(record_type=['commit'], module=['nova'],
-                                      user_name=['John Doe', 'Bill Smith'])):
-            response = self.app.get('/api/1.0/users?'
-                                    'module=nova&query=doe&metric=commits')
-            users = json.loads(response.data)['users']
-            self.assertEqual(1, len(users))
-            self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
-
     def test_user_details(self):
         with test_api.make_runtime_storage(
                 {'user:john_doe': {

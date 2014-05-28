@@ -32,28 +32,76 @@ from stackalytics import version as stackalytics_version
 LOG = logging.getLogger(__name__)
 
 
-def _filter_records_by_days(ignore, start_date, end_date, memory_storage_inst):
-    if start_date and 'start_date' not in ignore:
-        start_date = utils.date_to_timestamp_ext(start_date)
+def _prepare_params(kwargs, ignore):
+    params = kwargs.get('_params')
+
+    if not params:
+        params = {'action': flask.request.path}
+        for key in parameters.FILTER_PARAMETERS:
+            params[key] = parameters.get_parameter(kwargs, key, key)
+
+        if params['start_date']:
+            params['start_date'] = [utils.round_timestamp_to_day(
+                params['start_date'][0])]
+        if params['end_date']:
+            params['end_date'] = [utils.round_timestamp_to_day(
+                params['end_date'][0])]
+
+        kwargs['_params'] = params
+
+    if ignore:
+        return dict([(k, v if k not in ignore else [])
+                     for k, v in six.iteritems(params)])
     else:
-        start_date = memory_storage_inst.get_first_record_day()
-    if end_date and 'end_date' not in ignore:
-        end_date = utils.date_to_timestamp_ext(end_date)
-    else:
-        end_date = utils.date_to_timestamp_ext('now')
-
-    start_day = utils.timestamp_to_day(start_date)
-    end_day = utils.timestamp_to_day(end_date)
-
-    return memory_storage_inst.get_record_ids_by_days(
-        six.moves.range(start_day, end_day + 1))
+        return params
 
 
-def record_filter(ignore=None, use_default=True):
-    if not ignore:
-        ignore = []
+def cached(ignore=None):
+    def decorator(func):
+        @functools.wraps(func)
+        def prepare_params_decorated_function(*args, **kwargs):
+
+            params = _prepare_params(kwargs, ignore)
+
+            cache_inst = vault.get_vault()['cache']
+            key = json.dumps(params)
+            value = cache_inst.get(key)
+
+            if not value:
+                value = func(*args, **kwargs)
+                cache_inst[key] = value
+                vault.get_vault()['cache_size'] += len(key) + len(value)
+                LOG.debug('Cache size: %(size)d, entries: %(len)d',
+                          {'size': vault.get_vault()['cache_size'],
+                           'len': len(cache_inst.keys())})
+
+            return value
+
+        return prepare_params_decorated_function
+
+    return decorator
+
+
+def record_filter(ignore=None):
 
     def decorator(f):
+
+        def _filter_records_by_days(start_date, end_date, memory_storage_inst):
+            if start_date:
+                start_date = utils.date_to_timestamp_ext(start_date[0])
+            else:
+                start_date = memory_storage_inst.get_first_record_day()
+            if end_date:
+                end_date = utils.date_to_timestamp_ext(end_date[0])
+            else:
+                end_date = utils.date_to_timestamp_ext('now')
+
+            start_day = utils.timestamp_to_day(start_date)
+            end_day = utils.timestamp_to_day(end_date)
+
+            return memory_storage_inst.get_record_ids_by_days(
+                six.moves.range(start_day, end_day + 1))
+
         def _filter_records_by_modules(memory_storage_inst, modules, releases):
             selected = set([])
             for m, r in vault.resolve_modules(modules, releases):
@@ -71,87 +119,74 @@ def record_filter(ignore=None, use_default=True):
             memory_storage_inst = vault.get_memory_storage()
             record_ids = set(memory_storage_inst.get_record_ids())  # a copy
 
-            releases = []
-            if 'release' not in ignore:
-                releases = parameters.get_parameter(kwargs, 'release',
-                                                    'releases', use_default)
-                if releases:
-                    if 'all' not in releases:
+            params = _prepare_params(kwargs, ignore)
+
+            release = params['release']
+            if release:
+                if 'all' not in release:
+                    record_ids &= (
+                        memory_storage_inst.get_record_ids_by_releases(
+                            c.lower() for c in release))
+
+            project_type = params['project_type']
+            if project_type:
+                record_ids &= _filter_records_by_modules(
+                    memory_storage_inst,
+                    vault.resolve_project_types(project_type), release)
+
+            module = params['module']
+            if module:
+                record_ids &= _filter_records_by_modules(
+                    memory_storage_inst, module, release)
+
+            user_id = params['user_id']
+            user_id = [u for u in user_id
+                       if vault.get_user_from_runtime_storage(u)]
+            if user_id:
+                record_ids &= (
+                    memory_storage_inst.get_record_ids_by_user_ids(user_id))
+
+            company = params['company']
+            if company:
+                record_ids &= (
+                    memory_storage_inst.get_record_ids_by_companies(company))
+
+            metric = params['metric']
+            if 'all' not in metric:
+                for metric in metric:
+                    if metric in parameters.METRIC_TO_RECORD_TYPE:
                         record_ids &= (
-                            memory_storage_inst.get_record_ids_by_releases(
-                                c.lower() for c in releases))
+                            memory_storage_inst.get_record_ids_by_type(
+                                parameters.METRIC_TO_RECORD_TYPE[metric]))
 
-            modules = parameters.get_parameter(kwargs, 'module', 'modules',
-                                               use_default)
+            if 'tm_marks' in metric:
+                filtered_ids = []
+                review_nth = int(parameters.get_parameter(
+                    kwargs, 'review_nth')[0])
+                for record in memory_storage_inst.get_records(record_ids):
+                    parent = memory_storage_inst.get_record_by_primary_key(
+                        record['review_id'])
+                    if (parent and ('review_number' in parent) and
+                            (parent['review_number'] <= review_nth)):
+                        filtered_ids.append(record['record_id'])
+                record_ids = filtered_ids
 
-            if 'project_type' not in ignore:
-                param = parameters.get_parameter(kwargs, 'project_type',
-                                                 'project_types', use_default)
-                if param:
-                    record_ids &= _filter_records_by_modules(
-                        memory_storage_inst,
-                        vault.resolve_project_types(param),
-                        releases)
+            blueprint_id = params['blueprint_id']
+            if blueprint_id:
+                record_ids &= (
+                    memory_storage_inst.get_record_ids_by_blueprint_ids(
+                        blueprint_id))
 
-            if 'module' not in ignore:
-                if modules:
-                    record_ids &= _filter_records_by_modules(
-                        memory_storage_inst, modules, releases)
+            start_date = params['start_date']
+            end_date = params['end_date']
 
-            if 'user_id' not in ignore:
-                param = parameters.get_parameter(kwargs, 'user_id', 'user_ids')
-                param = [u for u in param
-                         if vault.get_user_from_runtime_storage(u)]
-                if param:
-                    record_ids &= (
-                        memory_storage_inst.get_record_ids_by_user_ids(param))
-
-            if 'company' not in ignore:
-                param = parameters.get_parameter(kwargs, 'company',
-                                                 'companies')
-                if param:
-                    record_ids &= (
-                        memory_storage_inst.get_record_ids_by_companies(param))
-
-            if 'metric' not in ignore:
-                metrics = parameters.get_parameter(kwargs, 'metric')
-                if 'all' not in metrics:
-                    for metric in metrics:
-                        if metric in parameters.METRIC_TO_RECORD_TYPE:
-                            record_ids &= (
-                                memory_storage_inst.get_record_ids_by_type(
-                                    parameters.METRIC_TO_RECORD_TYPE[metric]))
-
-                if 'tm_marks' in metrics:
-                    filtered_ids = []
-                    review_nth = int(parameters.get_parameter(
-                        kwargs, 'review_nth')[0])
-                    for record in memory_storage_inst.get_records(record_ids):
-                        parent = memory_storage_inst.get_record_by_primary_key(
-                            record['review_id'])
-                        if (parent and ('review_number' in parent) and
-                                (parent['review_number'] <= review_nth)):
-                            filtered_ids.append(record['record_id'])
-                    record_ids = filtered_ids
-
-            if 'blueprint_id' not in ignore:
-                param = parameters.get_parameter(kwargs, 'blueprint_id')
-                if param:
-                    record_ids &= (
-                        memory_storage_inst.get_record_ids_by_blueprint_ids(
-                            param))
-
-            start_date = parameters.get_single_parameter(kwargs, 'start_date')
-            end_date = parameters.get_single_parameter(kwargs, 'end_date')
-
-            if (start_date and 'start_date' not in ignore) or (
-                end_date and 'end_date' not in ignore):
-                record_ids &= _filter_records_by_days(ignore,
-                                                      start_date, end_date,
+            if start_date or end_date:
+                record_ids &= _filter_records_by_days(start_date, end_date,
                                                       memory_storage_inst)
 
             kwargs['record_ids'] = record_ids
             kwargs['records'] = memory_storage_inst.get_records(record_ids)
+
             return f(*args, **kwargs)
 
         return record_filter_decorated_function
@@ -362,8 +397,19 @@ def jsonify(root='data'):
     def decorator(func):
         @functools.wraps(func)
         def jsonify_decorated_function(*args, **kwargs):
+            return json.dumps({root: func(*args, **kwargs)})
+
+        return jsonify_decorated_function
+
+    return decorator
+
+
+def response():
+    def decorator(func):
+        @functools.wraps(func)
+        def response_decorated_function(*args, **kwargs):
             callback = flask.app.request.args.get('callback', False)
-            data = json.dumps({root: func(*args, **kwargs)})
+            data = func(*args, **kwargs)
 
             if callback:
                 data = str(callback) + '(' + data + ')'
@@ -373,7 +419,7 @@ def jsonify(root='data'):
 
             return flask.current_app.response_class(data, mimetype=mimetype)
 
-        return jsonify_decorated_function
+        return response_decorated_function
 
     return decorator
 

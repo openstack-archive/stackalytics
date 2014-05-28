@@ -62,8 +62,6 @@ def get_vault():
             vault['memory_storage'] = memory_storage.get_memory_storage(
                 memory_storage.MEMORY_STORAGE_CACHED)
 
-            _init_releases(vault)
-
             flask.current_app.stackalytics_vault = vault
         except Exception as e:
             LOG.critical('Failed to initialize application: %s', e)
@@ -77,6 +75,8 @@ def get_vault():
             compact_records(vault['runtime_storage'].get_update(os.getpid())))
 
         if have_updates:
+            vault['cache'] = {}
+            vault['cache_size'] = 0
             _init_releases(vault)
             _init_module_groups(vault)
             _init_project_types(vault)
