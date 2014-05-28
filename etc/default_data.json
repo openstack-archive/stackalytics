@@ -4273,6 +4273,18 @@
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
         },
         {
+            "launchpad_id": "raildo",
+            "gerrit_id": "raildo",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Raildo Mascena de Sousa Filho",
+            "emails": ["raildo@lsd.ufcg.edu.br"]
+        },
+        {
             "launchpad_id": "rajdeepd",
             "companies": [
                 {
