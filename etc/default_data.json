@@ -3527,6 +3527,18 @@
             "emails": ["matt@mattfarina.com"]
         },
         {
+            "launchpad_id": "mattmont",
+            "gerrit_id": "signed8bit",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Montgomery",
+            "emails": ["mattmont@cisco.com", "matthew@signed8bit.com"]
+        },
+        {
             "launchpad_id": "mattray",
             "companies": [
                 {
