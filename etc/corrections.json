@@ -2558,6 +2558,14 @@
             "primary_key": "656f2cd02083058c037c160f4c1b78d4c6eb877b",
             "module": "neutron",
             "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["If5386705a0c5575dfcef906b558e6a10fbd57de1"],
+            "primary_key": "b99810ec58f3fe4541333183d8909216cc5a04b4",
+            "module": "openstack-manuals",
+            "subject": "Import glossary from O'Reilly Guide"
         }
 
     ]
