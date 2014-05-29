@@ -2149,6 +2149,18 @@
             "emails": ["heckj@mac.com"]
         },
         {
+            "launchpad_id": "henrique-4",
+            "gerrit_id": "henriquetruta",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Henrique Truta",
+            "emails": ["henrique@lsd.ufcg.edu.br", "henriquecostatruta@gmail.com"]
+        },        
+	{
             "launchpad_id": "heut2008",
             "companies": [
                 {
