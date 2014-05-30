@@ -122,11 +122,11 @@ def _generate_marks():
             'launchpad_id': 'john_doe', 'week': 2294, 'user_id': 'john_doe',
             'description': 'Approved', 'author_name': 'John Doe',
             'author_email': 'john_doe@gmail.com',
-            'primary_key': str(uuid.uuid4()) + 'APRV',
+            'primary_key': str(uuid.uuid4()) + 'Workflow',
             'module': 'glance', 'patch': 2, 'record_type': 'mark',
             'company_name': '*independent', 'branch': 'master',
             'date': 1387860458, 'record_id': 37184, 'release': 'icehouse',
-            'value': 1, 'type': 'APRV',
+            'value': 1, 'type': 'Workflow',
             'review_id': str(uuid.uuid4())}
         yield mark
 

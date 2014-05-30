@@ -97,7 +97,15 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">Review &ldquo;${parent_subject}&rdquo;</div>
             <div>Submitted by: {%html parent_author_link %} ({%html parent_company_link %}) (#${parent_review_number})</div>
             <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
-            <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">${description}: <span class="review_mark">${value}</span></div>
+            <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">
+                {%if (type == "Workflow" && value == 1) %}
+                Approved
+                {%elif (type == "Workflow" && value == -1) %}
+                Work in progress
+                {%else%}
+                ${type}: <span class="review_mark">${value}</span>
+                {%/if%}
+            </div>
         {%elif record_type == "review" %}
             <div class="header">New change request &ldquo;${subject}&rdquo;</div>
             <div>Current Status: ${status}</div>
