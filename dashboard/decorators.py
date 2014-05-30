@@ -204,7 +204,7 @@ def loc_filter(result, record, param_id):
 
 def mark_filter(result, record, param_id):
     result_by_param = result[record[param_id]]
-    if record['type'] == 'APRV':
+    if record['type'] == 'Workflow' and record['value'] == 1:
         value = 'A'
     else:
         value = record['value']
