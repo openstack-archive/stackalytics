@@ -4,7 +4,7 @@
             "launchpad_id": "0-doug",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -37,7 +37,7 @@
             "launchpad_id": "6-morgan",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -279,7 +279,7 @@
             "launchpad_id": "amrith",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -337,7 +337,7 @@
             "launchpad_id": "andrlw",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -906,6 +906,17 @@
             ],
             "user_name": "Changbin Liu",
             "emails": ["changbin.liu@gmail.com", "changbl@research.att.com"]
+        },
+        {
+            "launchpad_id": "changsimon",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Simon Chang",
+            "emails": ["simon.sy.chang@gmail.com", "schang@tesora.com"]
         },
         {
             "launchpad_id": "chemikadze",
@@ -1993,7 +2004,7 @@
             "launchpad_id": "glucas-q",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -3298,7 +3309,7 @@
             "launchpad_id": "lmichaels",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -4165,7 +4176,7 @@
             "launchpad_id": "petr-malik",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -4711,7 +4722,7 @@
             "launchpad_id": "sean-gossard",
             "companies": [
                 {
-                    "company_name": "Tesora Corp",
+                    "company_name": "Tesora",
                     "end_date": null
                 }
             ],
@@ -6627,7 +6638,7 @@
         },
         {
             "domains": ["tesora.com", "parelastic.com"],
-            "company_name": "Tesora Corp",
+            "company_name": "Tesora",
             "aliases": ["ParElastic Corp", "ParElastic", "Tesora.com"]
         },
         {
