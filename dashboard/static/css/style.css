@@ -480,3 +480,10 @@ div.stackamenu li.current-menu-item a span {
 .ui-widget-overlay {
     opacity: 0.6;
 }
+
+.banner {
+    text-align: center;
+    background-color: #ECEEF3;
+    font-size: 16px;
+    color: #972D24;
+}

@@ -385,6 +385,8 @@ def templated(template=None, return_code=200):
                 stackalytics_version.version_info.version_string())
             ctx['stackalytics_release'] = (
                 stackalytics_version.version_info.release_string())
+            ctx['runtime_storage_update_time'] = (
+                vault_inst['runtime_storage_update_time'])
 
             return flask.render_template(template_name, **ctx), return_code
 

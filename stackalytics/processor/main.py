@@ -294,6 +294,9 @@ def main():
     # long operation should be the last
     update_members(runtime_storage_inst, record_processor_inst)
 
+    runtime_storage_inst.set_by_key('runtime_storage_update_time',
+                                    utils.date_to_timestamp('now'))
+
 
 if __name__ == '__main__':
     main()

@@ -73,6 +73,8 @@ def get_vault():
         memory_storage_inst = vault['memory_storage']
         have_updates = memory_storage_inst.update(
             compact_records(vault['runtime_storage'].get_update(os.getpid())))
+        vault['runtime_storage_update_time'] = (
+            vault['runtime_storage'].get_by_key('runtime_storage_update_time'))
 
         if have_updates:
             vault['cache'] = {}

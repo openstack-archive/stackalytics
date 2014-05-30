@@ -14,6 +14,7 @@
 <meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
 <meta name="version" content="{{ stackalytics_version }}"/>
 <meta name="build" content="{{ stackalytics_release }}"/>
+<meta name="runtime_storage_update_time" content="{{ runtime_storage_update_time }}"/>
 
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
@@ -63,9 +64,12 @@
 {% block body %}
 
     <div class="page">
+        {% if not runtime_storage_update_time %}
+            <div class="banner">Please note! The data is being loaded now and may be not complete.</div>
+        {% endif %}
     <div class="aheader">
         <div style="float: right; margin-top: 10px; margin-right: 20px;">
-            <a href="https://wiki.openstack.org/wiki/Stackalytics">About</a>
+            <a href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank">About</a>
         </div>
         <div id="analytics_header">
             <div style="float: left;">
