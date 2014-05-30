@@ -53,4 +53,7 @@ OPTS = [
                help='Default release, the most recent if not set'),
     cfg.StrOpt('default-project-type', default='openstack',
                help='Default project type'),
+    cfg.IntOpt('dashboard-update-interval', default=3600,
+               help='The interval specifies how frequently dashboard should '
+                    'check for updates in seconds'),
 ]

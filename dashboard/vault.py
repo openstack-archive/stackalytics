@@ -68,8 +68,13 @@ def get_vault():
             LOG.exception(e)
             flask.abort(500)
 
-    if not getattr(flask.request, 'stackalytics_updated', None):
+    time_now = utils.date_to_timestamp('now')
+    may_update_by_time = (time_now > vault.get('vault_update_time', 0) +
+                          cfg.CONF.dashboard_update_interval)
+    if (may_update_by_time and
+            not getattr(flask.request, 'stackalytics_updated', None)):
         flask.request.stackalytics_updated = True
+        vault['vault_update_time'] = time_now
         memory_storage_inst = vault['memory_storage']
         have_updates = memory_storage_inst.update(
             compact_records(vault['runtime_storage'].get_update(os.getpid())))
