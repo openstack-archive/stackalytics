@@ -2616,6 +2616,17 @@
             "emails": ["jerome.david.gallard@gmail.com", "jerome.gallard@orange.com", "gallard.jerome@gmail.com"]
         },
         {
+            "launchpad_id": "jesusaurus",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonathan Harker",
+            "emails": ["code@gentlydownthe.net", "jesusaurus@inbox.com", "k.jonathan.harker@hp.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
