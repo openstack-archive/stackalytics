@@ -79,6 +79,17 @@
             "emails": ["wwkeyboard@gmail.com", "aaron.lee@rackspace.com"]
         },
         {
+            "launchpad_id": "aaron-t",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aaron Greengrass",
+            "emails": ["aaron@greenbtn.com"]
+        },
+        {
             "launchpad_id": "academicgareth",
             "companies": [
                 {
