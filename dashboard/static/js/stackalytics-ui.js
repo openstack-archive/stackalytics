@@ -260,6 +260,12 @@ function extendWithGravatar(record, image_size) {
     });
 }
 
+function encodeURI(s) {
+    s = encodeURIComponent(s);
+    s = s.replace("*", "%2A");
+    return s;
+}
+
 function getUrlVars() {
     var vars = {};
     window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
@@ -270,7 +276,7 @@ function getUrlVars() {
 
 function makeLink(id, title, param_name) {
     var options = {};
-    options[param_name] = encodeURIComponent(id).toLowerCase();
+    options[param_name] = id.toLowerCase();
     var link = makeURI("/", options);
     return "<a href=\"" + link + "\">" + title + "</a>"
 }
@@ -282,7 +288,7 @@ function makeURI(uri, options) {
         $.extend(ops, options);
     }
     var str = $.map(ops,function (val, index) {
-        return index + "=" + encodeURIComponent(val).toLowerCase();
+        return index + "=" + encodeURI(val).toLowerCase();
     }).join("&");
 
     return (str == "") ? uri : uri + "?" + str;
@@ -301,7 +307,7 @@ function getPageState() {
 
 function reload(extra) {
     window.location.search = $.map($.extend(getUrlVars(), extra), function (val, index) {
-        return val? (index + "=" + encodeURIComponent(val)) : null;
+        return val? (index + "=" + val) : null;
     }).join("&")
 }
 
@@ -322,7 +328,9 @@ function initSingleSelector(name, api_url, select2_extra_options, change_handler
         dataType: "jsonp",
         success: function (data) {
             var initial_value = getUrlVars()[name];
-            if (!initial_value && data["default"]) {
+            if (initial_value) {
+                initial_value = encodeURI(initial_value);
+            } else if (data["default"]) {
                 initial_value = data["default"];
             }
             $(selectorId).
