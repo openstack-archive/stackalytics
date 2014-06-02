@@ -3736,6 +3736,21 @@
             "emails": ["mjblack@gmail.com", "matthew_black@cable.comcast.com"]
         },
         {
+            "launchpad_id": "mmaleckk",
+            "companies": [
+                {
+                    "company_name": "Embrane",
+                    "end_date": "2014-May-25"
+                },
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ivar Lazzaro",
+            "emails": ["ivarlazzaro@gmail.com"]
+        },
+        {
             "launchpad_id": "mordred",
             "companies": [
                 {
