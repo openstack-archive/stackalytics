@@ -179,7 +179,8 @@ def _get_changed_member_records(runtime_storage_inst, record_processor_inst):
         if record['record_type'] == 'member' and 'company_name' in record:
             company_draft = record['company_draft']
             company_name = record_processor_inst.domains_index.get(
-                utils.normalize_company_name(company_draft)) or company_draft
+                utils.normalize_company_name(company_draft)) or (
+                    utils.normalize_company_draft(company_draft))
 
             if company_name != record['company_name']:
                 record['company_name'] = company_name
