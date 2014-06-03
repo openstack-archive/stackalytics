@@ -628,6 +628,17 @@
             "emails": ["brian.elliott@rackspace.com", "bdelliott@gmail.com"]
         },
         {
+            "launchpad_id": "berendt",
+            "companies": [
+                {
+                    "company_name": "B1 Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christian Berendt",
+            "emails": ["berendt@b1-systems.de", "mail@cberendt.net"]
+        },
+        {
             "launchpad_id": "bertrand-lallau",
             "companies": [
                 {
