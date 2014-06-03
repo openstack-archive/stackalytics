@@ -457,13 +457,18 @@
         },
         {
             "launchpad_id": "armando-migliaccio",
+            "gerrit_id": "armando-migliaccio",
             "companies": [
                 {
                     "company_name": "VMware",
+                    "end_date": "2014-May-22"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
-            "user_name": "armando-migliaccio",
+            "user_name": "Armando Migliaccio",
             "emails": ["amigliaccio@nicira.com", "armando.migliaccio@eu.citrix.com", "amigliaccio@internap.com", "armamig@gmail.com", "armando.migliaccio@citrix.com"]
         },
         {
