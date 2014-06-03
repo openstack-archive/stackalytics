@@ -2566,6 +2566,14 @@
             "primary_key": "b99810ec58f3fe4541333183d8909216cc5a04b4",
             "module": "openstack-manuals",
             "subject": "Import glossary from O'Reilly Guide"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I867d138ecf90867efb8d5091b9cdbce0f7b5cf32"],
+            "primary_key": "c8a3722b217a815319d3f64078d6e33ea437f12c",
+            "module": "openstack-manuals",
+            "subject": "updated sitemap.xml"
         }
 
     ]
