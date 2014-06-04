@@ -35,7 +35,7 @@ METRIC_LABELS = {
     'emails': 'Emails',
     'bpd': 'Drafted Blueprints',
     'bpc': 'Completed Blueprints',
-    'man-days': "Man-days effort"
+    'person-day': "Person-day effort"
 }
 
 METRIC_TO_RECORD_TYPE = {

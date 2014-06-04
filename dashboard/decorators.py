@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import collections
 import functools
 import json
 
@@ -194,15 +193,15 @@ def record_filter(ignore=None):
     return decorator
 
 
-def incremental_filter(result, record, param_id):
+def incremental_filter(result, record, param_id, context):
     result[record[param_id]]['metric'] += 1
 
 
-def loc_filter(result, record, param_id):
+def loc_filter(result, record, param_id, context):
     result[record[param_id]]['metric'] += record['loc']
 
 
-def mark_filter(result, record, param_id):
+def mark_filter(result, record, param_id, context):
     result_by_param = result[record[param_id]]
     if record['type'] == 'Workflow' and record['value'] == 1:
         value = 'A'
@@ -249,29 +248,33 @@ def mark_finalize(record):
     return new_record
 
 
-def man_days_filter(result, record, param_id):
-    if record['record_type'] == 'commit':
-        # commit is attributed with the date of the merge which is not an
+def person_day_filter(result, record, param_id, context):
+    if record['record_type'] == 'commit' or record['record_type'] == 'member':
+        # 1. commit is attributed with the date of the merge which is not an
         # effort of the author (author's effort is represented in patches)
+        # 2. registration on openstack.org is not an effort
         return
 
     day = utils.timestamp_to_day(record['date'])
+    # fact that record-days are grouped by days in some order is used
+    if context.get('last_processed_day') != day:
+        context['last_processed_day'] = day
+        context['counted_user_ids'] = set()
 
-    result_by_param = result[record[param_id]]
-    if 'days' not in result_by_param:
-        result_by_param['days'] = collections.defaultdict(set)
     user = vault.get_user_from_runtime_storage(record['user_id'])
-    result_by_param['days'][day] |= set([user['seq']])
-    result_by_param['metric'] = 1
+    user_id = user['seq']
+
+    value = record[param_id]
+    if user_id not in context['counted_user_ids']:
+        context['counted_user_ids'].add(user_id)
+        result[value]['metric'] += 1
 
 
-def man_days_finalize(result_item):
-    metric = 0
-    for day_set in six.itervalues(result_item['days']):
-        metric += len(day_set)
-    del result_item['days']
-    result_item['metric'] = metric
-    return result_item
+def generate_records_for_person_day(record_ids):
+    memory_storage_inst = vault.get_memory_storage()
+    for values in memory_storage_inst.day_index.values():
+        for record in memory_storage_inst.get_records(record_ids & values):
+            yield record
 
 
 def aggregate_filter():
@@ -292,13 +295,18 @@ def aggregate_filter():
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),
                 'members': (incremental_filter, None),
-                'man-days': (man_days_filter, man_days_finalize),
+                'person-day': (person_day_filter, None),
             }
             if metric not in metric_to_filters_map:
                 metric = parameters.get_default('metric')
 
             kwargs['metric_filter'] = metric_to_filters_map[metric][0]
             kwargs['finalize_handler'] = metric_to_filters_map[metric][1]
+
+            if metric == 'person-day':
+                kwargs['records'] = generate_records_for_person_day(
+                    kwargs['record_ids'])
+
             return f(*args, **kwargs)
 
         return aggregate_filter_decorated_function
