@@ -210,3 +210,9 @@ def normalize_company_name(name):
     regex += '|' + '((^|\\s)(' + '|'.join(BAD_NAME_SUFFIXES_WITH_STOPS) + '))'
     name = re.sub(re.compile(regex, re.IGNORECASE), '', name)
     return ''.join([c.lower() for c in name if c.isalnum()])
+
+
+def normalize_company_draft(name):
+    name = re.sub(',', ' ', name)
+    name = re.sub(r'\s+', ' ', name)
+    return name
