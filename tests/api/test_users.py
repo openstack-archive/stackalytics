@@ -27,6 +27,10 @@ class TestAPIUsers(test_api.TestAPI):
                  'project_types': [
                      {'id': 'openstack', 'title': 'openstack',
                       'modules': ['nova', 'glance']}],
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
                  'module_groups': {
                      'nova': test_api.make_module('nova'),
                      'glance': test_api.make_module('glance')},

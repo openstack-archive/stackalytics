@@ -26,6 +26,10 @@ class TestAPIStats(test_api.TestAPI):
                             'uri': 'git://github.com/openstack/nova.git'},
                            {'module': 'glance', 'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
                  'module_groups': {
                      'openstack': {'id': 'openstack',
                                    'module_group_name': 'openstack',
@@ -60,6 +64,10 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
                  'module_groups': {
                      'openstack': {'id': 'openstack',
                                    'module_group_name': 'openstack',
@@ -108,6 +116,10 @@ class TestAPIStats(test_api.TestAPI):
                            {'module': 'glance', 'project_type': 'openstack',
                             'organization': 'openstack',
                             'uri': 'git://github.com/openstack/glance.git'}],
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
                  'module_groups': {
                      'openstack': {'id': 'openstack',
                                    'module_group_name': 'openstack',

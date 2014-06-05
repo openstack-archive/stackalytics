@@ -35,6 +35,10 @@ class TestAPIModules(test_api.TestAPI):
                      'nova-cli': test_api.make_module('nova-cli'),
                      'glance': test_api.make_module('glance'),
                  },
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance', 'nova-cli']},

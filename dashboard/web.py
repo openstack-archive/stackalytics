@@ -82,9 +82,15 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
     param_title = param_title or param_id
     result = dict((c, {'metric': 0, 'id': c}) for c in keys)
     context = {}
-    for record in records:
-        metric_filter(result, record, param_id, context)
-        result[record[param_id]]['name'] = record[param_title]
+    if metric_filter:
+        for record in records:
+            metric_filter(result, record, param_id, context)
+            result[record[param_id]]['name'] = record[param_title]
+    else:
+        for record in records:
+            record_param_id = record[param_id]
+            result[record_param_id]['metric'] += 1
+            result[record_param_id]['name'] = record[param_title]
 
     response = [r for r in result.values() if r['metric']]
     response = [item for item in map(finalize_handler, response) if item]

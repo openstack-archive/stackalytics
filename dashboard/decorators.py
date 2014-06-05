@@ -101,60 +101,74 @@ def record_filter(ignore=None):
             return memory_storage_inst.get_record_ids_by_days(
                 six.moves.range(start_day, end_day + 1))
 
-        def _filter_records_by_modules(memory_storage_inst, modules, releases):
+        def _filter_records_by_modules(memory_storage_inst, mr):
             selected = set([])
-            for m, r in vault.resolve_modules(modules, releases):
-                y = memory_storage_inst.get_record_ids_by_modules([m])
-                if r:
-                    x = memory_storage_inst.get_record_ids_by_releases([r])
-                    selected |= x & y
+            for m, r in mr:
+                if r is None:
+                    selected |= memory_storage_inst.get_record_ids_by_modules(
+                        [m])
                 else:
-                    selected |= y
+                    selected |= (
+                        memory_storage_inst.get_record_ids_by_module_release(
+                            m, r))
             return selected
+
+        def _intersect(first, second):
+            if first is not None:
+                return first & second
+            return second
 
         @functools.wraps(f)
         def record_filter_decorated_function(*args, **kwargs):
 
             memory_storage_inst = vault.get_memory_storage()
-            record_ids = set(memory_storage_inst.get_record_ids())  # a copy
+            record_ids = None
 
             params = _prepare_params(kwargs, ignore)
 
             release = params['release']
             if release:
                 if 'all' not in release:
-                    record_ids &= (
+                    record_ids = (
                         memory_storage_inst.get_record_ids_by_releases(
                             c.lower() for c in release))
 
             project_type = params['project_type']
+            mr = None
             if project_type:
-                record_ids &= _filter_records_by_modules(
-                    memory_storage_inst,
-                    vault.resolve_project_types(project_type), release)
+                mr = set(vault.resolve_modules(vault.resolve_project_types(
+                    project_type), release))
 
             module = params['module']
             if module:
-                record_ids &= _filter_records_by_modules(
-                    memory_storage_inst, module, release)
+                mr = _intersect(mr, set(vault.resolve_modules(
+                    module, release)))
+
+            if mr is not None:
+                record_ids = _intersect(
+                    record_ids, _filter_records_by_modules(
+                        memory_storage_inst, mr))
 
             user_id = params['user_id']
             user_id = [u for u in user_id
                        if vault.get_user_from_runtime_storage(u)]
             if user_id:
-                record_ids &= (
+                record_ids = _intersect(
+                    record_ids,
                     memory_storage_inst.get_record_ids_by_user_ids(user_id))
 
             company = params['company']
             if company:
-                record_ids &= (
+                record_ids = _intersect(
+                    record_ids,
                     memory_storage_inst.get_record_ids_by_companies(company))
 
             metric = params['metric']
             if 'all' not in metric:
                 for metric in metric:
                     if metric in parameters.METRIC_TO_RECORD_TYPE:
-                        record_ids &= (
+                        record_ids = _intersect(
+                            record_ids,
                             memory_storage_inst.get_record_ids_by_type(
                                 parameters.METRIC_TO_RECORD_TYPE[metric]))
 
@@ -172,7 +186,8 @@ def record_filter(ignore=None):
 
             blueprint_id = params['blueprint_id']
             if blueprint_id:
-                record_ids &= (
+                record_ids = _intersect(
+                    record_ids,
                     memory_storage_inst.get_record_ids_by_blueprint_ids(
                         blueprint_id))
 
@@ -180,8 +195,9 @@ def record_filter(ignore=None):
             end_date = params['end_date']
 
             if start_date or end_date:
-                record_ids &= _filter_records_by_days(start_date, end_date,
-                                                      memory_storage_inst)
+                record_ids = _intersect(
+                    record_ids, _filter_records_by_days(start_date, end_date,
+                                                        memory_storage_inst))
 
             kwargs['record_ids'] = record_ids
             kwargs['records'] = memory_storage_inst.get_records(record_ids)
@@ -287,7 +303,7 @@ def aggregate_filter():
             metric = metric_param.lower()
 
             metric_to_filters_map = {
-                'commits': (incremental_filter, None),
+                'commits': (None, None),
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
                 'tm_marks': (mark_filter, mark_finalize),

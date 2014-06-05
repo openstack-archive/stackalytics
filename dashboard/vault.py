@@ -68,26 +68,27 @@ def get_vault():
             LOG.exception(e)
             flask.abort(500)
 
-    time_now = utils.date_to_timestamp('now')
-    may_update_by_time = (time_now > vault.get('vault_update_time', 0) +
-                          cfg.CONF.dashboard_update_interval)
-    if (may_update_by_time and
-            not getattr(flask.request, 'stackalytics_updated', None)):
-        flask.request.stackalytics_updated = True
-        vault['vault_update_time'] = time_now
-        memory_storage_inst = vault['memory_storage']
-        have_updates = memory_storage_inst.update(
-            compact_records(vault['runtime_storage'].get_update(os.getpid())))
-        vault['runtime_storage_update_time'] = (
-            vault['runtime_storage'].get_by_key('runtime_storage_update_time'))
+    if not getattr(flask.request, 'stackalytics_updated', None):
+        time_now = utils.date_to_timestamp('now')
+        may_update_by_time = (time_now > vault.get('vault_update_time', 0) +
+                              cfg.CONF.dashboard_update_interval)
+        if may_update_by_time:
+            flask.request.stackalytics_updated = True
+            vault['vault_update_time'] = time_now
+            memory_storage_inst = vault['memory_storage']
+            have_updates = memory_storage_inst.update(compact_records(
+                vault['runtime_storage'].get_update(os.getpid())))
+            vault['runtime_storage_update_time'] = (
+                vault['runtime_storage'].get_by_key(
+                    'runtime_storage_update_time'))
 
-        if have_updates:
-            vault['cache'] = {}
-            vault['cache_size'] = 0
-            _init_releases(vault)
-            _init_module_groups(vault)
-            _init_project_types(vault)
-            _init_user_index(vault)
+            if have_updates:
+                vault['cache'] = {}
+                vault['cache_size'] = 0
+                _init_releases(vault)
+                _init_module_groups(vault)
+                _init_project_types(vault)
+                _init_user_index(vault)
 
     return vault
 
@@ -171,7 +172,7 @@ def get_user_from_runtime_storage(user_id):
     return user_index[user_id]
 
 
-def resolve_modules(module_ids, releases):
+def resolve_modules_for_releases(module_ids, releases):
     module_id_index = get_vault().get('module_id_index') or {}
 
     for module_id in module_ids:
@@ -195,6 +196,16 @@ def resolve_modules(module_ids, releases):
                     if 'modules' in module_group:
                         for module in module_group['modules']:
                             yield module, release
+
+
+def resolve_modules(module_ids, releases):
+    all_releases = get_vault()['releases'].keys()
+    for module, release in resolve_modules_for_releases(module_ids, releases):
+        if release is None:
+            for r in all_releases:
+                yield (module, r)
+        else:
+            yield (module, release)
 
 
 def resolve_project_types(project_types):
