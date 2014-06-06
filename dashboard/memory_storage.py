@@ -41,6 +41,7 @@ class CachedMemoryStorage(MemoryStorage):
         self.blueprint_id_index = {}
         self.company_name_mapping = {}
         self.day_index = {}
+        self.module_release_index = {}
 
         self.indexes = {
             'primary_key': self.primary_key_index,
@@ -69,6 +70,12 @@ class CachedMemoryStorage(MemoryStorage):
         else:
             self.day_index[record_day] = set([record['record_id']])
 
+        mr = (record['module'], record['release'])
+        if mr in self.module_release_index:
+            self.module_release_index[mr].add(record['record_id'])
+        else:
+            self.module_release_index[mr] = set([record['record_id']])
+
     def update(self, records):
         have_updates = False
 
@@ -92,6 +99,8 @@ class CachedMemoryStorage(MemoryStorage):
 
         record_day = utils.timestamp_to_day(record['date'])
         self.day_index[record_day].remove(record['record_id'])
+        self.module_release_index[
+            (record['module'], record['release'])].remove(record['record_id'])
 
     def _add_to_index(self, record_index, record, key):
         record_key = record[key]
@@ -128,6 +137,12 @@ class CachedMemoryStorage(MemoryStorage):
 
     def get_record_ids_by_days(self, days):
         return self._get_record_ids_from_index(days, self.day_index)
+
+    def get_record_ids_by_module_release(self, module, release):
+        mr = (module, release)
+        if mr in self.module_release_index:
+            return self.module_release_index[mr]
+        return set()
 
     def get_index_keys_by_record_ids(self, index_name, record_ids):
         return set([key

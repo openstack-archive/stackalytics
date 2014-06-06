@@ -32,6 +32,10 @@ class TestAPICompanies(test_api.TestAPI):
                         {'id': 'openstack', 'title': 'OpenStack',
                          'modules': ['nova', 'glance']}
                     ],
+                    'releases': [{'release_name': 'prehistory',
+                                  'end_date': 1234567890},
+                                 {'release_name': 'icehouse',
+                                  'end_date': 1234567890}],
                     'module_groups': {
                         'openstack': {'module_group_name': 'openstack',
                                       'modules': ['nova', 'glance']},
