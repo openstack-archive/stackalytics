@@ -16,7 +16,7 @@ Project Info
 -------------
 
  * Web-site: http://stackalytics.com/
- * Source Code: http://github.com/stackforge/stackalytics
+ * Source Code: http://git.openstack.org/cgit/stackforge/stackalytics
  * Wiki: https://wiki.openstack.org/wiki/Stackalytics
  * Launchpad: https://launchpad.net/stackalytics
  * Blueprints: https://blueprints.launchpad.net/stackalytics

@@ -22,10 +22,11 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_modules(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/glance.git'}],
+                {'repos': [
+                    {'module': 'nova', 'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/nova.git'},
+                    {'module': 'glance', 'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/glance.git'}],
                  'module_groups': {
                      'nova-group': {'id': 'nova-group',
                                     'module_group_name': 'nova-group',
@@ -74,8 +75,9 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_module(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'}],
+                {'repos': [
+                    {'module': 'nova', 'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/nova.git'}],
                  'module_groups': {
                      'nova-group': {'id': 'nova-group',
                                     'module_group_name': 'nova-group',

@@ -18,8 +18,8 @@ from oslo.config import cfg
 
 OPTS = [
     cfg.StrOpt('default-data-uri',
-               default='https://raw.github.com/stackforge/stackalytics/'
-                       'master/etc/default_data.json',
+               default='https://git.openstack.org/cgit/'
+                       'stackforge/stackalytics/plain/etc/default_data.json',
                help='URI for default data'),
     cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
@@ -32,8 +32,8 @@ OPTS = [
     cfg.IntOpt('days_to_update_members', default=7,
                help='Number of days to update members'),
     cfg.StrOpt('corrections-uri',
-               default=('https://raw.github.com/stackforge/stackalytics/'
-                        'master/etc/corrections.json'),
+               default=('https://git.openstack.org/cgit/'
+                        'stackforge/stackalytics/plain/etc/corrections.json'),
                help='The address of file with corrections data'),
     cfg.StrOpt('review-uri', default='gerrit://review.openstack.org',
                help='URI of review system'),
@@ -44,8 +44,8 @@ OPTS = [
     cfg.BoolOpt('force-update', default=False,
                 help='Forcibly read default data and update records'),
     cfg.StrOpt('program-list-uri',
-               default=('https://raw.github.com/openstack/governance/'
-                        'master/reference/programs.yaml'),
+               default=('https://git.openstack.org/cgit/'
+                        'openstack/governance/plain/reference/programs.yaml'),
                help='The address of file with list of programs'),
     cfg.StrOpt('default-metric', default='marks',
                help='Default metric'),

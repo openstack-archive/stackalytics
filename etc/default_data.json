@@ -6866,7 +6866,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/nova.git",
+            "uri": "git://git.openstack.org/openstack/nova.git",
             "module": "nova",
             "organization": "openstack"
         },
@@ -6905,7 +6905,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/keystone.git",
+            "uri": "git://git.openstack.org/openstack/keystone.git",
             "module": "keystone",
             "organization": "openstack"
         },
@@ -6939,7 +6939,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/cinder.git",
+            "uri": "git://git.openstack.org/openstack/cinder.git",
             "module": "cinder",
             "organization": "openstack"
         },
@@ -6978,7 +6978,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/glance.git",
+            "uri": "git://git.openstack.org/openstack/glance.git",
             "module": "glance",
             "organization": "openstack"
         },
@@ -7017,7 +7017,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/neutron.git",
+            "uri": "git://git.openstack.org/openstack/neutron.git",
             "module": "neutron",
             "organization": "openstack"
         },
@@ -7056,7 +7056,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/horizon.git",
+            "uri": "git://git.openstack.org/openstack/horizon.git",
             "module": "horizon",
             "organization": "openstack"
         },
@@ -7095,7 +7095,7 @@
                     "tag_from": "1.13.0"
                 }
             ],
-            "uri": "git://github.com/openstack/swift.git",
+            "uri": "git://git.openstack.org/openstack/swift.git",
             "module": "swift",
             "organization": "openstack"
         },
@@ -7127,7 +7127,7 @@
                     "tag_from": "0.8.0"
                 }
             ],
-            "uri": "git://github.com/openstack/python-keystoneclient.git",
+            "uri": "git://git.openstack.org/openstack/python-keystoneclient.git",
             "module": "python-keystoneclient",
             "organization": "openstack"
         },
@@ -7159,7 +7159,7 @@
                     "tag_from": "2.17.0"
                 }
             ],
-            "uri": "git://github.com/openstack/python-novaclient.git",
+            "uri": "git://git.openstack.org/openstack/python-novaclient.git",
             "module": "python-novaclient",
             "organization": "openstack"
         },
@@ -7186,7 +7186,7 @@
                     "tag_from": "1.0.8"
                 }
             ],
-            "uri": "git://github.com/openstack/python-cinderclient.git",
+            "uri": "git://git.openstack.org/openstack/python-cinderclient.git",
             "module": "python-cinderclient",
             "organization": "openstack"
         },
@@ -7208,7 +7208,7 @@
                     "tag_from": "0.11.0"
                 }
             ],
-            "uri": "git://github.com/openstack/python-glanceclient.git",
+            "uri": "git://git.openstack.org/openstack/python-glanceclient.git",
             "module": "python-glanceclient",
             "organization": "openstack"
         },
@@ -7235,7 +7235,7 @@
                     "tag_from": "2.3.1"
                 }
             ],
-            "uri": "git://github.com/openstack/python-neutronclient.git",
+            "uri": "git://git.openstack.org/openstack/python-neutronclient.git",
             "module": "python-neutronclient",
             "organization": "openstack"
         },
@@ -7257,7 +7257,7 @@
                     "tag_from": "1.8.0"
                 }
             ],
-            "uri": "git://github.com/openstack/python-swiftclient.git",
+            "uri": "git://git.openstack.org/openstack/python-swiftclient.git",
             "module": "python-swiftclient",
             "organization": "openstack"
         },
@@ -7286,7 +7286,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/heat.git",
+            "uri": "git://git.openstack.org/openstack/heat.git",
             "module": "heat",
             "organization": "openstack"
         },
@@ -7308,7 +7308,7 @@
                     "tag_from": "0.2.5"
                 }
             ],
-            "uri": "git://github.com/openstack/python-heatclient.git",
+            "uri": "git://git.openstack.org/openstack/python-heatclient.git",
             "module": "python-heatclient",
             "organization": "openstack"
         },
@@ -7332,7 +7332,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/ceilometer.git",
+            "uri": "git://git.openstack.org/openstack/ceilometer.git",
             "module": "ceilometer",
             "organization": "openstack"
         },
@@ -7349,7 +7349,7 @@
                     "tag_from": "1.0.6"
                 }
             ],
-            "uri": "git://github.com/openstack/python-ceilometerclient.git",
+            "uri": "git://git.openstack.org/openstack/python-ceilometerclient.git",
             "module": "python-ceilometerclient",
             "organization": "openstack"
         },
@@ -7373,7 +7373,7 @@
                     "tag_from": "2014.1"
                 }
             ],
-            "uri": "git://github.com/openstack/oslo-incubator.git",
+            "uri": "git://git.openstack.org/openstack/oslo-incubator.git",
             "module": "oslo-incubator",
             "organization": "openstack"
         },
@@ -7391,7 +7391,7 @@
                     "tag_from": "1.2.1"
                 }
             ],
-            "uri": "git://github.com/openstack/oslo.config.git",
+            "uri": "git://git.openstack.org/openstack/oslo.config.git",
             "module": "oslo.config",
             "organization": "openstack"
         },
@@ -7414,7 +7414,7 @@
                 }
 
             ],
-            "uri": "git://github.com/openstack/compute-api.git",
+            "uri": "git://git.openstack.org/openstack/compute-api.git",
             "module": "compute-api",
             "organization": "openstack"
         },
@@ -7436,7 +7436,7 @@
                     "tag_from": "d000b31"
                 }
             ],
-            "uri": "git://github.com/openstack/identity-api.git",
+            "uri": "git://git.openstack.org/openstack/identity-api.git",
             "module": "identity-api",
             "organization": "openstack"
         },
@@ -7459,7 +7459,7 @@
                 }
 
             ],
-            "uri": "git://github.com/openstack/image-api.git",
+            "uri": "git://git.openstack.org/openstack/image-api.git",
             "module": "image-api",
             "organization": "openstack"
         },
@@ -7482,7 +7482,7 @@
                 }
 
             ],
-            "uri": "git://github.com/openstack/netconn-api.git",
+            "uri": "git://git.openstack.org/openstack/netconn-api.git",
             "module": "netconn-api",
             "organization": "openstack"
         },
@@ -7505,7 +7505,7 @@
                 }
 
             ],
-            "uri": "git://github.com/openstack/object-api.git",
+            "uri": "git://git.openstack.org/openstack/object-api.git",
             "module": "object-api",
             "organization": "openstack"
         },
@@ -7527,7 +7527,7 @@
                     "tag_from": "5b33af5"
                 }
             ],
-            "uri": "git://github.com/openstack/volume-api.git",
+            "uri": "git://git.openstack.org/openstack/volume-api.git",
             "module": "volume-api",
             "organization": "openstack"
         },
@@ -7561,7 +7561,7 @@
                     "tag_from": "7dcdb23"
                 }
             ],
-            "uri": "git://github.com/openstack/openstack-manuals.git",
+            "uri": "git://git.openstack.org/openstack/openstack-manuals.git",
             "module": "openstack-manuals",
             "organization": "openstack"
         },
@@ -7578,7 +7578,7 @@
                     "tag_from": "0.11"
                 }
             ],
-            "uri": "git://github.com/openstack/openstack-doc-tools.git",
+            "uri": "git://git.openstack.org/openstack/openstack-doc-tools.git",
             "module": "openstack-doc-tools",
             "organization": "openstack"
         },
@@ -7600,7 +7600,7 @@
                     "tag_from": "1883cbb"
                 }
             ],
-            "uri": "git://github.com/openstack/operations-guide.git",
+            "uri": "git://git.openstack.org/openstack/operations-guide.git",
             "module": "operations-guide",
             "organization": "openstack"
         },
@@ -7622,7 +7622,7 @@
                     "tag_from": "b951d9651"
                 }
             ],
-            "uri": "git://github.com/openstack/api-site.git",
+            "uri": "git://git.openstack.org/openstack/api-site.git",
             "module": "api-site",
             "organization": "openstack"
         },
@@ -7631,7 +7631,7 @@
             "aliases": [
                 "savanna"
             ],
-            "uri": "git://github.com/openstack/sahara.git",
+            "uri": "git://git.openstack.org/openstack/sahara.git",
             "organization": "openstack",
             "releases": [
                 {
@@ -7654,7 +7654,7 @@
         },
         {
             "module": "sahara-dashboard",
-            "uri": "git://github.com/openstack/sahara-dashboard.git",
+            "uri": "git://git.openstack.org/openstack/sahara-dashboard.git",
             "organization": "openstack",
             "releases": [
                 {
@@ -7671,7 +7671,7 @@
         },
         {
             "module": "python-saharaclient",
-            "uri": "git://github.com/openstack/python-saharaclient.git",
+            "uri": "git://git.openstack.org/openstack/python-saharaclient.git",
             "organization": "openstack",
             "releases": [
                 {
@@ -7691,7 +7691,7 @@
             "aliases": [
                 "fuel"
             ],
-            "uri": "git://github.com/stackforge/fuel-main.git",
+            "uri": "git://git.openstack.org/stackforge/fuel-main.git",
             "organization": "stackforge"
         }
     ],
