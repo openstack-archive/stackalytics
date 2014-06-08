@@ -263,7 +263,7 @@ def main():
     conf = cfg.CONF
     conf.register_cli_opts(config.OPTS)
     conf.register_opts(config.OPTS)
-    conf()
+    conf(project='stackalytics')
 
     logging.setup('stackalytics')
     LOG.info('Logging enabled')
