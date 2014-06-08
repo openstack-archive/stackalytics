@@ -21,7 +21,7 @@ import mock
 import six
 import testtools
 
-from dashboard import web
+from stackalytics.dashboard import web
 from stackalytics.processor import runtime_storage
 
 

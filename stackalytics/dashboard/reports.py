@@ -21,9 +21,9 @@ import time
 
 import flask
 
-from dashboard import decorators
-from dashboard import helpers
-from dashboard import vault
+from stackalytics.dashboard import decorators
+from stackalytics.dashboard import helpers
+from stackalytics.dashboard import vault
 from stackalytics.processor import utils
 
 
