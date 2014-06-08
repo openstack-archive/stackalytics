@@ -89,7 +89,7 @@ def read_uri(uri):
         fd.close()
         return raw
     except Exception as e:
-        LOG.warn('Error while reading uri: %s' % e)
+        LOG.warn('Error while reading uri(%s): %s' % (uri, e))
 
 
 def read_json_from_uri(uri):
