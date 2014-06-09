@@ -22,12 +22,13 @@ class TestAPICompanies(test_api.TestAPI):
 
     def test_get_companies(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'project_type': 'openstack',
-                            'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/glance.git'}],
+                {'repos': [
+                    {'module': 'nova', 'project_type': 'openstack',
+                     'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/nova.git'},
+                    {'module': 'glance', 'project_type': 'openstack',
+                     'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/glance.git'}],
                     'project_types': [
                         {'id': 'openstack', 'title': 'OpenStack',
                          'modules': ['nova', 'glance']}
@@ -76,12 +77,13 @@ class TestAPICompanies(test_api.TestAPI):
 
     def test_get_company(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'project_type': 'openstack',
-                            'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'},
-                           {'module': 'glance', 'project_type': 'openstack',
-                            'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/glance.git'}]},
+                {'repos': [
+                    {'module': 'nova', 'project_type': 'openstack',
+                     'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/nova.git'},
+                    {'module': 'glance', 'project_type': 'openstack',
+                     'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/glance.git'}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['glance'],

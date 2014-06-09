@@ -22,8 +22,9 @@ class TestAPIUsers(test_api.TestAPI):
 
     def test_users(self):
         with test_api.make_runtime_storage(
-                {'repos': [{'module': 'nova', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'}],
+                {'repos': [
+                    {'module': 'nova', 'organization': 'openstack',
+                     'uri': 'git://git.openstack.org/openstack/nova.git'}],
                  'project_types': [
                      {'id': 'openstack', 'title': 'openstack',
                       'modules': ['nova', 'glance']}],
@@ -63,8 +64,9 @@ class TestAPIUsers(test_api.TestAPI):
                     'seq': 1, 'user_id': 'john_doe', 'user_name': 'John Doe',
                     'companies': [{'company_name': 'NEC', 'end_date': 0}],
                     'emails': 'john_doe@gmail.com'},
-                 'repos': [{'module': 'nova', 'organization': 'openstack',
-                            'uri': 'git://github.com/openstack/nova.git'}],
+                 'repos': [
+                     {'module': 'nova', 'organization': 'openstack',
+                      'uri': 'git://git.openstack.org/openstack/nova.git'}],
                  'module_groups': {'openstack': {
                      'module_group_name': 'openstack',
                      'modules': ['nova']}}},

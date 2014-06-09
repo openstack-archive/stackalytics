@@ -56,16 +56,19 @@ class TestDefaultDataProcessor(testtools.TestCase):
         with mock.patch('stackalytics.processor.default_data_processor.'
                         '_retrieve_project_list_from_github') as retriever:
             retriever.return_value = [
-                {'module': 'nova', 'uri': 'git://github.com/openstack/nova',
+                {'module': 'nova',
+                 'uri': 'git://git.openstack.org/openstack/nova',
                  'organization': 'openstack'},
-                {'module': 'qa', 'uri': 'git://github.com/openstack/qa',
+                {'module': 'qa', 'uri': 'git://git.openstack.org/openstack/qa',
                  'organization': 'openstack'},
             ]
             dd = {
                 'repos': [
-                    {'module': 'qa', 'uri': 'git://github.com/openstack/qa',
+                    {'module': 'qa',
+                     'uri': 'git://git.openstack.org/openstack/qa',
                      'organization': 'openstack'},
-                    {'module': 'tux', 'uri': 'git://github.com/stackforge/tux',
+                    {'module': 'tux',
+                     'uri': 'git://git.openstack.org/stackforge/tux',
                      'organization': 'stackforge'},
                 ],
                 'project_sources': [{'organization': 'openstack',
