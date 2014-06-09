@@ -1704,10 +1704,6 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
-                    "end_date": "2013-Jan-01"
-                },
-                {
-                    "company_name": "PLUMgrid",
                     "end_date": null
                 }
             ],
