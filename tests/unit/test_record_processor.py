@@ -545,8 +545,8 @@ class TestRecordProcessor(testtools.TestCase):
                          'company_draft': 'Mirantis'}
 
         record_processor_inst = self.make_record_processor()
-        result_member = record_processor_inst._process_member(
-            member_record).next()
+        result_member = next(record_processor_inst._process_member(
+            member_record))
 
         self.assertEqual(result_member['primary_key'], 'member:123456789')
         self.assertEqual(result_member['date'], utils.member_date_to_timestamp(
@@ -576,8 +576,8 @@ class TestRecordProcessor(testtools.TestCase):
         updated_member_record['member_name'] = 'Bill Smith'
         updated_member_record['company_draft'] = 'Rackspace'
 
-        result_member = record_processor_inst._process_member(
-            updated_member_record).next()
+        result_member = next(record_processor_inst._process_member(
+            updated_member_record))
         self.assertEqual(result_member['author_name'], 'Bill Smith')
         self.assertEqual(result_member['company_name'], 'Rackspace')
 

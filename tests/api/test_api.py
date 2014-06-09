@@ -59,7 +59,7 @@ def make_records(**kwargs):
         for record_type in kwargs.get('record_type', []):
             if record_type in GENERATORS.keys():
                 for values in algebraic_product(**kwargs):
-                    record = GENERATORS[record_type]().next()
+                    record = next(GENERATORS[record_type]())
                     record.update(values)
                     yield record
 
