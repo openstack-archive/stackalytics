@@ -5355,6 +5355,17 @@
             "emails": ["trey.morris@rackspace.com", "treyemorris@gmail.com"]
         },
         {
+            "launchpad_id": "travis-mcpeak",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Travis McPeak",
+            "emails": ["travis_mcpeak@symantec.com"]
+        },
+        {
             "launchpad_id": "treinish",
             "companies": [
                 {
