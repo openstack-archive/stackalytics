@@ -65,17 +65,19 @@ class MemcachedStorage(RuntimeStorage):
         if stripped:
             storage_uri = stripped.split(',')
             self.memcached = memcache.Client(storage_uri)
-            self._build_index()
             self._init_user_count()
+            self.record_index = {}
         else:
             raise Exception('Invalid storage uri %s' % uri)
 
-    def _build_index(self):
-        self.record_index = {}
+    def _build_index_lazily(self):
+        if self.record_index:
+            return
         for record in self.get_all_records():
             self.record_index[record['primary_key']] = record['record_id']
 
     def set_records(self, records_iterator, merge_handler=None):
+        self._build_index_lazily()
         for record in records_iterator:
             if record['primary_key'] in self.record_index:
                 # update
@@ -103,6 +105,7 @@ class MemcachedStorage(RuntimeStorage):
             self._commit_update(record_id)
 
     def apply_corrections(self, corrections_iterator):
+        self._build_index_lazily()
         for correction in corrections_iterator:
             if correction['primary_key'] not in self.record_index:
                 continue
