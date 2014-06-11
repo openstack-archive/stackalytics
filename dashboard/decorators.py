@@ -387,11 +387,6 @@ def templated(template=None, return_code=200):
             ctx['review_nth'] = (flask.request.args.get('review_nth') or
                                  parameters.get_default('review_nth'))
 
-            ctx['project_type_options'] = vault.get_project_types()
-            ctx['release_options'] = vault.get_release_options()
-            ctx['metric_options'] = sorted(parameters.METRIC_LABELS.items(),
-                                           key=lambda x: x[0])
-
             ctx['company'] = parameters.get_single_parameter(kwargs, 'company')
             ctx['company_original'] = (
                 vault.get_memory_storage().get_original_company_name(
@@ -403,6 +398,9 @@ def templated(template=None, return_code=200):
                 ctx['module_inst'] = vault_inst['module_id_index'][module]
 
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')
+            if ctx['user_id']:
+                ctx['user_inst'] = vault.get_user_from_runtime_storage(
+                    ctx['user_id'])
             ctx['page_title'] = helpers.make_page_title(
                 ctx['company'], ctx['user_id'], ctx['module'], ctx['release'])
             ctx['stackalytics_version'] = (
