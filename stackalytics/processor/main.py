@@ -302,8 +302,15 @@ def main():
     if not default_data:
         LOG.critical('Unable to load default data')
         return not 0
+
+    gerrit = rcs.get_rcs(None, cfg.CONF.review_uri)
+    gerrit.setup(key_filename=cfg.CONF.ssh_key_filename,
+                 username=cfg.CONF.ssh_username)
+
     default_data_processor.process(runtime_storage_inst,
-                                   default_data)
+                                   default_data,
+                                   cfg.CONF.git_base_uri,
+                                   gerrit)
 
     process_program_list(runtime_storage_inst, cfg.CONF.program_list_uri)
 
