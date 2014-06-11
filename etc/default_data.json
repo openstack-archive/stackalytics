@@ -1438,6 +1438,17 @@
             "emails": ["dan.florea@gmail.com", "dflorea@vmware.com"]
         },
         {
+            "launchpad_id": "dgstangel",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dan Stangel",
+            "emails": ["dgstangel@gmail.com", "dan.stangel@hp.com"]
+        },
+        {
             "launchpad_id": "dguitarbite",
             "companies": [
                 {
