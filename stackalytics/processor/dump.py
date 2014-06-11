@@ -35,7 +35,7 @@ OPTS = [
                 help='Restore data into memcached'),
     cfg.StrOpt('file',
                short='f',
-               help='File name where to store data'),
+               help='The name of file to store data'),
     cfg.StrOpt('min-compress-len', default=0,
                short='m',
                help='The threshold length to kick in auto-compression'),
@@ -60,6 +60,7 @@ def read_records_from_fd(fd):
 
 
 def store_bucket(memcached_inst, bucket):
+    LOG.debug('Store bucket of records into memcached')
     res = memcached_inst.set_multi(bucket,
                                    min_compress_len=cfg.CONF.min_compress_len)
     if res:
@@ -71,11 +72,11 @@ def import_data(memcached_inst, fd):
     LOG.info('Importing data into memcached')
     bucket = {}
     for key, value in read_records_from_fd(fd):
-        if len(bucket) < BULK_READ_SIZE:
-            bucket[key] = value
-        else:
+        LOG.debug('Reading record key %s, value %s', key, value)
+        if len(bucket) == BULK_READ_SIZE:
             store_bucket(memcached_inst, bucket)
             bucket = {}
+        bucket[key] = value
     if bucket:
         store_bucket(memcached_inst, bucket)
 
