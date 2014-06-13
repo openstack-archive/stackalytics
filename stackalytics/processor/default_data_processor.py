@@ -167,7 +167,7 @@ def _update_records(runtime_storage_inst, sources_root):
     release_index = {}
     for repo in utils.load_repos(runtime_storage_inst):
         vcs_inst = vcs.get_vcs(repo, sources_root)
-        release_index.update(vcs_inst.get_release_index())
+        release_index.update(vcs_inst.fetch())
 
     record_processor_inst = record_processor.RecordProcessor(
         runtime_storage_inst)

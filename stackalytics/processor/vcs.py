@@ -41,9 +41,6 @@ class Vcs(object):
     def fetch(self):
         pass
 
-    def get_release_index(self):
-        pass
-
     def log(self, branch, head_commit_id):
         pass
 
@@ -107,14 +104,22 @@ class Git(Vcs):
             return False
 
     def fetch(self):
-        LOG.debug('Fetching repo uri %s' % self.repo['uri'])
+        LOG.debug('Fetching repo uri %s', self.repo['uri'])
 
         if os.path.exists(self.folder):
             os.chdir(self.folder)
-            uri = str(sh.git('config', '--get', 'remote.origin.url')).strip()
+            try:
+                uri = str(
+                    sh.git('config', '--get', 'remote.origin.url')).strip()
+            except sh.ErrorReturnCode as e:
+                LOG.error('Unable to get config for git repo %s. Ignore it',
+                          self.repo['uri'])
+                LOG.exception(e)
+                return {}
+
             if uri != self.repo['uri']:
-                LOG.debug('Repo uri %(uri)s differs from cloned %(old)s',
-                          {'uri': self.repo['uri'], 'old': uri})
+                LOG.warn('Repo uri %(uri)s differs from cloned %(old)s',
+                         {'uri': self.repo['uri'], 'old': uri})
                 os.chdir('..')
                 shutil.rmtree(self.folder)
 
@@ -136,9 +141,9 @@ class Git(Vcs):
                           self.repo['uri'])
                 LOG.exception(e)
 
-        self.get_release_index()
+        return self._get_release_index()
 
-    def get_release_index(self):
+    def _get_release_index(self):
         if not os.path.exists(self.folder):
             return {}
 
@@ -159,10 +164,16 @@ class Git(Vcs):
                     tag_range = release['tag_from'] + '..' + release['tag_to']
                 else:
                     tag_range = release['tag_to']
-                git_log_iterator = sh.git('log', '--pretty=%H', tag_range,
-                                          _tty_out=False)
-                for commit_id in git_log_iterator:
-                    self.release_index[commit_id.strip()] = release_name
+
+                try:
+                    git_log_iterator = sh.git('log', '--pretty=%H', tag_range,
+                                              _tty_out=False)
+                    for commit_id in git_log_iterator:
+                        self.release_index[commit_id.strip()] = release_name
+                except sh.ErrorReturnCode as e:
+                    LOG.error('Unable to get log of git repo %s. Ignore it',
+                              self.repo['uri'])
+                    LOG.exception(e)
         return self.release_index
 
     def log(self, branch, head_commit_id):
@@ -175,9 +186,16 @@ class Git(Vcs):
         commit_range = 'HEAD'
         if head_commit_id:
             commit_range = head_commit_id + '..HEAD'
-        output = sh.git('log', '--pretty=%s' % GIT_LOG_FORMAT, '--shortstat',
-                        '-M', '--no-merges', commit_range, _tty_out=False,
-                        _decode_errors='ignore')
+
+        try:
+            output = sh.git('log', '--pretty=' + GIT_LOG_FORMAT, '--shortstat',
+                            '-M', '--no-merges', commit_range, _tty_out=False,
+                            _decode_errors='ignore')
+        except sh.ErrorReturnCode as e:
+            LOG.error('Unable to get log of git repo %s. Ignore it',
+                      self.repo['uri'])
+            LOG.exception(e)
+            return
 
         for rec in re.finditer(GIT_LOG_PATTERN, str(output)):
             i = 1
@@ -250,7 +268,15 @@ class Git(Vcs):
         os.chdir(self.folder)
         if not self._checkout(branch):
             return None
-        return str(sh.git('rev-parse', 'HEAD')).strip()
+
+        try:
+            return str(sh.git('rev-parse', 'HEAD')).strip()
+        except sh.ErrorReturnCode as e:
+            LOG.error('Unable to get HEAD for git repo %s. Ignore it',
+                      self.repo['uri'])
+            LOG.exception(e)
+
+        return None
 
 
 def get_vcs(repo, sources_root):
