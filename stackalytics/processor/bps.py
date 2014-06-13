@@ -20,32 +20,44 @@ from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
 
-LINK_FIELDS = ['owner', 'drafter', 'starter', 'completer',
-               'assignee', 'approver']
-DATE_FIELDS = ['date_created', 'date_completed', 'date_started']
+LINK_FIELDS = ['owner', 'assignee']
+BUG_FIELDS = ['web_link', 'status', 'title', 'importance']
+DATE_FIELDS = ['date_created', 'date_fix_committed']
 
 
-def log(repo):
+def _get_bug_id(web_link):
+    return web_link[web_link.rfind('/') + 1:]
+
+
+def log(repo, last_bug_date):
     module = repo['module']
-    LOG.debug('Retrieving list of blueprints for module: %s', module)
+    LOG.debug('Retrieving list of bugs for module: %s', module)
 
     if not launchpad_utils.lp_module_exists(module):
         LOG.debug('Module %s does not exist at Launchpad', module)
         return
 
-    for record in launchpad_utils.lp_blueprint_generator(module):
+    for record_draft in launchpad_utils.lp_bug_generator(module,
+                                                         last_bug_date):
+
+        record = {}
+
         for field in LINK_FIELDS:
-            link = record[field + '_link']
+            link = record_draft[field + '_link']
             if link:
                 record[field] = launchpad_utils.link_to_launchpad_id(link)
-                del record[field + '_link']
+
+        for field in BUG_FIELDS:
+            record[field] = record_draft[field]
+
         for field in DATE_FIELDS:
-            date = record[field]
+            date = record_draft[field]
             if date:
                 record[field] = utils.iso8601_to_timestamp(date)
 
+        bug_id = _get_bug_id(record_draft['web_link'])
         record['module'] = module
-        record['id'] = utils.get_blueprint_id(module, record['name'])
+        record['id'] = utils.get_bug_id(module, bug_id)
 
-        LOG.debug('New blueprint: %s', record)
+        LOG.debug('New bug: %s', record)
         yield record

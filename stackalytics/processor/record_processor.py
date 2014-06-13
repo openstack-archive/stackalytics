@@ -417,6 +417,30 @@ class RecordProcessor(object):
 
             yield bpc
 
+    def _process_bug(self, record):
+
+        bug_created = record.copy()
+        bug_created['primary_key'] = 'bugf:' + record['id']
+        bug_created['record_type'] = 'bugf'
+        bug_created['launchpad_id'] = record.get('owner')
+        bug_created['date'] = record['date_created']
+
+        self._update_record_and_user(bug_created)
+
+        yield bug_created
+
+        FIXED_BUGS = ['Fix Committed', 'Fix Released']
+        if 'date_fix_committed' in record and record['status'] in FIXED_BUGS:
+            bug_fixed = record.copy()
+            bug_fixed['primary_key'] = 'bugr:' + record['id']
+            bug_fixed['record_type'] = 'bugr'
+            bug_fixed['launchpad_id'] = record.get('assignee') or '*unassigned'
+            bug_fixed['date'] = record['date_fix_committed']
+
+            self._update_record_and_user(bug_fixed)
+
+            yield bug_fixed
+
     def _process_member(self, record):
         user_id = "member:" + record['member_id']
         record['primary_key'] = user_id
@@ -464,6 +488,9 @@ class RecordProcessor(object):
                 yield r
         elif record['record_type'] == 'member':
             for r in self._process_member(record):
+                yield r
+        elif record['record_type'] == 'bug':
+            for r in self._process_bug(record):
                 yield r
 
     def _renew_record_date(self, record):

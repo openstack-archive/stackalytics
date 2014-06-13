@@ -320,6 +320,90 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual('IBM', user['companies'][0]['company_name'])
         self.assertEqual(None, user['launchpad_id'])
 
+    def generate_bugs(self, assignee=None, date_fix_committed=None,
+                      status='Confirmed'):
+        yield {
+            'record_type': 'bug',
+            'id': 'bug_id',
+            'owner': 'owner',
+            'assignee': assignee,
+            'date_created': 1234567890,
+            'date_fix_committed': date_fix_committed,
+            'module': 'nova',
+            'status': status
+        }
+
+    def test_process_bug_not_fixed(self):
+        record = self.generate_bugs()
+        record_processor_inst = self.make_record_processor()
+        bugs = list(record_processor_inst.process(record))
+        self.assertEqual(len(bugs), 1)
+        self.assertRecordsMatch({
+            'primary_key': 'bugf:bug_id',
+            'record_type': 'bugf',
+            'launchpad_id': 'owner',
+            'date': 1234567890,
+        }, bugs[0])
+
+    def test_process_bug_fix_committed(self):
+        record = self.generate_bugs(status='Fix Committed',
+                                    date_fix_committed=1234567891,
+                                    assignee='assignee')
+        record_processor_inst = self.make_record_processor()
+        bugs = list(record_processor_inst.process(record))
+        self.assertEqual(len(bugs), 2)
+        self.assertRecordsMatch({
+            'primary_key': 'bugf:bug_id',
+            'record_type': 'bugf',
+            'launchpad_id': 'owner',
+            'date': 1234567890,
+        }, bugs[0])
+        self.assertRecordsMatch({
+            'primary_key': 'bugr:bug_id',
+            'record_type': 'bugr',
+            'launchpad_id': 'assignee',
+            'date': 1234567891,
+        }, bugs[1])
+
+    def test_process_bug_fix_released(self):
+        record = self.generate_bugs(status='Fix Released',
+                                    date_fix_committed=1234567891,
+                                    assignee='assignee')
+        record_processor_inst = self.make_record_processor()
+        bugs = list(record_processor_inst.process(record))
+        self.assertEqual(len(bugs), 2)
+        self.assertRecordsMatch({
+            'primary_key': 'bugf:bug_id',
+            'record_type': 'bugf',
+            'launchpad_id': 'owner',
+            'date': 1234567890,
+        }, bugs[0])
+        self.assertRecordsMatch({
+            'primary_key': 'bugr:bug_id',
+            'record_type': 'bugr',
+            'launchpad_id': 'assignee',
+            'date': 1234567891,
+        }, bugs[1])
+
+    def test_process_bug_fix_committed_without_assignee(self):
+        record = self.generate_bugs(status='Fix Committed',
+                                    date_fix_committed=1234567891)
+        record_processor_inst = self.make_record_processor()
+        bugs = list(record_processor_inst.process(record))
+        self.assertEqual(len(bugs), 2)
+        self.assertRecordsMatch({
+            'primary_key': 'bugf:bug_id',
+            'record_type': 'bugf',
+            'launchpad_id': 'owner',
+            'date': 1234567890,
+        }, bugs[0])
+        self.assertRecordsMatch({
+            'primary_key': 'bugr:bug_id',
+            'record_type': 'bugr',
+            'launchpad_id': '*unassigned',
+            'date': 1234567891,
+        }, bugs[1])
+
     # process records complex scenarios
 
     def test_process_blueprint_one_draft_spawned_lp_doesnt_know_user(self):

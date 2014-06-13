@@ -72,6 +72,11 @@ def timestamp_to_day(timestamp):
     return timestamp // (24 * 3600)
 
 
+def timestamp_to_utc_date(timestamp):
+    return (datetime.datetime.fromtimestamp(timestamp).
+            strftime('%Y-%m-%d'))
+
+
 def round_timestamp_to_day(timestamp):
     return (int(timestamp) // (24 * 3600)) * (24 * 3600)
 
@@ -173,6 +178,10 @@ def merge_records(original, new):
 
 def get_blueprint_id(module, name):
     return module + ':' + name
+
+
+def get_bug_id(module, bug_id):
+    return module + '/' + bug_id
 
 
 def get_patch_id(review_id, patch_number):
