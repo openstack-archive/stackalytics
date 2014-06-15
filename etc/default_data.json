@@ -2204,8 +2204,8 @@
             ],
             "user_name": "Henrique Truta",
             "emails": ["henrique@lsd.ufcg.edu.br", "henriquecostatruta@gmail.com"]
-        },        
-	{
+        },
+        {
             "launchpad_id": "heut2008",
             "companies": [
                 {
@@ -5157,12 +5157,16 @@
             "gerrit_id": "sbauza",
             "companies": [
                 {
-                    "company_name": "Bull",
+                    "company_name": "*independent",
+                    "end_date": "2014-May-04"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Sylvain Bauza",
-            "emails": ["sbauza@free.fr", "sylvain.bauza@bull.net"]
+            "emails": ["sbauza@free.fr", "sylvain.bauza@bull.net", "sylvain.bauza@gmail.com", "sbauza@redhat.com"]
         },
         {
             "launchpad_id": "tangmeiyan77",
@@ -6414,7 +6418,7 @@
             "domains": ["locaweb.com.br"],
             "company_name": "Locaweb"
         },
-        {    
+        {
             "domains": ["lsd.ufcg.edu.br"],
             "company_name": "Universidade Federal de Campina Grande"
         },
