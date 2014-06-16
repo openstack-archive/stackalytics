@@ -76,12 +76,12 @@ def lp_blueprint_generator(module):
         uri = chunk.get('next_collection_link')
 
 
-def lp_bug_generator(module, last_bug_date):
+def lp_bug_generator(module, modified_since):
     uri = LP_URI_DEVEL % (module + '?ws.op=searchTasks')
     for status in BUG_STATUSES:
         uri += '&status=' + six.moves.urllib.parse.quote_plus(status)
-    if last_bug_date:
-        uri += '&modified_since=' + last_bug_date
+    if modified_since:
+        uri += '&modified_since=' + utils.timestamp_to_utc_date(modified_since)
 
     while uri:
         LOG.debug('Reading chunk from uri %s', uri)

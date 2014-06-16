@@ -542,6 +542,8 @@ class RecordProcessor(object):
                 yield record
 
     def _update_commits_with_merge_date(self):
+        LOG.debug('Update commits with merge date')
+
         change_id_to_date = {}
         for record in self.runtime_storage_inst.get_all_records():
             if (record['record_type'] == 'review' and
@@ -728,13 +730,46 @@ class RecordProcessor(object):
             for processed in self._close_patch(cores, marks_patch['marks']):
                 yield processed
 
-    def update(self, release_index=None):
+    def _update_members_company_name(self):
+        LOG.debug('Update members with company names')
+
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['record_type'] != 'member':
+                continue
+
+            company_draft = record['company_draft']
+            company_name = self.domains_index.get(
+                utils.normalize_company_name(company_draft)) or (
+                    utils.normalize_company_draft(company_draft))
+
+            if company_name == record['company_name']:
+                continue
+
+            LOG.debug('Update record %s, company name changed to %s',
+                      record, company_name)
+            record['company_name'] = company_name
+
+            yield record
+
+            user = utils.load_user(self.runtime_storage_inst,
+                                   record['user_id'])
+            LOG.debug('Update user %s, company name changed to %s',
+                      user, company_name)
+            user['companies'] = [{
+                'company_name': company_name,
+                'end_date': 0,
+            }]
+            utils.store_user(self.runtime_storage_inst, user)
+
+    def post_processing(self, release_index):
         self.runtime_storage_inst.set_records(
             self._update_records_with_user_info())
 
-        if release_index:
-            self.runtime_storage_inst.set_records(
-                self._update_records_with_releases(release_index))
+        self.runtime_storage_inst.set_records(
+            self._update_commits_with_merge_date())
+
+        self.runtime_storage_inst.set_records(
+            self._update_records_with_releases(release_index))
 
         self.runtime_storage_inst.set_records(
             self._update_reviews_with_sequence_number())
@@ -742,11 +777,11 @@ class RecordProcessor(object):
         self.runtime_storage_inst.set_records(
             self._update_blueprints_with_mention_info())
 
-        self.runtime_storage_inst.set_records(
-            self._update_commits_with_merge_date())
-
         self._determine_core_contributors()
 
         # disagreement calculation must go after determining core contributors
         self.runtime_storage_inst.set_records(
             self._update_marks_with_disagreement())
+
+        self.runtime_storage_inst.set_records(
+            self._update_members_company_name())

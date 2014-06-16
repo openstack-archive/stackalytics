@@ -29,7 +29,7 @@ def _get_bug_id(web_link):
     return web_link[web_link.rfind('/') + 1:]
 
 
-def log(repo, last_bug_date):
+def log(repo, modified_since):
     module = repo['module']
     LOG.debug('Retrieving list of bugs for module: %s', module)
 
@@ -38,7 +38,7 @@ def log(repo, last_bug_date):
         return
 
     for record_draft in launchpad_utils.lp_bug_generator(module,
-                                                         last_bug_date):
+                                                         modified_since):
 
         record = {}
 

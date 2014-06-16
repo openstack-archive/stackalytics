@@ -782,7 +782,7 @@ class TestRecordProcessor(testtools.TestCase):
              'module': 'nova', 'branch': 'master'}
         ]))
 
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         user = {'seq': 2,
                 'core': [],
@@ -853,7 +853,7 @@ class TestRecordProcessor(testtools.TestCase):
                   }]}
         ]))
 
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         user_1 = {'seq': 1, 'user_id': 'john_doe',
                   'launchpad_id': 'john_doe', 'user_name': 'John Doe',
@@ -942,7 +942,7 @@ class TestRecordProcessor(testtools.TestCase):
              'date': 1234567895,
              'blueprint_id': ['mod:blueprint', 'mod:invalid']},
         ]))
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         bp1 = runtime_storage_inst.get_by_primary_key('bpd:mod:blueprint')
         self.assertEqual(2, bp1['mention_count'])
@@ -978,7 +978,7 @@ class TestRecordProcessor(testtools.TestCase):
              'createdOn': 5,
              'module': 'glance', 'branch': 'master'},
         ]))
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         review1 = runtime_storage_inst.get_by_primary_key('I111')
         self.assertEqual(2, review1['review_number'])
@@ -1065,7 +1065,7 @@ class TestRecordProcessor(testtools.TestCase):
                   }
              ]}
         ]))
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         marks = list([r for r in runtime_storage_inst.get_all_records()
                       if r['record_type'] == 'mark'])
@@ -1110,7 +1110,7 @@ class TestRecordProcessor(testtools.TestCase):
              'status': 'MERGED',
              'module': 'nova', 'branch': 'master'},
         ]))
-        record_processor_inst.update()
+        record_processor_inst.post_processing({})
 
         commit = runtime_storage_inst.get_by_primary_key('de7e8f2')
         self.assertEqual(1385490000, commit['date'])
