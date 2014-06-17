@@ -20,9 +20,9 @@ import flask
 import six
 from werkzeug import exceptions
 
-from dashboard import helpers
-from dashboard import parameters
-from dashboard import vault
+from stackalytics.dashboard import helpers
+from stackalytics.dashboard import parameters
+from stackalytics.dashboard import vault
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 from stackalytics import version as stackalytics_version

@@ -16,8 +16,8 @@
 import mock
 import testtools
 
-from dashboard import helpers
-from dashboard import parameters
+from stackalytics.dashboard import helpers
+from stackalytics.dashboard import parameters
 
 
 class TestWebUtils(testtools.TestCase):
@@ -83,8 +83,8 @@ Implements Blueprint ''' + (
         self.assertEqual(expected, observed,
                          'Commit message should be processed correctly')
 
-    @mock.patch('dashboard.vault.get_vault')
-    @mock.patch('dashboard.vault.get_user_from_runtime_storage')
+    @mock.patch('stackalytics.dashboard.vault.get_vault')
+    @mock.patch('stackalytics.dashboard.vault.get_user_from_runtime_storage')
     def test_make_page_title(self, user_patch, vault_patch):
         memory_storage_mock = mock.Mock()
         memory_storage_mock.get_original_company_name = mock.Mock(
@@ -107,7 +107,7 @@ Implements Blueprint ''' + (
                 'Mirantis', 'John Doe', 'neutron', 'Havana'))
 
     @mock.patch('flask.request')
-    @mock.patch('dashboard.parameters.get_default')
+    @mock.patch('stackalytics.dashboard.parameters.get_default')
     def test_parameters_get_parameter(self, get_default, flask_request):
 
         flask_request.args = mock.Mock()

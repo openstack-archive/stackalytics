@@ -18,8 +18,8 @@ import re
 
 import six
 
-from dashboard import parameters
-from dashboard import vault
+from stackalytics.dashboard import parameters
+from stackalytics.dashboard import vault
 from stackalytics.processor import utils
 
 

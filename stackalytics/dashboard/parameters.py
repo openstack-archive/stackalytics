@@ -17,7 +17,7 @@ import flask
 from oslo.config import cfg
 from six.moves.urllib import parse
 
-from dashboard import vault
+from stackalytics.dashboard import vault
 from stackalytics.openstack.common import log as logging
 
 

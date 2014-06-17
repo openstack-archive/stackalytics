@@ -23,12 +23,12 @@ import flask
 from oslo.config import cfg
 import six
 
-from dashboard import decorators
-from dashboard import helpers
-from dashboard import kpi
-from dashboard import parameters
-from dashboard import reports
-from dashboard import vault
+from stackalytics.dashboard import decorators
+from stackalytics.dashboard import helpers
+from stackalytics.dashboard import kpi
+from stackalytics.dashboard import parameters
+from stackalytics.dashboard import reports
+from stackalytics.dashboard import vault
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import utils
@@ -601,7 +601,7 @@ def main():
     else:
         conf(project='stackalytics')
 
-    logging.setup('dashboard')
+    logging.setup('stackalytics.dashboard')
 
     app.run(cfg.CONF.listen_host, cfg.CONF.listen_port)
 

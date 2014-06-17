@@ -15,7 +15,7 @@
 
 import flask
 
-from dashboard import decorators
+from stackalytics.dashboard import decorators
 
 
 blueprint = flask.Blueprint('kpi', __name__, url_prefix='/kpi')
