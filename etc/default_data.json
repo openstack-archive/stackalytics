@@ -7799,7 +7799,7 @@
         },
         {
             "module_group_name": "solum-group",
-            "modules": ["python-solumclient", "solum", "solum-dashboard"]
+            "modules": ["python-solumclient", "solum", "solum-dashboard", "solum-specs"]
         },
         {
             "module_group_name": "puppet-group",
