@@ -90,6 +90,22 @@
             "emails": ["aaron@greenbtn.com"]
         },
         {
+            "launchpad_id": "abhijeet-jain",
+            "gerrit_id": "Abhijeet.Jain",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2014-Jun-18"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abhijeet Jain",
+            "emails": ["abhijeet.jain@nectechnologies.in", "abhijeetjpjain@gmail.com", "abhijeet_jain@ymail.com"]
+        },
+        {
             "launchpad_id": "academicgareth",
             "companies": [
                 {
