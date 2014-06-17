@@ -1888,6 +1888,24 @@
             "emails": ["fpercoco@redhat.com", "flaper87@gmail.com"]
         },
         {
+           "launchpad_id": "flwang",
+           "gerrit_id": "flwang",
+           "companies": [
+               {
+                   "company_name": "IBM",
+                   "end_date": "2014-May-22"
+               },
+               {
+                   "company_name": "Catalyst IT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Fei Long Wang",
+           "emails": [
+               "flwang@catalyst.net.nz", "feilong@catalyst.net.nz", "flwang@qq.com"
+           ]
+        },
+        {
             "launchpad_id": "fujioka-yuuichi-d",
             "gerrit_id": "fujiokayuuichi",
             "companies": [
