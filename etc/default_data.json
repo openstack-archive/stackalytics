@@ -7787,7 +7787,7 @@
         },
         {
             "module_group_name": "fuel-group",
-            "modules": ["fuel-main", "fuel-web", "fuel-astute", "fuel-ostf", "fuel-library", "fuel-docs", "fuel-devops"]
+            "modules": ["fuel-astute", "fuel-devops", "fuel-docs", "fuel-library", "fuel-main", "fuel-ostf", "fuel-ostf-plugin", "fuel-provision", "fuel-specs", "fuel-web"]
         },
         {
             "module_group_name": "mistral-group",
@@ -7803,11 +7803,11 @@
         },
         {
             "module_group_name": "puppet-group",
-            "modules": ["puppet-openstack", "puppet-nova", "puppet-neutron", "puppet-glance", "puppet-keystone", "puppet-horizon", "puppet-heat", "puppet-cinder", "puppet-openstack_dev_env", "puppet-swift", "puppet-tempest", "puppet-ceilometer", "puppet_openstack_builder"]
+            "modules": ["puppet-ceilometer", "puppet-ceph", "puppet-cinder", "puppet-designate", "puppet-glance", "puppet-heat", "puppet-horizon", "puppet-ironic", "puppet-keystone", "puppet-neutron", "puppet-nova", "puppet-openstack", "puppet-openstack-specs", "puppet-openstack_dev_env", "puppet-sahara", "puppet-swift", "puppet-tempest", "puppet-vswitch", "puppet_openstack_builder"]
         },
         {
             "module_group_name": "chef-group",
-            "modules": ["openstack-chef-repo", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-identity", "cookbook-openstack-block-storage", "cookbook-openstack-object-storage", "cookbook-openstack-orchestration", "cookbook-openstack-metering", "cookbook-openstack-network", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-dashboard", "cookbook-openstack-image"]
+            "modules": ["openstack-chef-repo", "cookbook-ceph", "cookbook-openstack-block-storage", "cookbook-openstack-client", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-dashboard", "cookbook-openstack-data-processing", "cookbook-openstack-database", "cookbook-openstack-identity", "cookbook-openstack-image", "cookbook-openstack-integration-test", "cookbook-openstack-network", "cookbook-openstack-object-storage", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-orchestration", "cookbook-openstack-telemetry"]
         }
     ],
     "releases": [
