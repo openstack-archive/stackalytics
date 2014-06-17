@@ -135,6 +135,19 @@ class Gerrit(Rcs):
             if not proceed:
                 break
 
+    def get_project_list(self):
+        if not self._connect():
+            return
+
+        exec_result = self._exec_command('gerrit ls-projects')
+        if not exec_result:
+            raise Exception("Unable to retrieve list of projects from gerrit.")
+        stdin, stdout, stderr = exec_result
+        result = [line.strip() for line in stdout]
+        self.client.close()
+
+        return result
+
     def log(self, branch, last_id):
         if not self._connect():
             return

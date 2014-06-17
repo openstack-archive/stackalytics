@@ -17,7 +17,6 @@ import collections
 import hashlib
 import json
 
-from github import MainClass
 import six
 
 from stackalytics.openstack.common import log as logging
@@ -42,30 +41,34 @@ def _check_default_data_change(runtime_storage_inst, default_data):
     return True
 
 
-def _retrieve_project_list_from_github(project_sources):
-    LOG.info('Retrieving project list from GitHub')
-    github = MainClass.Github(timeout=60)
+def _retrieve_project_list_from_gerrit(project_sources, git_base_uri, gerrit):
+    LOG.info('Retrieving project list from Gerrit')
+    try:
+        project_list = gerrit.get_project_list()
+    except Exception as e:
+        LOG.exception(e)
+        LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
+        return False
 
     repos = []
     for project_source in project_sources:
         organization = project_source['organization']
         LOG.debug('Get list of projects for organization %s', organization)
-        try:
-            github_repos = github.get_organization(organization).get_repos()
-        except Exception as e:
-            LOG.exception(e)
-            LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
-            return False
+        git_repos = [
+            f for f in project_list if f.startswith(organization + "/")]
 
         exclude = set(project_source.get('exclude', []))
 
-        for repo in github_repos:
-            if repo.name not in exclude:
+        for repo in git_repos:
+            (org, name) = repo.split('/')
+            if name not in exclude:
+                url = '%(git_base_uri)s/%(repo)s.git' % dict(
+                    git_base_uri=git_base_uri, repo=repo)
                 r = {
                     'branches': ['master'],
-                    'module': repo.name,
-                    'organization': organization,
-                    'uri': repo.git_url,
+                    'module': name,
+                    'organization': org,
+                    'uri': url,
                     'releases': []
                 }
                 repos.append(r)
@@ -92,11 +95,12 @@ def _create_module_groups_for_project_sources(project_sources, repos):
     return module_groups
 
 
-def _update_project_list(default_data):
+def _update_project_list(default_data, git_base_uri, gerrit):
 
     configured_repos = set([r['uri'] for r in default_data['repos']])
 
-    repos = _retrieve_project_list_from_github(default_data['project_sources'])
+    repos = _retrieve_project_list_from_gerrit(
+        default_data['project_sources'], git_base_uri, gerrit)
     if repos:
         default_data['repos'] += [r for r in repos
                                   if r['uri'] not in configured_repos]
@@ -160,10 +164,11 @@ def _store_default_data(runtime_storage_inst, default_data):
             runtime_storage_inst.set_by_key(key, value)
 
 
-def process(runtime_storage_inst, default_data):
+def process(runtime_storage_inst, default_data,
+            git_base_uri, gerrit):
     LOG.debug('Process default data')
 
     if 'project_sources' in default_data:
-        _update_project_list(default_data)
+        _update_project_list(default_data, git_base_uri, gerrit)
 
     _store_default_data(runtime_storage_inst, default_data)
