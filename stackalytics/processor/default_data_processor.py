@@ -22,9 +22,7 @@ import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
-from stackalytics.processor import record_processor
 from stackalytics.processor import utils
-from stackalytics.processor import vcs
 
 LOG = logging.getLogger(__name__)
 
@@ -162,67 +160,10 @@ def _store_default_data(runtime_storage_inst, default_data):
             runtime_storage_inst.set_by_key(key, value)
 
 
-def _update_records(runtime_storage_inst, sources_root):
-    LOG.debug('Update existing records')
-    release_index = {}
-    for repo in utils.load_repos(runtime_storage_inst):
-        vcs_inst = vcs.get_vcs(repo, sources_root)
-        release_index.update(vcs_inst.fetch())
-
-    record_processor_inst = record_processor.RecordProcessor(
-        runtime_storage_inst)
-    record_processor_inst.update(release_index)
-
-
-def _get_changed_member_records(runtime_storage_inst, record_processor_inst):
-    for record in runtime_storage_inst.get_all_records():
-        if record['record_type'] == 'member' and 'company_name' in record:
-            company_draft = record['company_draft']
-            company_name = record_processor_inst.domains_index.get(
-                utils.normalize_company_name(company_draft)) or (
-                    utils.normalize_company_draft(company_draft))
-
-            if company_name != record['company_name']:
-                record['company_name'] = company_name
-                yield record
-
-
-def _update_members_company_name(runtime_storage_inst):
-    LOG.debug('Update company names for members')
-    record_processor_inst = record_processor.RecordProcessor(
-        runtime_storage_inst)
-    member_iterator = _get_changed_member_records(runtime_storage_inst,
-                                                  record_processor_inst)
-
-    for record in member_iterator:
-        company_name = record['company_name']
-        user = utils.load_user(runtime_storage_inst, record['user_id'])
-
-        user['companies'] = [{
-            'company_name': company_name,
-            'end_date': 0,
-        }]
-        user['company_name'] = company_name
-
-        utils.store_user(runtime_storage_inst, user)
-
-        LOG.debug('Company name changed for user %s', user)
-
-        record_id = record['record_id']
-        runtime_storage_inst.memcached.set(
-            runtime_storage_inst._get_record_name(record_id), record)
-        runtime_storage_inst._commit_update(record_id)
-
-
-def process(runtime_storage_inst, default_data, sources_root, force_update):
+def process(runtime_storage_inst, default_data):
     LOG.debug('Process default data')
-
-    dd_changed = _check_default_data_change(runtime_storage_inst, default_data)
 
     if 'project_sources' in default_data:
         _update_project_list(default_data)
 
-    if dd_changed or force_update:
-        _store_default_data(runtime_storage_inst, default_data)
-        _update_records(runtime_storage_inst, sources_root)
-        _update_members_company_name(runtime_storage_inst)
+    _store_default_data(runtime_storage_inst, default_data)
