@@ -336,6 +336,17 @@
             "emails": ["andersonvom@gmail.com", "andersonvom@thoughtworks.com", "anderson.mesquita@rackspace.com"]
         },
         {
+            "launchpad_id": "andrea-frittoli",
+            "companies": [
+                {
+                    "company_name": "Hewlett-Packard",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrea Frittoli",
+            "emails": ["andrea.frittoli@gmail.com", "andrea.frittoli@hp.com", "frittoli@hp.com"]
+        },
+        {
             "launchpad_id": "andrew-mccrae",
             "companies": [
                 {
