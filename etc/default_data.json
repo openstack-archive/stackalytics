@@ -2161,6 +2161,17 @@
             "emails": ["greglange@gmail.com", "glange@rackspace.com"]
         },
         {
+            "launchpad_id": "grishkin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Max Grishkin",
+            "emails": ["mgrishkin@gmail.com", "mgrishkin@mirantis.com"]
+        },
+        {
             "launchpad_id": "gtt116",
             "companies": [
                 {
