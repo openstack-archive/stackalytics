@@ -7686,6 +7686,18 @@
             "releases": [
                 {
                     "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "15cfe96"
+                }
+            ],
+            "uri": "git://git.openstack.org/openstack/training-guides.git",
+            "module": "training-guides",
+            "organization": "openstack"
+        },
+        {
+            "releases": [
+                {
+                    "tag_to": "HEAD",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
