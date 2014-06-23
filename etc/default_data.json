@@ -4413,6 +4413,17 @@
             "emails": ["thorsten@atomia.com"]
         },
         {
+            "launchpad_id": "r1chardj0n3s",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Richard Jones",
+            "emails": ["r1chardj0n3s@gmail.com"]
+        },
+        {
             "launchpad_id": "rackerhacker",
             "companies": [
                 {
