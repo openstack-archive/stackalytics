@@ -5408,11 +5408,15 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
+                    "end_date": "2014-May-15"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Thomas Bechtold",
-            "emails": ["t.bechtold@telekom.de", "thomasbechtold@jpberlin.de"]
+            "emails": ["tbechtold@suse.com", "t.bechtold@telekom.de", "thomasbechtold@jpberlin.de"]
         },
         {
             "launchpad_id": "torgomatic",
