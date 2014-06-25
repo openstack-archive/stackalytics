@@ -3299,6 +3299,18 @@
             "emails": ["lakhindr@hotmail.com", "lakhinder.walia@hds.com"]
         },
         {
+            "launchpad_id": "leandro-i-costantino",
+            "gerrit_id": "lcostantino",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Leandro Ignacio Costantino",
+            "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
+        },
+        {
             "launchpad_id": "letterj",
             "companies": [
                 {
