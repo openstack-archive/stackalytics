@@ -918,6 +918,17 @@
             "emails": ["chuck_burkett@cable.comcast.com", "chuck@burkett.org"]
         },
         {
+            "launchpad_id": "ccarlino",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chuck Carlino",
+            "emails": ["ccarlino@hp.com", "chuckjcarlino@gmail.com"]
+        },
+        {
             "launchpad_id": "cerberus",
             "companies": [
                 {
