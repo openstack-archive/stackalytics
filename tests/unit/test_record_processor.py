@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import itertools
 import time
 
 import mock
@@ -1070,17 +1069,17 @@ class TestRecordProcessor(testtools.TestCase):
         marks = list([r for r in runtime_storage_inst.get_all_records()
                       if r['record_type'] == 'mark'])
 
-        homer_mark = next(itertools.ifilter(
+        homer_mark = next(six.moves.filter(
             lambda x: x['date'] == (timestamp - 1), marks), None)
         self.assertTrue(homer_mark.get('disagreement'),
                         msg='Disagreement: core set -2 after +2')
 
-        homer_mark = next(itertools.ifilter(
+        homer_mark = next(six.moves.filter(
             lambda x: x['date'] == (timestamp + 2), marks), None)
         self.assertFalse(homer_mark.get('disagreement'),
                          msg='No disagreement: core set +2 after +1')
 
-        bart_mark = next(itertools.ifilter(
+        bart_mark = next(six.moves.filter(
             lambda x: x['date'] == (timestamp + 3), marks), None)
         self.assertTrue(bart_mark.get('disagreement'),
                         msg='Disagreement: core set +2 after -1')
@@ -1416,7 +1415,8 @@ def make_runtime_storage(users=None, companies=None, releases=None,
         return count
 
     def get_all_users():
-        for n in xrange(0, (runtime_storage_cache.get('user:count') or 0) + 1):
+        for n in six.moves.xrange(
+                0, (runtime_storage_cache.get('user:count') or 0) + 1):
             u = runtime_storage_cache.get('user:%s' % n)
             if u:
                 yield u

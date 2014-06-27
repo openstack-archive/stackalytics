@@ -108,10 +108,10 @@ def read_json_from_uri(uri):
 
 def make_range(start, stop, step):
     last_full = stop - ((stop - start) % step)
-    for i in xrange(start, last_full, step):
-        yield xrange(i, i + step)
+    for i in six.moves.xrange(start, last_full, step):
+        yield six.moves.xrange(i, i + step)
     if stop > last_full:
-        yield xrange(last_full, stop)
+        yield six.moves.xrange(last_full, stop)
 
 
 def store_user(runtime_storage_inst, user):
