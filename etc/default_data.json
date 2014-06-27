@@ -210,6 +210,18 @@
             "emails": ["alopgeek@gmail.com", "al592b@att.com"]
         },
         {
+            "launchpad_id": "alejandro-e-paredes",
+            "gerrit_id": "aeparede",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alejandro Emanuel Paredes",
+            "emails": ["alejandro.e.paredes@intel.com", "aleparedes@gmail.com"]
+        },
+        {
             "launchpad_id": "alex-gaynor",
             "companies": [
                 {
