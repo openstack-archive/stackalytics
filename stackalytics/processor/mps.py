@@ -33,7 +33,7 @@ CNT_EMPTY_MEMBERS = 50
 
 
 def _convert_str_fields_to_unicode(result):
-    for field, value in result.iteritems():
+    for field, value in six.iteritems(result):
         if type(value) is str:
             try:
                 value = six.text_type(value, 'utf8')

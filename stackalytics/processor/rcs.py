@@ -108,7 +108,7 @@ class Gerrit(Rcs):
             return False
 
     def _poll_reviews(self, project_organization, module, branch,
-                      start_id=None, last_id=None, is_open=False,
+                      start_id=0, last_id=0, is_open=False,
                       grab_comments=False):
         sort_key = start_id
 

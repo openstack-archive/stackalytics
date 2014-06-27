@@ -13,9 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import functools
 import json
 
 import jsonschema
+import six
 import testtools
 
 
@@ -24,17 +26,25 @@ class TestConfigFiles(testtools.TestCase):
         super(TestConfigFiles, self).setUp()
 
     def _read_file(self, file_name):
-        with open(file_name, 'r') as content_file:
+        if six.PY3:
+            opener = functools.partial(open, encoding='utf8')
+        else:
+            opener = open
+        with opener(file_name, 'r') as content_file:
             content = content_file.read()
             return json.loads(content)
 
     def _verify_ordering(self, array, key, msg):
-        sorted_array = sorted(array, key=key)
-        diff_msg = None
-        for i in range(len(array)):
-            if array[i] != sorted_array[i]:
-                diff_msg = ('First differing element %s:\n%s\n%s' %
-                            (i, array[i], sorted_array[i]))
+        comparator = lambda x, y: (x > y) - (x < y)
+
+        diff_msg = ''
+        for i in range(len(array) - 1):
+            if comparator(key(array[i]), key(array[i + 1])) > 0:
+                diff_msg = ('Order fails at index %(index)s, '
+                            'elements:\n%(first)s:\n%(second)s' %
+                            {'index': i, 'first': array[i],
+                             'second': array[i + 1]})
+                break
         if diff_msg:
             self.fail(msg + '\n' + diff_msg)
 

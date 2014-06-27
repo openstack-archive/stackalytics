@@ -33,9 +33,9 @@ def _normalize_user(user):
         elif y["end_date"] == 0:
             return -1
         else:
-            return cmp(x["end_date"], y["end_date"])
+            return x["end_date"] - y["end_date"]
 
-    user['companies'].sort(cmp=end_date_comparator)
+    user['companies'].sort(key=utils.cmp_to_key(end_date_comparator))
     user['user_id'] = user['launchpad_id']
 
 

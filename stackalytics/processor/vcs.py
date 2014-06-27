@@ -190,18 +190,18 @@ class Git(Vcs):
         try:
             output = sh.git('log', '--pretty=' + GIT_LOG_FORMAT, '--shortstat',
                             '-M', '--no-merges', commit_range, _tty_out=False,
-                            _decode_errors='ignore')
+                            _decode_errors='ignore', _encoding='utf8')
         except sh.ErrorReturnCode as e:
             LOG.error('Unable to get log of git repo %s. Ignore it',
                       self.repo['uri'])
             LOG.exception(e)
             return
 
-        for rec in re.finditer(GIT_LOG_PATTERN, str(output)):
+        for rec in re.finditer(GIT_LOG_PATTERN, six.text_type(output)):
             i = 1
             commit = {}
             for param in GIT_LOG_PARAMS:
-                commit[param[0]] = six.text_type(rec.group(i), 'utf8')
+                commit[param[0]] = rec.group(i)
                 i += 1
 
             if not utils.check_email_validity(commit['author_email']):

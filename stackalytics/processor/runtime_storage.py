@@ -127,23 +127,29 @@ class MemcachedStorage(RuntimeStorage):
         return self.memcached.incr('user:count')
 
     def get_all_users(self):
-        for n in xrange(0, self.get_by_key('user:count') + 1):
+        for n in six.moves.range(0, self.get_by_key('user:count') + 1):
             user = self.get_by_key('user:%s' % n)
             if user:
                 yield user
 
     def get_by_key(self, key):
-        return self.memcached.get(key.encode('utf8'))
+        if six.PY2:
+            key = key.encode('utf8')
+        return self.memcached.get(key)
 
     def set_by_key(self, key, value):
-        if not self.memcached.set(key.encode('utf8'), value):
+        if six.PY2:
+            key = key.encode('utf8')
+        if not self.memcached.set(key, value):
             LOG.critical('Failed to store data in memcached: '
                          'key %(key)s, value %(value)s',
                          {'key': key, 'value': value})
             raise Exception('Memcached set failed')
 
     def delete_by_key(self, key):
-        if not self.memcached.delete(key.encode('utf8')):
+        if six.PY2:
+            key = key.encode('utf8')
+        if not self.memcached.delete(key):
             LOG.critical('Failed to delete data from memcached: key %s', key)
             raise Exception('Memcached delete failed')
 

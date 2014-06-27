@@ -150,9 +150,12 @@ diff_stat:
         self.assertEqual(0, commits[4]['lines_deleted'])
         self.assertFalse('coauthor' in commits[4])
 
-        self.assertEqual(
-            [{'author_name': 'Tupac Shakur',
-              'author_email': 'tupac.shakur@openstack.com'},
-             {'author_name': 'Bob Dylan',
-              'author_email': 'bob.dylan@openstack.com'}],
+        self.assertIn(
+            {'author_name': 'Tupac Shakur',
+             'author_email': 'tupac.shakur@openstack.com'},
+            commits[5]['coauthor'])
+
+        self.assertIn(
+            {'author_name': 'Bob Dylan',
+             'author_email': 'bob.dylan@openstack.com'},
             commits[5]['coauthor'])

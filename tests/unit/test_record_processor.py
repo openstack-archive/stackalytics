@@ -743,11 +743,11 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@ibm.com', 'john_doe@gmail.com'],
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
-        self.assertEqual(user, utils.load_user(
+        self.assertUsersMatch(user, utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe'))
-        self.assertEqual(user, utils.load_user(
+        self.assertUsersMatch(user, utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
-        self.assertEqual(user, utils.load_user(
+        self.assertUsersMatch(user, utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe@ibm.com'))
 
     def test_merge_users(self):
@@ -866,10 +866,10 @@ class TestRecordProcessor(testtools.TestCase):
                   'companies': [{'company_name': '*independent',
                                  'end_date': 0}]}
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
-        self.assertEqual(user_1, utils.load_user(runtime_storage_inst,
-                                                 'john_doe'))
-        self.assertEqual(user_2, utils.load_user(runtime_storage_inst,
-                                                 'homer'))
+        self.assertUsersMatch(user_1, utils.load_user(runtime_storage_inst,
+                                                      'john_doe'))
+        self.assertUsersMatch(user_2, utils.load_user(runtime_storage_inst,
+                                                      'homer'))
 
     def test_process_commit_with_coauthors(self):
         record_processor_inst = self.make_record_processor(
@@ -1337,6 +1337,16 @@ class TestRecordProcessor(testtools.TestCase):
             self.assertEqual(value, actual[key],
                              'Values for key %s do not match' % key)
 
+    def assertUsersMatch(self, expected, actual):
+        match = True
+        for key, value in six.iteritems(expected):
+            if key == 'emails':
+                match = (set(value) == set(actual[key]))
+            else:
+                match = (value == actual[key])
+
+        self.assertTrue(match, 'User %s should match %s' % (actual, expected))
+
     # Helpers
 
     def make_record_processor(self, users=None, companies=None, releases=None,
@@ -1415,7 +1425,7 @@ def make_runtime_storage(users=None, companies=None, releases=None,
         return count
 
     def get_all_users():
-        for n in six.moves.xrange(
+        for n in six.moves.range(
                 0, (runtime_storage_cache.get('user:count') or 0) + 1):
             u = runtime_storage_cache.get('user:%s' % n)
             if u:

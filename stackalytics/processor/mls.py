@@ -14,9 +14,7 @@
 # limitations under the License.
 
 from email import utils as email_utils
-import gzip
 import re
-import StringIO
 
 import six
 from six.moves import http_client
@@ -85,8 +83,8 @@ def _retrieve_mails(uri):
     if not content:
         LOG.error('Error reading mail archive from uri: %s', uri)
         return
-    gzip_fd = gzip.GzipFile(fileobj=StringIO.StringIO(content))
-    content = gzip_fd.read()
+
+    content = utils.gzip_decompress(content)
     LOG.debug('Mail archive is loaded, start processing')
 
     content += TRAILING_RECORD

@@ -20,6 +20,7 @@ import operator
 import time
 
 import flask
+import six
 
 from stackalytics.dashboard import decorators
 from stackalytics.dashboard import helpers
@@ -159,15 +160,15 @@ def members():
 
 def _get_punch_card_data(records):
     punch_card_raw = []  # matrix days x hours
-    for wday in xrange(0, 7):
+    for wday in six.moves.range(0, 7):
         punch_card_raw.append([0] * 24)
     for record in records:
         tt = datetime.datetime.fromtimestamp(record['date']).timetuple()
         punch_card_raw[tt.tm_wday][tt.tm_hour] += 1
 
     punch_card_data = []  # format for jqplot bubble renderer
-    for wday in xrange(0, 7):
-        for hour in xrange(0, 24):
+    for wday in six.moves.range(0, 7):
+        for hour in six.moves.range(0, 24):
             v = punch_card_raw[wday][hour]
             if v:
                 punch_card_data.append([hour, wday, v, v])

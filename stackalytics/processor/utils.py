@@ -15,14 +15,13 @@
 
 import cgi
 import datetime
+import gzip
 import json
 import re
 import time
 
 import iso8601
 import six
-from six.moves.urllib import parse
-from six.moves.urllib import request
 
 from stackalytics.openstack.common import log as logging
 
@@ -89,8 +88,8 @@ def check_email_validity(email):
 
 def read_uri(uri):
     try:
-        fd = request.urlopen(uri)
-        raw = fd.read()
+        fd = six.moves.urllib.request.urlopen(uri)
+        raw = fd.read().decode('utf8')
         fd.close()
         return raw
     except Exception as e:
@@ -106,12 +105,50 @@ def read_json_from_uri(uri):
                  {'error': e, 'uri': uri})
 
 
+def gzip_decompress(content):
+    if six.PY3:
+        return gzip.decompress(content)
+    else:
+        gzip_fd = gzip.GzipFile(fileobj=six.moves.StringIO.StringIO(content))
+        return gzip_fd.read()
+
+
+def cmp_to_key(mycmp):  # ported from python 3
+    """Convert a cmp= function into a key= function."""
+    class K(object):
+        __slots__ = ['obj']
+
+        def __init__(self, obj):
+            self.obj = obj
+
+        def __lt__(self, other):
+            return mycmp(self.obj, other.obj) < 0
+
+        def __gt__(self, other):
+            return mycmp(self.obj, other.obj) > 0
+
+        def __eq__(self, other):
+            return mycmp(self.obj, other.obj) == 0
+
+        def __le__(self, other):
+            return mycmp(self.obj, other.obj) <= 0
+
+        def __ge__(self, other):
+            return mycmp(self.obj, other.obj) >= 0
+
+        def __ne__(self, other):
+            return mycmp(self.obj, other.obj) != 0
+
+        __hash__ = None
+    return K
+
+
 def make_range(start, stop, step):
     last_full = stop - ((stop - start) % step)
-    for i in six.moves.xrange(start, last_full, step):
-        yield six.moves.xrange(i, i + step)
+    for i in six.moves.range(start, last_full, step):
+        yield six.moves.range(i, i + step)
     if stop > last_full:
-        yield six.moves.xrange(last_full, stop)
+        yield six.moves.range(last_full, stop)
 
 
 def store_user(runtime_storage_inst, user):
@@ -200,7 +237,7 @@ def add_index(sequence, start=1, item_filter=lambda x: True):
 
 
 def safe_encode(s):
-    return parse.quote(s.encode('utf-8'))
+    return six.moves.urllib.parse.quote(s.encode('utf-8'))
 
 
 def make_module_group(module_group_id, name=None, modules=None, tag='module'):
