@@ -149,6 +149,12 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">&ldquo;${title}&rdquo;</div>
             <div>Status: <span class="status${status}">${status}</span></div>
             <div>Importance: ${importance}</div>
+        {%elif record_type == "ci_vote" %}
+            <div class="header">New CI vote in change request ${review_number}
+                 {%if is_merged %}(<span style="color: green;">Merged</span>){%/if%}</div>
+            <div>Parsed result: {%if ci_result == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
+            <div>Message: ${message}</div>
+            <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
         {%/if%}
     </div>
     </div>

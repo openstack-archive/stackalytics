@@ -84,7 +84,7 @@ class Gerrit(Rcs):
             return False
 
     def _get_cmd(self, project_organization, module, branch, sort_key=None,
-                 is_open=False, limit=PAGE_LIMIT):
+                 is_open=False, limit=PAGE_LIMIT, grab_comments=False):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
                'limit:%(limit)s' %
@@ -94,6 +94,8 @@ class Gerrit(Rcs):
             cmd += ' is:open'
         if sort_key:
             cmd += ' resume_sortkey:%016x' % sort_key
+        if grab_comments:
+            cmd += ' --comments'
         return cmd
 
     def _exec_command(self, cmd):
@@ -106,12 +108,13 @@ class Gerrit(Rcs):
             return False
 
     def _poll_reviews(self, project_organization, module, branch,
-                      start_id=None, last_id=None, is_open=False):
+                      start_id=None, last_id=None, is_open=False,
+                      grab_comments=False):
         sort_key = start_id
 
         while True:
             cmd = self._get_cmd(project_organization, module, branch, sort_key,
-                                is_open)
+                                is_open, grab_comments=grab_comments)
             LOG.debug('Executing command: %s', cmd)
             exec_result = self._exec_command(cmd)
             if not exec_result:
@@ -148,7 +151,7 @@ class Gerrit(Rcs):
 
         return result
 
-    def log(self, branch, last_id):
+    def log(self, branch, last_id, grab_comments=False):
         if not self._connect():
             return
 
@@ -156,7 +159,8 @@ class Gerrit(Rcs):
         LOG.debug('Poll new reviews for module: %s', self.repo['module'])
         for review in self._poll_reviews(self.repo['organization'],
                                          self.repo['module'], branch,
-                                         last_id=last_id):
+                                         last_id=last_id,
+                                         grab_comments=grab_comments):
             yield review
 
         # poll open reviews from last_id down to bottom
@@ -166,7 +170,8 @@ class Gerrit(Rcs):
             start_id = last_id + 1  # include the last review into query
         for review in self._poll_reviews(self.repo['organization'],
                                          self.repo['module'], branch,
-                                         start_id=start_id, is_open=True):
+                                         start_id=start_id, is_open=True,
+                                         grab_comments=grab_comments):
             yield review
 
         self.client.close()

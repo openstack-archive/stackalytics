@@ -129,6 +129,20 @@ def contribution(module, days):
     }
 
 
+@blueprint.route('/ci/<module>/<days>')
+@decorators.templated()
+@decorators.exception_handler()
+def external_ci(module, days):
+    if int(days) > 30:
+        days = 30
+
+    return {
+        'module': module,
+        'days': days,
+        'start_date': int(time.time()) - int(days) * 24 * 60 * 60
+    }
+
+
 @blueprint.route('/members')
 @decorators.exception_handler()
 @decorators.templated()
@@ -170,7 +184,7 @@ def _get_punch_card_data(records):
 def _get_activity_summary(record_ids):
     memory_storage_inst = vault.get_memory_storage()
 
-    types = ['mark', 'patch', 'email', 'bpd', 'bpc']
+    types = ['mark', 'patch', 'email', 'bpd', 'bpc', 'ci_vote']
     record_ids_by_type = set()
     for t in types:
         record_ids_by_type |= memory_storage_inst.get_record_ids_by_type(t)

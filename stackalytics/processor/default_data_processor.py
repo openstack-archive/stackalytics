@@ -109,6 +109,31 @@ def _update_project_list(default_data, git_base_uri, gerrit):
         default_data['project_sources'], default_data['repos'])
 
 
+def _update_with_driverlog_data(default_data, driverlog_data_uri):
+    LOG.info('Reading DriverLog data from uri: %s', driverlog_data_uri)
+    driverlog_data = utils.read_json_from_uri(driverlog_data_uri)
+
+    cis = {}
+    for driver in driverlog_data['drivers']:
+        if 'ci' in driver:
+            module = driver['project_id'].split('/')[1]
+
+            if module not in cis:
+                cis[module] = {}
+            cis[module][driver['ci']['id']] = driver
+
+            default_data['users'].append({
+                'launchpad_id': driver['ci']['id'],
+                'user_name': driver['ci']['id'],
+                'companies': [
+                    {'company_name': driver['vendor'], 'end_date': None}],
+            })
+
+    for repo in default_data['repos']:
+        if repo['module'] in cis:
+            repo['ci'] = cis[repo['module']]
+
+
 def _store_users(runtime_storage_inst, users):
     for user in users:
         stored_user = utils.load_user(runtime_storage_inst, user['user_id'])
@@ -165,10 +190,12 @@ def _store_default_data(runtime_storage_inst, default_data):
 
 
 def process(runtime_storage_inst, default_data,
-            git_base_uri, gerrit):
+            git_base_uri, gerrit, driverlog_data_uri):
     LOG.debug('Process default data')
 
     if 'project_sources' in default_data:
         _update_project_list(default_data, git_base_uri, gerrit)
+
+    _update_with_driverlog_data(default_data, driverlog_data_uri)
 
     _store_default_data(runtime_storage_inst, default_data)

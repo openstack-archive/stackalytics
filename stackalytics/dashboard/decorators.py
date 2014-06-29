@@ -314,6 +314,7 @@ def aggregate_filter():
                 'resolved-bugs': (incremental_filter, None),
                 'members': (incremental_filter, None),
                 'person-day': (person_day_filter, None),
+                'ci': (None, None),
             }
             if metric not in metric_to_filters_map:
                 metric = parameters.get_default('metric')

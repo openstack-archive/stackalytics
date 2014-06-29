@@ -21,6 +21,9 @@
         <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module_inst.module_group_name }}</a></b></div>
         <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module_inst.module_group_name }}</a></b></div>
         <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module_inst.module_group_name }}</a></b></div>
+        {% if module_inst.ci %}
+            <div><b><a href="/report/ci/{{ module }}/7" target="_blank">External CI status for {{ module_inst.module_group_name }} for the last 7 days</a></b></div>
+        {% endif %}
     {% endif %}
     {% if company %}
         <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}</a></b></div>

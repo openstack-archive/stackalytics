@@ -25,6 +25,7 @@ from stackalytics.openstack.common import log as logging
 from stackalytics.processor import bps
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
+from stackalytics.processor import driverlog
 from stackalytics.processor import lp
 from stackalytics.processor import mls
 from stackalytics.processor import mps
@@ -75,6 +76,22 @@ def _record_typer(record_iterator, record_type):
     for record in record_iterator:
         record['record_type'] = record_type
         yield record
+
+
+def _process_reviews(record_iterator, ci_map, module, branch):
+    for record in record_iterator:
+        yield record
+
+        for driver_info in driverlog.find_ci_result(record, ci_map):
+            driver_info['record_type'] = 'ci_vote'
+            driver_info['module'] = module
+            driver_info['branch'] = branch
+
+            release = branch.lower()
+            if release.find('/') > 0:
+                driver_info['release'] = release.split('/')[1]
+
+            yield driver_info
 
 
 def _process_repo(repo, runtime_storage_inst, record_processor_inst,
@@ -131,8 +148,14 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         rcs_key = 'rcs:' + str(parse.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage_inst.get_by_key(rcs_key)
 
-        review_iterator = rcs_inst.log(branch, last_id)
+        review_iterator = rcs_inst.log(branch, last_id,
+                                       grab_comments=('ci' in repo))
         review_iterator_typed = _record_typer(review_iterator, 'review')
+
+        if 'ci' in repo:  # add external CI data
+            review_iterator_typed = _process_reviews(
+                review_iterator_typed, repo['ci'], repo['module'], branch)
+
         processed_review_iterator = record_processor_inst.process(
             review_iterator_typed)
         runtime_storage_inst.set_records(processed_review_iterator,
@@ -310,7 +333,8 @@ def main():
     default_data_processor.process(runtime_storage_inst,
                                    default_data,
                                    cfg.CONF.git_base_uri,
-                                   gerrit)
+                                   gerrit,
+                                   cfg.CONF.driverlog_data_uri)
 
     process_program_list(runtime_storage_inst, cfg.CONF.program_list_uri)
 

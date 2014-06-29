@@ -473,25 +473,22 @@ class RecordProcessor(object):
 
         yield record
 
-    def _apply_type_based_processing(self, record):
-        if record['record_type'] == 'commit':
-            for r in self._process_commit(record):
-                yield r
-        elif record['record_type'] == 'review':
-            for r in self._process_review(record):
-                yield r
-        elif record['record_type'] == 'email':
-            for r in self._process_email(record):
-                yield r
-        elif record['record_type'] == 'bp':
-            for r in self._process_blueprint(record):
-                yield r
-        elif record['record_type'] == 'member':
-            for r in self._process_member(record):
-                yield r
-        elif record['record_type'] == 'bug':
-            for r in self._process_bug(record):
-                yield r
+    def _process_ci(self, record):
+        ci_vote = dict((k, v) for k, v in six.iteritems(record)
+                       if k not in ['reviewer'])
+
+        reviewer = record['reviewer']
+        ci_vote['primary_key'] = ('%s:%s' % (reviewer['username'],
+                                  ci_vote['date']))
+        ci_vote['user_id'] = reviewer['username']
+        ci_vote['launchpad_id'] = reviewer['username']
+        ci_vote['author_name'] = reviewer.get('name') or reviewer['username']
+        ci_vote['author_email'] = (
+            reviewer.get('email') or reviewer['username']).lower()
+
+        self._update_record_and_user(ci_vote)
+
+        yield ci_vote
 
     def _renew_record_date(self, record):
         record['week'] = utils.timestamp_to_week(record['date'])
@@ -499,14 +496,19 @@ class RecordProcessor(object):
             record['release'] = self._get_release(record['date'])
 
     def process(self, record_iterator):
+        PROCESSORS = {
+            'commit': self._process_commit,
+            'review': self._process_review,
+            'email': self._process_email,
+            'bp': self._process_blueprint,
+            'bug': self._process_bug,
+            'member': self._process_member,
+            'ci_vote': self._process_ci,
+        }
+
         for record in record_iterator:
-            for r in self._apply_type_based_processing(record):
-
-                if r['company_name'] == '*robots':
-                    continue
-
+            for r in PROCESSORS[record['record_type']](record):
                 self._renew_record_date(r)
-
                 yield r
 
     def _update_records_with_releases(self, release_index):

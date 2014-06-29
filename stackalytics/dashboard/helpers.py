@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import datetime
+import operator
 import re
 
 import six
@@ -116,7 +117,8 @@ def get_activity(records, start_record, page_size, query_message=None):
         records = [r for r in records
                    if (r.get('message') and
                        r.get('message').find(query_message) > 0)]
-    records_sorted = sorted(records, key=lambda x: x['date'], reverse=True)
+    records_sorted = sorted(records, key=operator.itemgetter('date'),
+                            reverse=True)
 
     result = []
     for record in records_sorted[start_record:]:

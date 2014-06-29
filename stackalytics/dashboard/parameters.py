@@ -38,6 +38,7 @@ METRIC_LABELS = {
     'filed-bugs': 'Filed Bugs',
     'resolved-bugs': 'Resolved Bugs',
     # 'person-day': "Person-day effort"
+    'ci': 'CI votes',
 }
 
 METRIC_TO_RECORD_TYPE = {
@@ -50,6 +51,7 @@ METRIC_TO_RECORD_TYPE = {
     'filed-bugs': 'bugf',
     'resolved-bugs': 'bugr',
     'members': 'member',
+    'ci': 'ci_vote',
 }
 
 FILTER_PARAMETERS = ['release', 'project_type', 'module', 'company', 'user_id',

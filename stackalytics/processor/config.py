@@ -49,6 +49,10 @@ OPTS = [
                default=('https://git.openstack.org/cgit/'
                         'openstack/governance/plain/reference/programs.yaml'),
                help='The address of file with list of programs'),
+    cfg.StrOpt('driverlog-data-uri',
+               default='https://git.openstack.org/cgit/'
+                       'stackforge/driverlog/plain/etc/default_data.json',
+               help='URI for default data'),
     cfg.StrOpt('default-metric', default='marks',
                help='Default metric'),
     cfg.StrOpt('default-release',
