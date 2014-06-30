@@ -132,6 +132,17 @@
             "emails": ["alexander_chudnovets@symantec.com", "achudnovets@mirantis.com"]
         },
         {
+            "launchpad_id": "adam-harwell",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adam Harwell",
+            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com"]
+        },
+        {
             "launchpad_id": "aditirav",
             "companies": [
                 {
