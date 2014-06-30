@@ -4222,11 +4222,7 @@
             "user_name": "OpenStack Robot",
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
-                "openstack-infra@lists.openstack.org", "elastic-hadoop-ci@mirantis.com",
-                "reddwarf-jenkins@googlegroups.com", "info@bitergia.com", "fuel-ci-bot@mirantis.com",
-                "os-external-testing@mellanox.com", "tobbe@tail-f.com", "ryu-openstack-review@lists.sourceforge.net",
-                "turbo-hipster@lists.rcbops.com", "arista-openstack-test@aristanetworks.com",
-                "lucas@midokura.com"]
+                "openstack-infra@lists.openstack.org", "info@bitergia.com"]
         },
         {
             "launchpad_id": "p-draigbrady",
