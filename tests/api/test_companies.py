@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 from tests.api import test_api
 
 
@@ -64,14 +62,14 @@ class TestAPICompanies(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/companies?metric=commits&'
                                     'module=glance')
-            companies = json.loads(response.data)['data']
+            companies = test_api.load_json(response)['data']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'},
                               {'id': 'ntt', 'text': 'NTT'}], companies)
 
             response = self.app.get('/api/1.0/companies?metric=marks&'
                                     'module=glance')
-            companies = json.loads(response.data)['data']
+            companies = test_api.load_json(response)['data']
             self.assertEqual([{'id': 'ibm', 'text': 'IBM'},
                               {'id': 'nec', 'text': 'NEC'}], companies)
 
@@ -90,7 +88,7 @@ class TestAPICompanies(test_api.TestAPI):
                                       company_name=['NEC', 'IBM', 'NTT'])):
 
             response = self.app.get('/api/1.0/companies/nec?module=glance')
-            company = json.loads(response.data)['company']
+            company = test_api.load_json(response)['company']
             self.assertEqual({'id': 'nec', 'text': 'NEC'}, company)
 
             response = self.app.get('/api/1.0/companies/google?module=glance')

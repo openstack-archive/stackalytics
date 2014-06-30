@@ -103,9 +103,9 @@ def open_reviews(module):
     total_open = 0
 
     for review in memory_storage_inst.get_records(review_ids):
-        if review['status'] == 'NEW':
+        if review.status == 'NEW':
             total_open += 1
-            if review['value'] in [1, 2]:
+            if review.value in [1, 2]:
                 waiting_on_reviewer.append(vault.extend_record(review))
 
     return {
@@ -163,7 +163,7 @@ def _get_punch_card_data(records):
     for wday in six.moves.range(0, 7):
         punch_card_raw.append([0] * 24)
     for record in records:
-        tt = datetime.datetime.fromtimestamp(record['date']).timetuple()
+        tt = datetime.datetime.fromtimestamp(record.date).timetuple()
         punch_card_raw[tt.tm_wday][tt.tm_hour] += 1
 
     punch_card_data = []  # format for jqplot bubble renderer

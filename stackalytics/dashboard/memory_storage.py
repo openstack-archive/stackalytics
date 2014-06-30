@@ -53,35 +53,35 @@ class CachedMemoryStorage(MemoryStorage):
         }
 
     def _save_record(self, record):
-        if record.get('company_name') == '*robots':
+        if record.company_name == '*robots':
             return
-        self.records[record['record_id']] = record
+        self.records[record.record_id] = record
         for key, index in six.iteritems(self.indexes):
             self._add_to_index(index, record, key)
-        for bp_id in (record.get('blueprint_id') or []):
+        for bp_id in (record.blueprint_id or []):
             if bp_id in self.blueprint_id_index:
-                self.blueprint_id_index[bp_id].add(record['record_id'])
+                self.blueprint_id_index[bp_id].add(record.record_id)
             else:
-                self.blueprint_id_index[bp_id] = set([record['record_id']])
+                self.blueprint_id_index[bp_id] = set([record.record_id])
 
-        record_day = utils.timestamp_to_day(record['date'])
+        record_day = utils.timestamp_to_day(record.date)
         if record_day in self.day_index:
-            self.day_index[record_day].add(record['record_id'])
+            self.day_index[record_day].add(record.record_id)
         else:
-            self.day_index[record_day] = set([record['record_id']])
+            self.day_index[record_day] = set([record.record_id])
 
-        mr = (record['module'], record['release'])
+        mr = (record.module, record.release)
         if mr in self.module_release_index:
-            self.module_release_index[mr].add(record['record_id'])
+            self.module_release_index[mr].add(record.record_id)
         else:
-            self.module_release_index[mr] = set([record['record_id']])
+            self.module_release_index[mr] = set([record.record_id])
 
     def update(self, records):
         have_updates = False
 
         for record in records:
             have_updates = True
-            record_id = record['record_id']
+            record_id = record.record_id
             if record_id in self.records:
                 # remove existing record from indexes
                 self._remove_record_from_index(self.records[record_id])
@@ -95,19 +95,19 @@ class CachedMemoryStorage(MemoryStorage):
 
     def _remove_record_from_index(self, record):
         for key, index in six.iteritems(self.indexes):
-            index[record[key]].remove(record['record_id'])
+            index[getattr(record, key)].remove(record.record_id)
 
-        record_day = utils.timestamp_to_day(record['date'])
-        self.day_index[record_day].remove(record['record_id'])
+        record_day = utils.timestamp_to_day(record.date)
+        self.day_index[record_day].remove(record.record_id)
         self.module_release_index[
-            (record['module'], record['release'])].remove(record['record_id'])
+            (record.module, record.release)].remove(record.record_id)
 
     def _add_to_index(self, record_index, record, key):
-        record_key = record[key]
+        record_key = getattr(record, key)
         if record_key in record_index:
-            record_index[record_key].add(record['record_id'])
+            record_index[record_key].add(record.record_id)
         else:
-            record_index[record_key] = set([record['record_id']])
+            record_index[record_key] = set([record.record_id])
 
     def _get_record_ids_from_index(self, items, index):
         record_ids = set()

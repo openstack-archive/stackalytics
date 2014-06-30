@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 from tests.api import test_api
 
 
@@ -28,7 +26,7 @@ class TestAPIReleases(test_api.TestAPI):
                     {'release_name': 'icehouse', 'end_date': 1397692800}]},
                 test_api.make_records(record_type=['commit'])):
             response = self.app.get('/api/1.0/releases')
-            releases = json.loads(response.data)['data']
+            releases = test_api.load_json(response)['data']
             self.assertEqual(3, len(releases))
             self.assertIn({'id': 'all', 'text': 'All'}, releases)
             self.assertIn({'id': 'icehouse', 'text': 'Icehouse'}, releases)

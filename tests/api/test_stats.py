@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 from tests.api import test_api
 
 
@@ -50,7 +48,7 @@ class TestAPIStats(test_api.TestAPI):
                                       module=['glance'])):
             response = self.app.get('/api/1.0/stats/modules?metric=loc&'
                                     'project_type=all')
-            stats = json.loads(response.data)['stats']
+            stats = test_api.load_json(response)['stats']
             self.assertEqual(2, len(stats))
             self.assertEqual(600, stats[0]['metric'])
             self.assertEqual('glance', stats[0]['id'])
@@ -106,7 +104,7 @@ class TestAPIStats(test_api.TestAPI):
                                       user_id=['john_doe', 'bill'])):
             response = self.app.get('/api/1.0/stats/engineers?metric=loc&'
                                     'project_type=all')
-            stats = json.loads(response.data)['stats']
+            stats = test_api.load_json(response)['stats']
             self.assertEqual(1, len(stats))
             self.assertEqual(660, stats[0]['metric'])
 
@@ -163,7 +161,7 @@ class TestAPIStats(test_api.TestAPI):
                                       user_id=['smith'])):
             response = self.app.get('/api/1.0/stats/engineers_extended?'
                                     'project_type=all')
-            stats = json.loads(response.data)['stats']
+            stats = test_api.load_json(response)['stats']
             self.assertEqual(2, len(stats))
             self.assertEqual(2, stats[0]['mark'])
             self.assertEqual('john_doe', stats[0]['id'])

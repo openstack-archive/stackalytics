@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 from tests.api import test_api
 
 
@@ -41,7 +39,7 @@ class TestAPIUsers(test_api.TestAPI):
                                       user_id=['john_doe', 'bill_smith'])):
             response = self.app.get('/api/1.0/users?'
                                     'module=nova&metric=commits')
-            users = json.loads(response.data)['data']
+            users = test_api.load_json(response)['data']
             self.assertEqual(2, len(users))
             self.assertIn({'id': 'john_doe', 'text': 'John Doe'}, users)
             self.assertIn({'id': 'bill_smith', 'text': 'Bill Smith'}, users)
@@ -55,7 +53,7 @@ class TestAPIUsers(test_api.TestAPI):
                 test_api.make_records(record_type=['commit'], module=['nova'],
                                       user_name=['John Doe', 'Bill Smith'])):
             response = self.app.get('/api/1.0/users/john_doe')
-            user = json.loads(response.data)['user']
+            user = test_api.load_json(response)['user']
             self.assertEqual('john_doe', user['user_id'])
 
     def test_user_not_found(self):

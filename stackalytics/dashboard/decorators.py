@@ -13,10 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import cProfile
 import functools
 import json
+import operator
 
 import flask
+from oslo.config import cfg
 import six
 from werkzeug import exceptions
 
@@ -210,23 +213,23 @@ def record_filter(ignore=None):
 
 
 def incremental_filter(result, record, param_id, context):
-    result[record[param_id]]['metric'] += 1
+    result[getattr(record, param_id)]['metric'] += 1
 
 
 def loc_filter(result, record, param_id, context):
-    result[record[param_id]]['metric'] += record['loc']
+    result[getattr(record, param_id)]['metric'] += record.loc
 
 
 def mark_filter(result, record, param_id, context):
-    result_by_param = result[record[param_id]]
-    if record['type'] == 'Workflow' and record['value'] == 1:
+    result_by_param = result[getattr(record, param_id)]
+    if record.type == 'Workflow' and record.value == 1:
         value = 'A'
     else:
-        value = record['value']
+        value = record.value
         result_by_param['metric'] += 1
     result_by_param[value] = result_by_param.get(value, 0) + 1
 
-    if record.get('disagreement'):
+    if record.disagreement:
         result_by_param['disagreements'] = (
             result_by_param.get('disagreements', 0) + 1)
 
@@ -265,22 +268,21 @@ def mark_finalize(record):
 
 
 def person_day_filter(result, record, param_id, context):
-    if record['record_type'] == 'commit' or record['record_type'] == 'member':
+    record_type = record.record_type
+    if record_type == 'commit' or record_type == 'member':
         # 1. commit is attributed with the date of the merge which is not an
         # effort of the author (author's effort is represented in patches)
         # 2. registration on openstack.org is not an effort
         return
 
-    day = utils.timestamp_to_day(record['date'])
+    day = utils.timestamp_to_day(record.date)
     # fact that record-days are grouped by days in some order is used
     if context.get('last_processed_day') != day:
         context['last_processed_day'] = day
         context['counted_user_ids'] = set()
 
-    user = vault.get_user_from_runtime_storage(record['user_id'])
-    user_id = user['seq']
-
-    value = record[param_id]
+    user_id = record.user_id
+    value = getattr(record, param_id)
     if user_id not in context['counted_user_ids']:
         context['counted_user_ids'].add(user_id)
         result[value]['metric'] += 1
@@ -288,9 +290,14 @@ def person_day_filter(result, record, param_id, context):
 
 def generate_records_for_person_day(record_ids):
     memory_storage_inst = vault.get_memory_storage()
-    for values in memory_storage_inst.day_index.values():
-        for record in memory_storage_inst.get_records(record_ids & values):
-            yield record
+    id_dates = []
+    for record in memory_storage_inst.get_records(record_ids):
+        id_dates.append((record.date, record.record_id))
+
+    id_dates.sort(key=operator.itemgetter(0))
+    for record in memory_storage_inst.get_records(
+            record_id for date, record_id in id_dates):
+        yield record
 
 
 def aggregate_filter():
@@ -438,9 +445,33 @@ def jsonify(root='data'):
     return decorator
 
 
+def profiler_decorator(func):
+    @functools.wraps(func)
+    def profiler_decorated_function(*args, **kwargs):
+        profiler = None
+        profile_filename = cfg.CONF.collect_profiler_stats
+
+        if profile_filename:
+            LOG.debug('Profiler is enabled')
+            profiler = cProfile.Profile()
+            profiler.enable()
+
+        result = func(*args, **kwargs)
+
+        if profile_filename:
+            profiler.disable()
+            profiler.dump_stats(profile_filename)
+            LOG.debug('Profiler stats is written to file %s', profile_filename)
+
+        return result
+
+    return profiler_decorated_function
+
+
 def response():
     def decorator(func):
         @functools.wraps(func)
+        @profiler_decorator
         def response_decorated_function(*args, **kwargs):
             callback = flask.app.request.args.get('callback', False)
             data = func(*args, **kwargs)

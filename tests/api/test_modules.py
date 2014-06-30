@@ -13,8 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import json
-
 from tests.api import test_api
 
 
@@ -50,7 +48,7 @@ class TestAPIModules(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/modules?'
                                     'project_type=all&metric=commits')
-            modules = json.loads(response.data)['data']
+            modules = test_api.load_json(response)['data']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
                  {'id': 'nova', 'text': 'nova', 'tag': 'module'},
@@ -63,7 +61,7 @@ class TestAPIModules(test_api.TestAPI):
 
             response = self.app.get('/api/1.0/modules?module=nova-group&'
                                     'project_type=integrated&metric=commits')
-            modules = json.loads(response.data)['data']
+            modules = test_api.load_json(response)['data']
             self.assertEqual(
                 [{'id': 'glance', 'text': 'glance', 'tag': 'module'},
                  {'id': 'nova', 'text': 'nova', 'tag': 'module'},
@@ -89,12 +87,12 @@ class TestAPIModules(test_api.TestAPI):
                 test_api.make_records(record_type=['commit'])):
 
             response = self.app.get('/api/1.0/modules/nova')
-            module = json.loads(response.data)['module']
+            module = test_api.load_json(response)['module']
             self.assertEqual(
                 {'id': 'nova', 'text': 'nova', 'tag': 'module'}, module)
 
             response = self.app.get('/api/1.0/modules/nova-group')
-            module = json.loads(response.data)['module']
+            module = test_api.load_json(response)['module']
             self.assertEqual(
                 {'tag': 'group', 'id': 'nova-group', 'text': 'nova-group'},
                 module)

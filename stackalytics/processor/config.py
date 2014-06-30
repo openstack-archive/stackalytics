@@ -62,4 +62,7 @@ OPTS = [
     cfg.IntOpt('dashboard-update-interval', default=3600,
                help='The interval specifies how frequently dashboard should '
                     'check for updates in seconds'),
+    cfg.StrOpt('collect-profiler-stats',
+               help='Name of file to store python profiler data. This option '
+                    'works for dashboard only'),
 ]

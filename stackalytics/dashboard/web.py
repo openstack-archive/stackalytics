@@ -72,19 +72,21 @@ def _get_aggregated_stats(records, metric_filter, keys, param_id,
                           param_title=None, finalize_handler=None):
     param_title = param_title or param_id
     result = dict((c, {'metric': 0, 'id': c}) for c in keys)
-    context = {}
+    context = {'vault': vault.get_vault()}
     if metric_filter:
         for record in records:
             metric_filter(result, record, param_id, context)
-            result[record[param_id]]['name'] = record[param_title]
+            result[getattr(record, param_id)]['name'] = (
+                getattr(record, param_title))
     else:
         for record in records:
-            record_param_id = record[param_id]
+            record_param_id = getattr(record, param_id)
             result[record_param_id]['metric'] += 1
-            result[record_param_id]['name'] = record[param_title]
+            result[record_param_id]['name'] = getattr(record, param_title)
 
     response = [r for r in result.values() if r['metric']]
-    response = [item for item in map(finalize_handler, response) if item]
+    if finalize_handler:
+        response = [item for item in map(finalize_handler, response) if item]
     response.sort(key=lambda x: x['metric'], reverse=True)
     utils.add_index(response, item_filter=lambda x: x['id'] != '*independent')
     return response
@@ -102,8 +104,8 @@ def get_new_companies(records, **kwargs):
 
     result = {}
     for record in records:
-        company_name = record['company_name']
-        date = record['date']
+        company_name = record.company_name
+        date = record.date
 
         if company_name not in result or result[company_name] > date:
             result[company_name] = date
@@ -204,21 +206,21 @@ def get_engineers_extended(records, **kwargs):
         return record
 
     def record_processing(result, record, param_id):
-        result_row = result[record[param_id]]
-        record_type = record['record_type']
+        result_row = result[getattr(record, param_id)]
+        record_type = record.record_type
         result_row[record_type] = result_row.get(record_type, 0) + 1
         if record_type == 'mark':
             decorators.mark_filter(result, record, param_id, {})
 
     result = {}
     for record in records:
-        user_id = record['user_id']
+        user_id = record.user_id
         if user_id not in result:
             result[user_id] = {'id': user_id, 'mark': 0, 'review': 0,
                                'commit': 0, 'email': 0, 'patch': 0,
                                'metric': 0}
         record_processing(result, record, 'user_id')
-        result[user_id]['name'] = record['author_name']
+        result[user_id]['name'] = record.author_name
 
     response = result.values()
     response = [item for item in map(postprocessing, response) if item]
@@ -237,9 +239,9 @@ def get_engineers_extended(records, **kwargs):
 def get_distinct_engineers(records, **kwargs):
     result = {}
     for record in records:
-        result[record['user_id']] = {
-            'author_name': record['author_name'],
-            'author_email': record['author_email'],
+        result[record.user_id] = {
+            'author_name': record.author_name,
+            'author_email': record.author_email,
         }
     return result
 
@@ -526,7 +528,7 @@ def timeline(records, **kwargs):
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
     if ('commits' in metric) or ('loc' in metric):
-        handler = lambda record: record['loc']
+        handler = lambda record: record.loc
     else:
         handler = lambda record: 0
 
@@ -536,13 +538,13 @@ def timeline(records, **kwargs):
         release_stat = collections.defaultdict(set)
         all_stat = collections.defaultdict(set)
         for record in records:
-            if ((record['record_type'] in ['commit', 'member']) or
-                    (record['week'] not in weeks)):
+            if ((record.record_type in ['commit', 'member']) or
+                    (record.week not in weeks)):
                 continue
 
-            day = utils.timestamp_to_day(record['date'])
-            user = vault.get_user_from_runtime_storage(record['user_id'])
-            if record['release'] == release_name:
+            day = utils.timestamp_to_day(record.date)
+            user = vault.get_user_from_runtime_storage(record.user_id)
+            if record.release == release_name:
                 release_stat[day] |= set([user['seq']])
             all_stat[day] |= set([user['seq']])
         for day, users in six.iteritems(release_stat):
@@ -553,15 +555,15 @@ def timeline(records, **kwargs):
             week_stat_commits[week] += len(users)
     else:
         for record in records:
-            week = record['week']
+            week = record.week
             if week in weeks:
                 week_stat_loc[week] += handler(record)
                 week_stat_commits[week] += 1
                 if 'members' in metric:
-                    if record['date'] >= start_date:
+                    if record.date >= start_date:
                         week_stat_commits_hl[week] += 1
                 else:
-                    if record['release'] == release_name:
+                    if record.release == release_name:
                         week_stat_commits_hl[week] += 1
 
     if 'all' == release_name and 'members' not in metric:
