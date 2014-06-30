@@ -37,7 +37,7 @@ METRIC_LABELS = {
     'bpc': 'Completed Blueprints',
     'filed-bugs': 'Filed Bugs',
     'resolved-bugs': 'Resolved Bugs',
-    # 'person-day': "Person-day effort"
+    'person-day': "Person-day effort",
     'ci': 'CI votes',
 }
 

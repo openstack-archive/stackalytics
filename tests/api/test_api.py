@@ -15,6 +15,7 @@
 
 import contextlib
 import itertools
+import json
 import uuid
 
 import mock
@@ -172,3 +173,7 @@ def algebraic_product(**kwargs):
         for position, key in six.iteritems(position_to_key):
             result[key] = chain[position]
         yield result
+
+
+def load_json(api_response):
+    return json.loads(api_response.data.decode('utf8'))

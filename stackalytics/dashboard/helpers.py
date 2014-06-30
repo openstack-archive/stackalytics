@@ -113,12 +113,16 @@ def extend_user(user):
 
 def get_activity(records, start_record, page_size, query_message=None):
     if query_message:
+        # note that all records are now dicts!
+        key_func = operator.itemgetter('date')
         records = [vault.extend_record(r) for r in records]
         records = [r for r in records
                    if (r.get('message') and
                        r.get('message').find(query_message) > 0)]
-    records_sorted = sorted(records, key=operator.itemgetter('date'),
-                            reverse=True)
+    else:
+        key_func = operator.attrgetter('date')
+
+    records_sorted = sorted(records, key=key_func, reverse=True)
 
     result = []
     for record in records_sorted[start_record:]:

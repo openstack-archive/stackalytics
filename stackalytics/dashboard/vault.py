@@ -15,10 +15,8 @@
 
 import collections
 import os
-import UserDict
 
 import flask
-import itertools
 from oslo.config import cfg
 import six
 
@@ -37,27 +35,8 @@ RECORD_FIELDS_FOR_AGGREGATE = ['record_id', 'primary_key', 'record_type',
                                'disagreement', 'value', 'status',
                                'blueprint_id']
 
-_CompactRecordTuple = collections.namedtuple('CompactRecord',
-                                             RECORD_FIELDS_FOR_AGGREGATE)
-
-
-class CompactRecord(_CompactRecordTuple, UserDict.DictMixin):
-    __slots__ = ()
-
-    def __getitem__(self, key):
-        if isinstance(key, str):
-            return getattr(self, key)
-        else:
-            return super(CompactRecord, self).__getitem__(key)
-
-    def keys(self):
-        return RECORD_FIELDS_FOR_AGGREGATE
-
-    def has_key(self, key):
-        return key in RECORD_FIELDS_FOR_AGGREGATE
-
-    def iteritems(self):
-        return itertools.izip(RECORD_FIELDS_FOR_AGGREGATE, self)
+CompactRecord = collections.namedtuple('CompactRecord',
+                                       RECORD_FIELDS_FOR_AGGREGATE)
 
 
 def compact_records(records):
@@ -70,7 +49,7 @@ def compact_records(records):
 def extend_record(record):
     runtime_storage_inst = get_vault()['runtime_storage']
     return runtime_storage_inst.get_by_key(
-        runtime_storage_inst._get_record_name(record['record_id']))
+        runtime_storage_inst._get_record_name(record.record_id))
 
 
 def get_vault():
