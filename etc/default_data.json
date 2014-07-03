@@ -1389,6 +1389,17 @@
             "emails": ["davidh@il.ibm.com", "david.hadas@gmail.com"]
         },
         {
+            "launchpad_id": "davide-guerri",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Davide Guerri",
+            "emails": ["davide.guerri@gmail.com", "davide.guerri@hp.com"]
+        },
+        {
             "launchpad_id": "daz",
             "companies": [
                 {
