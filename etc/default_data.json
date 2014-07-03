@@ -3050,6 +3050,17 @@
             "emails": ["juan_perez@cable.comcast.com"]
         },
         {
+            "launchpad_id": "juliaashleykreger",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julia Kreger",
+            "emails": ["juliaashleykreger@gmail.com", "julia.ash.kreger@hp.com"]
+        },
+        {
             "launchpad_id": "julien-marinfrisonroche",
             "companies": [
                 {
