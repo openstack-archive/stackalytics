@@ -5220,6 +5220,17 @@
             "emails": ["alexei_vinogradov@symantec.com", "avinogradov@mirantis.com"]
         },
         {
+            "launchpad_id": "stanzgy",
+            "companies": [
+                {
+                    "company_name": "Netease",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhang Gengyuan",
+            "emails": ["stan.zgy@gmail.com", "hzzhanggy@corp.netease.com"]
+        },
+        {
             "launchpad_id": "starodubcevna",
             "companies": [
                 {
