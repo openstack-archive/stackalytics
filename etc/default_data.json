@@ -7917,7 +7917,7 @@
         },
         {
             "module_group_name": "mistral-group",
-            "modules": ["python-mistralclient", "mistral", "mistral-extra"]
+            "modules": ["python-mistralclient", "mistral", "mistral-extra", "mistral-dashboard"]
         },
         {
             "module_group_name": "murano-group",
