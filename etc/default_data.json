@@ -5704,6 +5704,18 @@
             "emails": ["vipuls@gmail.com", "vipul.sabhaya@hp.com"]
         },
         {
+            "launchpad_id": "vishalcdac07",
+            "gerrit_id": "vishalcdac",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vishal Yadav",
+            "emails": ["vishal.yadav@nectechnologies.in", "vishalcdac07@gmail.com"]
+        },
+        {
             "launchpad_id": "vishvananda",
             "companies": [
                 {
