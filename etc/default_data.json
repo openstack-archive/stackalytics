@@ -5001,6 +5001,18 @@
             "emails": ["shrirang.phadke@izeltech.com"]
         },
         {
+            "launchpad_id": "shuichiro-makigaki",
+            "gerrit_id": "shuichiro-makigaki",
+            "companies": [
+                {
+                    "company_name": "Rakuten",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shuichiro MAKIGAKI",
+            "emails": ["shuichiro.makigaki@gmail.com"]
+        },
+        {
             "launchpad_id": "shuo-yang",
             "gerrit_id": "syang",
             "companies": [
