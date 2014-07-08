@@ -6006,7 +6006,8 @@
             "emails": ["zaro0508@gmail.com"]
         },
         {
-            "launchpad_id": "zealot",
+            "launchpad_id": "zealot0630",
+            "gerrit_id": "zealot",
             "companies": [
                 {
                     "company_name": "Netease",
@@ -6014,7 +6015,7 @@
                 }
             ],
             "user_name": "Zang MingJie",
-            "emails": ["zealot0630@gmail.com"]
+            "emails": ["zealot0630@gmail.com", "zangmingjie@corp.netease.com"]
         },
         {
             "launchpad_id": "zengyunling",
