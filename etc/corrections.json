@@ -2582,6 +2582,14 @@
             "primary_key": "908491f6eebc7c123aed03cdb2d1f24a8e3a8d5d",
             "module": "openstack-manuals",
             "subject": "Update sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 43",
+            "loc": 43,
+            "change_id": ["I11280778bbf53a21e008d0dcfe4d21bfc89d7aa1"],
+            "primary_key": "d7974c8081b3b4a82c68ca74d3934fb91f7fcad7",
+            "module": "openstack-manuals",
+            "subject": "Enable building of French user Guide"
         }
 
     ]
