@@ -22,9 +22,7 @@ LOG = logging.getLogger(__name__)
 
 
 def _find_vote(review, ci_id, patch_set_number):
-    """
-    Finds vote corresponding to ci_id
-    """
+    """Finds vote corresponding to ci_id."""
     for patch_set in review['patchSets']:
         if patch_set['number'] == patch_set_number:
             for approval in (patch_set.get('approvals') or []):
@@ -38,9 +36,7 @@ def _find_vote(review, ci_id, patch_set_number):
 
 
 def find_ci_result(review, ci_map):
-    """
-    For a given stream of reviews yields results produced by CIs
-    """
+    """For a given stream of reviews yields results produced by CIs."""
 
     review_id = review['id']
     review_number = review['number']

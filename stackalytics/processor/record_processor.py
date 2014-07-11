@@ -326,8 +326,9 @@ class RecordProcessor(object):
         return mark
 
     def _process_review(self, record):
-        """
-         Process a review. Review spawns into records of three types:
+        """Process a review.
+
+        Review spawns into records of three types:
           * review - records that a user created review request
           * patch - records that a user submitted another patch set
           * mark - records that a user set approval mark to given review
