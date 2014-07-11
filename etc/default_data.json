@@ -1496,8 +1496,13 @@
             "companies": [
                 {
                     "company_name": "StackOps",
+                    "end_date": "2014-Jan-07"
+                },
+                {
+                    "company_name": "Midokura",
                     "end_date": null
                 }
+             
             ],
             "user_name": "Jaume Devesa",
             "emails": ["devvesa@gmail.com"]
