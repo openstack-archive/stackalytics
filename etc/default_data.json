@@ -3365,6 +3365,21 @@
             "emails": ["lakhindr@hotmail.com", "lakhinder.walia@hds.com"]
         },
         {
+            "launchpad_id": "ldbragst",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Jun-26"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lance Bragstad",
+            "emails": ["lbragstad@gmail.com", "ldbragst@us.ibm.com"]
+        },
+        {
             "launchpad_id": "leandro-i-costantino",
             "gerrit_id": "lcostantino",
             "companies": [
