@@ -2596,7 +2596,7 @@
             "loc": 623,
             "change_id": ["Iaea7a29267ee554d0d20b5cd050d453cea3798ba"],
             "primary_key": "aa7a7cd794f7f5244107d888b5add366ff5920f4",
-            "module": "openstack-manuals",
+            "module": "training-guides",
             "subject": "Remove all mostly untranslated PO files"
         }
     ]
