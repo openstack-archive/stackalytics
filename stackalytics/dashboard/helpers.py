@@ -146,24 +146,24 @@ def get_contribution_summary(records):
     resolved_bug_count = 0
 
     for record in records:
-        record_type = record['record_type']
+        record_type = record.record_type
         if record_type == 'commit':
             commit_count += 1
-            loc += record['loc']
-        elif record['record_type'] == 'mark':
-            if record['type'] == 'Workflow' and record['value'] == 1:
+            loc += record.loc
+        elif record_type == 'mark':
+            if record.type == 'Workflow' and record.value == 1:
                 marks['A'] += 1
             else:
-                marks[record['value']] += 1
-        elif record['record_type'] == 'email':
+                marks[record.value] += 1
+        elif record_type == 'email':
             email_count += 1
-        elif record['record_type'] == 'bpd':
+        elif record_type == 'bpd':
             drafted_blueprint_count += 1
-        elif record['record_type'] == 'bpc':
+        elif record_type == 'bpc':
             completed_blueprint_count += 1
-        elif record['record_type'] == 'bugf':
+        elif record_type == 'bugf':
             filed_bug_count += 1
-        elif record['record_type'] == 'bugr':
+        elif record_type == 'bugr':
             resolved_bug_count += 1
 
     result = {
