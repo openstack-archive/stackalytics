@@ -65,7 +65,7 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
         {% if show_user_gravatar %}
             <img src="${gravatar}">
         {% else %}
-            <img src="http://www.gravatar.com/avatar/a${parseInt(record_type,36)}?s={{ gravatar_size }}&d=identicon" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
+            <img src="//www.gravatar.com/avatar/a${parseInt(record_type,36)}?s={{ gravatar_size }}&d=identicon" style="width: {{ gravatar_size }}px; height: {{ gravatar_size }}px;">
         {% endif %}
     </div>
 
