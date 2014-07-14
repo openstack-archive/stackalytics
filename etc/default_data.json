@@ -198,6 +198,17 @@
             "emails": ["ailzhang@cisco.com", "zhangal1992@gmail.com"]
         },
         {
+            "launchpad_id": "aishu-ece",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aishwarya Thangappa",
+            "emails": ["aishu.ece@gmail.com"]
+        },
+        {
             "launchpad_id": "akash",
             "companies": [
                 {
