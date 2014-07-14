@@ -89,6 +89,7 @@ def get_vault():
                 _init_releases(vault)
                 _init_module_groups(vault)
                 _init_project_types(vault)
+                _init_repos(vault)
                 _init_user_index(vault)
 
     return vault
@@ -128,8 +129,14 @@ def _init_project_types(vault):
     project_types = runtime_storage_inst.get_by_key('project_types') or {}
 
     vault['project_types'] = project_types
-    vault['project_types_index'] = dict([(pt['id'], pt)
-                                         for pt in project_types])
+    vault['project_types_index'] = dict((pt['id'], pt) for pt in project_types)
+
+
+def _init_repos(vault):
+    runtime_storage_inst = vault['runtime_storage']
+    repos = runtime_storage_inst.get_by_key('repos') or {}
+
+    vault['repos_index'] = dict((r['module'], r) for r in repos)
 
 
 def _init_user_index(vault):
@@ -173,7 +180,7 @@ def get_user_from_runtime_storage(user_id):
     return user_index[user_id]
 
 
-def resolve_modules_for_releases(module_ids, releases):
+def _resolve_modules_for_releases(module_ids, releases):
     module_id_index = get_vault().get('module_id_index') or {}
 
     for module_id in module_ids:
@@ -201,7 +208,7 @@ def resolve_modules_for_releases(module_ids, releases):
 
 def resolve_modules(module_ids, releases):
     all_releases = get_vault()['releases'].keys()
-    for module, release in resolve_modules_for_releases(module_ids, releases):
+    for module, release in _resolve_modules_for_releases(module_ids, releases):
         if release is None:
             for r in all_releases:
                 yield (module, r)

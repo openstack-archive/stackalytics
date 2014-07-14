@@ -2,6 +2,7 @@
 {% import '_macros/activity_log.html' as activity_log %}
 {% import '_macros/contribution_summary.html' as contribution_summary %}
 {% import '_macros/user_profile.html' as user_profile %}
+{% import '_macros/module_details.html' as module_details %}
 
 {% set show_company_breakdown = (not company) and (not user_id) %}
 {% set show_engineer_breakdown = (not user_id) %}
@@ -13,6 +14,7 @@
 {% set show_contribution_on_left = (not user_id) and (module) %}
 {% set show_contribution_on_right = (user_id) or (company and not module) %}
 {% set show_user_profile = (user_id) %}
+{% set show_module_details = (module) %}
 {% set show_top_mentors_options = (metric == 'tm_marks') %}
 {% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
 
@@ -182,6 +184,10 @@
     </table>
     <div class="spacer"></div>
     </div>
+    {% endif %}
+
+    {% if show_module_details %}
+        {{ module_details.show_module_details(module=module) }}
     {% endif %}
 
     {% if show_bp_breakdown %}

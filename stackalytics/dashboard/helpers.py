@@ -111,6 +111,35 @@ def extend_user(user):
     return user
 
 
+def extend_module(module_id):
+    module_id_index = vault.get_vault()['module_id_index']
+    module_id = module_id.lower()
+
+    if module_id not in module_id_index:
+        return None
+
+    repos_index = vault.get_vault()['repos_index']
+
+    module = module_id_index[module_id]
+    name = module['module_group_name']
+    if name[0].islower():
+        name = name.capitalize()
+
+    child_modules = []
+    for m in module['modules']:
+        child = {'module_name': m}
+        if m in repos_index:
+            child['repo_uri'] = repos_index[m]['uri']
+        child_modules.append(child)
+
+    return {
+        'id': module_id,
+        'name': name,
+        'tag': module['tag'],
+        'modules': child_modules,
+    }
+
+
 def get_activity(records, start_record, page_size, query_message=None):
     if query_message:
         # note that all records are now dicts!

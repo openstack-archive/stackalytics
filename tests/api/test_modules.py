@@ -79,7 +79,7 @@ class TestAPIModules(test_api.TestAPI):
                  'module_groups': {
                      'nova-group': {'id': 'nova-group',
                                     'module_group_name': 'nova-group',
-                                    'modules': ['nova', 'nova-cli'],
+                                    'modules': ['nova-cli', 'nova'],
                                     'tag': 'group'},
                      'nova': test_api.make_module('nova'),
                      'nova-cli': test_api.make_module('nova-cli'),
@@ -89,10 +89,20 @@ class TestAPIModules(test_api.TestAPI):
             response = self.app.get('/api/1.0/modules/nova')
             module = test_api.load_json(response)['module']
             self.assertEqual(
-                {'id': 'nova', 'text': 'nova', 'tag': 'module'}, module)
+                {'id': 'nova',
+                 'modules': [
+                     {'module_name': 'nova',
+                      'repo_uri': 'git://git.openstack.org/openstack/nova.git'}
+                 ],
+                 'name': 'Nova', 'tag': 'module'}, module)
 
             response = self.app.get('/api/1.0/modules/nova-group')
             module = test_api.load_json(response)['module']
             self.assertEqual(
-                {'tag': 'group', 'id': 'nova-group', 'text': 'nova-group'},
-                module)
+                {'id': 'nova-group',
+                 'modules': [
+                     {'module_name': 'nova-cli'},
+                     {'module_name': 'nova',
+                      'repo_uri': 'git://git.openstack.org/openstack/nova.git'}
+                 ],
+                 'name': 'Nova-group', 'tag': 'group'}, module)

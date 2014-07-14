@@ -1,0 +1,54 @@
+{% macro show_module_details(module) -%}
+
+<script type="text/javascript">
+    function load_module_details(extra_options) {
+        $.ajax({
+            url: makeURI("/api/1.0/modules/{{ module }}", extra_options),
+            dataType: "json",
+            success: function (data) {
+                var module = data["module"];
+                for (var i=0; i < module.modules.length; i++) {
+                    module.modules[i].uri = makeURI('/', {module: module.modules[i].module_name});
+                }
+                console.log(module);
+                $("#module_details_template").tmpl(data["module"]).appendTo("#module_details_container");
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        var uri_options = {};
+        load_module_details(uri_options);
+    });
+</script>
+
+<script id="module_details_template" type="text/x-jquery-tmpl">
+    {% raw %}
+    <div>
+        <h2>${name}</h2>
+        <div style="font-style: italic; margin-bottom: 0.5em;">
+            {%if tag == 'program' %}
+                The official OpenStack program as defined in
+                <a href="https://git.openstack.org/cgit/openstack/governance/tree/reference/programs.yaml" target="_blank">programs.yaml</a>
+            {%/if%}
+            {%if tag == 'group' %}
+                Custom module group as defined in
+                <a href="https://git.openstack.org/cgit/stackforge/stackalytics/tree/etc/default_data.json" target="_blank">default_data.json</a>
+            {%/if%}
+        </div>
+        <div>
+            {%if tag == 'module' %}
+            Repo: ${modules[0].repo_uri}
+            {%else%}
+            Modules:
+            {%each(index,module) modules %}{%if index>0 %}, {%/if%}
+                <a href="${module.uri}">${module.module_name}</a>{%/each%}
+            {%/if%}
+        </div>
+    </div>
+    {% endraw %}
+</script>
+
+<div id="module_details_container" style="margin-bottom: 2em;"></div>
+
+{%- endmacro %}

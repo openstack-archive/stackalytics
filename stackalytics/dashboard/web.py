@@ -343,18 +343,15 @@ def get_company(company_name, **kwargs):
     flask.abort(404)
 
 
-@app.route('/api/1.0/modules/<module>')
+@app.route('/api/1.0/modules/<module_id>')
 @decorators.response()
 @decorators.cached()
 @decorators.jsonify('module')
-def get_module(module, **kwargs):
-    module_id_index = vault.get_vault()['module_id_index']
-    module = module.lower()
-    if module in module_id_index:
-        return {'id': module_id_index[module]['id'],
-                'text': module_id_index[module]['module_group_name'],
-                'tag': module_id_index[module]['tag']}
-    flask.abort(404)
+def get_module(module_id, **kwargs):
+    module = helpers.extend_module(module_id)
+    if not module:
+        flask.abort(404)
+    return module
 
 
 @app.route('/api/1.0/members')

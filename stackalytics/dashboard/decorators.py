@@ -404,15 +404,17 @@ def templated(template=None, return_code=200):
 
             module = parameters.get_single_parameter(kwargs, 'module')
             ctx['module'] = module
+            module_name = None
             if module and module in vault_inst['module_id_index']:
                 ctx['module_inst'] = vault_inst['module_id_index'][module]
+                module_name = ctx['module_inst']['module_group_name']
 
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')
             if ctx['user_id']:
                 ctx['user_inst'] = vault.get_user_from_runtime_storage(
                     ctx['user_id'])
             ctx['page_title'] = helpers.make_page_title(
-                ctx['company'], ctx['user_id'], ctx['module'], ctx['release'])
+                ctx['company'], ctx['user_id'], module_name, ctx['release'])
             ctx['stackalytics_version'] = (
                 stackalytics_version.version_info.version_string())
             ctx['stackalytics_release'] = (
