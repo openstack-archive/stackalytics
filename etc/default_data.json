@@ -7694,8 +7694,7 @@
                     "tag_from": "2012.1"
                 },
                 {
-                    "branch": "stable/grizzly",
-                    "tag_to": "HEAD",
+                    "tag_to": "grizzly-eol",
                     "release_name": "Grizzly",
                     "tag_from": "2012.2"
                 },
@@ -7706,6 +7705,7 @@
                     "tag_from": "2013.1.rc2"
                 },
                 {
+                    "branch": "stable/icehouse",
                     "tag_to": "HEAD",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
