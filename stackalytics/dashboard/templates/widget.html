@@ -8,9 +8,9 @@
 <meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, and code reviews"/>
 <meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
 
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
 
 <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
 
@@ -19,7 +19,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
 <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
@@ -39,7 +39,7 @@
 
 <script type="text/javascript">
 
-    var base_url = "http://stackalytics.com";
+    var base_url = "//stackalytics.com";
 
     $(document).ready(function () {
         initSelectors(base_url);
@@ -63,7 +63,7 @@
                 .button()
                 .click(function (event) {
                     event.preventDefault();
-                    window.open('http://stackalytics.com/', 'stackalytics');
+                    window.open('//stackalytics.com/', 'stackalytics');
                     return false;
                 });
     });
