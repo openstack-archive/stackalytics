@@ -3307,6 +3307,17 @@
             "emails": ["k.jonathan.harker@hp.com"]
         },
         {
+            "launchpad_id": "koti-kelam",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Koteswara Rao Kelam",
+            "emails": ["koteswara.kelam@hp.com", "koti.kelam@gmail.com"]
+        },
+        {
             "launchpad_id": "kozhukalov",
             "user_name": "Vladimir Kozhukalov",
             "companies": [
