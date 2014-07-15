@@ -35,7 +35,10 @@
             {%if core != '' %}
                 <div>Core in:
                     {%each( index, value ) core %}
-                        ${value[0]} (<small>${value[1]}</small>)
+                        ${value[0]}
+                        {%if value[1] != 'master' %}
+                            (<small>${value[1]}</small>)
+                        {%/if%}
                     {%/each%}
                 </div>
             {%/if%}
