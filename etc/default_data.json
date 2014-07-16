@@ -4446,17 +4446,6 @@
             "emails": ["raymond_pekowski@dell.com", "pekowski@gmail.com"]
         },
         {
-            "launchpad_id": "petel",
-            "companies": [
-                {
-                    "company_name": "Tesora",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Peter Stachowski",
-            "emails": ["peter@parelastic.com", "peter@tesora.com"]
-        },
-        {
             "launchpad_id": "peter-a-portante",
             "companies": [
                 {
@@ -4466,6 +4455,17 @@
             ],
             "user_name": "Peter Portante",
             "emails": ["peter.portante@redhat.com"]
+        },
+        {
+            "launchpad_id": "peterstac",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peter Stachowski",
+            "emails": ["peter@parelastic.com", "peter@tesora.com"]
         },
         {
             "launchpad_id": "petr-malik",
