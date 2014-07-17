@@ -1,0 +1,46 @@
+{% extends "kpi/base_kpi.html" %}
+
+{% block title %}
+    Example of scripted KPI report
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            readKpiScript($("#kpi_script").val(), "root_container");
+
+            $("#btn_update").click(function() {
+                readKpiScript($("#kpi_script").val(), "root_container");
+            })
+        });
+    </script>
+{% endblock %}
+
+
+{% block content %}
+    <div>KPI report can be configured by script. See the example below:</div>
+
+    <label for="kpi_script"></label>
+    <textarea id="kpi_script" style="width: 60em; height: 30em;">
+Release Icehouse:
+  Company Mirantis:
+    - top 5 by commits in official-integrated
+    - less than 50% by commits in stackalytics
+  Group glance-group:
+    User lzy-dev:
+      - top 3 by commits
+      - top 4 by reviews in glance
+      - make 10 commits during 30 days
+      - become core
+    User apevec:
+      - make 15 reviews in python-glanceclient
+      - draft 2 blueprints
+      - implement 7 blueprints
+      - send 10 emails
+    Company Mirantis:
+      - top 5 by locs
+</textarea>
+    <button id="btn_update">Update</button>
+
+    <div id="root_container"></div>
+{% endblock %}

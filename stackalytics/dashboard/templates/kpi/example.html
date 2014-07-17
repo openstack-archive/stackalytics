@@ -11,29 +11,29 @@
 
             var month_ago = Math.round(Date.now() / 1000) - 60 * 60 * 24 * 30;
 
-            goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "commits", module: "openstack"},
+            goalPositionInTop("kpi_container_position", {release: "icehouse", metric: "commits", module: "openstack"},
                     "companies", "Mirantis", 5, "Be in top 5 by commits");
-            goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", module: "openstack"},
+            goalPositionInTop("kpi_container_position", {release: "icehouse", metric: "marks", module: "openstack"},
                     "engineers", "boris-42", 5, "Be in top 5 by reviews");
-            goal_position_in_top("kpi_container_position", {release: "icehouse", metric: "marks", module: "glance"},
+            goalPositionInTop("kpi_container_position", {release: "icehouse", metric: "marks", module: "glance"},
                     "engineers", "boris-42", 3, "Be in top 3 among reviewers");
 
-            goal_percentage_in_top_less_than("kpi_container_percentage",
+            goalPercentageInTopLessThan("kpi_container_percentage",
                     {release: "all", metric: "commits", project_type: "all", module: "stackalytics"},
                     "companies", "Mirantis", 0.8, "Mirantis contribution to Stackalytics is less than 80%");
 
-            goal_metric("kpi_container_position", {release: "icehouse", metric: "bpd", module: "glance"},
+            goalMetric("kpi_container_position", {release: "icehouse", metric: "bpd", module: "glance"},
                     "modules", "glance", 50, "File at least 50 blueprints into Glance");
 
-            goal_metric("kpi_container_position", {release: "all", metric: "bpd", module: "glance", start_date: month_ago},
+            goalMetric("kpi_container_position", {release: "all", metric: "bpd", module: "glance", start_date: month_ago},
                     "modules", "glance", 20, "File at least 20 blueprints into Glance in last month");
 
-            goal_disagreement_ratio_less_than("kpi_container_percentage",
+            goalDisagreementRatioLessThan("kpi_container_percentage",
                     {release: "all", metric: "marks", project_type: "all", module: "glance"},
                     "lzy-dev", 0.08, "Disagreement ratio should be less than 8%");
 
 
-            goal_core_engineer_in_project("kpi_core_status", "lzy-dev", "glance", "Become core engineer in Glance");
+            goalCoreEngineerInProject("kpi_core_status", "lzy-dev", "glance", "Become core engineer in Glance");
         });
     </script>
 {% endblock %}
