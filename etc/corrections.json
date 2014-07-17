@@ -2598,6 +2598,22 @@
             "primary_key": "aa7a7cd794f7f5244107d888b5add366ff5920f4",
             "module": "training-guides",
             "subject": "Remove all mostly untranslated PO files"
+        },
+        {
+            "correction_comment": "Ignore Hadoop xml files from upstream",
+            "loc": 6870,
+            "change_id": ["Iaa36dcf4fbb7c5162ca768bae03cc7faeb988a6b"],
+            "primary_key": "1a42ee5f884882fbab1af165654773473bc2343d",
+            "module": "sahara",
+            "subject": "Add vanilla plugin with Hadoop 2.4.0"
+        },
+        {
+            "correction_comment": "Ignore deleting plugin",
+            "loc": 16015,
+            "change_id": ["I74b6fac1825864556417ff511c82b694ae83292f"],
+            "primary_key": "f10b259214082304dbcaf1706261504d489fef42",
+            "module": "sahara",
+            "subject": "Remove IDH plugin from sahara"
         }
     ]
 }
