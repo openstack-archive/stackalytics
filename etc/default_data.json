@@ -1819,11 +1819,15 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2014-Jul-18"
+                },
+                {
+                    "company_name": "Workday",
                     "end_date": null
                 }
             ],
             "user_name": "Edgar Magana",
-            "emails": ["emagana@gmail.com", "eperdomo@dhcp-171-71-119-164.cisco.com", "eperdomo@cisco.com"]
+            "emails": ["emagana@gmail.com", "eperdomo@cisco.com"]
         },
         {
             "launchpad_id": "emilienm",
