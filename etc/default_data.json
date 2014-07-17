@@ -652,6 +652,10 @@
                 },
                 {
                     "company_name": "Nebula",
+                    "end_date": "2013-Nov-01"
+                },
+                {
+                    "company_name": "CoreOS",
                     "end_date": null
                 }
             ],
@@ -1094,7 +1098,7 @@
                     "end_date": null
                 }
             ],
-            "user_name": "clayg",
+            "user_name": "Clay Gerrard",
             "emails": ["clay.gerrard@rackspace.com", "clay.gerrard@gmail.com"]
         },
         {
@@ -1228,6 +1232,17 @@
             ],
             "user_name": "Christoph Thiel",
             "emails": ["c.thiel@telekom.de", "cthiel@suse.com"]
+        },
+        {
+            "launchpad_id": "cthier",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chuck Thier",
+            "emails": ["cthier@gmail.com"]
         },
         {
             "launchpad_id": "cweidenkeller",
@@ -1558,6 +1573,21 @@
             ],
             "user_name": "Pranav Salunke",
             "emails": ["pranav@aptira.com","pps.pranav@gmail.com", "dguitarbite@gmail.com"]
+        },
+        {
+            "launchpad_id": "diane-fleming",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2014-Jun-30"
+                },
+                {
+                    "company_name": "eBay",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Diane Fleming",
+            "emails": ["dfleming@austin.rr.com","diane.fleming@rackspace.com"]
         },
         {
             "launchpad_id": "dims-v",
@@ -2115,7 +2145,7 @@
                     "end_date": null
                 }
             ],
-            "user_name": "gholt",
+            "user_name": "Greg Holt",
             "emails": ["z-launchpad@brim.net", "gholt@rackspace.com"]
         },
         {
@@ -4691,6 +4721,21 @@
             "emails": ["rjuvvadi@hcl.com", "rrjuvvadi@gmail.com", "ramana@venus.lekha.org"]
         },
         {
+            "launchpad_id": "rkukura",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2014-Feb-01"
+                },
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robert Kukura",
+            "emails": ["kukura@noironetworks.com","rkukura@redhat.com"]
+        },
+        {
             "launchpad_id": "rlane",
             "companies": [
                 {
@@ -5307,6 +5352,21 @@
             "emails": ["sbaker@redhat.com", "steve@stevebaker.org"]
         },
         {
+            "launchpad_id": "stevendgonzales",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2014-Apr-01"
+                },
+                {
+                    "company_name": "EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steven Gonzales",
+            "emails": ["stevendgonzales@gmail.com"]
+        },
+        {
             "launchpad_id": "stevenk",
             "companies": [
                 {
@@ -5473,6 +5533,10 @@
             "companies": [
                 {
                     "company_name": "DreamHost",
+                    "end_date": "2014-Mar-01"
+                },
+                {
+                    "company_name": "Datera",
                     "end_date": null
                 }
             ],
