@@ -40,6 +40,7 @@ def find_ci_result(review, ci_map):
 
     review_id = review['id']
     review_number = review['number']
+    ci_already_seen = set()
 
     for comment in reversed(review.get('comments') or []):
         reviewer_id = comment['reviewer'].get('username')
@@ -72,9 +73,13 @@ def find_ci_result(review, ci_map):
             result = _find_vote(review, ci['id'], patch_set_number)
 
         if result is not None:
-            is_merged = (review['status'] == 'MERGED' and
-                         patch_set_number == review['patchSets'][-1]
-                         ['number'])
+            is_merged = (
+                review['status'] == 'MERGED' and
+                patch_set_number == review['patchSets'][-1]['number'] and
+                ci['id'] not in ci_already_seen)
+
+            ci_already_seen.add(ci['id'])
+
             yield {
                 'reviewer': comment['reviewer'],
                 'ci_result': result,
