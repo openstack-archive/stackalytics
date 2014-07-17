@@ -8003,7 +8003,7 @@
         },
         {
             "module_group_name": "solum-group",
-            "modules": ["python-solumclient", "solum", "solum-dashboard", "solum-specs"]
+            "modules": ["python-solumclient", "solum", "solum-dashboard", "solum-infra-guestagent", "solum-specs"]
         },
         {
             "module_group_name": "puppet-group",
