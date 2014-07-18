@@ -4851,6 +4851,17 @@
             "emails": ["megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
         },
         {
+            "launchpad_id": "rromans",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robb Romans",
+            "emails": ["robb.romans@rackspace.com", "robb@romans.me"]
+        },
+        {
             "launchpad_id": "rsokolkov",
             "companies": [
                 {
