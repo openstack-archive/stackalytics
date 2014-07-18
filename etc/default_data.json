@@ -198,6 +198,17 @@
             "emails": ["ailzhang@cisco.com", "zhangal1992@gmail.com"]
         },
         {
+            "launchpad_id": "akash",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Akash Gangil",
+            "emails": ["agangil@vmware.com", "akashg1611@gmail.com"]
+        },
+        {
             "launchpad_id": "akscram",
             "companies": [
                 {
