@@ -2499,6 +2499,10 @@
             "companies": [
                 {
                     "company_name": "Grid Dynamics",
+                    "end_date": "2011-Jul-07"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
