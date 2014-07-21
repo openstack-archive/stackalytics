@@ -5069,6 +5069,17 @@
             "emails": ["s.lotfy@telekom.de"]
         },
         {
+            "launchpad_id": "selvakumar-s2",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Selvakumar S",
+            "emails": ["selvakumar.s2@hp.com", "selvakumar.nms@gmail.com"]
+        },
+        {
             "launchpad_id": "sergey.vilgelm",
             "companies": [
                 {
