@@ -5382,6 +5382,18 @@
             "emails": ["nstarodubtsev@mirantis.com", "starodubcevna@gmail.com"]
         },
         {
+            "launchpad_id": "stephaneeee",
+            "gerrit_id": "cinerama",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stephane Miller",
+            "emails": ["stephane@alum.mit.edu", "cinerama@hp.com"]
+        },
+        {
             "launchpad_id": "steve-stevebaker",
             "companies": [
                 {
