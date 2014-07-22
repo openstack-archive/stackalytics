@@ -1,0 +1,186 @@
+{% extends "reports/base_report.html" %}
+
+{% block title %}
+Cores
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            initSingleSelector("project_type", "/api/1.0/project_types", {
+                formatResultCssClass: function (item) {
+                    return (item.child) ? "project_group_item" : "project_group";
+                }
+            }, function (options) {
+                options['module'] = null;
+            });
+
+            $.ajax({
+                url: "/api/1.0/users?project_type={{ project_type }}&core_in=master",
+                dataType: "json",
+                success: function (data) {
+                    var users = data["data"];
+
+                    var counters = {};
+                    var modules_index = {};
+
+                    for (var i in users) {
+                        var user = users[i];
+
+                        var company_name = user.company_name;
+                        var company_stat = counters[company_name];
+                        if (!company_stat) {
+                            company_stat = {};
+                            counters[company_name] = company_stat;
+                        }
+
+                        var modules = user.core;
+                        for (var j in modules) {
+                            var module = modules[j];
+                            if (!company_stat[module]) {
+                                company_stat[module] = [];
+                            }
+                            company_stat[module].push(user.text);
+                            modules_index[module] = module;
+                        }
+                    }
+
+                    var module_list = [];
+                    for (var module_name in modules_index) {
+                        module_list.push(module_name);
+                    }
+                    module_list.sort();
+
+                    // make table
+
+                    var table = $("<table id='table_cores'></table>");
+                    var table_head = $("<thead></thead>");
+                    table.append(table_head);
+                    var table_body = $("<tbody></tbody>");
+                    table.append(table_body);
+
+                    var head_row = $('<tr></tr>');
+                    table_head.append(head_row);
+                    head_row.append($("<th>Company</th>"));
+
+                    for (i in module_list) {
+                        module = module_list[i];
+                        head_row.append($("<th>" + module + "</th>"));
+                    }
+
+                    head_row.append($("<th>Total</th>"));
+
+                    var module_sum = {};
+
+                    for (company_name in counters) {
+                        var row = $("<tr></tr>");
+                        table_body.append(row);
+                        row.append($("<td>" + company_name + "</td>"));
+
+                        company_stat = counters[company_name];
+                        var sum = 0;
+
+                        for (i in module_list) {
+                            module = module_list[i];
+                            users = company_stat[module];
+                            var title = "";
+                            var counter = 0;
+                            var cell_class = "nonzero";
+                            if (users) {
+                                counter = users.length;
+                                title = users.join(", ");
+                            } else {
+                                cell_class = "zero"
+                            }
+                            sum += counter;
+                            row.append($("<td title='" + title + "' class='" + cell_class + "'>" + counter + "</td>"));
+
+                            if (!module_sum[module]) {
+                                module_sum[module] = counter;
+                            } else {
+                                module_sum[module] += counter;
+                            }
+                        }
+
+                        row.append($("<td>" + sum + "</td>"));
+                    }
+
+                    var table_foot = $("<tfoot></tfoot>");
+                    table.append(table_foot);
+                    var footer_row = $("<tr></tr>");
+                    table_foot.append(footer_row);
+                    footer_row.append($("<td>Total</th>"));
+
+                    sum = 0;
+                    for (i in module_list) {
+                        module = module_list[i];
+                        footer_row.append($("<td>" + module_sum[module] + "</td>"));
+                        sum += module_sum[module];
+                    }
+                    footer_row.append($("<td>" + sum + "</td>"));
+
+                    $("#table_container").append(table);
+                    $("#table_container_loading").hide();
+
+                    table.dataTable({
+                        "bPaginate": false,
+                        "iDisplayLength": -1,
+                        "aoColumnDefs": [
+                            { "sClass": "left", "aTargets": [0] }
+                        ]
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style type="text/css">
+        table.dataTable tr.even {
+            background-color: #EEF1F4;
+        }
+
+        table.dataTable tr.even:hover, table.dataTable tr.odd:hover {
+            background-color: #F8FFEC;
+        }
+
+        table.dataTable tr.even td.sorting_1 {
+            background-color: #E0E8E8;
+        }
+
+        table.dataTable td {
+            text-align: center;
+        }
+
+        table.dataTable td.left, table.dataTable th.left {
+            text-align: left;
+        }
+
+        table.dataTable tfoot td {
+            background-color: #dadde0;
+            font-weight: bold;
+        }
+
+        .zero {
+            color: #A0A0A0;
+        }
+
+        .nonzero {
+            color: #000000;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <h1>Cores in
+        <span style="display: inline; position: relative; top: -3px;">
+            <input type="hidden" id="project_type_selector" style="width: 200px" data-placeholder="Select project type"/>
+        </span>
+    </h1>
+
+    <div id="table_container"></div>
+    <div id="table_container_loading" class="select2-loading" style="width: 7em;">Loading...</div>
+
+{% endblock %}

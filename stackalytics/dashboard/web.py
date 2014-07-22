@@ -414,15 +414,37 @@ def get_bpd(records, **kwargs):
 @decorators.jsonify()
 @decorators.record_filter(ignore=['user_id'])
 def get_users_json(record_ids, **kwargs):
+    core_in = parameters.get_single_parameter({}, 'core_in') or None
+    valid_modules = set()
+    if core_in:
+        core_in = set(core_in.split(','))
+        valid_modules = vault.resolve_project_types(
+            kwargs['_params']['project_type'])
+        valid_modules = set(m[0] for m in vault.resolve_modules(
+            valid_modules, kwargs['_params']['release']))
+
     user_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
         'user_id', record_ids)
     if kwargs['_params']['user_id']:
         user_ids.add(kwargs['_params']['user_id'][0])
 
-    result = [{'id': user_id,
-               'text': (vault.get_user_from_runtime_storage(user_id)
-                        ['user_name'])}
-              for user_id in user_ids]
+    result = []
+    for user_id in user_ids:
+        user = vault.get_user_from_runtime_storage(user_id)
+        r = {'id': user_id, 'text': user['user_name']}
+
+        add_flag = not core_in
+        if core_in and user.get('core'):
+            core_modules = [module_branch[0] for module_branch in user['core']
+                            if (module_branch[1] in core_in and
+                                module_branch[0] in valid_modules)]
+            if core_modules:
+                r['core'] = core_modules
+                if user['companies']:
+                    r['company_name'] = user['companies'][-1]['company_name']
+                add_flag = True
+        if add_flag:
+            result.append(r)
 
     result.sort(key=lambda x: x['text'])
     return result

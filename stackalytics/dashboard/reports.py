@@ -24,6 +24,7 @@ import six
 
 from stackalytics.dashboard import decorators
 from stackalytics.dashboard import helpers
+from stackalytics.dashboard import parameters
 from stackalytics.dashboard import vault
 from stackalytics.processor import utils
 
@@ -155,6 +156,16 @@ def members():
     return {
         'days': days,
         'all_days': all_days
+    }
+
+
+@blueprint.route('/cores')
+@decorators.exception_handler()
+@decorators.templated()
+def cores():
+    project_type = parameters.get_single_parameter({}, 'project_type')
+    return {
+        'project_type': project_type,
     }
 
 
