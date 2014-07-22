@@ -2983,6 +2983,17 @@
             "emails": ["john@johngarbutt.com", "john.garbutt@rackspace.com", "john.garbutt@citrix.com"]
         },
         {
+            "launchpad_id": "johnson-dantis",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Johnson Dantis",
+            "emails": ["johnson.dantis@hp.com"]
+        },
+        {
             "launchpad_id": "jordan-pittier",
             "companies": [
                 {
