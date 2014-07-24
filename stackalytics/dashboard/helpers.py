@@ -173,6 +173,8 @@ def get_contribution_summary(records):
     email_count = 0
     filed_bug_count = 0
     resolved_bug_count = 0
+    patch_set_count = 0
+    change_request_count = 0
 
     for record in records:
         record_type = record.record_type
@@ -194,6 +196,10 @@ def get_contribution_summary(records):
             filed_bug_count += 1
         elif record_type == 'bugr':
             resolved_bug_count += 1
+        elif record_type == 'patch':
+            patch_set_count += 1
+        elif record_type == 'review':
+            change_request_count += 1
 
     result = {
         'drafted_blueprint_count': drafted_blueprint_count,
@@ -204,6 +210,8 @@ def get_contribution_summary(records):
         'marks': marks,
         'filed_bug_count': filed_bug_count,
         'resolved_bug_count': resolved_bug_count,
+        'patch_set_count': patch_set_count,
+        'change_request_count': change_request_count,
     }
     return result
 
