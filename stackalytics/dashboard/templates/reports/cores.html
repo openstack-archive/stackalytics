@@ -64,13 +64,12 @@ Cores
                     var head_row = $('<tr></tr>');
                     table_head.append(head_row);
                     head_row.append($("<th>Company</th>"));
+                    head_row.append($("<th>Total</th>"));
 
                     for (i in module_list) {
                         module = module_list[i];
                         head_row.append($("<th>" + module + "<a href='/report/contribution/" + module + "/30' target='_blank'>&nbsp;</a></th>"));
                     }
-
-                    head_row.append($("<th>Total</th>"));
 
                     var module_sum = {};
 
@@ -78,6 +77,9 @@ Cores
                         var row = $("<tr></tr>");
                         table_body.append(row);
                         row.append($("<td>" + company_name + "</td>"));
+
+                        var sum_cell = $("<td class='total'></td>");
+                        row.append(sum_cell);
 
                         company_stat = counters[company_name];
                         var sum = 0;
@@ -104,7 +106,7 @@ Cores
                             }
                         }
 
-                        row.append($("<td>" + sum + "</td>"));
+                        sum_cell.html(sum);
                     }
 
                     var table_foot = $("<tfoot></tfoot>");
@@ -112,14 +114,16 @@ Cores
                     var footer_row = $("<tr></tr>");
                     table_foot.append(footer_row);
                     footer_row.append($("<td>Total</th>"));
+                    sum_cell = $("<td class='total'></td>");
+                    footer_row.append(sum_cell);
 
                     sum = 0;
                     for (i in module_list) {
                         module = module_list[i];
-                        footer_row.append($("<td>" + module_sum[module] + "</td>"));
+                        footer_row.append($("<td class='total'>" + module_sum[module] + "</td>"));
                         sum += module_sum[module];
                     }
-                    footer_row.append($("<td>" + sum + "</td>"));
+                    sum_cell.html(sum);
 
                     $("#table_container").append(table);
                     $("#table_container_loading").hide();
@@ -168,6 +172,10 @@ Cores
 
         .nonzero {
             color: #000000;
+        }
+
+        .total, table.dataTable tfoot td.total {
+            color: #a92703;
         }
     </style>
 
