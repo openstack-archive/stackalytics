@@ -1,34 +1,9 @@
 {% extends "base.html" %}
 
+{% set active_tab = 'driverlog' %}
+{% block title %}Vendor Drivers{% endblock %}
+
 {% block head %}
-    <title>Vendor Drivers</title>
-
-    <meta name="keywords" content="openstack, contribution, statistics, community, review, commit, report, havana, grizzly, icehouse, drivers"/>
-
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
-
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery-ui/jquery-ui-1.10.4.custom.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/moonfonts.css') }}">
-
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/md5.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.gravatar.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.timeago.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/driverlog-ui.js') }}"></script>
-
     <script type="text/javascript">
         var base_url = "http://stackalytics.com/driverlog/";
 

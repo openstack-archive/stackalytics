@@ -1,60 +1,19 @@
 {% extends "base.html" %}
 
+{% block title %}
+Stackalytics {% if page_title %}| {{ page_title }} {% endif %}
+{% endblock %}
+
 {% block head %}
 
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-
-<title>Stackalytics {% if page_title %}| {{ page_title }} {% endif %}</title>
-
-{% if not page_title %}
-<meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, and code reviews"/>
-{% else %}
-<meta name="description" content="Full commits and review statistics of {{ page_title }}"/>
-{% endif %}
-<meta name="keywords" content="openstack, contribution, community, review, commit, {{ company }}"/>
-<meta name="version" content="{{ stackalytics_version }}"/>
-<meta name="build" content="{{ stackalytics_release }}"/>
-<meta name="runtime_storage_update_time" content="{{ runtime_storage_update_time }}"/>
-
-<link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-<link href='//fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-
-<link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
-
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/moonfonts.css') }}">
-
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
-<!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.tmpl.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/md5.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.gravatar.js') }}"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='js/stackalytics-ui.js') }}"></script>
-
 <script type="text/javascript">
-
     $(document).ready(function () {
         initSelectors("");
     });
+
     $(function () {
         $(document).tooltip();
     });
-
 </script>
 
 {% block scripts %}{% endblock %}
