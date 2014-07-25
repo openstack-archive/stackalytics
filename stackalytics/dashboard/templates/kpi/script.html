@@ -7,22 +7,45 @@
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            readKpiScript($("#kpi_script").val(), "root_container");
 
-            $("#btn_update").click(function() {
+            function processTextArea() {
                 readKpiScript($("#kpi_script").val(), "root_container");
-            })
+            }
+
+            var url_vars = getUrlVars();
+
+            if ("url" in url_vars) {
+                $("#kpi_url").val(url_vars["url"]);
+                $.get(url_vars["url"],function (data) {
+                    $("#kpi_script").val(data);
+                    processTextArea();
+                }).fail(function(){
+                    $("#kpi_script").val("Error loading file from URL: " + url_vars["url"]);
+                });
+            } else {
+                processTextArea();
+            }
+
+            $("#btn_update").click(function () {
+                processTextArea();
+            });
         });
     </script>
 {% endblock %}
 
 
 {% block content %}
-    <div>KPI report can be configured by script. See the example below:</div>
+    <div>KPI report can be configured by script or loaded from URL.</div>
+
+    <form action="/kpi/script" method="get">
+        <label for="kpi_url">URL:</label>
+        <input id="kpi_url" style="width: 45em;" name="url"/>
+        <input type="submit" value="Load">
+    </form>
 
     <label for="kpi_script"></label>
     <textarea id="kpi_script" style="width: 60em; height: 30em;">
-Release Icehouse:
+Release Juno:
   Company Mirantis:
     - top 5 by commits in official-integrated
     - less than 50% by commits in stackalytics
