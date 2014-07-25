@@ -152,8 +152,9 @@ class CachedMemoryStorage(MemoryStorage):
     def get_record_ids(self):
         return self.records.keys()
 
-    def get_record_ids_by_type(self, record_type):
-        return self.record_types_index.get(record_type, set())
+    def get_record_ids_by_types(self, record_types):
+        return self._get_record_ids_from_index(record_types,
+                                               self.record_types_index)
 
     def get_records(self, record_ids):
         for i in record_ids:
