@@ -172,7 +172,7 @@ def record_filter(ignore=None):
                     if metric in parameters.METRIC_TO_RECORD_TYPE:
                         record_ids = _intersect(
                             record_ids,
-                            memory_storage_inst.get_record_ids_by_type(
+                            memory_storage_inst.get_record_ids_by_types(
                                 parameters.METRIC_TO_RECORD_TYPE[metric]))
 
             if 'tm_marks' in metric:
@@ -268,13 +268,6 @@ def mark_finalize(record):
 
 
 def person_day_filter(result, record, param_id, context):
-    record_type = record.record_type
-    if record_type == 'commit' or record_type == 'member':
-        # 1. commit is attributed with the date of the merge which is not an
-        # effort of the author (author's effort is represented in patches)
-        # 2. registration on openstack.org is not an effort
-        return
-
     day = utils.timestamp_to_day(record.date)
     # fact that record-days are grouped by days in some order is used
     if context.get('last_processed_day') != day:

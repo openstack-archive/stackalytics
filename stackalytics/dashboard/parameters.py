@@ -43,17 +43,18 @@ METRIC_LABELS = {
 }
 
 METRIC_TO_RECORD_TYPE = {
-    'loc': 'commit',
-    'commits': 'commit',
-    'marks': 'mark',
-    'emails': 'email',
-    'bpd': 'bpd',
-    'bpc': 'bpc',
-    'filed-bugs': 'bugf',
-    'resolved-bugs': 'bugr',
-    'members': 'member',
-    'ci': 'ci_vote',
-    'patches': 'patch',
+    'loc': ['commit'],
+    'commits': ['commit'],
+    'marks': ['mark'],
+    'emails': ['email'],
+    'bpd': ['bpd'],
+    'bpc': ['bpc'],
+    'filed-bugs': ['bugf'],
+    'resolved-bugs': ['bugr'],
+    'members': ['member'],
+    'person-day': ['mark', 'patch', 'email', 'bpd', 'bugf'],
+    'ci': ['ci_vote'],
+    'patches': ['patch'],
 }
 
 FILTER_PARAMETERS = ['release', 'project_type', 'module', 'company', 'user_id',
