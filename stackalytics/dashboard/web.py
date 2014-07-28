@@ -557,15 +557,12 @@ def timeline(records, **kwargs):
         release_stat = collections.defaultdict(set)
         all_stat = collections.defaultdict(set)
         for record in records:
-            if ((record.record_type in ['commit', 'member']) or
-                    (record.week not in weeks)):
-                continue
-
-            day = utils.timestamp_to_day(record.date)
-            user = vault.get_user_from_runtime_storage(record.user_id)
-            if record.release == release_name:
-                release_stat[day] |= set([user['seq']])
-            all_stat[day] |= set([user['seq']])
+            if start_week <= record.week < end_week:
+                day = utils.timestamp_to_day(record.date)
+                user_id = record.user_id
+                if record.release == release_name:
+                    release_stat[day].add(user_id)
+                all_stat[day].add(user_id)
         for day, users in six.iteritems(release_stat):
             week = utils.timestamp_to_week(day * 24 * 3600)
             week_stat_commits_hl[week] += len(users)
@@ -575,7 +572,7 @@ def timeline(records, **kwargs):
     else:
         for record in records:
             week = record.week
-            if week in weeks:
+            if start_week <= week < end_week:
                 week_stat_loc[week] += handler(record)
                 week_stat_commits[week] += 1
                 if 'members' in metric:
