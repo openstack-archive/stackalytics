@@ -2622,6 +2622,14 @@
             "primary_key": "f10b259214082304dbcaf1706261504d489fef42",
             "module": "sahara",
             "subject": "Remove IDH plugin from sahara"
+        },
+        {
+            "correction_comment": "Ignore update of sitemap.xml",
+            "loc": 0,
+            "change_id": ["Icb6417c5efa13c6e24718c355fdefff301435952"],
+            "primary_key": "c56f1fb16f62793f317838683bdc06183f8c841e",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml"
         }
     ]
 }
