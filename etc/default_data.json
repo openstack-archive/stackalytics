@@ -901,7 +901,7 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
-                    "end_date": null
+                    "end_date": "2014-May-31"
                 }
             ],
             "user_name": "Christoph Kassen",
@@ -1249,11 +1249,11 @@
                 },
                 {
                     "company_name": "Deutsche Telekom",
-                    "end_date": null
+                    "end_date": "2014-Jul-31"
                 }
             ],
             "user_name": "Christoph Thiel",
-            "emails": ["c.thiel@telekom.de", "cthiel@suse.com"]
+            "emails": ["c.thiel@telekom.de", "cthiel@suse.com", "christoph.thiel@gmail.com"]
         },
         {
             "launchpad_id": "cthier",
@@ -1282,7 +1282,7 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
-                    "end_date": null
+                    "end_date": "2014-Apr-30"
                 }
             ],
             "user_name": "Daniel Gollub",
@@ -5088,7 +5088,7 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
-                    "end_date": null
+                    "end_date": "2014-Mar-31"
                 }
             ],
             "user_name": "Seif Lotfy",
