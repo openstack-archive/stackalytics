@@ -1109,6 +1109,21 @@
             "emails": ["christophe@sauthier.com", "christophe.sauthier@objectif-libre.com"]
         },
         {
+            "launchpad_id": "chungg",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Jun-27"
+                },
+                {
+                    "company_name": "eNovance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gordon Chung",
+            "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com"]
+        },
+        {
             "launchpad_id": "clay-gerrard",
             "companies": [
                 {
