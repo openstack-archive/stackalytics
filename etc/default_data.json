@@ -2070,6 +2070,24 @@
            ]
         },
         {
+            "launchpad_id": "freyes",
+            "gerrit_id": "freyes",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-May-31"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Felipe Reyes",
+            "emails": [
+                "freyes@tty.cl", "freyes@suse.com"
+            ]
+        },
+        {
             "launchpad_id": "fujioka-yuuichi-d",
             "gerrit_id": "fujiokayuuichi",
             "companies": [
