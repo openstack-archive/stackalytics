@@ -930,6 +930,21 @@
             "emails": ["chris.behrens@rackspace.com", "cbehrens@codestud.com"]
         },
         {
+            "launchpad_id": "cbjchen",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-May-06"
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liang Chen",
+            "emails": ["liang.chen@canonical.com", "cl55_6@hotmail.com", "cbjchen@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "cboylan",
             "companies": [
                 {
