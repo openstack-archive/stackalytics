@@ -6277,6 +6277,21 @@
             "emails": ["chaochin@gmail.com", "zhaoqin@cn.ibm.com"]
         },
         {
+            "launchpad_id": "zhhuabj",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-May-23"
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hua Zhang",
+            "emails": ["zhhuabj@cn.ibm.com", "joshua.zhang@canonical.com", "veryhua2006@gmail.com"]
+        },
+        {
             "launchpad_id": "zhikunliu",
             "companies": [
                 {
