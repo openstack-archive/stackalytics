@@ -2630,6 +2630,31 @@
             "primary_key": "c56f1fb16f62793f317838683bdc06183f8c841e",
             "module": "openstack-manuals",
             "subject": "Update sitemap.xml"
+        },
+        {
+            "correction_comment": "Ignore glossary localizations",
+            "loc": 66,
+            "change_id": ["Ia3626c0f4c01ed76152ec6b7dec601454db71ee7"],
+            "primary_key": "b526bf243fbd3dcde430d855af0b3639236ca855",
+            "module": "security-doc",
+            "subject": "Move glossary to its own directory"
+        },
+        {
+            "correction_comment": "Ignore glossary import",
+            "loc": 0,
+            "change_id": ["I5ca49f0bdb8ae21604c352d9ae67222c02bc95cd"],
+            "primary_key": "55c444320ceb001b72024a2e5a11ae88d1071077",
+            "module": "security-doc",
+            "subject": "Import glossary from openstack-manuals"
+        },
+        {
+            "correction_comment": "Ignore glossary import",
+            "loc": 0,
+            "change_id": ["Ic448e01d62a22ed5d292552cf568a17ce153b032"],
+            "primary_key": "3e9a25152319a6eda641c20eb6b36e8cacb169aa",
+            "module": "operations-guide",
+            "subject": "Sync glossary from openstack-manuals"
         }
+
     ]
 }
