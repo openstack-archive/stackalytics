@@ -1259,6 +1259,21 @@
             "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com"]
         },
         {
+            "launchpad_id": "craigtracey",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2013-Oct-31"
+                },
+                {
+                    "company_name": "Blue Box",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craig Tracey",
+            "emails": ["craigtracey@gmail.com", "ctracey@bluebox.net"]
+        },
+        {
             "launchpad_id": "cristian-a-sanchez",
             "gerrit_id": "casanch1",
             "companies": [
@@ -1580,7 +1595,7 @@
                     "company_name": "Midokura",
                     "end_date": null
                 }
-             
+
             ],
             "user_name": "Jaume Devesa",
             "emails": ["devvesa@gmail.com"]
