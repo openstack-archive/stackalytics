@@ -1706,6 +1706,10 @@
             "companies": [
                 {
                     "company_name": "DreamHost",
+                    "end_date": "2014-Jul-29"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
