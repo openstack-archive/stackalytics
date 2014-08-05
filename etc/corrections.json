@@ -2654,6 +2654,14 @@
             "primary_key": "3e9a25152319a6eda641c20eb6b36e8cacb169aa",
             "module": "operations-guide",
             "subject": "Sync glossary from openstack-manuals"
+        },
+        {
+            "correction_comment": "Ignore glossary move",
+            "loc": 25,
+            "change_id": ["I01d68f29d5a4e713e17ed88815644ad40f98bf71"],
+            "primary_key": "40f4d6305183723b670b9c5f50348ef50735f212",
+            "module": "operations-guide",
+            "subject": "Move glossary to its own directory"
         }
 
     ]
