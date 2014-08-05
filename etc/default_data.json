@@ -6075,6 +6075,17 @@
             "emails": ["wl3617@qq.com", "long.wang@bj.cs2c.com.cn", "wanglong@cse.buaa.edu.cn"]
         },
         {
+            "launchpad_id": "wchrisjohnson",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Johnson",
+            "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com"]
+        },
+        {
             "launchpad_id": "wenjianhn",
             "companies": [
                 {
