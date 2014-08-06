@@ -5217,6 +5217,17 @@
             "emails": ["shilla.saebi@gmail.com","shilla_saebi@cable.comcast.com"]
         },
         {
+            "launchpad_id": "shiva-m",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shivakumar M",
+            "emails": ["shiva075gowda@gmail.com", "shivam@hp.com"]
+        },
+        {
             "launchpad_id": "shrirangphadke",
             "gerrit_id": "shrirangphadke",
             "companies": [
