@@ -1106,11 +1106,15 @@
             "companies": [
                 {
                     "company_name": "IBM",
+                    "end_date": "2014-Jul-22"
+                },
+                {
+                    "company_name": "Antallagon",
                     "end_date": null
                 }
             ],
             "user_name": "Chris Buccella",
-            "emails": ["chris@buccella.org", "buccella@linux.vnet.ibm.com"]
+            "emails": ["chris@buccella.org", "buccella@linux.vnet.ibm.com", "chris.buccella@antallagon.com"]
         },
         {
             "launchpad_id": "christophe.sauthier",
