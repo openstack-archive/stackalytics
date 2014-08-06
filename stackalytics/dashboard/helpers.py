@@ -165,7 +165,7 @@ def get_activity(records, start_record, page_size, query_message=None):
 
 
 def get_contribution_summary(records):
-    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2, 'A'])
+    marks = dict((m, 0) for m in [-2, -1, 0, 1, 2, 'A', 'WIP'])
     commit_count = 0
     loc = 0
     drafted_blueprint_count = 0
@@ -182,10 +182,13 @@ def get_contribution_summary(records):
             commit_count += 1
             loc += record.loc
         elif record_type == 'mark':
-            if record.type == 'Workflow' and record.value == 1:
-                marks['A'] += 1
-            else:
-                marks[record.value] += 1
+            value = record.value
+            if record.type == 'Workflow':
+                if value == 1:
+                    value = 'A'
+                else:
+                    value = 'WIP'
+            marks[value] += 1
         elif record_type == 'email':
             email_count += 1
         elif record_type == 'bpd':
