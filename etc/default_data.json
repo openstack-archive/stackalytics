@@ -581,6 +581,17 @@
             "emails": ["angus@salkeld.id.au", "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
+            "launchpad_id": "ashraf-vazeer",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashraf Vazeer",
+            "emails": ["ashrafvaz@gmail.com", "ashraf.vazeer@hp.com"]
+        },
+        {
             "launchpad_id": "asomya",
             "companies": [
                 {
