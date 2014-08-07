@@ -3529,6 +3529,17 @@
             "emails": ["kispear@gmail.com"]
         },
         {
+            "launchpad_id": "kylestev",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kyle Stevenson",
+            "emails": ["kyle@kylestevenson.me", "kyle.stevenson@rackspace.com"]
+        },
+        {
             "launchpad_id": "kzqdnsw4i20a5pz-peter",
             "companies": [
                 {
