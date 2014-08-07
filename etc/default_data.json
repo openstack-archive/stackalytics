@@ -5103,6 +5103,17 @@
             "emails": ["salv.orlando@gmail.com", "sorlando@nicira.com", "salvatore.orlando@eu.citrix.com"]
         },
         {
+            "launchpad_id": "sambetts",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sam Betts",
+            "emails": ["sam@code-smash.net", "sambetts@cisco.com", "sam.betts.sb@gmail.com"]
+        },
+        {
             "launchpad_id": "sandy-sandywalsh",
             "companies": [
                 {
