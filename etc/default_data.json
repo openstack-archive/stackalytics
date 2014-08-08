@@ -1942,6 +1942,17 @@
             "emails": ["ekirpichov@gmail.com"]
         },
         {
+            "launchpad_id": "ellen-hui",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ellen Hui",
+            "emails": ["ellenfkh@gmail.com", "ellen.hui@rackspace.com"]
+        },
+        {
             "launchpad_id": "emagana",
             "companies": [
                 {
