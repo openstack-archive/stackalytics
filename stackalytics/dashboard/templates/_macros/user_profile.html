@@ -35,7 +35,7 @@
             {%if core != '' %}
                 <div>Core in:
                     {%each( index, value ) core %}
-                        ${value[0]}
+                        <a href="/?module=${value[0]}&metric=${metric}">${value[0]}</a>
                         {%if value[1] != 'master' %}
                             (<small>${value[1]}</small>)
                         {%/if%}
