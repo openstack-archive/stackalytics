@@ -2510,6 +2510,17 @@
             "emails": ["hodosmb@gmail.com", "mikhail.khodos@nexenta.com"]
         },
         {
+            "launchpad_id": "holzman",
+            "companies": [
+                {
+                    "company_name": "Fermi National Accelerator Laboratory",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Burt Holzman",
+            "emails": ["burt@fnal.gov", "holzman@gmail.com"]
+        },
+        {
             "launchpad_id": "hovyakov",
             "companies": [
                 {
