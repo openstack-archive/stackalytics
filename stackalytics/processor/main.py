@@ -95,7 +95,7 @@ def _process_reviews(record_iterator, ci_map, module, branch):
 
 
 def _process_repo(repo, runtime_storage_inst, record_processor_inst,
-                  bug_modified_since):
+                  rcs_inst, bug_modified_since):
     uri = repo['uri']
     LOG.info('Processing repo uri: %s', uri)
 
@@ -117,10 +117,6 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
 
     vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
     vcs_inst.fetch()
-
-    rcs_inst = rcs.get_rcs(repo, cfg.CONF.review_uri)
-    rcs_inst.setup(key_filename=cfg.CONF.ssh_key_filename,
-                   username=cfg.CONF.ssh_username)
 
     branches = set(['master'])
     for release in repo.get('releases'):
@@ -148,7 +144,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         rcs_key = 'rcs:' + str(parse.quote_plus(uri) + ':' + branch)
         last_id = runtime_storage_inst.get_by_key(rcs_key)
 
-        review_iterator = rcs_inst.log(branch, last_id,
+        review_iterator = rcs_inst.log(repo, branch, last_id,
                                        grab_comments=('ci' in repo))
         review_iterator_typed = _record_typer(review_iterator, 'review')
 
@@ -161,7 +157,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         runtime_storage_inst.set_records(processed_review_iterator,
                                          utils.merge_records)
 
-        last_id = rcs_inst.get_last_id(branch)
+        last_id = rcs_inst.get_last_id(repo, branch)
         runtime_storage_inst.set_by_key(rcs_key, last_id)
 
 
@@ -206,9 +202,17 @@ def process(runtime_storage_inst, record_processor_inst):
 
     current_date = utils.date_to_timestamp('now')
     bug_modified_since = runtime_storage_inst.get_by_key('bug_modified_since')
+
+    rcs_inst = rcs.get_rcs(cfg.CONF.review_uri)
+    rcs_inst.setup(key_filename=cfg.CONF.ssh_key_filename,
+                   username=cfg.CONF.ssh_username)
+
     for repo in repos:
         _process_repo(repo, runtime_storage_inst, record_processor_inst,
-                      bug_modified_since)
+                      rcs_inst, bug_modified_since)
+
+    rcs_inst.close()
+
     runtime_storage_inst.set_by_key('bug_modified_since', current_date)
 
     LOG.info('Processing mail lists')
@@ -326,10 +330,6 @@ def main():
     if not default_data:
         LOG.critical('Unable to load default data')
         return not 0
-
-    gerrit = rcs.get_rcs(None, cfg.CONF.review_uri)
-    gerrit.setup(key_filename=cfg.CONF.ssh_key_filename,
-                 username=cfg.CONF.ssh_username)
 
     default_data_processor.process(runtime_storage_inst,
                                    default_data,

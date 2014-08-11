@@ -26,25 +26,32 @@ LOG = logging.getLogger(__name__)
 DEFAULT_PORT = 29418
 GERRIT_URI_PREFIX = r'^gerrit:\/\/'
 PAGE_LIMIT = 100
+REQUEST_COUNT_LIMIT = 20
 
 
 class Rcs(object):
-    def __init__(self, repo, uri):
-        self.repo = repo
-
-    def setup(self, **kwargs):
+    def __init__(self):
         pass
 
-    def log(self, branch, last_id):
+    def setup(self, **kwargs):
+        return True
+
+    def get_project_list(self):
+        pass
+
+    def log(self, repo, branch, last_id):
         return []
 
-    def get_last_id(self, branch):
+    def get_last_id(self, repo, branch):
         return -1
+
+    def close(self):
+        pass
 
 
 class Gerrit(Rcs):
-    def __init__(self, repo, uri):
-        super(Gerrit, self).__init__(repo, uri)
+    def __init__(self, uri):
+        super(Gerrit, self).__init__()
 
         stripped = re.sub(GERRIT_URI_PREFIX, '', uri)
         if stripped:
@@ -54,20 +61,20 @@ class Gerrit(Rcs):
         else:
             raise Exception('Invalid rcs uri %s' % uri)
 
+        self.key_filename = None
+        self.username = None
+
         self.client = paramiko.SSHClient()
         self.client.load_system_host_keys()
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-    def setup(self, **kwargs):
-        if 'key_filename' in kwargs:
-            self.key_filename = kwargs['key_filename']
-        else:
-            self.key_filename = None
+        self.request_count = 0
 
-        if 'username' in kwargs:
-            self.username = kwargs['username']
-        else:
-            self.username = None
+    def setup(self, **kwargs):
+        self.key_filename = kwargs.get('key_filename')
+        self.username = kwargs.get('username')
+
+        return self._connect()
 
     def _connect(self):
         try:
@@ -99,12 +106,21 @@ class Gerrit(Rcs):
         return cmd
 
     def _exec_command(self, cmd):
+        # check how many requests were sent over connection and reconnect
+        if self.request_count >= REQUEST_COUNT_LIMIT:
+            self.close()
+            self.request_count = 0
+            self._connect()
+        else:
+            self.request_count += 1
+
         try:
             return self.client.exec_command(cmd)
         except Exception as e:
             LOG.error('Error %(error)s while execute command %(cmd)s',
                       {'error': e, 'cmd': cmd})
             LOG.exception(e)
+            self.request_count = REQUEST_COUNT_LIMIT
             return False
 
     def _poll_reviews(self, project_organization, module, branch,
@@ -139,50 +155,38 @@ class Gerrit(Rcs):
                 break
 
     def get_project_list(self):
-        if not self._connect():
-            return
-
         exec_result = self._exec_command('gerrit ls-projects')
         if not exec_result:
             raise Exception("Unable to retrieve list of projects from gerrit.")
         stdin, stdout, stderr = exec_result
         result = [line.strip() for line in stdout]
-        self.client.close()
 
         return result
 
-    def log(self, branch, last_id, grab_comments=False):
-        if not self._connect():
-            return
-
+    def log(self, repo, branch, last_id, grab_comments=False):
         # poll new reviews from the top down to last_id
-        LOG.debug('Poll new reviews for module: %s', self.repo['module'])
-        for review in self._poll_reviews(self.repo['organization'],
-                                         self.repo['module'], branch,
+        LOG.debug('Poll new reviews for module: %s', repo['module'])
+        for review in self._poll_reviews(repo['organization'],
+                                         repo['module'], branch,
                                          last_id=last_id,
                                          grab_comments=grab_comments):
             yield review
 
         # poll open reviews from last_id down to bottom
-        LOG.debug('Poll open reviews for module: %s', self.repo['module'])
+        LOG.debug('Poll open reviews for module: %s', repo['module'])
         start_id = None
         if last_id:
             start_id = last_id + 1  # include the last review into query
-        for review in self._poll_reviews(self.repo['organization'],
-                                         self.repo['module'], branch,
+        for review in self._poll_reviews(repo['organization'],
+                                         repo['module'], branch,
                                          start_id=start_id, is_open=True,
                                          grab_comments=grab_comments):
             yield review
 
-        self.client.close()
+    def get_last_id(self, repo, branch):
+        LOG.debug('Get last id for module: %s', repo['module'])
 
-    def get_last_id(self, branch):
-        if not self._connect():
-            return None
-
-        LOG.debug('Get last id for module: %s', self.repo['module'])
-
-        cmd = self._get_cmd(self.repo['organization'], self.repo['module'],
+        cmd = self._get_cmd(repo['organization'], repo['module'],
                             branch, limit=1)
         LOG.debug('Executing command: %s', cmd)
         exec_result = self._exec_command(cmd)
@@ -197,18 +201,19 @@ class Gerrit(Rcs):
                 last_id = int(review['sortKey'], 16)
                 break
 
-        self.client.close()
-
         LOG.debug('Module %(module)s last id is %(id)s',
-                  {'module': self.repo['module'], 'id': last_id})
+                  {'module': repo['module'], 'id': last_id})
         return last_id
 
+    def close(self):
+        self.client.close()
 
-def get_rcs(repo, uri):
+
+def get_rcs(uri):
     LOG.debug('Review control system is requested for uri %s' % uri)
     match = re.search(GERRIT_URI_PREFIX, uri)
     if match:
-        return Gerrit(repo, uri)
+        return Gerrit(uri)
     else:
         LOG.warning('Unsupported review control system, fallback to dummy')
-        return Rcs(repo, uri)
+        return Rcs()

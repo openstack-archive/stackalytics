@@ -67,13 +67,14 @@ def _retrieve_project_list_from_gerrit(project_source):
     LOG.info('Retrieving project list from Gerrit')
     try:
         uri = project_source.get('uri') or cfg.CONF.review_uri
-        gerrit = rcs.Gerrit(None, uri)
+        gerrit_inst = rcs.Gerrit(uri)
         key_filename = (project_source.get('ssh_key_filename') or
                         cfg.CONF.ssh_key_filename)
         username = project_source.get('ssh_username') or cfg.CONF.ssh_username
-        gerrit.setup(key_filename=key_filename, username=username)
+        gerrit_inst.setup(key_filename=key_filename, username=username)
 
-        project_list = gerrit.get_project_list()
+        project_list = gerrit_inst.get_project_list()
+        gerrit_inst.close()
     except Exception as e:
         LOG.exception(e)
         LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
