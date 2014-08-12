@@ -3805,6 +3805,7 @@
         },
         {
             "launchpad_id": "m-koderer",
+            "gerrit_id": "mkoderer",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -3812,7 +3813,7 @@
                 }
             ],
             "user_name": "Marc Koderer",
-            "emails": ["m.koderer@telekom.de"]
+            "emails": ["m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
             "launchpad_id": "maksimov",
