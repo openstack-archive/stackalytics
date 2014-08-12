@@ -8376,7 +8376,7 @@
         },
         {
             "module_group_name": "monasca-group",
-            "modules": ["monasca-agent", "cookbook-monasca-agent", "monasca-api", "cookbook-monasca-api", "monasca-notification", "cookbook-monasca-notification", "monasca-persister", "cookbook-monasca-persister", "monasca-thresh", "cookbook-monasca-thresh", "monasca-agent", "monasca-ceilometer", "monasca-common", "monasca-ui", "monasca-vagrant", "python-monascaclient"]
+            "modules": ["monasca-agent", "cookbook-monasca-agent", "monasca-api", "cookbook-monasca-api", "monasca-notification", "cookbook-monasca-notification", "monasca-persister", "cookbook-monasca-persister", "cookbook-monasca-schema", "monasca-thresh", "cookbook-monasca-thresh", "monasca-agent", "monasca-ceilometer", "monasca-common", "monasca-ui", "monasca-vagrant", "python-monascaclient"]
         },
         {
             "module_group_name": "rally-group",
