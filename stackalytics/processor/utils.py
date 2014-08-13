@@ -89,7 +89,7 @@ def check_email_validity(email):
 def read_uri(uri):
     try:
         fd = six.moves.urllib.request.urlopen(uri)
-        raw = fd.read().decode('utf8')
+        raw = fd.read()
         fd.close()
         return raw
     except Exception as e:
@@ -107,9 +107,9 @@ def read_json_from_uri(uri):
 
 def gzip_decompress(content):
     if six.PY3:
-        return gzip.decompress(content)
+        return gzip.decompress(content).decode('utf8')
     else:
-        gzip_fd = gzip.GzipFile(fileobj=six.moves.StringIO.StringIO(content))
+        gzip_fd = gzip.GzipFile(fileobj=six.moves.StringIO(content))
         return gzip_fd.read()
 
 
