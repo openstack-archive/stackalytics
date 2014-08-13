@@ -1420,6 +1420,17 @@
             "emails": ["danms@us.ibm.com", "dms@danplanet.com", "dansmith@redhat.com"]
         },
         {
+            "launchpad_id": "danny-al-gaaf",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Danny Al-Gaaf",
+            "emails": ["danny.al-gaaf@bisect.de"]
+        },
+        {
             "launchpad_id": "danwent",
             "companies": [
                 {
