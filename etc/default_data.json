@@ -5127,11 +5127,15 @@
             "companies": [
                 {
                     "company_name": "Cloudwatt",
+                    "end_date": "2014-Aug-18"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Sahid Orentino Ferdjaoui",
-            "emails": ["sahid.ferdjaoui@cloudwatt.com", "sahid.ferdjaoui@gmail.com"]
+            "emails": ["sahid.ferdjaoui@cloudwatt.com", "sahid.ferdjaoui@gmail.com", "sferdjao@redhat.com", "sahid.ferdjaoui@redhat.com", "sferdjaoui@redhat.com", "sahid@redhat.com"]
         },
         {
             "launchpad_id": "salvatore-orlando",
