@@ -111,9 +111,20 @@ def export_data(memcached_inst, fd):
         key_prefix = key + ':'
 
         for record_id_set in utils.make_range(0, count, BULK_READ_SIZE):
-            for k, v in six.iteritems(memcached_inst.get_multi(
-                    record_id_set, key_prefix)):
-                pickle.dump((key_prefix + str(k), v), fd)
+            # memcache limits the size of returned data to specific yet unknown
+            # chunk size, the code should verify that all requested records are
+            # returned an be able to fall back to one-by-one retrieval
+
+            chunk = memcached_inst.get_multi(record_id_set, key_prefix)
+            if len(chunk) < len(record_id_set):
+                # retrieve one-by-one
+                for record_id in record_id_set:
+                    key = key_prefix + str(record_id)
+                    pickle.dump((key, memcached_inst.get(key)), fd)
+            else:
+                # dump the whole chunk
+                for k, v in six.iteritems(chunk):
+                    pickle.dump((key_prefix + str(k), v), fd)
 
     for user_seq in range(memcached_inst.get('user:count') or 0):
         user = memcached_inst.get('user:%s' % user_seq)
@@ -124,25 +135,6 @@ def export_data(memcached_inst, fd):
                 pickle.dump(('user:%s' % user['launchpad_id'], user), fd)
             for email in user.get('emails') or []:
                 pickle.dump(('user:%s' % email, user), fd)
-
-
-def export_data_universal(memcached_inst, fd):
-    LOG.info('Exporting data from memcached')
-    slabs = memcached_inst.get_slabs()
-    for slab_number, slab in six.iteritems(slabs[0][1]):
-        count = int(slab['number'])
-        keys = memcached_inst.get_stats(
-            'cachedump %s %s' % (slab_number, count))[0][1].keys()
-
-        n = 0
-        while n < count:
-            LOG.debug('Dumping slab %s, start record %s', slab_number, n)
-
-            for k, v in six.iteritems(memcached_inst.get_multi(
-                    keys[n: min(count, n + BULK_READ_SIZE)])):
-                pickle.dump((k, v), fd)
-
-            n += BULK_READ_SIZE
 
 
 def _connect_to_memcached(uri):
