@@ -5413,6 +5413,17 @@
             "emails": ["simon.pasquier@bull.net", "pasquier.simon@gmail.com"]
         },
         {
+            "launchpad_id": "sina-sa",
+            "companies": [
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sina Sadeghi",
+            "emails": ["sina.sa@gmail.com", "sina@aptira.com"]
+        },
+        {
             "launchpad_id": "sjmc7",
             "companies": [
                 {
