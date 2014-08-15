@@ -853,6 +853,17 @@
             "emails": ["boris@pavlovic.me", "bpavlovic@mirantis.com"]
         },
         {
+            "launchpad_id": "bradjones",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bradley Jones",
+            "emails": ["jones.bradley@me.com", "bradjone@cisco.com"]
+        },
+        {
             "launchpad_id": "breu",
             "companies": [
                 {
