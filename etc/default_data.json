@@ -6217,11 +6217,16 @@
             "companies": [
                 {
                     "company_name": "Canonical",
+                    "end_date": "2014-Mar-01"
+                },
+                {
+                    "company_name": "Letv Cloud Computing",
                     "end_date": null
                 }
             ],
             "user_name": "Jian Wen",
-            "emails": ["jian.wen@canonical.com", "wenjianhn@gmail.com", "jian.wen@ubuntu.com"]
+            "emails": ["jian.wen@canonical.com", "wenjianhn@gmail.com", "jian.wen@ubuntu.com",
+                       "wenjian@letv.com"]
         },
         {
             "launchpad_id": "wingwj",
