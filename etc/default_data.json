@@ -4886,6 +4886,17 @@
             "emails": ["john@dewey.ws"]
         },
         {
+            "launchpad_id": "rick-chen",
+            "companies": [
+                {
+                    "company_name": "ProphetStor",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rick Chen",
+            "emails": ["rick.chen@prophetstor.com"]
+        },
+        {
             "launchpad_id": "ridhi-j-shah",
             "companies": [
                 {
