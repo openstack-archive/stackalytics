@@ -158,29 +158,51 @@ class RecordProcessor(object):
             return user['companies'][0]['company_name']
         return None
 
-    def _merge_user_profiles(self, user_a, user_b, user_c):
-        user = {}
+    def _merge_user_profiles(self, user_profiles):
+        merged_user = {}  # merged user profile
+
+        # collect ordinary fields
         for key in ['seq', 'user_name', 'user_id',
                     'launchpad_id', 'companies']:
-            user[key] = user_a.get(key) or user_b.get(key) or user_c.get(key)
+            merged_user[key] = next((v.get(key) for v in user_profiles
+                                     if v.get(key)), None)
 
-        if user['launchpad_id'] and user['user_id'] != user['launchpad_id']:
-            user['user_id'] = user['launchpad_id']
+        # update user_id, prefer it to be equal to launchpad_id
+        merged_user['user_id'] = (merged_user['launchpad_id'] or
+                                  merged_user['user_id'])
 
+        # merge emails
         emails = set([])
         core_in = set([])
-        for u in [user_a, user_b, user_c]:
+        for u in user_profiles:
             emails |= set(u.get('emails', []))
             core_in |= set(u.get('core', []))
-        user['emails'] = list(emails)
-        user['core'] = list(core_in)
+        merged_user['emails'] = list(emails)
+        merged_user['core'] = list(core_in)
 
-        self._update_user_affiliation(user)
+        # merge companies
+        merged_companies = merged_user['companies']
+        for u in user_profiles:
+            companies = u.get('companies')
+            if companies:
+                if (companies[0]['company_name'] != self._get_independent() or
+                        len(companies) > 1):
+                    merged_companies = companies
+                    break
+        merged_user['companies'] = merged_companies
 
-        if user_a.get('seq') and user_b.get('seq'):
-            LOG.debug('Delete user: %s', user_b)
-            utils.delete_user(self.runtime_storage_inst, user_b)
-        return user
+        self._update_user_affiliation(merged_user)
+
+        seqs = set(u.get('seq') for u in user_profiles if u.get('seq'))
+        if len(seqs) > 1:
+            # profiles are merged, keep only one, remove others
+            seqs.remove(merged_user['seq'])
+
+            for u in user_profiles:
+                if u.get('seq') in seqs:
+                    LOG.debug('Delete user: %s', u)
+                    utils.delete_user(self.runtime_storage_inst, u)
+        return merged_user
 
     def update_user(self, record):
         email = record.get('author_email')
@@ -203,7 +225,7 @@ class RecordProcessor(object):
             user = user_e
         else:
             if user_e or user_l:
-                user = self._merge_user_profiles(user_e, user_l, user)
+                user = self._merge_user_profiles([user_e, user_l, user])
             else:
                 # create new
                 if not user_name:
