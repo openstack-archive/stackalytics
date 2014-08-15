@@ -574,11 +574,16 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2014-Aug-15"
+		},
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Angus Salkeld",
-            "emails": ["angus@salkeld.id.au", "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
+            "emails": ["angus@salkeld.id.au", "asalkeld@mirantis.com",
+		       "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
             "launchpad_id": "ashraf-vazeer",
