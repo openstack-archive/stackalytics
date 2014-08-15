@@ -1780,6 +1780,21 @@
             "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com"]
         },
         {
+            "launchpad_id": "dragon889",
+            "companies": [
+                {
+                   "company_name": "*independent",
+                   "end_date": "2014-Aug-05"
+                },
+                {
+                    "company_name": "Letv Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "LIU Yulong",
+            "emails": ["liuyulong@letv.com", "yulong@cloudcraft.cn", "dragon889@163.com"]
+        },
+        {
             "launchpad_id": "dreidellhasa",
             "companies": [
                 {
