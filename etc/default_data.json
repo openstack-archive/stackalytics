@@ -5054,6 +5054,21 @@
             "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
         },
         {
+            "launchpad_id": "roeyc",
+            "companies": [
+                {
+                    "company_name": "Mellanox",
+                    "end_date": "2014-Aug-04"
+                },
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roey Chen",
+            "emails": ["roeyc@vmware.com", "chen.roey@gmail.com"]
+        },
+        {
             "launchpad_id": "rohitagarwalla",
             "companies": [
                 {
