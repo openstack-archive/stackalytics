@@ -2701,6 +2701,17 @@
             "emails": ["invsblduck@gmail.com"]
         },
         {
+            "launchpad_id": "ionosphere80",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Kassawara",
+            "emails": ["mkassawara@gmail.com", "matt.kassawara@rackspace.com"]
+        },
+        {
             "launchpad_id": "ironcamel",
             "companies": [
                 {
