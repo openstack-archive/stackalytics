@@ -6135,6 +6135,17 @@
             "emails": ["usrleon@gmail.com", "mlvov@mirantis.com"]
         },
         {
+            "launchpad_id": "vanderliang",
+            "companies": [
+                {
+                    "company_name": "Letv Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Deliang Fan",
+            "emails": ["fandeliang@letv.com", "vanderliang@gmail.com"]
+        },
+        {
             "launchpad_id": "vandita-arora",
             "companies": [
                 {
