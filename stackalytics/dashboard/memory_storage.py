@@ -145,9 +145,9 @@ class CachedMemoryStorage(MemoryStorage):
         return set()
 
     def get_index_keys_by_record_ids(self, index_name, record_ids):
-        return set([key
-                    for key, value in six.iteritems(self.indexes[index_name])
-                    if value & record_ids])
+        return set(key
+                   for key, value in six.iteritems(self.indexes[index_name])
+                   if value & record_ids)
 
     def get_record_ids(self):
         return self.records.keys()
