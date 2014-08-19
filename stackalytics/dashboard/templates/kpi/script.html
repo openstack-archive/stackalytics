@@ -6,6 +6,8 @@
 
 {% block scripts %}
     <script type="text/javascript">
+        var g_doc_pattern = /.*docs.google.com.*\/d\/(.+)\/.*/;
+
         $(document).ready(function () {
 
             function processTextArea() {
@@ -15,8 +17,18 @@
             var url_vars = getUrlVars();
 
             if ("url" in url_vars) {
-                $("#kpi_url").val(url_vars["url"]);
-                $.get(url_vars["url"],function (data) {
+                var url = url_vars["url"];
+                $("#kpi_url").val(url);
+                $("#source_link").attr("href", url);
+
+                var pattern_match = g_doc_pattern.exec(url);
+                if (pattern_match) {
+                    var doc_id = pattern_match[1];
+                    url = "https://docs.google.com/feeds/download/documents/export/Export?id=" + doc_id + "&exportFormat=txt";
+                    console.log(url);
+                }
+
+                $.get(url,function (data) {
                     $("#kpi_script").val(data);
                     processTextArea();
                 }).fail(function(){
@@ -41,6 +53,7 @@
         <label for="kpi_url">URL:</label>
         <input id="kpi_url" style="width: 45em;" name="url"/>
         <input type="submit" value="Load">
+        <span><a href="" id="source_link">View Source</a></span>
     </form>
 
     <label for="kpi_script"></label>
