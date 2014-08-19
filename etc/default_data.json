@@ -1695,6 +1695,17 @@
             "emails": ["pranav@aptira.com","pps.pranav@gmail.com", "dguitarbite@gmail.com"]
         },
         {
+            "launchpad_id": "dhami",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mandeep Dhami",
+            "emails": ["dhami@noironetworks.com","mandeep.dhami@gmail.com"]
+        },
+        {
             "launchpad_id": "diane-fleming",
             "companies": [
                 {
@@ -4623,6 +4634,17 @@
             "emails": ["gleebix@gmail.com"]
         },
         {
+            "launchpad_id": "paul-l-kehrer",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paul Kehrer",
+            "emails": ["paul.l.kehrer@gmail.com"]
+        },
+        {
             "launchpad_id": "paulcz",
             "companies": [
                 {
@@ -5720,6 +5742,17 @@
             ],
             "user_name": "Stephane Miller",
             "emails": ["stephane@alum.mit.edu", "cinerama@hp.com"]
+        },
+        {
+            "launchpad_id": "steve-leon",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steve Leon",
+            "emails": ["kokhang@gmail.com", "steve.leon@hp.com"]
         },
         {
             "launchpad_id": "steve-stevebaker",
