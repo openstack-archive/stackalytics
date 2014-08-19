@@ -3571,6 +3571,17 @@
             ]
         },
         {
+            "launchpad_id": "kragniz",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Louis Taylor",
+            "emails": ["louis.taylor@hp.com", "kragniz@gmail.com"]
+        },
+        {
             "launchpad_id": "krotscheck",
             "companies": [
                 {
