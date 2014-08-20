@@ -791,6 +791,17 @@
             "emails": ["brad@nicira.com", "bhall@nicira.com"]
         },
         {
+            "launchpad_id": "blueboxjesse",
+            "companies": [
+                {
+                    "company_name": "Blue Box",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jesse Proudman",
+            "emails": ["jproudman@bluebox.net"]
+        },
+        {
             "launchpad_id": "bmcconne",
             "companies": [
                 {
