@@ -1601,6 +1601,19 @@
             "emails": ["deepak.garg@citrix.com", "deepakgarg.iitg@gmail.com"]
         },
         {
+            "launchpad_id": "degdoo",
+            "gerrit_id": "degdoo",
+            "companies": [
+                {
+                    "company_name": "Rakuten",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Koichi Yoshigoe",
+            "emails": ["koichi.yoshigoe@gmail.com", "koichi.yoshigoe@mail.rakuten.com"]
+        },
+
+        {
             "launchpad_id": "denny-6",
             "companies": [
                 {
