@@ -7432,6 +7432,10 @@
             "company_name": "Radware"
         },
         {
+            "domains": ["rakuten.com", "rakops.com"],
+            "company_name": "Rakuten"
+        },
+        {
             "domains": ["ravellosystems.com"],
             "company_name": "Ravello Systems"
         },
