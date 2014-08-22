@@ -4188,6 +4188,20 @@
             "emails": ["woppin@gmail.com","michchap@cisco.com"]
         },
         {
+            "launchpad_id": "miguelgrinberg",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Miguel Grinberg",
+            "emails": [
+                "miguel.grinberg@gmail.com",
+                "miguel.grinberg@rackspace.com"
+            ]
+        },
+        {
             "launchpad_id": "mihgen",
             "user_name": "Mike Scherbakov",
             "companies": [
