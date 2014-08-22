@@ -5214,6 +5214,21 @@
             "emails": ["rsokolkov@mirantis.com"]
         },
         {
+            "launchpad_id": "rtapadar",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": "2014-Jul-28"
+                },
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rudrajit Tapadar",
+            "emails": ["rudrajit.tapadar@gmail.com", "rudrajit_tapadar@symantec.com"]
+        },
+        {
             "launchpad_id": "rtb",
             "companies": [
                 {
