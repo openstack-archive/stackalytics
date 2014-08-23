@@ -15,6 +15,7 @@
 
 import collections
 import os
+import sys
 
 import flask
 from oslo.config import cfg
@@ -39,9 +40,28 @@ CompactRecord = collections.namedtuple('CompactRecord',
                                        RECORD_FIELDS_FOR_AGGREGATE)
 
 
+if six.PY2:
+    _unihash = {}
+
+    def uniintern(o):
+        if not isinstance(o, basestring):
+            return o
+        if isinstance(o, str):
+            return intern(o)
+        if isinstance(o, unicode):
+            return _unihash.setdefault(o, o)
+else:
+    def uniintern(o):
+        if isinstance(o, str):
+            return sys.intern(o)
+        else:
+            return o
+
+
 def compact_records(records):
     for record in records:
-        compact = dict((k, record.get(k)) for k in RECORD_FIELDS_FOR_AGGREGATE)
+        compact = dict((k, uniintern(record.get(k)))
+                       for k in RECORD_FIELDS_FOR_AGGREGATE)
 
         yield CompactRecord(**compact)
 
