@@ -2345,6 +2345,17 @@
             "emails": ["geekinutah@gmail.com"]
         },
         {
+            "launchpad_id": "gessau",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Henry Gessau",
+            "emails": ["gessau@cisco.com", "gessau@gmail.com"]
+        },
+        {
             "launchpad_id": "ghe.rivero",
             "companies": [
                 {
