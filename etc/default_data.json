@@ -176,6 +176,18 @@
             "emails": ["adrian@17od.com", "adrian_f_smith@dell.com"]
         },
         {
+            "launchpad_id": "agarwalnisha1980",
+            "gerrit_id": "Nisha",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nisha Agarwal",
+            "emails": ["agarwalnisha1980@gmail.com"]
+        },
+        {
             "launchpad_id": "aignatov",
             "companies": [
                 {
@@ -526,6 +538,18 @@
             ],
             "user_name": "Antony Messerli",
             "emails": ["root@debian.ohthree.com", "ant@openstack.org", "amesserl@rackspace.com"]
+        },
+        {
+            "launchpad_id": "anusha-iiitm",
+            "gerrit_id": "anusha08",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anusha Ramineni",
+            "emails": ["anusha.iiitm@gmail.com"]
         },
         {
             "launchpad_id": "aostapenko",
@@ -2080,6 +2104,18 @@
             ],
             "user_name": "Sergey Skripnick",
             "emails": ["sskripnick@mirantis.com", "eyerediskin@gmail.com"]
+        },
+        {
+            "launchpad_id": "faizan-barmawer",
+            "gerrit_id": "barmawer",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Syed Ismail Faizan Barmawer",
+            "emails": ["faizan.barmawer@gmail.com"]
         },
         {
             "launchpad_id": "fallenpegasus",
@@ -4738,6 +4774,18 @@
             "emails": ["psiwczak@internap.com", "psiwczak@mirantis.com"]
         },
         {
+            "launchpad_id": "psp0808",
+            "gerrit_id": "Pradhan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pradhan",
+            "emails": ["psp0808@gmail.com"]
+        },
+        {
             "launchpad_id": "pvo",
             "companies": [
                 {
@@ -4803,6 +4851,17 @@
             ],
             "user_name": "Rajdeep Dua",
             "emails": ["dua_rajdeep@yahoo.com", "rajdeepd@vmware.com"]
+        },
+        {
+            "launchpad_id": "rameshg87",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ramakrishnan G",
+            "emails": ["rameshg87@gmail.com"]
         },
         {
             "launchpad_id": "raphmraph",
@@ -5594,6 +5653,17 @@
             "emails": ["nstarodubtsev@mirantis.com", "starodubcevna@gmail.com"]
         },
         {
+            "launchpad_id": "stendulker",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shivanand Tendulker",
+            "emails": ["stendulker@gmail.com"]
+        },
+        {
             "launchpad_id": "stephaneeee",
             "gerrit_id": "cinerama",
             "companies": [
@@ -6174,6 +6244,17 @@
             ],
             "user_name": "Viswa Vutharkar",
             "emails": ["vpvutharkar@ebaysf.com"]
+        },
+        {
+            "launchpad_id": "wan-yen-hsu",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wan-yen Hsu",
+            "emails": ["wan-yen.hsu@hp.com"]
         },
         {
             "launchpad_id": "wanglong",
