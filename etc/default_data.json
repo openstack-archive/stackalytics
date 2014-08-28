@@ -867,6 +867,21 @@
             "emails": ["bob.melander@gmail.com"]
         },
         {
+            "launchpad_id": "boden",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Aug-22"
+                },
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Boden Russell",
+            "emails": ["bodenvmw@gmail.com"]
+        },
+        {
             "launchpad_id": "bogdando",
             "user_name": "Bogdan Dobrelya",
             "companies": [
