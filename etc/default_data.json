@@ -4061,6 +4061,17 @@
             "emails": ["mathieu.rohon@gmail.com"]
         },
         {
+            "launchpad_id": "mathomd",
+            "companies": [
+                {
+                    "company_name": "Rakuten",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kentaro Sasaki",
+            "emails": ["mathomd@gmail.com"]
+        },
+        {
             "launchpad_id": "mathrock",
             "companies": [
                 {
