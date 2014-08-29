@@ -5243,6 +5243,18 @@
             "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
         },
         {
+            "launchpad_id": "rocha-porto",
+            "gerrit_id": "rocha",
+            "companies": [
+                {
+                    "company_name": "Catalyst IT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ricardo Rocha",
+            "emails": ["ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
+        },
+        {
             "launchpad_id": "roeyc",
             "companies": [
                 {
