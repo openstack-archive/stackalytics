@@ -4252,6 +4252,10 @@
             "companies": [
                 {
                     "company_name": "Symantec",
+                    "end_date": "2014-May-13"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
