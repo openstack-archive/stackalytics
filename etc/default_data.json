@@ -952,6 +952,17 @@
             "emails": ["brian.tully@hp.com", "brian.tully@gmail.com"]
         },
         {
+            "launchpad_id": "briancurtin",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Curtin",
+            "emails": ["brian@python.org", "brian.curtin@gmail.com", "brian.curtin@rackspace.com"]
+        },
+        {
             "launchpad_id": "broskos",
             "companies": [
                 {
