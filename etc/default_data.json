@@ -6286,11 +6286,15 @@
             "companies": [
                 {
                     "company_name": "Symantec",
+                    "end_date": "2014-Aug-15"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Travis McPeak",
-            "emails": ["travis_mcpeak@symantec.com"]
+            "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com"]
         },
         {
             "launchpad_id": "treinish",
