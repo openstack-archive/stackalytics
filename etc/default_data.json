@@ -8878,7 +8878,7 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["openstack", "openstack-infra", "openstack-dev"]
+            "modules": ["official-integrated", "official-incubated", "official-other", "governance"]
         },
         {
             "id": "integrated",
@@ -8891,18 +8891,6 @@
             "title": "incubated",
             "child": true,
             "modules": ["official-incubated"]
-        },
-        {
-            "id": "documentation",
-            "title": "documentation",
-            "child": true,
-            "modules": ["documentation"]
-        },
-        {
-            "id": "infra",
-            "title": "infra",
-            "child": true,
-            "modules": ["openstack-infra"]
         },
         {
             "id": "other",
