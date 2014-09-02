@@ -65,4 +65,6 @@ OPTS = [
     cfg.StrOpt('collect-profiler-stats',
                help='Name of file to store python profiler data. This option '
                     'works for dashboard only'),
+    cfg.IntOpt('members-look-ahead', default=250,
+               help='How many member profiles to look ahead after the last'),
 ]

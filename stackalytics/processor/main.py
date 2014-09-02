@@ -175,7 +175,8 @@ def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
 
 def _process_member_list(uri, runtime_storage_inst, record_processor_inst):
     member_iterator = mps.log(uri, runtime_storage_inst,
-                              cfg.CONF.days_to_update_members)
+                              cfg.CONF.days_to_update_members,
+                              cfg.CONF.members_look_ahead)
     member_iterator_typed = _record_typer(member_iterator, 'member')
     processed_member_iterator = record_processor_inst.process(
         member_iterator_typed)

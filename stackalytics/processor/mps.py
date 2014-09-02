@@ -29,8 +29,6 @@ NAME_AND_DATE_PATTERN = r'<h3>(?P<member_name>[^<]*)[\s\S]*?' \
 COMPANY_PATTERN = r'<strong>Date\sJoined[\s\S]*?<b>(?P<company_draft>[^<]*)' \
                   r'[\s\S]*?From\s(?P<date_from>[\s\S]*?)\(Current\)'
 
-CNT_EMPTY_MEMBERS = 50
-
 
 def _convert_str_fields_to_unicode(result):
     for field, value in six.iteritems(result):
@@ -69,7 +67,7 @@ def _retrieve_member(uri, member_id, html_parser):
     return member
 
 
-def log(uri, runtime_storage_inst, days_to_update_members):
+def log(uri, runtime_storage_inst, days_to_update_members, members_look_ahead):
     LOG.debug('Retrieving new openstack.org members')
 
     last_update_members_date = runtime_storage_inst.get_by_key(
@@ -90,7 +88,7 @@ def log(uri, runtime_storage_inst, days_to_update_members):
     cur_index = last_member_index + 1
     html_parser = six.moves.html_parser.HTMLParser()
 
-    while cnt_empty < CNT_EMPTY_MEMBERS:
+    while cnt_empty < members_look_ahead:
 
         profile_uri = uri + str(cur_index)
         member = _retrieve_member(profile_uri, str(cur_index), html_parser)
