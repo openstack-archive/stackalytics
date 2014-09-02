@@ -3514,6 +3514,22 @@
             "emails": ["rkanade@redhat.com", "rohan.kanade@izeltech.com", "openstack@rohankanade.com", "rohan.kanade@nttdata.com"]
         },
         {
+            "launchpad_id": "kanagaraj-manickam",
+            "gerrit_id": "kanagarajm",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2012-Nov-21"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kanagaraj Manickam",
+            "emails": ["mkr1481@gmail.com", "kanagaraj.manickam@hp.com"]
+        },
+        {
             "launchpad_id": "kannan",
             "companies": [
                 {
