@@ -5316,6 +5316,18 @@
             "emails": ["rohitgarwalla@gmail.com", "rohitagarwalla@gmail.com", "roagarwa@cisco.com"]
         },
         {
+            "launchpad_id": "romain-hardouin",
+            "gerrit_id": "romainh",
+            "companies": [
+                {
+                    "company_name": "Cloudwatt",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Romain Hardouin",
+            "emails": ["romain.hardouin@cloudwatt.com", "romain_hardouin@yahoo.fr"]
+        },
+        {
             "launchpad_id": "romcheg",
             "companies": [
                 {
