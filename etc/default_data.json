@@ -4268,6 +4268,21 @@
             "emails": ["kmestery@cisco.com", "mestery@noironetworks.com"]
         },
         {
+            "launchpad_id": "mfisch",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2013-Nov-22"
+                },
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Fischer",
+            "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com", "matt.fischer@twcable.com", "matthew.fischer@twcable.com"]
+        },
+        {
             "launchpad_id": "miarmak",
             "companies": [
                 {
@@ -7793,6 +7808,10 @@
         {
             "domains": ["tunnelvisionlabs.com"],
             "company_name": "Tunnel Vision Laboratories"
+        },
+        {
+            "domains": ["twcable.com"],
+            "company_name": "Time Warner Cable"
         },
         {
             "domains": ["ubisoft.com"],
