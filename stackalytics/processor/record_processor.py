@@ -282,7 +282,8 @@ class RecordProcessor(object):
     def _make_review_record(self, record):
         # copy everything except patchsets and flatten user data
         review = dict([(k, v) for k, v in six.iteritems(record)
-                       if k not in ['patchSets', 'owner', 'createdOn']])
+                       if k not in ['patchSets', 'owner', 'createdOn',
+                                    'comments']])
         owner = record['owner']
 
         review['primary_key'] = review['id']
