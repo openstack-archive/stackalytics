@@ -2662,7 +2662,22 @@
             "primary_key": "40f4d6305183723b670b9c5f50348ef50735f212",
             "module": "operations-guide",
             "subject": "Move glossary to its own directory"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I2208c23fe9bb145a656cc5006563280851cc956e"],
+            "primary_key": "f1b7d46f271115ddade111bb9fd4eb0b7c8f9122",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I5bf6c43d265a4bf094e8f9bef522712f6287142e"],
+            "primary_key": "fb26e75b1ae08d18c0032bbe969407c7f20a7c74",
+            "module": "api-site",
+            "subject": "Update sitemap.xml"
         }
-
     ]
 }
