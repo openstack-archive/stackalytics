@@ -6297,6 +6297,18 @@
             "emails": ["tim.simpson@rackspace.com", "tim.simpson4@gmail.com"]
         },
         {
+            "launchpad_id": "tkak",
+            "gerrit_id": "tkakfrkw",
+            "companies": [
+                {
+                    "company_name": "Rakuten",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Takaaki FURUKAWA",
+            "emails": ["takaaki.furukawa@rakops.com", "takaaki.furukawa@mail.rakuten.com"]
+        },
+        {
             "launchpad_id": "tmazur",
             "companies": [
                 {
