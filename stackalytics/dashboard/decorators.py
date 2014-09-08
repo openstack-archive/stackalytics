@@ -17,6 +17,7 @@ import cProfile
 import functools
 import json
 import operator
+import time
 
 import flask
 from oslo.config import cfg
@@ -483,7 +484,19 @@ def response():
             else:
                 mimetype = 'application/json'
 
-            return flask.current_app.response_class(data, mimetype=mimetype)
+            resp = flask.current_app.response_class(data, mimetype=mimetype)
+            update_time = vault.get_vault()['vault_next_update_time']
+            now = utils.date_to_timestamp('now')
+            if now < update_time:
+                max_age = update_time - now
+            else:
+                max_age = 0
+            resp.headers['cache-control'] = 'public, max-age=%d' % (max_age,)
+            resp.headers['expires'] = time.strftime(
+                '%a, %d %b %Y %H:%M:%S GMT',
+                time.gmtime(vault.get_vault()['vault_next_update_time']))
+            resp.headers['access-control-allow-origin'] = '*'
+            return resp
 
         return response_decorated_function
 
