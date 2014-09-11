@@ -243,6 +243,18 @@
             "emails": ["agangil@vmware.com", "akashg1611@gmail.com"]
         },
         {
+            "launchpad_id": "akbajaj",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ajay Bajaj",
+            "emails": ["akbajaj@hp.com"]
+        },
+        {
+
             "launchpad_id": "akscram",
             "companies": [
                 {
@@ -380,6 +392,17 @@
             ],
             "user_name": "Amrith Kumar",
             "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith.kumar@gmail.com"]
+        },
+        {
+            "launchpad_id": "ananta",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anant Patil",
+            "emails": ["anant.techie@gmail.com","anant.patil@hp.com"]
         },
         {
             "launchpad_id": "anastasia-martynova",
@@ -619,6 +642,17 @@
             "user_name": "Angus Salkeld",
             "emails": ["angus@salkeld.id.au", "asalkeld@mirantis.com",
 		       "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
+        },
+        {
+            "launchpad_id": "ashokkumaran-b",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashok kumaran B",
+            "emails": ["ashokkumaran.b@gmail.com","ashokkumaran.b@hp.com"]
         },
         {
             "launchpad_id": "ashraf-vazeer",
@@ -996,6 +1030,17 @@
             "emails": ["btorch@gmail.com", "marcelo.martins@rackspace.com"]
         },
         {
+            "launchpad_id": "bvivek",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vivekanandan B",
+            "emails": ["vivekanandan.bangarusamy@hp.com"]
+        },
+        {
             "launchpad_id": "c-kassen",
             "companies": [
                 {
@@ -1178,6 +1223,18 @@
             "emails": ["chen.zheng@easystack.cn", "czheng@cn.ibm.com"]
         },
         {
+            "launchpad_id": "chetan6033",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chetanpatige",
+            "emails": ["chetan.p@hp.com","chetan6033@gmail.com"]
+        },
+        {
+
             "launchpad_id": "chiradeep",
             "companies": [
                 {
@@ -1653,6 +1710,17 @@
             ],
             "user_name": "Deepak Garg",
             "emails": ["deepak.garg@citrix.com", "deepakgarg.iitg@gmail.com"]
+        },
+        {
+            "launchpad_id": "deepali-verneya",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Deepali Verneya",
+            "emails": ["deepali.verneya@hp.com"]
         },
         {
             "launchpad_id": "degdoo",
@@ -2856,6 +2924,17 @@
             ],
             "user_name": "Naveed Massjouni",
             "emails": ["naveedm9@gmail.com", "naveed.massjouni@rackspace.com"]
+        },
+        {
+            "launchpad_id": "ishant-tyagi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ishant Tyagi",
+            "emails": ["ishant.tyagi@hp.com","tyagi.ishant@gmail.com"]
         },
         {
             "launchpad_id": "ishii-hisaharu",
@@ -4254,6 +4333,17 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "mayank0107",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mayank",
+            "emails": ["mayank.kumar@hp.com","mayank0107@yahoo.co.in"]
+        },
+        {
             "launchpad_id": "mdrnstm",
             "companies": [
                 {
@@ -4639,6 +4729,28 @@
             "emails": ["nikhil.komawar@rackspace.com", "nikhilskomawar@gmail.com"]
         },
         {
+            "launchpad_id": "nikunj2512",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nikunj Agarwal",
+            "emails": ["nikunj.aggarwal@hp.com","nikunj2512@gmail.com"]
+        },
+        {
+            "launchpad_id": "nileshkumar-govindbhai-patel",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nileshkumar Patel",
+            "emails": ["nileshkumar-govindbhai.patel@hp.com"]
+        },
+        {
             "launchpad_id": "niu-zglinux",
             "companies": [
                 {
@@ -4725,6 +4837,17 @@
             ],
             "user_name": "Roman Bogorodskiy",
             "emails": ["bogorodskiy@gmail.com", "rbogorodskiy@mirantis.com"]
+        },
+        {
+            "launchpad_id": "novel-kumar",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Novel Kumar",
+            "emails": ["novel.kumar@gmail.com"]
         },
         {
             "launchpad_id": "ogazitt",
@@ -5189,6 +5312,17 @@
             ],
             "user_name": "John Dewey",
             "emails": ["john@dewey.ws"]
+        },
+        {
+            "launchpad_id": "rh-s",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rakesh H S",
+            "emails": ["rh-s@hp.com","rakeshhs1@gmail.com"]
         },
         {
             "launchpad_id": "rick-chen",
@@ -5704,6 +5838,17 @@
             "emails": ["shaunm@gnome.org"]
         },
         {
+             "launchpad_id": "shausy",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shanthakumar K",
+            "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com"]
+        },
+        {
             "launchpad_id": "shilla-saebi",
             "companies": [
                 {
@@ -5804,6 +5949,17 @@
             ],
             "user_name": "Sina Sadeghi",
             "emails": ["sina.sa@gmail.com", "sina@aptira.com"]
+        },
+        {
+             "launchpad_id": "sjayanthi",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Swaroop Jayanthi",
+            "emails": ["sjayanthi@hp.com"]
         },
         {
             "launchpad_id": "sjmc7",
