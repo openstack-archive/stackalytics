@@ -2762,6 +2762,18 @@
             ],
             "emails": ["ipekelny@mirantis.com", "ipekelny@griddynamics.com", "pekelny@gmail.com"]
         },
+		{
+           "launchpad_id": "ichihara-hirofumi",
+           "gerrit_id": "Hirofumi-Ichihara",
+           "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Hirofumi Ichihara",
+           "emails": ["ichihara.hirofumi@lab.ntt.co.jp", "ichihara.hirofumi@gmail.com"]
+        },
         {
            "launchpad_id": "idegtiarov",
            "gerrit_id": "tovstun",
