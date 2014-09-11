@@ -5131,6 +5131,18 @@
             "emails": ["rbowen@redhat.com", "rbowen@rcbowen.com"]
         },
         {
+            "launchpad_id": "rcarrillocruz",
+            "gerrit_id" : "rcc",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ricardo Carrillo Cruz",
+            "emails": ["ricardo.carrillo.cruz@gmail.com", "ricardo.carrillo.cruz@hp.com"]
+        },
+        {
             "launchpad_id": "rconradharris",
             "companies": [
                 {
