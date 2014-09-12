@@ -9137,7 +9137,7 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["official-integrated", "official-incubated", "official-other", "governance"]
+            "modules": ["official-integrated", "official-incubated", "official-other", "governance", "python-openstackclient"]
         },
         {
             "id": "integrated",
