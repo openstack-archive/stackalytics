@@ -3258,6 +3258,17 @@
             "emails": ["lawrancejing@gmail.com", "jing.liuqing@99cloud.net"]
         },
         {
+            "launchpad_id": "jjohnsonkoilraj",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "johnson raj",
+            "emails": ["johnson.raj@hp.com"]
+        },
+        {
             "launchpad_id": "jk0",
             "companies": [
                 {
@@ -4054,6 +4065,18 @@
             "emails": ["logan@bacoosta.com"]
         },
         {
+            "launchpad_id": "lokesh-s",
+            "gerrit_id": "loki",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lokesh s",
+            "emails": ["slokesh184@gmail.com", "lokesh.s@hp.com"]
+        },
+        {
             "launchpad_id": "loquacity",
             "companies": [
                 {
@@ -4119,6 +4142,17 @@
             ],
             "user_name": "Marc Koderer",
             "emails": ["m.koderer@telekom.de", "marc@koderer.com"]
+        },
+        {
+            "launchpad_id": "maheshkumar-pandurangan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maheshkumar Pandurangan",
+            "emails": ["maheshkumar.pandurangan@hp.com"]
         },
         {
             "launchpad_id": "maksimov",
@@ -5084,6 +5118,17 @@
             ],
             "user_name": "Pradeep Kilambi",
             "emails": ["pkilambi@cisco.com", "praddevel@gmail.com"]
+        },
+        {
+            "launchpad_id": "pradeep-av",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pradeep Kumar",
+            "emails": ["pradeep.av@hp.com"]
         },
         {
             "launchpad_id": "praneshpg",
