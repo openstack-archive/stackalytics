@@ -5534,6 +5534,17 @@
             "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
         },
         {
+            "launchpad_id": "robsparker",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rob Parker",
+            "emails": ["rob.s.parker@gmail.com", "rob.parker@hp.com"]
+        },
+        {
             "launchpad_id": "rocha-porto",
             "gerrit_id": "rocha",
             "companies": [
