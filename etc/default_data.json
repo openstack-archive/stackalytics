@@ -5495,6 +5495,18 @@
             "emails": ["nirmal.ranganathan@rackspace.com", "nirmal.ranganathan@rackspace.coom", "rnirmal@gmail.com"]
         },
         {
+            "launchpad_id": "robcresswell",
+            "gerrit_id": "rob-cresswell",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rob Cresswell",
+            "emails": ["rcresswe@cisco.com"]
+        },
+        {
             "launchpad_id": "robert-myers",
             "gerrit_id": "rmyers",
             "companies": [
