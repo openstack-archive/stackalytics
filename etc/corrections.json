@@ -2678,6 +2678,14 @@
             "primary_key": "fb26e75b1ae08d18c0032bbe969407c7f20a7c74",
             "module": "api-site",
             "subject": "Update sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Id5272434132e989c26c67ed44436856b722236f2"],
+            "primary_key": "9f0df8c2451bdb00c17da2a890c954597a5d7f6b",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml file"
         }
     ]
 }
