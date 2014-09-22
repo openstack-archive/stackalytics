@@ -1101,7 +1101,7 @@
                 }
             ],
             "user_name": "Clark Boylan",
-            "emails": ["clark.boylan@gmail.com"]
+            "emails": ["clark.boylan@gmail.com", "cboylan@sapwetik.org"]
         },
         {
             "launchpad_id": "cbrandily",
@@ -1958,7 +1958,7 @@
                 }
             ],
             "user_name": "Doug Hellmann",
-            "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com"]
+            "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com", "doug@doughellmann.com"]
         },
         {
             "launchpad_id": "dragon889",
@@ -4431,7 +4431,7 @@
                 }
             ],
             "user_name": "Kyle Mestery",
-            "emails": ["kmestery@cisco.com", "mestery@noironetworks.com"]
+            "emails": ["kmestery@cisco.com", "mestery@noironetworks.com", "mestery@mestery.com"]
         },
         {
             "launchpad_id": "mfisch",
@@ -4447,6 +4447,17 @@
             ],
             "user_name": "Matt Fischer",
             "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com", "matt.fischer@twcable.com", "matthew.fischer@twcable.com"]
+        },
+        {
+            "launchpad_id": "mgeisler",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Martin Geisler",
+            "emails": ["martin@geisler.net"]
         },
         {
             "launchpad_id": "miarmak",
@@ -4958,6 +4969,17 @@
             "emails": ["olkonami@gmail.com", "okopylova@mirantis.com"]
         },
         {
+            "launchpad_id": "oomichi",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ken'ichi Ohmichi",
+            "emails": ["ken1ohmichi@gmail.com", "oomichi@mxs.nes.nec.co.jp"]
+        },
+        {
             "launchpad_id": "openstack",
             "companies": [
                 {
@@ -5327,6 +5349,17 @@
             ],
             "user_name": "Raphael Mondesir",
             "emails": ["raphael_mondesir@cable.comcast.com", "raphmraph@gmail.com"]
+        },
+        {
+            "launchpad_id": "rblee88",
+            "companies": [
+                {
+                    "company_name": "ThoughtWorks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Richard Lee",
+            "emails": ["rblee88@gmail.com"]
         },
         {
             "launchpad_id": "rbowen",
@@ -5734,6 +5767,18 @@
             ],
             "user_name": "Russell Haering",
             "emails": ["russellhaering@gmail.com", "russell.haering@rackspace.com"]
+        },
+        {
+            "launchpad_id": "ryan-petrello",
+            "gerrit_id": "ryanpetrello",
+            "companies": [
+                {
+                    "company_name": "DreamHost",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ryan Petrello",
+            "emails": ["lists@ryanpetrello.com", "ryan.petrello@dreamhost.com"]
         },
         {
             "launchpad_id": "ryu-midokura",
