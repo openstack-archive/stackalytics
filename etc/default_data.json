@@ -6409,6 +6409,17 @@
             "user_name": "Sylvain Bauza",
             "emails": ["sbauza@free.fr", "sylvain.bauza@bull.net", "sylvain.bauza@gmail.com", "sbauza@redhat.com"]
         },
+ 	{
+            "launchpad_id": "tan-lin-good",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tan Lin",
+            "emails": [ "tan.lin.good@gmail.com"]
+        },
         {
             "launchpad_id": "tangmeiyan77",
             "companies": [
