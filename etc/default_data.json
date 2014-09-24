@@ -1935,6 +1935,17 @@
             "emails": ["dirk@dmllr.de"]
         },
         {
+            "launchpad_id": "docaedo",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christopher Aedo",
+            "emails": ["doc@aedo.net", "caedo@mirantis.com"]
+         },
+         {
             "launchpad_id": "dolph",
             "companies": [
                 {
