@@ -5627,6 +5627,18 @@
             "emails": ["ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
         },
         {
+            "launchpad_id": "rodrigodsousa",
+            "gerrit_id": "rodrigods",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rodrigo Duarte",
+            "emails": ["rodrigods@lsd.ufcg.edu.br", "rodrigodsousa@gmail.com"]
+        },
+        {
             "launchpad_id": "roeyc",
             "companies": [
                 {
