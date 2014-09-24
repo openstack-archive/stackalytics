@@ -2672,6 +2672,17 @@
             "emails": ["guslees@gmail.com", "angus.lees@rackspace.com"]
         },
         {
+            "launchpad_id": "hareesh-puthalath",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hareesh Puthalath",
+            "emails": ["hareesh.puthalath@gmail.com", "hputhala@cisco.com"]
+        },
+        {
             "launchpad_id": "harlowja",
             "companies": [
                 {
