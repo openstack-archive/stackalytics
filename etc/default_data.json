@@ -5676,6 +5676,17 @@
             "emails": ["romcheg@romcheg.org"]
         },
         {
+            "launchpad_id": "romilg",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Romil Gupta",
+            "emails": ["romilg@hp.com", "romilgupta19@gmail.com"]
+        },
+        {
             "launchpad_id": "ronak-malav-shah",
             "companies": [
                 {
