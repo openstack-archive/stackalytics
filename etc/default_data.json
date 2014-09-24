@@ -6902,6 +6902,18 @@
             "emails": ["victor.r.howard@gmail.com", "victor_howard@cable.comcast.com"]
         },
         {
+            "launchpad_id": "victsou",
+            "gerrit_id": "victsou",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Silva",
+            "emails": ["victor@lsd.ufcg.edu.br", "victsou@gmail.com"]
+        },
+        {
             "launchpad_id": "vipuls",
             "companies": [
                 {
