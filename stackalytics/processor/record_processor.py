@@ -266,8 +266,10 @@ class RecordProcessor(object):
             if record['company_name'] != '*robots':
                 yield record
         else:
-            coauthors.append({'author_name': record['author_name'],
-                              'author_email': record['author_email']})
+            if record['author_email'] not in [
+                    c['author_email'] for c in coauthors]:
+                coauthors.append({'author_name': record['author_name'],
+                                  'author_email': record['author_email']})
             for coauthor in coauthors:
                 coauthor['date'] = record['date']
                 self._update_record_and_user(coauthor)

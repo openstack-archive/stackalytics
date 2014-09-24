@@ -909,6 +909,30 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual('jimi',
                          processed_commits[0]['coauthor'][2]['user_id'])
 
+    def test_process_commit_with_coauthors_no_dup_of_author(self):
+        record_processor_inst = self.make_record_processor(
+            lp_info={'jimi.hendrix@openstack.com':
+                     {'name': 'jimi', 'display_name': 'Jimi Hendrix'},
+                     'bob.dylan@openstack.com':
+                     {'name': 'bob', 'display_name': 'Bob Dylan'}})
+        processed_commits = list(record_processor_inst.process([
+            {'record_type': 'commit',
+             'commit_id': 'de7e8f297c193fb310f22815334a54b9c76a0be1',
+             'author_name': 'Jimi Hendrix',
+             'author_email': 'jimi.hendrix@openstack.com', 'date': 1234567890,
+             'lines_added': 25, 'lines_deleted': 9, 'release_name': 'havana',
+             'coauthor': [{'author_name': 'Jimi Hendrix',
+                           'author_email': 'jimi.hendrix@openstack.com'},
+                          {'author_name': 'Bob Dylan',
+                           'author_email': 'bob.dylan@openstack.com'}]}]))
+
+        self.assertEqual(2, len(processed_commits))
+
+        self.assertEqual('jimi',
+                         processed_commits[0]['coauthor'][0]['user_id'])
+        self.assertEqual('bob',
+                         processed_commits[0]['coauthor'][1]['user_id'])
+
     # record post-processing
 
     def test_blueprint_mention_count(self):
