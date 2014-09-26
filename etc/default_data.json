@@ -1318,6 +1318,17 @@
             "emails": ["clay.gerrard@rackspace.com", "clay.gerrard@gmail.com"]
         },
         {
+            "launchpad_id": "clayton-oneill",
+            "companies": [
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Clayton O'Neill",
+            "emails": ["clayton@oneill.net", "clayton.oneill@twcable.com"]
+        },
+        {
             "launchpad_id": "clint-fewbar",
             "companies": [
                 {
