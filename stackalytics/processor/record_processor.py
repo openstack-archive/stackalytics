@@ -78,8 +78,8 @@ class RecordProcessor(object):
     def _find_company(self, companies, date):
         for r in companies:
             if date < r['end_date']:
-                return r['company_name']
-        return companies[-1]['company_name']
+                return r['company_name'], 'strict'
+        return companies[-1]['company_name'], 'open'  # may be overridden
 
     def _get_company_by_email(self, email):
         if not email:
@@ -247,8 +247,8 @@ class RecordProcessor(object):
         if user.get('user_name'):
             record['author_name'] = user['user_name']
 
-        company = self._find_company(user['companies'], record['date'])
-        if company != '*robots':
+        company, policy = self._find_company(user['companies'], record['date'])
+        if company != '*robots' and policy == 'open':
             company = (self._get_company_by_email(record.get('author_email'))
                        or company)
         record['company_name'] = company

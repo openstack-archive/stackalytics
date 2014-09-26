@@ -208,6 +208,39 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertIn('johndoe@ibm.com', utils.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
 
+    def test_process_commit_existing_user_old_job_not_overridden(self):
+        # User is known to LP, his email is new to us, and maps to other
+        # company. Have some record with new email, but from the period when
+        # he worked for other company. Should return other company as mentioned
+        # in profile instead of overriding
+        record_processor_inst = self.make_record_processor(
+            users=[
+                {'user_id': 'john_doe',
+                 'launchpad_id': 'john_doe',
+                 'user_name': 'John Doe',
+                 'emails': ['johndoe@nec.co.jp'],
+                 'companies': [{'company_name': 'IBM', 'end_date': 1200000000},
+                               {'company_name': 'NEC', 'end_date': 0}]}
+            ],
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']},
+                       {'company_name': 'NEC', 'domains': ['nec.com']}],
+            lp_info={'johndoe@nec.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_commit = list(record_processor_inst.process(
+            generate_commits(author_email='johndoe@nec.com',
+                             author_name='John Doe',
+                             date=1000000000)))[0]
+
+        expected_commit = {
+            'launchpad_id': 'john_doe',
+            'author_email': 'johndoe@nec.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
+        }
+
+        self.assertRecordsMatch(expected_commit, processed_commit)
+
     def test_process_commit_existing_user_new_email_unknown_company(self):
         # User is known to LP, but his email is new to us. Should match
         # the user and return company from user profile
