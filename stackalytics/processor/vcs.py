@@ -65,7 +65,8 @@ GIT_LOG_PATTERN = re.compile(''.join([(r[0] + ':(.*?)\n')
                              'diff_stat:' + DIFF_STAT_PATTERN,
                              re.DOTALL)
 
-CO_AUTHOR_PATTERN_RAW = '(?P<author_name>.+?)\s*<(?P<author_email>.+)>'
+CO_AUTHOR_PATTERN_RAW = ('(?P<author_name>.+?)\s*'
+                         '<?(?P<author_email>[\w\.-]+@[\w\.-]+)>?')
 CO_AUTHOR_PATTERN = re.compile(CO_AUTHOR_PATTERN_RAW, re.IGNORECASE)
 
 MESSAGE_PATTERNS = {

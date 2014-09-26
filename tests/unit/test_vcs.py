@@ -112,6 +112,7 @@ message:Change-Id: Id811c762ec1d13992b306c4a38e7360575e61451
 Co-Authored-By: Tupac Shakur <tupac.shakur@openstack.com>
 Also-By: Bob Dylan <bob.dylan@openstack.com>
 Also-By: Anonymous <wrong@email>
+Also-By: Winnie the Pooh winnie222@openstack.org
 
 diff_stat:
 
@@ -158,4 +159,9 @@ diff_stat:
         self.assertIn(
             {'author_name': 'Bob Dylan',
              'author_email': 'bob.dylan@openstack.com'},
+            commits[5]['coauthor'])
+
+        self.assertIn(
+            {'author_name': 'Winnie the Pooh',
+             'author_email': 'winnie222@openstack.org'},
             commits[5]['coauthor'])
