@@ -597,6 +597,17 @@
             "emails": ["andrey_ostapenko@symantec.com", "aostapenko@mirantis.com"]
         },
         {
+            "launchpad_id": "aplanas",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alberto Planas Dominguez",
+            "emails": ["aplanas@gmail.com", "aplanas@suse.de"]
+        },
+        {
             "launchpad_id": "armando-migliaccio",
             "gerrit_id": "armando-migliaccio",
             "companies": [
