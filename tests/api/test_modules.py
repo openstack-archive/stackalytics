@@ -83,7 +83,16 @@ class TestAPIModules(test_api.TestAPI):
                                     'tag': 'group'},
                      'nova': test_api.make_module('nova'),
                      'nova-cli': test_api.make_module('nova-cli'),
-                 }},
+                 },
+                 'releases': [{'release_name': 'prehistory',
+                               'end_date': 1234567890},
+                              {'release_name': 'icehouse',
+                               'end_date': 1234567890}],
+                 'project_types': [
+                     {'id': 'all', 'title': 'All',
+                      'modules': ['nova', 'glance', 'nova-cli']},
+                     {'id': 'openstack', 'title': 'OpenStack',
+                      'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'])):
 
             response = self.app.get('/api/1.0/modules/nova')

@@ -35,6 +35,35 @@ from stackalytics import version as stackalytics_version
 LOG = logging.getLogger(__name__)
 
 
+def _check_param_in(params, name, collection, allow_all=False):
+    for single in (params.get(name) or []):
+        single = single.lower()
+        if allow_all and single == 'all':
+            continue
+        if single not in collection:
+            params[name] = []
+            flask.abort(404)
+
+
+def _validate_params(params):
+    vault_inst = vault.get_vault()
+    memory_storage_inst = vault.get_memory_storage()
+
+    _check_param_in(params, 'release', vault_inst['releases'], True)
+    _check_param_in(params, 'project_type', vault_inst['project_types_index'])
+    _check_param_in(params, 'module', vault_inst['module_id_index'])
+    _check_param_in(params, 'company',
+                    memory_storage_inst.get_companies_lower())
+    _check_param_in(params, 'user_id', memory_storage_inst.get_user_ids())
+    _check_param_in(params, 'metric', parameters.METRIC_TO_RECORD_TYPE, True)
+
+
+def _get_single(params):
+    if params:
+        return params[0]
+    return None
+
+
 def _prepare_params(kwargs, ignore):
     params = kwargs.get('_params')
 
@@ -50,6 +79,7 @@ def _prepare_params(kwargs, ignore):
             params['end_date'] = [utils.round_timestamp_to_day(
                 params['end_date'][0])]
 
+        _validate_params(params)
         kwargs['_params'] = params
 
     if ignore:
@@ -178,8 +208,7 @@ def record_filter(ignore=None):
 
             if 'tm_marks' in metric:
                 filtered_ids = []
-                review_nth = int(parameters.get_parameter(
-                    kwargs, 'review_nth')[0])
+                review_nth = int(parameters.get_parameter('review_nth')[0])
                 for record in memory_storage_inst.get_records(record_ids):
                     parent = memory_storage_inst.get_record_by_primary_key(
                         record['review_id'])
@@ -371,56 +400,55 @@ def templated(template=None, return_code=200):
             if ctx is None:
                 ctx = {}
 
+            try:
+                _prepare_params(kwargs, [])
+            except Exception:
+                if return_code == 200:
+                    raise  # do not re-raise on error page
+
             # put parameters into template
-            metric = flask.request.args.get('metric')
-            if metric not in parameters.METRIC_LABELS:
-                metric = None
-            ctx['metric'] = metric or parameters.get_default('metric')
+            ctx['metric'] = parameters.get_single_parameter(
+                kwargs, 'metric', use_default=True)
             ctx['metric_label'] = parameters.METRIC_LABELS[ctx['metric']]
 
-            project_type = flask.request.args.get('project_type')
-            if not vault.is_project_type_valid(project_type):
-                project_type = parameters.get_default('project_type')
+            project_type = parameters.get_single_parameter(
+                kwargs, 'project_type', use_default=True)
             ctx['project_type'] = project_type
 
-            release = flask.request.args.get('release')
-            releases = vault_inst['releases']
-            if release:
-                release = release.lower()
-                if release != 'all':
-                    if release not in releases:
-                        release = None
-                    else:
-                        release = releases[release]['release_name']
-            ctx['release'] = (release or
-                              parameters.get_default('release')).lower()
-            ctx['review_nth'] = (flask.request.args.get('review_nth') or
-                                 parameters.get_default('review_nth'))
+            ctx['release'] = parameters.get_single_parameter(
+                kwargs, 'release', use_default=True)
 
-            ctx['company'] = parameters.get_single_parameter(kwargs, 'company')
-            ctx['company_original'] = (
-                vault.get_memory_storage().get_original_company_name(
-                    ctx['company']))
+            company = parameters.get_single_parameter(kwargs, 'company')
+            ctx['company'] = company
+            if company:
+                ctx['company_original'] = (
+                    vault.get_memory_storage().get_original_company_name(
+                        ctx['company']))
 
             module = parameters.get_single_parameter(kwargs, 'module')
             ctx['module'] = module
-            module_name = None
             if module and module in vault_inst['module_id_index']:
                 ctx['module_inst'] = vault_inst['module_id_index'][module]
-                module_name = ctx['module_inst']['module_group_name']
 
             ctx['user_id'] = parameters.get_single_parameter(kwargs, 'user_id')
             if ctx['user_id']:
                 ctx['user_inst'] = vault.get_user_from_runtime_storage(
                     ctx['user_id'])
+
             ctx['page_title'] = helpers.make_page_title(
-                ctx['company'], ctx['user_id'], module_name, ctx['release'])
+                ctx.get('release'), ctx.get('module_inst'),
+                ctx.get('company_original'), ctx.get('user_inst'))
+
             ctx['stackalytics_version'] = (
                 stackalytics_version.version_info.version_string())
             ctx['stackalytics_release'] = (
                 stackalytics_version.version_info.release_string())
             ctx['runtime_storage_update_time'] = (
                 vault_inst['runtime_storage_update_time'])
+
+            # deprecated -- top mentor report
+            ctx['review_nth'] = parameters.get_single_parameter(
+                kwargs, 'review_nth')
 
             return flask.render_template(template_name, **ctx), return_code
 

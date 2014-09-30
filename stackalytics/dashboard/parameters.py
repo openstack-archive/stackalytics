@@ -85,25 +85,29 @@ def get_default(param_name):
         return None
 
 
-def get_parameter(kwargs, singular_name, plural_name=None, use_default=True):
-    if singular_name in kwargs:
-        p = kwargs[singular_name]
+def get_parameter(kwargs, name, plural_name=None, use_default=True):
+    processed_params = kwargs.get('_params') or {}
+    if name in processed_params:
+        return processed_params[name]
+
+    if name in kwargs:
+        p = kwargs[name]
     else:
-        p = flask.request.args.get(singular_name)
+        p = flask.request.args.get(name)
         if (not p) and plural_name:
             p = flask.request.args.get(plural_name)
     if p:
         return parse.unquote_plus(p).split(',')
     elif use_default:
-        default = get_default(singular_name)
+        default = get_default(name)
         return [default] if default else []
     else:
         return []
 
 
-def get_single_parameter(kwargs, singular_name, use_default=True):
-    param = get_parameter(kwargs, singular_name, use_default)
+def get_single_parameter(kwargs, name, use_default=True):
+    param = get_parameter(kwargs, name, use_default)
     if param:
         return param[0]
     else:
-        return ''
+        return None
