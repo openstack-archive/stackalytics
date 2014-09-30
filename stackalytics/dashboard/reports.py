@@ -92,10 +92,10 @@ def open_reviews(module):
 
     module_id_index = vault.get_vault()['module_id_index']
     module = module.lower()
-    if module in module_id_index:
-        modules = module_id_index[module]['modules']
-    else:
-        modules = [module]
+    if module not in module_id_index:
+        flask.abort(404)
+
+    modules = module_id_index[module]['modules']
 
     review_ids = (memory_storage_inst.get_record_ids_by_modules(modules) &
                   memory_storage_inst.get_record_ids_by_types(['review']))
