@@ -4031,6 +4031,21 @@
             "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com"]
         },
         {
+            "launchpad_id": "lin-hua-cheng",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2014-Sep-26"
+                },
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lin Hua Cheng",
+            "emails": ["os.lcheng@gmail.com", "lin-hua.cheng@hp.com", "lhcheng@yahoo-inc.com"]
+        },
+        {
             "launchpad_id": "linuxjedi",
             "companies": [
                 {
