@@ -60,12 +60,6 @@ def widget():
     return flask.render_template('widget.html')
 
 
-@app.errorhandler(404)
-@decorators.templated('404.html', 404)
-def page_not_found(e):
-    pass
-
-
 # AJAX Handlers ---------
 
 def _get_aggregated_stats(records, metric_filter, keys, param_id,
@@ -167,7 +161,7 @@ def get_core_engineer_branch(user, modules):
 @decorators.record_filter()
 @decorators.aggregate_filter()
 def get_engineers(records, metric_filter, finalize_handler, **kwargs):
-    modules_names = parameters.get_parameter({}, 'module', 'modules')
+    modules_names = parameters.get_parameter(kwargs, 'module')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
     def postprocessing(record):
@@ -190,7 +184,7 @@ def get_engineers(records, metric_filter, finalize_handler, **kwargs):
 @decorators.jsonify('stats')
 @decorators.record_filter(ignore=['metric'])
 def get_engineers_extended(records, **kwargs):
-    modules_names = parameters.get_parameter({}, 'module', 'modules')
+    modules_names = parameters.get_parameter(kwargs, 'module')
     modules = set([m for m, r in vault.resolve_modules(modules_names, [''])])
 
     def postprocessing(record):
@@ -299,7 +293,7 @@ def get_companies_json(record_ids, **kwargs):
 def get_modules_json(record_ids, **kwargs):
     module_id_index = vault.get_vault()['module_id_index']
 
-    tags = parameters.get_parameter({}, 'tag', 'tags')
+    tags = parameters.get_parameter(kwargs, 'tag', plural_name='tags')
 
     # all modules mentioned in records
     module_ids = vault.get_memory_storage().get_index_keys_by_record_ids(
@@ -414,7 +408,7 @@ def get_bpd(records, **kwargs):
 @decorators.jsonify()
 @decorators.record_filter(ignore=['user_id'])
 def get_users_json(record_ids, **kwargs):
-    core_in = parameters.get_single_parameter({}, 'core_in') or None
+    core_in = parameters.get_single_parameter(kwargs, 'core_in') or None
     valid_modules = set()
     if core_in:
         core_in = set(core_in.split(','))

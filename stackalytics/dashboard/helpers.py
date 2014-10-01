@@ -237,7 +237,7 @@ def make_link(title, uri=None, options=None):
                    'metric')
     param_values = {}
     for param_name in param_names:
-        v = parameters.get_parameter({}, param_name, param_name)
+        v = parameters.get_parameter({}, param_name)
         if v:
             param_values[param_name] = ','.join(v)
     if options:
@@ -274,13 +274,10 @@ def make_commit_message(record):
     return s
 
 
-def make_page_title(company, user_id, module, release):
-    if company:
-        memory_storage = vault.get_memory_storage()
-        company = memory_storage.get_original_company_name(company)
-    if company or user_id:
-        if user_id:
-            s = vault.get_user_from_runtime_storage(user_id)['user_name']
+def make_page_title(release, module_inst, company, user_inst):
+    if company or user_inst:
+        if user_inst:
+            s = user_inst['user_name']
             if company:
                 s += ' (%s)' % company
         else:
@@ -288,8 +285,8 @@ def make_page_title(company, user_id, module, release):
     else:
         s = 'OpenStack community'
     s += ' contribution'
-    if module:
-        s += ' to %s' % module
+    if module_inst:
+        s += ' to %s' % module_inst['module_group_name']
     if release != 'all':
         s += ' in %s release' % release.capitalize()
     else:

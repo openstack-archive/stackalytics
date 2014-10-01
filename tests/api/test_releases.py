@@ -23,7 +23,12 @@ class TestAPIReleases(test_api.TestAPI):
                 {'releases': [
                     {'release_name': 'prehistory', 'end_date': 1365033600},
                     {'release_name': 'havana', 'end_date': 1381968000},
-                    {'release_name': 'icehouse', 'end_date': 1397692800}]},
+                    {'release_name': 'icehouse', 'end_date': 1397692800}],
+                 'project_types': [
+                     {'id': 'all', 'title': 'All',
+                      'modules': ['nova', 'glance', 'nova-cli']},
+                     {'id': 'openstack', 'title': 'OpenStack',
+                      'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'])):
             response = self.app.get('/api/1.0/releases')
             releases = test_api.load_json(response)['data']

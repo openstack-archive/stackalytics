@@ -174,6 +174,9 @@ class CachedMemoryStorage(MemoryStorage):
     def get_companies(self):
         return self.company_index.keys()
 
+    def get_companies_lower(self):
+        return self.company_name_mapping.keys()
+
     def get_modules(self):
         return self.module_index.keys()
 

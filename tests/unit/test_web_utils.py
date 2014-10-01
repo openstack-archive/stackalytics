@@ -86,25 +86,23 @@ Implements Blueprint ''' + (
     @mock.patch('stackalytics.dashboard.vault.get_vault')
     @mock.patch('stackalytics.dashboard.vault.get_user_from_runtime_storage')
     def test_make_page_title(self, user_patch, vault_patch):
-        memory_storage_mock = mock.Mock()
-        memory_storage_mock.get_original_company_name = mock.Mock(
-            return_value='Mirantis'
-        )
-        vault_patch.return_value = {'memory_storage': memory_storage_mock}
-        user_patch.return_value = {'user_name': 'John Doe'}
+        user_inst = {'user_name': 'John Doe'}
+        module_inst = {'module_group_name': 'neutron'}
 
         self.assertEqual('OpenStack community contribution in all releases',
-                         helpers.make_page_title('', '', '', 'all'))
+                         helpers.make_page_title('all', None, None, None))
         self.assertEqual('OpenStack community contribution in Havana release',
-                         helpers.make_page_title('', '', '', 'Havana'))
+                         helpers.make_page_title('Havana', None, None, None))
         self.assertEqual('Mirantis contribution in Havana release',
-                         helpers.make_page_title('Mirantis', '', '', 'Havana'))
+                         helpers.make_page_title(
+                             'Havana', None, 'Mirantis', None))
         self.assertEqual('John Doe contribution in Havana release',
-                         helpers.make_page_title('', 'john_doe', '', 'Havana'))
+                         helpers.make_page_title(
+                             'Havana', None, None, user_inst))
         self.assertEqual(
             'John Doe (Mirantis) contribution to neutron in Havana release',
             helpers.make_page_title(
-                'Mirantis', 'John Doe', 'neutron', 'Havana'))
+                'Havana', module_inst, 'Mirantis', user_inst))
 
     @mock.patch('flask.request')
     @mock.patch('stackalytics.dashboard.parameters.get_default')
