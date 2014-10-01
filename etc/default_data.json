@@ -1265,11 +1265,15 @@
                 },
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                    {
+                    "company_name": "Red Hat",
                     "end_date": null
-                }
+                    }
             ],
             "user_name": "Chmouel Boudjnah",
-            "emails": ["chmouel@chmouel.com", "launchpad@chmouel.com", "chmouel.boudjnah@rackspace.co.uk", "chmouel@openstack.org", "chmouel@enovance.com"]
+            "emails": ["chmouel@chmouel.com", "launchpad@chmouel.com", "chmouel.boudjnah@rackspace.co.uk", "chmouel@openstack.org", "chmouel@enovance.com", "cboudjna@redhat.com"]
         },
         {
             "launchpad_id": "chris-buccella",
@@ -1307,11 +1311,15 @@
                 },
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Gordon Chung",
-            "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com"]
+            "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com"]
         },
         {
             "launchpad_id": "clay-gerrard",
@@ -1472,6 +1480,21 @@
             "emails": ["cristian.a.sanchez@intel.com"]
         },
         {
+            "launchpad_id": "cschwede",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christian Schwede",
+            "emails": ["cristian.schwede@enovance.com", "cschwede@redhat.com"]
+        },
+        {
             "launchpad_id": "cthiel-suse",
             "companies": [
                 {
@@ -1507,6 +1530,21 @@
             ],
             "user_name": "Conrad Weidenkeller",
             "emails": ["conrad@weidenkeller.com"]
+        },
+        {
+            "launchpad_id": "cyril-roelandt",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cyril Roelandt",
+            "emails": ["cyril.roelandt@enovance.com", "croeland@redhat.com"]
         },
         {
             "launchpad_id": "d-gollub",
@@ -2223,11 +2261,15 @@
             "companies": [
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Emilien Macchi",
-            "emails": ["emilien.macchi@stackops.com", "emilien.macchi@enovance.com", "emilien@enovance.com"]
+            "emails": ["emilien.macchi@stackops.com", "emilien.macchi@enovance.com", "emilien@enovance.com", "emacchi@redhat.com"]
         },
         {
             "launchpad_id": "enchantner",
@@ -2333,6 +2375,21 @@
             "emails": ["sskripnick@mirantis.com", "eyerediskin@gmail.com"]
         },
         {
+            "launchpad_id": "fabien-boucher",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fabien Boucher",
+            "emails": ["fabien.boucher@enovance.com", "fboucher@redhat.com"]
+        },
+        {
             "launchpad_id": "faizan-barmawer",
             "gerrit_id": "barmawer",
             "companies": [
@@ -2385,6 +2442,22 @@
             "user_name": "Flavio Percoco Premoli",
             "emails": ["fpercoco@redhat.com", "flaper87@gmail.com"]
         },
+        {
+            "launchpad_id": "flepied",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Frederic Lepied",
+            "emails": ["frederic.lepied@enovance.com", "flepied@redhat.com"]
+        },
+
         {
            "launchpad_id": "flwang",
            "gerrit_id": "flwang",
@@ -2520,6 +2593,21 @@
             "emails": ["geekinutah@gmail.com"]
         },
         {
+            "launchpad_id": "george-peristerakis",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "George Peristerakis",
+            "emails": ["george.peristerakis@enovance.com", "gperiste@redhat.com"]
+        },
+        {
             "launchpad_id": "gessau",
             "companies": [
                 {
@@ -2600,6 +2688,21 @@
             ],
             "user_name": "Graham Binns",
             "emails": ["graham.binns@gmail.com", "graham@grahambinns.com", "graham.binns@canonical.com", "graham@canonical.com", "gmb@canonical.com", "gmb@grahambinns.com"]
+        },
+        {
+            "launchpad_id": "goneri",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gonéri Le Bouder",
+            "emails": ["goneri.lebouder@enovance.com", "gleboude@redhat.com"]
         },
         {
             "launchpad_id": "gongysh",
@@ -3233,11 +3336,15 @@
             "companies": [
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Julien Danjou",
-            "emails": ["julien@danjou.info", "julien.danjou@enovance.com"]
+            "emails": ["julien@danjou.info", "julien.danjou@enovance.com", "jdanjou@redhat.com"]
         },
         {
             "launchpad_id": "jdurgin",
@@ -3998,6 +4105,21 @@
             "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
         },
         {
+            "launchpad_id": "leseb",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sébastien Han",
+            "emails": ["sebastien.han@enovance.com", "shan@redhat.com"]
+        },
+        {
             "launchpad_id": "letterj",
             "companies": [
                 {
@@ -4284,6 +4406,21 @@
             "emails": ["marun@redhat.com", "mnewby@internap.com"]
         },
         {
+            "launchpad_id": "masco",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Masco Kaliyamoorthy",
+            "emails": ["masco.kaliyamoorthy@enovance.com", "mkaliyam@redhat.com"]
+        },
+        {
             "launchpad_id": "masumotok",
             "companies": [
                 {
@@ -4441,6 +4578,22 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "maxime-vidori",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maxime Vidori",
+            "emails": ["maxime.vidori@enovance.com", "mvidori@redhat.com"]
+        },
+
+        {
             "launchpad_id": "mayank0107",
             "companies": [
                 {
@@ -4502,6 +4655,21 @@
             ],
             "user_name": "Martin Geisler",
             "emails": ["martin@geisler.net"]
+        },
+        {
+            "launchpad_id": "mhu",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthieu Huin",
+            "emails": ["matthieu.huin@enovance.com", "mhuin@redhat.com"]
         },
         {
             "launchpad_id": "miarmak",
@@ -5350,6 +5518,21 @@
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
         },
         {
+            "launchpad_id": "rahmu",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Hakim Rahme",
+            "emails": ["joe.hakim.rahme@enovance.com", "jhakimra@redhat.com"]
+        },
+        {
             "launchpad_id": "raildo",
             "gerrit_id": "raildo",
             "companies": [
@@ -5699,6 +5882,21 @@
             "emails": ["romain.hardouin@cloudwatt.com", "romain_hardouin@yahoo.fr"]
         },
         {
+            "launchpad_id": "romainsc",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Romain Chantereau",
+            "emails": ["romain.chantereau@enovance.com", "rchanter@redhat.com"]
+        },
+        {
             "launchpad_id": "romcheg",
             "companies": [
                 {
@@ -5952,6 +6150,21 @@
             "emails": ["saschpe@suse.de", "saschpe@gmx.de"]
         },
         {
+            "launchpad_id": "sbadia",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sebastien Badia",
+            "emails": ["sebastien.badia@enovance.com", "sbadia@redhat.com"]
+        },
+        {
             "launchpad_id": "scollins",
             "companies": [
                 {
@@ -6143,11 +6356,15 @@
             "companies": [
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Mehdi Abaakouk",
-            "emails": ["mehdi.abaakouk@enovance.com"]
+            "emails": ["mehdi.abaakouk@enovance.com", "mabaakou@redhat.com"]
         },
         {
             "launchpad_id": "simon-pasquier",
@@ -6357,6 +6574,21 @@
             "emails": ["alexei_vinogradov@symantec.com", "avinogradov@mirantis.com"]
         },
         {
+            "launchpad_id": "sridhargaddam",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sridhar Gaddam",
+            "emails": ["sridhar.gaddam@enovance.com", "sgaddam@redhat.com"]
+        },
+        {
             "launchpad_id": "stanzgy",
             "companies": [
                 {
@@ -6521,6 +6753,22 @@
             "user_name": "Sylvain Bauza",
             "emails": ["sbauza@free.fr", "sylvain.bauza@bull.net", "sylvain.bauza@gmail.com", "sbauza@redhat.com"]
         },
+        {
+            "launchpad_id": "sylvaina",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sylvain Afchain",
+            "emails": ["sylvain.afchain@enovance.com", "safchain@redhat.com"]
+        },
+
  	{
             "launchpad_id": "tan-lin-good",
             "companies": [
@@ -6621,11 +6869,15 @@
                 },
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Thomas Herve",
-            "emails": ["therve@gmail.com", "thomas.herve@enovance.com", "th@rackspace.com"]
+            "emails": ["therve@gmail.com", "thomas.herve@enovance.com", "th@rackspace.com", "therve@redhat.com"]
         },
         {
             "launchpad_id": "thesheep",
@@ -6658,6 +6910,10 @@
             "companies": [
                 {
                     "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
@@ -6810,6 +7066,21 @@
             "emails": ["mtreinish@kortar.org", "treinish@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "tristanc",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tristan Cacqueray",
+            "emails": ["tristan.cacqueray@enovance.com", "tdecacqu@redhat.com"]
+        },
+        {
             "launchpad_id": "troy-toman",
             "companies": [
                 {
@@ -6936,6 +7207,22 @@
             "emails": ["victor.r.howard@gmail.com", "victor_howard@cable.comcast.com"]
         },
         {
+            "launchpad_id": "victor-stinner",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Stinner",
+            "emails": ["victor.stinner@enovance.com", "vstinner@redhat.com"]
+        },
+
+        {
             "launchpad_id": "victsou",
             "gerrit_id": "victsou",
             "companies": [
@@ -7013,6 +7300,21 @@
             ],
             "user_name": "Vladimir Kuklin",
             "emails": ["vkuklin@mirantis.com", "aglar@aglar.ru"]
+        },
+        {
+            "launchpad_id": "vladik-romanovsky",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vladik Romanovsky",
+            "emails": ["vladik.romanovsky@enovance.com", "vromanso@redhat.com"]
         },
         {
             "launchpad_id": "vmtrooper",
