@@ -3395,6 +3395,17 @@
             "emails": ["code@gentlydownthe.net", "jesusaurus@inbox.com", "k.jonathan.harker@hp.com"]
         },
         {
+            "launchpad_id": "jhalterman",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonathan Halterman",
+            "emails": ["jhalterman@gmail.com", "jonathan.halterman@hp.com", "jhalterman@hp.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
