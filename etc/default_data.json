@@ -1706,6 +1706,21 @@
             "emails": ["davidh@il.ibm.com", "david.hadas@gmail.com"]
         },
         {
+            "launchpad_id": "david-lyle",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2014-Sep-26"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Lyle",
+            "emails": ["david.lyle@hp.com", "dklyle0@gmail.com", "david.lyle@intel.com"]
+        },
+        {
             "launchpad_id": "davide-guerri",
             "companies": [
                 {
