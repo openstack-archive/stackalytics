@@ -29,7 +29,7 @@ OPTS = [
                help='The address dashboard listens on'),
     cfg.IntOpt('listen-port', default=8080,
                help='The port dashboard listens on'),
-    cfg.IntOpt('days_to_update_members', default=7,
+    cfg.IntOpt('days_to_update_members', default=30,
                help='Number of days to update members'),
     cfg.StrOpt('corrections-uri',
                default=('https://git.openstack.org/cgit/'
