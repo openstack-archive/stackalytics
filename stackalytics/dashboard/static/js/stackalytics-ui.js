@@ -329,7 +329,7 @@ function initSingleSelector(name, api_url, select2_extra_options, change_handler
         success: function (data) {
             var initial_value = getUrlVars()[name];
             if (initial_value) {
-                initial_value = encodeURI(initial_value);
+                initial_value = encodeURI(initial_value).toLocaleLowerCase();
             } else if (data["default"]) {
                 initial_value = data["default"];
             }
