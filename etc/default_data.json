@@ -2202,6 +2202,21 @@
             "emails": ["lalasjtu@gmail.com", "penfzhan@cisco.com"]
         },
         {
+            "launchpad_id": "ed-leafe",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2014-Aug-22"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ed Leafe",
+            "emails": ["ed@leafe.com", "ed@openstack.org"]
+        },
+        {
             "launchpad_id": "edward-hope-morley",
             "companies": [
                 {
