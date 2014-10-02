@@ -66,7 +66,7 @@ Change-Id: I70638f239794e78ba049c60d2001190910a89c90
 diff_stat:
 
  1 file changed, 1 deletion(-)
-commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
+commit_id:2dcb4fa4aa1925ffbd90d1cc7556a13a1bc45d1c
 date:1369831203
 author_name:Mark McClain
 author_email:mark.mcclain@dreamhost.com
@@ -78,7 +78,7 @@ Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 diff_stat:
 
  1 file changed, 8 insertions(+)
-commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
+commit_id:06d321b6b7681b162cd3231b5bdd92b17eb4f401
 date:1369831203
 author_name:John Doe
 author_email:john.doe@dreamhost.com
@@ -90,7 +90,7 @@ Change-Id: Id32a4a72ec1d13992b306c4a38e73605758e26c7
 diff_stat:
 
  0 files changed
-commit_id:92811c76f3a8308b36f81e61451ec17d227b453b
+commit_id:913c86a9d5b6a1b74db36266e996cb4d6073f75b
 date:1369831203
 author_name:Doug Hoffner
 author_email:mark.mcclain@dreamhost.com
@@ -101,8 +101,16 @@ Co-Authored-By: some friend of mine
 diff_stat:
 
  0 files changed, 0 insertions(+), 0 deletions(-)
+commit_id:2f3103a96c4d234a4fcc0b0211a20308c0d342e7
+date:1397687866
+author_name:James E. Blair
+author_email:jeblair@openstack.org
+subject:Reduce IAD usage by 50%
+message:At provider's request.
 
- 0 files changed
+Change-Id: I976eaff357bf0ad4bce2a7fd5fe6fd81750276c5
+
+diff_stat:
 commit_id:12811c76f3a8208b36f81e61451ec17d227b4e58
 date:1369831203
 author_name:Jimi Hendrix
@@ -117,11 +125,10 @@ Also-By: Winnie the Pooh winnie222@openstack.org
 diff_stat:
 
  0 files changed, 0 insertions(+), 0 deletions(-)
-
             '''
 
         commits = list(self.git.log('dummy', 'dummy'))
-        commits_expected = 6
+        commits_expected = 7
         self.assertEqual(commits_expected, len(commits))
 
         self.assertEqual(21, commits[0]['files_changed'])
@@ -151,17 +158,22 @@ diff_stat:
         self.assertEqual(0, commits[4]['lines_deleted'])
         self.assertFalse('coauthor' in commits[4])
 
+        self.assertEqual('jeblair@openstack.org', commits[5]['author_email'])
+        self.assertEqual(0, commits[5]['files_changed'])
+        self.assertEqual(0, commits[5]['lines_added'])
+        self.assertEqual(0, commits[5]['lines_deleted'])
+
         self.assertIn(
             {'author_name': 'Tupac Shakur',
              'author_email': 'tupac.shakur@openstack.com'},
-            commits[5]['coauthor'])
+            commits[6]['coauthor'])
 
         self.assertIn(
             {'author_name': 'Bob Dylan',
              'author_email': 'bob.dylan@openstack.com'},
-            commits[5]['coauthor'])
+            commits[6]['coauthor'])
 
         self.assertIn(
             {'author_name': 'Winnie the Pooh',
              'author_email': 'winnie222@openstack.org'},
-            commits[5]['coauthor'])
+            commits[6]['coauthor'])

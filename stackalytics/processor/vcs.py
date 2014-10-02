@@ -62,7 +62,7 @@ DIFF_STAT_PATTERN = ('[^\d]+(\d+)\s+[^\s]*\s+changed'
                      '(,\s+(\d+)\s+([^\d\s]*)\s+(\d+)?)?')
 GIT_LOG_PATTERN = re.compile(''.join([(r[0] + ':(.*?)\n')
                                       for r in GIT_LOG_PARAMS]) +
-                             'diff_stat:' + DIFF_STAT_PATTERN,
+                             'diff_stat:(?P<diff_stat>.+?)(?=commit|\Z)',
                              re.DOTALL)
 
 CO_AUTHOR_PATTERN_RAW = ('(?P<author_name>.+?)\s*'
@@ -208,23 +208,27 @@ class Git(Vcs):
             if not utils.check_email_validity(commit['author_email']):
                 continue
 
-            commit['files_changed'] = int(rec.group(i))
-            i += 1
-            lines_changed_group = rec.group(i)
-            i += 1
-            lines_changed = rec.group(i)
-            i += 1
-            deleted_or_inserted = rec.group(i)
-            i += 1
-            lines_deleted = rec.group(i)
-            i += 1
+            diff_stat_str = rec.group('diff_stat')
+            diff_rec = re.search(DIFF_STAT_PATTERN, diff_stat_str)
 
-            if lines_changed_group:  # there inserted or deleted lines
-                if not lines_deleted:
-                    if deleted_or_inserted[0] == 'd':  # deleted
-                        lines_deleted = lines_changed
-                        lines_changed = 0
+            if diff_rec:
+                files_changed = int(diff_rec.group(1))
+                lines_changed_group = diff_rec.group(2)
+                lines_changed = diff_rec.group(3)
+                deleted_or_inserted = diff_rec.group(4)
+                lines_deleted = diff_rec.group(5)
 
+                if lines_changed_group:  # there inserted or deleted lines
+                    if not lines_deleted:
+                        if deleted_or_inserted[0] == 'd':  # deleted
+                            lines_deleted = lines_changed
+                            lines_changed = 0
+            else:
+                files_changed = 0
+                lines_changed = 0
+                lines_deleted = 0
+
+            commit['files_changed'] = files_changed
             commit['lines_added'] = int(lines_changed or 0)
             commit['lines_deleted'] = int(lines_deleted or 0)
 
