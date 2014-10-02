@@ -216,7 +216,7 @@
 
         show_engineers_table(base_options);
 
-        {% if company == '' %}
+        {% if not company %}
             show_companies_table(base_options);
             show_new_companies_table(base_options);
             renderChart("/api/1.0/stats/companies", "members_chart", base_options);

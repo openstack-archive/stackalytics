@@ -409,7 +409,7 @@ def templated(template=None, return_code=200):
             # put parameters into template
             ctx['metric'] = parameters.get_single_parameter(
                 kwargs, 'metric', use_default=True)
-            ctx['metric_label'] = parameters.METRIC_LABELS[ctx['metric']]
+            ctx['metric_label'] = parameters.METRIC_LABELS.get(ctx['metric'])
 
             project_type = parameters.get_single_parameter(
                 kwargs, 'project_type', use_default=True)
