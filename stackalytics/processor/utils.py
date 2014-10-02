@@ -17,6 +17,7 @@ import cgi
 import datetime
 import gzip
 import json
+import random
 import re
 import time
 
@@ -86,9 +87,20 @@ def check_email_validity(email):
     return False
 
 
+user_agents = [
+    'Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Gecko/20100101 Firefox/32.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_6) AppleWebKit/537.78.2',
+    'Mozilla/5.0 (Windows NT 6.3; WOW64) Gecko/20100101 Firefox/32.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X) Chrome/37.0.2062.120',
+    'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
+]
+
+
 def read_uri(uri):
     try:
-        fd = six.moves.urllib.request.urlopen(uri)
+        req = six.moves.urllib.request.Request(
+            url=uri, headers={'User-Agent': random.choice(user_agents)})
+        fd = six.moves.urllib.request.urlopen(req)
         raw = fd.read()
         fd.close()
         return raw

@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import random
 
 import re
 import time
@@ -105,6 +106,8 @@ def log(uri, runtime_storage_inst, days_to_update_members, members_look_ahead):
         cur_index += 1
         LOG.debug('New member: %s', member['member_id'])
         yield member
+
+        time.sleep(random.random() * 5)
 
     LOG.debug('Last_member_index: %s', last_member_index)
     runtime_storage_inst.set_by_key('last_member_index', last_member_index)
