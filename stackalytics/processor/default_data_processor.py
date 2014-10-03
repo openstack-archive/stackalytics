@@ -140,6 +140,7 @@ def _store_users(runtime_storage_inst, users):
         if stored_user:
             stored_user.update(user)
             user = stored_user
+        user['static'] = True
         utils.store_user(runtime_storage_inst, user)
 
 

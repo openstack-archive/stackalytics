@@ -163,9 +163,12 @@ class RecordProcessor(object):
 
         # collect ordinary fields
         for key in ['seq', 'user_name', 'user_id',
-                    'launchpad_id', 'companies']:
+                    'launchpad_id', 'companies', 'static']:
             merged_user[key] = next((v.get(key) for v in user_profiles
                                      if v.get(key)), None)
+
+        if not merged_user['static']:
+            del merged_user['static']
 
         # update user_id, prefer it to be equal to launchpad_id
         merged_user['user_id'] = (merged_user['launchpad_id'] or
@@ -248,9 +251,11 @@ class RecordProcessor(object):
             record['author_name'] = user['user_name']
 
         company, policy = self._find_company(user['companies'], record['date'])
-        if company != '*robots' and policy == 'open':
-            company = (self._get_company_by_email(record.get('author_email'))
-                       or company)
+        if not user.get('static'):
+            # for auto-generated profiles affiliation may be overridden
+            if company != '*robots' and policy == 'open':
+                company = (self._get_company_by_email(
+                    record.get('author_email')) or company)
         record['company_name'] = company
 
     def _process_commit(self, record):
