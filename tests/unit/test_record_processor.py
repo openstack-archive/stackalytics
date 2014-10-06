@@ -580,9 +580,9 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
-                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
+                'gerrit_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
@@ -632,7 +632,6 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
-                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
@@ -682,9 +681,9 @@ class TestRecordProcessor(testtools.TestCase):
             processed_records[1])
 
         user = {'seq': 1,
-                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
+                'gerrit_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
@@ -750,8 +749,8 @@ class TestRecordProcessor(testtools.TestCase):
                          [{'company_name': 'Rackspace', 'end_date': 0}])
 
     def test_process_email_then_review(self):
-        # it is expected that the user profile will contain both email and
-        # LP id
+        # it is expected that the user profile will contain email and
+        # gerrit id, while LP id will be None
         record_processor_inst = self.make_record_processor()
 
         list(record_processor_inst.process([
@@ -772,9 +771,47 @@ class TestRecordProcessor(testtools.TestCase):
         ]))
 
         user = {'seq': 1,
-                'core': [],
+                'user_id': 'john_doe@gmail.com',
+                'gerrit_id': 'john_doe',
+                'user_name': 'John Doe',
+                'emails': ['john_doe@gmail.com'],
+                'companies': [{'company_name': '*independent', 'end_date': 0}]}
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            gerrit_id='john_doe'))
+
+    def test_process_email_then_review_gerrit_id_same_as_launchpad_id(self):
+        # it is expected that the user profile will contain email, LP id and
+        # gerrit id
+        record_processor_inst = self.make_record_processor(
+            lp_user_name={'john_doe': {'name': 'john_doe',
+                                       'display_name': 'John Doe'}}
+        )
+
+        list(record_processor_inst.process([
+            {'record_type': 'email',
+             'message_id': '<message-id>',
+             'author_email': 'john_doe@gmail.com',
+             'subject': 'hello, world!',
+             'body': 'lorem ipsum',
+             'date': 1234567890},
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'john_doe@gmail.com',
+                       'username': 'john_doe'},
+             'createdOn': 1379404951,
+             'module': 'nova', 'branch': 'master'}
+        ]))
+
+        user = {'seq': 1,
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
+                'gerrit_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
@@ -784,11 +821,16 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(user, user_processor.load_user(
             record_processor_inst.runtime_storage_inst,
             user_id='john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            gerrit_id='john_doe'))
 
     def test_process_commit_then_review_with_different_email(self):
         record_processor_inst = self.make_record_processor(
             lp_info={'john_doe@gmail.com':
                      {'name': 'john_doe', 'display_name': 'John Doe'}},
+            lp_user_name={'john_doe': {'name': 'john_doe',
+                                       'display_name': 'John Doe'}},
             companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}])
 
         list(record_processor_inst.process([
@@ -817,18 +859,20 @@ class TestRecordProcessor(testtools.TestCase):
                               'username': 'john_doe'}}]}]}
         ]))
         user = {'seq': 1,
-                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@ibm.com', 'john_doe@gmail.com'],
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
         self.assertUsersMatch(user, user_processor.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe'))
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe'))
         self.assertUsersMatch(user, user_processor.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
         self.assertUsersMatch(user, user_processor.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@ibm.com'))
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@ibm.com'))
 
     def test_merge_users(self):
         record_processor_inst = self.make_record_processor(
@@ -864,9 +908,9 @@ class TestRecordProcessor(testtools.TestCase):
         record_processor_inst.post_processing({})
 
         user = {'seq': 2,
-                'core': [],
                 'user_id': 'john_doe',
                 'launchpad_id': 'john_doe',
+                'gerrit_id': 'john_doe',
                 'user_name': 'John Doe',
                 'emails': ['john_doe@ibm.com'],
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
@@ -877,9 +921,11 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(user, user_processor.load_user(
             runtime_storage_inst, 2))
         self.assertEqual(user, user_processor.load_user(
-            runtime_storage_inst, 'john_doe'))
+            runtime_storage_inst, user_id='john_doe'))
         self.assertEqual(user, user_processor.load_user(
-            runtime_storage_inst, 'john_doe@ibm.com'))
+            runtime_storage_inst, email='john_doe@ibm.com'))
+        self.assertEqual(user, user_processor.load_user(
+            runtime_storage_inst, gerrit_id='john_doe'))
 
         # all records should have the same user_id and company name
         for record in runtime_storage_inst.get_all_records():
@@ -891,7 +937,8 @@ class TestRecordProcessor(testtools.TestCase):
     def test_core_user_guess(self):
         record_processor_inst = self.make_record_processor(
             lp_user_name={
-                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'}
+                'john_doe': {'name': 'john_doe', 'display_name': 'John Doe'},
+                'homer': {'name': 'homer', 'display_name': 'Homer Simpson'},
             },
             companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
         )
@@ -944,7 +991,6 @@ class TestRecordProcessor(testtools.TestCase):
         user_2 = {'seq': 3, 'user_id': 'homer',
                   'launchpad_id': 'homer', 'user_name': 'Homer Simpson',
                   'emails': ['hsimpson@gmail.com'],
-                  'core': [],
                   'companies': [{'company_name': '*independent',
                                  'end_date': 0}]}
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
@@ -1440,16 +1486,17 @@ class TestRecordProcessor(testtools.TestCase):
 
     def assertRecordsMatch(self, expected, actual):
         for key, value in six.iteritems(expected):
-            self.assertEqual(value, actual[key],
+            self.assertEqual(value, actual.get(key),
                              'Values for key %s do not match' % key)
 
     def assertUsersMatch(self, expected, actual):
+        self.assertIsNotNone(actual, 'User should not be None')
         match = True
         for key, value in six.iteritems(expected):
             if key == 'emails':
-                match = (set(value) == set(actual[key]))
+                match = (set(value) == set(actual.get(key)))
             else:
-                match = (value == actual[key])
+                match = (value == actual.get(key))
 
         self.assertTrue(match, 'User %s should match %s' % (actual, expected))
 
