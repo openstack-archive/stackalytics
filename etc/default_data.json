@@ -4680,6 +4680,10 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2014-Sep-26"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
