@@ -6199,6 +6199,21 @@
             "emails": ["sarada.a@hp.com"]
         },
         {
+            "launchpad_id": "sarob",
+            "companies": [
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": "2014-Aug-08"
+                },
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Roberts",
+            "emails": ["seanrob@yahoo-inc.com", "seanroberts66@gmail.com"]
+        },
+        {
             "launchpad_id": "saschpe",
             "companies": [
                 {
