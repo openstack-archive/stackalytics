@@ -21,6 +21,7 @@ import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
@@ -136,12 +137,13 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
 
 def _store_users(runtime_storage_inst, users):
     for user in users:
-        stored_user = utils.load_user(runtime_storage_inst, user['user_id'])
+        stored_user = user_processor.load_user(runtime_storage_inst,
+                                               user_id=user['user_id'])
         if stored_user:
             stored_user.update(user)
             user = stored_user
         user['static'] = True
-        utils.store_user(runtime_storage_inst, user)
+        user_processor.store_user(runtime_storage_inst, user)
 
 
 def _store_companies(runtime_storage_inst, companies):

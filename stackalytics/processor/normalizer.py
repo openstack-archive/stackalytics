@@ -16,6 +16,7 @@
 import six
 
 from stackalytics.openstack.common import log as logging
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
@@ -36,7 +37,9 @@ def _normalize_user(user):
             return x["end_date"] - y["end_date"]
 
     user['companies'].sort(key=utils.cmp_to_key(end_date_comparator))
-    user['user_id'] = user['launchpad_id']
+    user['user_id'] = user_processor.make_user_id(
+        launchpad_id=user.get('launchpad_id'),
+        email=user.get('email'))
 
 
 def _normalize_users(users):

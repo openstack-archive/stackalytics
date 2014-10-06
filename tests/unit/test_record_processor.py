@@ -21,6 +21,7 @@ import testtools
 
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
@@ -205,8 +206,9 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertIn('johndoe@ibm.com', utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
+        self.assertIn('johndoe@ibm.com', user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe')['emails'])
 
     def test_process_commit_existing_user_new_email_known_company_static(self):
         # User profile is configured in default_data. Email is new to us,
@@ -237,8 +239,9 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertIn('johndoe@ibm.com', utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
+        self.assertIn('johndoe@ibm.com', user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe')['emails'])
 
     def test_process_commit_existing_user_old_job_not_overridden(self):
         # User is known to LP, his email is new to us, and maps to other
@@ -300,8 +303,9 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        self.assertIn('johndoe@gmail.com', utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')['emails'])
+        self.assertIn('johndoe@gmail.com', user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe')['emails'])
 
     def test_process_commit_existing_user_new_email_known_company_update(self):
         record_processor_inst = self.make_record_processor(
@@ -329,8 +333,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst, user_id='john_doe')
         self.assertIn('johndoe@gmail.com', user['emails'])
         self.assertEqual('IBM', user['companies'][0]['company_name'],
                          message='User affiliation should be updated')
@@ -355,8 +359,8 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst, user_id='john_doe')
         self.assertIn('johndoe@ibm.com', user['emails'])
         self.assertEqual('IBM', user['companies'][0]['company_name'])
 
@@ -378,8 +382,9 @@ class TestRecordProcessor(testtools.TestCase):
         }
 
         self.assertRecordsMatch(expected_commit, processed_commit)
-        user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'johndoe@ibm.com')
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='johndoe@ibm.com')
         self.assertIn('johndoe@ibm.com', user['emails'])
         self.assertEqual('IBM', user['companies'][0]['company_name'])
         self.assertEqual(None, user['launchpad_id'])
@@ -492,8 +497,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[0])
 
-        user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst, user_id='john_doe')
         self.assertEqual({
             'seq': 1,
             'user_id': 'john_doe',
@@ -527,8 +532,8 @@ class TestRecordProcessor(testtools.TestCase):
              'company_name': '*independent'},
             processed_records[0])
 
-        user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe')
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst, user_id='john_doe')
         self.assertEqual({
             'seq': 1,
             'user_id': 'john_doe',
@@ -581,10 +586,12 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe'))
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
 
     def test_process_blueprint_then_commit(self):
         record_processor_inst = self.make_record_processor(
@@ -631,10 +638,12 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe'))
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
 
     def test_process_review_then_blueprint(self):
         record_processor_inst = self.make_record_processor(
@@ -679,10 +688,12 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe'))
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
 
     def test_create_member(self):
         member_record = {'member_id': '123456789',
@@ -702,8 +713,9 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(result_member['author_name'], 'John Doe')
         self.assertEqual(result_member['company_name'], 'Mirantis')
 
-        result_user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'member:123456789')
+        result_user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            member_id='123456789')
 
         self.assertEqual(result_user['user_name'], 'John Doe')
         self.assertEqual(result_user['company_name'], 'Mirantis')
@@ -729,8 +741,9 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(result_member['author_name'], 'Bill Smith')
         self.assertEqual(result_member['company_name'], 'Rackspace')
 
-        result_user = utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'member:123456789')
+        result_user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            member_id='123456789')
 
         self.assertEqual(result_user['user_name'], 'Bill Smith')
         self.assertEqual(result_user['companies'],
@@ -765,10 +778,12 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@gmail.com'],
                 'companies': [{'company_name': '*independent', 'end_date': 0}]}
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
-        self.assertEqual(user, utils.load_user(
-            record_processor_inst.runtime_storage_inst, 'john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            email='john_doe@gmail.com'))
+        self.assertEqual(user, user_processor.load_user(
+            record_processor_inst.runtime_storage_inst,
+            user_id='john_doe'))
 
     def test_process_commit_then_review_with_different_email(self):
         record_processor_inst = self.make_record_processor(
@@ -808,11 +823,11 @@ class TestRecordProcessor(testtools.TestCase):
                 'user_name': 'John Doe',
                 'emails': ['john_doe@ibm.com', 'john_doe@gmail.com'],
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
-        self.assertUsersMatch(user, utils.load_user(
+        self.assertUsersMatch(user, user_processor.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe'))
-        self.assertUsersMatch(user, utils.load_user(
+        self.assertUsersMatch(user, user_processor.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe@gmail.com'))
-        self.assertUsersMatch(user, utils.load_user(
+        self.assertUsersMatch(user, user_processor.load_user(
             record_processor_inst.runtime_storage_inst, 'john_doe@ibm.com'))
 
     def test_merge_users(self):
@@ -857,12 +872,14 @@ class TestRecordProcessor(testtools.TestCase):
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
         self.assertEqual(2, runtime_storage_inst.get_by_key('user:count'))
-        self.assertEqual(None, utils.load_user(runtime_storage_inst, 1))
-        self.assertEqual(user, utils.load_user(runtime_storage_inst, 2))
-        self.assertEqual(user, utils.load_user(runtime_storage_inst,
-                                               'john_doe'))
-        self.assertEqual(user, utils.load_user(runtime_storage_inst,
-                                               'john_doe@ibm.com'))
+        self.assertEqual(None, user_processor.load_user(
+            runtime_storage_inst, 1))
+        self.assertEqual(user, user_processor.load_user(
+            runtime_storage_inst, 2))
+        self.assertEqual(user, user_processor.load_user(
+            runtime_storage_inst, 'john_doe'))
+        self.assertEqual(user, user_processor.load_user(
+            runtime_storage_inst, 'john_doe@ibm.com'))
 
         # all records should have the same user_id and company name
         for record in runtime_storage_inst.get_all_records():
@@ -931,10 +948,10 @@ class TestRecordProcessor(testtools.TestCase):
                   'companies': [{'company_name': '*independent',
                                  'end_date': 0}]}
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
-        self.assertUsersMatch(user_1, utils.load_user(runtime_storage_inst,
-                                                      'john_doe'))
-        self.assertUsersMatch(user_2, utils.load_user(runtime_storage_inst,
-                                                      'homer'))
+        self.assertUsersMatch(user_1, user_processor.load_user(
+            runtime_storage_inst, user_id='john_doe'))
+        self.assertUsersMatch(user_2, user_processor.load_user(
+            runtime_storage_inst, user_id='homer'))
 
     def test_process_commit_with_coauthors(self):
         record_processor_inst = self.make_record_processor(

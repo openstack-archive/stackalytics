@@ -24,6 +24,7 @@ import six
 from stackalytics.dashboard import memory_storage
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import runtime_storage
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
@@ -197,7 +198,8 @@ def get_user_from_runtime_storage(user_id):
     runtime_storage_inst = get_vault()['runtime_storage']
     user_index = get_vault()['user_index']
     if user_id not in user_index:
-        user_index[user_id] = utils.load_user(runtime_storage_inst, user_id)
+        user_index[user_id] = user_processor.load_user(
+            runtime_storage_inst, user_id=user_id)
     return user_index[user_id]
 
 

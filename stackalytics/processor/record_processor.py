@@ -22,6 +22,7 @@ import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import launchpad_utils
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
@@ -98,7 +99,8 @@ class RecordProcessor(object):
         company = (self._get_company_by_email(email) or
                    self._get_independent())
         user = {
-            'user_id': launchpad_id or email,
+            'user_id': user_processor.make_user_id(
+                email=email, launchpad_id=launchpad_id),
             'launchpad_id': launchpad_id,
             'user_name': user_name or '',
             'companies': [{
@@ -204,12 +206,14 @@ class RecordProcessor(object):
             for u in user_profiles:
                 if u.get('seq') in seqs:
                     LOG.debug('Delete user: %s', u)
-                    utils.delete_user(self.runtime_storage_inst, u)
+                    user_processor.delete_user(
+                        self.runtime_storage_inst, u)
         return merged_user
 
     def update_user(self, record):
         email = record.get('author_email')
-        user_e = utils.load_user(self.runtime_storage_inst, email) or {}
+        user_e = user_processor.load_user(
+            self.runtime_storage_inst, email=email) or {}
 
         user_name = record.get('author_name')
         launchpad_id = record.get('launchpad_id')
@@ -219,7 +223,8 @@ class RecordProcessor(object):
             if lp_user_name:
                 user_name = lp_user_name
 
-        user_l = utils.load_user(self.runtime_storage_inst, launchpad_id) or {}
+        user_l = user_processor.load_user(
+            self.runtime_storage_inst, launchpad_id=launchpad_id) or {}
 
         user = self._create_user(launchpad_id, email, user_name)
 
@@ -237,7 +242,7 @@ class RecordProcessor(object):
                         user['user_name'] = user_name
                 LOG.debug('Created new user: %s', user)
 
-            utils.store_user(self.runtime_storage_inst, user)
+            user_processor.store_user(self.runtime_storage_inst, user)
 
         return user
 
@@ -473,7 +478,7 @@ class RecordProcessor(object):
             yield bug_fixed
 
     def _process_member(self, record):
-        user_id = "member:" + record['member_id']
+        user_id = user_processor.make_user_id(member_id=record['member_id'])
         record['primary_key'] = user_id
         record['date'] = utils.member_date_to_timestamp(record['date_joined'])
         record['author_name'] = record['member_name']
@@ -489,7 +494,7 @@ class RecordProcessor(object):
         # _update_record_and_user function will create new user if needed
         self._update_record_and_user(record)
         record['company_name'] = company_name
-        user = utils.load_user(self.runtime_storage_inst, user_id)
+        user = user_processor.load_user(self.runtime_storage_inst, user_id)
 
         user['user_name'] = record['author_name']
         user['companies'] = [{
@@ -498,7 +503,7 @@ class RecordProcessor(object):
         }]
         user['company_name'] = company_name
 
-        utils.store_user(self.runtime_storage_inst, user)
+        user_processor.store_user(self.runtime_storage_inst, user)
 
         record['company_name'] = company_name
 
@@ -704,7 +709,7 @@ class RecordProcessor(object):
             core_old = user.get('core')
             user['core'] = list(core_engineers.get(user['user_id'], []))
             if user['core'] != core_old:
-                utils.store_user(self.runtime_storage_inst, user)
+                user_processor.store_user(self.runtime_storage_inst, user)
 
     def _close_patch(self, cores, marks):
         if len(marks) < 2:
@@ -784,15 +789,15 @@ class RecordProcessor(object):
 
             yield record
 
-            user = utils.load_user(self.runtime_storage_inst,
-                                   record['user_id'])
+            user = user_processor.load_user(self.runtime_storage_inst,
+                                            record['user_id'])
             LOG.debug('Update user %s, company name changed to %s',
                       user, company_name)
             user['companies'] = [{
                 'company_name': company_name,
                 'end_date': 0,
             }]
-            utils.store_user(self.runtime_storage_inst, user)
+            user_processor.store_user(self.runtime_storage_inst, user)
 
     def post_processing(self, release_index):
         self.runtime_storage_inst.set_records(
