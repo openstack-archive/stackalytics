@@ -95,12 +95,12 @@ class RecordProcessor(object):
                     return self.domains_index[m]
         return None
 
-    def _create_user(self, launchpad_id, email, user_name):
+    def _create_user(self, launchpad_id, email, gerrit_id, user_name):
         company = (self._get_company_by_email(email) or
                    self._get_independent())
         user = {
             'user_id': user_processor.make_user_id(
-                email=email, launchpad_id=launchpad_id),
+                email=email, launchpad_id=launchpad_id, gerrit_id=gerrit_id),
             'launchpad_id': launchpad_id,
             'user_name': user_name or '',
             'companies': [{
@@ -108,6 +108,8 @@ class RecordProcessor(object):
                 'end_date': 0,
             }],
         }
+        if gerrit_id:
+            user['gerrit_id'] = gerrit_id
         if email:
             user['emails'] = [email]
         else:
@@ -164,17 +166,16 @@ class RecordProcessor(object):
         merged_user = {}  # merged user profile
 
         # collect ordinary fields
-        for key in ['seq', 'user_name', 'user_id',
+        for key in ['seq', 'user_name', 'user_id', 'gerrit_id',
                     'launchpad_id', 'companies', 'static']:
-            merged_user[key] = next((v.get(key) for v in user_profiles
-                                     if v.get(key)), None)
-
-        if not merged_user['static']:
-            del merged_user['static']
+            value = next((v.get(key) for v in user_profiles if v.get(key)),
+                         None)
+            if value:
+                merged_user[key] = value
 
         # update user_id, prefer it to be equal to launchpad_id
-        merged_user['user_id'] = (merged_user['launchpad_id'] or
-                                  merged_user['user_id'])
+        merged_user['user_id'] = (merged_user.get('launchpad_id') or
+                                  merged_user.get('user_id'))
 
         # merge emails
         emails = set([])
@@ -183,7 +184,8 @@ class RecordProcessor(object):
             emails |= set(u.get('emails', []))
             core_in |= set(u.get('core', []))
         merged_user['emails'] = list(emails)
-        merged_user['core'] = list(core_in)
+        if core_in:
+            merged_user['core'] = list(core_in)
 
         # merge companies
         merged_companies = merged_user['companies']
@@ -223,17 +225,32 @@ class RecordProcessor(object):
             if lp_user_name:
                 user_name = lp_user_name
 
+        gerrit_id = record.get('gerrit_id')
+        if gerrit_id:
+            user_g = user_processor.load_user(
+                self.runtime_storage_inst, gerrit_id=gerrit_id) or {}
+            if (not user_g) and (not launchpad_id):
+                # query LP
+                guessed_lp_id = gerrit_id
+                lp_user_name = self._get_lp_user_name(guessed_lp_id)
+                if lp_user_name == user_name:
+                    launchpad_id = guessed_lp_id
+        else:
+            user_g = {}
+
         user_l = user_processor.load_user(
             self.runtime_storage_inst, launchpad_id=launchpad_id) or {}
 
-        user = self._create_user(launchpad_id, email, user_name)
+        user = self._create_user(launchpad_id, email, gerrit_id, user_name)
 
-        if (user_e.get('seq') == user_l.get('seq')) and user_e.get('seq'):
+        if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq')) and
+                user_e.get('seq')):
             # sequence numbers are set and the same, merge is not needed
             user = user_e
         else:
-            if user_e or user_l:
-                user = self._merge_user_profiles([user_e, user_l, user])
+            if user_e or user_l or user_g:
+                user = self._merge_user_profiles(
+                    [user_e, user_l, user_g, user])
             else:
                 # create new
                 if not user_name:
@@ -243,6 +260,7 @@ class RecordProcessor(object):
                 LOG.debug('Created new user: %s', user)
 
             user_processor.store_user(self.runtime_storage_inst, user)
+            LOG.debug('Stored user: %s', user)
 
         return user
 
@@ -250,8 +268,8 @@ class RecordProcessor(object):
         user = self.update_user(record)
 
         record['user_id'] = user['user_id']
-        record['launchpad_id'] = user['launchpad_id']
-
+        if user.get('launchpad_id'):
+            record['launchpad_id'] = user['launchpad_id']
         if user.get('user_name'):
             record['author_name'] = user['user_name']
 
@@ -299,7 +317,7 @@ class RecordProcessor(object):
         owner = record['owner']
 
         review['primary_key'] = review['id']
-        review['launchpad_id'] = owner['username']
+        review['gerrit_id'] = owner['username'].lower()
         review['author_name'] = owner['name']
         review['author_email'] = owner['email'].lower()
         review['date'] = record['createdOn']
@@ -329,7 +347,7 @@ class RecordProcessor(object):
         patch_record['number'] = patch['number']
         patch_record['date'] = patch['createdOn']
         uploader = patch['uploader']
-        patch_record['launchpad_id'] = uploader['username']
+        patch_record['gerrit_id'] = uploader['username'].lower()
         patch_record['author_name'] = uploader['name']
         patch_record['author_email'] = uploader['email'].lower()
         patch_record['module'] = review['module']
@@ -349,7 +367,7 @@ class RecordProcessor(object):
         mark['value'] = int(approval['value'])
         mark['date'] = approval['grantedOn']
         mark['primary_key'] = (review['id'] + str(mark['date']) + mark['type'])
-        mark['launchpad_id'] = reviewer['username']
+        mark['gerrit_id'] = reviewer['username'].lower()
         mark['author_name'] = reviewer['name']
         mark['author_email'] = reviewer['email'].lower()
         mark['module'] = review['module']
@@ -663,18 +681,15 @@ class RecordProcessor(object):
     def _update_reviews_with_sequence_number(self):
         LOG.debug('Set review number in review records')
 
-        users_reviews = {}
+        users_reviews = collections.defaultdict(list)
         for record in self.runtime_storage_inst.get_all_records():
             if record['record_type'] == 'review':
-                launchpad_id = record['launchpad_id']
+                user_id = record.get('user_id')
                 review = {'date': record['date'], 'id': record['id']}
-                if launchpad_id in users_reviews:
-                    users_reviews[launchpad_id].append(review)
-                else:
-                    users_reviews[launchpad_id] = [review]
+                users_reviews[user_id].append(review)
 
         reviews_index = {}
-        for launchpad_id, reviews in six.iteritems(users_reviews):
+        for reviews in six.itervalues(users_reviews):
             reviews.sort(key=lambda x: x['date'])
             review_number = 0
             for review in reviews:
@@ -692,7 +707,7 @@ class RecordProcessor(object):
     def _determine_core_contributors(self):
         LOG.debug('Determine core contributors')
 
-        core_engineers = {}
+        module_branches = collections.defaultdict(set)
         quarter_ago = int(time.time()) - 60 * 60 * 24 * 30 * 3  # a quarter ago
 
         for record in self.runtime_storage_inst.get_all_records():
@@ -701,14 +716,17 @@ class RecordProcessor(object):
                     record['value'] in [2, -2]):
                 module_branch = (record['module'], record['branch'])
                 user_id = record['user_id']
-                if user_id in core_engineers:
-                    core_engineers[user_id].add(module_branch)
-                else:
-                    core_engineers[user_id] = set([module_branch])
+                module_branches[user_id].add(module_branch)
+
         for user in self.runtime_storage_inst.get_all_users():
             core_old = user.get('core')
-            user['core'] = list(core_engineers.get(user['user_id'], []))
-            if user['core'] != core_old:
+            user_module_branch = module_branches.get(user['user_id'])
+            if user_module_branch:
+                user['core'] = list(user_module_branch)
+            elif user.get('core'):
+                del user['core']
+
+            if user.get('core') != core_old:
                 user_processor.store_user(self.runtime_storage_inst, user)
 
     def _close_patch(self, cores, marks):
@@ -737,7 +755,7 @@ class RecordProcessor(object):
 
         cores = set()
         for user in self.runtime_storage_inst.get_all_users():
-            for (module, branch) in (user['core'] or []):
+            for (module, branch) in (user.get('core') or []):
                 cores.add((module, branch, user['user_id']))
 
         # map from review_id to current patch and list of marks

@@ -124,7 +124,7 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
             cis[module][driver['ci']['id']] = driver
 
             default_data['users'].append({
-                'launchpad_id': driver['ci']['id'],
+                'gerrit_id': driver['ci']['id'],
                 'user_name': driver['ci']['id'],
                 'companies': [
                     {'company_name': driver['vendor'], 'end_date': None}],

@@ -14,11 +14,14 @@
 # limitations under the License.
 
 
-def make_user_id(email=None, launchpad_id=None, member_id=None):
+def make_user_id(email=None, launchpad_id=None, gerrit_id=None,
+                 member_id=None):
+    if launchpad_id or email:
+        return launchpad_id or email
+    if gerrit_id:
+        return 'gerrit:%s' % gerrit_id
     if member_id:
         return 'member:%s' % member_id
-    else:
-        return launchpad_id or email
 
 
 def store_user(runtime_storage_inst, user):
@@ -29,13 +32,18 @@ def store_user(runtime_storage_inst, user):
         runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
     if user.get('launchpad_id'):
         runtime_storage_inst.set_by_key('user:%s' % user['launchpad_id'], user)
+    if user.get('gerrit_id'):
+        runtime_storage_inst.set_by_key('user:gerrit:%s' % user['gerrit_id'],
+                                        user)
     for email in user.get('emails') or []:
         runtime_storage_inst.set_by_key('user:%s' % email, user)
 
 
 def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
-              launchpad_id=None, member_id=None):
-    if member_id:
+              launchpad_id=None, gerrit_id=None, member_id=None):
+    if gerrit_id:
+        key = 'gerrit:%s' % gerrit_id
+    elif member_id:
         key = 'member:%s' % member_id
     else:
         key = seq or user_id or launchpad_id or email
