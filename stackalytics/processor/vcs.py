@@ -95,6 +95,8 @@ class Git(Vcs):
 
     def _checkout(self, branch):
         try:
+            sh.git('clean', '-d', '--force')
+            sh.git('reset', '--hard')
             sh.git('checkout', 'origin/' + branch)
             return True
         except sh.ErrorReturnCode as e:
