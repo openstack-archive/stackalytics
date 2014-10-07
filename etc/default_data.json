@@ -8769,9 +8769,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/nova.git",
@@ -8808,9 +8813,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/keystone.git",
@@ -8842,9 +8852,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/cinder.git",
@@ -8881,9 +8896,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/glance.git",
@@ -8920,9 +8940,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/neutron.git",
@@ -8959,9 +8984,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/horizon.git",
@@ -9189,9 +9219,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/heat.git",
@@ -9235,9 +9270,14 @@
                     "tag_from": "2013.2"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/ceilometer.git",
@@ -9571,9 +9611,14 @@
                     "tag_from": "0.3"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2014.2.rc1",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
                 }
             ]
         },
@@ -9723,7 +9768,11 @@
         },
         {
             "release_name": "Juno",
-            "end_date": "2014-Oct-17"
+            "end_date": "2014-Oct-16"
+        },
+        {
+            "release_name": "Kilo",
+            "end_date": "2015-Apr-30"
         }
     ],
     "mail_lists": [
