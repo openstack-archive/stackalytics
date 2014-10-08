@@ -5102,6 +5102,10 @@
             "companies": [
                 {
                     "company_name": "UnitedStack",
+                    "end_date": "2014-Sep-14"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
