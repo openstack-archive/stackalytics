@@ -12,8 +12,8 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-import random
 
+import random
 import re
 import time
 
@@ -29,21 +29,16 @@ NAME_AND_DATE_PATTERN = r'<h3>(?P<member_name>[^<]*)[\s\S]*?' \
                         r'<div class="span-7 last">(?P<date_joined>[^<]*)'
 COMPANY_PATTERN = r'<strong>Date\sJoined[\s\S]*?<b>(?P<company_draft>[^<]*)' \
                   r'[\s\S]*?From\s(?P<date_from>[\s\S]*?)\(Current\)'
+GARBAGE_PATTERN = r'[/\\~%^\*_]+'
 
 
-def _convert_str_fields_to_unicode(result):
-    for field, value in six.iteritems(result):
-        if type(value) is str:
-            try:
-                value = six.text_type(value, 'utf8')
-                result[field] = value
-            except Exception:
-                pass
+def strip_garbage(s):
+    return re.sub(r'\s+', ' ', re.sub(GARBAGE_PATTERN, '', s))
 
 
 def _retrieve_member(uri, member_id, html_parser):
 
-    content = utils.read_uri(uri)
+    content = six.text_type(utils.read_uri(uri), 'utf8')
 
     if not content:
         return {}
@@ -54,7 +49,7 @@ def _retrieve_member(uri, member_id, html_parser):
         result = rec.groupdict()
 
         member['member_id'] = member_id
-        member['member_name'] = result['member_name']
+        member['member_name'] = strip_garbage(result['member_name'])
         member['date_joined'] = result['date_joined']
         member['member_uri'] = uri
         break
@@ -63,7 +58,8 @@ def _retrieve_member(uri, member_id, html_parser):
     for rec in re.finditer(COMPANY_PATTERN, content):
         result = rec.groupdict()
 
-        member['company_draft'] = html_parser.unescape(result['company_draft'])
+        member['company_draft'] = strip_garbage(
+            html_parser.unescape(result['company_draft']))
 
     return member
 
@@ -98,8 +94,6 @@ def log(uri, runtime_storage_inst, days_to_update_members, members_look_ahead):
             cnt_empty += 1
             cur_index += 1
             continue
-
-        _convert_str_fields_to_unicode(member)
 
         cnt_empty = 0
         last_member_index = cur_index
