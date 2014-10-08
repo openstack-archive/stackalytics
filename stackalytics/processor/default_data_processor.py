@@ -126,6 +126,7 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
             default_data['users'].append({
                 'gerrit_id': driver['ci']['id'],
                 'user_name': driver['ci']['id'],
+                'static': True,
                 'companies': [
                     {'company_name': driver['vendor'], 'end_date': None}],
             })
