@@ -29,10 +29,13 @@
                     [<span style="font-style: italic;"><a
                         href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change</a></span>]
             </div>
-            {%if launchpad_id != '' %}
+            {%if launchpad_id %}
                 <div>Launchpad: <a href="https://launchpad.net/~${launchpad_id}" target="_blank">${launchpad_id}</a></div>
             {%/if%}
-            {%if core != '' %}
+            {%if gerrit_id %}
+                <div>Gerrit: <a href="https://review.openstack.org/#/q/owner:${gerrit_id},n,z" target="_blank">${gerrit_id}</a></div>
+            {%/if%}
+            {%if core %}
                 <div>Core in:
                     {%each( index, value ) core %}
                         <a href="/?module=${value[0]}&metric=${metric}">${value[0]}</a>
