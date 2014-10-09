@@ -8776,8 +8776,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -8820,8 +8819,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -8859,8 +8857,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -8903,8 +8900,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -8947,8 +8943,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -8991,8 +8986,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -9035,8 +9029,7 @@
                     "tag_from": "1.7.4"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "1.8.0"
                 },
@@ -9226,8 +9219,7 @@
                     "tag_from": "v7.release"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -9277,8 +9269,7 @@
         {
             "releases": [
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -9323,8 +9314,7 @@
         {
             "releases": [
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
@@ -9347,8 +9337,7 @@
         {
             "releases": [
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "fc8ca59"
                 },
@@ -9511,8 +9500,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1.rc2"
                 },

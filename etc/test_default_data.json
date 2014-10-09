@@ -69,8 +69,7 @@
                     "tag_from": "2012.2"
                 },
                 {
-                    "branch": "stable/havana",
-                    "tag_to": "HEAD",
+                    "tag_to": "havana-eol",
                     "release_name": "Havana",
                     "tag_from": "2013.1"
                 },
