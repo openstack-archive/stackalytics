@@ -8061,10 +8061,6 @@
             "company_name": "Endurance Wind Power"
         },
         {
-            "domains": ["enovance.com"],
-            "company_name": "eNovance"
-        },
-        {
             "domains": ["epam.com"],
             "company_name": "EPAM Systems"
         },
@@ -8480,9 +8476,9 @@
             "company_name": "Ravello Systems"
         },
         {
-            "domains": ["redhat.com", "gluster.com"],
+            "domains": ["redhat.com", "gluster.com", "enovance.com"],
             "company_name": "Red Hat",
-            "aliases": ["Red Hat Canada, Inc", "Red Hat Czech, s.r.o.", "Red Hat, Inc., Bloomberg L.P.", "Red Hat India Pvt. Ltd.", "Red Hat Software"]
+            "aliases": ["Red Hat Canada, Inc", "Red Hat Czech, s.r.o.", "Red Hat, Inc., Bloomberg L.P.", "Red Hat India Pvt. Ltd.", "Red Hat Software", "eNovance"]
         },
         {
             "domains": ["reduxio.com"],
