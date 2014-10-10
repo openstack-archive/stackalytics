@@ -89,7 +89,8 @@ class CachedMemoryStorage(MemoryStorage):
 
         if have_updates:
             self.company_name_mapping = dict(
-                (c.lower(), c) for c in self.company_index.keys())
+                (c.lower().replace('&', ''), c)
+                for c in self.company_index.keys())
 
         return have_updates
 

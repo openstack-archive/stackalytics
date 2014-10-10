@@ -288,7 +288,7 @@ function makeURI(uri, options) {
         $.extend(ops, options);
     }
     var str = $.map(ops,function (val, index) {
-        return index + "=" + encodeURI(val).toLowerCase();
+        return index + "=" + encodeURI(val.replace("&", "")).toLowerCase();
     }).join("&");
 
     return (str == "") ? uri : uri + "?" + str;
@@ -329,7 +329,7 @@ function initSingleSelector(name, api_url, select2_extra_options, change_handler
         success: function (data) {
             var initial_value = getUrlVars()[name];
             if (initial_value) {
-                initial_value = encodeURI(initial_value).toLocaleLowerCase();
+                initial_value = (initial_value).toLocaleLowerCase();
             } else if (data["default"]) {
                 initial_value = data["default"];
             }

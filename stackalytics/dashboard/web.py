@@ -272,7 +272,7 @@ def get_contribution_json(records, **kwargs):
 @decorators.record_filter(ignore=['company'])
 def get_companies_json(record_ids, **kwargs):
     memory_storage = vault.get_memory_storage()
-    companies = set(memory_storage.get_original_company_name(company)
+    companies = set(company
                     for company in memory_storage.get_index_keys_by_record_ids(
                     'company_name', record_ids))
 
@@ -280,7 +280,7 @@ def get_companies_json(record_ids, **kwargs):
         companies.add(memory_storage.get_original_company_name(
             kwargs['_params']['company'][0]))
 
-    return [{'id': utils.safe_encode(c.lower()), 'text': c}
+    return [{'id': c.lower().replace('&', ''), 'text': c}
             for c in sorted(companies)]
 
 
