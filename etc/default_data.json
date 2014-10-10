@@ -8538,10 +8538,6 @@
             "company_name": "Rizumu"
         },
         {
-            "domains": ["rr.com"],
-            "company_name": "Time Warner Cable"
-        },
-        {
             "domains": ["samsung.com"],
             "company_name": "Samsung",
             "aliases": ["Samsung SDS", "Samsung India Software Operations"]
