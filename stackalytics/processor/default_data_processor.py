@@ -114,26 +114,31 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
     LOG.info('Reading DriverLog data from uri: %s', driverlog_data_uri)
     driverlog_data = utils.read_json_from_uri(driverlog_data_uri)
 
-    cis = {}
+    module_ci_ids = {}
+    ci_ids = set()
     for driver in driverlog_data['drivers']:
         if 'ci' in driver:
             module = driver['project_id'].split('/')[1]
 
-            if module not in cis:
-                cis[module] = {}
-            cis[module][driver['ci']['id']] = driver
+            if module not in module_ci_ids:
+                module_ci_ids[module] = {}
+            ci_id = driver['ci']['id']
+            module_ci_ids[module][ci_id] = driver
 
-            default_data['users'].append({
-                'gerrit_id': driver['ci']['id'],
-                'user_name': driver['ci']['id'],
-                'static': True,
-                'companies': [
-                    {'company_name': driver['vendor'], 'end_date': None}],
-            })
+            if ci_id not in ci_ids:
+                ci_ids.add(ci_id)
+                default_data['users'].append({
+                    'user_id': user_processor.make_user_id(gerrit_id=ci_id),
+                    'gerrit_id': ci_id,
+                    'user_name': ci_id,
+                    'static': True,
+                    'companies': [
+                        {'company_name': driver['vendor'], 'end_date': None}],
+                })
 
     for repo in default_data['repos']:
-        if repo['module'] in cis:
-            repo['ci'] = cis[repo['module']]
+        if repo['module'] in module_ci_ids:
+            repo['ci'] = module_ci_ids[repo['module']]
 
 
 def _store_users(runtime_storage_inst, users):

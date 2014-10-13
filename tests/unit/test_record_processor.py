@@ -139,7 +139,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -170,7 +170,7 @@ class TestRecordProcessor(testtools.TestCase):
                              date=1000000000)))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': '*independent',
@@ -199,7 +199,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@ibm.com',
             'author_name': 'John Doe',
             'company_name': 'IBM',
@@ -232,7 +232,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@ibm.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -268,7 +268,7 @@ class TestRecordProcessor(testtools.TestCase):
                              date=1000000000)))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@nec.com',
             'author_name': 'John Doe',
             'company_name': 'IBM',
@@ -296,7 +296,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -326,7 +326,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@ibm.com',
             'author_name': 'John Doe',
             'company_name': 'IBM',
@@ -352,7 +352,7 @@ class TestRecordProcessor(testtools.TestCase):
                              author_name='John Doe')))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@ibm.com',
             'author_name': 'John Doe',
             'company_name': 'IBM',
@@ -566,14 +566,14 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.assertRecordsMatch(
             {'record_type': 'bpd',
-             'launchpad_id': 'john_doe',
+             'user_id': 'john_doe',
              'author_name': 'John Doe',
              'company_name': '*independent'},
             processed_records[0])
 
         self.assertRecordsMatch(
             {'record_type': 'review',
-             'launchpad_id': 'john_doe',
+             'user_id': 'john_doe',
              'author_name': 'John Doe',
              'author_email': 'john_doe@gmail.com',
              'company_name': '*independent'},
@@ -625,7 +625,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.assertRecordsMatch(
             {'record_type': 'commit',
-             'launchpad_id': 'john_doe',
+             'user_id': 'john_doe',
              'author_name': 'John Doe',
              'author_email': 'john_doe@gmail.com',
              'company_name': '*independent'},
@@ -667,7 +667,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.assertRecordsMatch(
             {'record_type': 'review',
-             'launchpad_id': 'john_doe',
+             'user_id': 'john_doe',
              'author_name': 'John Doe',
              'author_email': 'john_doe@gmail.com',
              'company_name': '*independent'},
@@ -675,7 +675,7 @@ class TestRecordProcessor(testtools.TestCase):
 
         self.assertRecordsMatch(
             {'record_type': 'bpd',
-             'launchpad_id': 'john_doe',
+             'user_id': 'john_doe',
              'author_name': 'John Doe',
              'company_name': '*independent'},
             processed_records[1])
@@ -1021,12 +1021,12 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(3, len(processed_commits))
 
         self.assertRecordsMatch({
-            'launchpad_id': 'tupac',
+            'user_id': 'tupac',
             'author_email': 'tupac.shakur@openstack.com',
             'author_name': 'Tupac Shakur',
         }, processed_commits[0])
         self.assertRecordsMatch({
-            'launchpad_id': 'jimi',
+            'user_id': 'jimi',
             'author_email': 'jimi.hendrix@openstack.com',
             'author_name': 'Jimi Hendrix',
         }, processed_commits[2])
@@ -1320,7 +1320,7 @@ class TestRecordProcessor(testtools.TestCase):
         ))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -1353,7 +1353,7 @@ class TestRecordProcessor(testtools.TestCase):
         ))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -1387,7 +1387,7 @@ class TestRecordProcessor(testtools.TestCase):
         ))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -1421,7 +1421,7 @@ class TestRecordProcessor(testtools.TestCase):
         ))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',
@@ -1454,7 +1454,7 @@ class TestRecordProcessor(testtools.TestCase):
         ))[0]
 
         expected_commit = {
-            'launchpad_id': 'john_doe',
+            'user_id': 'john_doe',
             'author_email': 'johndoe@gmail.com',
             'author_name': 'John Doe',
             'company_name': 'NEC',

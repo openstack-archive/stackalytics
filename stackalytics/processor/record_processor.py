@@ -98,22 +98,22 @@ class RecordProcessor(object):
     def _create_user(self, launchpad_id, email, gerrit_id, user_name):
         company = (self._get_company_by_email(email) or
                    self._get_independent())
+        emails = []
+        if email:
+            emails = [email]
         user = {
             'user_id': user_processor.make_user_id(
-                email=email, launchpad_id=launchpad_id, gerrit_id=gerrit_id),
+                emails=emails, launchpad_id=launchpad_id, gerrit_id=gerrit_id),
             'launchpad_id': launchpad_id,
             'user_name': user_name or '',
             'companies': [{
                 'company_name': company,
                 'end_date': 0,
             }],
+            'emails': emails,
         }
         if gerrit_id:
             user['gerrit_id'] = gerrit_id
-        if email:
-            user['emails'] = [email]
-        else:
-            user['emails'] = []
         return user
 
     def _get_lp_info(self, email):
@@ -163,6 +163,20 @@ class RecordProcessor(object):
         return None
 
     def _merge_user_profiles(self, user_profiles):
+        LOG.debug('Merge profiles: %s', user_profiles)
+
+        # check of there are more than 1 launchpad_id nor gerrit_id
+        lp_ids = set(u.get('launchpad_id') for u in user_profiles
+                     if u.get('launchpad_id'))
+        if len(lp_ids) > 1:
+            LOG.info('Ambiguous launchpad ids: %s on profiles: %s',
+                     (lp_ids, user_profiles))
+        g_ids = set(u.get('gerrit_id') for u in user_profiles
+                    if u.get('gerrit_id'))
+        if len(g_ids) > 1:
+            LOG.info('Ambiguous gerrit ids: %s on profiles: %s',
+                     (g_ids, user_profiles))
+
         merged_user = {}  # merged user profile
 
         # collect ordinary fields
@@ -219,7 +233,8 @@ class RecordProcessor(object):
 
         user_name = record.get('author_name')
         launchpad_id = record.get('launchpad_id')
-        if email and (not user_e) and (not launchpad_id):
+        if (email and (not user_e) and (not launchpad_id) and
+                (not user_e.get('launchpad_id'))):
             # query LP
             launchpad_id, lp_user_name = self._get_lp_info(email)
             if lp_user_name:
@@ -229,7 +244,8 @@ class RecordProcessor(object):
         if gerrit_id:
             user_g = user_processor.load_user(
                 self.runtime_storage_inst, gerrit_id=gerrit_id) or {}
-            if (not user_g) and (not launchpad_id):
+            if ((not user_g) and (not launchpad_id) and
+                    (not user_e.get('launchpad_id'))):
                 # query LP
                 guessed_lp_id = gerrit_id
                 lp_user_name = self._get_lp_user_name(guessed_lp_id)
@@ -241,13 +257,13 @@ class RecordProcessor(object):
         user_l = user_processor.load_user(
             self.runtime_storage_inst, launchpad_id=launchpad_id) or {}
 
-        user = self._create_user(launchpad_id, email, gerrit_id, user_name)
-
         if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq')) and
                 user_e.get('seq')):
             # sequence numbers are set and the same, merge is not needed
             user = user_e
         else:
+            user = self._create_user(launchpad_id, email, gerrit_id, user_name)
+
             if user_e or user_l or user_g:
                 user = self._merge_user_profiles(
                     [user_e, user_l, user_g, user])
@@ -268,8 +284,6 @@ class RecordProcessor(object):
         user = self.update_user(record)
 
         record['user_id'] = user['user_id']
-        if user.get('launchpad_id'):
-            record['launchpad_id'] = user['launchpad_id']
         if user.get('user_name'):
             record['author_name'] = user['user_name']
 
@@ -535,7 +549,7 @@ class RecordProcessor(object):
         ci_vote['primary_key'] = ('%s:%s' % (reviewer['username'],
                                   ci_vote['date']))
         ci_vote['user_id'] = reviewer['username']
-        ci_vote['launchpad_id'] = reviewer['username']
+        ci_vote['gerrit_id'] = reviewer['username']
         ci_vote['author_name'] = reviewer.get('name') or reviewer['username']
         ci_vote['author_email'] = (
             reviewer.get('email') or reviewer['username']).lower()

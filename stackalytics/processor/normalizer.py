@@ -39,7 +39,8 @@ def _normalize_user(user):
     user['companies'].sort(key=utils.cmp_to_key(end_date_comparator))
     user['user_id'] = user_processor.make_user_id(
         launchpad_id=user.get('launchpad_id'),
-        email=user.get('email'))
+        emails=user.get('emails'),
+        gerrit_id=user.get('gerrit_id'))
 
 
 def _normalize_users(users):

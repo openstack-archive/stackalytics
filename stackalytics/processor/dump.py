@@ -110,7 +110,7 @@ def export_data(memcached_inst, fd):
 
         key_prefix = key + ':'
 
-        for record_id_set in utils.make_range(0, count, BULK_READ_SIZE):
+        for record_id_set in utils.make_range(0, count + 1, BULK_READ_SIZE):
             # memcache limits the size of returned data to specific yet unknown
             # chunk size, the code should verify that all requested records are
             # returned an be able to fall back to one-by-one retrieval
@@ -126,13 +126,17 @@ def export_data(memcached_inst, fd):
                 for k, v in six.iteritems(chunk):
                     pickle.dump((key_prefix + str(k), v), fd)
 
-    for user_seq in range(memcached_inst.get('user:count') or 0):
+    for user_seq in range((memcached_inst.get('user:count') or 0) + 1):
         user = memcached_inst.get('user:%s' % user_seq)
         if user:
             if user.get('user_id'):
                 pickle.dump(('user:%s' % user['user_id'], user), fd)
             if user.get('launchpad_id'):
                 pickle.dump(('user:%s' % user['launchpad_id'], user), fd)
+            if user.get('gerrit_id'):
+                pickle.dump(('user:gerrit:%s' % user['gerrit_id'], user), fd)
+            if user.get('member_id'):
+                pickle.dump(('user:member:%s' % user['member_id'], user), fd)
             for email in user.get('emails') or []:
                 pickle.dump(('user:%s' % email, user), fd)
 

@@ -13,11 +13,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from stackalytics.openstack.common import log as logging
 
-def make_user_id(email=None, launchpad_id=None, gerrit_id=None,
+
+LOG = logging.getLogger(__name__)
+
+
+def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
                  member_id=None):
-    if launchpad_id or email:
-        return launchpad_id or email
+    if launchpad_id or emails:
+        return launchpad_id or emails[0]
     if gerrit_id:
         return 'gerrit:%s' % gerrit_id
     if member_id:
@@ -25,9 +30,23 @@ def make_user_id(email=None, launchpad_id=None, gerrit_id=None,
 
 
 def store_user(runtime_storage_inst, user):
+    write_flag = False
+
     if not user.get('seq'):
         user['seq'] = runtime_storage_inst.inc_user_count()
-    runtime_storage_inst.set_by_key('user:%s' % user['seq'], user)
+        LOG.debug('New user: %s', user)
+        write_flag = True
+    else:
+        stored_user = runtime_storage_inst.get_by_key(
+            'user:%d' % user.get('seq'))
+        if stored_user != user:
+            LOG.debug('User updated: %s', user)
+            write_flag = True
+
+    if not write_flag:
+        return
+
+    runtime_storage_inst.set_by_key('user:%d' % user['seq'], user)
     if user.get('user_id'):
         runtime_storage_inst.set_by_key('user:%s' % user['user_id'], user)
     if user.get('launchpad_id'):
@@ -53,4 +72,5 @@ def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
 
 
 def delete_user(runtime_storage_inst, user):
+    LOG.debug('Delete user: %s', user)
     runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
