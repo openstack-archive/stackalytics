@@ -88,3 +88,43 @@ class TestConfigFiles(testtools.TestCase):
 
     def test_users_in_alphabetical_order_in_test_file(self):
         self._verify_users_in_alphabetical_order('etc/test_default_data.json')
+
+    def _check_collision(self, storage, user, field, field_name):
+        self.assertFalse(
+            field in storage,
+            'Duplicate %s %s, collision between: %s and %s'
+            % (field_name, field, storage[field], user))
+        storage[field] = user
+
+    def _verify_users_unique(self, file_name):
+        users = self._read_file(file_name)['users']
+        storage = {}
+        for user in users:
+            if user.get('launchpad_id'):
+                field = user['launchpad_id']
+                self.assertFalse(
+                    field in storage,
+                    'Duplicate launchpad_id %s, collision between: %s and %s'
+                    % (field, storage.get(field), user))
+                storage[field] = user
+
+            if user.get('gerrit_id'):
+                field = user['gerrit_id']
+                self.assertFalse(
+                    ('gerrit:%s' % field) in storage,
+                    'Duplicate gerrit_id %s, collision between: %s and %s'
+                    % (field, storage.get(field), user))
+                storage['gerrit:%s' % field] = user
+
+            for email in user['emails']:
+                self.assertFalse(
+                    email in storage,
+                    'Duplicate email %s, collision between: %s and %s'
+                    % (email, storage.get(email), user))
+                storage[email] = user
+
+    def test_users_unique_profiles(self):
+        self._verify_users_unique('etc/default_data.json')
+
+    def test_users_unique_profiles_in_test_file(self):
+        self._verify_users_unique('etc/test_default_data.json')

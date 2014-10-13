@@ -2302,17 +2302,6 @@
             "emails": ["emilien.macchi@stackops.com", "emilien.macchi@enovance.com", "emilien@enovance.com", "emacchi@redhat.com"]
         },
         {
-            "launchpad_id": "enchantner",
-            "user_name": "Nikolay Markov",
-            "companies": [
-                {
-                    "company_name": "Mirantis",
-                    "end_date": null
-                }
-            ],
-            "emails": ["nmarkov@mirantis.com"]
-        },
-        {
             "launchpad_id": "eric-martin4",
             "companies": [
                 {
@@ -3996,17 +3985,6 @@
             ],
             "user_name": "Rui Chen",
             "emails": ["chenrui.momo@gmail.com", "kiwik.chenrui@huawei.com"]
-        },
-        {
-            "launchpad_id": "kjharke",
-            "companies": [
-                {
-                    "company_name": "HP",
-                    "end_date": null
-                }
-            ],
-            "user_name": "K Jonathan Harker",
-            "emails": ["k.jonathan.harker@hp.com"]
         },
         {
             "launchpad_id": "koti-kelam",
