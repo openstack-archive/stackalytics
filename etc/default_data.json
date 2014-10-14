@@ -154,6 +154,21 @@
             "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com"]
         },
         {
+            "launchpad_id": "adam-vinsh",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2014-Aug-15"
+                },
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adam Vinsh",
+            "emails": ["a.vinsh1@comcast.net", "adam.vinsh@twcable.com", "adam.vinsh@hp.com"]
+        },
+        {
             "launchpad_id": "aditirav",
             "companies": [
                 {
@@ -962,6 +977,21 @@
             ],
             "user_name": "Boris Pavlovic",
             "emails": ["boris@pavlovic.me", "bpavlovic@mirantis.com"]
+        },
+        {
+            "launchpad_id": "brad-klein",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2014-Aug-15"
+                },
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bradley Klein",
+            "emails": ["bradley.klein@twcable.com", "brad.klein@hp.com"]
         },
         {
             "launchpad_id": "bradjones",
@@ -3976,6 +4006,21 @@
             "emails": ["kiall@managedit.ie", "kiall@hp.com"]
         },
         {
+            "launchpad_id": "kim-jensen2",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2014-Sep-29"
+                },
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kim Jensen",
+            "emails": ["kim.jensen2@hp.com", "kim.jensen@twcable.com"]
+        },
+        {
             "launchpad_id": "kiwik-chenrui",
             "companies": [
                 {
@@ -4652,6 +4697,21 @@
             ],
             "user_name": "Morgan Fainberg",
             "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com"]
+        },
+        {
+            "launchpad_id": "med",
+            "companies": [
+                {
+                    "company_name": "Canonical",
+                    "end_date": "2014-Jan-26"
+                },
+                {
+                    "company_name": "Time Warner Cable",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Medberry",
+            "emails": ["david.medberry@canonical.com", "openstack@medberry.net", "david.medberry@twcable.com", "ubuntu@medberry.net"]
         },
         {
             "launchpad_id": "mestery",
