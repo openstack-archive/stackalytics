@@ -7011,6 +7011,17 @@
             "emails": ["tim.miller.0@gmail.com"]
         },
         {
+            "launchpad_id": "tim-millican",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tim Millican",
+            "emails": ["tim.millican@linux.com"]
+        },
+        {
             "launchpad_id": "tim-simpson",
             "companies": [
                 {
