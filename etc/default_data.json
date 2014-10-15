@@ -5022,6 +5022,17 @@
             "user_name": "Neill Cox",
             "emails": ["neill.cox@rackspace.com", "neill@ingenious.com.au"]
         },
+         {
+            "launchpad_id": "nejc-saje",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nejc Saje",
+            "emails": ["nsaje@redhat.com", "nejc.saje@xlab.si", "nejc.saje@gmail.com"]
+        },
         {
             "launchpad_id": "nelson-crynwr",
             "companies": [
