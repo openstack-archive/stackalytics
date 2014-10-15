@@ -8067,6 +8067,11 @@
             "aliases": ["debian.org"]
         },
         {
+            "domains": ["dektech.com.au"],
+            "company_name": "DEK Technologies",
+            "aliases": ["DEK Technologies","DEK"]
+        },
+        {
             "domains": ["dell.com", "software.dell.com"],
             "company_name": "Dell",
             "aliases": ["Dell  &amp; Ganette Publishing", "Dell, Inc., Cabarrus County Schools", "Dell & Ganette Publishing"]
