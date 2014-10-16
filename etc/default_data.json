@@ -7323,6 +7323,18 @@
             "emails": ["vandita_arora@cable.comcast.com"]
         },
         {
+            "launchpad_id": "vedlad",
+            "gerrit_id": "vedlad",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ved Lad",
+            "emails": ["ved_lad@symantec.com", "ved_lad@symantec40.com", "vedlad@gmail.com"]
+        },
+        {
             "launchpad_id": "vey-julien",
             "gerrit_id": "julienvey",
             "companies": [
