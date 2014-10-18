@@ -2107,6 +2107,18 @@
             "emails": ["dreidellhasa@yahoo.com", "mmcroberts@mirantis.com"]
         },
         {
+            "launchpad_id": "drewboik",
+            "gerrit_id": "dboik",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Boik",
+            "emails": ["dboik@cisco.com", "drew.boik@gmail.com"]
+        },
+        {
             "launchpad_id": "dricco",
             "companies": [
                 {
