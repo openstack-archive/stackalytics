@@ -2686,6 +2686,22 @@
             "primary_key": "9f0df8c2451bdb00c17da2a890c954597a5d7f6b",
             "module": "openstack-manuals",
             "subject": "Update sitemap.xml file"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Id875ad0f221acc6532b0df85114b34d4bb175a7f"],
+            "primary_key": "11b4d2c213c55542e6b6af7a8e02191d0fa57497",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ifa40208c792481e58fa611c925a0ed0678d3ecee"],
+            "primary_key": "d511ee3fa3a6422bbd2f16893821a0baf1bee931",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap.xml"
         }
     ]
 }
