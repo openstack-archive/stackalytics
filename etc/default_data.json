@@ -1016,6 +1016,17 @@
             "emails": ["joseph.breu@rackspace.com", "breu@breu.org"]
         },
         {
+            "launchpad_id": "brian-shang-dev",
+            "companies": [
+                {
+                    "company_name": "Letv Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shang Yong",
+            "emails": ["shangyong@letv.com", "brian.shang.dev@gmail.com"]
+        },
+        {
             "launchpad_id": "brian-tully",
             "companies": [
                 {
