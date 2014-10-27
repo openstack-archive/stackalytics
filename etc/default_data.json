@@ -5892,11 +5892,15 @@
             "companies": [
                 {
                     "company_name": "Internap",
+                    "end_date": "2011-Sep-01"
+                },
+                {
+                    "company_name": "Violin Memory",
                     "end_date": null
                 }
             ],
             "user_name": "Ryan Lucio",
-            "emails": ["rlucio@internap.com"]
+            "emails": ["rlucio@vmem.com"]
         },
         {
             "launchpad_id": "rmoore08",
