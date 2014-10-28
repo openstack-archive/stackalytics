@@ -5390,11 +5390,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2014-Oct-17"
+                },
+                {
+                    "company_name": "Blue Box",
                     "end_date": null
                 }
             ],
             "user_name": "Paul Czarkowski",
-            "emails": ["paul@paulcz.net", "paul.czarkowski@rackspace.com"]
+            "emails": ["paul@paulcz.net", "username.taken@gmail.com", "pczarkowski@bluebox.net", "paul.czarkowski@rackspace.com"]
         },
         {
             "launchpad_id": "paulmontgomery-code",
