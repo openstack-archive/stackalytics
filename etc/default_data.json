@@ -5021,18 +5021,7 @@
                 }
             ],
             "user_name": "Nachi Ueno",
-            "emails": ["nachi@nttmcl.com", "nachi@ntti3.com"]
-        },
-        {
-            "launchpad_id": "nati-ueno-s",
-            "companies": [
-                {
-                    "company_name": "NTT",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Nachi Ueno",
-            "emails": ["openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
+            "emails": ["nachi@nttmcl.com", "nachi@ntti3.com", "openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
         },
         {
             "launchpad_id": "neillc",
@@ -7910,7 +7899,7 @@
         {
             "domains": [""],
             "company_name": "*independent",
-            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome", "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor", "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance", "Freelance IT Specialist"]
+            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome", "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor", "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance", "Freelance IT Specialist", "No Affiliation", "Not applicable"]
         },
         {
             "domains": ["360.cn"],
@@ -7932,6 +7921,10 @@
         {
             "domains": ["a10networks.com"],
             "company_name": "A10 Networks"
+        },
+        {
+            "domains": ["accenture.com"],
+            "company_name": "Accenture"
         },
         {
             "domains": ["alcatel-lucent.com"],
@@ -7984,6 +7977,10 @@
             "company_name": "Awcloud"
         },
         {
+            "domains": ["axway.com"],
+            "company_name": "Axway"
+        },
+        {
             "domains": ["b1-systems.de"],
             "company_name": "B1 Systems"
         },
@@ -8014,6 +8011,10 @@
             "company_name": "Bluehost"
         },
         {
+            "domains": ["boeing.com"],
+            "company_name": "Boeing"
+        },
+        {
             "domains": ["brightcomputing.com"],
             "company_name": "Bright Computing",
             "aliases": ["Bright Computing, BV"]
@@ -8022,6 +8023,10 @@
             "domains": ["brinkster.com"],
             "company_name": "Brinkster",
             "aliases": ["Brinkster Communications"]
+        },
+        {
+            "domains": ["broadcom.com"],
+            "company_name": "Broadcom"
         },
         {
             "domains": ["brocade.com"],
@@ -8123,6 +8128,10 @@
             "company_name": "Cybera"
         },
         {
+            "domains": ["cybercom.fi", "cybercom.com"],
+            "company_name": "Cybercom"
+        },
+        {
             "domains": ["debian.org"],
             "company_name": "Debian",
             "aliases": ["debian.org"]
@@ -8207,6 +8216,10 @@
             "company_name": "Chef"
         },
         {
+            "domains": ["gigaspaces.com"],
+            "company_name": "GigaSpaces"
+        },
+        {
             "domains": ["globallogic.com"],
             "company_name": "GlobalLogic"
         },
@@ -8268,17 +8281,17 @@
         {
             "domains": ["hp.com"],
             "company_name": "HP",
-            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations Pvt Ltd", "HP cloud services", "HP India software Operation", "HP Labs"]
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations Pvt Ltd", "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations"]
         },
         {
             "domains": ["huawei.com"],
             "company_name": "Huawei",
-            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd."]
+            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd.", "Huawei Technology"]
         },
         {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
             "company_name": "IBM",
-            "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India Pvt Ltd", "IBM India Pvt. Ltd.", "IBM Japan, Ltd.", "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH", "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services"]
+            "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India Pvt Ltd", "IBM India Pvt. Ltd.", "IBM Japan, Ltd.", "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH", "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services", "IBM Deutschland", "IBM Malaysia", "IBM Haifa"]
         },
         {
             "domains": ["ifca.unican.es"],
@@ -8289,6 +8302,10 @@
             "domains": ["igbmc.fr"],
             "company_name": "IGBMC",
             "aliases": ["IGBMC biological research lab"]
+        },
+        {
+            "domains": ["infoblox.com"],
+            "company_name": "Infoblox"
         },
         {
             "domains": ["inktank.com"],
@@ -8524,6 +8541,10 @@
             "aliases": ["Orange Labs"]
         },
         {
+            "domains": ["parallels.com"],
+            "company_name": "Parallels"
+        },
+        {
             "domains": ["pdx.edu"],
             "company_name": "Portland State University"
         },
@@ -8696,6 +8717,10 @@
             "aliases": ["Symantec Software and Services"]
         },
         {
+            "domains": ["tail-f.com"],
+            "company_name": "Tail-f"
+        },
+        {
             "domains": ["taobao.com"],
             "company_name": "Taobao"
         },
@@ -8778,6 +8803,10 @@
             "company_name": "VirtualBridges"
         },
         {
+            "domains": ["vccloud.vn"],
+            "company_name": "VCCloud"
+        },
+        {
             "domains": ["vce.com"],
             "company_name": "VCE"
         },
@@ -8814,7 +8843,7 @@
         {
             "domains": ["windriver.com"],
             "company_name": "Wind River",
-            "aliases": ["Wind River Systems"]
+            "aliases": ["Wind River Systems", "WindRiver System", "WindRiver"]
         },
         {
             "domains": ["wipro.com"],
@@ -8822,8 +8851,16 @@
             "aliases": ["Wipro Infotech", "Wipro Technologies"]
         },
         {
+            "domains": ["workday.com"],
+            "company_name": "Workday"
+        },
+        {
             "domains": ["x-ion.de"],
             "company_name": "x-ion"
+        },
+        {
+            "domains": ["xerox.com"],
+            "company_name": "Xerox"
         },
         {
             "domains": ["xlab.si"],
