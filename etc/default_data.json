@@ -1115,6 +1115,17 @@
             "emails": ["caleb@calebgroom.com", "cgroom@rackspace.com"]
         },
         {
+            "launchpad_id": "carl-baldwin",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Carl Baldwin",
+            "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com"]
+        },
+        {
             "launchpad_id": "cbehrens",
             "companies": [
                 {
