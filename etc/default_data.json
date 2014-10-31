@@ -3985,6 +3985,17 @@
             "emails": ["keith_newstadt@symantec.com", "kngh@newstadt.org"]
         },
         {
+            "launchpad_id": "kelly-domico",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kelly Domico",
+            "emails": [ "kelly.domico@hp.com" ]
+        },
+        {
             "launchpad_id": "ken-pepple",
             "companies": [
                 {
