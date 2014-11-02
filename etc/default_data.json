@@ -4497,6 +4497,21 @@
             "emails": ["mark.sturdevant@hp.com", "markstur@hp.com"]
         },
         {
+            "launchpad_id": "markmcclain",
+            "companies": [
+                {
+                    "company_name": "DreamHost",
+                    "end_date": "2014-Jan-10"
+                },
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark McClain",
+            "emails": ["mark.mcclain@dreamhost.com", "mmcclain@yahoo-inc.com", "mark@mcclain.xyz"]
+        },
+        {
             "launchpad_id": "markwash",
             "companies": [
                 {
