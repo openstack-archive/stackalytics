@@ -1505,6 +1505,22 @@
             "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com"]
         },
         {
+           "launchpad_id": "cpallares",
+           "gerrit_id": "cpallares",
+           "companies": [
+               {
+                   "company_name": "OpenStack Foundation",
+                   "end_date": "2014-Mar-24"
+               },
+               {
+                   "company_name": "Red Hat",
+                   "end_date": null
+               }
+           ],
+	   "user_name": "Cindy Pallares",
+           "emails": ["cindy.pallaresq@gmail.com", "cpallares@redhat.com", "cpallare@redhat.com"]
+        },
+        {
             "launchpad_id": "craigtracey",
             "companies": [
                 {
