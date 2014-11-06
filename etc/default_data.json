@@ -1344,6 +1344,17 @@
             "emails": ["chris@buccella.org", "buccella@linux.vnet.ibm.com", "chris.buccella@antallagon.com"]
         },
         {
+            "launchpad_id": "chris-p-robinson",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Robinson",
+            "emails": ["chris_p_robinson@hotmail.com", "chrisprobinson@outlook.com", "chris.p.robinson@hp.com"]
+        },
+        {
             "launchpad_id": "christophe.sauthier",
             "companies": [
                 {
