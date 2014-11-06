@@ -1521,6 +1521,17 @@
            "emails": ["cindy.pallaresq@gmail.com", "cpallares@redhat.com", "cpallare@redhat.com"]
         },
         {
+            "launchpad_id": "craige",
+            "companies": [
+                {
+                    "company_name": "Anchor",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craige McWhirter",
+            "emails": ["craige@mcwhirter.com.au", "craige.mcwhirter@mcwhirter.com.au"]
+        },
+        {
             "launchpad_id": "craigtracey",
             "companies": [
                 {
