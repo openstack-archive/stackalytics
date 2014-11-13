@@ -3982,11 +3982,15 @@
             "companies": [
                 {
                     "company_name": "AT&T",
+                    "end_date": "2013-Dec-31"
+                },
+                {
+                    "company_name": "Cisco Systems",
                     "end_date": null
                 }
             ],
             "user_name": "Kevin Bringard",
-            "emails": ["kbringard@attinteractive.com", "kbringard@att.com"]
+            "emails": ["kbringard@attinteractive.com", "kbringard@att.com", "kevinbri@cisco.com", "kevinbringard@gmail.com"]
         },
         {
             "launchpad_id": "kc-wang",
