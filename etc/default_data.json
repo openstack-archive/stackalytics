@@ -6594,6 +6594,10 @@
             "companies": [
                 {
                     "company_name": "Bull",
+                    "end_date": "2014-Jun-30"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
@@ -6965,6 +6969,10 @@
             "companies": [
                 {
                     "company_name": "Bull",
+                    "end_date": "2014-May-31"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
@@ -7143,11 +7151,11 @@
             "launchpad_id": "thomas-goirand",
             "companies": [
                 {
-                    "company_name": "eNovance",
-                    "end_date": "2014-Jun-24"
+                    "company_name": "GPLHost",
+                    "end_date": "2014-Sep-01"
                 },
                 {
-                    "company_name": "Red Hat",
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
