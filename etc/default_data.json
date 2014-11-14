@@ -5487,6 +5487,18 @@
             "emails": ["paulmontgomery.code@gmail.com", "paul.montgomery@rackspace.com"]
         },
         {
+            "launchpad_id": "pawel-palucki",
+            "gerrit_id": "pawel.palucki",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pawel Palucki",
+            "emails": ["pawel.palucki@intel.com"]
+        },
+        {
             "launchpad_id": "pblaho",
             "companies": [
                 {
