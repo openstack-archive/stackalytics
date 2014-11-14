@@ -247,6 +247,17 @@
             "emails": ["aishu.ece@gmail.com"]
         },
         {
+            "launchpad_id": "aju",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aju Francis",
+            "emails": ["aju@iraw.net"]
+        },
+        {
             "launchpad_id": "akash",
             "companies": [
                 {
@@ -775,6 +786,17 @@
             ],
             "user_name": "Bartosz G\u00f3rski",
             "emails": ["bartosz.gorski@nttmcl.com", "bartosz.gorski@ntti3.com"]
+        },
+        {
+            "launchpad_id": "basilbaby",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Basil Baby",
+            "emails": ["basilbaby@gmail.com"]
         },
         {
             "launchpad_id": "bcwaldon",
@@ -4524,6 +4546,17 @@
             "emails": ["mandar.vaze@vertex.co.in"]
         },
         {
+            "launchpad_id": "mark-klein",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Klein",
+            "emails": ["mark_klein@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "mark-sturdevant",
             "companies": [
                 {
@@ -5075,6 +5108,17 @@
             ],
             "user_name": "Liu Yuan",
             "emails": ["namei.unix@gmail.com"]
+        },
+        {
+            "launchpad_id": "nate-johnston",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nate Johnston",
+            "emails": ["nate_johnston@cable.comcast.com"]
         },
         {
             "launchpad_id": "nathan-regola",
@@ -6015,6 +6059,17 @@
             ],
             "user_name": "Robert Myers",
             "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
+        },
+        {
+            "launchpad_id": "roberto-moral",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roberto Moral",
+            "emails": ["roberto_moral@cable.comcast.com"]
         },
         {
             "launchpad_id": "robsparker",
