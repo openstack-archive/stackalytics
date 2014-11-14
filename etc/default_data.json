@@ -3715,11 +3715,15 @@
             "companies": [
                 {
                     "company_name": "Cloudwatt",
+                    "end_date": "2014-Sep-30"
+                },
+                {
+                    "company_name": "Scality",
                     "end_date": null
                 }
             ],
             "user_name": "Jordan Pittier",
-            "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com", "jordan.pittier@cloudwatt.com"]
+            "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com", "jordan.pittier@cloudwatt.com", "jordan.pittier@scality.com"]
         },
         {
             "launchpad_id": "joseph-r-email",
