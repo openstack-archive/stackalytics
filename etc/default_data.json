@@ -2834,11 +2834,15 @@
                 },
                 {
                     "company_name": "UnitedStack",
+                    "end_date": "2014-Nov-10"
+                },
+                {
+                    "company_name": "99cloud",
                     "end_date": null
                 }
             ],
             "user_name": "Yong Sheng Gong",
-            "emails": ["gongysh@unitedstack.com", "gongysh@cn.ibm.com", "gongysh@linux.vnet.ibm.com"]
+            "emails": ["gong.yongsheng@99cloud.net", "gong_ys2013@yahoo.com", "gong_ys2004@aliyun.com", "gongysh@unitedstack.com", "gongysh@cn.ibm.com", "gongysh@linux.vnet.ibm.com"]
         },
         {
             "launchpad_id": "gpocentek",
