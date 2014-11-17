@@ -755,6 +755,17 @@
             "emails": ["avishay@gmail.com", "avishay@stratoscale.com", "avishay@il.ibm.com"]
         },
         {
+            "launchpad_id": "azher-ullah-khan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Azher Ullah Khan",
+            "emails": ["azher-ullah.khan@hp.com"]
+        },
+        {
             "launchpad_id": "azilli",
             "companies": [
                 {
