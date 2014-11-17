@@ -5901,6 +5901,17 @@
             "user_name": "Rakesh H S",
             "emails": ["rh-s@hp.com","rakeshhs1@gmail.com"]
         },
+	{
+	    "launchpad_id": "richardwheil",
+            "companies": [
+		{
+		    "company_name": "Comcast",
+		    "end_date": null
+		}
+	    ],
+	    "user_name": "Richard H",
+	    "emails": ["richardwheil@gmail.com"]
+	},
         {
             "launchpad_id": "rick-chen",
             "companies": [
