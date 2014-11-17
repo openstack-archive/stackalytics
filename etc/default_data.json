@@ -5008,6 +5008,18 @@
             "emails": ["michael.still@canonical.com", "mikal@stillhq.com"]
         },
         {
+            "launchpad_id": "mikemason010",
+            "gerrit_id" : "mac4",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Mason",
+            "emails": ["mikemason010@gmail.com", "mmason@hp.com"]
+        },
+        {
             "launchpad_id": "mikeyp-3",
             "companies": [
                 {
