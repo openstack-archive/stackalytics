@@ -2459,6 +2459,17 @@
             "emails": ["eric_scholz@cable.comcast.com", "eric.scholz1975@gmail.com"]
         },
         {
+            "launchpad_id": "erobinso-2000",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Robinson",
+            "emails": ["erobinso_2000@yahoo.com"]
+        },
+        {
             "launchpad_id": "ethuleau",
             "companies": [
                 {
@@ -3351,6 +3362,17 @@
             ],
             "user_name": "James Li",
             "emails": ["yueli.m@gmail.com", "james.li@rackspace.com"]
+        },
+        {
+            "launchpad_id": "james-reeves5546",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "James Reeves",
+            "emails": ["james.reeves5546@gmail.com"]
         },
         {
             "launchpad_id": "james-slagle",
@@ -7775,6 +7797,17 @@
             "user_name": "Jian Wen",
             "emails": ["jian.wen@canonical.com", "wenjianhn@gmail.com", "jian.wen@ubuntu.com",
                        "wenjian@letv.com"]
+        },
+        {
+            "launchpad_id": "wes-gurney",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wes Gurney",
+            "emails": ["wes_gurney@cable.comcast.com"]
         },
         {
             "launchpad_id": "wingwj",
