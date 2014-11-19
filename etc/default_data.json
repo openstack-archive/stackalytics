@@ -6117,6 +6117,17 @@
             "emails": ["rmoore08@gmail.com", "ryan.moore@hp.com"]
         },
         {
+            "launchpad_id": "rmschn",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ray Schneider",
+            "emails": ["rmschn@gmail.com"]
+        },
+        {
             "launchpad_id": "rnirmal",
             "companies": [
                 {
