@@ -10113,6 +10113,18 @@
             ],
             "uri": "git://git.openstack.org/stackforge/fuel-main.git",
             "organization": "stackforge"
+        },
+        {
+            "module": "api-wg",
+            "uri": "git://git.openstack.org/openstack/api-wg.git",
+            "organization": "openstack",
+            "releases": [
+                {
+                    "tag_to": "2014.2",
+                    "release_name": "Kilo",
+                    "tag_from": "dce0d4e8"
+                }
+            ]
         }
     ],
     "project_sources": [
@@ -10242,7 +10254,7 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["official-integrated", "official-incubated", "official-other", "governance", "python-openstackclient"]
+            "modules": ["official-integrated", "official-incubated", "official-other", "governance", "python-openstackclient", "api-wg"]
         },
         {
             "id": "integrated",
