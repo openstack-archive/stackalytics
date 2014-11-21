@@ -5260,6 +5260,10 @@
             "companies": [
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2014-Mar-31"
+                },
+                {
+                    "company_name": "Cisco Systems",
                     "end_date": null
                 }
             ],
