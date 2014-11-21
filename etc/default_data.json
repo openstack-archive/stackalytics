@@ -2385,6 +2385,18 @@
             "emails": ["eharney@redhat.com", "eharney@gmail.com"]
         },
         {
+            "launchpad_id": "eikke",
+            "gerrit_id": "nicolast",
+            "companies": [
+                {
+                    "company_name": "Scality",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nicolas Trangez",
+            "emails": ["ikke@nicolast.be", "nicolas.trangez@scality.com"]
+        },
+        {
             "launchpad_id": "ekirpichov",
             "user_name": "Eugene Kirpichov",
             "companies": [
