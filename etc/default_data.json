@@ -7321,6 +7321,17 @@
             "emails": ["thingee@gmail.com", "mike.perez@dreamhost.com"]
         },
         {
+            "launchpad_id": "thinrichs",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tim Hinrichs",
+            "emails": ["timothy.l.hinrichs@gmail.com"]
+        },
+        {
             "launchpad_id": "thomas-goirand",
             "companies": [
                 {
