@@ -8126,11 +8126,15 @@
             "companies": [
                 {
                     "company_name": "Intel",
+                    "end_date": "2013-Jun-22"
+                },
+                {
+                    "company_name": "eBay",
                     "end_date": null
                 }
             ],
             "user_name": "Huang Zhiteng",
-            "emails": ["zhiteng.huang@intel.com"]
+            "emails": ["zhiteng.huang@intel.com", "zhithuang@ebaysf.com", "winston.d@gmail.com"]
         },
         {
             "launchpad_id": "ziad-sawalha",
