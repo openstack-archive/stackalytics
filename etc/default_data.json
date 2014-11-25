@@ -3966,6 +3966,17 @@
             "emails": ["justin@fathomdb.com", "superstack@superstack.org"]
         },
         {
+            "launchpad_id": "jwy",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Janet Yu",
+            "emails": ["jwy@cs.stanford.edu"]
+        },
+        {
             "launchpad_id": "k3vinmcdonald",
             "companies": [
                 {
