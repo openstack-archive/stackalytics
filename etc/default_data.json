@@ -8111,6 +8111,17 @@
             "emails": ["zhhuabj@cn.ibm.com", "joshua.zhang@canonical.com", "veryhua2006@gmail.com"]
         },
         {
+            "launchpad_id": "zhidong",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhidong Yu",
+            "emails": ["zdyu2000@gmail.com", "zhidong.yu@intel.com"]
+        },
+        {
             "launchpad_id": "zhikunliu",
             "companies": [
                 {
