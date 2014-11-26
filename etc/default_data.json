@@ -2663,6 +2663,10 @@
                 },
                 {
                     "company_name": "SUSE",
+                    "end_date": "2014-Sep-30"
+                },
+                {
+                    "company_name": "Canonical",
                     "end_date": null
                 }
             ],
