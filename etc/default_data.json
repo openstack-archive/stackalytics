@@ -7934,6 +7934,21 @@
             "emails": ["todd@ansolabs.com", "todd@rubidine.com", "xtoddx@gmail.com"]
         },
         {
+            "launchpad_id": "xuhj",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Nov-21"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Xu(He Jie Xu)",
+            "emails": ["soulxu@gmail.com", "hejie.xu@intel.com", "xuhj@cn.ibm.com", "xuhj@linux.vnet.ibm.com"]
+        },
+        {
             "launchpad_id": "xychu2008",
             "companies": [
                 {
