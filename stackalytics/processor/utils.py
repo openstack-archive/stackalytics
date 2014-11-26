@@ -57,6 +57,11 @@ def iso8601_to_timestamp(s):
     return int(time.mktime(iso8601.parse_date(s).timetuple()))
 
 
+def timestamp_to_date(timestamp):
+    return (datetime.datetime.fromtimestamp(timestamp).
+            strftime('%Y-%b-%d'))
+
+
 def timestamp_to_week(timestamp):
     # Jan 4th 1970 is the first Sunday in the Epoch
     return (timestamp - 3 * 24 * 3600) // (7 * 24 * 3600)

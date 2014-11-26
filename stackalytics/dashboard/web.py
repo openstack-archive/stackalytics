@@ -490,6 +490,52 @@ def get_project_types_json(**kwargs):
             parameters.get_default('project_type'))
 
 
+@app.route('/api/1.0/affiliation_changes')
+@decorators.exception_handler()
+@decorators.response()
+@decorators.jsonify('affiliation_changes')
+def get_company_changes(**kwargs):
+
+    start_days = str(flask.request.args.get('start_days') or
+                     utils.timestamp_to_date(int(time.time()) -
+                                             365 * 24 * 60 * 60))
+    end_days = str(flask.request.args.get('end_days') or
+                   utils.timestamp_to_date(int(time.time())))
+
+    start_date = utils.date_to_timestamp_ext(start_days)
+    end_date = utils.date_to_timestamp_ext(end_days)
+
+    runtime_storage = vault.get_runtime_storage()
+    result = []
+
+    for user in runtime_storage.get_all_users():
+        companies = user.get('companies') or []
+        if len(companies) < 2:
+            continue
+
+        companies_iter = iter(companies)
+        company = companies_iter.next()
+        old_company_name = company['company_name']
+        date = company['end_date']
+
+        for company in companies_iter:
+            new_company_name = company['company_name']
+
+            if start_date <= date <= end_date:
+                result.append({
+                    'user_id': user['user_id'],
+                    'user_name': user['user_name'],
+                    'old_company_name': old_company_name,
+                    'new_company_name': new_company_name,
+                    'date': date,
+                })
+
+            old_company_name = new_company_name
+            date = company['end_date']
+
+    return result
+
+
 def _get_week(kwargs, param_name):
     date_param = parameters.get_single_parameter(kwargs, param_name)
     if date_param:

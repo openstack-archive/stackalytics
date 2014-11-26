@@ -159,6 +159,22 @@ def members():
     }
 
 
+@blueprint.route('/affiliation_changes')
+@decorators.exception_handler()
+@decorators.templated()
+def affiliation_changes():
+    start_days = str(flask.request.args.get('start_days') or
+                     utils.timestamp_to_date(int(time.time()) -
+                                             365 * 24 * 60 * 60))
+    end_days = str(flask.request.args.get('end_days') or
+                   utils.timestamp_to_date(int(time.time())))
+
+    return {
+        'start_days': start_days,
+        'end_days': end_days,
+    }
+
+
 @blueprint.route('/cores')
 @decorators.exception_handler()
 @decorators.templated()

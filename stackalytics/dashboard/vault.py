@@ -68,7 +68,7 @@ def compact_records(records):
 
 
 def extend_record(record):
-    runtime_storage_inst = get_vault()['runtime_storage']
+    runtime_storage_inst = get_runtime_storage()
     return runtime_storage_inst.get_by_key(
         runtime_storage_inst._get_record_name(record.record_id))
 
@@ -121,6 +121,10 @@ def get_memory_storage():
     return get_vault()['memory_storage']
 
 
+def get_runtime_storage():
+    return get_vault()['runtime_storage']
+
+
 def _init_releases(vault):
     runtime_storage_inst = vault['runtime_storage']
     releases = runtime_storage_inst.get_by_key('releases')
@@ -170,7 +174,7 @@ def get_project_types():
 
 
 def get_release_options():
-    runtime_storage_inst = get_vault()['runtime_storage']
+    runtime_storage_inst = get_runtime_storage()
     releases = (runtime_storage_inst.get_by_key('releases') or [None])[1:]
     releases.append({'release_name': 'all'})
     releases.reverse()
@@ -195,7 +199,7 @@ def get_project_type(project_type_id):
 
 
 def get_user_from_runtime_storage(user_id):
-    runtime_storage_inst = get_vault()['runtime_storage']
+    runtime_storage_inst = get_runtime_storage()
     user_index = get_vault()['user_index']
     if user_id not in user_index:
         user_index[user_id] = user_processor.load_user(

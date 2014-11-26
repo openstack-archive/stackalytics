@@ -1,0 +1,162 @@
+{% extends "reports/base_report.html" %}
+
+{% block title %}
+Company Affiliation Changes
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+
+    function show_users_table(options) {
+        var table_column_names = ["from", "to", "count", "users"];
+        var table_id = "users_table";
+
+        $.ajax({
+            url: makeURI("/api/1.0/affiliation_changes", options),
+            dataType: "json",
+            success: function (data) {
+                var Data = data["affiliation_changes"];
+
+                var tableColumns = [];
+                var sort_by_column = 2;
+                for (var i = 0; i < table_column_names.length; i++) {
+                    tableColumns.push({"mData": table_column_names[i]});
+                }
+
+                result = {};
+                for (i = 0; i < Data.length; i++) {
+                    var user_id = Data[i].user_id;
+                    var user_name = Data[i].user_name;
+                    var old_company_name = Data[i].old_company_name;
+                    var new_company_name = Data[i].new_company_name;
+
+                    if (!result[old_company_name])
+                        result[old_company_name] = {};
+
+                    if (!result[old_company_name][new_company_name])
+                        result[old_company_name][new_company_name] = [];
+
+                    result[old_company_name][new_company_name].push({
+                        'name': user_name,
+                        'id': user_id
+                    });
+                }
+
+                var tableData = [];
+
+                var index = 0;
+                for (old_company_name in result)
+                    for (new_company_name in result[old_company_name]) {
+                        tableData.push({});
+                        tableData[index].from = "<a href=\".." + "?company=" + old_company_name + "\">" + old_company_name + "</a>";
+                        tableData[index].to = "<a href=\".." + "?company=" + new_company_name + "\">" + new_company_name + "</a>";
+
+                        var users = result[old_company_name][new_company_name];
+                        tableData[index].count = users.length;
+                        var user_links = [];
+                        for (var j = 0; j < users.length; j++)
+                            user_links.push("<a href=\"" + "users/" + users[j].id + "\">" + users[j].name + "</a>");
+                        user_links.sort();
+                        tableData[index].users = user_links.join(", ");
+
+                        index++;
+                    }
+
+                if (table_id) {
+                    $("#" + table_id).dataTable({
+                        "aaSorting": [
+                            [ sort_by_column, "desc" ]
+                        ],
+                        "bFilter": true,
+                        "bInfo": true,
+                        "bAutoWidth": true,
+                        "aaData": tableData,
+                        "aoColumns": tableColumns,
+                        "bDestroy": true,
+                        'bPaginate': true,
+                        "sPaginationType": "full_numbers",
+                        "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
+                        "iDisplayLength": -1
+                    });
+                }
+            }
+        });
+    }
+
+    function make_options() {
+        var options = {};
+        options['start_days'] = $('#start_days_selector').val();
+        options['end_days'] = $('#end_days_selector').val();
+
+        return options;
+    }
+
+    function reload() {
+        window.location.search = $.map(make_options(),function (val, index) {
+            return index + "=" + val;
+        }).join("&")
+    }
+
+    function show_page() {
+        show_users_table(make_options());
+    }
+
+    $(document).ready(function () {
+
+        $("#start_days_selector").val("{{ start_days }}").on('change', function (evt) {
+            reload();
+        });
+        $("#end_days_selector").val("{{ end_days }}").on('change', function (evt) {
+            reload();
+        });
+
+        show_page();
+    });
+
+    $(function() {
+        $( "#start_days_selector" ).datepicker({
+            dateFormat: 'yy-M-d',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+
+    $(function() {
+        $( "#end_days_selector" ).datepicker({
+            dateFormat: 'yy-M-d',
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+
+    $(document).ready(function () {
+        $('#start_days_selector').val("{{ start_days }}");
+        $('#end_days_selector').val("{{ end_days }}");
+        show_page();
+    });
+
+    </script>
+
+{% endblock %}
+
+{% block content %}
+<h1>Company Affiliation Changes</h1>
+
+    <p>Start of the period: <input type="text" id="start_days_selector"/> &nbsp; End of the period: <input type="text" id="end_days_selector"/></p>
+
+    <div class="body" style="margin-right: 1em;">
+        <table id="users_table" style="width: 100%">
+            <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Count</th>
+                <th>Users</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

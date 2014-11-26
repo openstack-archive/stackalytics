@@ -551,7 +551,7 @@
             "launchpad_id": "anteaya",
             "companies": [
                 {
-                    "company_name": "independent",
+                    "company_name": "*independent",
                     "end_date": "2013-Apr-02"
                 },
                 {
