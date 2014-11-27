@@ -7055,6 +7055,21 @@
             "emails": ["alexei_vinogradov@symantec.com", "avinogradov@mirantis.com"]
         },
         {
+            "launchpad_id": "srics-r",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": "2014-Oct-03"
+                },
+                {
+                    "company_name": "Brocade",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sridhar Ramaswamy",
+            "emails": ["srics.r@gmail.com", "sramasw@brocade.com", "srramasw@cisco.com"]
+        },
+        {
             "launchpad_id": "sridhargaddam",
             "companies": [
                 {
