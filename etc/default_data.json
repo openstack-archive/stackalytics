@@ -10211,6 +10211,16 @@
                     "tag_from": "dce0d4e8"
                 }
             ]
+        },
+        {
+            "module": "docker",
+            "organization": "docker",
+            "uri": "https://github.com/docker/docker.git"
+        },
+        {
+            "module": "kubernetes",
+            "organization": "googlecloudplatform",
+            "uri": "https://github.com/googlecloudplatform/kubernetes.git"
         }
     ],
     "project_sources": [
@@ -10364,6 +10374,11 @@
             "id": "stackforge",
             "title": "Stackforge",
             "modules": ["stackforge"]
+        },
+        {
+            "id": "complimentary",
+            "title": "Complimentary",
+            "modules": ["docker", "kubernetes"]
         }
     ]
 }
