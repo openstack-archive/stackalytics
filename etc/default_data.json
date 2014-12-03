@@ -8722,6 +8722,11 @@
             "company_name": "Kungliga Tekniska h\u00f6gskolan"
         },
         {
+            "domains": ["kvhasia.com", "kvh.co.jp"],
+            "company_name": "KVH",
+            "aliases": ["KVH Co., Ltd."]
+        },
+        {
             "domains": ["kylin-cloud.com"],
             "company_name": "Kylin Cloud"
         },
