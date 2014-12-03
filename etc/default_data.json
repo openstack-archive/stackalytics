@@ -4637,11 +4637,15 @@
                 },
                 {
                     "company_name": "Yahoo!",
+                    "end_date": "2014-Nov-30"
+                },
+                {
+                    "company_name": "Akanda",
                     "end_date": null
                 }
             ],
             "user_name": "Mark McClain",
-            "emails": ["mark.mcclain@dreamhost.com", "mmcclain@yahoo-inc.com", "mark@mcclain.xyz"]
+            "emails": ["mark.mcclain@dreamhost.com", "mmcclain@yahoo-inc.com", "mark@akanda.io", "mark@mcclain.xyz"]
         },
         {
             "launchpad_id": "markwash",
