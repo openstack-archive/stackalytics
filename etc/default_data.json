@@ -5172,6 +5172,21 @@
             "emails": ["mthompson@a10networks.com", "miket@a10networks.com"]
         },
         {
+            "launchpad_id": "mvoelker",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": "2014-Nov-30"
+                },
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark T. Voelker",
+            "emails": ["mvoelker@cisco.com", "mvoelker@vmware.com", "markvoelker@gmail.com"]
+        },
+        {
             "launchpad_id": "mykeyjdm",
             "companies": [
                 {
