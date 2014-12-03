@@ -10221,6 +10221,11 @@
             "module": "kubernetes",
             "organization": "googlecloudplatform",
             "uri": "https://github.com/googlecloudplatform/kubernetes.git"
+        },
+        {
+            "module": "jcloud",
+            "organization": "jcloud",
+            "uri": "https://github.com/jclouds/jclouds.git"
         }
     ],
     "project_sources": [
@@ -10378,7 +10383,7 @@
         {
             "id": "complimentary",
             "title": "Complimentary",
-            "modules": ["docker", "kubernetes"]
+            "modules": ["docker", "kubernetes", "jcloud"]
         }
     ]
 }
