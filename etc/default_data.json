@@ -6332,6 +6332,21 @@
             "emails": ["ronak.malav.shah@gmail.com", "ronak@nuagenetworks.net"]
         },
         {
+            "launchpad_id": "rossella-o",
+            "companies": [
+                {
+                    "company_name": "Midokura",
+                    "end_date": "2014-Feb-15"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rossella Sblendido",
+            "emails": ["rossella@midokura.com", "rsblendido@suse.com"]
+        },
+        {
             "launchpad_id": "rossetti-megan18",
             "companies": [
                 {
