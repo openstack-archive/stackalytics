@@ -333,8 +333,6 @@ def main():
 
     default_data_processor.process(runtime_storage_inst,
                                    default_data,
-                                   cfg.CONF.git_base_uri,
-                                   gerrit,
                                    cfg.CONF.driverlog_data_uri)
 
     process_program_list(runtime_storage_inst, cfg.CONF.program_list_uri)

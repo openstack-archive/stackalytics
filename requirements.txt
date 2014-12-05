@@ -12,6 +12,7 @@ oslo.serialization>=1.0.0   # Apache-2.0
 oslo.utils>=1.0.0           # Apache-2.0
 paramiko>=1.13.0
 psutil>=1.1.1,<2.0.0
+PyGithub
 python-memcached>=1.48
 PyYAML>=3.1.0
 sh

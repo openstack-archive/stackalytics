@@ -17,14 +17,20 @@ import collections
 import hashlib
 import json
 
+from github import MainClass
+from oslo.config import cfg
+import re
 import six
 
 from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
+from stackalytics.processor import rcs
 from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
+
+GITHUB_URI_PREFIX = r'^github:\/\/'
 
 
 def _check_default_data_change(runtime_storage_inst, default_data):
@@ -42,39 +48,76 @@ def _check_default_data_change(runtime_storage_inst, default_data):
     return True
 
 
-def _retrieve_project_list_from_gerrit(project_sources, git_base_uri, gerrit):
+def _retrieve_project_list_from_sources(project_sources):
+    for project_source in project_sources:
+        uri = project_source.get('uri') or cfg.CONF.review_uri
+        repo_iterator = []
+        if re.search(rcs.GERRIT_URI_PREFIX, uri):
+            repo_iterator = _retrieve_project_list_from_gerrit(project_source)
+        elif re.search(GITHUB_URI_PREFIX, uri):
+            repo_iterator = _retrieve_project_list_from_github(project_source)
+
+        exclude = set(project_source.get('exclude', []))
+        for repo in repo_iterator:
+            if repo['module'] not in exclude:
+                yield repo
+
+
+def _retrieve_project_list_from_gerrit(project_source):
     LOG.info('Retrieving project list from Gerrit')
     try:
+        gerrit = rcs.Gerrit(None, project_source['uri'])
+        key_filename = (project_source.get('ssh_key_filename') or
+                        cfg.CONF.ssh_key_filename)
+        username = project_source.get('ssh_username') or cfg.CONF.ssh_username
+        gerrit.setup(key_filename=key_filename, username=username)
+
         project_list = gerrit.get_project_list()
     except Exception as e:
         LOG.exception(e)
         LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
-        return False
+        return
 
-    repos = []
-    for project_source in project_sources:
-        organization = project_source['organization']
-        LOG.debug('Get list of projects for organization %s', organization)
-        git_repos = [
-            f for f in project_list if f.startswith(organization + "/")]
+    organization = project_source['organization']
+    LOG.debug('Get list of projects for organization %s', organization)
+    git_repos = [f for f in project_list if f.startswith(organization + "/")]
 
-        exclude = set(project_source.get('exclude', []))
+    git_base_uri = project_source.get('git_base_uri') or cfg.CONF.git_base_uri
 
-        for repo in git_repos:
-            (org, name) = repo.split('/')
-            if name not in exclude:
-                url = '%(git_base_uri)s/%(repo)s.git' % dict(
-                    git_base_uri=git_base_uri, repo=repo)
-                r = {
-                    'branches': ['master'],
-                    'module': name,
-                    'organization': org,
-                    'uri': url,
-                    'releases': []
-                }
-                repos.append(r)
-                LOG.debug('Project is added to default data: %s', r)
-    return repos
+    for repo in git_repos:
+        (org, name) = repo.split('/')
+        repo_uri = '%(git_base_uri)s/%(repo)s.git' % dict(
+            git_base_uri=git_base_uri, repo=repo)
+        yield {
+            'branches': ['master'],
+            'module': name,
+            'organization': org,
+            'uri': repo_uri,
+            'releases': []
+        }
+
+
+def _retrieve_project_list_from_github(project_source):
+    LOG.info('Retrieving project list from GitHub')
+    github = MainClass.Github(timeout=60)
+
+    organization = project_source['organization']
+    LOG.debug('Get list of projects for organization %s', organization)
+    try:
+        github_repos = github.get_organization(organization).get_repos()
+    except Exception as e:
+        LOG.exception(e)
+        LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
+        return
+
+    for repo in github_repos:
+        yield {
+            'branches': ['master'],
+            'module': repo.name.lower(),
+            'organization': organization,
+            'uri': repo.git_url,
+            'releases': []
+        }
 
 
 def _create_module_groups_for_project_sources(project_sources, repos):
@@ -96,12 +139,12 @@ def _create_module_groups_for_project_sources(project_sources, repos):
     return module_groups
 
 
-def _update_project_list(default_data, git_base_uri, gerrit):
+def _update_project_list(default_data):
 
     configured_repos = set([r['uri'] for r in default_data['repos']])
 
-    repos = _retrieve_project_list_from_gerrit(
-        default_data['project_sources'], git_base_uri, gerrit)
+    repos = _retrieve_project_list_from_sources(
+        default_data['project_sources'])
     if repos:
         default_data['repos'] += [r for r in repos
                                   if r['uri'] not in configured_repos]
@@ -198,12 +241,11 @@ def _store_default_data(runtime_storage_inst, default_data):
             runtime_storage_inst.set_by_key(key, value)
 
 
-def process(runtime_storage_inst, default_data,
-            git_base_uri, gerrit, driverlog_data_uri):
+def process(runtime_storage_inst, default_data, driverlog_data_uri):
     LOG.debug('Process default data')
 
     if 'project_sources' in default_data:
-        _update_project_list(default_data, git_base_uri, gerrit)
+        _update_project_list(default_data)
 
     _update_with_driverlog_data(default_data, driverlog_data_uri)
 

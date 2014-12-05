@@ -72,11 +72,11 @@ class TestDefaultDataProcessor(testtools.TestCase):
                      'organization': 'stackforge'},
                 ],
                 'project_sources': [{'organization': 'openstack',
-                                     'module_group_name': 'OpenStack'}],
+                                     'uri': 'gerrit://'}],
                 'module_groups': [],
             }
 
-            default_data_processor._update_project_list(dd, None, None)
+            default_data_processor._update_project_list(dd)
 
             self.assertEqual(3, len(dd['repos']))
             self.assertIn('qa', set([r['module'] for r in dd['repos']]))
@@ -85,7 +85,7 @@ class TestDefaultDataProcessor(testtools.TestCase):
 
             self.assertEqual(2, len(dd['module_groups']))
             self.assertIn({'id': 'openstack',
-                           'module_group_name': 'OpenStack',
+                           'module_group_name': 'openstack',
                            'modules': ['qa', 'nova'],
                            'tag': 'organization'}, dd['module_groups'])
             self.assertIn({'id': 'stackforge',

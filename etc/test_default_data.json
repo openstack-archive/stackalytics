@@ -109,7 +109,7 @@
     "project_sources": [
         {
             "organization": "openstack-ops",
-            "module_group_name": "OpenStack-Ops"
+            "uri": "gerrit://review.openstack.org"
         }
     ],
 
