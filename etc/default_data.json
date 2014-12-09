@@ -4864,6 +4864,18 @@
             "emails": ["mlobur@mirantis.com", "max_lobur@outlook.com", "max_lobur@mirantis.com"]
         },
         {
+            "launchpad_id": "maxime-leroy",
+            "gerrit_id": "mleroy",
+            "companies": [
+                {
+                    "company_name": "6WIND",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maxime Leroy",
+            "emails": ["maxime.leroy@6wind.com"]
+        },
+        {
             "launchpad_id": "maxime-vidori",
             "companies": [
                 {
