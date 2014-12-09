@@ -146,9 +146,17 @@
                     "organization": {
                         "type": "string"
                     },
-                    "module_group_name": {
-                        "type": "string",
-                        "pattern": "^[\\w-]+$"
+                    "uri": {
+                        "type": "string"
+                    },
+                    "git_base_uri": {
+                        "type": "string"
+                    },
+                    "ssh_key_filename": {
+                        "type": "string"
+                    },
+                    "ssh_username": {
+                        "type": "string"
                     },
                     "exclude": {
                         "type": "array",

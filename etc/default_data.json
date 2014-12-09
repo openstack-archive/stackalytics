@@ -10301,6 +10301,10 @@
         },
         {
             "organization": "stackforge"
+        },
+        {
+            "organization": "cloudfoundry",
+            "uri": "github://"
         }
     ],
     "module_groups": [
@@ -10440,7 +10444,25 @@
         {
             "id": "complimentary",
             "title": "Complimentary",
-            "modules": ["docker", "kubernetes", "jcloud"]
+            "modules": ["docker", "kubernetes", "jclouds", "cloudfoundry"]
+        },
+        {
+            "id": "cloudfoundry-group",
+            "title": "CloudFoundary",
+            "child": true,
+            "modules": ["cloudfoundry"]
+        },
+        {
+            "id": "docker-group",
+            "title": "Docker",
+            "child": true,
+            "modules": ["docker"]
+        },
+        {
+            "id": "kubernetes-group",
+            "title": "kubernetes",
+            "child": true,
+            "modules": ["kubernetes"]
         }
     ]
 }
