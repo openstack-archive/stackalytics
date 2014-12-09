@@ -1193,6 +1193,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2014-Sep-30"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
                     "end_date": null
                 }
             ],
