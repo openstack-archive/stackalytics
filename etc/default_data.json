@@ -1789,11 +1789,15 @@
             "companies": [
                 {
                     "company_name": "Canonical",
+                    "end_date": "2013-Sep-02"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Dave Walker",
-            "emails": ["dave.walker@canonical.com", "davewalker@ubuntu.com"]
+            "emails": ["email@daviey.com", "dave.walker@canonical.com", "davewalker@ubuntu.com"]
         },
         {
             "launchpad_id": "david-deguzman",
