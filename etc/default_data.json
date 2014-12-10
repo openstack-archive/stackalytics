@@ -8329,6 +8329,10 @@
             "aliases": ["Alcatel Lucent", "Alcatel-Lucent, Nuage Networks", "Alcatel-Lcuent", "Alcatel-Lucent Austria", "Alcatel-Lucent Bell Labs France"]
         },
         {
+            "domains": ["altiscale.com"],
+            "company_name": "Altiscale"
+        },
+        {
             "domains": ["alyseo.com"],
             "company_name": "Alyseo"
         },
@@ -8485,6 +8489,10 @@
         {
             "domains": ["cloudenablers.com"],
             "company_name": "CD Cloudenablers"
+        },
+        {
+            "domains": ["cloudfounders.com"],
+            "company_name": "CloudFounders"
         },
         {
             "domains": ["cloudscaling.com"],
@@ -8967,6 +8975,14 @@
             "domains": ["pistoncloud.com"],
             "company_name": "Piston Cloud",
             "aliases": ["Piston Cloud Computing, Inc.", "Piston"]
+        },
+        {
+            "domains": ["pivotal.io", "gopivotal.com"],
+            "company_name": "Pivotal"
+        },
+        {
+            "domains": ["pivotallabs.com"],
+            "company_name": "Pivotal Labs"
         },
         {
             "domains": ["playhaven.com"],
