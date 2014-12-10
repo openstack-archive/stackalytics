@@ -66,7 +66,8 @@ def _retrieve_project_list_from_sources(project_sources):
 def _retrieve_project_list_from_gerrit(project_source):
     LOG.info('Retrieving project list from Gerrit')
     try:
-        gerrit = rcs.Gerrit(None, project_source['uri'])
+        uri = project_source.get('uri') or cfg.CONF.review_uri
+        gerrit = rcs.Gerrit(None, uri)
         key_filename = (project_source.get('ssh_key_filename') or
                         cfg.CONF.ssh_key_filename)
         username = project_source.get('ssh_username') or cfg.CONF.ssh_username
