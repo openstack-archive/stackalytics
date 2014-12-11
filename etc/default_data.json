@@ -7844,6 +7844,18 @@
             "emails": ["vasiliyk@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "vkmc",
+            "gerrit_id": "vkmc",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victoria Martínez de la Cruz",
+            "emails": ["vimartin@redhat.com", "victoria@redhat.com", "victoria@vmartinezdelacruz.com"]
+        },
+        {
             "launchpad_id": "vkuklin",
             "companies": [
                 {
