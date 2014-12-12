@@ -6170,6 +6170,17 @@
             "emails": ["rlane@wikimedia.org"]
         },
         {
+            "launchpad_id": "rloo",
+            "companies": [
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ruby Loo",
+            "emails": ["rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
+        },
+        {
             "launchpad_id": "rlucio",
             "companies": [
                 {
