@@ -10510,7 +10510,7 @@
         },
         {
             "id": "cloudfoundry-group",
-            "title": "CloudFoundary",
+            "title": "CloudFoundry",
             "child": true,
             "modules": ["cloudfoundry"]
         },
