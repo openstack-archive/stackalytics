@@ -4305,6 +4305,17 @@
             "emails": ["kyle@kylestevenson.me", "kyle.stevenson@rackspace.com"]
         },
         {
+            "launchpad_id": "kylin7-sg",
+            "companies": [
+                {
+                    "company_name": "Kylin Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kylin CG",
+            "emails": ["kylin7.sg@gmail.com"]
+        },
+        {
             "launchpad_id": "kzqdnsw4i20a5pz-peter",
             "companies": [
                 {
