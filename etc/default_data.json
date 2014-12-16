@@ -7030,6 +7030,17 @@
             "emails": ["sumitnaiksatam@gmail.com", "snaiksat@cisco.com"]
         },
         {
+            "launchpad_id": "sombrafam",
+            "companies": [
+                {
+                    "company_name": "FIT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Erlon R. Cruz",
+            "emails": ["sombrafam@gmail.com", "erlon.cruz@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "somikbehera",
             "companies": [
                 {
@@ -8662,6 +8673,11 @@
         {
             "domains": ["fathomdb.com"],
             "company_name": "FathomDB"
+        },
+        {
+            "domains": ["fit-tecnologia.org.br"],
+            "company_name": "FIT Instituto de Tecnologia",
+            "aliases": ["FIT"]
         },
         {
             "domains": ["fnal.gov"],
