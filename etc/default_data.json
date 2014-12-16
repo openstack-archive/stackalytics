@@ -9023,12 +9023,8 @@
             "aliases": ["Piston Cloud Computing, Inc.", "Piston"]
         },
         {
-            "domains": ["pivotal.io", "gopivotal.com"],
+            "domains": ["pivotal.io", "gopivotal.com", "pivotallabs.com"],
             "company_name": "Pivotal"
-        },
-        {
-            "domains": ["pivotallabs.com"],
-            "company_name": "Pivotal Labs"
         },
         {
             "domains": ["playhaven.com"],
@@ -10510,7 +10506,7 @@
         },
         {
             "id": "cloudfoundry-group",
-            "title": "CloudFoundry",
+            "title": "Cloud Foundry",
             "child": true,
             "modules": ["cloudfoundry"]
         },
@@ -10522,7 +10518,7 @@
         },
         {
             "id": "kubernetes-group",
-            "title": "kubernetes",
+            "title": "Kubernetes",
             "child": true,
             "modules": ["kubernetes"]
         }
