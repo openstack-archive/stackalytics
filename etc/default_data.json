@@ -2427,6 +2427,17 @@
             "emails": ["ekirpichov@gmail.com"]
         },
         {
+            "launchpad_id": "ekotowski",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Edmond Kotowski",
+            "emails": ["ekotowski@gmail.com", "ekotowski@hp.com"]
+        },
+        {
             "launchpad_id": "ellen-hui",
             "companies": [
                 {
@@ -7306,6 +7317,17 @@
             ],
             "user_name": "Susanne Balle",
             "emails": ["sleipnir012@gmail.com", "susanne.balle@hp.com"]
+        },
+        {
+            "launchpad_id": "sushil-kumar2",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sushil Kumar",
+            "emails": ["skm.net@gmail.com", "sushil.kumar3@hp.com"]
         },
         {
             "launchpad_id": "swann-w",
