@@ -1170,6 +1170,17 @@
             "emails": ["chris.behrens@rackspace.com", "cbehrens@codestud.com"]
         },
         {
+            "launchpad_id": "cbitter78",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Charles Bitter",
+            "emails": ["cbitter78@gmail.com", "charles_bitter@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "cbjchen",
             "companies": [
                 {
