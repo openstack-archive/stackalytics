@@ -670,7 +670,7 @@
                 {
                     "company_name": "Rackspace",
                     "end_date": "2014-Aug-15"
-		},
+                },
                 {
                     "company_name": "Mirantis",
                     "end_date": null
@@ -678,7 +678,7 @@
             ],
             "user_name": "Angus Salkeld",
             "emails": ["angus@salkeld.id.au", "asalkeld@mirantis.com",
-		       "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
+                       "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
             "launchpad_id": "ashokkumaran-b",
@@ -1261,15 +1261,15 @@
         {
             "launchpad_id": "chad-lung",
             "companies": [
-		{
-		    "company_name": "Rackspace",
-		    "end_date": "2014-Jul-28"
-		},
-		{
-		    "company_name": "EMC",
-		    "end_date": null
-		}
-	    ],
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2014-Jul-28"
+                },
+                {
+                    "company_name": "EMC",
+                    "end_date": null
+                }
+            ],
             "user_name": "Chad Lung",
             "emails": ["chad.lung@gmail.com", "chad.lung@rackspace.com"]
         },
@@ -1576,7 +1576,7 @@
                    "end_date": null
                }
            ],
-	   "user_name": "Cindy Pallares",
+           "user_name": "Cindy Pallares",
            "emails": ["cindy.pallaresq@gmail.com", "cpallares@redhat.com", "cpallare@redhat.com"]
         },
         {
@@ -3189,7 +3189,7 @@
             ],
             "emails": ["ipekelny@mirantis.com", "ipekelny@griddynamics.com", "pekelny@gmail.com"]
         },
-		{
+        {
            "launchpad_id": "ichihara-hirofumi",
            "gerrit_id": "Hirofumi-Ichihara",
            "companies": [
@@ -6110,17 +6110,17 @@
             "user_name": "Rakesh H S",
             "emails": ["rh-s@hp.com","rakeshhs1@gmail.com"]
         },
-	{
-	    "launchpad_id": "richardwheil",
+        {
+            "launchpad_id": "richardwheil",
             "companies": [
-		{
-		    "company_name": "Comcast",
-		    "end_date": null
-		}
-	    ],
-	    "user_name": "Richard H",
-	    "emails": ["richardwheil@gmail.com"]
-	},
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Richard H",
+            "emails": ["richardwheil@gmail.com"]
+        },
         {
             "launchpad_id": "rick-chen",
             "companies": [
@@ -7353,8 +7353,7 @@
             "user_name": "Sylvain Afchain",
             "emails": ["sylvain.afchain@enovance.com", "safchain@redhat.com"]
         },
-
- 	{
+        {
             "launchpad_id": "tan-lin-good",
             "companies": [
                 {
