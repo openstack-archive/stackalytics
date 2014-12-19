@@ -8237,6 +8237,17 @@
             "emails": ["yportnova@griddynamics.com", "yportnov@yahoo-inc.com", "yportnova@mirantis.com"]
         },
         {
+            "launchpad_id": "ypraveen",
+            "companies": [
+                {
+                    "company_name": "Avi Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Praveen Yalagandula",
+            "emails": ["ypraveen@gmail.com", "ypraveen@avinetworks.com"]
+        },
+        {
             "launchpad_id": "yugsuo",
             "companies": [
                 {
@@ -8506,6 +8517,10 @@
             "domains": ["att.com", "attinteractive.com"],
             "company_name": "AT&T",
             "aliases": ["AT&T Mobility"]
+        },
+        {
+            "domains": ["avinetworks.com"],
+            "company_name": "Avi Networks"
         },
         {
             "domains": ["awcloud.com"],
