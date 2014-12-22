@@ -25,10 +25,13 @@ Stackalytics {% if page_title %}| {{ page_title }} {% endif %}
     <div class="page">
         {% if not runtime_storage_update_time %}
             <div class="banner">Please note! The data is being loaded now and may be not complete.</div>
+            {% set update_time_title = '' %}
+        {% else %}
+            {% set update_time_title = 'Last updated on ' + runtime_storage_update_time_str %}
         {% endif %}
     <div class="aheader">
         <div style="float: right; margin-top: 10px; margin-right: 20px;">
-            <a href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank">About</a>
+            <a href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank" title="{{ update_time_title }}">About</a>
         </div>
         <div id="analytics_header">
             <div style="float: left;">
