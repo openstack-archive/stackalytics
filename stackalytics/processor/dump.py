@@ -14,11 +14,11 @@
 # limitations under the License.
 
 import pickle
+import re
 import sys
 
 import memcache
 from oslo.config import cfg
-import re
 import six
 from six.moves.urllib import parse
 

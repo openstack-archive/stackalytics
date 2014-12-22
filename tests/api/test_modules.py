@@ -20,29 +20,31 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_modules(self):
         with test_api.make_runtime_storage(
-                {'repos': [
-                    {'module': 'nova', 'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/nova.git'},
-                    {'module': 'glance', 'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/glance.git'}],
-                 'module_groups': {
-                     'nova-group': {'id': 'nova-group',
-                                    'module_group_name': 'nova-group',
-                                    'modules': ['nova', 'nova-cli'],
-                                    'tag': 'group'},
-                     'nova': test_api.make_module('nova'),
-                     'nova-cli': test_api.make_module('nova-cli'),
-                     'glance': test_api.make_module('glance'),
-                 },
-                 'releases': [{'release_name': 'prehistory',
-                               'end_date': 1234567890},
-                              {'release_name': 'icehouse',
-                               'end_date': 1234567890}],
-                 'project_types': [
-                     {'id': 'all', 'title': 'All',
-                      'modules': ['nova', 'glance', 'nova-cli']},
-                     {'id': 'integrated', 'title': 'Integrated',
-                      'modules': ['nova', 'glance']}]},
+                {
+                    'repos': [
+                        {'module': 'nova', 'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/nova.git'},
+                        {'module': 'glance', 'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/glance.git'}
+                    ],
+                    'module_groups': {
+                        'nova-group': {'id': 'nova-group',
+                                       'module_group_name': 'nova-group',
+                                       'modules': ['nova', 'nova-cli'],
+                                       'tag': 'group'},
+                        'nova': test_api.make_module('nova'),
+                        'nova-cli': test_api.make_module('nova-cli'),
+                        'glance': test_api.make_module('glance'),
+                    },
+                    'releases': [
+                        {'release_name': 'prehistory', 'end_date': 1234567890},
+                        {'release_name': 'icehouse', 'end_date': 1234567890}],
+                    'project_types': [{'id': 'all', 'title': 'All',
+                                       'modules': ['nova', 'glance',
+                                                   'nova-cli']},
+                                      {'id': 'integrated',
+                                       'title': 'Integrated',
+                                       'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'],
                                       module=['glance', 'nova', 'nova-cli'])):
 
@@ -73,26 +75,27 @@ class TestAPIModules(test_api.TestAPI):
 
     def test_get_module(self):
         with test_api.make_runtime_storage(
-                {'repos': [
-                    {'module': 'nova', 'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/nova.git'}],
-                 'module_groups': {
-                     'nova-group': {'id': 'nova-group',
-                                    'module_group_name': 'nova-group',
-                                    'modules': ['nova-cli', 'nova'],
-                                    'tag': 'group'},
-                     'nova': test_api.make_module('nova'),
-                     'nova-cli': test_api.make_module('nova-cli'),
-                 },
-                 'releases': [{'release_name': 'prehistory',
-                               'end_date': 1234567890},
-                              {'release_name': 'icehouse',
-                               'end_date': 1234567890}],
-                 'project_types': [
-                     {'id': 'all', 'title': 'All',
-                      'modules': ['nova', 'glance', 'nova-cli']},
-                     {'id': 'openstack', 'title': 'OpenStack',
-                      'modules': ['nova', 'glance']}]},
+                {
+                    'repos': [
+                        {'module': 'nova', 'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/nova.git'}],
+                    'module_groups': {
+                        'nova-group': {'id': 'nova-group',
+                                       'module_group_name': 'nova-group',
+                                       'modules': ['nova-cli', 'nova'],
+                                       'tag': 'group'},
+                        'nova': test_api.make_module('nova'),
+                        'nova-cli': test_api.make_module('nova-cli'),
+                    },
+                    'releases': [{'release_name': 'prehistory',
+                                  'end_date': 1234567890},
+                                 {'release_name': 'icehouse',
+                                  'end_date': 1234567890}],
+                    'project_types': [
+                        {'id': 'all', 'title': 'All',
+                         'modules': ['nova', 'glance', 'nova-cli']},
+                        {'id': 'openstack', 'title': 'OpenStack',
+                         'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'])):
 
             response = self.app.get('/api/1.0/modules/nova')

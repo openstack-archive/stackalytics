@@ -274,7 +274,7 @@ def get_companies_json(record_ids, **kwargs):
     memory_storage = vault.get_memory_storage()
     companies = set(company
                     for company in memory_storage.get_index_keys_by_record_ids(
-                    'company_name', record_ids))
+                        'company_name', record_ids))
 
     if kwargs['_params']['company']:
         companies.add(memory_storage.get_original_company_name(

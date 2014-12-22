@@ -47,9 +47,10 @@ update the block_device_mapping with the potentially new connection_info \
 returned.
 Fixes bug <a href="https://bugs.launchpad.net/bugs/1076801" class="ext_link">\
 1076801</a>
-''' + ('Change-Id: <a href="https://review.openstack.org/#q,'
-       'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
-       'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
+''' + (
+            'Change-Id: <a href="https://review.openstack.org/#q,'
+            'Ie49ccd2138905e178843b375a9b16c3fe572d1db,n,z" class="ext_link">'
+            'Ie49ccd2138905e178843b375a9b16c3fe572d1db</a>')
 
         observed = helpers.make_commit_message(record)
 

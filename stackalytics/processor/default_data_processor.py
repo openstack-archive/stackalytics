@@ -16,10 +16,10 @@
 import collections
 import hashlib
 import json
+import re
 
 from github import MainClass
 from oslo.config import cfg
-import re
 import six
 
 from stackalytics.openstack.common import log as logging

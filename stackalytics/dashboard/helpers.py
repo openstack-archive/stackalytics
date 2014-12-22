@@ -237,9 +237,9 @@ def make_link(title, uri=None, options=None):
                    'metric')
     param_values = {}
     for param_name in param_names:
-        v = parameters.get_parameter({}, param_name)
-        if v:
-            param_values[param_name] = ','.join(v)
+        value = parameters.get_parameter({}, param_name)
+        if value:
+            param_values[param_name] = ','.join(value)
     if options:
         param_values.update(options)
     if param_values:

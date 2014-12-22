@@ -20,17 +20,18 @@ class TestAPICompanies(test_api.TestAPI):
 
     def test_get_companies(self):
         with test_api.make_runtime_storage(
-                {'repos': [
-                    {'module': 'nova', 'project_type': 'openstack',
-                     'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/nova.git'},
-                    {'module': 'glance', 'project_type': 'openstack',
-                     'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/glance.git'}],
+                {
+                    'repos': [
+                        {'module': 'nova', 'project_type': 'openstack',
+                         'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/nova.git'},
+                        {'module': 'glance', 'project_type': 'openstack',
+                         'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/glance.git'}
+                    ],
                     'project_types': [
                         {'id': 'openstack', 'title': 'OpenStack',
-                         'modules': ['nova', 'glance']}
-                    ],
+                         'modules': ['nova', 'glance']}],
                     'releases': [{'release_name': 'prehistory',
                                   'end_date': 1234567890},
                                  {'release_name': 'icehouse',
@@ -75,26 +76,28 @@ class TestAPICompanies(test_api.TestAPI):
 
     def test_get_company(self):
         with test_api.make_runtime_storage(
-                {'repos': [
-                    {'module': 'nova', 'project_type': 'openstack',
-                     'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/nova.git'},
-                    {'module': 'glance', 'project_type': 'openstack',
-                     'organization': 'openstack',
-                     'uri': 'git://git.openstack.org/openstack/glance.git'}],
-                 'module_groups': {
-                     'nova': test_api.make_module('nova'),
-                     'glance': test_api.make_module('glance'),
-                 },
-                 'releases': [{'release_name': 'prehistory',
-                               'end_date': 1234567890},
-                              {'release_name': 'icehouse',
-                               'end_date': 1234567890}],
-                 'project_types': [
-                     {'id': 'all', 'title': 'All',
-                      'modules': ['nova', 'glance', 'nova-cli']},
-                     {'id': 'openstack', 'title': 'OpenStack',
-                      'modules': ['nova', 'glance']}]},
+                {
+                    'repos': [
+                        {'module': 'nova', 'project_type': 'openstack',
+                         'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/nova.git'},
+                        {'module': 'glance', 'project_type': 'openstack',
+                         'organization': 'openstack',
+                         'uri': 'git://git.openstack.org/openstack/glance.git'}
+                    ],
+                    'module_groups': {
+                        'nova': test_api.make_module('nova'),
+                        'glance': test_api.make_module('glance'),
+                    },
+                    'releases': [{'release_name': 'prehistory',
+                                  'end_date': 1234567890},
+                                 {'release_name': 'icehouse',
+                                  'end_date': 1234567890}],
+                    'project_types': [
+                        {'id': 'all', 'title': 'All',
+                         'modules': ['nova', 'glance', 'nova-cli']},
+                        {'id': 'openstack', 'title': 'OpenStack',
+                         'modules': ['nova', 'glance']}]},
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['glance'],
