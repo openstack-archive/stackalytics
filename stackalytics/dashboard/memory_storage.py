@@ -53,7 +53,8 @@ class CachedMemoryStorage(MemoryStorage):
         }
 
     def _save_record(self, record):
-        if record.company_name == '*robots':
+        if (record.company_name == '*robots' and
+                record.record_type not in ['patch', 'review']):
             return
         self.records[record.record_id] = record
         for key, index in six.iteritems(self.indexes):
