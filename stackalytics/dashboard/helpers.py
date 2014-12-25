@@ -221,7 +221,7 @@ def get_contribution_summary(records):
 
 def format_datetime(timestamp):
     return datetime.datetime.utcfromtimestamp(
-        timestamp).strftime('%d %b %Y %H:%M:%S')
+        timestamp).strftime('%d %b %Y %H:%M:%S') + ' UTC'
 
 
 def format_date(timestamp):
