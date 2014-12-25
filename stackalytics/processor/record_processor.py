@@ -333,7 +333,8 @@ class RecordProcessor(object):
         review['primary_key'] = review['id']
         review['gerrit_id'] = owner['username'].lower()
         review['author_name'] = owner['name']
-        review['author_email'] = owner['email'].lower()
+        if owner.get('email'):
+            review['author_email'] = owner['email'].lower()
         review['date'] = record['createdOn']
 
         patch_sets = record.get('patchSets', [])
@@ -363,7 +364,8 @@ class RecordProcessor(object):
         uploader = patch['uploader']
         patch_record['gerrit_id'] = uploader['username'].lower()
         patch_record['author_name'] = uploader['name']
-        patch_record['author_email'] = uploader['email'].lower()
+        if uploader.get('email'):
+            patch_record['author_email'] = uploader['email'].lower()
         patch_record['module'] = review['module']
         patch_record['branch'] = review['branch']
         patch_record['review_id'] = review['id']
@@ -401,17 +403,13 @@ class RecordProcessor(object):
           * mark - records that a user set approval mark to given review
         """
         owner = record['owner']
-        if 'email' not in owner or 'username' not in owner:
-            return  # ignore
-
-        yield self._make_review_record(record)
+        if 'email' in owner or 'username' in owner:
+            yield self._make_review_record(record)
 
         for patch in record.get('patchSets', []):
-            if (('email' not in patch['uploader']) or
-                    ('username' not in patch['uploader'])):
-                continue  # ignore
-
-            yield self._make_patch_record(record, patch)
+            if (('email' in patch['uploader']) or
+                    ('username' in patch['uploader'])):
+                yield self._make_patch_record(record, patch)
 
             if 'approvals' not in patch:
                 continue  # not reviewed by anyone
