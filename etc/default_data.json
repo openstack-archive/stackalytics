@@ -10498,6 +10498,12 @@
             "modules": ["fuel-astute", "fuel-devops", "fuel-docs", "fuel-library", "fuel-main", "fuel-ostf", "fuel-ostf-plugin", "fuel-provision", "fuel-specs", "fuel-web", "fuel-plugins"]
         },
         {
+            "module_group_name": "group-based-policy-group",
+            "modules": ["group-based-policy", "group-based-policy-ui",
+            "group-based-policy-automation", "group-based-policy-specs",
+            "python-group-based-policy-client"]
+        },
+        {
             "module_group_name": "mistral-group",
             "modules": ["python-mistralclient", "mistral", "mistral-extra", "mistral-dashboard"]
         },
