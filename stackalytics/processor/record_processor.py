@@ -331,7 +331,7 @@ class RecordProcessor(object):
         owner = record['owner']
 
         review['primary_key'] = review['id']
-        review['gerrit_id'] = owner['username'].lower()
+        review['gerrit_id'] = owner['username']
         review['author_name'] = owner['name']
         if owner.get('email'):
             review['author_email'] = owner['email'].lower()
@@ -362,7 +362,7 @@ class RecordProcessor(object):
         patch_record['number'] = patch['number']
         patch_record['date'] = patch['createdOn']
         uploader = patch['uploader']
-        patch_record['gerrit_id'] = uploader['username'].lower()
+        patch_record['gerrit_id'] = uploader['username']
         patch_record['author_name'] = uploader['name']
         if uploader.get('email'):
             patch_record['author_email'] = uploader['email'].lower()
@@ -383,7 +383,7 @@ class RecordProcessor(object):
         mark['value'] = int(approval['value'])
         mark['date'] = approval['grantedOn']
         mark['primary_key'] = (review['id'] + str(mark['date']) + mark['type'])
-        mark['gerrit_id'] = reviewer['username'].lower()
+        mark['gerrit_id'] = reviewer['username']
         mark['author_name'] = reviewer['name']
         mark['author_email'] = reviewer['email'].lower()
         mark['module'] = review['module']

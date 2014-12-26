@@ -389,6 +389,37 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual('IBM', user['companies'][0]['company_name'])
         self.assertEqual(None, user['launchpad_id'])
 
+    def test_process_review_new_user(self):
+        # User is known to LP, but new to us
+        # Should add new user and set company depending on email
+        record_processor_inst = self.make_record_processor(
+            companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}],
+            lp_info={'johndoe@ibm.com':
+                     {'name': 'john_doe', 'display_name': 'John Doe'}})
+
+        processed_review = list(record_processor_inst.process([
+            {'record_type': 'review',
+             'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+             'subject': 'Fix AttributeError in Keypair._add_details()',
+             'owner': {'name': 'John Doe',
+                       'email': 'johndoe@ibm.com',
+                       'username': 'John_Doe'},
+             'createdOn': 1379404951,
+             'module': 'nova', 'branch': 'master'}
+        ]))[0]
+
+        expected_review = {
+            'user_id': 'john_doe',
+            'author_email': 'johndoe@ibm.com',
+            'author_name': 'John Doe',
+            'company_name': 'IBM',
+        }
+
+        self.assertRecordsMatch(expected_review, processed_review)
+        user = user_processor.load_user(
+            record_processor_inst.runtime_storage_inst, user_id='john_doe')
+        self.assertEqual('John_Doe', user['gerrit_id'])
+
     def generate_bugs(self, assignee=None, date_fix_committed=None,
                       status='Confirmed'):
         yield {
