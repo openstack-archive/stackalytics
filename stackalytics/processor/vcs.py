@@ -207,7 +207,8 @@ class Git(Vcs):
                 commit[param[0]] = rec.group(i)
                 i += 1
 
-            if not utils.check_email_validity(commit['author_email']):
+            if not commit['author_email']:
+                # ignore commits with empty email (there are some < Essex)
                 continue
 
             diff_stat_str = rec.group('diff_stat')
