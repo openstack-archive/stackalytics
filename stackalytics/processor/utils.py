@@ -195,8 +195,7 @@ def format_text(s):
 def make_age_string(seconds):
     days = seconds / (3600 * 24)
     hours = (seconds / 3600) - (days * 24)
-    minutes = (seconds / 60) - (days * 24 * 60) - (hours * 60)
-    return '%d days, %d hours, %d minutes' % (days, hours, minutes)
+    return '%d days and %d hours' % (days, hours)
 
 
 def merge_records(original, new):

@@ -7,8 +7,18 @@ Open change requests report for {{ module }}
 {% block scripts %}
     <script type="text/javascript">
         $(document).ready(function () {
-            renderBarChart("latest_revision_chart", [{{ latest_revision.chart_data }}]);
-            renderBarChart("first_revision_chart", [{{ first_revision.chart_data }}]);
+            {% if reviewer_latest_revision.chart_data %}
+            renderBarChart("reviewer_latest_revision_chart", [{{ reviewer_latest_revision.chart_data }}]);
+            {% endif %}
+            {% if reviewer_first_revision.chart_data %}
+            renderBarChart("reviewer_first_revision_chart", [{{ reviewer_first_revision.chart_data }}]);
+            {% endif %}
+            {% if submitter_latest_revision.chart_data %}
+            renderBarChart("submitter_latest_revision_chart", [{{ submitter_latest_revision.chart_data }}]);
+            {% endif %}
+            {% if submitter_first_revision.chart_data %}
+            renderBarChart("submitter_first_revision_chart", [{{ submitter_first_revision.chart_data }}]);
+            {% endif %}
         });
     </script>
 {% endblock %}
@@ -21,40 +31,77 @@ Open change requests report for {{ module }}
     <li>Total open reviews: {{ total_open }}</li>
     <li>Waiting on submitter: {{ waiting_on_submitter }}</li>
     <li>Waiting on reviewer: {{ waiting_on_reviewer }}</li>
+    <li>Waiting on CI (no votes yet): {{ waiting_on_ci }}</li>
 </ul>
 
 {% if waiting_on_reviewer %}
 <h3>Change requests waiting for reviewers since the last vote or mark</h3>
 
 <ul>
-    <li>Average wait time: {{ latest_revision.average }}</li>
-    <li>Max wait time: {{ latest_revision.max }}</li>
+    <li>Average wait time: {{ reviewer_latest_revision.average }}</li>
+    <li>Max wait time: {{ reviewer_latest_revision.max }}</li>
 </ul>
 
-<div id="latest_revision_chart" style="width: 100%; height: 350px;"></div>
+<div id="reviewer_latest_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in latest_revision.reviews[:5] %}
-    <li>{{ item.updated_on_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_name }} ({{ item.company_name }})</li>
+{% for item in reviewer_latest_revision.reviews[:5] %}
+    <li>{{ item.updated_on_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>
 
 <h3>Change requests waiting for reviewers since the creation date</h3>
 
 <ul>
-    <li>Average wait time: {{ first_revision.average }}</li>
-    <li>Max wait time: {{ first_revision.max }}</li>
+    <li>Average wait time: {{ reviewer_first_revision.average }}</li>
+    <li>Max wait time: {{ reviewer_first_revision.max }}</li>
 </ul>
 
-<div id="first_revision_chart" style="width: 100%; height: 350px;"></div>
+<div id="reviewer_first_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in first_revision.reviews[:5] %}
-    <li>{{ item.date_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_name }} ({{ item.company_name }})</li>
+{% for item in reviewer_first_revision.reviews[:5] %}
+    <li>{{ item.date_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>
 
 {% else %}
     <h3>No change requests waiting for reviewers</h3>
+{% endif %}
+
+
+{% if waiting_on_submitter %}
+<h3>Change requests waiting for submitters since the last vote or mark</h3>
+
+<ul>
+    <li>Average wait time: {{ submitter_latest_revision.average }}</li>
+    <li>Max wait time: {{ submitter_latest_revision.max }}</li>
+</ul>
+
+<div id="submitter_latest_revision_chart" style="width: 100%; height: 350px;"></div>
+
+<ol>
+{% for item in submitter_latest_revision.reviews[:5] %}
+    <li>{{ item.updated_on_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
+{% endfor %}
+</ol>
+
+<h3>Change requests waiting for submitters since the creation date</h3>
+
+<ul>
+    <li>Average wait time: {{ submitter_first_revision.average }}</li>
+    <li>Max wait time: {{ submitter_first_revision.max }}</li>
+</ul>
+
+<div id="submitter_first_revision_chart" style="width: 100%; height: 350px;"></div>
+
+<ol>
+{% for item in submitter_first_revision.reviews[:5] %}
+    <li>{{ item.date_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
+{% endfor %}
+</ol>
+
+{% else %}
+    <h3>No change requests waiting for submitters</h3>
 {% endif %}
 {% endblock %}

@@ -101,22 +101,40 @@ def open_reviews(module):
                   memory_storage_inst.get_record_ids_by_types(['review']))
 
     waiting_on_reviewer = []
+    waiting_on_submitter = []
     total_open = 0
 
     for review in memory_storage_inst.get_records(review_ids):
         if review.status == 'NEW':
             total_open += 1
+
+            # review.value is minimum from votes made for the latest patch
             if review.value in [1, 2]:
-                waiting_on_reviewer.append(vault.extend_record(review))
+                # CI or engineer liked this change request, waiting for someone
+                # to merge or to put dislike
+                waiting_on_reviewer.append(helpers.extend_record(review))
+            elif review.value in [-1, -2]:
+                # CI or reviewer do not like this, waiting for submitter to fix
+                waiting_on_submitter.append(helpers.extend_record(review))
+            else:
+                # new requests without votes, waiting for CI
+                pass
 
     return {
         'module': module,
         'total_open': total_open,
         'waiting_on_reviewer': len(waiting_on_reviewer),
-        'waiting_on_submitter': total_open - len(waiting_on_reviewer),
-        'latest_revision': _process_stat(
+        'waiting_on_submitter': len(waiting_on_submitter),
+        'waiting_on_ci': (total_open - len(waiting_on_reviewer) -
+                          len(waiting_on_submitter)),
+        'reviewer_latest_revision': _process_stat(
             waiting_on_reviewer, 'updated_on', time_now),
-        'first_revision': _process_stat(waiting_on_reviewer, 'date', time_now),
+        'reviewer_first_revision': _process_stat(
+            waiting_on_reviewer, 'date', time_now),
+        'submitter_latest_revision': _process_stat(
+            waiting_on_submitter, 'updated_on', time_now),
+        'submitter_first_revision': _process_stat(
+            waiting_on_submitter, 'date', time_now),
     }
 
 
