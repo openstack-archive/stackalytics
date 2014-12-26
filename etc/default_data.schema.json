@@ -35,8 +35,7 @@
                                     "type": "string"
                                 },
                                 "end_date": {
-                                    "type": ["string", "null"],
-                                    "pattern": "^20\\d{2}-\\w{3}-[0-3]\\d$"
+                                    "$ref": "#/definitions/date_format"
                                 }
                             },
                             "required": ["company_name", "end_date"],
@@ -58,8 +57,7 @@
                         "type": "string"
                     },
                     "end_date": {
-                        "type": "string",
-                        "pattern": "^20\\d{2}-\\w{3}-[0-3]\\d$"
+                        "$ref": "#/definitions/date_format"
                     }
                 },
                 "required": ["release_name", "end_date"],
@@ -201,9 +199,6 @@
                 "type": "string"
             }
         },
-        "voting_date": {
-            "type": "string"
-        },
         "project_types": {
             "type": "array",
             "items": {
@@ -230,6 +225,12 @@
                 "required": ["id", "title", "modules"],
                 "additionalProperties": false
             }
+        }
+    },
+    "definitions": {
+        "date_format": {
+            "type": ["string", "null"],
+            "pattern": "^20\\d{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-[0-3]\\d$"
         }
     }
 }
