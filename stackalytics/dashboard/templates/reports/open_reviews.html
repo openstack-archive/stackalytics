@@ -1,7 +1,7 @@
 {% extends "reports/base_report.html" %}
 
 {% block title %}
-Open reviews report for {{ module }}
+Open change requests report for {{ module }}
 {% endblock %}
 
 {% block scripts %}
@@ -14,7 +14,7 @@ Open reviews report for {{ module }}
 {% endblock %}
 
 {% block content %}
-<h1>Open reviews for {{ module }}</h1>
+<h1>Open change requests for {{ module }}</h1>
 
 <h3>Summary</h3>
 <ul>
@@ -23,8 +23,8 @@ Open reviews report for {{ module }}
     <li>Waiting on reviewer: {{ waiting_on_reviewer }}</li>
 </ul>
 
-{% if total_open %}
-<h3>Stats since last revision</h3>
+{% if waiting_on_reviewer %}
+<h3>Change requests waiting for reviewers since the last vote or mark</h3>
 
 <ul>
     <li>Average wait time: {{ latest_revision.average }}</li>
@@ -39,7 +39,7 @@ Open reviews report for {{ module }}
 {% endfor %}
 </ol>
 
-<h3>Stats since first revision</h3>
+<h3>Change requests waiting for reviewers since the creation date</h3>
 
 <ul>
     <li>Average wait time: {{ first_revision.average }}</li>
@@ -54,5 +54,7 @@ Open reviews report for {{ module }}
 {% endfor %}
 </ol>
 
+{% else %}
+    <h3>No change requests waiting for reviewers</h3>
 {% endif %}
 {% endblock %}
