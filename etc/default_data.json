@@ -7920,6 +7920,17 @@
             "emails": ["vishvananda@yahoo.com", "vishvananda@gmail.com", "root@mirror.nasanebula.net"]
         },
         {
+            "launchpad_id": "vishwanathj",
+            "companies": [
+                {
+                    "company_name": "Brocade",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vishwanath Jayaraman",
+            "emails": ["vjayara@brocade.com", "vishwanathj@hotmail.com"]
+        },
+        {
             "launchpad_id": "vito-ordaz",
             "companies": [
                 {
