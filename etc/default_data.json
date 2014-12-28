@@ -6635,6 +6635,10 @@
             "companies": [
                 {
                     "company_name": "Comcast",
+                    "end_date": "2014-Dec-26"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
