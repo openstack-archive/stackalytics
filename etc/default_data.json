@@ -247,6 +247,17 @@
             "emails": ["aishu.ece@gmail.com"]
         },
         {
+            "launchpad_id": "ajayaa",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ajaya Agrawal",
+            "emails": ["ajaya.agrawal@ril.com", "ajku.agr@gmail.com"]
+        },
+        {
             "launchpad_id": "aju",
             "companies": [
                 {
@@ -6512,6 +6523,17 @@
             ],
             "user_name": "Rupak Ganguly",
             "emails": ["rupakg@gmail.com"]
+        },
+        {
+            "launchpad_id": "rushiagr",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rushi Agrawal",
+            "emails": ["rushi.agr@gmail.com", "rushi.agrawal@ril.com"]
         },
         {
             "launchpad_id": "russell-sim",
