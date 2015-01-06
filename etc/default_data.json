@@ -7015,6 +7015,17 @@
             "emails": ["me@frostman.ru", "slukjanov@mirantis.com", "me@slukjanov.name"]
         },
         {
+            "launchpad_id": "slupers1",
+            "companies": [
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergey Lupersolsky",
+            "emails": ["slupers@yahoo-inc.com", "slupers1@yahoo.com"]
+        },
+        {
             "launchpad_id": "smaffulli",
             "companies": [
                 {
