@@ -2028,6 +2028,17 @@
             "emails": ["dan.florea@gmail.com", "dflorea@vmware.com"]
         },
         {
+            "launchpad_id": "dgonzalez",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Gonzalez Nothnagel",
+            "emails": ["daniel@gonzalez-nothnagel.de"]
+        },
+        {
             "launchpad_id": "dgstangel",
             "companies": [
                 {
