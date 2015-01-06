@@ -126,8 +126,8 @@ diff_stat:
 
  0 files changed, 0 insertions(+), 0 deletions(-)
             '''
+            commits = list(self.git.log('dummy', 'dummy'))
 
-        commits = list(self.git.log('dummy', 'dummy'))
         commits_expected = 7
         self.assertEqual(commits_expected, len(commits))
 
