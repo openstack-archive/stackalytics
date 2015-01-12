@@ -52,16 +52,25 @@ All requests support common set of parameters that allow to filter resulting dat
 +================+===========================================================================+
 | release        | Name of OpenStack release or 'all', by default current release            |
 +----------------+---------------------------------------------------------------------------+
-| project_type   | Type of project, e.g. 'core', by default 'openstack'                      |
+| project_type   | Type of project, by default 'openstack'                                   |
 +----------------+---------------------------------------------------------------------------+
 | module         | Name of module (repository name)                                          |
 +----------------+---------------------------------------------------------------------------+
 | company        | Company name                                                              |
 +----------------+---------------------------------------------------------------------------+
-| user_id        | Launchpad id of user or email if no Laucnhpad id is mapped.               |
+| user_id        | Launchpad id of user or email if no Launchpad id is mapped.               |
 +----------------+---------------------------------------------------------------------------+
-| metric         | Metric: 'commits', 'loc', 'marks', 'emails'                               |
+| metric         | Metric: e.g. 'commits', 'loc', 'marks', 'emails'                          |
 +----------------+---------------------------------------------------------------------------+
+
+2.1.1 Other query parameters
+............................
+
+Data can be queried by time period:
+ * ``start_date`` - when the period starts
+ * ``end_date`` - when the period ends
+Note that if both release and time period are specified then the data is selected for the
+intersection (thus the useful way is to specify release as ``all``).
 
 2.2 Contribution by Modules
 ---------------------------
