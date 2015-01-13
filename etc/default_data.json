@@ -45,6 +45,17 @@
             "emails": ["morgan@parelastic.com", "morgan@tesora.com"]
         },
         {
+            "launchpad_id": "9lex",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Barclay",
+            "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com"]
+        },
+        {
             "launchpad_id": "a-gorodnev",
             "gerrit_id": "agorodnev",
             "companies": [
@@ -301,6 +312,17 @@
             ],
             "user_name": "Ilya Kharin",
             "emails": ["ikharin@mirantis.com", "akscram@gmail.com"]
+        },
+        {
+            "launchpad_id": "al-miller",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Al Miller",
+            "emails": ["al.miller@ajmiller.net", "al.miller@hp.com"]
         },
         {
             "launchpad_id": "al592b",
@@ -7391,6 +7413,17 @@
             ],
             "user_name": "Swann Croiset",
             "emails": ["swann.croiset@bull.net", "swann@oopss.org"]
+        },
+        {
+            "launchpad_id": "swiftwangster",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Min Wang",
+            "emails": ["swiftwangster@gmail.com", "min.wang6@hp.com"]
         },
         {
             "launchpad_id": "sylvain-bauza",
