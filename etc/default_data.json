@@ -4308,6 +4308,17 @@
             "emails": ["michael.krotscheck@hp.com", "krotscheck@gmail.com"]
         },
         {
+            "launchpad_id": "krtaylor",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kurt Taylor",
+            "emails": ["kurt.r.taylor@gmail.com", "krtaylor@us.ibm.com"]
+        },
+        {
             "launchpad_id": "kshileev",
             "companies": [
                 {
