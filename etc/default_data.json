@@ -2136,11 +2136,15 @@
             "companies": [
                 {
                     "company_name": "IBM",
+                    "end_date": "2015-Jan-14"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Davanum Srinivas",
-            "emails": ["dims@linux.vnet.ibm.com", "davanum@gmail.com"]
+            "emails": ["dsrinivas@mirantis.com", "dims@linux.vnet.ibm.com", "davanum@gmail.com"]
         },
         {
             "launchpad_id": "dlenwell",
