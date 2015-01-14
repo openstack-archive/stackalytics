@@ -362,7 +362,8 @@ class RecordProcessor(object):
         patch_record['number'] = patch['number']
         patch_record['date'] = patch['createdOn']
         uploader = patch['uploader']
-        patch_record['gerrit_id'] = uploader['username']
+        if uploader.get('username'):
+            patch_record['gerrit_id'] = uploader['username']
         patch_record['author_name'] = uploader['name']
         if uploader.get('email'):
             patch_record['author_email'] = uploader['email'].lower()
