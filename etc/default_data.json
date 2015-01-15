@@ -3138,6 +3138,17 @@
             "emails": ["heckj@mac.com"]
         },
         {
+            "launchpad_id": "hellochosen",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dongcan Ye",
+            "emails": ["hellochosen@gmail.com", "yedongcan@awcloud.com"]
+        },
+        {
             "launchpad_id": "henrique-4",
             "gerrit_id": "henriquetruta",
             "companies": [
