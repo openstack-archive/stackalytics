@@ -5568,12 +5568,12 @@
                     "end_date": "2014-Sep-14"
                 },
                 {
-                    "company_name": "*independent",
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
             "user_name": "Zhenguo Niu",
-            "emails": ["zhenguo@unitedstack.com", "niu.zglinux@gmail.com"]
+            "emails": ["niuzhenguo@huawei.com", "zhenguo@unitedstack.com", "niu.zglinux@gmail.com"]
         },
         {
             "launchpad_id": "nmarkov",
