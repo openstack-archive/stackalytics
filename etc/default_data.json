@@ -4651,6 +4651,17 @@
             "emails": ["lucasagomes@gmail.com"]
         },
         {
+            "launchpad_id": "lxstar01",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xing Liu",
+            "emails": ["lxstar01@gmail.com", "liuxing@awcloud.com"]
+        },
+        {
             "launchpad_id": "lyz",
             "companies": [
                 {
