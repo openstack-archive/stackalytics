@@ -8247,6 +8247,17 @@
             "emails": ["wudx05@gmail.com", "wudx@awcloud.com"]
         },
         {
+            "launchpad_id": "wuyuting",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wuyuting",
+            "emails": ["wytdahu@gmail.com", "wuyuting@awcloud.com"]
+        },
+        {
             "launchpad_id": "xdeller",
             "user_name": "Andrey Korolyov",
             "companies": [
