@@ -1466,6 +1466,17 @@
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com"]
         },
         {
+            "launchpad_id": "claire921",
+            "companies": [
+                {
+                    "company_name": "Google",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Claire",
+            "emails": ["claire921@gmail.com"]
+        },
+        {
             "launchpad_id": "clay-gerrard",
             "companies": [
                 {
@@ -7411,6 +7422,17 @@
             "emails": ["skm.net@gmail.com", "sushil.kumar3@hp.com"]
         },
         {
+            "launchpad_id": "svendowideit",
+            "companies": [
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sven Dowideit",
+            "emails": ["svendowideit@home.org.au"]
+        },
+        {
             "launchpad_id": "swann-w",
             "companies": [
                 {
@@ -7913,6 +7935,17 @@
             ],
             "user_name": "Vandita Arora",
             "emails": ["vandita_arora@cable.comcast.com"]
+        },
+        {
+            "launchpad_id": "vbatts",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vincent Batts",
+            "emails": ["vbatts@gmail.com"]
         },
         {
             "launchpad_id": "vedlad",
