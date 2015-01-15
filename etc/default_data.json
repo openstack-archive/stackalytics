@@ -2426,6 +2426,17 @@
             "emails": ["edward.hope-morley@canonical.com", "opentastic@gmail.com"]
         },
         {
+            "launchpad_id": "edwardbadboy",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhou Zheng Sheng",
+            "emails": ["edwardbadboy@gmail.com", "zhengsheng@awcloud.com"]
+        },
+        {
             "launchpad_id": "egallen",
             "companies": [
                 {
