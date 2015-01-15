@@ -8520,6 +8520,17 @@
             "emails": ["yunlingzeng@hotmail.com", "zengyunling@huawei.com"]
         },
         {
+            "launchpad_id": "zhangjialong",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangjl",
+            "emails": ["zhangjl@awcloud.com", "zhangjl_cn@qq.com"]
+        },
+        {
             "launchpad_id": "zhangleiqiang",
             "companies": [
                 {
