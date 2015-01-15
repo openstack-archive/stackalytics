@@ -211,6 +211,9 @@ class Git(Vcs):
                 # ignore commits with empty email (there are some < Essex)
                 continue
 
+            commit['author_email'] = utils.keep_safe_chars(
+                commit['author_email'])
+
             diff_stat_str = rec.group('diff_stat')
             diff_rec = re.search(DIFF_STAT_PATTERN, diff_stat_str)
 

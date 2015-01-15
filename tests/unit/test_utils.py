@@ -78,6 +78,12 @@ class TestUtils(testtools.TestCase):
         self.assertEqual(expected, utils.add_index(
             sequence, start=0, item_filter=lambda x: x['name'] != 'B'))
 
+    def test_keep_safe_chars(self):
+        self.assertEqual('somemoretext',
+                         utils.keep_safe_chars('some more text'))
+        self.assertEqual(u'(unicode)',
+                         utils.keep_safe_chars(u'(unicode \u0423) '))
+
     def test_normalize_company_name(self):
         company_names = ['EMC Corporation', 'Abc, corp..', 'Mirantis IT.',
                          'Red Hat, Inc.', 'abc s.r.o. ABC', '2s.r.o. co',

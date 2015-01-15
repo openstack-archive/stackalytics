@@ -234,6 +234,10 @@ def safe_encode(s):
     return six.moves.urllib.parse.quote(s.encode('utf-8'))
 
 
+def keep_safe_chars(s):
+    return re.sub(r'[^\x21-\x7e\x80-\xff]+', '', s)
+
+
 def make_module_group(module_group_id, name=None, modules=None, tag='module'):
     return {'id': module_group_id,
             'module_group_name': name or module_group_id,
