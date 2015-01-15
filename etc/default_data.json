@@ -3768,6 +3768,17 @@
             "emails": ["joe@swiftstack.com", "joe@cloudscaling.com"]
         },
         {
+            "launchpad_id": "joe-launchpad-bedafamily",
+            "companies": [
+                {
+                    "company_name": "Google",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Beda",
+            "emails": ["joe.github@bedafamily.com"]
+        },
+        {
             "launchpad_id": "joe-topjian-v",
             "companies": [
                 {
@@ -7530,6 +7541,17 @@
             ],
             "user_name": "James Polley",
             "emails": ["jp@jamezpolley.com", "james.polley@hp.com"]
+        },
+        {
+            "launchpad_id": "teabee89",
+            "companies": [
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tibor Vass",
+            "emails": ["teabee89@gmail.com"]
         },
         {
             "launchpad_id": "tellesmvn",
