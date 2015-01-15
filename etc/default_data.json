@@ -3104,6 +3104,17 @@
             "emails": ["harlowja@gmail.com", "harlowja@yahoo-inc.com", "harlowja@outlook.com"]
         },
         {
+            "launchpad_id": "harshit-3",
+            "companies": [
+                {
+                    "company_name": "Acelio",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Harshit Chitalia",
+            "emails": ["harshit@acelio.com"]
+        },
+        {
             "launchpad_id": "hartsock",
             "gerrit_id": "hartsocks",
             "companies": [
@@ -8661,6 +8672,10 @@
         {
             "domains": ["accenture.com"],
             "company_name": "Accenture"
+        },
+        {
+            "domains": ["acelio.com"],
+            "company_name": "Acelio"
         },
         {
             "domains": ["alcatel-lucent.com"],
