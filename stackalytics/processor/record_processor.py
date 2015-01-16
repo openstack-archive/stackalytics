@@ -331,7 +331,8 @@ class RecordProcessor(object):
         owner = record['owner']
 
         review['primary_key'] = review['id']
-        review['gerrit_id'] = owner['username']
+        if owner.get('username'):
+            review['gerrit_id'] = owner['username']
         review['author_name'] = owner['name']
         if owner.get('email'):
             review['author_email'] = owner['email'].lower()
