@@ -36,16 +36,16 @@ class TestMps(testtools.TestCase):
 <div class="last name-and-title">
 <h3>Jim Battenberg</h3>
 </div>
-<hr><div class="span-3"><strong>Date Joined</strong></div>
-<div class="span-7 last">June 25, 2013 <br><br></div>
-    <div class="span-3"><strong>Affiliations</strong></div>
-    <div class="span-7 last">
+<hr><div class="span-4"><strong>Date Joined</strong></div>
+<div class="span-6 last">June 25, 2013 <br><br></div>
+    <div class="span-4"><strong>Affiliations</strong></div>
+    <div class="span-6 last">
             <div>
                 <b>Rackspace</b> From  (Current)
             </div>
     </div>
-<div class="span-3"><strong>Statement of Interest </strong></div>
-<div class="span-7 last">
+<div class="span-4"><strong>Statement of Interest </strong></div>
+<div class="span-6 last">
 <p>contribute logic and evangelize openstack</p>
 </div>
 <p>&nbsp;</p>'''

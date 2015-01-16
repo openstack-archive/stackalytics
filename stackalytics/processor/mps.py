@@ -26,7 +26,7 @@ from stackalytics.processor import utils
 LOG = logging.getLogger(__name__)
 
 NAME_AND_DATE_PATTERN = (r'<h3>(?P<member_name>[^<]*)[\s\S]*?'
-                         r'<div class="span-7 last">(?P<date_joined>[^<]*)')
+                         r'<div class="span-\d last">(?P<date_joined>[^<]*)')
 COMPANY_PATTERN = (r'<strong>Date\sJoined[\s\S]*?<b>(?P<company_draft>[^<]*)'
                    r'[\s\S]*?From\s(?P<date_from>[\s\S]*?)\(Current\)')
 GARBAGE_PATTERN = r'[/\\~%^\*_]+'
