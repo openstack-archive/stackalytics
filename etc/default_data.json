@@ -10764,7 +10764,7 @@
         },
         {
             "module_group_name": "chef-group",
-            "modules": ["openstack-chef-repo", "cookbook-ceph", "cookbook-openstack-block-storage", "cookbook-openstack-client", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-dashboard", "cookbook-openstack-data-processing", "cookbook-openstack-database", "cookbook-openstack-identity", "cookbook-openstack-image", "cookbook-openstack-integration-test", "cookbook-openstack-network", "cookbook-openstack-object-storage", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-orchestration", "cookbook-openstack-telemetry"]
+            "modules": ["openstack-chef-repo", "cookbook-ceph", "cookbook-openstack-bare-metal", "cookbook-openstack-block-storage", "cookbook-openstack-client", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-dashboard", "cookbook-openstack-data-processing", "cookbook-openstack-database", "cookbook-openstack-identity", "cookbook-openstack-image", "cookbook-openstack-integration-test", "cookbook-openstack-network", "cookbook-openstack-object-storage", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-orchestration", "cookbook-openstack-telemetry"]
         },
         {
             "module_group_name": "magnetodb-group",
