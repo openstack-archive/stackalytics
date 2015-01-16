@@ -253,6 +253,10 @@ class Git(Vcs):
             else:
                 commit['release'] = None
 
+            if commit['release'] == 'ignored':
+                # drop commits that are marked by 'ignored' release
+                continue
+
             if 'blueprint_id' in commit:
                 commit['blueprint_id'] = [(commit['module'] + ':' + bp_name)
                                           for bp_name

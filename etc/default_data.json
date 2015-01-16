@@ -10694,6 +10694,18 @@
             ]
         },
         {
+            "module": "vmware-nsx",
+            "uri": "git://git.openstack.org/stackforge/vmware-nsx.git",
+            "organization": "stackforge",
+            "releases": [
+                {
+                    "release_name": "ignored",
+                    "tag_from": "44e6ae3a44d73be5618daac6cc7785f08242817b",
+                    "tag_to": "067694223916f0098f8dc455a7567bc3e53b8574"
+                }
+            ]
+        },
+        {
             "module": "docker",
             "organization": "docker",
             "uri": "https://github.com/docker/docker.git"
