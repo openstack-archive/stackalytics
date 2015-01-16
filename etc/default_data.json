@@ -10699,6 +10699,41 @@
             "uri": "https://github.com/docker/docker.git"
         },
         {
+            "module": "docker-registry",
+            "organization": "docker",
+            "uri": "https://github.com/docker/docker-registry.git"
+        },
+        {
+            "module": "docker-network",
+            "organization": "docker",
+            "uri": "https://github.com/docker/docker-network.git"
+        },
+        {
+            "module": "libcontainer",
+            "organization": "docker",
+            "uri": "https://github.com/docker/libcontainer.git"
+        },
+        {
+            "module": "distribution",
+            "organization": "docker",
+            "uri": "https://github.com/docker/distribution.git"
+        },
+        {
+            "module": "machine",
+            "organization": "docker",
+            "uri": "https://github.com/docker/machine.git"
+        },
+        {
+            "module": "swarm",
+            "organization": "docker",
+            "uri": "https://github.com/docker/swarm.git"
+        },
+        {
+            "module": "libtrust",
+            "organization": "docker",
+            "uri": "https://github.com/docker/libtrust.git"
+        },
+        {
             "module": "kubernetes",
             "organization": "googlecloudplatform",
             "uri": "https://github.com/googlecloudplatform/kubernetes.git"
