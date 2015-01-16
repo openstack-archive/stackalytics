@@ -1624,6 +1624,17 @@
            "emails": ["cindy.pallaresq@gmail.com", "cpallares@redhat.com", "cpallare@redhat.com"]
         },
         {
+            "github_id": "cpuguy83",
+            "companies": [
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Goff",
+            "emails": ["cpuguy83@gmail.com"]
+        },
+        {
             "launchpad_id": "craige",
             "companies": [
                 {

@@ -40,7 +40,9 @@ def _normalize_user(user):
     user['user_id'] = user_processor.make_user_id(
         launchpad_id=user.get('launchpad_id'),
         emails=user.get('emails'),
-        gerrit_id=user.get('gerrit_id'))
+        gerrit_id=user.get('gerrit_id'),
+        github_id=user.get('user_id'),
+        ldap_id=user.get('ldap_id'))
 
 
 def _normalize_users(users):

@@ -35,6 +35,12 @@
             {%if gerrit_id %}
                 <div>Gerrit: <a href="https://review.openstack.org/#/q/owner:${gerrit_id},n,z" target="_blank">${gerrit_id}</a></div>
             {%/if%}
+            {%if github_id %}
+                <div>Github: <a href="https://github.com/${github_id}" target="_blank">${github_id}</a></div>
+            {%/if%}
+            {%if ldap_id %}
+                <div>LDAP: ${ldap_id}</div>
+            {%/if%}
             {%if core %}
                 <div>Core in:
                     {%each( index, value ) core %}
