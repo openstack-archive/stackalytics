@@ -10835,6 +10835,10 @@
         {
             "module_group_name": "rally-group",
             "modules": ["rally", "python-rallyclient", "osprofiler"]
+        },
+        {
+            "module_group_name": "docker-group",
+            "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust"]
         }
     ],
     "releases": [
@@ -10932,7 +10936,7 @@
         {
             "id": "complimentary",
             "title": "Complimentary",
-            "modules": ["docker", "kubernetes", "jclouds", "cloudfoundry"]
+            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry"]
         },
         {
             "id": "cloudfoundry-group",
@@ -10944,7 +10948,7 @@
             "id": "docker-group",
             "title": "Docker",
             "child": true,
-            "modules": ["docker"]
+            "modules": ["docker-group"]
         },
         {
             "id": "kubernetes-group",
