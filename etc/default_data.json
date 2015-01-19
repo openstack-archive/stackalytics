@@ -2158,6 +2158,17 @@
             "emails": ["dsrinivas@mirantis.com", "dims@linux.vnet.ibm.com", "davanum@gmail.com"]
         },
         {
+            "launchpad_id": "divius",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dmitry Tantsur",
+            "emails": ["divius.inside@gmail.com", "dtantsur@redhat.com"]
+        },
+        {
             "launchpad_id": "dlenwell",
             "companies": [
                 {
