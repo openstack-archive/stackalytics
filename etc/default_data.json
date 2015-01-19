@@ -7324,6 +7324,17 @@
             "emails": ["samtarangare@gmail.com", "srangare@mvista.com"]
         },
         {
+            "launchpad_id": "sreshetniak",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergey Reshetnyak",
+            "emails": ["sreshetniak@mirantis.com", "reshetniaksv@gmail.com"]
+        },
+        {
             "launchpad_id": "srics-r",
             "companies": [
                 {
