@@ -2478,6 +2478,10 @@
             "companies": [
                 {
                     "company_name": "Cloudwatt",
+                    "end_date": "2014-Jun-01"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
