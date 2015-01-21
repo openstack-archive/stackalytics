@@ -155,6 +155,8 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div>Parsed result: {%if ci_result == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
             <div>Message: ${message}</div>
             <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
+        {%elif record_type == "member" %}
+            <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
         {%/if%}
     </div>
     </div>
