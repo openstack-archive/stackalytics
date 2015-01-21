@@ -6745,6 +6745,18 @@
             "emails": ["ryuyada@gmail.com", "ryutaro.yada@mail.rakuten.com"]
         },
         {
+           "launchpad_id": "s-haub",
+           "gerrit_id": "shaub",
+           "companies": [
+               {
+                   "company_name": "Deutsche Telekom",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Stefan Haub",
+           "emails": ["s.haub@telekom.de"]
+        },
+        {
             "launchpad_id": "sahid-ferdjaoui",
             "companies": [
                 {
