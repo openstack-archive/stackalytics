@@ -8328,6 +8328,17 @@
             "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com"]
         },
         {
+            "launchpad_id": "wei-d-chen",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dave Chen",
+            "emails": ["dave.jungler@gmail.com", "wei.d.chen@intel.com"]
+        },
+        {
             "launchpad_id": "wenjianhn",
             "companies": [
                 {
