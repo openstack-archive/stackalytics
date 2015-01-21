@@ -6906,11 +6906,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2015-Jan-05"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Steven Deaton",
-            "emails": ["sdeaton2@gmail.com", "steven.deaton@rackspace.com"]
+            "emails": ["sdeaton2@gmail.com", "steven.deaton@rackspace.com", "sld@hp.com"]
         },
         {
             "launchpad_id": "sean-gossard",
