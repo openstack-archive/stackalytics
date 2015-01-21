@@ -6180,6 +6180,17 @@
             "emails": ["raphael_mondesir@cable.comcast.com", "raphmraph@gmail.com"]
         },
         {
+            "launchpad_id": "raymond-angelone",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ray Angelone",
+            "emails": ["raymond_angelone@symantec.com", "angeloneray@gmail.com"]
+        },
+        {
             "launchpad_id": "rblee88",
             "companies": [
                 {
