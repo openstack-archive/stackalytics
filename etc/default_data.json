@@ -5937,6 +5937,10 @@
             "companies": [
                 {
                     "company_name": "StackOps",
+                    "end_date": "2014-Mar-01"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
