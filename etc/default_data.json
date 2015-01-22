@@ -5439,6 +5439,21 @@
             "emails": ["michael_bradford@cable.comcast.com"]
         },
         {
+            "launchpad_id": "nakato",
+            "companies": [
+                {
+                    "company_name": "Anchor",
+                    "end_date": "2015-Jan-01"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sachi King",
+            "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io"]
+        },
+        {
             "launchpad_id": "namei-unix",
             "companies": [
                 {
@@ -8845,6 +8860,10 @@
         {
             "domains": ["alyseo.com"],
             "company_name": "Alyseo"
+        },
+        {
+            "domains": ["anchor.com.au", "anchor.net.au", "anchor.hosting"],
+            "company_name": "Anchor"
         },
         {
             "domains": ["anl.gov"],
