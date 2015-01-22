@@ -3086,6 +3086,17 @@
             "emails": ["mgrishkin@gmail.com", "mgrishkin@mirantis.com"]
         },
         {
+            "launchpad_id": "grue-pm",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Susie Gray",
+            "emails": ["susie.gray@hp.com"]
+        },
+        {
             "launchpad_id": "gtt116",
             "companies": [
                 {
