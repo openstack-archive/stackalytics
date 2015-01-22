@@ -544,6 +544,17 @@
             "emails": ["andy.edmonds@gmail.com", "andy@edmonds.be"]
         },
         {
+            "launchpad_id": "anish7",
+            "companies": [
+                {
+                    "company_name": "Chelsio Communications",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anish Bhatt",
+            "emails": ["anish@chelsio.com", "anish7@gmail.com"]
+        },
+        {
             "launchpad_id": "ankurrishi",
             "companies": [
                 {
