@@ -8609,6 +8609,17 @@
             "emails": ["yun.shen@hp.com"]
         },
         {
+            "launchpad_id": "yuntong",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yuntong",
+            "emails": ["yuntongjin@gmail.com", "yuntong.jin@intel.com"]
+        },
+        {
             "launchpad_id": "yuxcer",
             "companies": [
                 {
