@@ -4235,6 +4235,17 @@
             "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org"]
         },
         {
+            "github_id": "jpetazzo",
+            "companies": [
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jérôme Petazzoni",
+            "emails": ["j.petazzoni@docker.com"]
+        },
+        {
             "launchpad_id": "jpichon",
             "companies": [
                 {
@@ -5085,6 +5096,17 @@
             "emails": ["mark.sturdevant@hp.com", "markstur@hp.com"]
         },
         {
+            "launchpad_id": "mark.rushakoff",
+            "companies": [
+                {
+                    "company_name": "InfluxDB",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Rushakoff",
+            "emails": ["mark.rushakoff@gmail.com"]
+        },
+        {
             "launchpad_id": "markmcclain",
             "companies": [
                 {
@@ -5393,6 +5415,17 @@
             "emails": ["kmestery@cisco.com", "mestery@noironetworks.com", "mestery@mestery.com"]
         },
         {
+            "github_id": "metalivedev",
+            "companies": [
+                {
+                    "company_name": "Docker",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andy Rothfusz",
+            "emails": ["andy.rothfusz@docker.com"]
+        },
+        {
             "launchpad_id": "mfisch",
             "companies": [
                 {
@@ -5565,6 +5598,17 @@
             ],
             "user_name": "Ivar Lazzaro",
             "emails": ["ivarlazzaro@gmail.com"]
+        },
+        {
+            "github_id": "mmb",
+            "companies": [
+                {
+                    "company_name": "Pivotal",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew M. Boedicker",
+            "emails": ["matthewm@boedicker.org"]
         },
         {
             "launchpad_id": "mmohan-9",
@@ -5912,6 +5956,17 @@
             ],
             "user_name": "Nikolay Markov",
             "emails": ["nmarkov@mirantis.com", "enchantner@gmail.com"]
+        },
+        {
+            "launchpad_id": "noav",
+            "companies": [
+                {
+                    "company_name": "Heroku",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Noah Zoschke",
+            "emails": ["n.zoschke@heroku.com"]
         },
         {
             "launchpad_id": "nobodycam",
@@ -6598,6 +6653,17 @@
             ],
             "user_name": "Eldar Nugaev",
             "emails": ["eldr@ya.ru", "enugaev@griddynamics.com", "reldan@oscloud.ru"]
+        },
+        {
+            "github_id": "reset",
+            "companies": [
+                {
+                    "company_name": "Undead Labs",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jomie Winsor",
+            "emails": ["jamie@vialstudios.com"]
         },
         {
             "launchpad_id": "retr0h",
