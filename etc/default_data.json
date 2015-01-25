@@ -4952,6 +4952,17 @@
             "emails": ["lmichaels@parelastic.com", "lmichaels@tesora.com"]
         },
         {
+            "launchpad_id": "lodgenbd",
+            "companies": [
+                {
+                    "company_name": "CenturyLink",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brad Lodgen",
+            "emails": ["brad@lodgens.com", "brad.lodgen@centurylink.com"]
+        },
+        {
             "launchpad_id": "loganmc10",
             "companies": [
                 {
