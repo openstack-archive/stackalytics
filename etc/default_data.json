@@ -6868,6 +6868,7 @@
         {
             "launchpad_id": "robcresswell",
             "gerrit_id": "rob-cresswell",
+            "github_id": "robcresswell",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -6875,7 +6876,7 @@
                 }
             ],
             "user_name": "Rob Cresswell",
-            "emails": ["rcresswe@cisco.com"]
+            "emails": ["robert.cresswell@outlook.com", "rcresswe@cisco.com"]
         },
         {
             "launchpad_id": "robert-myers",
