@@ -326,15 +326,19 @@
         },
         {
             "launchpad_id": "al592b",
-            "gerrit_id": "alop",
+            "gerrit_id": "alopgeek",
             "companies": [
                 {
                     "company_name": "AT&T",
+                    "end_date": "2014-May-19"
+                },
+                {
+                    "company_name": "Cisco Systems",
                     "end_date": null
                 }
             ],
             "user_name": "Abel Lopez",
-            "emails": ["alopgeek@gmail.com", "al592b@att.com"]
+            "emails": ["alopgeek@gmail.com", "abelopez@cisco.com", "al592b@att.com"]
         },
         {
             "launchpad_id": "alejandro-e-paredes",
