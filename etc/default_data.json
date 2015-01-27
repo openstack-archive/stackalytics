@@ -11579,8 +11579,8 @@
             "modules": ["stackforge"]
         },
         {
-            "id": "complimentary",
-            "title": "Complimentary",
+            "id": "complementary",
+            "title": "Complementary",
             "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry"]
         },
         {
