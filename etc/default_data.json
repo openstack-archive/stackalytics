@@ -1996,6 +1996,18 @@
             "emails": ["davide.guerri@gmail.com", "davide.guerri@hp.com"]
         },
         {
+            "launchpad_id": "davpat2112",
+            "gerrit_id": "dpaterson",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Paterson",
+            "emails": ["david_paterson@dell.com", "davpat2112@yahoo.com"]
+        },
+        {
             "launchpad_id": "daz",
             "companies": [
                 {
