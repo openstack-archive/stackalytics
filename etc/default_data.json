@@ -720,6 +720,18 @@
             "emails": ["arnaudleg@gmail.com"]
         },
         {
+            "launchpad_id": "arun-mithil",
+            "gerrit_id": "arun-mithil",
+            "companies": [
+                {
+                    "company_name": "Pluribus Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mithil Arun",
+            "emails": ["arun.mithil@gmail.com", "mithil.arun@pluribusnetworks.com"]
+        },
+        {
             "launchpad_id": "asalkeld",
             "companies": [
                 {
@@ -4086,6 +4098,18 @@
             "emails": ["joe.github@bedafamily.com"]
         },
         {
+            "launchpad_id": "joe-nellipuzha",
+            "gerrit_id": "joseph_george",
+            "companies": [
+                {
+                    "company_name": "Pluribus Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joseph George",
+            "emails": ["joe.nellipuzha@gmail.com", "joseph.george@pluribusnetworks.com"]
+        },
+        {
             "launchpad_id": "joe-topjian-v",
             "companies": [
                 {
@@ -6440,6 +6464,30 @@
             ],
             "user_name": "Pranesh Pandurangan",
             "emails": ["praneshpg@gmail.com", "praneshp@yahoo-inc.com"]
+        },
+        {
+            "launchpad_id": "prashanth-prahal",
+            "gerrit_id": "prashanth-prahal",
+            "companies": [
+                {
+                    "company_name": "Pluribus Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Prashanth Prahalad",
+            "emails": ["prashanth.prahal@gmail.com", "prashanth.prahalad@pluribusnetworks.com"]
+        },
+        {
+            "launchpad_id": "prasoontelang",
+            "gerrit_id": "prasoon",
+            "companies": [
+                {
+                    "company_name": "Pluribus Networks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Prasoon Telang",
+            "emails": ["prasoontelang@gmail.com", "prasoon.telang@pluribusnetworks.com"]
         },
         {
             "launchpad_id": "prdsilva",
@@ -10082,6 +10130,10 @@
         {
             "domains": ["plumgrid.com"],
             "company_name": "PLUMgrid"
+        },
+        {
+            "domains": ["pluribusnetworks.com"],
+            "company_name": "Pluribus Networks"
         },
         {
             "domains": ["pubyun.com"],
