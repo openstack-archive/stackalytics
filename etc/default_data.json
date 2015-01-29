@@ -8682,6 +8682,17 @@
             "emails": ["vieux@docker.com"]
         },
         {
+            "launchpad_id": "vigneshvar-a-s",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vigneshvar.A.S",
+            "emails": ["vigneshvar.a.s@gmail.com", "vigneshvar.subramanian@ril.com"]
+        },
+        {
             "launchpad_id": "vipuls",
             "companies": [
                 {
