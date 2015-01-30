@@ -8703,6 +8703,18 @@
             "emails": ["vey.julien@gmail.com", "julien.vey@numergy.com"]
         },
         {
+            "launchpad_id": "victor-lowther",
+            "gerrit_id": "victor-lowther",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Lowther",
+            "emails": ["victor.lowther@gmail.com", "victor_lowther@dell.com"]
+        },
+        {
             "launchpad_id": "victor-r-howard",
             "companies": [
                 {
