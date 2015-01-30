@@ -60,8 +60,22 @@ class TestUtils(testtools.TestCase):
     def test_format_text_split_long_link(self):
         original = ('https://blueprints.launchpad.net/stackalytics/+spec/'
                     'stackalytics-core')
-        expected = ('https://&#8203;blueprints.launchpad.net/&#8203;'
-                    'stackalytics/&#8203;+spec/&#8203;stackalytics-core')
+        expected = ('https://blueprints.&#8203;launchpad.&#8203;net'
+                    '/&#8203;stackalytics/+spec/&#8203;stackalytics-core')
+
+        self.assertEqual(expected, utils.format_text(original))
+
+    def test_format_text_split_full_class_path(self):
+        original = 'tests.unit.benchmark.scenarios.test_base'
+        expected = ('tests.&#8203;unit.&#8203;benchmark.&#8203;'
+                    'scenarios.&#8203;test_base')
+
+        self.assertEqual(expected, utils.format_text(original))
+
+    def test_format_text_split_full_class_path_middle_line(self):
+        original = 'some text tests.unit.benchmark.scenarios.test_base wide'
+        expected = ('some text tests.&#8203;unit.&#8203;benchmark.&#8203;'
+                    'scenarios.&#8203;test_base wide')
 
         self.assertEqual(expected, utils.format_text(original))
 

@@ -188,7 +188,11 @@ def unwrap_text(text):
 
 def format_text(s):
     s = cgi.escape(re.sub(re.compile('\n{2,}', flags=re.MULTILINE), '\n', s))
-    s = re.sub(r'([/\/\*=~]{1,2}|--|\+\+)', r'\1&#8203;', s)
+
+    def replace_dots(match_obj):
+        return re.sub(r'([\./]+)', r'\1&#8203;', match_obj.group(0))
+
+    s = re.sub(r'((?:\w+[\./]+)+\w+)', replace_dots, s)
     return s
 
 
