@@ -3346,6 +3346,18 @@
             "emails": ["guslees@gmail.com", "angus.lees@rackspace.com"]
         },
         {
+            "launchpad_id": "h-aramaki",
+            "gerrit_id": "haramaki",
+            "companies": [
+                {
+                    "company_name": "NetOne Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hiroki Aramaki",
+            "emails": ["h-aramaki@netone.co.jp"]
+        },
+        {
             "launchpad_id": "hareesh-puthalath",
             "companies": [
                 {
@@ -10050,6 +10062,10 @@
         {
             "domains": ["netease.com"],
             "company_name": "Netease"
+        },
+        {
+            "domains": ["netone.co.jp"],
+            "company_name": "NetOne Systems"
         },
         {
             "domains": ["nexenta.com"],
