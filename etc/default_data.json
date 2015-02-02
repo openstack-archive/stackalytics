@@ -2521,6 +2521,17 @@
             "emails": ["dt-github@xr7.org", "dtroyer@gmail.com"]
         },
         {
+            "launchpad_id": "duhzecca",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eduardo Felipe Zecca da Cruz",
+            "emails": ["duhzecca@gmail.com", "eduardo.cruz@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "duk",
             "companies": [
                 {
