@@ -39,13 +39,17 @@ def link_to_launchpad_id(link):
 def lp_profile_by_launchpad_id(launchpad_id):
     LOG.debug('Lookup user id %s at Launchpad', launchpad_id)
     uri = LP_URI_V1 % ('~' + launchpad_id)
-    return utils.read_json_from_uri(uri)
+    lp_profile = utils.read_json_from_uri(uri)
+    utils.validate_lp_display_name(lp_profile)
+    return lp_profile
 
 
 def lp_profile_by_email(email):
     LOG.debug('Lookup user email %s at Launchpad', email)
     uri = LP_URI_V1 % ('people/?ws.op=getByEmail&email=' + email)
-    return utils.read_json_from_uri(uri)
+    lp_profile = utils.read_json_from_uri(uri)
+    utils.validate_lp_display_name(lp_profile)
+    return lp_profile
 
 
 def lp_module_exists(module):

@@ -266,3 +266,8 @@ def normalize_company_draft(name):
     name = re.sub(',', ' ', name)
     name = re.sub(r'\s+', ' ', name)
     return name
+
+
+def validate_lp_display_name(lp_profile):
+    if "<email address hidden>" == lp_profile['display_name']:
+        lp_profile['display_name'] = lp_profile['name']
