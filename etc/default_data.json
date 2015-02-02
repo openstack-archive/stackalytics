@@ -3602,6 +3602,17 @@
             "emails": ["ipekelny@mirantis.com", "ipekelny@griddynamics.com", "pekelny@gmail.com"]
         },
         {
+            "launchpad_id": "ibolotin",
+            "companies": [
+                {
+                    "company_name": "Symantec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Igor Bolotin",
+            "emails": ["igor_bolotin@symantec.com", "ibolotin@gmail.com"]
+        },
+        {
            "launchpad_id": "ichihara-hirofumi",
            "gerrit_id": "Hirofumi-Ichihara",
            "companies": [
