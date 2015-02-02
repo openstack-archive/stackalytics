@@ -7035,6 +7035,18 @@
             "emails": ["ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
         },
         {
+            "launchpad_id": "rodrigo-barbieri2010",
+            "gerrit_id": "ganso",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rodrigo Barbieri",
+            "emails": ["rodrigo.barbieri2010@gmail.com", "rodrigo.barbieri@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "rodrigodsousa",
             "gerrit_id": "rodrigods",
             "companies": [
