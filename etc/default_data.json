@@ -2565,6 +2565,17 @@
             "emails": ["dweimer@gmail.com", "dougw@sdsc.edu"]
         },
         {
+            "launchpad_id": "dzambonil",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Diego Zamboni Latance",
+            "emails": ["dzambonil@gmail.com", "diego.latance@fit-tecnologia.org.br"]
+        },
+        {
             "github_id": "dzuelke",
             "companies": [
                 {
