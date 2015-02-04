@@ -7193,6 +7193,17 @@
             "emails": ["megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
         },
         {
+            "launchpad_id": "rosso-af",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adriano F. Rosso",
+            "emails": ["rosso.af@gmail.com", "adriano.rosso@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "rromans",
             "companies": [
                 {
