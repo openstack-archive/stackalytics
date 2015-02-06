@@ -8266,6 +8266,21 @@
             "emails": ["galiu@pivotal.io"]
         },
         {
+            "launchpad_id": "taget-9",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2015-Feb-02"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eli Qiao",
+            "emails": [ "qiaoliyong@gmail.com", "liyong.qiao@intel.com"]
+        },
+        {
             "launchpad_id": "tan-lin-good",
             "companies": [
                 {
