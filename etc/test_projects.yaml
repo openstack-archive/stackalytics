@@ -1,0 +1,16 @@
+Sahara:
+  ptl: Sergey Lukjanov (SergeyLukjanov)
+  mission: >
+    To provide a scalable data processing stack and associated management
+    interfaces.
+  url: https://wiki.openstack.org/wiki/Sahara
+  projects:
+    - repo: openstack/sahara
+      tags:
+        - name: integrated-release
+          since: juno
+    - repo: openstack/python-saharaclient
+    - repo: openstack/sahara-dashboard
+    - repo: openstack/sahara-extra
+    - repo: openstack/sahara-image-elements
+    - repo: openstack/sahara-specs

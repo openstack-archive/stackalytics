@@ -11694,19 +11694,13 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["official-integrated", "official-incubated", "official-other", "governance", "python-openstackclient", "api-wg"]
+            "modules": ["official-integrated", "official-other", "governance", "python-openstackclient", "api-wg"]
         },
         {
             "id": "integrated",
             "title": "integrated",
             "child": true,
             "modules": ["official-integrated"]
-        },
-        {
-            "id": "incubated",
-            "title": "incubated",
-            "child": true,
-            "modules": ["official-incubated"]
         },
         {
             "id": "other",

@@ -240,30 +240,24 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 
-def _read_official_programs_yaml(program_list_uri, release_names):
-    LOG.debug('Process list of programs from uri: %s', program_list_uri)
-    content = yaml.safe_load(utils.read_uri(program_list_uri))
+def _read_official_projects_yaml(project_list_uri, release_names):
+    LOG.debug('Process list of projects from uri: %s', project_list_uri)
+    content = yaml.safe_load(utils.read_uri(project_list_uri))
     module_groups = collections.defaultdict(
         lambda: {'modules': [], 'releases': collections.defaultdict(list)})
 
     official_integrated = module_groups['official-integrated']
     official_integrated['tag'] = 'project_type'
     official_integrated['module_group_name'] = 'official-integrated'
-    official_incubated = module_groups['official-incubated']
-    official_incubated['tag'] = 'project_type'
-    official_incubated['module_group_name'] = 'official-incubated'
     official_other = module_groups['official-other']
     official_other['tag'] = 'project_type'
     official_other['module_group_name'] = 'official-other'
 
     for name, info in six.iteritems(content):
-        # for one program
-        group_id = name.lower()
-        if 'codename' in info:
-            name = '%s (%s)' % (info['codename'], name)
-            group_id = '%s-group' % info['codename'].lower()
+        # take one official project
 
-        module_groups[group_id]['module_group_name'] = name
+        group_id = '%s-group' % name.lower()
+        module_groups[group_id]['module_group_name'] = '%s Official' % name
         module_groups[group_id]['tag'] = 'program'
 
         for module in info['projects']:
@@ -271,17 +265,22 @@ def _read_official_programs_yaml(program_list_uri, release_names):
 
             module_groups[group_id]['modules'].append(module_name)
 
-            if ('integrated-since' in module) or ('incubated-since' in module):
-                project_type = 'official-other'
-                for release_name in release_names:
-                    if release_name == module.get('incubated-since'):
-                        project_type = 'official-incubated'
-                    elif release_name == module.get('integrated-since'):
-                        project_type = 'official-integrated'
+            type_matched = False
+            if 'tags' in module:
+                for tag in module.get('tags'):
+                    tag_name = tag.get('name')
 
-                    module_groups[project_type]['releases'][
-                        release_name].append(module_name)
-            else:
+                    if tag_name == 'integrated-release':
+                        type_matched = True  # project type is matched here
+                        project_type = 'official-other'
+                        for release_name in release_names:
+                            if release_name == tag.get('since'):
+                                project_type = 'official-integrated'
+
+                            module_groups[project_type]['releases'][
+                                release_name].append(module_name)
+
+            if not type_matched:
                 module_groups['official-other']['modules'].append(module_name)
 
     # set ids for module groups
@@ -291,13 +290,13 @@ def _read_official_programs_yaml(program_list_uri, release_names):
     return module_groups
 
 
-def process_program_list(runtime_storage_inst, program_list_uri):
+def process_project_list(runtime_storage_inst, project_list_uri):
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
     release_names = [r['release_name'].lower()
                      for r in runtime_storage_inst.get_by_key('releases')[1:]]
 
-    official_module_groups = _read_official_programs_yaml(
-        program_list_uri, release_names)
+    official_module_groups = _read_official_projects_yaml(
+        project_list_uri, release_names)
     LOG.debug('Update module groups with official: %s', official_module_groups)
     module_groups.update(official_module_groups)
 
@@ -335,7 +334,7 @@ def main():
                                    default_data,
                                    cfg.CONF.driverlog_data_uri)
 
-    process_program_list(runtime_storage_inst, cfg.CONF.program_list_uri)
+    process_project_list(runtime_storage_inst, cfg.CONF.project_list_uri)
 
     update_pids(runtime_storage_inst)
 
