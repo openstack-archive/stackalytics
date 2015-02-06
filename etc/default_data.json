@@ -9529,7 +9529,7 @@
         {
             "domains": [""],
             "company_name": "*independent",
-            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome", "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor", "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance", "Freelance IT Specialist", "No Affiliation", "Not applicable"]
+            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome", "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor", "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance", "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated", "Unaffliated"]
         },
         {
             "domains": ["360.cn"],
@@ -9952,7 +9952,7 @@
         {
             "domains": ["hp.com"],
             "company_name": "HP",
-            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations Pvt Ltd", "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations"]
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations Pvt Ltd", "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations", "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte Ltd", "Hewlett Packard Romania"]
         },
         {
             "domains": ["huawei.com"],
@@ -10222,7 +10222,7 @@
         {
             "domains": ["oracle.com"],
             "company_name": "Oracle",
-            "aliases": ["Oracle America Inc."]
+            "aliases": ["Oracle America Inc.", "Oracle India Pvt. Ltd"]
         },
         {
             "domains": ["orange.com"],
