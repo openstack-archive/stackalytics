@@ -269,5 +269,6 @@ def normalize_company_draft(name):
 
 
 def validate_lp_display_name(lp_profile):
-    if "<email address hidden>" == lp_profile['display_name']:
-        lp_profile['display_name'] = lp_profile['name']
+    if lp_profile:
+        if "<email address hidden>" == lp_profile['display_name']:
+            lp_profile['display_name'] = lp_profile['name']

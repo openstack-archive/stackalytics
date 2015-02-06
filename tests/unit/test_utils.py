@@ -110,3 +110,16 @@ class TestUtils(testtools.TestCase):
 
         self.assertEqual(normalized_company_names,
                          correct_normalized_company_names)
+
+    def test_validate_lp_display_name(self):
+        profile = dict(name='johnny', display_name='John Smith')
+        utils.validate_lp_display_name(profile)
+        self.assertEqual('John Smith', profile['display_name'])
+
+        profile = dict(name='johnny', display_name='<email address hidden>')
+        utils.validate_lp_display_name(profile)
+        self.assertEqual('johnny', profile['display_name'])
+
+        profile = None
+        utils.validate_lp_display_name(profile)
+        self.assertEqual(None, profile)
