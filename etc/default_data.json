@@ -8218,6 +8218,17 @@
             "emails": ["svendowideit@home.org.au"]
         },
         {
+            "launchpad_id": "swamireddy",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Swami Reddy",
+            "emails": ["swamireddy@gmail.com", "swami.reddy@ril.com"]
+        },
+        {
             "launchpad_id": "swann-w",
             "companies": [
                 {
