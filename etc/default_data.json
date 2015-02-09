@@ -7407,6 +7407,22 @@
             "emails": ["sam@code-smash.net", "sambetts@cisco.com", "sam.betts.sb@gmail.com"]
         },
         {
+            "launchpad_id": "sammiestoel",
+            "gerrit_id": "sammiestoel",
+            "companies": [
+                {
+                   "company_name": "*independent",
+                   "end_date": "2014-Jul-01"
+                },
+               {
+                   "company_name": "Mirantis",
+                   "end_date": null
+               }
+            ],
+            "user_name": "Sam Stoelinga",
+            "emails": ["sammiestoel@gmail.com", "sstoelinga@mirantis.com"]
+        },
+        {
             "launchpad_id": "sandy-sandywalsh",
             "companies": [
                 {
