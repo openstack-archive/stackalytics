@@ -98,4 +98,13 @@ def lp_bug_generator(module, modified_since):
         for record in chunk['entries']:
             yield record
 
+            related_tasks_uri = record['related_tasks_collection_link']
+            LOG.debug('Reading related task from uri %s', related_tasks_uri)
+            related_tasks = utils.read_json_from_uri(related_tasks_uri)
+            if not related_tasks:
+                LOG.warn('No data was read from uri %s', uri)
+            elif related_tasks['entries']:
+                for related_task in related_tasks['entries']:
+                    yield related_task
+
         uri = chunk.get('next_collection_link')
