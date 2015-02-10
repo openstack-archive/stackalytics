@@ -7386,6 +7386,17 @@
             "emails": ["sahid.ferdjaoui@cloudwatt.com", "sahid.ferdjaoui@gmail.com", "sferdjao@redhat.com", "sahid.ferdjaoui@redhat.com", "sferdjaoui@redhat.com", "sahid@redhat.com"]
         },
         {
+            "launchpad_id": "sajuptpm",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Saju Madhavan",
+            "emails": ["sajuptpm@gmail.com", "saju.madhavan@ril.com"]
+        },
+        {
             "launchpad_id": "salvatore-orlando",
             "companies": [
                 {
