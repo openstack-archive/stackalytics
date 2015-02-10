@@ -1342,6 +1342,18 @@
             "emails": ["ccarlino@hp.com", "chuckjcarlino@gmail.com"]
         },
         {
+            "launchpad_id": "cdearbor",
+            "gerrit_id": "cdearbor",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Dearborn",
+            "emails": ["christopher_dearborn@dell.com", "cdearbor@comcast.net"]
+        },
+        {
             "launchpad_id": "cerberus",
             "companies": [
                 {
