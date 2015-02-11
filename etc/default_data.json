@@ -1275,6 +1275,18 @@
             "emails": ["chris.behrens@rackspace.com", "cbehrens@codestud.com"]
         },
         {
+            "launchpad_id": "cbelu",
+            "gerrit_id": "claudiub",
+            "companies": [
+                {
+                    "company_name": "Cloudbase Solutions",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Claudiu Belu",
+            "emails": ["dudu_0012000@yahoo.com"]
+        },
+        {
             "launchpad_id": "cbitter78",
             "companies": [
                 {
