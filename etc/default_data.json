@@ -117,6 +117,17 @@
             "emails": ["abhijeet.jain@nectechnologies.in", "abhijeetjpjain@gmail.com", "abhijeet_jain@ymail.com"]
         },
         {
+            "launchpad_id": "abhishekl",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abhishek Lekshmanan",
+            "emails": ["abhishek.lekshmanan@gmail.com","abhishek.lekshmanan@ril.com"]
+        },
+        {
             "launchpad_id": "academicgareth",
             "companies": [
                 {
