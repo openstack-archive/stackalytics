@@ -1876,6 +1876,17 @@
             "emails": ["loic@dachary.org", "loic.dachary@cloudwatt.com", "loic.dachary@enovance.com"]
         },
         {
+            "launchpad_id": "dagnello",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Davide Agnello",
+            "emails": ["davide_agnello@hotmail.com", "davide.agnello@hp.com"]
+        },
+        {
             "launchpad_id": "daisy-ycguo",
             "companies": [
                 {
