@@ -3258,6 +3258,18 @@
             "emails": ["graham.binns@gmail.com", "graham@grahambinns.com", "graham.binns@canonical.com", "graham@canonical.com", "gmb@canonical.com", "gmb@grahambinns.com"]
         },
         {
+            "launchpad_id": "go-chiba",
+            "gerrit_id": "go_chiba",
+            "companies": [
+                {
+                    "company_name": "NetOne Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Go Chiba",
+            "emails": ["go.chiba@gmail.com"]
+        },
+        {
             "launchpad_id": "goneri",
             "companies": [
                 {
