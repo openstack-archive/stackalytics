@@ -8872,6 +8872,18 @@
             "user_name": "Julien Vey",
             "emails": ["vey.julien@gmail.com", "julien.vey@numergy.com"]
         },
+	{
+            "launchpad_id": "victor-feitosa",
+            "gerrit_id": "victorfeitosa",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Feitosa",
+            "emails": ["victor.feitosa@lsbd.ufc.br"]
+        },
         {
             "launchpad_id": "victor-lowther",
             "gerrit_id": "victor-lowther",
