@@ -128,6 +128,17 @@
             "emails": ["abhishek.lekshmanan@gmail.com","abhishek.lekshmanan@ril.com"]
         },
         {
+            "launchpad_id": "abitha",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abitha Palaniappan",
+            "emails": ["abitha.palaniappan@gmail.com", "abitha.palaniappan@hp.com"]
+        },
+        {
             "launchpad_id": "academicgareth",
             "companies": [
                 {
