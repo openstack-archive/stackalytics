@@ -44,6 +44,17 @@
             "user_name": "Morgan Jones",
             "emails": ["morgan@parelastic.com", "morgan@tesora.com"]
         },
+        {   "launchpad_id": "9-me-9",
+            "gerrit_id": "vmtyler",
+            "companies": [
+                {
+                    "company_name": "EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tyler Britten",
+            "emails": ["me@vmtyler.com", "tyler.britten@emc.com"]
+        },
         {
             "launchpad_id": "9lex",
             "companies": [
