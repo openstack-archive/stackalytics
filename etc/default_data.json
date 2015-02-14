@@ -8355,6 +8355,7 @@
         },
         {
             "launchpad_id": "taget-9",
+            "gerrit_id": "Eli",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -8366,7 +8367,7 @@
                 }
             ],
             "user_name": "Eli Qiao",
-            "emails": [ "qiaoliyong@gmail.com", "liyong.qiao@intel.com"]
+            "emails": [ "qiaoliyong@gmail.com", "liyong.qiao@intel.com", "taget@linux.vnet.ibm.com"]
         },
         {
             "launchpad_id": "tan-lin-good",
