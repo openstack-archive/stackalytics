@@ -9681,6 +9681,17 @@
             "emails": ["zhiteng.huang@intel.com", "zhithuang@ebaysf.com", "winston.d@gmail.com"]
         },
         {
+            "launchpad_id": "zhouhan",
+            "companies": [
+                {
+                    "company_name": "eBay",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Han Zhou",
+            "emails": ["hzhou8@ebaysf.com", "zhouhan@gmail.com"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
