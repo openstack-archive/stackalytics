@@ -2807,6 +2807,17 @@
             "emails": ["ellenfkh@gmail.com", "ellen.hui@rackspace.com"]
         },
         {
+            "launchpad_id": "elvis-teixeira",
+            "companies": [
+            {
+                "company_name": "Hitachi",
+                "end_date": null
+            }
+            ],
+            "user_name": "Elvis Teixeira",
+            "emails": ["elvismtt@gmail.com", "elvis.teixeira@lsbd.ufc.br"]
+        },
+        {
             "launchpad_id": "emagana",
             "companies": [
                 {
