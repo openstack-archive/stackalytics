@@ -3116,7 +3116,18 @@
             ],
             "user_name": "Ferran Rodenas",
             "emails": ["frodenas@gmail.com"]
-         },
+        },
+        {
+            "launchpad_id": "fthiagogv",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thiago Gomes",
+            "emails": ["thiago.gomes@lsbd.ufc.br"]
+        },
         {
             "launchpad_id": "fujioka-yuuichi-d",
             "gerrit_id": "fujiokayuuichi",
