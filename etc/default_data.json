@@ -3764,6 +3764,17 @@
             "emails": ["dilyin@mirantis.com", "idv1985@gmail.com"]
         },
         {
+           "launchpad_id": "idzzy",
+           "companies": [
+               {
+                   "company_name": "KVH",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Yusuke Ide",
+           "emails": ["idzzyzzbi@gmail.com"]
+        },
+        {
             "launchpad_id": "ilyaalekseyev",
             "companies": [
                 {
