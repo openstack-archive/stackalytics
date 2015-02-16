@@ -2180,7 +2180,17 @@
             "user_name": "Koichi Yoshigoe",
             "emails": ["koichi.yoshigoe@gmail.com", "koichi.yoshigoe@mail.rakuten.com"]
         },
-
+        {
+            "launchpad_id": "denis-cavalcante",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Denis Cavalcante",
+            "emails": ["denis.cavalcante@lsbd.ufc.br", "dencaval@gmail.com"]
+        },
         {
             "launchpad_id": "denny-6",
             "companies": [
