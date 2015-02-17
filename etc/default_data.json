@@ -7709,6 +7709,21 @@
             "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com"]
         },
         {
+            "launchpad_id": "sdake",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2015-Jan-30"
+                },
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steven Dake",
+            "emails": ["sdake@redhat.com", "stdake@cisco.com"]
+        },
+        {
             "launchpad_id": "sdeaton2",
             "companies": [
                 {
