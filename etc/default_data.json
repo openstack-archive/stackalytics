@@ -9768,7 +9768,12 @@
         {
             "domains": [""],
             "company_name": "*independent",
-            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company", "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome", "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor", "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance", "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated", "Unaffliated"]
+            "aliases": ["None", "Non", "l-", ".", "****", "1", "aaa", "-", "dsadsadsadsad", "I dont have one", "company",
+              "n/a", "Self", "Student", "home", "Home Based", "Independent", "Independen", "Independant", "MyHome",
+              "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor",
+              "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance",
+              "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
+              "Unaffliated", "test"]
         },
         {
             "domains": ["360.cn"],
@@ -9959,7 +9964,8 @@
         {
             "domains": ["cisco.com"],
             "company_name": "Cisco Systems",
-            "aliases": ["Cisco System", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.", "Cisco", "Cisco Inc", "Cisco Hong Kong"]
+            "aliases": ["Cisco System", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.",
+              "Cisco", "Cisco Inc", "Cisco Hong Kong"]
         },
         {
             "domains": ["citrix.com"],
@@ -9980,7 +9986,8 @@
         },
         {
             "domains": ["cloudenablers.com"],
-            "company_name": "CD Cloudenablers"
+            "company_name": "Cloudenablers",
+            "aliases": ["CD Cloudenablers"]
         },
         {
             "domains": ["cloudfounders.com"],
@@ -10096,7 +10103,8 @@
         {
             "domains": ["ericsson.com"],
             "company_name": "Ericsson",
-            "aliases": ["Ericsson AB", "Ericsson Research", "Ericcson AB", "Ericsson Eurolab Deutschland GmbH", "Ericsson India"]
+            "aliases": ["Ericsson AB", "Ericsson Research", "Ericcson AB", "Ericsson Eurolab Deutschland GmbH",
+              "Ericsson India", "Ericsson Montreal", "Ericsson Hungary"]
         },
         {
             "domains": ["fathomdb.com"],
@@ -10191,7 +10199,12 @@
         {
             "domains": ["hp.com"],
             "company_name": "HP",
-            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations Pvt Ltd", "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations", "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte Ltd", "Hewlett Packard Romania"]
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard",
+              "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking",
+              "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations",
+              "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations",
+              "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte", "Hewlett Packard Romania",
+              "HP Helion Public Cloud", "HP Japan", "HP Korea"]
         },
         {
             "domains": ["huawei.com"],
@@ -10201,7 +10214,10 @@
         {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
             "company_name": "IBM",
-            "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India Pvt Ltd", "IBM India Pvt. Ltd.", "IBM Japan, Ltd.", "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH", "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services", "IBM Deutschland", "IBM Malaysia", "IBM Haifa"]
+            "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India", "IBM Japan",
+              "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH",
+              "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services",
+              "IBM Deutschland", "IBM Malaysia", "IBM Haifa", "IBM Global Services", "IBM Softlayer"]
         },
         {
             "domains": ["ifca.unican.es"],
@@ -10430,7 +10446,7 @@
         {
             "domains": ["nokia.com"],
             "company_name": "Nokia",
-            "aliases": ["Nokia Solutions and Networks"]
+            "aliases": ["Nokia Solutions and Networks", "Nokia Networks"]
         },
         {
             "domains": ["ntt.com", "nttmcl.com", "nttdata.co.jp", "ntt.co.jp", "nttdata.com", "vertex.co.in", "ntts.co.jp"],
@@ -10466,7 +10482,7 @@
         {
             "domains": ["orange.com"],
             "company_name": "Orange",
-            "aliases": ["Orange Labs"]
+            "aliases": ["Orange Labs", "Orange Polska S.A."]
         },
         {
             "domains": ["parallels.com"],
@@ -10515,17 +10531,14 @@
             "company_name": "Puppet Labs"
         },
         {
-            "domains": ["qq.com"],
-            "company_name": "Tencent"
-        },
-        {
             "domains": ["qrclab.com"],
             "company_name": "Quanta Research Cambridge"
         },
         {
             "domains": ["rackspace.co.uk", "rackspace.com", "slicehost.com", "mailtrust.com"],
             "company_name": "Rackspace",
-            "aliases": ["Rackspace, Cloudscaling, Korea Telcom, friends with lots of people", "Rackspace.com", "Rackspace Hosting", "Rackspce", "Rackspace Hosting; Tunnel Vision Laboratories LLC"]
+            "aliases": ["Rackspace, Cloudscaling, Korea Telcom, friends with lots of people", "Rackspace.com", "Rackspace Hosting",
+              "Rackspce", "Rackspace Hosting; Tunnel Vision Laboratories LLC"]
         },
         {
             "domains": ["rackwareinc.com"],
@@ -10784,7 +10797,7 @@
         {
             "domains": ["wipro.com"],
             "company_name": "Wipro",
-            "aliases": ["Wipro Infotech", "Wipro Technologies"]
+            "aliases": ["Wipro Infotech", "Wipro Technologies", "Wipro Arabia Ltd"]
         },
         {
             "domains": ["workday.com"],
