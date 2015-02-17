@@ -5709,6 +5709,17 @@
             "emails": ["martin@geisler.net"]
         },
         {
+            "launchpad_id": "mgoddard",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Goddard",
+            "emails": ["mgoddard@cray.com"]
+        },
+        {
             "launchpad_id": "mhu",
             "companies": [
                 {
@@ -8306,6 +8317,17 @@
             ],
             "user_name": "Steve Kowalik",
             "emails": ["steven@wedontsleep.org"]
+        },
+        {
+            "launchpad_id": "stigtelfer",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stig Telfer",
+            "emails": ["stelfer@cray.com"]
         },
         {
             "launchpad_id": "subbu",
