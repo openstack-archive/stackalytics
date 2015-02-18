@@ -5355,6 +5355,17 @@
             "emails": ["mandar.vaze@vertex.co.in"]
         },
         {
+            "launchpad_id": "marcusvrn",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marcus V R Nascimento",
+            "emails": ["marcusvrn@gmail.com", "marcus.nascimento@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "mark-klein",
             "companies": [
                 {
