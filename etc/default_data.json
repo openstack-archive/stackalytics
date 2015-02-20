@@ -9491,6 +9491,17 @@
             "emails": ["yapengwu@gmail.com", "yapeng.wu@huawei.com"]
         },
         {
+            "launchpad_id": "yatinkumbhare-c",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yatin Kumbhare",
+            "emails": ["yatinkumbhare@gmail.com", "yatin.kumbhare@ril.com"]
+        },
+        {
             "launchpad_id": "yevgen-runts",
             "companies": [
                 {
