@@ -720,11 +720,15 @@
             "companies": [
                 {
                     "company_name": "Symantec",
+                    "end_date": "2015-Feb-09"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Andrei V. Ostapenko",
-            "emails": ["andrey_ostapenko@symantec.com", "aostapenko@mirantis.com"]
+            "emails": ["aostapenko@mirantis.com", "andrey_ostapenko@symantec.com"]
         },
         {
             "launchpad_id": "aplanas",
