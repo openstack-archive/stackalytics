@@ -3723,6 +3723,18 @@
             "emails": ["hwbi2008@gmail.com"]
         },
         {
+            "launchpad_id": "i-kumagai",
+            "gerrit_id": "kumagai19o",
+            "companies": [
+                {
+                    "company_name": "Bit-isle Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ikuo Kumagai",
+            "emails": ["i-kumagai@bit-isle.co.jp"]
+        },
+        {
             "launchpad_id": "i159",
             "user_name": "Ilya Pekelny",
             "companies": [
