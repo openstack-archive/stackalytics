@@ -10643,6 +10643,11 @@
             "aliases": ["Samsung SDS", "Samsung India Software Operations"]
         },
         {
+            "domains": ["sap.com"],
+            "company_name": "SAP",
+            "aliases": ["SAP SE"]
+        },
+        {
             "domains": ["scality.com"],
             "company_name": "Scality",
             "aliases": ["Scality.com"]
