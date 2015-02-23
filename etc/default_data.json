@@ -11806,7 +11806,7 @@
         },
         {
             "module_group_name": "fuel-group",
-            "modules": ["fuel-astute", "fuel-devops", "fuel-docs", "fuel-library", "fuel-main", "fuel-ostf", "fuel-ostf-plugin", "fuel-provision", "fuel-specs", "fuel-web", "fuel-plugins", "python-fuelclient"]
+            "modules": ["fuel-astute", "fuel-devops", "fuel-docs", "fuel-library", "fuel-main", "fuel-ostf", "fuel-ostf-plugin", "fuel-provision", "fuel-specs", "fuel-tasks-validator", "fuel-web", "fuel-plugins", "python-fuelclient"]
         },
         {
             "module_group_name": "group-based-policy-group",
