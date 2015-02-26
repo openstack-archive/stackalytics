@@ -849,6 +849,17 @@
             "emails": ["aswad.rangnekar@nttdata.com", "aswad@wanclouds.net", "aswad.r@gmail.com", "aswad.rangnekar@gmail.com"]
         },
         {
+            "launchpad_id": "atomic777",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Tomic",
+            "emails": ["atomic@tesora.com", "atomic777@gmail.com"]
+        },
+        {
             "launchpad_id": "aurlapova",
             "companies": [
                 {
