@@ -9411,6 +9411,20 @@
             "emails": ["wytdahu@gmail.com", "wuyuting@awcloud.com"]
         },
         {
+           "launchpad_id": "xavpaice",
+           "gerrit_id": "xavpaice",
+           "companies": [
+               {
+                   "company_name": "Catalyst IT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Xav Paice",
+           "emails": [
+               "xav@catalyst.net.nz", "xavpaice@gmail.com"
+           ]
+        },
+        {
             "launchpad_id": "xdeller",
             "user_name": "Andrey Korolyov",
             "companies": [
