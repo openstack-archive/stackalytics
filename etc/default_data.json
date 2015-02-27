@@ -5964,6 +5964,17 @@
             "emails": ["mordred@inaugust.com"]
         },
         {
+            "launchpad_id": "moreira-belmiro-email-lists",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Belmiro Moreira",
+            "emails": ["moreira-belmiro-email-lists@gmail.com", "belmiro.moreira@cern.ch"]
+        },
+        {
             "launchpad_id": "morellon",
             "companies": [
                 {
