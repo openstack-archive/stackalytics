@@ -9628,14 +9628,14 @@
             "emails": ["yun.shen@hp.com"]
         },
         {
-            "launchpad_id": "yuntong",
+            "launchpad_id": "yuntongjin",
             "companies": [
                 {
                     "company_name": "Intel",
                     "end_date": null
                 }
             ],
-            "user_name": "yuntong",
+            "user_name": "yuntongjin",
             "emails": ["yuntongjin@gmail.com", "yuntong.jin@intel.com"]
         },
         {
