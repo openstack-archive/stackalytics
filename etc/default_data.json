@@ -6835,6 +6835,18 @@
             "emails": ["psp0808@gmail.com"]
         },
         {
+            "launchpad_id": "purp",
+            "gerrit_id": "jim.meyer",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jim Meyer",
+            "emails": ["jim@geekdaily.org", "jim.meyer@hp.com"]
+        },
+        {
             "launchpad_id": "pvo",
             "companies": [
                 {
