@@ -6812,6 +6812,17 @@
             "emails": ["rprikhodchenko@mirantis.com", "me@romcheg.me"]
         },
         {
+            "launchpad_id": "pshige",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "SHIGEMATSU Mitsuhiro",
+            "emails": ["shigematsu.mitsuhiro@lab.ntt.co.jp", "pshige@pshige.org"]
+        },
+	{
             "launchpad_id": "psiwczak",
             "companies": [
                 {
