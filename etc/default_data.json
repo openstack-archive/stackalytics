@@ -6844,7 +6844,7 @@
             "user_name": "SHIGEMATSU Mitsuhiro",
             "emails": ["shigematsu.mitsuhiro@lab.ntt.co.jp", "pshige@pshige.org"]
         },
-	{
+        {
             "launchpad_id": "psiwczak",
             "companies": [
                 {
@@ -9116,7 +9116,7 @@
             "user_name": "Julien Vey",
             "emails": ["vey.julien@gmail.com", "julien.vey@numergy.com"]
         },
-	{
+        {
             "launchpad_id": "victor-feitosa",
             "gerrit_id": "victorfeitosa",
             "companies": [
