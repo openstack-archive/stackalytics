@@ -6148,6 +6148,17 @@
             "emails": ["nachi@nttmcl.com", "nachi@ntti3.com", "openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
         },
         {
+            "launchpad_id": "neethi209",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "neethi shashidhar",
+            "emails": ["neethi209@gmail.com", "neethi.shashidhar@hp.com"]
+        },
+        {
             "launchpad_id": "neillc",
             "companies": [
                 {
