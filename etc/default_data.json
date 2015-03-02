@@ -9925,7 +9925,8 @@
               "HomeOffice", "Self Employeed", "Self Employed", "myself", "Self-employeed", "individual", "Individual Contributor",
               "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance",
               "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
-              "Unaffliated", "test"]
+              "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
+              "Unaffiliaited", "Unaffilated", "Personal user"]
         },
         {
             "domains": ["360.cn"],
@@ -10121,7 +10122,7 @@
             "domains": ["cisco.com"],
             "company_name": "Cisco Systems",
             "aliases": ["Cisco System", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.",
-              "Cisco", "Cisco Inc", "Cisco Hong Kong"]
+              "Cisco", "Cisco Inc", "Cisco Hong Kong", "Cisco Canada", "Cisco APAC"]
         },
         {
             "domains": ["citrix.com"],
@@ -10360,12 +10361,13 @@
               "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations",
               "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations",
               "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte", "Hewlett Packard Romania",
-              "HP Helion Public Cloud", "HP Japan", "HP Korea"]
+              "HP Helion Public Cloud", "HP Japan", "HP Korea", "HP Helion"]
         },
         {
             "domains": ["huawei.com"],
             "company_name": "Huawei",
-            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd.", "Huawei Technology"]
+            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd.", "Huawei Technology",
+              "Huawei Technologies Düsseldorf", "Huawei Technologies India Private Limited"]
         },
         {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
@@ -10373,7 +10375,8 @@
             "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India", "IBM Japan",
               "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH",
               "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services",
-              "IBM Deutschland", "IBM Malaysia", "IBM Haifa", "IBM Global Services", "IBM Softlayer"]
+              "IBM Deutschland", "IBM Malaysia", "IBM Haifa", "IBM Global Services", "IBM Softlayer", "IBM Cloud Division",
+              "IBM Malaysia Sdn Bhd"]
         },
         {
             "domains": ["ifca.unican.es"],
@@ -10457,12 +10460,17 @@
         {
             "domains": ["juniper.com", "juniper.net"],
             "company_name": "Juniper",
-            "aliases": ["Juniper Networks", "Juniper Networks Inc."]
+            "aliases": ["Juniper Networks", "Juniper Networks Inc.", "Juniper Networks India", "Juniper India"]
         },
         {
             "domains": ["kent.ac.uk"],
             "company_name": "University of Kent",
             "aliases": ["University of Kent"]
+        },
+        {
+            "domains": ["kionetworks.com"],
+            "company_name": "KIO Networks",
+            "aliases": ["Kionetworks", "KIO", "Kio operaciones", "KIO-Networks"]
         },
         {
             "domains": ["kt.com"],
@@ -10516,7 +10524,8 @@
         },
         {
             "domains": ["mellanox.com", "mellanox.co.il"],
-            "company_name": "Mellanox"
+            "company_name": "Mellanox",
+            "aliases": ["Mellanox Technologies", "Mellanox.com"]
         },
         {
             "domains": ["memset.com"],
@@ -10936,7 +10945,8 @@
         {
             "domains": ["vmware.com", "nicira.com"],
             "company_name": "VMware",
-            "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture"]
+            "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture",
+              "VMware Software"]
         },
         {
             "domains": ["wanclouds.net"],
