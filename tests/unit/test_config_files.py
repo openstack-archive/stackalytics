@@ -25,14 +25,16 @@ class TestConfigFiles(testtools.TestCase):
     def setUp(self):
         super(TestConfigFiles, self).setUp()
 
-    def _read_file(self, file_name):
+    def _read_raw_file(self, file_name):
         if six.PY3:
             opener = functools.partial(open, encoding='utf8')
         else:
             opener = open
         with opener(file_name, 'r') as content_file:
-            content = content_file.read()
-            return json.loads(content)
+            return content_file.read()
+
+    def _read_file(self, file_name):
+        return json.loads(self._read_raw_file(file_name))
 
     def _verify_ordering(self, array, key, msg):
         comparator = lambda x, y: (x > y) - (x < y)
@@ -130,3 +132,20 @@ class TestConfigFiles(testtools.TestCase):
 
     def test_users_unique_profiles_in_test_file(self):
         self._verify_users_unique('etc/test_default_data.json')
+
+    def _verify_default_data_whitespace_issues(self, file_name):
+        data = self._read_raw_file(file_name)
+        line_n = 1
+        for line in data.split('\n'):
+            msg = 'Whitespace issue in "%s", line %s: ' % (line, line_n)
+            self.assertTrue(line.find('\t') == -1, msg=msg + 'tab character')
+            self.assertEqual(line.rstrip(), line,
+                             message=msg + 'trailing spaces')
+            line_n += 1
+
+    def test_default_data_whitespace_issues(self):
+        self._verify_default_data_whitespace_issues('etc/default_data.json')
+
+    def test_test_default_data_whitespace_issues(self):
+        self._verify_default_data_whitespace_issues(
+            'etc/test_default_data.json')
