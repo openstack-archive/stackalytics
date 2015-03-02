@@ -7545,11 +7545,15 @@
             "companies": [
                 {
                     "company_name": "University of Melbourne",
+                    "end_date": "2015-Feb-27"
+                },
+                {
+                    "company_name": "Aptira",
                     "end_date": null
                 }
             ],
             "user_name": "Russell Sim",
-            "emails": ["russell.sim@gmail.com", "russell.sim@unimelb.edu.au"]
+            "emails": ["russell.sim@gmail.com", "russell.sim@unimelb.edu.au", "russell@aptira.com"]
         },
         {
             "launchpad_id": "russellb",
