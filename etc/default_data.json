@@ -502,6 +502,17 @@
             "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith.kumar@gmail.com"]
         },
         {
+            "launchpad_id": "anand1712",
+            "companies": [
+                {
+                    "company_name": "HCL",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anand Shanmugam",
+            "emails": ["anand1712@gmail.com","shanmugam.a@hcl.com"]
+        },
+        {
             "launchpad_id": "ananta",
             "companies": [
                 {
