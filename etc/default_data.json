@@ -11818,6 +11818,18 @@
             ]
         },
         {
+            "module": "oslo.versionedobjects",
+            "uri": "git://git.openstack.org/openstack/oslo.versionedobjects.git",
+            "organization": "openstack",
+            "releases": [
+                {
+                    "release_name": "ignored",
+                    "tag_from": "ff29c76abb68798195412639fc3f99d2ee310b2e",
+                    "tag_to": "591c480cafc2e729586feffbd3e0565d82bb528f"
+                }
+            ]
+        },
+        {
             "module": "docker",
             "organization": "docker",
             "uri": "https://github.com/docker/docker.git"
