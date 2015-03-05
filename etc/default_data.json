@@ -3235,6 +3235,21 @@
             "emails": ["adam.gandelman@canonical.com", "adamg@canonical.com", "adamg@ubuntu.com"]
         },
         {
+            "launchpad_id": "gandharva-s",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-Dec-14"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gandharva S",
+            "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com"]
+        },
+        {
             "launchpad_id": "garyk",
             "companies": [
                 {
