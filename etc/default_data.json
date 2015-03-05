@@ -1065,6 +1065,17 @@
             "emails": ["brad@nicira.com", "bhall@nicira.com"]
         },
         {
+            "launchpad_id": "bharathm",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bharath M",
+            "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com"]
+        },
+        {
             "launchpad_id": "blueboxjesse",
             "companies": [
                 {
