@@ -7417,6 +7417,17 @@
             "emails": ["romain.hardouin@cloudwatt.com", "romain_hardouin@yahoo.fr"]
         },
         {
+            "launchpad_id": "romain-s",
+            "companies": [
+                {
+                    "company_name": "Cloudwatt",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Romain Soufflet",
+            "emails": ["romain@soufflet.io", "romain.soufflet@cloudwatt.com"]
+        },
+        {
             "launchpad_id": "romainsc",
             "companies": [
                 {
