@@ -473,6 +473,18 @@
             "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com"]
         },
         {
+            "launchpad_id": "amank",
+            "gerrit_id": "amank",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aman Kumar",
+            "emails": ["amank@hp.com", "amank3107@gmail.com"]
+        },
+        {
             "launchpad_id": "amcrn",
             "companies": [
                 {
