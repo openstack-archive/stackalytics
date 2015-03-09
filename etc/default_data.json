@@ -3572,6 +3572,17 @@
             "emails": ["h-aramaki@netone.co.jp"]
         },
         {
+            "launchpad_id": "hanrong",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rong Han ZTE",
+            "emails": ["spring068@sina.cn", "han.rong3@zte.com.cn"]
+        },
+        {
             "launchpad_id": "hareesh-puthalath",
             "companies": [
                 {
