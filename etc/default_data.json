@@ -2268,6 +2268,18 @@
             "emails": ["denis.cavalcante@lsbd.ufc.br", "dencaval@gmail.com"]
         },
         {
+            "launchpad_id": "dennis-kusidlo",
+            "gerrit_id": "dkusidlo",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dennis Kusidlo",
+            "emails": ["dennis.kusidlo@gmail.com", "kusidlo.telekom@gmail.com"]
+        },
+        {
             "launchpad_id": "denny-6",
             "companies": [
                 {
