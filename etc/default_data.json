@@ -4906,6 +4906,10 @@
             "companies": [
                 {
                     "company_name": "Big Switch Networks",
+                    "end_date": "2015-Mar-10"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
