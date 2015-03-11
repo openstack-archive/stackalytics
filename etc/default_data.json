@@ -9668,6 +9668,17 @@
             "emails": ["yatinkumbhare@gmail.com", "yatin.kumbhare@ril.com"]
         },
         {
+            "launchpad_id": "ybabenko",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuriy Babenko",
+            "emails": ["ybabenko3@gmail.com"]
+        },
+        {
             "launchpad_id": "yevgen-runts",
             "companies": [
                 {
