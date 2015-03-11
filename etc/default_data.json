@@ -6956,6 +6956,18 @@
             "emails": ["thorsten@atomia.com"]
         },
         {
+            "launchpad_id": "r-uone",
+            "gerrit_id": "rtrezeciak",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ralf Trezeciak",
+            "emails": ["openstack@trezeciak.de" , "uone@trezeciak.de" ]
+        },
+        {
             "launchpad_id": "r1chardj0n3s",
             "companies": [
                 {
