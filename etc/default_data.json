@@ -6616,6 +6616,17 @@
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
         },
         {
+            "launchpad_id": "parath",
+            "companies": [
+                {
+                    "company_name": "Stackmasters",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thanassis Parathyras",
+            "emails": ["aparathyras@stackmasters.eu"]
+        },
+        {
             "launchpad_id": "patrick-crews",
             "companies": [
                 {
@@ -10919,6 +10930,10 @@
         {
             "domains": ["stackinsider.com"],
             "company_name": "Stackinsider"
+        },
+        {
+            "domains": ["stackmasters.eu"],
+            "company_name": "Stackmasters"
         },
         {
             "domains": ["stackops.com"],
