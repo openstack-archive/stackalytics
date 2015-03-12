@@ -3723,6 +3723,17 @@
             "emails": ["reachme@hgadgil.net"]
         },
         {
+            "launchpad_id": "hmunfru",
+            "companies": [
+                {
+                    "company_name": "Telefonica I+D",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Henar Munoz Frutos",
+            "emails": ["henar.munozfrutos@telefonica.com"]
+        },
+        {
             "launchpad_id": "hodosmb",
             "companies": [
                 {
@@ -10982,6 +10993,10 @@
             "domains": ["tcs.com"],
             "company_name": "Tata",
             "aliases": ["Tata Consultancy Services", "Tata Consultancy Services Limited"]
+        },
+        {
+            "domains": ["telefonica.com"],
+            "company_name": "Telefonica I+D"
         },
         {
             "domains": ["telekom.de"],
