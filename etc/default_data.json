@@ -2071,6 +2071,18 @@
             "emails": ["darren.birkett@gmail.com"]
         },
         {
+            "launchpad_id": "daschab",
+            "gerrit_id": "DaSchab",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Schabarum",
+            "emails": ["da.schabs@gmail.com"]
+        },
+        {
             "launchpad_id": "davewalker",
             "companies": [
                 {
