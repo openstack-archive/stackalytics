@@ -12056,6 +12056,16 @@
             "uri": "https://github.com/docker/libtrust.git"
         },
         {
+            "module": "compose",
+            "organization": "docker",
+            "uri": "https://github.com/docker/compose.git"
+        },
+        {
+            "module": "docker-py",
+            "organization": "docker",
+            "uri": "https://github.com/docker/docker-py.git"
+        },
+        {
             "module": "kubernetes",
             "organization": "googlecloudplatform",
             "uri": "https://github.com/googlecloudplatform/kubernetes.git"
@@ -12137,7 +12147,8 @@
         },
         {
             "module_group_name": "docker-group",
-            "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust"]
+            "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust",
+                "compose", "docker-py"]
         }
     ],
     "releases": [
