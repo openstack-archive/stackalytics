@@ -10113,6 +10113,11 @@
             "aliases": ["Alcatel Lucent", "Alcatel-Lucent, Nuage Networks", "Alcatel-Lcuent", "Alcatel-Lucent Austria", "Alcatel-Lucent Bell Labs France"]
         },
         {
+            "domains": ["allegrogroup.com", "allegro.pl"],
+            "company_name": "Allegro",
+            "aliases": ["Allegro Group", "Grupa Allegro", "Grupa Allegro Sp. z o.o."]
+        },
+        {
             "domains": ["altiscale.com"],
             "company_name": "Altiscale"
         },
