@@ -9202,6 +9202,18 @@
             "emails": ["usrleon@gmail.com", "mlvov@mirantis.com"]
         },
         {
+            "launchpad_id": "uwe-schreiber",
+            "gerrit_id": "uschreiber",
+            "companies": [
+                {
+                    "company_name": "SVA System Vertrieb Alexander GmbH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Uwe Schreiber",
+            "emails": ["uwe.schreiber@sva.de"]
+        },
+        {
             "launchpad_id": "vanderliang",
             "companies": [
                 {
