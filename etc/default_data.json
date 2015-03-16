@@ -5518,6 +5518,17 @@
             "emails": ["mark.sturdevant@hp.com", "markstur@hp.com"]
         },
         {
+            "launchpad_id": "mark-xiett",
+            "companies": [
+                {
+                    "company_name": "ZTE corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Xie",
+            "emails": ["mark_xiett@163.com", "xie.taotao@zte.com.cn"]
+        },
+        {
             "launchpad_id": "mark.rushakoff",
             "companies": [
                 {
