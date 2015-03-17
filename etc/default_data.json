@@ -6942,6 +6942,17 @@
             "emails": ["prasoontelang@gmail.com", "prasoon.telang@pluribusnetworks.com"]
         },
         {
+            "launchpad_id": "pratapvedula",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "pratapvedula",
+            "emails": ["pratapvedula@gmail.com", "pratap_vedula@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "prdsilva",
             "companies": [
                 {
