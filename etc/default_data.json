@@ -5467,6 +5467,17 @@
             "emails": ["m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
+            "launchpad_id": "magesh-gv",
+            "companies": [
+                {
+                    "company_name": "One Convergence Devices Pvt. Ltd",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Magesh GV",
+            "emails": ["mageshgv@gmail.com", "magesh.gv@oneconvergence.com"]
+        },
+        {
             "launchpad_id": "maheshkumar-pandurangan",
             "companies": [
                 {
