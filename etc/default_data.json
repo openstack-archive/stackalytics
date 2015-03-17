@@ -3114,6 +3114,21 @@
             "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com"]
         },
         {
+            "launchpad_id": "ficoos",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2015-Feb-28"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Saggi Mizrahi",
+            "emails": ["ficoos@gmail.com", "saggi.mizrahi@huawei.com"]
+        },
+        {
             "launchpad_id": "fifieldt",
             "companies": [
                 {
