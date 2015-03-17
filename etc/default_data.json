@@ -10620,8 +10620,8 @@
         },
         {
             "domains": ["jhuapl.edu"],
-            "company_name": "Johns Hopkins University",
-            "aliases": ["Johns Hopkins University Applied Physics Lab", "Johns Hopkins University Applied Physics Laboratory"]
+            "company_name": "Johns Hopkins University Applied Physics Laboratory",
+            "aliases": ["Johns Hopkins University Applied Physics Lab", "Johns Hopkins University Applied Physics Laboratory", "JHU/APL"]
         },
         {
             "domains": ["jpberlin.de"],
