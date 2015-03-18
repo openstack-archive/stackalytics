@@ -12150,6 +12150,10 @@
         {
             "organization": "cloudfoundry",
             "uri": "github://"
+        },
+        {
+            "organization": "ansible",
+            "uri": "github://"
         }
     ],
     "module_groups": [
@@ -12203,6 +12207,10 @@
             "module_group_name": "docker-group",
             "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust",
                 "compose", "docker-py"]
+        },
+        {
+            "module_group_name": "ansible-group",
+            "modules": ["ansible", "ansible-modules-core", "ansible-modules-extras"]
         }
     ],
     "releases": [
@@ -12294,7 +12302,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry"]
+            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group"]
         },
         {
             "id": "cloudfoundry-group",
@@ -12313,6 +12321,12 @@
             "title": "Kubernetes",
             "child": true,
             "modules": ["kubernetes"]
+        },
+        {
+            "id": "ansible-group",
+            "title": "Cloud Foundry",
+            "child": true,
+            "modules": ["ansible"]
         }
     ]
 }
