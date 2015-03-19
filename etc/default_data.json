@@ -12336,7 +12336,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group"]
+            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible"]
         },
         {
             "id": "cloudfoundry-group",
@@ -12358,7 +12358,7 @@
         },
         {
             "id": "ansible-group",
-            "title": "Cloud Foundry",
+            "title": "Ansible",
             "child": true,
             "modules": ["ansible"]
         }
