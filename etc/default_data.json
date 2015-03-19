@@ -3940,6 +3940,21 @@
            "emails": ["idzzyzzbi@gmail.com"]
         },
         {
+            "launchpad_id": "igordcard",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-Oct-14"
+                },
+                {
+                    "company_name": "Instituto de Telecomunicacoes",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Igor Duarte Cardoso",
+            "emails": ["igordcard@gmail.com", "icardoso@av.it.pt"]
+        },
+        {
             "launchpad_id": "ilyaalekseyev",
             "companies": [
                 {
@@ -10680,7 +10695,7 @@
             "company_name": "ISP RAS"
         },
         {
-            "domains": ["it.pt"],
+            "domains": ["it.pt", "av.it.pt", "lx.it.pt", "co.it.pt"],
             "company_name": "Instituto de Telecomunicacoes"
         },
         {
