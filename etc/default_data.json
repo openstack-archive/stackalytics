@@ -2012,6 +2012,18 @@
             "emails": ["dprince@redhat.com", "dan.prince@rackspace.com"]
         },
         {
+            "launchpad_id": "dane-fichter",
+            "gerrit_id": "dane-fichter",
+            "companies": [
+                {
+                    "company_name": "Johns Hopkins University Applied Physics Laboratory",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dane Fichter",
+            "emails": ["dane.fichter@jhuapl.edu"]
+        },
+        {
             "launchpad_id": "daniel-kuffner",
             "companies": [
                 {
