@@ -7241,6 +7241,17 @@
             "emails": ["eldr@ya.ru", "enugaev@griddynamics.com", "reldan@oscloud.ru"]
         },
         {
+            "launchpad_id": "rellerreller",
+            "companies": [
+                {
+                    "company_name": "Johns Hopkins University Applied Physics Laboratory",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nathan Reller",
+            "emails": ["rellerreller@yahoo.com", "nathan.reller@jhuapl.edu"]
+        },
+        {
             "github_id": "reset",
             "companies": [
                 {
