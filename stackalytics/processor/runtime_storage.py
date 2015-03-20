@@ -16,9 +16,9 @@
 import re
 
 import memcache
+from oslo_log import log as logging
 import six
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 
 

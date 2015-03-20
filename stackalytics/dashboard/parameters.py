@@ -14,11 +14,11 @@
 # limitations under the License.
 
 import flask
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 from six.moves.urllib import parse
 
 from stackalytics.dashboard import vault
-from stackalytics.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)

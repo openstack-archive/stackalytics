@@ -14,14 +14,15 @@
 # limitations under the License.
 
 import collections
+import logging as std_logging
 
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import psutil
 import six
 from six.moves.urllib import parse
 import yaml
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import bps
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
@@ -317,10 +318,13 @@ def main():
     conf = cfg.CONF
     conf.register_cli_opts(config.OPTS)
     conf.register_opts(config.OPTS)
+    logging.register_options(conf)
+    logging.set_defaults()
     conf(project='stackalytics')
 
-    logging.setup('stackalytics')
+    logging.setup(conf, 'stackalytics')
     LOG.info('Logging enabled')
+    conf.log_opt_values(LOG, std_logging.DEBUG)
 
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)

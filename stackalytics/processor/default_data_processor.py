@@ -19,10 +19,10 @@ import json
 import re
 
 from github import MainClass
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import six
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import normalizer
 from stackalytics.processor import rcs
 from stackalytics.processor import user_processor

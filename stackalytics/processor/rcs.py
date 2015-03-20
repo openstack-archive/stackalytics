@@ -16,9 +16,8 @@
 import json
 import re
 
+from oslo_log import log as logging
 import paramiko
-
-from stackalytics.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)

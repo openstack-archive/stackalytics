@@ -22,9 +22,8 @@ import re
 import time
 
 import iso8601
+from oslo_log import log as logging
 import six
-
-from stackalytics.openstack.common import log as logging
 
 
 LOG = logging.getLogger(__name__)
