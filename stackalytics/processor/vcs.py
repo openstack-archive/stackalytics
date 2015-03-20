@@ -17,10 +17,10 @@ import os
 import re
 import shutil
 
+from oslo_log import log as logging
 import sh
 import six
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 
 

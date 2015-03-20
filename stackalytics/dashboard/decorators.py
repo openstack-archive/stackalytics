@@ -20,14 +20,14 @@ import operator
 import time
 
 import flask
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import six
 from werkzeug import exceptions
 
 from stackalytics.dashboard import helpers
 from stackalytics.dashboard import parameters
 from stackalytics.dashboard import vault
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 from stackalytics import version as stackalytics_version
 

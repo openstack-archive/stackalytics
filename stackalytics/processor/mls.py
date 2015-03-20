@@ -16,11 +16,11 @@
 from email import utils as email_utils
 import re
 
+from oslo_log import log as logging
 import six
 from six.moves import http_client
 from six.moves.urllib import parse
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import utils
 
 

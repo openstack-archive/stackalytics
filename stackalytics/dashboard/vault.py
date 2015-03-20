@@ -18,11 +18,11 @@ import os
 import sys
 
 import flask
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import six
 
 from stackalytics.dashboard import memory_storage
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import user_processor
 from stackalytics.processor import utils

@@ -13,16 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import logging as std_logging
 import pickle
 import re
 import sys
 
 import memcache
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import six
 from six.moves.urllib import parse
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import utils
 
@@ -157,10 +158,13 @@ def main():
     conf.register_cli_opts(OPTS)
     conf.register_opts(config.OPTS)
     conf.register_opts(OPTS)
-    conf()
+    logging.register_options(conf)
+    logging.set_defaults()
+    conf(project='stackalytics')
 
-    logging.setup('stackalytics')
+    logging.setup(conf, 'stackalytics')
     LOG.info('Logging enabled')
+    conf.log_opt_values(LOG, std_logging.DEBUG)
 
     memcached_inst = _connect_to_memcached(cfg.CONF.runtime_storage_uri)
 

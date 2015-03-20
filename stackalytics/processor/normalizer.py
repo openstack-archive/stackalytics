@@ -13,9 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from oslo_log import log as logging
 import six
 
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 

@@ -20,7 +20,8 @@ import re
 import time
 
 import flask
-from oslo.config import cfg
+from oslo_config import cfg
+from oslo_log import log as logging
 import six
 
 from stackalytics.dashboard import decorators
@@ -29,7 +30,6 @@ from stackalytics.dashboard import kpi
 from stackalytics.dashboard import parameters
 from stackalytics.dashboard import reports
 from stackalytics.dashboard import vault
-from stackalytics.openstack.common import log as logging
 from stackalytics.processor import config
 from stackalytics.processor import utils
 
@@ -651,6 +651,9 @@ def remove_ctrl_chars(text):
 
 
 def main():
+    logging.register_options(conf)
+    logging.set_defaults()
+
     conf_file = os.getenv('STACKALYTICS_CONF')
     if conf_file and os.path.isfile(conf_file):
         conf(default_config_files=[conf_file])
@@ -659,7 +662,7 @@ def main():
     else:
         conf(project='stackalytics')
 
-    logging.setup('stackalytics.dashboard')
+    logging.setup(conf, 'stackalytics.dashboard')
 
     app.run(cfg.CONF.listen_host, cfg.CONF.listen_port)
 
