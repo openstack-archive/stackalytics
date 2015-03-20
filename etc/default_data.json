@@ -8823,7 +8823,10 @@
                 }
             ],
             "user_name": "Tan Lin",
-            "emails": [ "tan.lin.good@gmail.com"]
+            "emails": [
+                "tan.lin.good@gmail.com",
+                "lin.tan@intel.com"
+            ]
         },
         {
             "launchpad_id": "tangmeiyan77",
