@@ -6600,6 +6600,12 @@
             "companies": [
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2014-Dec-31"
+                }
+            ],
+            "companies": [
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
