@@ -10359,6 +10359,10 @@
             "company_name": "CERN"
         },
         {
+            "domains": ["chinamobile.com", "cmss.chinamobile.com"],
+            "company_name": "China Mobile"
+        },
+        {
             "domains": ["cienet.com.cn"],
             "company_name": "CIeNET Technologies"
         },
