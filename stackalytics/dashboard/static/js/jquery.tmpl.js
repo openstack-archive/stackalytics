@@ -424,7 +424,7 @@
     function updateWrapped(options, wrapped) {
         // Build the wrapped content.
         options._wrap = build(options, true,
-                // Suport imperative scenario in which options.wrapped can be set to a selector or an HTML string.
+                // Support imperative scenario in which options.wrapped can be set to a selector or an HTML string.
                 $.isArray(wrapped) ? wrapped : [regex.html_expr.test(wrapped) ? wrapped : $(wrapped).html()]
         ).join("");
     }
