@@ -10384,6 +10384,11 @@
             "company_name": "China Mobile"
         },
         {
+            "domains": ["chinanetcenter.com"],
+            "company_name": "ChinaNetCenter",
+            "aliases": ["ChinaNetCenter Cloud", "ChinaNetCenter CDN", "ChinaNetCenter IDC", "China Cache", "ChinaNetCenter USA"]
+        },
+        {
             "domains": ["cienet.com.cn"],
             "company_name": "CIeNET Technologies"
         },
