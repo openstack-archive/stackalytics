@@ -5612,6 +5612,18 @@
             "emails": ["mark.mcclain@dreamhost.com", "mmcclain@yahoo-inc.com", "mark@akanda.io", "mark@mcclain.xyz"]
         },
         {
+            "launchpad_id": "markus-groben",
+            "gerrit_id": "markus-groben",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Markus Groben",
+            "emails": ["markus-groben@t-online.de"]
+        },
+        {
             "launchpad_id": "markwash",
             "companies": [
                 {
