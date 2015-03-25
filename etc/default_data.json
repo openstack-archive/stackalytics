@@ -9991,6 +9991,17 @@
             "emails": ["yuxcer@126.com", "yuxcer@gmail.com"]
         },
         {
+            "launchpad_id": "z8715000",
+            "companies": [
+                {
+                    "company_name": "ChinaNetCenter",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jun moon",
+            "emails": ["z8715000@126.com", "muj@chinanetcenter.com"]
+        },
+        {
             "launchpad_id": "zaitcev",
             "companies": [
                 {
