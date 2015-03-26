@@ -9683,6 +9683,25 @@
             "emails": ["vito.ordaz@gmail.com", "victor.rodionov@nexenta.com"]
         },
         {
+           "launchpad_id": "vivek-nandavanam",
+           "gerrit_id": "vivek.nandavanam",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": "2013-Jan-31"
+               },
+               {
+                   "company_name": "VMTurbo Inc.",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Vivek Nandavanam",
+           "emails": [
+               "vivek.nandavanam@vmturbo.com",
+               "vivek.nandavanam@gmail.com"
+           ]
+        },
+        {
             "launchpad_id": "vivekdhayaal",
             "companies": [
                 {
@@ -11508,6 +11527,11 @@
             "domains": ["virtualtech.jp"],
             "company_name": "Virtualtech",
             "aliases": ["VirtualTech Japan Inc."]
+        },
+        {
+            "domains": ["vmturbo.com"],
+            "company_name": "VMTurbo Inc.",
+            "aliases": ["VMTurbo"]
         },
         {
             "domains": ["vmware.com", "nicira.com"],
