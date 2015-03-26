@@ -4326,6 +4326,17 @@
             "emails": ["joshd@hq.newdream.net", "josh.durgin@dreamhost.com", "josh.durgin@inktank.com"]
         },
         {
+            "launchpad_id": "jejbcan",
+            "companies": [
+                {
+                    "company_name": "Parallels",
+                    "end_date": null
+                }
+            ],
+            "user_name": "James Bottomley",
+            "emails": ["james.bottomley@hansenpartnership.com", "jejbcan@hansenpartnership.com", "jbottomley@parallels.com", "jejbcan1@hansenpartnership.com"]
+        },
+        {
             "launchpad_id": "jeladi",
             "companies": [
                 {
