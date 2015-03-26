@@ -9706,6 +9706,17 @@
             "emails": ["wingwj@gmail.com", "wingwj.wu@huawei.com"]
         },
         {
+            "launchpad_id": "wrongfan",
+            "companies": [
+                {
+                    "company_name": "PLCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wrongfan",
+            "emails": ["rongfan.wang@gmail.com", "rongfan.wang@plcloud.com"]
+        },
+        {
             "launchpad_id": "wudx05",
             "companies": [
                 {
@@ -10975,6 +10986,10 @@
         {
             "domains": ["playhaven.com"],
             "company_name": "PlayHaven"
+        },
+        {
+            "domains": ["plcloud.com"],
+            "company_name": "PLCloud"
         },
         {
             "domains": ["plumgrid.com"],
