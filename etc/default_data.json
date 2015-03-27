@@ -285,6 +285,25 @@
             "emails": ["agarwalnisha1980@gmail.com"]
         },
         {
+           "launchpad_id": "ahmed-nooras-saba",
+           "gerrit_id": "ansaba",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": "2012-Jan-31"
+               },
+               {
+                   "company_name": "VMTurbo Inc.",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Saba",
+           "emails": [
+               "ahmed.saba@vmturbo.com",
+               "ahmed.nooras.saba@gmail.com"
+           ]
+        },
+        {
             "launchpad_id": "aignatov",
             "companies": [
                 {
@@ -3017,6 +3036,25 @@
             ],
             "user_name": "Emilien Macchi",
             "emails": ["emilien.macchi@stackops.com", "emilien.macchi@enovance.com", "emilien@enovance.com", "emacchi@redhat.com"]
+        },
+        {
+           "launchpad_id": "endresara",
+           "gerrit_id": "endresara",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": "2009-Jun-30"
+               },
+               {
+                   "company_name": "VMTurbo Inc.",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Endre Sara",
+           "emails": [
+               "endre.sara@vmturbo.com",
+               "endresara@gmail.com"
+           ]
         },
         {
             "launchpad_id": "eric-martin4",
