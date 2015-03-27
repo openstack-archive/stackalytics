@@ -21,6 +21,17 @@ import six
 import testtools
 
 
+def dict_raise_on_duplicates(ordered_pairs):
+    """Reject duplicate keys."""
+    d = {}
+    for k, v in ordered_pairs:
+        if k in d:
+            raise ValueError("duplicate key: %s (value: %s)" % (k, v))
+        else:
+            d[k] = v
+    return d
+
+
 class TestConfigFiles(testtools.TestCase):
     def setUp(self):
         super(TestConfigFiles, self).setUp()
@@ -54,6 +65,19 @@ class TestConfigFiles(testtools.TestCase):
         corrections = self._read_file('etc/corrections.json')
         schema = self._read_file('etc/corrections.schema.json')
         jsonschema.validate(corrections, schema)
+
+    def _verify_default_data_duplicate_keys(self, file_name):
+        try:
+            json.loads(self._read_raw_file(file_name),
+                       object_pairs_hook=dict_raise_on_duplicates)
+        except ValueError as ve:
+            self.fail(ve)
+
+    def test_default_data_duplicate_keys(self):
+        self._verify_default_data_duplicate_keys('etc/default_data.json')
+
+    def test_test_default_data_duplicate_keys(self):
+        self._verify_default_data_duplicate_keys('etc/test_default_data.json')
 
     def _verify_default_data_by_schema(self, file_name):
         default_data = self._read_file(file_name)
