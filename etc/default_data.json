@@ -3406,6 +3406,17 @@
             "emails": ["ghe.rivero@hp.com", "ghe@debian.org", "ghe.rivero@gmail.com", "ghe.rivero@stackops.com", "ghe@rivero.io"]
         },
         {
+            "launchpad_id": "ghezal",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ghezal Sherdil",
+            "emails": ["ghezal.sherdil@gmail.com"]
+        },
+        {
             "launchpad_id": "gholt",
             "companies": [
                 {
