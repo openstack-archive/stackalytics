@@ -6188,6 +6188,17 @@
             "emails": ["thiago.morello@locaweb.com.br"]
         },
         {
+            "launchpad_id": "mpmsimo",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Simo",
+            "emails": ["michael_simo@cable.comcast.com", "os@mpmsimo.com"]
+        },
+        {
             "launchpad_id": "mr-rods",
             "companies": [
                 {
