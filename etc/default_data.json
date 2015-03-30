@@ -3201,6 +3201,18 @@
            ]
         },
         {
+            "launchpad_id": "fnordahl",
+            "gerrit_id": "fnordahl",
+            "companies": [
+                {
+                    "company_name": "PowerTech Information Systems AS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Frode Nordahl",
+            "emails": [ "frode.nordahl@gmail.com", "frode@powertech.no" ]
+        },
+        {
             "launchpad_id": "freyes",
             "gerrit_id": "freyes",
             "companies": [
@@ -11018,6 +11030,10 @@
         {
             "domains": ["pluribusnetworks.com"],
             "company_name": "Pluribus Networks"
+        },
+        {
+            "domains": ["powertech.no"],
+            "company_name": "PowerTech Information Systems AS"
         },
         {
             "domains": ["pubyun.com"],
