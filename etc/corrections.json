@@ -2702,6 +2702,14 @@
             "primary_key": "d511ee3fa3a6422bbd2f16893821a0baf1bee931",
             "module": "openstack-manuals",
             "subject": "Regenerate sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I742c487dd7bca9de3e811c545de477367fff112c"],
+            "primary_key": "16f73c8a43bf06a9972c52e0a317d610372873b8",
+            "module": "nova",
+            "subject": "move the integrated tests into the functional tree"
         }
     ]
 }
