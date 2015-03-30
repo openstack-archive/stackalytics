@@ -3739,6 +3739,17 @@
             "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com"]
         },
         {
+            "launchpad_id": "hfamily15",
+            "companies": [
+                {
+                    "company_name": "LGCNS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ha Hyun",
+            "emails": ["hfamily15@gmail.com", "hahyun0523@lgcns.com"]
+        },
+        {
             "github_id": "hgadgil",
             "companies": [
                 {
@@ -10825,6 +10836,10 @@
         {
             "domains": ["lavabit.com"],
             "company_name": "Lavabit"
+        },
+        {
+            "domains": ["lgcns.com"],
+            "company_name": "LG CNS"
         },
         {
             "domains": ["limilo.com"],
