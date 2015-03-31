@@ -473,6 +473,17 @@
             "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com"]
         },
         {
+            "launchpad_id": "alyson-rodrigues-rosa",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alyson R. Rosa",
+            "emails": ["alyson.rodrigues.rosa@gmail.com", "alyson.rosa@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "amank",
             "gerrit_id": "amank",
             "companies": [
