@@ -2810,6 +2810,18 @@
             "emails": ["lalasjtu@gmail.com", "penfzhan@cisco.com"]
         },
         {
+           "launchpad_id": "earthdragon77",
+           "gerrit_id": "Mahito",
+           "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Mahito OGURA",
+           "emails": ["m.ogura@ntt.com", "eathdragon77@gmail.com"]
+        },
+        {
             "launchpad_id": "ed-leafe",
             "companies": [
                 {
