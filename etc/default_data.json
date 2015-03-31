@@ -9304,6 +9304,18 @@
             "emails": ["matt@cloudscaling.com"]
         },
         {
+            "launchpad_id": "uckey-1067",
+            "gerrit_id": "ukinau",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuki Nishiwaki",
+            "emails": ["uckey.1067@gmail.com"]
+        },
+        {
             "launchpad_id": "unmesh-gurjar",
             "companies": [
                 {
