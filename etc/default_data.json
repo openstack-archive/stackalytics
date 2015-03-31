@@ -6144,6 +6144,17 @@
             "emails": ["ivarlazzaro@gmail.com"]
         },
         {
+            "launchpad_id": "mmasaki",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Masaki Matsushita",
+            "emails": ["glass.saga@gmail.com", "masaki.matsushita@ntt.com"]
+        },
+        {
             "github_id": "mmb",
             "companies": [
                 {
