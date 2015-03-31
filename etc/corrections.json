@@ -2710,6 +2710,14 @@
             "primary_key": "16f73c8a43bf06a9972c52e0a317d610372873b8",
             "module": "nova",
             "subject": "move the integrated tests into the functional tree"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Id42ba373c1bda6a312b673ab2b489ca56da8c628"],
+            "primary_key": "89cd6a0c493e26b5a9e017c99d731464292abbaf",
+            "module": "nova",
+            "subject": "move all tests to nova/tests/unit"
         }
     ]
 }
