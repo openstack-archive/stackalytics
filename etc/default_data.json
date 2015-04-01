@@ -9205,6 +9205,17 @@
             "emails": ["tbechtold@suse.com", "t.bechtold@telekom.de", "thomasbechtold@jpberlin.de"]
         },
         {
+            "launchpad_id": "toddmorey",
+            "companies": [
+                {
+                    "company_name": "OpenStack Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Todd Morey",
+            "emails": ["todd@toddmorey.com", "toddmorey@todds-mbp-2.(none)", "toddmorey@todds-mbp-2.grandenetworks.net", "toddmorey@todds-macbook-pro-2.local"]
+        },
+        {
             "launchpad_id": "torgomatic",
             "companies": [
                 {
@@ -9539,6 +9550,17 @@
             ],
             "user_name": "Vigneshvar.A.S",
             "emails": ["vigneshvar.a.s@gmail.com", "vigneshvar.subramanian@ril.com"]
+        },
+        {
+            "launchpad_id": "vijayendra-bhamidipati",
+            "companies": [
+                {
+                    "company_name": "eBay",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Venkata Siva Vijayendra Bhamidipati",
+            "emails": ["vijayendrabvs@gmail.com", "vbhamidipati@ebaysf.com", "vbhamidipati@paypal.com"]
         },
         {
             "launchpad_id": "vipuls",
@@ -10935,6 +10957,10 @@
             "company_name": "Managed IT"
         },
         {
+            "domains": ["maprtech.com", "mapr.com"],
+            "company_name": "MapR"
+        },
+        {
             "domains": ["mellanox.com", "mellanox.co.il"],
             "company_name": "Mellanox",
             "aliases": ["Mellanox Technologies", "Mellanox.com"]
@@ -11114,6 +11140,10 @@
         {
             "domains": ["puppetlabs.com"],
             "company_name": "Puppet Labs"
+        },
+        {
+            "domains": ["purestorage.com"],
+            "company_name": "Pure Storage"
         },
         {
             "domains": ["qrclab.com"],
