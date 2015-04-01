@@ -84,7 +84,7 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
         {%if record_type == "commit" %}
             <div class="header">Commit &ldquo;${subject}&rdquo;</div>
             <div class="message">{%html message %}</div>
-            {%if commit_date_str != "" %}
+            {%if commit_date_str != "" && commit_date_str != date_str %}
                 <div>Commit date: ${commit_date_str}</div>
             {%/if%}
             {%if correction_comment != "" %}
