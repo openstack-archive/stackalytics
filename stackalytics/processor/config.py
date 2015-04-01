@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import copy
+
 from oslo_config import cfg
 
 
@@ -68,3 +70,7 @@ OPTS = [
     cfg.IntOpt('members-look-ahead', default=250,
                help='How many member profiles to look ahead after the last'),
 ]
+
+
+def list_opts():
+    yield (None, copy.deepcopy(OPTS))

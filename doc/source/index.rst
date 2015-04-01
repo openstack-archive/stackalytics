@@ -14,12 +14,19 @@ Overview
 
 
 API
-----------
+---
 .. toctree::
    :maxdepth: 1
 
    userdoc/api_v1.0
 
+
+CLI Tools
+---------
+.. toctree::
+   :maxdepth: 1
+
+   tools.rst
 
 Developer Guide
 ---------------
