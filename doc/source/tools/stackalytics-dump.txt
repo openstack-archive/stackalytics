@@ -1,0 +1,129 @@
+usage: stackalytics-dump [-h]
+                         [--collect-profiler-stats COLLECT_PROFILER_STATS]
+                         [--config-dir DIR] [--config-file PATH]
+                         [--corrections-uri CORRECTIONS_URI]
+                         [--dashboard-update-interval DASHBOARD_UPDATE_INTERVAL]
+                         [--days_to_update_members DAYS_TO_UPDATE_MEMBERS]
+                         [--debug] [--default-metric DEFAULT_METRIC]
+                         [--default-project-type DEFAULT_PROJECT_TYPE]
+                         [--default-release DEFAULT_RELEASE]
+                         [--driverlog-data-uri DRIVERLOG_DATA_URI]
+                         [--file FILE] [--force-update]
+                         [--git-base-uri GIT_BASE_URI]
+                         [--listen-host LISTEN_HOST]
+                         [--listen-port LISTEN_PORT]
+                         [--log-config-append PATH]
+                         [--log-date-format DATE_FORMAT] [--log-dir LOG_DIR]
+                         [--log-file PATH] [--log-format FORMAT]
+                         [--members-look-ahead MEMBERS_LOOK_AHEAD]
+                         [--min-compress-len MIN_COMPRESS_LEN] [--nodebug]
+                         [--noforce-update] [--norestore] [--nouse-syslog]
+                         [--nouse-syslog-rfc-format] [--noverbose]
+                         [--project-list-uri PROJECT_LIST_URI] [--restore]
+                         [--review-uri REVIEW_URI]
+                         [--runtime-storage-uri RUNTIME_STORAGE_URI]
+                         [--sources-root SOURCES_ROOT]
+                         [--ssh-key-filename SSH_KEY_FILENAME]
+                         [--ssh-username SSH_USERNAME]
+                         [--syslog-log-facility SYSLOG_LOG_FACILITY]
+                         [--use-syslog] [--use-syslog-rfc-format] [--verbose]
+                         [--version] [--default-data-uri DEFAULT_DATA_URI]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --collect-profiler-stats COLLECT_PROFILER_STATS
+                        Name of file to store python profiler data. This
+                        option works for dashboard only
+  --config-dir DIR      Path to a config directory to pull *.conf files from.
+                        This file set is sorted, so as to provide a
+                        predictable parse order if individual options are
+                        over-ridden. The set is parsed after the file(s)
+                        specified via previous --config-file, arguments hence
+                        over-ridden options in the directory take precedence.
+  --config-file PATH    Path to a config file to use. Multiple config files
+                        can be specified, with values in later files taking
+                        precedence. The default files used are: None.
+  --corrections-uri CORRECTIONS_URI
+                        The address of file with corrections data
+  --dashboard-update-interval DASHBOARD_UPDATE_INTERVAL
+                        The interval specifies how frequently dashboard should
+                        check for updates in seconds
+  --days_to_update_members DAYS_TO_UPDATE_MEMBERS
+                        Number of days to update members
+  --debug, -d           Print debugging output (set logging level to DEBUG
+                        instead of default WARNING level).
+  --default-metric DEFAULT_METRIC
+                        Default metric
+  --default-project-type DEFAULT_PROJECT_TYPE
+                        Default project type
+  --default-release DEFAULT_RELEASE
+                        Default release, the most recent if not set
+  --driverlog-data-uri DRIVERLOG_DATA_URI
+                        URI for default data
+  --file FILE, -f FILE  The name of file to store data
+  --force-update        Forcibly read default data and update records
+  --git-base-uri GIT_BASE_URI
+                        git base location
+  --listen-host LISTEN_HOST
+                        The address dashboard listens on
+  --listen-port LISTEN_PORT
+                        The port dashboard listens on
+  --log-config-append PATH, --log_config PATH
+                        The name of a logging configuration file. This file is
+                        appended to any existing logging configuration files.
+                        For details about logging configuration files, see the
+                        Python logging module documentation.
+  --log-date-format DATE_FORMAT
+                        Format string for %(asctime)s in log records. Default:
+                        None .
+  --log-dir LOG_DIR, --logdir LOG_DIR
+                        (Optional) The base directory used for relative --log-
+                        file paths.
+  --log-file PATH, --logfile PATH
+                        (Optional) Name of log file to output to. If no
+                        default is set, logging will go to stdout.
+  --log-format FORMAT   DEPRECATED. A logging.Formatter log message format
+                        string which may use any of the available
+                        logging.LogRecord attributes. This option is
+                        deprecated. Please use logging_context_format_string
+                        and logging_default_format_string instead.
+  --members-look-ahead MEMBERS_LOOK_AHEAD
+                        How many member profiles to look ahead after the last
+  --min-compress-len MIN_COMPRESS_LEN, -m MIN_COMPRESS_LEN
+                        The threshold length to kick in auto-compression
+  --nodebug             The inverse of --debug
+  --noforce-update      The inverse of --force-update
+  --norestore           The inverse of --restore
+  --nouse-syslog        The inverse of --use-syslog
+  --nouse-syslog-rfc-format
+                        The inverse of --use-syslog-rfc-format
+  --noverbose           The inverse of --verbose
+  --project-list-uri PROJECT_LIST_URI
+                        The address of file with the official projects list
+  --restore, -r         Restore data into memcached
+  --review-uri REVIEW_URI
+                        URI of review system
+  --runtime-storage-uri RUNTIME_STORAGE_URI
+                        Storage URI
+  --sources-root SOURCES_ROOT
+                        The folder that holds all project sources to analyze
+  --ssh-key-filename SSH_KEY_FILENAME
+                        SSH key for gerrit review system access
+  --ssh-username SSH_USERNAME
+                        SSH username for gerrit review system access
+  --syslog-log-facility SYSLOG_LOG_FACILITY
+                        Syslog facility to receive log lines.
+  --use-syslog          Use syslog for logging. Existing syslog format is
+                        DEPRECATED during I, and will change in J to honor
+                        RFC5424.
+  --use-syslog-rfc-format
+                        (Optional) Enables or disables syslog rfc5424 format
+                        for logging. If enabled, prefixes the MSG part of the
+                        syslog message with APP-NAME (RFC5424). The format
+                        without the APP-NAME is deprecated in I, and will be
+                        removed in J.
+  --verbose, -v         Print more verbose output (set logging level to INFO
+                        instead of default WARNING level).
+  --version             show program's version number and exit
+  --default-data-uri DEFAULT_DATA_URI
+                        URI for default data
