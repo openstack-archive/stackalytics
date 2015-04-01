@@ -85,7 +85,7 @@ def import_data(memcached_inst, fd):
 def get_repo_keys(memcached_inst):
     for repo in (memcached_inst.get('repos') or []):
         uri = repo['uri']
-        branches = set(['master'])
+        branches = {repo.get('default_branch', 'master')}
         for release in repo.get('releases'):
             if 'branch' in release:
                 branches.add(release['branch'])

@@ -12341,6 +12341,24 @@
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
+        },
+        {
+            "module": "ansible",
+            "organization": "ansible",
+            "uri": "https://github.com/ansible/ansible.git",
+            "default_branch": "devel"
+        },
+        {
+            "module": "ansible-modules-core",
+            "organization": "ansible",
+            "uri": "https://github.com/ansible/ansible-modules-core.git",
+            "default_branch": "devel"
+        },
+        {
+            "module": "ansible-modules-extras",
+            "organization": "ansible",
+            "uri": "https://github.com/ansible/ansible-modules-extras.git",
+            "default_branch": "devel"
         }
     ],
     "project_sources": [
@@ -12362,10 +12380,6 @@
         },
         {
             "organization": "cloudfoundry",
-            "uri": "github://"
-        },
-        {
-            "organization": "ansible",
             "uri": "github://"
         }
     ],

@@ -110,6 +110,9 @@
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "default_branch": {
+                        "type": "string"
                     }
                 },
                 "required": ["uri", "module", "organization"],
@@ -167,6 +170,9 @@
                         "items": {
                             "type": "string"
                         }
+                    },
+                    "default_branch": {
+                        "type": "string"
                     }
                 },
                 "required": ["organization"],

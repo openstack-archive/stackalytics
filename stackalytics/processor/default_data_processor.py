@@ -114,7 +114,7 @@ def _retrieve_project_list_from_github(project_source):
 
     for repo in github_repos:
         yield {
-            'branches': ['master'],
+            'branches': [project_source.get('default_branch', 'master')],
             'module': repo.name.lower(),
             'organization': organization,
             'uri': repo.git_url,
