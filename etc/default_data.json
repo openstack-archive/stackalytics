@@ -6999,11 +6999,15 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2015-Mar-27"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Pradeep Kilambi",
-            "emails": ["pkilambi@cisco.com", "praddevel@gmail.com"]
+            "emails": ["pkilambi@redhat.com","pkilambi@cisco.com", "praddevel@gmail.com"]
         },
         {
             "github_id": "pmenglund",
