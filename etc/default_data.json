@@ -9795,6 +9795,17 @@
             "emails": ["wingwj@gmail.com", "wingwj.wu@huawei.com"]
         },
         {
+            "launchpad_id": "wkqwu",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kai Qiang Wu(Kennan)",
+            "emails": ["wkqwu@cn.ibm.com", "wkq5325@gmail.com"]
+        },
+        {
             "launchpad_id": "wrongfan",
             "companies": [
                 {
