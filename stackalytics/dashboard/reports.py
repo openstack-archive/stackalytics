@@ -286,14 +286,15 @@ def activity():
 @decorators.exception_handler()
 @decorators.record_filter()
 def get_commit_report(records, **kwargs):
-    loc_threshold = int(flask.request.args.get('loc_threshold') or 0)
+    loc_threshold = int(flask.request.args.get('loc_threshold') or 1000)
     response = []
     for record in records:
-        if ('loc' in record) and (record['loc'] > loc_threshold):
-            nr = dict([(k, record[k])
+        if record.record_type == 'commit' and record.loc > loc_threshold:
+            ext_record = vault.extend_record(record)
+            nr = dict([(k, ext_record[k])
                        for k in ['loc', 'subject', 'module', 'primary_key',
                                  'change_id']
-                       if k in record])
+                       if k in ext_record])
             response.append(nr)
     return response
 
