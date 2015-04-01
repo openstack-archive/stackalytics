@@ -2718,6 +2718,14 @@
             "primary_key": "89cd6a0c493e26b5a9e017c99d731464292abbaf",
             "module": "nova",
             "subject": "move all tests to nova/tests/unit"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": null,
+            "primary_key": "c09eca8cc4fe065c0d76c97d2a6946534b5b323f",
+            "module": "openstackweb",
+            "subject": "[smarcet] - initial commit"
         }
     ]
 }
