@@ -11062,6 +11062,10 @@
             "aliases": ["Orange Labs", "Orange Polska S.A."]
         },
         {
+            "domains": ["osones.com"],
+            "company_name": "Osones"
+        },
+        {
             "domains": ["parallels.com"],
             "company_name": "Parallels"
         },
