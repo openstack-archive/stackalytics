@@ -37,6 +37,10 @@ def _normalize_user(user):
             return x["end_date"] - y["end_date"]
 
     user['companies'].sort(key=utils.cmp_to_key(end_date_comparator))
+    if user['companies']:
+        if user['companies'][-1]['end_date'] != 0:
+            user['companies'].append(dict(company_name='*independent',
+                                          end_date=0))
     user['user_id'] = user_processor.make_user_id(
         launchpad_id=user.get('launchpad_id'),
         emails=user.get('emails'),

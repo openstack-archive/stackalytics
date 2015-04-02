@@ -52,6 +52,11 @@ class TestDefaultDataProcessor(testtools.TestCase):
                          data['users'][0]['user_id'],
                          message='User id should be set')
 
+        # verify that *independent company is added automatically
+        self.assertEqual(3, len(data['users'][1]['companies']))
+        self.assertEqual(0, data['users'][1]['companies'][-1]['end_date'],
+                         message='The last company end date should be 0')
+
     def test_update_project_list(self):
         with mock.patch('stackalytics.processor.default_data_processor.'
                         '_retrieve_project_list_from_gerrit') as retriever:

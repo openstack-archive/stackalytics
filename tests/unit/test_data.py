@@ -26,6 +26,15 @@ DEFAULT_DATA = {
             ]
         },
         {
+            'launchpad_id': 'smith',
+            'user_name': 'Smith',
+            'emails': ['smith@gmail.com', 'smith@nec.com'],
+            'companies': [
+                {'company_name': 'IBM', 'end_date': '2013-May-01'},
+                {'company_name': 'NEC', 'end_date': '2014-Jun-01'}
+            ]
+        },
+        {
             'launchpad_id': 'ivan_ivanov',
             'user_name': 'Ivan Ivanov',
             'emails': ['ivanivan@yandex.ru', 'iivanov@mirantis.com'],
