@@ -2726,6 +2726,146 @@
             "primary_key": "c09eca8cc4fe065c0d76c97d2a6946534b5b323f",
             "module": "openstackweb",
             "subject": "[smarcet] - initial commit"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I7e5f2bbce86e0bdd292f0cb8b395995f9171e5eb"],
+            "primary_key": "fbd2730a6952d7531e7f1b461141f427b3a712c6",
+            "module": "training-guides",
+            "subject": "Removes basic-install-guides from training guides"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia76e41a8a3b7230701872ae7a1975edc3d9ea847"],
+            "primary_key": "46ed619b9ab1d61582f36155eea0d4a88f31fd50",
+            "module": "nova",
+            "subject": "Remove baremetal virt driver"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Iae976151e87d4d2edd6e913a5aea16d9c13dc051"],
+            "primary_key": "6cbed3be2027d8ce5b1bf495e47342ab7b264936",
+            "module": "groups",
+            "subject": "New bootstrap based theme"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I7ac0dba821601c5d6cb61b40951c9692782d88be"],
+            "primary_key": "6ede600f324b8a6b2feb828ff60bc0b8b4f09c08",
+            "module": "oslo-incubator",
+            "subject": "rpc, notifier: remove deprecated modules"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I8a01a977889b36015a9cfa900173c05bfd516457"],
+            "primary_key": "56bc2e093e5c7143003faecd0f931f3ebf16e3aa",
+            "module": "neutron",
+            "subject": "Decompose the VMware plugin"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "5150996122448088eab187603fc616393c6ba9f8",
+            "module": "openstackdocstheme",
+            "subject": "Adds rearranged files for rename to openstackdocstheme"
+        },
+        {
+            "correction_comment": "Reset LOC to 0 for auto-generated files",
+            "loc": 0,
+            "change_id": ["I02f6c19e903b43b297c35e1f0cff8886e57d4d20"],
+            "primary_key": "05deadc9e519e35938240cef23d3b5aa9a03496e",
+            "module": "activity-board",
+            "subject": "OpenStack Community Activity Report Q4 2014"
+        },
+        {
+            "correction_comment": "Reset LOC to 0 for auto-generated files",
+            "loc": 0,
+            "change_id": ["I89ca4da22f59da465738326f143e1224cb96a674"],
+            "primary_key": "c6bc1e679dd892fc82344a007ab6160403889baf",
+            "module": "activity-board",
+            "subject": "This report is produced quarterly to give Community Managers and OpenStack Foundation's management better insights on development activities and online conversations. The quantitative and qualitative assessment start from tracking actions across all OpenStack git repositories, gerrit code reviews, bug trackers as well as IRC channels, mailing lists and questions/answers."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I0bca6bd6d0ce2b17ab3cf0539042276bfd77f79b"],
+            "primary_key": "559d1e73ec8170cf576688346010ffa29d532ee8",
+            "module": "training-guides",
+            "subject": "Delete the XML content to prepare for Juno"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I9570b24c02e406e752da3707d94a5385d5d26895"],
+            "primary_key": "6a17aa430347f6c9c327521a1af0768d942c567b",
+            "module": "openstack-manuals",
+            "subject": "Removes trunk and juno versions of Install Guide for Debian"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4ef25303987c2c3dd4e7400c5e28e85d6a5bc956"],
+            "primary_key": "5dfffe69c82cea14015bb138423794b611d1e769",
+            "module": "openstack-manuals",
+            "subject": "Redirect and update sitemap for API docs sent to openstack-attic"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie96b482b9fbcb1d85203ad35bb65c1f43e912a44"],
+            "primary_key": "7063585c60205fe031e1c74289d88886705cfb57",
+            "module": "oslo.db",
+            "subject": "Move files out of the namespace package"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "3c11d3edc002db0ec75919b66bc1bcb77be6708a",
+            "module": "openstackdocstheme",
+            "subject": "Removes uneeded files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "c246504e88ad0350dc4674c48478e3b5ca91f63b",
+            "module": "openstackdocstheme",
+            "subject": "Removes redundant static files and template files"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "cf9c89fa9b88b926a9beab9e8fdf4063952f6d5f",
+            "module": "openstackdocstheme",
+            "subject": "Starting point for Sphinx theme for docs.openstack.org content"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I56274336802036de050efc62eb2ee6b5d4ede77b"],
+            "primary_key": "70c5b67df353f70f0253dd7b8bcc66c871f842ff",
+            "module": "oslo.config",
+            "subject": "Move files out of the namespace package"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia562010c152a214f1c0fed767c82022c7c2c52e7"],
+            "primary_key": "e55a83e832d888e1a5fb087863590b08e7bd6090mehdi.abaakouk@enovance.com",
+            "module": "oslo.messaging",
+            "subject": "Move files out of the namespace package"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ia562010c152a214f1c0fed767c82022c7c2c52e7"],
+            "primary_key": "e55a83e832d888e1a5fb087863590b08e7bd6090doug@doughellmann.com",
+            "module": "oslo.messaging",
+            "subject": "Move files out of the namespace package"
         }
     ]
 }
