@@ -3777,7 +3777,7 @@
             "launchpad_id": "hfamily15",
             "companies": [
                 {
-                    "company_name": "LGCNS",
+                    "company_name": "LG CNS",
                     "end_date": null
                 }
             ],
@@ -10930,7 +10930,8 @@
         },
         {
             "domains": ["lgcns.com"],
-            "company_name": "LG CNS"
+            "company_name": "LG CNS",
+            "aliases": ["LG CNS"]
         },
         {
             "domains": ["limilo.com"],
