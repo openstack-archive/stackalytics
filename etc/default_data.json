@@ -12552,6 +12552,10 @@
         {
             "module_group_name": "ansible-group",
             "modules": ["ansible", "ansible-modules-core", "ansible-modules-extras"]
+        },
+        {
+            "module_group_name": "refstack-group",
+            "modules": ["refstack", "refstack-client"]
         }
     ],
     "releases": [
