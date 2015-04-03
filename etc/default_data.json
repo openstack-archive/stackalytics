@@ -9784,6 +9784,21 @@
             "emails": ["vpvutharkar@ebaysf.com"]
         },
         {
+            "launchpad_id": "w-wanghong",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": "2015-Apr-02"
+                },
+                {
+                    "company_name": "ChinaNetCenter",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wanghong",
+            "emails": ["reviewwanghong@126.com", "wh@chinanetcenter.com"]
+        },
+        {
             "launchpad_id": "wan-yen-hsu",
             "companies": [
                 {
