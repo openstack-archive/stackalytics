@@ -124,6 +124,17 @@
             "emails": ["aaron@greenbtn.com"]
         },
         {
+            "github_id": "abadger",
+            "companies": [
+                {
+                    "company_name": "RedHat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Toshio Kuratomi",
+            "emails": ["toshio@fedoraproject.org", "a.badger@gmail.com"]
+        },
+        {
             "launchpad_id": "abhijeet-jain",
             "gerrit_id": "Abhijeet.Jain",
             "companies": [
@@ -977,6 +988,17 @@
             ],
             "user_name": "Basil Baby",
             "emails": ["basilbaby@gmail.com"]
+        },
+        {
+            "github_id": "bcoca",
+            "companies": [
+                {
+                    "company_name": "Ansible",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Coca",
+            "emails": ["bcoca@ansible.com", "brian.coca+git@gmail.com"]
         },
         {
             "launchpad_id": "bcwaldon",
@@ -6256,6 +6278,18 @@
             "emails": ["thiago.morello@locaweb.com.br"]
         },
         {
+            "launchpad_id": "mpdehaan",
+            "github_id": "mpdehaan",
+            "companies": [
+                {
+                    "company_name": "Ansible",
+                    "end_date": "2015-Jan-30"
+                }
+            ],
+            "user_name": "Michael DeHaan",
+            "emails": ["michael.dehaan@gmail.com","michael.dehaan@ansible.com"]
+        },
+        {
             "launchpad_id": "mpmsimo",
             "companies": [
                 {
@@ -10421,6 +10455,10 @@
         {
             "domains": ["anl.gov"],
             "company_name": "Argonne National Laboratory"
+        },
+        {
+            "domains": ["ansible.com"],
+            "company_name": "Ansible"
         },
         {
             "domains": ["apple.com"],

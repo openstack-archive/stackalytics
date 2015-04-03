@@ -82,7 +82,10 @@ class TestConfigFiles(testtools.TestCase):
     def _verify_default_data_by_schema(self, file_name):
         default_data = self._read_file(file_name)
         schema = self._read_file('etc/default_data.schema.json')
-        jsonschema.validate(default_data, schema)
+        try:
+            jsonschema.validate(default_data, schema)
+        except jsonschema.ValidationError as e:
+            self.fail(e)
 
     def test_default_data_schema_conformance(self):
         self._verify_default_data_by_schema('etc/default_data.json')
