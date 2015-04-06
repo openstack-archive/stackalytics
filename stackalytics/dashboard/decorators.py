@@ -414,6 +414,7 @@ def templated(template=None, return_code=200):
             project_type = parameters.get_single_parameter(
                 kwargs, 'project_type', use_default=True)
             ctx['project_type'] = project_type
+            ctx['project_type_inst'] = vault.get_project_type(project_type)
 
             ctx['release'] = parameters.get_single_parameter(
                 kwargs, 'release', use_default=True)
@@ -436,6 +437,7 @@ def templated(template=None, return_code=200):
                     ctx['user_id'])
 
             ctx['page_title'] = helpers.make_page_title(
+                ctx['project_type_inst'],
                 ctx.get('release'), ctx.get('module_inst'),
                 ctx.get('company_original'), ctx.get('user_inst'))
 
