@@ -12473,6 +12473,11 @@
             "organization": "ansible",
             "uri": "https://github.com/ansible/ansible-modules-extras.git",
             "default_branch": "devel"
+        },
+        {
+            "module": "ovs",
+            "organization": "openvswitch",
+            "uri": "https://github.com/ovs/openvswitch.git"
         }
     ],
     "project_sources": [
@@ -12647,7 +12652,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group"]
+            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group", "ovs"]
         },
         {
             "id": "cloudfoundry-group",
@@ -12672,6 +12677,12 @@
             "title": "Ansible",
             "child": true,
             "modules": ["ansible-group"]
+        },
+        {
+            "id": "ovs-group",
+            "title": "Open vSwitch",
+            "child": true,
+            "modules": ["ovs"]
         }
     ]
 }
