@@ -12477,7 +12477,7 @@
         {
             "module": "ovs",
             "organization": "openvswitch",
-            "uri": "https://github.com/ovs/openvswitch.git"
+            "uri": "https://github.com/openvswitch/ovs.git"
         }
     ],
     "project_sources": [
