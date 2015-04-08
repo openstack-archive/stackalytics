@@ -219,7 +219,7 @@ def get_bug_id(module, bug_id):
 
 
 def get_patch_id(review_id, patch_number):
-    return review_id + ':' + patch_number
+    return '%s:%s' % (review_id, patch_number)
 
 
 def add_index(sequence, start=1, item_filter=lambda x: True):

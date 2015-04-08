@@ -95,11 +95,16 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
             <div class="header">Review &ldquo;${parent_subject}&rdquo;</div>
-            <div>Submitted by: {%html parent_author_link %} ({%html parent_company_link %}) (#${parent_review_number})</div>
+            <div>Review submitted by: {%html parent_author_link %} ({%html parent_company_link %})</div>
+            {%if patch_author_link != parent_author_link %}
+                <div>Patch submitted by: {%html patch_author_link %} ({%html patch_company_link %})</div>
+            {%/if%}
             <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">
                 {%if (type == "Workflow" && value == 1) %}
                 Approved
+                {%elif (type == "Self-Workflow" && value == 1) %}
+                Self-Approved
                 {%elif (type == "Workflow" && value == -1) %}
                 Work in progress
                 {%else%}

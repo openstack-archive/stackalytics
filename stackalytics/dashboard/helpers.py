@@ -49,11 +49,11 @@ def _extend_record_common_fields(record):
         _extend_author_fields(coauthor)
 
 
-def _extend_by_parent_info(record, parent):
+def _extend_by_parent_info(record, parent, prefix='parent_'):
     parent = vault.extend_record(parent)
     _extend_record_common_fields(parent)
     for k, v in six.iteritems(parent):
-        record['parent_' + k] = v
+        record[prefix + k] = v
 
 
 def extend_record(record):
@@ -68,16 +68,19 @@ def extend_record(record):
         if record['commit_date']:
             record['commit_date_str'] = format_datetime(record['commit_date'])
     elif record['record_type'] == 'mark':
-        parent = vault.get_memory_storage().get_record_by_primary_key(
+        review = vault.get_memory_storage().get_record_by_primary_key(
             record['review_id'])
-        if not parent:
+        patch = vault.get_memory_storage().get_record_by_primary_key(
+            utils.get_patch_id(record['review_id'], record['patch']))
+        if not review or not patch:
             return None
 
-        _extend_by_parent_info(record, parent)
+        _extend_by_parent_info(record, review, 'parent_')
+        _extend_by_parent_info(record, patch, 'patch_')
     elif record['record_type'] == 'patch':
-        parent = vault.get_memory_storage().get_record_by_primary_key(
+        review = vault.get_memory_storage().get_record_by_primary_key(
             record['review_id'])
-        _extend_by_parent_info(record, parent)
+        _extend_by_parent_info(record, review, 'parent_')
     elif record['record_type'] == 'email':
         record['email_link'] = record.get('email_link') or ''
         record['blueprint_links'] = []
@@ -182,12 +185,14 @@ def get_contribution_summary(records):
             commit_count += 1
             loc += record.loc
         elif record_type == 'mark':
-            value = record.value
+            value = 0
             if record.type == 'Workflow':
-                if value == 1:
+                if record.value == 1:
                     value = 'A'
                 else:
                     value = 'WIP'
+            elif record.type == 'Code-Review':
+                value = record.value
             marks[value] += 1
         elif record_type == 'email':
             email_count += 1

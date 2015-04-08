@@ -831,6 +831,23 @@ class RecordProcessor(object):
             }]
             user_processor.store_user(self.runtime_storage_inst, user)
 
+    def _update_self_made_marks(self):
+        LOG.debug('Update self-made marks')
+        patch_id_to_user_id = {}
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['record_type'] == 'patch':
+                patch_id_to_user_id[record['primary_key']] = record['user_id']
+
+        for record in self.runtime_storage_inst.get_all_records():
+            if record['record_type'] != 'mark':
+                continue
+
+            patch_id = utils.get_patch_id(record['review_id'], record['patch'])
+            if record['user_id'] == patch_id_to_user_id.get(patch_id):
+                if record['type'].find('Self-') < 0:
+                    record['type'] = 'Self-%s' % record['type']
+                    yield record
+
     def post_processing(self, release_index):
         self.runtime_storage_inst.set_records(
             self._update_records_with_user_info())
@@ -855,3 +872,5 @@ class RecordProcessor(object):
 
         self.runtime_storage_inst.set_records(
             self._update_members_company_name())
+
+        self.runtime_storage_inst.set_records(self._update_self_made_marks())

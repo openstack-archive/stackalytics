@@ -252,13 +252,14 @@ def loc_filter(result, record, param_id, context):
 
 def mark_filter(result, record, param_id, context):
     result_by_param = result[getattr(record, param_id)]
-    value = record.value
+    value = 0
     record_type = record.type
 
     if record_type == 'Code-Review':
         result_by_param['metric'] += 1
+        value = record.value
     elif record.type == 'Workflow':
-        if value == 1:
+        if record.value == 1:
             value = 'A'
         else:
             value = 'WIP'
