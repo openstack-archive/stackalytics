@@ -10464,6 +10464,10 @@
             "company_name": "Alyseo"
         },
         {
+            "domains": ["amadeus.com"],
+            "company_name": "Amadeus"
+        },
+        {
             "domains": ["anchor.com.au", "anchor.net.au", "anchor.hosting"],
             "company_name": "Anchor"
         },
@@ -10507,6 +10511,10 @@
             "domains": ["att.com", "attinteractive.com"],
             "company_name": "AT&T",
             "aliases": ["AT&T Mobility"]
+        },
+        {
+            "domains": ["avaya.com"],
+            "company_name": "Avaya"
         },
         {
             "domains": ["avinetworks.com"],
@@ -10617,7 +10625,7 @@
             "company_name": "CIeNET Technologies"
         },
         {
-            "domains": ["cisco.com"],
+            "domains": ["cisco.com", "noironetworks.com"],
             "company_name": "Cisco Systems",
             "aliases": ["Cisco System", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.",
               "Cisco", "Cisco Inc", "Cisco Hong Kong", "Cisco Canada", "Cisco APAC"]
@@ -10750,6 +10758,10 @@
         {
             "domains": ["endurancewindpower.com"],
             "company_name": "Endurance Wind Power"
+        },
+        {
+            "domains": ["entpnt.com"],
+            "company_name": "Entry Point Networks"
         },
         {
             "domains": ["epam.com"],
@@ -10895,6 +10907,10 @@
             "company_name": "Inktank"
         },
         {
+            "domains": ["inmon.com"],
+            "company_name": "InMon"
+        },
+        {
             "domains": ["inria.fr"],
             "company_name": "Inria",
             "aliases": ["INRIA"]
@@ -10961,6 +10977,10 @@
             "aliases": ["Juniper Networks", "Juniper Networks Inc.", "Juniper Networks India", "Juniper India"]
         },
         {
+            "domains": ["kau.se"],
+            "company_name": "Karlstad Universitet"
+        },
+        {
             "domains": ["kent.ac.uk"],
             "company_name": "University of Kent",
             "aliases": ["University of Kent"]
@@ -11016,6 +11036,10 @@
         {
             "domains": ["lsd.ufcg.edu.br"],
             "company_name": "Universidade Federal de Campina Grande"
+        },
+        {
+            "domains": ["m3s.it"],
+            "company_name": "M3S"
         },
         {
             "domains": ["maginatics.com"],
@@ -11078,6 +11102,10 @@
             "company_name": "NASA"
         },
         {
+            "domains": ["navy.mil"],
+            "company_name": "US Navy"
+        },
+        {
             "domains": ["nebula.com", "ansolabs.com"],
             "company_name": "Nebula",
             "aliases": ["Nebula, Inc. ; CFO Tools", "Nebulaworks"]
@@ -11098,6 +11126,10 @@
         {
             "domains": ["netone.co.jp"],
             "company_name": "NetOne Systems"
+        },
+        {
+            "domains": ["netronome.com"],
+            "company_name": "Netronome"
         },
         {
             "domains": ["nexenta.com"],
