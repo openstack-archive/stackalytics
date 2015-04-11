@@ -2476,11 +2476,15 @@
                 },
                 {
                     "company_name": "eBay",
+                    "end_date": "2014-Dec-31"
+                },
+                {
+                    "company_name": "Cisco Systems",
                     "end_date": null
                 }
             ],
             "user_name": "Diane Fleming",
-            "emails": ["dfleming@austin.rr.com","diane.fleming@rackspace.com"]
+            "emails": ["dfleming@austin.rr.com", "diflemin@cisco.com", "diflemin@ebay.com", "diane.fleming@rackspace.com"]
         },
         {
             "launchpad_id": "dims-v",
