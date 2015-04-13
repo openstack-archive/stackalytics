@@ -2866,6 +2866,14 @@
             "primary_key": "e55a83e832d888e1a5fb087863590b08e7bd6090doug@doughellmann.com",
             "module": "oslo.messaging",
             "subject": "Move files out of the namespace package"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ie3afdf0c8941d21896aa60dbf9d1cbd6593b5a7f"],
+            "primary_key": "8b100eb15beadbad48f356afaa09b12f85f63b3c",
+            "module": "activity-board",
+            "subject": "OpenStack Community Activity Report Q1 2015"
         }
     ]
 }
