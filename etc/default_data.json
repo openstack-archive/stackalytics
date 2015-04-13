@@ -6813,6 +6813,17 @@
             "emails": ["novel.kumar@gmail.com"]
         },
         {
+            "launchpad_id": "nuaafe",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Tie",
+            "emails": ["nuaafe@gmail.com", "wtie@cisco.com"]
+        },
+        {
             "launchpad_id": "o-tony",
             "companies": [
                 {
