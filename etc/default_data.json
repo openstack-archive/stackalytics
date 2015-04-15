@@ -2525,11 +2525,15 @@
                 },
                 {
                     "company_name": "Blue Box",
+                    "end_date": "2015-Feb-18"
+                },
+                {
+                    "company_name": "Akanda",
                     "end_date": null
                 }
             ],
             "user_name": "David Lenwell",
-            "emails": ["david@pistoncloud.com", "dlenwell@bluebox.net", "dlenwell@gmail.com"]
+            "emails": ["david@pistoncloud.com", "dlenwell@bluebox.net", "dlenwell@gmail.com", "david@akanda.io"]
         },
         {
             "launchpad_id": "dlfryar",
@@ -8103,11 +8107,15 @@
                 },
                 {
                     "company_name": "VMware",
+                    "end_date": "2015-Mar-27"
+                },
+                {
+                    "company_name": "Akanda",
                     "end_date": null
                 }
             ],
             "user_name": "Sean Roberts",
-            "emails": ["seanrob@yahoo-inc.com", "seanroberts66@gmail.com"]
+            "emails": ["seanrob@yahoo-inc.com", "seanroberts66@gmail.com", "sean.roberts@akanda.io"]
         },
         {
             "launchpad_id": "saschpe",
