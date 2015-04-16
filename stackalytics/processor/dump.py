@@ -131,7 +131,8 @@ def export_data(memcached_inst, fd):
         user = memcached_inst.get('user:%s' % user_seq)
         if user:
             if user.get('user_id'):
-                pickle.dump(('user:%s' % user['user_id'], user), fd)
+                pickle.dump((('user:%s' % user['user_id']).encode('utf8'),
+                             user), fd)
             if user.get('launchpad_id'):
                 pickle.dump(('user:%s' % user['launchpad_id'], user), fd)
             if user.get('gerrit_id'):
@@ -139,7 +140,7 @@ def export_data(memcached_inst, fd):
             if user.get('member_id'):
                 pickle.dump(('user:member:%s' % user['member_id'], user), fd)
             for email in user.get('emails') or []:
-                pickle.dump(('user:%s' % email, user), fd)
+                pickle.dump((('user:%s' % email).encode('utf8'), user), fd)
 
 
 def _connect_to_memcached(uri):
