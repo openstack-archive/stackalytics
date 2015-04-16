@@ -378,7 +378,7 @@ def get_members(records, **kwargs):
 def get_bpd(records, **kwargs):
     result = []
     for record in records:
-        if record['record_type'] in ['bpd', 'bpc']:
+        if record.record_type in ['bpd', 'bpc']:
             record = vault.extend_record(record)
             mention_date = record.get('mention_date')
             if mention_date:
