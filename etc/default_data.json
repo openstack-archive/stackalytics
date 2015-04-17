@@ -5685,6 +5685,17 @@
             "emails": ["marcusvrn@gmail.com", "marcus.nascimento@fit-tecnologia.org.br"]
         },
         {
+            "launchpad_id": "mario-villaplana-j",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mario Villaplana",
+            "emails": ["mario.villaplana@gmail.com", "mario.villaplana@rackspace.com"]
+        },
+        {
             "launchpad_id": "mark-klein",
             "companies": [
                 {
