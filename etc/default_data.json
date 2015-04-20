@@ -1527,6 +1527,21 @@
             "emails": ["matt.dietz@rackspace.com", "matthew.dietz@gmail.com", "matthewdietz@matthew-dietzs-macbook-pro.local"]
         },
         {
+            "launchpad_id": "cgoncalves",
+            "companies": [
+                {
+                    "company_name": "Instituto de Telecomunicacoes",
+                    "end_date": "2014-Sep-15"
+                },
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Carlos Goncalves",
+            "emails": ["mail@cgoncalves.pt", "carlos.goncalves@neclab.eu"]
+        },
+        {
             "launchpad_id": "chad-lung",
             "companies": [
                 {
@@ -11191,9 +11206,9 @@
             "aliases": ["Nebula, Inc. ; CFO Tools", "Nebulaworks"]
         },
         {
-            "domains": ["nec.com", "nec.co.jp", "nectechnologies.in"],
+            "domains": ["nec.com", "nec.co.jp", "nectechnologies.in", "neclab.eu"],
             "company_name": "NEC",
-            "aliases": ["NEC Europe Ltd.", "NEC Soft, Ltd.", "NEC Technologies India Ltd.", "NEC Technlogies India Ltd"]
+            "aliases": ["NEC Europe Ltd.", "NEC Soft, Ltd.", "NEC Technologies India Ltd.", "NEC Technlogies India Ltd", "NEC Laboratories Europe"]
         },
         {
             "domains": ["netapp.com"],
