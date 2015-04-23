@@ -4177,6 +4177,21 @@
             "emails": ["ishii@nttmcl.com", "ishii.hisaharu@lab.ntt.co.jp"]
         },
         {
+            "launchpad_id": "isviridov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2015-Feb-09"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Sviridov",
+            "emails": ["isviridov@mirantis.com", "sviridov.ilya@gmail.com"]
+        },
+        {
             "launchpad_id": "itoumsn",
             "companies": [
                 {
