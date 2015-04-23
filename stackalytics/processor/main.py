@@ -262,7 +262,10 @@ def _read_official_projects_yaml(project_list_uri, release_names):
         module_groups[group_id]['tag'] = 'program'
 
         for module in info['projects']:
-            module_name = module['repo'].split('/')[1]
+            repo_split = module['repo'].split('/')
+            if len(repo_split) < 2:
+                continue  # valid repo must be in form of 'org/module'
+            module_name = repo_split[1]
 
             module_groups[group_id]['modules'].append(module_name)
 
