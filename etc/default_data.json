@@ -10550,7 +10550,7 @@
               "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance",
               "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
-              "Unaffiliaited", "Unaffilated", "Personal user"]
+              "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy"]
         },
         {
             "domains": ["360.cn"],
@@ -10772,7 +10772,7 @@
             "domains": ["cisco.com", "noironetworks.com"],
             "company_name": "Cisco Systems",
             "aliases": ["Cisco System", "Cisco Systems Inc., Intel, Microsoft, Dorkbotz", "Cisco System, Inc., Nebula, Inc.",
-              "Cisco", "Cisco Inc", "Cisco Hong Kong", "Cisco Canada", "Cisco APAC"]
+              "Cisco", "Cisco Inc", "Cisco Hong Kong", "Cisco Canada", "Cisco APAC", "Cisco Systems India"]
         },
         {
             "domains": ["citrix.com"],
@@ -10859,7 +10859,8 @@
         {
             "domains": ["dell.com", "software.dell.com"],
             "company_name": "Dell",
-            "aliases": ["Dell  &amp; Ganette Publishing", "Dell, Inc., Cabarrus County Schools", "Dell & Ganette Publishing"]
+            "aliases": ["Dell  &amp; Ganette Publishing", "Dell, Inc., Cabarrus County Schools", "Dell & Ganette Publishing",
+                "Dell Software Group"]
         },
         {
             "domains": ["denali-systems.com"],
@@ -10915,7 +10916,8 @@
             "domains": ["ericsson.com"],
             "company_name": "Ericsson",
             "aliases": ["Ericsson AB", "Ericsson Research", "Ericcson AB", "Ericsson Eurolab Deutschland GmbH",
-              "Ericsson India", "Ericsson Montreal", "Ericsson Hungary"]
+              "Ericsson India", "Ericsson Montreal", "Ericsson Hungary", "Ericsson China", "Ericsson Canada",
+              "Ericsson India Global Services"]
         },
         {
             "domains": ["fathomdb.com"],
@@ -11015,7 +11017,7 @@
               "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations",
               "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations",
               "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte", "Hewlett Packard Romania",
-              "HP Helion Public Cloud", "HP Japan", "HP Korea", "HP Helion"]
+              "HP Helion Public Cloud", "HP Japan", "HP Korea", "HP Helion", "HP Costa Rica", "China HP"]
         },
         {
             "domains": ["huawei.com"],
@@ -11680,7 +11682,7 @@
         {
             "domains": ["wipro.com"],
             "company_name": "Wipro",
-            "aliases": ["Wipro Infotech", "Wipro Technologies", "Wipro Arabia Ltd"]
+            "aliases": ["Wipro Infotech", "Wipro Technologies", "Wipro Arabia Ltd", "Wipro Technoligies"]
         },
         {
             "domains": ["workday.com"],
