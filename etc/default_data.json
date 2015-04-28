@@ -1162,6 +1162,21 @@
             "emails": ["bmcconne@rackspace.com"]
         },
         {
+            "launchpad_id": "bmoss",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2015-Apr-17"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Moss",
+            "emails": ["kallimachos@gmail.com", "bmoss@rackspace.com"]
+        },
+        {
             "launchpad_id": "bnemec",
             "companies": [
                 {
