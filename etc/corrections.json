@@ -2874,6 +2874,22 @@
             "primary_key": "8b100eb15beadbad48f356afaa09b12f85f63b3c",
             "module": "activity-board",
             "subject": "OpenStack Community Activity Report Q1 2015"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4039c727c9ca25ebf07b5ea1de13373912e76cfb"],
+            "primary_key": "348d8a4bb5b112ad9ee33959fd62e7637846f4f1",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml file"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I52fac483206f5386c594429cfb61611c49ff2292"],
+            "primary_key": "5888bf56a91b1c818729be83293633fdde3bd70c",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml file for kilo release"
         }
     ]
 }
