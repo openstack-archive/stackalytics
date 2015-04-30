@@ -473,7 +473,8 @@ class RecordProcessor(object):
 
         yield bpd
 
-        if record.get('assignee') and record['date_completed']:
+        if (record.get('assignee') and record['date_completed'] and
+                record.get('implementation_status') == 'Implemented'):
             bpc = dict([(k, v) for k, v in six.iteritems(record)
                         if k.find('_link') < 0])
             bpc['record_type'] = 'bpc'
