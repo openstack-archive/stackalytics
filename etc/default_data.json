@@ -7275,17 +7275,6 @@
             "emails": ["priti_desai@symantec.com", "pritidesai8@gmail.com"]
         },
         {
-            "launchpad_id": "prykhodchenko",
-            "companies": [
-                {
-                    "company_name": "Mirantis",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Roman Prykhodchenko",
-            "emails": ["rprikhodchenko@mirantis.com", "me@romcheg.me"]
-        },
-        {
             "launchpad_id": "pshige",
             "companies": [
                 {
@@ -7899,6 +7888,7 @@
         },
         {
             "launchpad_id": "romcheg",
+            "gerrit_id": "prykhodchenko",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -7906,7 +7896,7 @@
                 }
             ],
             "user_name": "Roman Prykhodchenko",
-            "emails": ["romcheg@romcheg.org"]
+            "emails": ["rprikhodchenko@mirantis.com", "me@romcheg.me"]
         },
         {
             "launchpad_id": "romilg",
