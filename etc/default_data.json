@@ -266,11 +266,15 @@
             "companies": [
                 {
                     "company_name": "Dell",
+                    "end_date": "2013-Aug-05"
+                },
+                {
+                    "company_name": "Workday",
                     "end_date": null
                 }
             ],
             "user_name": "Adrian Smith",
-            "emails": ["adrian@17od.com", "adrian_f_smith@dell.com"]
+            "emails": ["adrian@17od.com", "adrian_f_smith@dell.com", "adrian.smith@workday.com"]
         },
         {
             "launchpad_id": "agarwalnisha1980",
