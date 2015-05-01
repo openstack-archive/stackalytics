@@ -458,6 +458,22 @@
             "emails": ["alex.meade@rackspace.com", "hatboy112@yahoo.com", "mr.alex.meade@gmail.com"]
         },
         {
+            "launchpad_id": "alex-schultz",
+            "gerrit_id": "mwhahaha",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2015-Apr-03"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Schultz",
+            "emails": ["alex.schultz@rackspace.com", "aschultz@next-development.com", "aschultz@mirantis.com"]
+        },
+        {
             "launchpad_id": "alexandra-settle",
             "companies": [
                 {
