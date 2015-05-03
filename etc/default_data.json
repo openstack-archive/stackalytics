@@ -642,6 +642,17 @@
             "emails": ["anish@chelsio.com", "anish7@gmail.com"]
         },
         {
+           "launchpad_id": "ankita-wagh7",
+           "companies": [
+               {
+                   "company_name": "Symantec",
+                   "end_date": null
+               }
+            ],
+            "user_name": "Ankita Wagh",
+            "emails": ["ankita.wagh7@gmail.com", "ankita_wagh@symantec.com"]
+        },
+        {
             "launchpad_id": "ankurrishi",
             "companies": [
                 {
