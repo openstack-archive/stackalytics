@@ -6958,6 +6958,17 @@
             "emails": ["p@draigbrady.com", "pbrady@redhat.com"]
         },
         {
+            "launchpad_id": "pabelanger",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paul Belanger",
+            "emails": ["pabelanger@redhat.com"]
+        },
+        {
             "launchpad_id": "pablo-a-fuente",
             "gerrit_id": "pafuent",
             "companies": [
