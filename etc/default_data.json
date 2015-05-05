@@ -5372,11 +5372,15 @@
             "companies": [
                 {
                     "company_name": "University of Melbourne",
+                    "end_date": "2015-Feb-25"
+                },
+                {
+                    "company_name": "Aptira",
                     "end_date": null
                 }
             ],
             "user_name": "Kieran Spear",
-            "emails": ["kispear@gmail.com"]
+            "emails": ["kispear@gmail.com", "kieran.spear@unimelb.edu.au", "kieran@aptira.com"]
         },
         {
             "launchpad_id": "kylestev",
