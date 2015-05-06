@@ -8567,6 +8567,17 @@
             "emails": ["shpadubi@cisco.com", "shweta.ap05@gmail.com"]
         },
         {
+            "launchpad_id": "shweta-shrivastava",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shweta",
+            "emails": ["shweta.shrivastava@hp.com"]
+        },
+        {
             "launchpad_id": "shykes",
             "companies": [
                 {
