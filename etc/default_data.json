@@ -1810,6 +1810,17 @@
             "emails": ["clayton@oneill.net", "clayton.oneill@twcable.com"]
         },
         {
+            "launchpad_id": "clint",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Clint Adams",
+            "emails": ["clint.adams@hp.com", "clint@debian.org", "clint@gcfm.net"]
+        },
+        {
             "launchpad_id": "clint-fewbar",
             "companies": [
                 {
