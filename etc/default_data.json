@@ -5327,6 +5327,22 @@
             "emails": ["louis.taylor@hp.com", "kragniz@gmail.com", "louis@kragniz.eu"]
         },
         {
+            "launchpad_id": "krinkle",
+            "github_id": "cmurphy",
+            "companies": [
+                {
+                    "company_name": "Puppet Labs",
+                    "end_date": "2015-Apr-28"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Colleen Murphy",
+            "emails": ["colleen@gazlene.net", "cmurphy@hp.com"]
+        },
+        {
             "launchpad_id": "krotscheck",
             "companies": [
                 {
