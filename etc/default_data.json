@@ -2806,6 +2806,31 @@
             "emails": ["dstanek@dstanek.com", "david.stanek@rackspace.com"]
         },
         {
+            "launchpad_id": "dstufft",
+            "companies": [
+                {
+                    "company_name": "Nebula",
+                    "end_date": "2013-Dec-13"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2015-May-01"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Donald Stufft",
+            "emails": [
+                "donald@stufft.io",
+                "donald.stufft@gmail.com",
+                "donald.stufft@nebula.com",
+                "donald.stufft@racksapce.com",
+                "donald.stufft@hp.com"
+            ]
+        },
+        {
             "launchpad_id": "dtroyer",
             "companies": [
                 {
