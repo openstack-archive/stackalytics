@@ -12901,6 +12901,30 @@
             "default_branch": "devel"
         },
         {
+            "module": "pip",
+            "organization": "pypa",
+            "uri": "https://github.com/pypa/pip.git",
+            "default_branch": "develop"
+        },
+        {
+            "module": "warehouse",
+            "organization": "pypa",
+            "uri": "https://github.com/pypa/warehouse.git",
+            "default_branch": "master"
+        },
+        {
+            "module": "twine",
+            "organization": "pypa",
+            "uri": "https://github.com/pypa/twine.git",
+            "default_branch": "master"
+        },
+        {
+            "module": "virtualenv",
+            "organization": "pypa",
+            "uri": "https://github.com/pypa/virtualenv.git",
+            "default_branch": "develop"
+        },
+        {
             "module": "ovs",
             "organization": "openvswitch",
             "uri": "https://github.com/openvswitch/ovs.git"
@@ -12983,6 +13007,10 @@
         {
             "module_group_name": "ansible-group",
             "modules": ["ansible", "ansible-modules-core", "ansible-modules-extras"]
+        },
+        {
+            "module_group_name": "pypa-group",
+            "modules": ["pip", "warehouse", "twine", "virtualenv"]
         },
         {
             "module_group_name": "refstack-group",
@@ -13082,7 +13110,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group", "ovs"]
+            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group", "pypa-group", "ovs"]
         },
         {
             "id": "cloudfoundry-group",
@@ -13107,6 +13135,12 @@
             "title": "Ansible",
             "child": true,
             "modules": ["ansible-group"]
+        },
+        {
+            "id": "pypa-group",
+            "title": "Python Packaging",
+            "child": true,
+            "modules": ["pypa-group"]
         },
         {
             "id": "ovs-group",
