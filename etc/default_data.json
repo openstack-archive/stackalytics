@@ -9951,6 +9951,17 @@
             "emails": ["vimartin@redhat.com", "victoria@redhat.com", "victoria@vmartinezdelacruz.com"]
         },
         {
+            "launchpad_id": "vkrayneva",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Veronica Krayneva",
+            "emails": ["vkrayneva@mirantis.com"]
+        },
+        {
             "launchpad_id": "vkuklin",
             "companies": [
                 {
