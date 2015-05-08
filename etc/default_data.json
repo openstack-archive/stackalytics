@@ -10714,7 +10714,8 @@
               "Unaffiliated", "没有", "Null", "Univerisity", "fsfsf", "xxx", "no job", "Freelancer", "free", "Freelance",
               "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
-              "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy"]
+              "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy",
+              "unaffillated", "Unafflicated"]
         },
         {
             "domains": ["360.cn"],
@@ -11851,6 +11852,10 @@
         {
             "domains": ["workday.com"],
             "company_name": "Workday"
+        },
+        {
+            "domains": ["x-io.com", "xiostorage.com"],
+            "company_name": "X-IO Technologies"
         },
         {
             "domains": ["x-ion.de"],
