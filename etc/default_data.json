@@ -2099,6 +2099,18 @@
             "emails": ["loic@dachary.org", "loic.dachary@cloudwatt.com", "loic.dachary@enovance.com"]
         },
         {
+            "launchpad_id": "dag-stenstad",
+            "gerrit_id": "stenstad",
+            "companies": [
+                {
+                    "company_name": "Zetta.IO Technology AS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dag Stenstad",
+            "emails": ["dag@stenstad.net", "dag@zetta.io", "dag@aicondi.com"]
+        },
+        {
             "launchpad_id": "dagnello",
             "companies": [
                 {
