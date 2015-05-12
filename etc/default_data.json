@@ -12980,10 +12980,6 @@
             "modules": ["python-solumclient", "solum", "solum-dashboard", "solum-infra-guestagent", "solum-specs"]
         },
         {
-            "module_group_name": "puppet-group",
-            "modules": ["puppet-ceilometer", "puppet-ceph", "puppet-cinder", "puppet-designate", "puppet-glance", "puppet-heat", "puppet-horizon", "puppet-ironic", "puppet-keystone", "puppet-neutron", "puppet-nova", "puppet-openstack", "puppet-openstack-specs", "puppet-openstack_dev_env", "puppet-sahara", "puppet-swift", "puppet-tempest", "puppet-vswitch", "puppet_openstack_builder"]
-        },
-        {
             "module_group_name": "chef-group",
             "modules": ["openstack-chef-repo", "cookbook-ceph", "cookbook-openstack-bare-metal", "cookbook-openstack-block-storage", "cookbook-openstack-client", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-dashboard", "cookbook-openstack-data-processing", "cookbook-openstack-database", "cookbook-openstack-identity", "cookbook-openstack-image", "cookbook-openstack-integration-test", "cookbook-openstack-network", "cookbook-openstack-object-storage", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-orchestration", "cookbook-openstack-telemetry"]
         },
