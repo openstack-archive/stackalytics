@@ -125,10 +125,25 @@ Also-By: Winnie the Pooh winnie222@openstack.org
 diff_stat:
 
  0 files changed, 0 insertions(+), 0 deletions(-)
+commit_id:d1af9cbe0187e1a65cf1eb46fb1650cf619a7b3a
+date:1369831300
+author_name:Vasya Pupkin
+author_email:vpupkinx@openstack.com
+subject:adds new support of co-authors
+message:Change-Id: I577dfdf7f65a0c883ddbcfda62daf8c5f9c746c1
+Co-Authored-By: Tupac Shakur <tupac.shakur@openstack.com>
+Also: Bob Dylan <bob.dylan@openstack.com>
+Co-Authored: Anonymous <correct@email.com>
+Co-Author-By: Anonymous2 <correct@email2.com>
+Co-Author: Winnie the Pooh winnie222@openstack.org
+
+diff_stat:
+
+ 0 files changed, 0 insertions(+), 0 deletions(-)
             '''
             commits = list(self.git.log('dummy', 'dummy'))
 
-        commits_expected = 7
+        commits_expected = 8
         self.assertEqual(commits_expected, len(commits))
 
         self.assertEqual(21, commits[0]['files_changed'])
@@ -177,3 +192,28 @@ diff_stat:
             {'author_name': 'Winnie the Pooh',
              'author_email': 'winnie222@openstack.org'},
             commits[6]['coauthor'])
+
+        self.assertIn(
+            {'author_name': 'Tupac Shakur',
+             'author_email': 'tupac.shakur@openstack.com'},
+            commits[7]['coauthor'])
+
+        self.assertNotIn(
+            {'author_name': 'Bob Dylan',
+             'author_email': 'bob.dylan@openstack.com'},
+            commits[7]['coauthor'])
+
+        self.assertNotIn(
+            {'author_name': 'Anonymous',
+             'author_email': 'correct@email.com'},
+            commits[7]['coauthor'])
+
+        self.assertNotIn(
+            {'author_name': 'Anonymous2',
+             'author_email': 'correct@email2.com'},
+            commits[7]['coauthor'])
+
+        self.assertIn(
+            {'author_name': 'Winnie the Pooh',
+             'author_email': 'winnie222@openstack.org'},
+            commits[7]['coauthor'])

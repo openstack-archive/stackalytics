@@ -74,7 +74,7 @@ MESSAGE_PATTERNS = {
     'blueprint_id': re.compile(r'\b(?:blueprint|bp)\b[ \t]*[#:]?[ \t]*'
                                r'(?P<id>[a-z0-9-]+)', re.IGNORECASE),
     'change_id': re.compile('Change-Id: (?P<id>I[0-9a-f]{40})', re.IGNORECASE),
-    'coauthor': re.compile(r'(?:Co-Authored|Also)-By:'
+    'coauthor': re.compile(r'(?:Co-Authored-By|Also-By|Co-Author):'
                            r'\s*(?P<id>%s)\s' % CO_AUTHOR_PATTERN_RAW,
                            re.IGNORECASE)
 }
