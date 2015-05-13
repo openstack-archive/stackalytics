@@ -4412,6 +4412,20 @@
             "emails": ["james.slagle@gmail.com"]
         },
         {
+           "launchpad_id": "jamespd",
+           "gerrit_id": "jdempsey",
+           "companies": [
+               {
+                   "company_name": "Catalyst IT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "James Dempsey",
+           "emails": [
+               "jamesd@catalyst.net.nz", "jamespd@gmail.com"
+           ]
+        },
+        {
             "github_id": "jamtur01",
             "companies": [
                 {
