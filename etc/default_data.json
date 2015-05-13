@@ -7626,6 +7626,17 @@
             "emails": ["rick.harris@rackspace.com", "rick@quasar.racklabs.com", "rconradharris@gmail.com"]
         },
         {
+            "launchpad_id": "reachharkirat",
+            "companies": [
+                {
+                    "company_name": "Brocade",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Harkirat Singh",
+            "emails": ["reachharkirat@gmail.com", "harkirat@brocade.com"]
+        },
+        {
             "launchpad_id": "redbo",
             "companies": [
                 {
