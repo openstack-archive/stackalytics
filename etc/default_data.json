@@ -815,6 +815,17 @@
             "emails": ["anusha.iiitm@gmail.com"]
         },
         {
+            "launchpad_id": "anusree-a04",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "anusreea",
+            "emails": ["anusree.a04@gmail.com"]
+        },
+        {
             "launchpad_id": "aostapenko",
             "companies": [
                 {
