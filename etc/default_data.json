@@ -6135,6 +6135,17 @@
             "emails": ["maty.grosz@alcatel-lucent.com", "imdg24@gmail.com"]
         },
         {
+            "launchpad_id": "mauricio-lima",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mauricio Lima",
+            "emails": ["mauricio.lima@lsbd.ufc.br", "mauriciolimab@gmail.com"]
+        },
+        {
             "launchpad_id": "max-lobur",
             "companies": [
                 {
