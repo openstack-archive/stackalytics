@@ -911,6 +911,17 @@
                        "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
+            "launchpad_id": "ashleighfarnham-deactivatedaccount",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashleigh Farnham",
+            "emails": ["ashleighfarnham@gmail.com", "ashleigh.farnham@hp.com"]
+        },
+        {
             "launchpad_id": "ashokkumaran-b",
             "companies": [
                 {
