@@ -9803,6 +9803,17 @@
             "emails": ["uwe.schreiber@sva.de"]
         },
         {
+            "launchpad_id": "vaidyanath-m",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vaidyanath",
+            "emails": ["vaidyanath.m@gmail.com", "vaidyanath.manogaran@ril.com"]
+        },
+        {
             "launchpad_id": "vanderliang",
             "companies": [
                 {
