@@ -6446,6 +6446,17 @@
             "emails": ["marga.sfo@gmail.com", "millet@cisco.com"]
         },
         {
+            "launchpad_id": "mishra-rakesh510",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rakesh Mishra",
+            "emails": ["mishra.rakesh510@gmail.com", "rakesh.ku.mishra@ril.com"]
+        },
+        {
             "launchpad_id": "mjblack",
             "companies": [
                 {
