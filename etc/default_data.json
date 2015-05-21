@@ -6516,6 +6516,17 @@
             "emails": ["snmohan83@gmail.com", "mmohan@mvista.com"]
         },
         {
+            "launchpad_id": "mmuehl",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Muehl",
+            "emails": ["mark_muehl@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "mordred",
             "github_id": "emonty",
             "companies": [
