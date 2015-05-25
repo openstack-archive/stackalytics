@@ -10431,6 +10431,17 @@
             "emails": ["yejia@unitedstack.com", "xyj.asmy@gmail.com"]
         },
         {
+            "launchpad_id": "yamamoto",
+            "user_name": "YAMAMOTO Takashi",
+            "companies": [
+                {
+                    "company_name": "VA Linux",
+                    "end_date": null
+                }
+            ],
+            "emails": ["yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
+        },
+        {
             "launchpad_id": "yanheven",
             "companies": [
                 {
