@@ -11281,6 +11281,11 @@
             "aliases": ["Hitachi Data Systems", "Hitachi India"]
         },
         {
+            "domains": ["hihuron.com"],
+            "company_name": "Huron",
+            "aliases": ["Huron Technologies"]
+        },
+        {
             "domains": ["hortonworks.com"],
             "company_name": "Hortonworks"
         },
