@@ -10825,7 +10825,7 @@
               "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
               "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy",
-              "unaffillated", "Unafflicated"]
+              "unaffillated", "Unafflicated", "Unafiliated", "Unaffialiated"]
         },
         {
             "domains": ["360.cn"],
@@ -11307,7 +11307,7 @@
               "IBM Research", "IBM Research - China", "IBM Research Lab, India", "IBM Deutschland Research & Development GmbH",
               "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services",
               "IBM Deutschland", "IBM Malaysia", "IBM Haifa", "IBM Global Services", "IBM Softlayer", "IBM Cloud Division",
-              "IBM Malaysia Sdn Bhd"]
+              "IBM Malaysia Sdn Bhd", "IBM India Private"]
         },
         {
             "domains": ["ifca.unican.es"],
@@ -11534,7 +11534,8 @@
         {
             "domains": ["nec.com", "nec.co.jp", "nectechnologies.in", "neclab.eu"],
             "company_name": "NEC",
-            "aliases": ["NEC Europe Ltd.", "NEC Soft, Ltd.", "NEC Technologies India Ltd.", "NEC Technlogies India Ltd", "NEC Laboratories Europe"]
+            "aliases": ["NEC Europe Ltd.", "NEC Soft, Ltd.", "NEC Technologies India Ltd.", "NEC Technlogies India Ltd", "NEC Laboratories Europe",
+                "NEC Solution Innovators"]
         },
         {
             "domains": ["netapp.com"],
@@ -12473,11 +12474,6 @@
                     "tag_to": "1.1.1",
                     "release_name": "Juno",
                     "tag_from": "1.0.8"
-                },
-                {
-                    "tag_to": "HEAD",
-                    "release_name": "Kilo",
-                    "tag_from": "1.1.1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/python-cinderclient.git",
@@ -12689,9 +12685,15 @@
                     "tag_from": "2014.1"
                 },
                 {
+                    "branch": "stable/kilo",
                     "tag_to": "HEAD",
                     "release_name": "Kilo",
                     "tag_from": "2014.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Liberty",
+                    "tag_from": "2015.1.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/oslo-incubator.git",
@@ -12899,14 +12901,7 @@
         {
             "module": "api-wg",
             "uri": "git://git.openstack.org/openstack/api-wg.git",
-            "organization": "openstack",
-            "releases": [
-                {
-                    "tag_to": "HEAD",
-                    "release_name": "Kilo",
-                    "tag_from": "dce0d4e8"
-                }
-            ]
+            "organization": "openstack"
         },
         {
             "module": "vmware-nsx",
