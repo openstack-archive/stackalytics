@@ -10814,6 +10814,17 @@
             "emails": ["chuck.short@canonical.com", "zulcss@ubuntu.com"]
         },
         {
+            "launchpad_id": "zxiiro",
+            "companies": [
+                {
+                    "company_name": "The Linux Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thanh Ha",
+            "emails": ["zxiiro@gmail.com", "thanh.ha@linuxfoundation.org"]
+        },
+        {
             "launchpad_id": "zyluo",
             "companies": [
                 {
