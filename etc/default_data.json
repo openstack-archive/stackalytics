@@ -2881,6 +2881,14 @@
                 {
                     "company_name": "Nebula",
                     "end_date": "2015-Apr-01"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2015-Apr-27"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
                 }
             ],
             "user_name": "Dean Troyer",
