@@ -4624,11 +4624,15 @@
             "companies": [
                 {
                     "company_name": "Inktank",
+                    "end_date": "2014-Apr-30"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Josh Durgin",
-            "emails": ["joshd@hq.newdream.net", "josh.durgin@dreamhost.com", "josh.durgin@inktank.com"]
+            "emails": ["joshd@hq.newdream.net", "josh.durgin@dreamhost.com", "josh.durgin@inktank.com", "jdurgin@redhat.com"]
         },
         {
             "launchpad_id": "jejbcan",
