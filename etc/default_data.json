@@ -10455,10 +10455,14 @@
             "companies": [
                 {
                     "company_name": "VA Linux",
+                    "end_date": "2015-May-31"
+                },
+                {
+                    "company_name": "Midokura",
                     "end_date": null
                 }
             ],
-            "emails": ["yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
+            "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
         },
         {
             "launchpad_id": "yanheven",
