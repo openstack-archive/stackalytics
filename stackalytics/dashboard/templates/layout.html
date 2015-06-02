@@ -24,9 +24,12 @@ Stackalytics {% if page_title %}| {{ page_title }} {% endif %}
 
     <div class="page">
         {% if not runtime_storage_update_time %}
-            <div class="banner">Please note! The data is being loaded now and may be not complete.</div>
+            <div class="banner">The data is being loaded now and is not complete</div>
             {% set update_time_title = '' %}
         {% else %}
+            {% if runtime_storage_update_time is too_old %}
+                <div class="banner">The data was last updated on {{ runtime_storage_update_time_str }}</div>
+            {% endif %}
             {% set update_time_title = 'Last updated on ' + runtime_storage_update_time_str %}
         {% endif %}
     <div class="aheader">

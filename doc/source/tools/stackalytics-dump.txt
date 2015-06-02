@@ -1,4 +1,4 @@
-usage: stackalytics-dump [-h]
+usage: stackalytics-dump [-h] [--age-warn AGE_WARN]
                          [--collect-profiler-stats COLLECT_PROFILER_STATS]
                          [--config-dir DIR] [--config-file PATH]
                          [--corrections-uri CORRECTIONS_URI]
@@ -31,6 +31,7 @@ usage: stackalytics-dump [-h]
 
 optional arguments:
   -h, --help            show this help message and exit
+  --age-warn AGE_WARN   Warn if the age of data is more than this value, sec
   --collect-profiler-stats COLLECT_PROFILER_STATS
                         Name of file to store python profiler data. This
                         option works for dashboard only
@@ -114,14 +115,14 @@ optional arguments:
   --syslog-log-facility SYSLOG_LOG_FACILITY
                         Syslog facility to receive log lines.
   --use-syslog          Use syslog for logging. Existing syslog format is
-                        DEPRECATED during I, and will change in J to honor
+                        DEPRECATED during I, and changed in J to honor
                         RFC5424.
   --use-syslog-rfc-format
                         (Optional) Enables or disables syslog rfc5424 format
                         for logging. If enabled, prefixes the MSG part of the
                         syslog message with APP-NAME (RFC5424). The format
-                        without the APP-NAME is deprecated in I, and will be
-                        removed in J.
+                        without the APP-NAME is deprecated in K, and will be
+                        removed in M, along with this option.
   --verbose, -v         Print more verbose output (set logging level to INFO
                         instead of default WARNING level).
   --version             show program's version number and exit

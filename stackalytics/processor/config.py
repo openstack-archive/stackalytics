@@ -69,6 +69,8 @@ OPTS = [
                     'works for dashboard only'),
     cfg.IntOpt('members-look-ahead', default=250,
                help='How many member profiles to look ahead after the last'),
+    cfg.IntOpt('age-warn', default=2 * 24 * 60 * 60,
+               help='Warn if the age of data is more than this value, sec'),
 ]
 
 

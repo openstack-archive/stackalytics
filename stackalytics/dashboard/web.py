@@ -16,7 +16,6 @@
 import collections
 import operator
 import os
-import re
 import time
 
 import flask
@@ -639,15 +638,11 @@ def timeline(records, **kwargs):
     return [array_commits, array_commits_hl, array_loc]
 
 
-@app.template_filter('make_url')
-def to_url_params(dict_params, base_url):
-    return base_url + '?' + '&'.join(
-        ['%s=%s' % (k, v) for k, v in six.iteritems(dict_params)])
-
-
-@app.template_filter('remove_ctrl_chars')
-def remove_ctrl_chars(text):
-    return re.sub(r'[\W]', '_', text)
+@app.template_test()
+def too_old(timestamp):
+    age = cfg.CONF.age_warn
+    now = time.time()
+    return timestamp + age < now
 
 
 def main():
