@@ -11389,6 +11389,10 @@
             "company_name": "Internap"
         },
         {
+            "domains": ["inwinstack.com"],
+            "company_name": "inwinSTACK"
+        },
+        {
             "domains": ["iomart.com"],
             "company_name": "iomart",
             "aliases": ["iomart group"]
