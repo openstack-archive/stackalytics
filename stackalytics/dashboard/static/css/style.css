@@ -99,7 +99,11 @@ div.drop label {
 .drop {
     height: 30px;
     float: left;
-    margin-right: 20px;
+    margin-right: 23px;
+}
+
+.drop:last-child {
+    margin-right: 0;
 }
 
 .drop label {
