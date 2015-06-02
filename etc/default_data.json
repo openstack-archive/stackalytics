@@ -1937,11 +1937,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2015-May-07"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Craig Vyvial",
-            "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com"]
+            "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com", "craig.vyvial@hp.com"]
         },
         {
            "launchpad_id": "cpallares",
