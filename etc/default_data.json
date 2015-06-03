@@ -6685,11 +6685,15 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2015-May-31"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "Sachi King",
-            "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io"]
+            "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io", "sachi.king@hp.com"]
         },
         {
             "launchpad_id": "namei-unix",
