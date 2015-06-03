@@ -8611,6 +8611,18 @@
             "emails": ["sean.mccully@rackspace.com"]
         },
         {
+            "launchpad_id": "sean-mcginnis",
+            "gerrit_id": "SeanM",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean McGinnis",
+            "emails": ["sean_mcginnis@dell.com", "sean.mcginnis@gmail.com", "sean.mcginnis@gmx.com"]
+        },
+        {
             "launchpad_id": "seif",
             "companies": [
                 {
