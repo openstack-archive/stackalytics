@@ -1784,11 +1784,15 @@
                 },
                 {
                     "company_name": "Red Hat",
+                    "end_date": "2015-May-31"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
             "user_name": "Gordon Chung",
-            "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com"]
+            "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
         },
         {
             "launchpad_id": "claire921",
