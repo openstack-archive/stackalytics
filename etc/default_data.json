@@ -127,7 +127,7 @@
             "github_id": "abadger",
             "companies": [
                 {
-                    "company_name": "Red Hat",
+                    "company_name": "Ansible",
                     "end_date": null
                 }
             ],
@@ -6590,7 +6590,7 @@
                 }
             ],
             "user_name": "Michael DeHaan",
-            "emails": ["michael.dehaan@gmail.com", "michael.dehaan@ansible.com", "michael@ansible.com"]
+            "emails": ["michael.dehaan@gmail.com", "michael.dehaan@ansible.com", "michael@ansible.com", "michael@ansibleworks.com"]
         },
         {
             "launchpad_id": "mpmsimo",
