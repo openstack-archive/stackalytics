@@ -10497,11 +10497,15 @@
             "companies": [
                 {
                     "company_name": "ChinaNetCenter",
+                    "end_date": "2015-May-31"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
             "user_name": "yanheven",
-            "emails": ["yanheven@gmail.com", "yanhf@chinanetcenter.com"]
+            "emails": ["haifeng.yan@hp.com", "yanheven@gmail.com", "yanhf@chinanetcenter.com"]
         },
         {
             "launchpad_id": "yapengwu",
