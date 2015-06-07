@@ -4288,6 +4288,21 @@
             "emails": ["mkassawara@gmail.com", "matt.kassawara@rackspace.com"]
         },
         {
+            "launchpad_id": "irenab",
+            "companies": [
+                {
+                    "company_name": "Mellanox",
+                    "end_date": "2014-Dec-31"
+                },
+                {
+                    "company_name": "Midokura",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Irena Berezovsky",
+            "emails": ["irenab.dev@gmail.com", "irena@midokura.com", "irenab@mellanox.com"]
+        },
+        {
             "launchpad_id": "ironcamel",
             "companies": [
                 {
