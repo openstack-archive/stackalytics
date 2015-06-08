@@ -2436,11 +2436,15 @@
             "companies": [
                 {
                     "company_name": "Rakuten",
+                    "end_date": "2015-Apr-27"
+                },
+                {
+                    "company_name": "Daikanyama RED",
                     "end_date": null
                 }
             ],
             "user_name": "Koichi Yoshigoe",
-            "emails": ["koichi.yoshigoe@gmail.com", "koichi.yoshigoe@mail.rakuten.com"]
+            "emails": ["koichi.yoshigoe@gmail.com", "yoshigoe@d-red.jp", "koichi.yoshigoe@mail.rakuten.com"]
         },
         {
             "launchpad_id": "denis-cavalcante",
@@ -11201,6 +11205,10 @@
         {
             "domains": ["cybercom.fi", "cybercom.com"],
             "company_name": "Cybercom"
+        },
+        {
+            "domains": ["d-red.jp"],
+            "company_name": "Daikanyama RED"
         },
         {
             "domains": ["debian.org"],
