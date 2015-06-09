@@ -46,6 +46,18 @@
             "emails": ["295988511@qq.com","liuxinguo@huawei.com"]
         },
         {
+            "launchpad_id": "3-andrew",
+            "gerrit_id": "AndrewSpiers",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Spiers",
+            "emails": ["andrew@andrewspiers.net", "andrew.spiers@unimelb.edu.au"]
+        },
+        {
             "launchpad_id": "6-morgan",
             "companies": [
                 {
