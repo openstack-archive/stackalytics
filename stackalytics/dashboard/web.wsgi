@@ -13,4 +13,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from dashboard.web import app as application
+from stackalytics.dashboard.web import app as application
