@@ -1655,6 +1655,17 @@
             "emails": ["changbin.liu@gmail.com", "changbl@research.att.com"]
         },
         {
+            "launchpad_id": "changhyun83-b",
+            "companies": [
+                {
+                    "company_name": "LG CNS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "changhyun",
+            "emails": ["changhyun83@naver.com", "changhyun83@lgcns.com"]
+        },
+        {
             "launchpad_id": "changsimon",
             "companies": [
                 {
