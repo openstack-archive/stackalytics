@@ -5266,6 +5266,18 @@
             "emails": ["kb.sankethi@gmail.com"]
         },
         {
+            "launchpad_id": "kbaikov",
+            "gerrit_id": "kbaikov",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Konstantin Baikov",
+            "emails": ["konstantin.baikov@gmail.com", "kbaikov@suse.com"]
+        },
+        {
             "launchpad_id": "kbringard",
             "companies": [
                 {
