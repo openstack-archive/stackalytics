@@ -67,8 +67,20 @@ All requests support common set of parameters that allow to filter resulting dat
 ............................
 
 Data can be queried by time period:
- * ``start_date`` - when the period starts
- * ``end_date`` - when the period ends
+
+==========  ===========
+Parameter   Description
+==========  ===========
+start_date  When the period starts
+end_date    When the period ends
+==========  ===========
+
+Both ``start_date`` and ``end_date`` take as their argument `Unix time
+<http://en.wikipedia.org/wiki/Unix_time>`_
+
+For example to specify ``'Thu Jan  1 00:00:00 UTC 2015'`` the value would be
+``1420070400``
+
 Note that if both release and time period are specified then the data is selected for the
 intersection (thus the useful way is to specify release as ``all``).
 
