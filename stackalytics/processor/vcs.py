@@ -130,11 +130,11 @@ class Git(Vcs):
             os.chdir(self.sources_root)
             try:
                 sh.git('clone', self.repo['uri'])
+                os.chdir(self.folder)
             except sh.ErrorReturnCode as e:
                 LOG.error('Unable to clone git repo %s. Ignore it',
                           self.repo['uri'])
                 LOG.exception(e)
-            os.chdir(self.folder)
         else:
             os.chdir(self.folder)
             try:
