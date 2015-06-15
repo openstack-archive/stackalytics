@@ -8005,6 +8005,23 @@
             "emails": ["rjuvvadi@hcl.com", "rrjuvvadi@gmail.com", "ramana@venus.lekha.org"]
         },
         {
+            "launchpad_id": "rkiran",
+            "github_id": "kiran-r",
+            "gerrit_id": "Kiran",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-Jul-14"
+                },
+                {
+                    "company_name": "Maplelabs",
+                    "end_date": null
+                }
+            ],
+            "user_name":"Kiran R",
+            "emails": ["kiran.ranganath@maplelabs.com", "kiran7193@gmail.com"]
+        },
+        {
             "launchpad_id": "rkukura",
             "companies": [
                 {
@@ -11697,6 +11714,10 @@
         {
             "domains": ["managedit.ie"],
             "company_name": "Managed IT"
+        },
+        {
+            "domains": ["maplelabs.com"],
+            "company_name": "Maplelabs"
         },
         {
             "domains": ["maprtech.com", "mapr.com"],
