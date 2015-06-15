@@ -13048,8 +13048,8 @@
         },
         {
             "module": "vmware-nsx",
-            "uri": "git://git.openstack.org/stackforge/vmware-nsx.git",
-            "organization": "stackforge",
+            "uri": "git://git.openstack.org/openstack/vmware-nsx.git",
+            "organization": "openstack",
             "releases": [
                 {
                     "release_name": "ignored",
