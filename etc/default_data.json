@@ -1699,6 +1699,18 @@
             "emails": ["chanwit@gmail.com"]
         },
         {
+            "launchpad_id": "chelsea-winfree",
+            "gerrit_id": "chellygel",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chelsea Winfree",
+            "emails": ["chelsea.winfree@gmail.com", "chelsea.winfree@rackspace.com"]
+        },
+        {
             "launchpad_id": "chemikadze",
             "companies": [
                 {
