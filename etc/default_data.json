@@ -880,6 +880,17 @@
             "emails": ["amigliaccio@nicira.com", "armando.migliaccio@eu.citrix.com", "amigliaccio@internap.com", "armamig@gmail.com", "armando.migliaccio@citrix.com"]
         },
         {
+            "launchpad_id": "arnaud-jost",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arnaud Jost",
+            "emails": ["arnaud.jost@ovh.net"]
+        },
+        {
             "launchpad_id": "arnaudleg",
             "companies": [
                 {
@@ -4696,6 +4707,17 @@
             "emails": ["joshd@hq.newdream.net", "josh.durgin@dreamhost.com", "josh.durgin@inktank.com", "jdurgin@redhat.com"]
         },
         {
+            "launchpad_id": "jean-daniel-bonnetot",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jean-Daniel Bonnetot",
+            "emails": ["jean-daniel.bonnetot@ovh.net", "jean-daniel.bonnetot@corp.ovh.com", "gounini@geekarea.fr"]
+        },
+        {
             "launchpad_id": "jejbcan",
             "companies": [
                 {
@@ -7723,6 +7745,17 @@
             "emails": ["ramon@linux-labs.net", "racedo@redhat.com"]
         },
         {
+            "launchpad_id": "raphael-glon",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Raphael Glon",
+            "emails": ["raphael.glon@ovh.net"]
+        },
+        {
             "launchpad_id": "raphmraph",
             "companies": [
                 {
@@ -8164,6 +8197,17 @@
             ],
             "user_name": "Romain Hardouin",
             "emails": ["romain.hardouin@cloudwatt.com", "romain_hardouin@yahoo.fr"]
+        },
+        {
+            "launchpad_id": "romain-ledisez",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Romain Le Disez",
+            "emails": ["romain.ledisez@ovh.net"]
         },
         {
             "launchpad_id": "romain-s",
@@ -8942,6 +8986,17 @@
             ],
             "user_name": "Kui",
             "emails": ["skuicloud@gmail.com", "kui.shi@huawei.com"]
+        },
+        {
+            "launchpad_id": "slaweq",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Slawek Kaplonski",
+            "emails": ["slawomir.kaplonski@ovh.net", "slawek@kaplonski.pl"]
         },
         {
             "launchpad_id": "sleepsonthefloor",
@@ -10094,6 +10149,17 @@
             ],
             "user_name": "Venkata Siva Vijayendra Bhamidipati",
             "emails": ["vijayendrabvs@gmail.com", "vbhamidipati@ebaysf.com", "vbhamidipati@paypal.com"]
+        },
+        {
+            "launchpad_id": "vincegt",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vincent Cassé",
+            "emails": ["vincent.casse@ovh.net", "vincent@casse.me"]
         },
         {
             "launchpad_id": "vipuls",
@@ -11763,6 +11829,11 @@
         {
             "domains": ["osones.com"],
             "company_name": "Osones"
+        },
+        {
+            "domains": ["ovh.com"],
+            "company_name": "OVH",
+            "aliases": ["OVH Group", "RunAbove"]
         },
         {
             "domains": ["parallels.com"],
