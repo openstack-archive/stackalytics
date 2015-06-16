@@ -10408,6 +10408,18 @@
             "emails": ["reviewwanghong@126.com", "wh@chinanetcenter.com"]
         },
         {
+            "launchpad_id": "waipengyip",
+            "gerrit_id": "jake",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jake Yip",
+            "emails": ["waipengyip@yahoo.com", "waipengyip@gmail.com", "jake.yip@unimelb.edu.au"]
+        },
+        {
             "launchpad_id": "wan-yen-hsu",
             "companies": [
                 {
