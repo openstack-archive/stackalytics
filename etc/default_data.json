@@ -1161,6 +1161,26 @@
             "emails": ["berendt@b1-systems.de", "mail@cberendt.net"]
         },
         {
+            "launchpad_id": "bertiefulton",
+            "gerrit_id": "bertie.fultonsap.com",
+            "companies": [
+                {
+                    "company_name": "SAP",
+                    "end_date": "2015-Jun-15"
+                },
+                {
+                    "company_name": "Ampliphae",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bertie Fulton",
+            "emails": [
+                "bertie.fulton@sap.com",
+                "bertiefulton@yahoo.co.uk",
+                "bertie.fulton@ampliphae.com"
+            ]
+        },
+        {
             "launchpad_id": "bertrand-lallau",
             "companies": [
                 {
@@ -11129,6 +11149,10 @@
         {
             "domains": ["amadeus.com"],
             "company_name": "Amadeus"
+        },
+        {
+            "domains": ["ampliphae.com"],
+            "company_name": "Ampliphae"
         },
         {
             "domains": ["anchor.com.au", "anchor.net.au", "anchor.hosting"],
