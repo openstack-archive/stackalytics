@@ -11819,6 +11819,11 @@
             "company_name": "Metacloud"
         },
         {
+            "domains": ["metaswitch.com"],
+            "company_name": "Metaswitch",
+            "aliases": ["Metaswitch Networks"]
+        },
+        {
             "domains": ["microsoft.com"],
             "company_name": "Microsoft"
         },
