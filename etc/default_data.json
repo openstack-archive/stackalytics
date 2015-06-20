@@ -3670,6 +3670,17 @@
             "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com"]
         },
         {
+            "launchpad_id": "gaoqian1983",
+            "companies": [
+                {
+                    "company_name": "Huaxin Hospital, First Hospital of Tsinghua University",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Viola Gao",
+            "emails": ["gaoqian1983@outlook.com"]
+        },
+        {
             "launchpad_id": "garyk",
             "companies": [
                 {
