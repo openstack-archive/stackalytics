@@ -4185,6 +4185,17 @@
             "emails": ["hong.wong@hp.com"]
         },
         {
+            "launchpad_id": "houshengbo",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vincent Hou",
+            "emails": ["houshengbo@hotmail.com", "sbhou@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "hovyakov",
             "companies": [
                 {
