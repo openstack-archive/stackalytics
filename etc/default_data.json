@@ -6009,6 +6009,17 @@
             "emails": ["m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
+            "launchpad_id": "madhusudhan-kandadai",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Madhusudhan Kandadai",
+            "emails": ["madhusudhan.openstack@gmail.com", "madhusudhan.kandadai@hp.com"]
+        },
+        {
             "launchpad_id": "magesh-gv",
             "companies": [
                 {
