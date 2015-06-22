@@ -16,6 +16,7 @@
 import cgi
 import datetime
 import gzip
+import io
 import json
 import random
 import re
@@ -105,6 +106,8 @@ def read_uri(uri):
         req = six.moves.urllib.request.Request(
             url=uri, headers={'User-Agent': random.choice(user_agents)})
         fd = six.moves.urllib.request.urlopen(req)
+        if six.PY3:
+            fd = io.TextIOWrapper(fd)
         raw = fd.read()
         fd.close()
         return raw
