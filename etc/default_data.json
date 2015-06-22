@@ -13411,6 +13411,11 @@
             "module": "ovs",
             "organization": "openvswitch",
             "uri": "https://github.com/openvswitch/ovs.git"
+        },
+        {
+            "module": "ceph",
+            "organization": "ceph",
+            "uri": "https://github.com/ceph/ceph.git"
         }
     ],
     "project_sources": [
@@ -13589,7 +13594,19 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["docker-group", "kubernetes", "jclouds", "cloudfoundry", "ansible-group", "pypa-group", "ovs"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes", "jclouds", "cloudfoundry", "ovs", "pypa-group"]
+        },
+        {
+            "id": "ansible-group",
+            "title": "Ansible",
+            "child": true,
+            "modules": ["ansible-group"]
+        },
+        {
+            "id": "ceph-group",
+            "title": "Ceph",
+            "child": true,
+            "modules": ["ceph"]
         },
         {
             "id": "cloudfoundry-group",
@@ -13610,22 +13627,16 @@
             "modules": ["kubernetes"]
         },
         {
-            "id": "ansible-group",
-            "title": "Ansible",
+            "id": "ovs-group",
+            "title": "Open vSwitch",
             "child": true,
-            "modules": ["ansible-group"]
+            "modules": ["ovs"]
         },
         {
             "id": "pypa-group",
             "title": "Python Packaging",
             "child": true,
             "modules": ["pypa-group"]
-        },
-        {
-            "id": "ovs-group",
-            "title": "Open vSwitch",
-            "child": true,
-            "modules": ["ovs"]
         }
     ]
 }

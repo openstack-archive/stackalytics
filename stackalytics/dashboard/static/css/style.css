@@ -390,7 +390,7 @@ a[target]:not([target='']):after, .ext_link:after {
 }
 
 .select2-results {
-    max-height: 300px;
+    max-height: 350px;
 }
 
 .ui-tooltip {
