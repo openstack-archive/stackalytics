@@ -96,7 +96,7 @@ def _process_reviews(record_iterator, ci_map, module, branch):
 
 
 def _process_repo(repo, runtime_storage_inst, record_processor_inst,
-                  rcs_inst, bug_modified_since):
+                  rcs_inst):
     uri = repo['uri']
     LOG.info('Processing repo uri: %s', uri)
 
@@ -109,12 +109,19 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
                                      utils.merge_records)
 
     LOG.debug('Processing bugs for repo uri: %s', uri)
+    current_date = utils.date_to_timestamp('now')
+    bug_modified_since = runtime_storage_inst.get_by_key(
+        'bug_modified_since-%s' % repo['module'])
+
     bug_iterator = bps.log(repo, bug_modified_since)
     bug_iterator_typed = _record_typer(bug_iterator, 'bug')
     processed_bug_iterator = record_processor_inst.process(
         bug_iterator_typed)
     runtime_storage_inst.set_records(processed_bug_iterator,
                                      utils.merge_records)
+
+    runtime_storage_inst.set_by_key(
+        'bug_modified_since-%s' % repo['module'], current_date)
 
     vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
     vcs_inst.fetch()
@@ -201,20 +208,15 @@ def _post_process_records(record_processor_inst, repos):
 def process(runtime_storage_inst, record_processor_inst):
     repos = utils.load_repos(runtime_storage_inst)
 
-    current_date = utils.date_to_timestamp('now')
-    bug_modified_since = runtime_storage_inst.get_by_key('bug_modified_since')
-
     rcs_inst = rcs.get_rcs(cfg.CONF.review_uri)
     rcs_inst.setup(key_filename=cfg.CONF.ssh_key_filename,
                    username=cfg.CONF.ssh_username)
 
     for repo in repos:
         _process_repo(repo, runtime_storage_inst, record_processor_inst,
-                      rcs_inst, bug_modified_since)
+                      rcs_inst)
 
     rcs_inst.close()
-
-    runtime_storage_inst.set_by_key('bug_modified_since', current_date)
 
     LOG.info('Processing mail lists')
     mail_lists = runtime_storage_inst.get_by_key('mail_lists') or []
