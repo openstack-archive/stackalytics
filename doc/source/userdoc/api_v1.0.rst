@@ -289,6 +289,10 @@ Depending on selected metric Activity log contains commits, reviews, emails or b
 | GET             | /api/1.0/activity                                                 | Activity log                                        |
 +-----------------+-------------------------------------------------------------------+-----------------------------------------------------+
 
+When querying the activity log, the page_size and start_record parameters can be used to manage
+the paging of results (splitting results over multiple requests/responses). The default value of
+page_size is 10.
+
 **Example Response**
 
 .. sourcecode:: json
