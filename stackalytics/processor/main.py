@@ -14,7 +14,6 @@
 # limitations under the License.
 
 import collections
-import logging as std_logging
 
 from oslo_config import cfg
 from oslo_log import log as logging
@@ -319,17 +318,8 @@ def process_project_list(runtime_storage_inst, project_list_uri):
 
 
 def main():
-    # init conf and logging
-    conf = cfg.CONF
-    conf.register_cli_opts(config.OPTS)
-    conf.register_opts(config.OPTS)
-    logging.register_options(conf)
-    logging.set_defaults()
-    conf(project='stackalytics')
-
-    logging.setup(conf, 'stackalytics')
-    LOG.info('Logging enabled')
-    conf.log_opt_values(LOG, std_logging.DEBUG)
+    utils.init_config_and_logging(config.CONNECTION_OPTS +
+                                  config.PROCESSOR_OPTS)
 
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         cfg.CONF.runtime_storage_uri)

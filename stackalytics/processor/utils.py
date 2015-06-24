@@ -18,16 +18,32 @@ import datetime
 import gzip
 import io
 import json
+import logging as std_logging
 import random
 import re
 import time
 
 import iso8601
+from oslo_config import cfg
 from oslo_log import log as logging
 import six
 
 
 LOG = logging.getLogger(__name__)
+
+
+def init_config_and_logging(opts):
+    conf = cfg.CONF
+    conf.register_cli_opts(opts)
+    conf.register_opts(opts)
+    logging.register_options(conf)
+    logging.set_defaults()
+
+    conf(project='stackalytics')
+
+    logging.setup(conf, 'stackalytics')
+    LOG.info('Logging enabled')
+    conf.log_opt_values(LOG, std_logging.DEBUG)
 
 
 def date_to_timestamp(d):

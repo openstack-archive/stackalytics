@@ -43,7 +43,7 @@ app.register_blueprint(kpi.blueprint)
 LOG = logging.getLogger(__name__)
 
 conf = cfg.CONF
-conf.register_opts(config.OPTS)
+conf.register_opts(config.CONNECTION_OPTS + config.DASHBOARD_OPTS)
 
 
 # Handlers ---------

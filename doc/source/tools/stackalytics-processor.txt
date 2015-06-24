@@ -1,40 +1,28 @@
-usage: stackalytics-processor [-h] [--age-warn AGE_WARN]
-                              [--collect-profiler-stats COLLECT_PROFILER_STATS]
-                              [--config-dir DIR] [--config-file PATH]
+usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
                               [--corrections-uri CORRECTIONS_URI]
-                              [--dashboard-update-interval DASHBOARD_UPDATE_INTERVAL]
                               [--days_to_update_members DAYS_TO_UPDATE_MEMBERS]
-                              [--debug] [--default-metric DEFAULT_METRIC]
-                              [--default-project-type DEFAULT_PROJECT_TYPE]
-                              [--default-release DEFAULT_RELEASE]
+                              [--debug] [--default-data-uri DEFAULT_DATA_URI]
                               [--driverlog-data-uri DRIVERLOG_DATA_URI]
-                              [--force-update] [--git-base-uri GIT_BASE_URI]
-                              [--listen-host LISTEN_HOST]
-                              [--listen-port LISTEN_PORT]
+                              [--git-base-uri GIT_BASE_URI]
                               [--log-config-append PATH]
                               [--log-date-format DATE_FORMAT]
                               [--log-dir LOG_DIR] [--log-file PATH]
                               [--log-format FORMAT]
                               [--members-look-ahead MEMBERS_LOOK_AHEAD]
-                              [--nodebug] [--noforce-update] [--nouse-syslog]
+                              [--nodebug] [--nouse-syslog]
                               [--nouse-syslog-rfc-format] [--noverbose]
                               [--project-list-uri PROJECT_LIST_URI]
                               [--review-uri REVIEW_URI]
-                              [--runtime-storage-uri RUNTIME_STORAGE_URI]
                               [--sources-root SOURCES_ROOT]
                               [--ssh-key-filename SSH_KEY_FILENAME]
                               [--ssh-username SSH_USERNAME]
                               [--syslog-log-facility SYSLOG_LOG_FACILITY]
                               [--use-syslog] [--use-syslog-rfc-format]
                               [--verbose] [--version]
-                              [--default-data-uri DEFAULT_DATA_URI]
+                              [--runtime-storage-uri RUNTIME_STORAGE_URI]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --age-warn AGE_WARN   Warn if the age of data is more than this value, sec
-  --collect-profiler-stats COLLECT_PROFILER_STATS
-                        Name of file to store python profiler data. This
-                        option works for dashboard only
   --config-dir DIR      Path to a config directory to pull *.conf files from.
                         This file set is sorted, so as to provide a
                         predictable parse order if individual options are
@@ -46,28 +34,16 @@ optional arguments:
                         precedence. The default files used are: None.
   --corrections-uri CORRECTIONS_URI
                         The address of file with corrections data
-  --dashboard-update-interval DASHBOARD_UPDATE_INTERVAL
-                        The interval specifies how frequently dashboard should
-                        check for updates in seconds
   --days_to_update_members DAYS_TO_UPDATE_MEMBERS
                         Number of days to update members
   --debug, -d           Print debugging output (set logging level to DEBUG
                         instead of default WARNING level).
-  --default-metric DEFAULT_METRIC
-                        Default metric
-  --default-project-type DEFAULT_PROJECT_TYPE
-                        Default project type
-  --default-release DEFAULT_RELEASE
-                        Default release, the most recent if not set
+  --default-data-uri DEFAULT_DATA_URI
+                        URI for default data
   --driverlog-data-uri DRIVERLOG_DATA_URI
                         URI for default data
-  --force-update        Forcibly read default data and update records
   --git-base-uri GIT_BASE_URI
                         git base location
-  --listen-host LISTEN_HOST
-                        The address dashboard listens on
-  --listen-port LISTEN_PORT
-                        The port dashboard listens on
   --log-config-append PATH, --log_config PATH
                         The name of a logging configuration file. This file is
                         appended to any existing logging configuration files.
@@ -90,7 +66,6 @@ optional arguments:
   --members-look-ahead MEMBERS_LOOK_AHEAD
                         How many member profiles to look ahead after the last
   --nodebug             The inverse of --debug
-  --noforce-update      The inverse of --force-update
   --nouse-syslog        The inverse of --use-syslog
   --nouse-syslog-rfc-format
                         The inverse of --use-syslog-rfc-format
@@ -99,8 +74,6 @@ optional arguments:
                         The address of file with the official projects list
   --review-uri REVIEW_URI
                         URI of review system
-  --runtime-storage-uri RUNTIME_STORAGE_URI
-                        Storage URI
   --sources-root SOURCES_ROOT
                         The folder that holds all project sources to analyze
   --ssh-key-filename SSH_KEY_FILENAME
@@ -121,5 +94,5 @@ optional arguments:
   --verbose, -v         Print more verbose output (set logging level to INFO
                         instead of default WARNING level).
   --version             show program's version number and exit
-  --default-data-uri DEFAULT_DATA_URI
-                        URI for default data
+  --runtime-storage-uri RUNTIME_STORAGE_URI
+                        Storage URI

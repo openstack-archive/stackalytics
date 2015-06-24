@@ -13,7 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import logging as std_logging
 import pickle
 import re
 import sys
@@ -153,19 +152,7 @@ def _connect_to_memcached(uri):
 
 
 def main():
-    # init conf and logging
-    conf = cfg.CONF
-    conf.register_cli_opts(config.OPTS)
-    conf.register_cli_opts(OPTS)
-    conf.register_opts(config.OPTS)
-    conf.register_opts(OPTS)
-    logging.register_options(conf)
-    logging.set_defaults()
-    conf(project='stackalytics')
-
-    logging.setup(conf, 'stackalytics')
-    LOG.info('Logging enabled')
-    conf.log_opt_values(LOG, std_logging.DEBUG)
+    utils.init_config_and_logging(config.CONNECTION_OPTS + OPTS)
 
     memcached_inst = _connect_to_memcached(cfg.CONF.runtime_storage_uri)
 
