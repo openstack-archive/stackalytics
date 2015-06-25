@@ -8954,6 +8954,18 @@
             "emails": ["shrirang.phadke@izeltech.com"]
         },
         {
+            "launchpad_id": "shu-shen",
+            "gerrit_id": "shushen",
+            "companies": [
+                {
+                    "company_name": "Siaras",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shu Shen",
+            "emails": ["sshen@siaras.com", "shu.shen@gmail.com"]
+        },
+        {
             "launchpad_id": "shuichiro-makigaki",
             "gerrit_id": "shuichiro-makigaki",
             "companies": [
@@ -12112,6 +12124,10 @@
             "domains": ["seagate.com"],
             "company_name": "Seagate",
             "aliases": ["Seagate Technology"]
+        },
+        {
+            "domains": ["siaras.com"],
+            "company_name": "Siaras"
         },
         {
             "domains": ["simplivity.com"],
