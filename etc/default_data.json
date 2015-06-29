@@ -13444,6 +13444,30 @@
             "module": "ceph",
             "organization": "ceph",
             "uri": "https://github.com/ceph/ceph.git"
+        },
+        {
+            "module": "barbican",
+            "organization": "openstack",
+            "uri": "git://git.openstack.org/openstack/barbican.git",
+            "releases": [
+                {
+                    "branch": "stable/juno",
+                    "tag_to": "HEAD",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1"
+                },
+                {
+                    "branch": "stable/kilo",
+                    "tag_to": "HEAD",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Liberty",
+                    "tag_from": "2015.1.0"
+                }
+            ]
         }
     ],
     "project_sources": [
