@@ -9899,6 +9899,17 @@
             "emails": ["aman@tmm1.net"]
         },
         {
+            "launchpad_id": "tmmorin-orange",
+            "companies": [
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thomas Morin",
+            "emails": ["tmmorin.orange@gmail.com","thomas.morin@orange.com"]
+        },
+        {
             "launchpad_id": "toabctl",
             "companies": [
                 {
