@@ -2829,6 +2829,21 @@
             "emails": ["olivier@docker.com"]
         },
         {
+            "launchpad_id": "dmsimard",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Moreau Simard",
+            "emails": ["moi@dmsimard.com", "dmsimard@iweb.com", "dmsimard@internap.com"]
+        },
+        {
             "launchpad_id": "docaedo",
             "companies": [
                 {
