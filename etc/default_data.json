@@ -11080,6 +11080,18 @@
             "emails": ["xyzjerry@gmail.com", "jerryzhao@fortinet.com", "zhaoxinyu@huawei.com"]
         },
         {
+            "launchpad_id": "zhen-fang",
+            "gerrit_id": "fangzhen",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fang Zhen",
+            "emails": ["zhen.fang@easystack.cn","fangzhenzyou@gmail.com"]
+        },
+        {
             "launchpad_id": "zhhuabj",
             "companies": [
                 {
