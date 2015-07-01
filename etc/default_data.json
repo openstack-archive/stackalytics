@@ -6514,6 +6514,21 @@
             "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com", "matt.fischer@twcable.com", "matthew.fischer@twcable.com"]
         },
         {
+            "launchpad_id": "mgagne",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mathieu Gagné",
+            "emails": ["mgagne@iweb.com", "mgagne@internap.com"]
+        },
+        {
             "launchpad_id": "mgeisler",
             "companies": [
                 {
