@@ -4895,6 +4895,18 @@
             "emails": ["wentian@unitedstack.com", "jiangwt100@gmail.com"]
         },
         {
+            "launchpad_id": "jikyll",
+            "gerrit_id": "jikyll",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Haodong Tang",
+            "emails": ["jikyll25@gmail.com","haodong.tang@easystack.cn"]
+        },
+        {
             "launchpad_id": "jim-rollenhagen",
             "companies": [
                 {
