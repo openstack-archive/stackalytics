@@ -891,6 +891,21 @@
             "emails": ["aplanas@gmail.com", "aplanas@suse.de"]
         },
         {
+            "launchpad_id": "arahal",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ahmed Rahal",
+            "emails": ["arahal@iweb.com", "arahal@internap.com"]
+        },
+        {
             "launchpad_id": "armando-migliaccio",
             "gerrit_id": "armando-migliaccio",
             "companies": [
@@ -5854,6 +5869,21 @@
             "emails": ["os.lcheng@gmail.com", "lin-hua.cheng@hp.com", "lhcheng@yahoo-inc.com"]
         },
         {
+            "launchpad_id": "lindycoder",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Martin Roy",
+            "emails": ["lindycoder@gmail.com", "mroy@iweb.com", "martin.roy@internap.com"]
+        },
+        {
             "launchpad_id": "linuxjedi",
             "companies": [
                 {
@@ -7370,6 +7400,21 @@
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
                 "openstack-infra@lists.openstack.org", "info@bitergia.com"]
+        },
+        {
+            "launchpad_id": "opilotte",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": "2014-Aug-15"
+                }
+            ],
+            "user_name": "Olivier Pilotte",
+            "emails": ["olivierpilotte@gmail.com", "opilotte@iweb.com"]
         },
         {
             "github_id": "oppegard",
