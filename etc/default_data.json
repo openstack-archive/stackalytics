@@ -3873,6 +3873,21 @@
             "emails": ["go.chiba@gmail.com"]
         },
         {
+            "launchpad_id": "godp1301",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Philippe Godin",
+            "emails": ["godp1301@gmail.com", "pgodin@iweb.com", "pgodin@internap.com"]
+        },
+        {
             "launchpad_id": "goneri",
             "companies": [
                 {
