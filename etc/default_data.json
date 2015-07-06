@@ -4903,6 +4903,18 @@
             "emails": ["code@gentlydownthe.net", "jesusaurus@inbox.com", "k.jonathan.harker@hp.com"]
         },
         {
+            "launchpad_id": "jexbow",
+            "gerrit_id": "Rayman",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rayman Lwo",
+            "emails": ["liangliang.luo@easystack.cn", "jexbow@foxmail.com"]
+        },
+        {
             "launchpad_id": "jhalterman",
             "companies": [
                 {
