@@ -4003,6 +4003,17 @@
             "emails": ["susie.gray@hp.com"]
         },
         {
+            "launchpad_id": "gs-opencos-zte",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ming Gao",
+            "emails": ["gaoshilin@163.com", "gaoming10132825@zte.com.cn"]
+        },
+        {
             "launchpad_id": "gtt116",
             "companies": [
                 {
