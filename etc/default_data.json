@@ -73,11 +73,15 @@
             "companies": [
                 {
                     "company_name": "EMC",
+                    "end_date": "2015-Jun-30"
+                },
+                {
+                    "company_name": "Blue Box",
                     "end_date": null
                 }
             ],
             "user_name": "Tyler Britten",
-            "emails": ["me@vmtyler.com", "tyler.britten@emc.com"]
+            "emails": ["me@vmtyler.com", "tyler.britten@emc.com", "tbritten@bluebox.net", "tbritten@blueboxcloud.com"]
         },
         {
             "launchpad_id": "9lex",
