@@ -5639,6 +5639,17 @@
             "emails": ["chenrui.momo@gmail.com", "kiwik.chenrui@huawei.com"]
         },
         {
+            "launchpad_id": "klkumar",
+            "companies": [
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "kumar lakshman kumar",
+            "emails": ["lakshman@aptira.com", "vit.lakshman@gmail.com"]
+        },
+        {
             "launchpad_id": "koti-kelam",
             "companies": [
                 {
