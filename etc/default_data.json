@@ -11247,6 +11247,17 @@
             "emails": ["zhen.fang@easystack.cn","fangzhenzyou@gmail.com"]
         },
         {
+            "launchpad_id": "zhengzhenyu",
+            "companies": [
+                {
+                "company_name": "Huawei",
+                "end_date": null
+                }
+            ],
+            "user_name": "Zhenyu Zheng",
+            "emails": ["zhengzhenyu@huawei.com", "zheng.zhenyu@outlook.com", "zhengzhenyulixi@gmail.com"]
+        },
+        {
             "launchpad_id": "zhhuabj",
             "companies": [
                 {
