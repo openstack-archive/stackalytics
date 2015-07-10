@@ -5558,6 +5558,17 @@
             "emails": ["ken.pepple@cloudtp.com", "ken@pepple.info", "ken.pepple@rabbityard.com", "ken.pepple@gmail.com"]
         },
         {
+            "launchpad_id":"kencjohnston",
+            "companies": [
+                {
+                    "company_name":"Rackspace",
+                    "end_date":null
+                }
+            ],
+            "user_name":"Kenny Johnston",
+            "emails":["kenny.johnston@rackspace.com", "kencjohnston@gmail.com"]
+        },
+        {
             "github_id": "kennethreitz",
             "companies": [
                 {
