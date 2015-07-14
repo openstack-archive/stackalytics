@@ -713,6 +713,17 @@
             "emails": ["akostov@docker.com"]
         },
         {
+            "launchpad_id": "andreykurilin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrey Kurilin",
+            "emails": ["andr.kurilin@gmail.com", "akurilin@mirantis.com"]
+        },
+        {
             "launchpad_id": "andrlw",
             "companies": [
                 {
