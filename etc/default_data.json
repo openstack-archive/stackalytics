@@ -11168,6 +11168,18 @@
             "emails": ["zaitcev@kotori.zaitcev.us", "zaitcev@redhat.com"]
         },
         {
+            "launchpad_id": "zara-zaimeche",
+            "gerrit_id": "Zara",
+            "companies": [
+                {
+                    "company_name": "Codethink",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zara",
+            "emails": ["zara.zaimeche@codethink.co.uk"]
+        },
+        {
             "launchpad_id": "zaro0508",
             "companies": [
                 {
