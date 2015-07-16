@@ -230,6 +230,20 @@
             "emails": ["zhangcan@letv.com", "can@canx.me"]
         },
         {
+            "launchpad_id": "adam-coldrick",
+            "gerrit_id": "SotK",
+            "companies": [
+                {
+                    "company_name": "Codethink",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adam Coldrick",
+            "emails": [
+                "adam.coldrick@codethink.co.uk"
+            ]
+        },
+        {
             "launchpad_id": "adam-harwell",
             "companies": [
                 {
