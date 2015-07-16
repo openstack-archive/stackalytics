@@ -497,6 +497,18 @@
             "emails": ["alejandro.e.paredes@intel.com", "aleparedes@gmail.com"]
         },
         {
+            "launchpad_id": "aleksiyantsa",
+            "gerrit_id": "yappo",
+            "companies": [
+                {
+                    "company_name": "ISP RAS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Aleksiyants",
+            "emails": ["aleksiyantsa@gmail.com", "aleksiyantsa@ispras.ru"]
+        },
+        {
             "launchpad_id": "alex-gaynor",
             "companies": [
                 {
