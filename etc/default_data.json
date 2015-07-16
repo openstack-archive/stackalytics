@@ -9279,7 +9279,19 @@
             "emails": ["sina.sa@gmail.com", "sina@aptira.com"]
         },
         {
-             "launchpad_id": "sjayanthi",
+            "launchpad_id": "sinvalv",
+            "gerrit_id": "sinvalvieira",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sinval Vieira",
+            "emails": ["sinval@lsd.ufcg.edu.br", "sinvalneto01@gmail.com"]
+        },
+        {
+            "launchpad_id": "sjayanthi",
             "companies": [
                 {
                     "company_name": "HP",
