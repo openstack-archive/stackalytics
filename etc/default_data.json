@@ -4714,6 +4714,18 @@
             "emails": ["jprovazn@redhat.com", "jan.provaznik@gmail.com"]
         },
         {
+            "launchpad_id": "janonymous",
+            "gerrit_id": "Janonymous",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaivish Kothari",
+            "emails": ["jaivish.kothari@nectechnologies.in", "janonymous.codevulture@gmail.com"]
+        },
+        {
             "launchpad_id": "jasmeet-sidhu",
             "companies": [
                 {
