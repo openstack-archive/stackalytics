@@ -5742,11 +5742,13 @@
             "companies": [
                 {
                     "company_name": "HP",
-                    "end_date": null
+                    "end_date": "2015-Jul-31"
                 }
             ],
             "user_name": "Louis Taylor",
-            "emails": ["louis.taylor@hp.com", "kragniz@gmail.com", "louis@kragniz.eu"]
+            "emails": ["louis.taylor@hp.com",
+                       "kragniz@gmail.com",
+                       "louis@kragniz.eu"]
         },
         {
             "launchpad_id": "krinkle",
