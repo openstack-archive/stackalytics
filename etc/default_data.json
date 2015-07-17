@@ -9841,6 +9841,20 @@
             "emails": [ "qiaoliyong@gmail.com", "liyong.qiao@intel.com", "taget@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "takeaki-matsumoto",
+            "gerrit_id": "takmatsu",
+            "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Takeaki Mitsui",
+           "emails": [
+                "takeaki.matsumoto@ntt.com"
+           ]
+        },
+        {
             "launchpad_id": "tan-lin-good",
             "companies": [
                 {
@@ -10082,6 +10096,21 @@
             ],
             "user_name": "Takaaki FURUKAWA",
             "emails": ["takaaki.furukawa@rakops.com", "takaaki.furukawa@mail.rakuten.com"]
+        },
+        {
+            "launchpad_id": "tkyk-mitsui",
+            "gerrit_id": "takayuki-mitsui",
+            "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "takayuki",
+           "emails": [
+                "tkyk.mitsui@gmail.com",
+                "takayuki.mitsui@ntt.com"
+           ]
         },
         {
             "launchpad_id": "tmazur",
