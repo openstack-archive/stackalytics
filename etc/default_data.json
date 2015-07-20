@@ -11505,7 +11505,8 @@
               "Freelance IT Specialist", "No Affiliation", "Not applicable", "Unaffilliated", "Unaffiliate", "Unafilliated",
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
               "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy",
-              "unaffillated", "Unafflicated", "Unafiliated", "Unaffialiated"]
+              "unaffillated", "Unafflicated", "Unafiliated", "Unaffialiated", "Unaffiliation", "Unaffilicated", "Unaffilinated",
+              "indepedent", "Unaffiliatd", "Anonomous", "unaffiliated student", "Personal", "Unalliliated"]
         },
         {
             "domains": ["360.cn"],
@@ -11696,6 +11697,10 @@
         {
             "domains": ["cable.comcast.com"],
             "company_name": "Comcast"
+        },
+        {
+            "domains": ["calsoftinc.com"],
+            "company_name": "Calsoft"
         },
         {
             "domains": ["calxeda.com"],
@@ -11995,8 +12000,10 @@
         {
             "domains": ["huawei.com"],
             "company_name": "Huawei",
-            "aliases": ["Huawei Technologies Co. Ltd", "Huawei Technologies Co., Ltd.", "Huawei Technology",
-              "Huawei Technologies Düsseldorf", "Huawei Technologies India Private Limited"]
+            "aliases": ["Huawei Technologies", "Huawei Technology", "Huawei Technologies Co. Limitied",
+              "Huawei Technologies Düsseldorf", "Huawei Technologies India Private Limited", "Huawei china",
+              "Huawei Tech", "Huawei Enterprise Business Group", "huawei technical", "Huawei Technologies India",
+              "huawei storage system", "华为技术有限公司", "华为"]
         },
         {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
@@ -12208,7 +12215,8 @@
         },
         {
             "domains": ["midokura.com", "midokura.jp"],
-            "company_name": "Midokura"
+            "company_name": "Midokura",
+            "aliases": ["Midokura Japan"]
         },
         {
             "domains": ["mirantis.com", "mirantis.ru"],
