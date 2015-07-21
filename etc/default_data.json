@@ -10217,6 +10217,17 @@
             "emails": ["itzshamail@gmail.com"]
         },
         {
+            "launchpad_id": "shaohef",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ShaoHe Feng",
+            "emails": ["shaohef@126.com", "shaohe.feng@intel.com"]
+        },
+        {
             "launchpad_id": "shashirekha-j-gundur",
             "gerrit_id": "shashirekha.j.gundur",
             "companies": [
