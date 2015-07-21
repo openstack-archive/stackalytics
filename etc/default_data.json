@@ -122,6 +122,10 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2015-Jan-02"
+                },
+                {
+                    "company_name": "ThoughtWorks",
                     "end_date": null
                 }
             ],
