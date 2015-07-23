@@ -4615,6 +4615,18 @@
             "emails": ["itoumsn@nttdata.co.jp"]
         },
         {
+            "launchpad_id": "iurygregory",
+            "gerrit_id": "iurygregory",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Iury Gregory",
+            "emails": ["iurygregory@gmail.com", "iurygregory@lsd.ufcg.edu.br"]
+        },
+        {
             "launchpad_id": "ivoks",
             "companies": [
                 {
