@@ -7588,6 +7588,19 @@
             "emails": ["pablo.a.fuente@intel.com"]
         },
         {
+            "launchpad_id": "palvarez89",
+            "gerrit_id": "pedroalvarez",
+            "github_id": "palvarez89",
+            "companies": [
+                {
+                    "company_name": "Codethink",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pedro Alvarez Piedehierro",
+            "emails": ["pedro.alvarez@codethink.co.uk", "palvarez89@gmail.com"]
+        },
+        {
             "launchpad_id": "pandemicsyn",
             "companies": [
                 {
