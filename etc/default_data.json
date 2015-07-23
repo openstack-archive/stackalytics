@@ -485,6 +485,21 @@
             "emails": ["alopgeek@gmail.com", "abelopez@cisco.com", "al592b@att.com"]
         },
         {
+            "launchpad_id": "aldavud",
+            "companies": [
+                {
+                    "company_name": "Nine Internet Solutions AG",
+                    "end_date": "2014-Jul-31"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Gurtner",
+            "emails": ["aldavud@crimson.ch", "dgurtner@redhat.com", "david@nine.ch", "david.gurtner1@swisscom.com"]
+        },
+        {
             "launchpad_id": "alejandro-e-paredes",
             "gerrit_id": "aeparede",
             "companies": [
@@ -12340,6 +12355,10 @@
         {
             "domains": ["nimbula.com"],
             "company_name": "Nimbula"
+        },
+        {
+            "domains": ["nine.ch"],
+            "company_name": "Nine Internet Solutions AG"
         },
         {
             "domains": ["nitrous.io"],
