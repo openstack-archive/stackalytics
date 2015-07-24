@@ -10276,6 +10276,18 @@
             "emails": ["todd@toddmorey.com", "toddmorey@todds-mbp-2.(none)", "toddmorey@todds-mbp-2.grandenetworks.net", "toddmorey@todds-macbook-pro-2.local"]
         },
         {
+            "launchpad_id": "tom-pollard",
+            "gerrit_id": "CTtpollard",
+            "companies": [
+                {
+                    "company_name": "Codethink",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tom Pollard",
+            "emails": ["tom.pollard@codethink.co.uk", "tom_pollard@hotmail.co.uk"]
+        },
+        {
             "launchpad_id": "torgomatic",
             "companies": [
                 {
