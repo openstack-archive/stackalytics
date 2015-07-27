@@ -2934,6 +2934,10 @@
             "companies": [
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2015-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
