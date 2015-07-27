@@ -11556,6 +11556,17 @@
             "emails": ["hzhou8@ebaysf.com", "zhouhan@gmail.com"]
         },
         {
+            "launchpad_id": "zhu-rong",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhu.rong",
+            "emails": ["zhu.rong@99cloud.net", "aaronzhu1020@gmail.com"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
