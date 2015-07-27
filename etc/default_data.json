@@ -1855,6 +1855,17 @@
             "emails": ["nsokolov@griddynamics.com", "nsokolov@griddynamics.net", "chemikadze@gmail.com"]
         },
         {
+            "launchpad_id": "chen-qiaomin",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "qiaomin032",
+            "emails": ["chen.qiaomin@99cloud.net", "qiaomin032@sina.com"]
+        },
+        {
             "launchpad_id": "chen-zheng",
             "gerrit_id": "jackychen",
             "companies": [
