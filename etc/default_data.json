@@ -13975,6 +13975,20 @@
             ]
         },
         {
+            "module_group_name": "fuel-python",
+            "modules": [
+              "fuel-agent",
+              "fuel-astute",
+              "fuel-nailgun-agent",
+              "fuel-provision",
+              "fuel-tasklib",
+              "fuel-upgrade",
+              "fuel-web",
+              "fuel-plugins",
+              "python-fuelclient"
+            ]
+        },
+        {
             "module_group_name": "group-based-policy-group",
             "modules": ["group-based-policy", "group-based-policy-ui",
             "group-based-policy-automation", "group-based-policy-specs",
