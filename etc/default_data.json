@@ -7007,11 +7007,15 @@
                 },
                 {
                     "company_name": "independent",
+                    "end_date": "2015-Jul-23"
+                },
+                {
+                    "company_name": "SUSE Linux GmBH",
                     "end_date": null
                 }
             ],
             "user_name": "Madhu Mohan Nelemane",
-            "emails": ["snmohan83@gmail.com", "mmohan@mvista.com"]
+            "emails": ["snmohan83@gmail.com", "mmohan@mvista.com", "mmnelemane@suse.com"]
         },
         {
             "launchpad_id": "mmuehl",
