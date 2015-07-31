@@ -32,24 +32,18 @@ function appendKpiBlock(container_id, kpi_block) {
     }
 }
 
-function processStats(container_id, url, query_options, item_id, metric, text_goal, comparator, data_filter) {
+function processStats(container_id, url, query_options, item_id, metric, text_goal, comparator) {
     $.ajax({
         url: makeURI(url, query_options),
         dataType: "jsonp",
         success: function (data) {
             data = data["stats"];
             var position = -1;
-            var index = 0;
             var sum = 0;
 
             for (var i = 0; i < data.length; i++) {
-                if (data_filter) {
-                    if (!data_filter(data[i])) {
-                        continue;
-                    }
-                }
                 sum += data[i][metric];
-                data[i].index = ++index;  // re-index
+                data[i].index = data[i]["index"];
                 if (data[i].id == item_id) {
                     position = i;
                 }
@@ -73,7 +67,7 @@ function processStats(container_id, url, query_options, item_id, metric, text_go
     });
 }
 
-function goalPositionInTop(container_id, query_options, item_type, item_id, position, text_goal, data_filter) {
+function goalPositionInTop(container_id, query_options, item_type, item_id, position, text_goal) {
     $(document).ready(function () {
         processStats(container_id, "/api/1.0/stats/" + item_type, query_options, item_id, "metric", text_goal,
             function (item, sum) {
@@ -84,7 +78,7 @@ function goalPositionInTop(container_id, query_options, item_type, item_id, posi
                         "Position " + item.index + " is worse than the goal position " + position,
                     value: item.index
                 }
-            }, data_filter);
+            });
     });
 }
 
