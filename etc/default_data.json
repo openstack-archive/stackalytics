@@ -458,6 +458,18 @@
             "emails": ["ikharin@mirantis.com", "akscram@gmail.com"]
         },
         {
+            "launchpad_id": "al-foo",
+            "gerrit_id": "al_indigo",
+            "companies": [
+                {
+                    "company_name": "ISP RAS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Oleg Borisenko",
+            "emails": ["al@foo.ru", "al@somestuff.ru", "borisenko@ispras.ru"]
+        },
+        {
             "launchpad_id": "al-miller",
             "companies": [
                 {
