@@ -9386,6 +9386,17 @@
             "emails": ["mehdi.abaakouk@enovance.com", "mabaakou@redhat.com", "sileht@redhat.com", "sileht@sileht.net"]
         },
         {
+            "launchpad_id": "simon-l-v",
+            "companies": [
+                {
+                    "company_name": "inwinSTACK",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Simon Lin",
+            "emails": ["simon.l@inwinstack.com", "x7712611430@gmail.com"]
+        },
+        {
             "launchpad_id": "simon-pasquier",
             "companies": [
                 {
