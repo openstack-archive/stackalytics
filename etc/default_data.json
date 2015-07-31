@@ -8918,6 +8918,22 @@
            "emails": ["s.haub@telekom.de"]
         },
         {
+            "launchpad_id": "s8m",
+            "gerrit_id": "SamYaple",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-Jul-27"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sam Yaple",
+            "emails": ["sam@yaple.net", "sam.yaple@rackspace.com"]
+        },
+        {
             "launchpad_id": "sahid-ferdjaoui",
             "companies": [
                 {
