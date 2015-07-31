@@ -168,6 +168,10 @@
         {
             "release_name": "Kilo",
             "end_date": "2015-Apr-30"
+        },
+        {
+            "release_name": "Liberty",
+            "end_date": "2015-Oct-15"
         }
     ],
 
@@ -183,19 +187,13 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["official-integrated", "official-other", "governance", "python-openstackclient", "api-wg"]
+            "modules": ["tc-approved-release", "governance", "python-openstackclient", "api-wg"]
         },
         {
-            "id": "integrated",
-            "title": "integrated",
+            "id": "tc-approved-release",
+            "title": "tc-approved",
             "child": true,
-            "modules": ["official-integrated"]
-        },
-        {
-            "id": "other",
-            "title": "other",
-            "child": true,
-            "modules": ["official-other"]
+            "modules": ["tc-approved-release"]
         },
         {
             "id": "stackforge",

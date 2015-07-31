@@ -1,16 +1,38 @@
 Sahara:
   ptl: Sergey Lukjanov (SergeyLukjanov)
+  irc-channel: openstack-sahara
+  service: Data processing service
   mission: >
     To provide a scalable data processing stack and associated management
     interfaces.
   url: https://wiki.openstack.org/wiki/Sahara
-  projects:
-    - repo: openstack/sahara
+  deliverables:
+    python-saharaclient:
+      repos:
+        - openstack/python-saharaclient
       tags:
-        - name: integrated-release
-          since: juno
-    - repo: openstack/python-saharaclient
-    - repo: openstack/sahara-dashboard
-    - repo: openstack/sahara-extra
-    - repo: openstack/sahara-image-elements
-    - repo: openstack/sahara-specs
+        - release:cycle-with-intermediary
+        - release:has-stable-branches
+        - type:library
+        - release:managed
+        - vulnerability:managed
+    sahara:
+      repos:
+        - openstack/sahara
+        - openstack/sahara-extra
+        - openstack/sahara-image-elements
+      tags:
+        - tc-approved-release
+        - release:managed
+        - release:cycle-with-milestones
+        - release:has-stable-branches
+        - type:service
+        - vulnerability:managed
+    sahara-dashboard:
+      repos:
+        - openstack/sahara-dashboard
+      tags:
+        - type:library
+    sahara-specs:
+      repos:
+        - openstack/sahara-specs

@@ -126,6 +126,7 @@ class Gerrit(Rcs):
                       start_id=0, last_id=0, is_open=False,
                       grab_comments=False):
         sort_key = start_id
+        last_id = last_id or 0
 
         while True:
             cmd = self._get_cmd(project_organization, module, branch, sort_key,
