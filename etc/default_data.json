@@ -6339,6 +6339,17 @@
             "emails": ["marcusvrn@gmail.com", "marcus.nascimento@fit-tecnologia.org.br"]
         },
         {
+            "launchpad_id": "margaret-frances",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Margaret Frances",
+            "emails": ["margaret_frances@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "mario-villaplana-j",
             "companies": [
                 {
