@@ -187,13 +187,25 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["tc-approved-release", "governance", "python-openstackclient", "api-wg"]
+            "modules": ["openstack-official", "governance", "api-wg"]
         },
         {
             "id": "tc-approved-release",
             "title": "tc-approved",
             "child": true,
             "modules": ["tc-approved-release"]
+        },
+        {
+            "id": "type:service",
+            "title": "type:service",
+            "child": true,
+            "modules": ["type:service"]
+        },
+        {
+            "id": "type:library",
+            "title": "type:library",
+            "child": true,
+            "modules": ["type:library"]
         },
         {
             "id": "stackforge",

@@ -22,7 +22,15 @@ from stackalytics.processor import utils
 
 LOG = logging.getLogger(__name__)
 
-TAGS = ['tc-approved-release']  # list of supported tags
+# list of supported tags
+TAGS = ['tc-approved-release', 'type:service', 'type:library']
+
+
+def _make_module_group(module_groups, name):
+    m = module_groups[name]  # object created by defaultdict
+    m['tag'] = 'project_type'
+    m['module_group_name'] = name
+    return m
 
 
 def read_projects_yaml(project_list_uri):
@@ -30,10 +38,10 @@ def read_projects_yaml(project_list_uri):
     content = yaml.safe_load(utils.read_uri(project_list_uri))
     module_groups = collections.defaultdict(lambda: {'modules': []})
 
+    all_official = _make_module_group(module_groups, 'openstack-official')
+
     for tag in TAGS:
-        m = module_groups[tag]  # object created by defaultdict
-        m['tag'] = 'project_type'
-        m['module_group_name'] = tag
+        _make_module_group(module_groups, tag)
 
     for name, project in six.iteritems(content):
         group_id = '%s-group' % name.lower()
@@ -48,6 +56,8 @@ def read_projects_yaml(project_list_uri):
                 module_name = repo_split[1]
 
                 module_groups[group_id]['modules'].append(module_name)
+
+                all_official['modules'].append(module_name)
 
                 tags = deliverable.get('tags', [])
                 for tag in tags:

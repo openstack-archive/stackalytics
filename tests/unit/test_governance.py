@@ -79,7 +79,27 @@ class TestGovernance(testtools.TestCase):
                 'module_group_name': 'tc-approved-release',
                 'modules': ['sahara', 'sahara-extra', 'sahara-image-elements'],
                 'tag': 'project_type'
-            }
+            },
+            'type:library': {
+                'id': 'type:library',
+                'module_group_name': 'type:library',
+                'modules': ['python-saharaclient', 'sahara-dashboard'],
+                'tag': 'project_type'
+            },
+            'type:service': {
+                'id': 'type:service',
+                'module_group_name': 'type:service',
+                'modules': ['sahara', 'sahara-extra', 'sahara-image-elements'],
+                'tag': 'project_type'
+            },
+            'openstack-official': {
+                'id': 'openstack-official',
+                'module_group_name': 'openstack-official',
+                'modules': ['python-saharaclient', 'sahara',
+                            'sahara-dashboard', 'sahara-extra',
+                            'sahara-image-elements', 'sahara-specs'],
+                'tag': 'project_type'
+            },
         }
 
         actual = governance.read_projects_yaml('uri')
