@@ -2,11 +2,12 @@ usage: stackalytics-dashboard [-h] [--config-dir DIR] [--config-file PATH]
                               [--debug] [--log-config-append PATH]
                               [--log-date-format DATE_FORMAT]
                               [--log-dir LOG_DIR] [--log-file PATH]
-                              [--log-format FORMAT] [--nouse-syslog]
-                              [--nouse-syslog-rfc-format] [--noverbose]
+                              [--log-format FORMAT] [--nodebug]
+                              [--nouse-syslog] [--nouse-syslog-rfc-format]
+                              [--noverbose]
                               [--syslog-log-facility SYSLOG_LOG_FACILITY]
                               [--use-syslog] [--use-syslog-rfc-format]
-                              [--verbose] [--version] [--nodebug]
+                              [--verbose] [--version]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -20,7 +21,7 @@ optional arguments:
                         can be specified, with values in later files taking
                         precedence. The default files used are: None.
   --debug, -d           Print debugging output (set logging level to DEBUG
-                        instead of default WARNING level).
+                        instead of default INFO level).
   --log-config-append PATH, --log_config PATH
                         The name of a logging configuration file. This file is
                         appended to any existing logging configuration files.
@@ -40,6 +41,7 @@ optional arguments:
                         logging.LogRecord attributes. This option is
                         deprecated. Please use logging_context_format_string
                         and logging_default_format_string instead.
+  --nodebug             The inverse of --debug
   --nouse-syslog        The inverse of --use-syslog
   --nouse-syslog-rfc-format
                         The inverse of --use-syslog-rfc-format
@@ -47,15 +49,13 @@ optional arguments:
   --syslog-log-facility SYSLOG_LOG_FACILITY
                         Syslog facility to receive log lines.
   --use-syslog          Use syslog for logging. Existing syslog format is
-                        DEPRECATED during I, and changed in J to honor
-                        RFC5424.
+                        DEPRECATED and will be changed later to honor RFC5424.
   --use-syslog-rfc-format
                         (Optional) Enables or disables syslog rfc5424 format
                         for logging. If enabled, prefixes the MSG part of the
                         syslog message with APP-NAME (RFC5424). The format
                         without the APP-NAME is deprecated in K, and will be
                         removed in M, along with this option.
-  --verbose, -v         Print more verbose output (set logging level to INFO
-                        instead of default WARNING level).
+  --verbose, -v         If set to false, will disable INFO logging level,
+                        making WARNING the default.
   --version             show program's version number and exit
-  --nodebug             The inverse of --debug
