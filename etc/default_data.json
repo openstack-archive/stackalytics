@@ -4463,6 +4463,18 @@
             "emails": ["hwbi2008@gmail.com"]
         },
         {
+            "launchpad_id": "hyakuhei",
+            "gerrit_id": "hyakuhei",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robert Clark",
+            "emails": ["hyakuhei@gmail.com", "robert.clark@hp.com"]
+        },
+        {
             "launchpad_id": "i-kumagai",
             "gerrit_id": "kumagai19o",
             "companies": [
