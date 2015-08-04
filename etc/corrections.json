@@ -2898,6 +2898,22 @@
             "primary_key": "43b7aed3b9533f060d725250ae00679e5f56a83f",
             "module": "activity-board",
             "subject": "OpenStack community activity report Q2, 2015"
+        },
+        {
+            "correction_comment": "Reset LOC to 3",
+            "loc": 3,
+            "change_id": ["Ie65227e510d95504ed94fb35f0f7273739759601"],
+            "primary_key": "56d5683c8c49558ae22200bc01ec87ea83144003",
+            "module": "horizon",
+            "subject": "Import translations from Transifex for Juno"
+        },
+        {
+            "correction_comment": "Reset LOC to 9",
+            "loc": 9,
+            "change_id": ["Ib36562168009fa34b9818e99154df350678abd4b"],
+            "primary_key": "9b0ba951c07af13aa4c386b19876474b971e7946",
+            "module": "horizon",
+            "subject": "Import translations from Transifex for Juno"
         }
     ]
 }
