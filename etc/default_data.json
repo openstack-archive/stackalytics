@@ -1092,6 +1092,18 @@
             "emails": ["ashrafvaz@gmail.com", "ashraf.vazeer@hp.com"]
         },
         {
+           "launchpad_id": "ashu",
+           "gerrit_id": "ashu",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Ashwini Khandarkar",
+           "emails": ["ashu@coolsvap.net"]
+        },
+        {
             "launchpad_id": "asomya",
             "companies": [
                 {
