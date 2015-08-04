@@ -2890,6 +2890,14 @@
             "primary_key": "5888bf56a91b1c818729be83293633fdde3bd70c",
             "module": "openstack-manuals",
             "subject": "Update sitemap.xml file for kilo release"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I31fb5b67de2acc60def378399eb2dde3e43810ae"],
+            "primary_key": "43b7aed3b9533f060d725250ae00679e5f56a83f",
+            "module": "activity-board",
+            "subject": "OpenStack community activity report Q2, 2015"
         }
     ]
 }
