@@ -7029,7 +7029,19 @@
             "github_id": "emonty",
             "companies": [
                 {
+                    "company_name": "Rackspace",
+                    "end_date": "2011-Nov-20"
+                },
+                {
                     "company_name": "HP",
+                    "end_date": "2015-Aug-01"
+                },
+                {
+                    "company_name": "In August",
+                    "end_date": "2015-Aug-16"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
@@ -12140,6 +12152,10 @@
             "domains": ["igbmc.fr"],
             "company_name": "IGBMC",
             "aliases": ["IGBMC biological research lab"]
+        },
+        {
+            "domains": ["inaugust.com"],
+            "company_name": "In August"
         },
         {
             "domains": ["infoblox.com"],
