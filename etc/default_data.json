@@ -4923,6 +4923,17 @@
             "emails": ["jason.straw@rackspace.com"]
         },
         {
+            "launchpad_id": "jay-clark",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jay Clark",
+            "emails": ["jason.t.clark@hp.com", "jay.clark@gmail.com"]
+        },
+        {
             "launchpad_id": "jay-lau-513",
             "companies": [
                 {
