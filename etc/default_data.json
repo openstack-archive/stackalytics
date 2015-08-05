@@ -2482,6 +2482,18 @@
             "emails": ["da.schabs@gmail.com"]
         },
         {
+            "launchpad_id": "dasp",
+            "gerrit_id": "daniel",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Speichert",
+            "emails": ["daniel@speichert.pl", "daniel_speichert@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "davewalker",
             "companies": [
                 {
