@@ -12614,6 +12614,11 @@
             "company_name": "PowerTech Information Systems AS"
         },
         {
+            "domains": ["projectcalico.org"],
+            "company_name": "Project Calico",
+            "aliases": ["Calico"]
+        },
+        {
             "domains": ["pubyun.com"],
             "company_name": "Pubyun"
         },
