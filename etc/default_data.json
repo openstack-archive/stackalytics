@@ -8228,6 +8228,17 @@
             "emails": ["dua_rajdeep@yahoo.com", "rajdeepd@vmware.com"]
         },
         {
+            "launchpad_id": "ramap",
+            "companies": [
+                {
+                    "company_name": "Akanda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rama Puranam",
+            "emails": ["rama.puranam@gmail.com", "rama@akanda.io"]
+        },
+        {
             "launchpad_id": "rameshg87",
             "companies": [
                 {
