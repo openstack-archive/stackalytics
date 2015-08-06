@@ -6007,6 +6007,18 @@
             "emails": ["lakhindr@hotmail.com", "lakhinder.walia@hds.com"]
         },
         {
+            "launchpad_id": "larainema",
+            "gerrit_id": "larainema",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dong Ma",
+            "emails": ["winterma.dong@gmail.com", "dong.ma@hp.com"]
+        },
+        {
             "launchpad_id": "ldbragst",
             "companies": [
                 {
