@@ -18,7 +18,6 @@ import datetime
 import gzip
 import io
 import json
-import logging as std_logging
 import random
 import re
 import time
@@ -43,7 +42,7 @@ def init_config_and_logging(opts):
 
     logging.setup(conf, 'stackalytics')
     LOG.info('Logging enabled')
-    conf.log_opt_values(LOG, std_logging.DEBUG)
+    conf.log_opt_values(LOG, logging.DEBUG)
 
 
 def date_to_timestamp(d):
