@@ -311,6 +311,18 @@
             "emails": ["adrian@17od.com", "adrian_f_smith@dell.com", "adrian.smith@workday.com"]
         },
         {
+             "launchpad_id": "agalkin",
+             "gerrit_id": "agalkin",
+             "companies": [
+                 {
+                     "company_name": "Mirantis",
+                     "end_date": null
+                 }
+             ],
+            "user_name": "Alexey Galkin",
+            "emails": ["agalkin@mirantis.com"]
+        },
+        {
             "launchpad_id": "agarwalnisha1980",
             "gerrit_id": "Nisha",
             "companies": [
