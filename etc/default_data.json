@@ -1429,6 +1429,17 @@
             "emails": ["kallimachos@gmail.com", "brian.moss@rackspace.com"]
         },
         {
+            "launchpad_id": "bmotz",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ben Motz",
+            "emails": ["bmotz@cray.com"]
+        },
+        {
             "launchpad_id": "bnemec",
             "companies": [
                 {
@@ -3240,6 +3251,17 @@
                 "donald.stufft@rackspace.com",
                 "donald.stufft@hp.com"
             ]
+        },
+        {
+            "launchpad_id": "dszumski",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Doug Szumski",
+            "emails": ["dszumski@cray.com"]
         },
         {
             "launchpad_id": "dtroyer",
@@ -10255,11 +10277,11 @@
             "companies": [
                 {
                     "company_name": "Cray",
-                    "end_date": null
+                    "end_date": "2015-Aug-14"
                 }
             ],
             "user_name": "Stig Telfer",
-            "emails": ["stelfer@cray.com"]
+            "emails": ["stig.openstack@telfer.org", "stelfer@cray.com"]
         },
         {
             "launchpad_id": "subbu",
@@ -10461,6 +10483,17 @@
             ],
             "user_name": "tinytmy",
             "emails": ["tangmeiyan77@gmail.com", "xichao.liu@kylin-cloud.com"]
+        },
+        {
+            "launchpad_id": "tara-y",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tara Fly",
+            "emails": ["tara@blank.org", "tara@cray.com"]
         },
         {
             "launchpad_id": "tatyana-leontovich",
