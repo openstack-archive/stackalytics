@@ -8726,11 +8726,15 @@
             "companies": [
                 {
                     "company_name": "Catalyst IT",
+                    "end_date": "2015-Aug-01"
+                },
+                {
+                    "company_name": "CERN",
                     "end_date": null
                 }
             ],
             "user_name": "Ricardo Rocha",
-            "emails": ["ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
+            "emails": ["ricardo.rocha@cern.ch", "ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
         },
         {
             "launchpad_id": "rodrigo-barbieri2010",
