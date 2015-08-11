@@ -9637,6 +9637,18 @@
             "emails": ["seungkyua@gmail.com"]
         },
         {
+            "launchpad_id": "shamail-tahir",
+            "gerrit_id": "shamail",
+            "companies": [
+                {
+                    "company_name": "EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shamail Tahir",
+            "emails": ["itzshamail@gmail.com"]
+        },
+        {
             "launchpad_id": "shaunm-gnome",
             "companies": [
                 {
