@@ -144,6 +144,17 @@
             "emails": ["aaron@greenbtn.com"]
         },
         {
+            "launchpad_id": "aaron.d",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aaron DH",
+            "emails": ["344677472@qq.com", "dinghh@awcloud.com"]
+        },
+        {
             "github_id": "abadger",
             "companies": [
                 {
@@ -1918,6 +1929,39 @@
             "emails": ["chen.zheng@easystack.cn", "czheng@cn.ibm.com"]
         },
         {
+            "launchpad_id": "chengyang",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chengyang",
+            "emails": ["chengyang@awcloud.com"]
+        },
+        {
+            "launchpad_id": "chenjhfrontend",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "alfred",
+            "emails": ["chenjhfrontend@163.com", "chenjianhua@awcloud.com"]
+        },
+        {
+            "launchpad_id": "chenkang",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chenkang",
+            "emails": ["chenkang@awcloud.com"]
+        },
+        {
             "launchpad_id": "chetan6033",
             "companies": [
                 {
@@ -2385,6 +2429,17 @@
             "emails": ["davide_agnello@hotmail.com", "davide.agnello@hp.com"]
         },
         {
+            "launchpad_id": "daijing",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "daijing",
+            "emails": ["daijing@awcloud.com"]
+        },
+        {
             "launchpad_id": "daisy-ycguo",
             "companies": [
                 {
@@ -2421,6 +2476,17 @@
             ],
             "user_name": "Dane Fichter",
             "emails": ["dane.fichter@jhuapl.edu"]
+        },
+        {
+            "launchpad_id": "dangchb",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "dangchb",
+            "emails": ["dangchb@awcloud.com"]
         },
         {
             "launchpad_id": "daniel-kuffner",
@@ -3644,6 +3710,28 @@
             "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com"]
         },
         {
+            "launchpad_id": "fengxy",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "fengxy",
+            "emails": ["fengxy@awcloud.com"]
+        },
+        {
+            "launchpad_id": "fengzhr",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "space",
+            "emails": ["fengzhr@awcloud.com"]
+        },
+        {
             "launchpad_id": "ficoos",
             "companies": [
                 {
@@ -3856,6 +3944,17 @@
             ],
             "user_name": "Gandharva S",
             "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com"]
+        },
+        {
+            "launchpad_id": "gaojie",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "gaojie",
+            "emails": ["gaojie@awcloud.com"]
         },
         {
             "launchpad_id": "gaoqian1983",
@@ -4182,6 +4281,28 @@
             "emails": ["guilhem.lettron@optiflows.com", "guilhem.lettron@gmail.com", "guilhem@lettron.fr"]
         },
         {
+            "launchpad_id": "guolei",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guolei",
+            "emails": ["guolei@awcloud.com"]
+        },
+        {
+            "launchpad_id": "guoshan",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guoshan",
+            "emails": ["guoshan@awcloud.com"]
+        },
+        {
             "launchpad_id": "gus",
             "companies": [
                 {
@@ -4205,6 +4326,17 @@
             "emails": ["h-aramaki@netone.co.jp"]
         },
         {
+            "launchpad_id": "hanjiabao",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hanjiabao",
+            "emails": ["hanjiabao@awcloud.com"]
+        },
+        {
             "launchpad_id": "hanrong",
             "companies": [
                 {
@@ -4214,6 +4346,17 @@
             ],
             "user_name": "Rong Han ZTE",
             "emails": ["spring068@sina.cn", "han.rong3@zte.com.cn"]
+        },
+        {
+            "launchpad_id": "haoning",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ning hao",
+            "emails": ["haoning@awcloud.com"]
         },
         {
             "launchpad_id": "hareesh-puthalath",
@@ -4270,6 +4413,17 @@
             ],
             "user_name": "Antoine Musso",
             "emails": ["hashar@free.fr"]
+        },
+        {
+            "launchpad_id": "hbjmstone",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "stoneliu",
+            "emails": ["hbjmstone@163.com", "liulei@awcloud.com"]
         },
         {
             "launchpad_id": "heckj",
@@ -4421,6 +4575,17 @@
             "emails": ["hovyakov@gmail.com", "hovyakov@griddynamics.com", "dkhovyakov@griddynamics.com"]
         },
         {
+            "launchpad_id": "huangsm",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Totti",
+            "emails": ["huangsm@awcloud.com"]
+        },
+        {
             "launchpad_id": "huangtianhua",
             "companies": [
                 {
@@ -4475,6 +4640,17 @@
             ],
             "user_name": "Hua Wang",
             "emails": ["wanghua.humble@gmail.com", "wanghua7@huawei.com"]
+        },
+        {
+            "launchpad_id": "huyujie",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "huyujie",
+            "emails": ["huyujie@awcloud.com"]
         },
         {
             "launchpad_id": "hvprash",
@@ -6070,6 +6246,16 @@
             "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
         },
         {
+            "launchpad_id": "leixin",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "leixin",
+            "emails": ["leixin487@hotmail.com", "leixin@awcloud.com"]           },
+        {
             "launchpad_id": "leseb",
             "companies": [
                 {
@@ -6203,6 +6389,17 @@
             "emails": ["willowd878@gmail.com", "liudong78@huawei.com"]
         },
         {
+            "launchpad_id": "liuhh",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "LiuHuanHuan",
+            "emails": ["liuhh@awcloud.com", "lhh_youzi@163.com"]
+        },
+        {
             "launchpad_id": "liusheng",
             "companies": [{
                 "company_name": "Huawei",
@@ -6221,6 +6418,17 @@
             ],
             "user_name": "Li Yingjun",
             "emails": ["liyingjun1988@gmail.com", "yingjun.li@kylin-cloud.com"]
+        },
+        {
+            "launchpad_id": "lizhixin",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhixin Li",
+            "emails": ["lizhixin@awcloud.com"]
         },
         {
             "launchpad_id": "ljjjustin",
@@ -6321,6 +6529,17 @@
             ],
             "user_name": "Zhiyuan Cai",
             "emails": ["luckyvega.g@gmail.com", "caizhiyuan1@huawei.com"]
+        },
+        {
+            "launchpad_id": "luwei",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "luwei",
+            "emails": ["luwei@awcloud.com"]
         },
         {
             "launchpad_id": "lxstar01",
@@ -10025,6 +10244,17 @@
             "emails": ["sulochan@gmail.com", "sulochan.acharya@rackspace.co.uk"]
         },
         {
+            "launchpad_id": "sunshuai",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ShuaiSun",
+            "emails": ["sunshuai@awcloud.com"]
+        },
+        {
             "launchpad_id": "susanne-balle",
             "companies": [
                 {
@@ -11117,6 +11347,17 @@
             "emails": ["wl3617@qq.com", "long.wang@bj.cs2c.com.cn", "wanglong@cse.buaa.edu.cn"]
         },
         {
+            "launchpad_id": "wangzhh",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangzhh",
+            "emails": ["wangzhh@awcloud.com", "wzh_1993@126.com"]
+        },
+        {
             "launchpad_id": "wchrisjohnson",
             "companies": [
                 {
@@ -11137,6 +11378,17 @@
             ],
             "user_name": "Dave Chen",
             "emails": ["dave.jungler@gmail.com", "wei.d.chen@intel.com"]
+        },
+        {
+            "launchpad_id": "weike",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "weike",
+            "emails": ["weike@awcloud.com", "weike.cs@gmail.com"]
         },
         {
             "launchpad_id": "wenjianhn",
@@ -11281,6 +11533,17 @@
             ],
             "user_name": "Xiang Hui",
             "emails": ["xianghui@cn.ibm.com", "hui.xiang@canonical.com"]
+        },
+        {
+            "launchpad_id": "xiaobo-2",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xiaobo698745",
+            "emails": ["xiaobo@awcloud.com"]
         },
         {
             "launchpad_id": "xtoddx",
@@ -11627,6 +11890,17 @@
             "emails": ["zhangleiqiang@gmail.com", "zhangleiqiang@huawei.com"]
         },
         {
+            "launchpad_id": "zhaolijun",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhaolijun",
+            "emails": ["zhaolijun@awcloud.com"]
+        },
+        {
             "launchpad_id": "zhaoqin",
             "companies": [
                 {
@@ -11737,6 +12011,17 @@
             ],
             "user_name": "Han Zhou",
             "emails": ["hzhou8@ebaysf.com", "zhouhan@gmail.com"]
+        },
+        {
+            "launchpad_id": "zhouhy",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ZouHuiying",
+            "emails": ["zhouhy@awcloud.com"]
         },
         {
             "launchpad_id": "zhu-rong",
