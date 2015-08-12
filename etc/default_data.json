@@ -2635,6 +2635,18 @@
             "emails": ["david.lyle@hp.com", "dklyle0@gmail.com", "david.lyle@intel.com"]
         },
         {
+            "launchpad_id": "david-pursehouse-k",
+            "gerrit_id": "david.pursehouse",
+            "companies": [
+                {
+                    "company_name": "Sony Mobile Communications",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David Pursehouse",
+            "emails": ["david.pursehouse@sonymobile.com"]
+        },
+        {
             "launchpad_id": "davide-guerri",
             "companies": [
                 {
