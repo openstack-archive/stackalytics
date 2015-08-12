@@ -13104,6 +13104,10 @@
             "company_name": "Sonian"
         },
         {
+            "domains": ["sonymobile.com"],
+            "company_name": "Sony Mobile Communications"
+        },
+        {
             "domains": ["spilgames.com"],
             "company_name": "Spil Games"
         },
