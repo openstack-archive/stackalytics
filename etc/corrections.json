@@ -2914,6 +2914,14 @@
             "primary_key": "9b0ba951c07af13aa4c386b19876474b971e7946",
             "module": "horizon",
             "subject": "Import translations from Transifex for Juno"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I304f13adb1c3db5c012524719c51a6c265f0528e"],
+            "primary_key": "04095c5001aaa68bd9ba53319874c2158cbc10ea",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap"
         }
     ]
 }
