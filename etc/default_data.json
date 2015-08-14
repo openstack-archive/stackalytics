@@ -4970,7 +4970,7 @@
                 }
             ],
             "user_name": "Andreas Jaeger",
-            "emails": ["jaegerandi@gmail.com", "aj@suse.de"]
+            "emails": ["jaegerandi@gmail.com", "aj@suse.de", "aj@suse.come"]
         },
         {
             "launchpad_id": "jaimegildesagredo",
@@ -13182,7 +13182,7 @@
         {
             "domains": ["suse.cz", "suse.de", "suse.com"],
             "company_name": "SUSE",
-            "aliases": ["SUSE Linux Products GmbH"]
+            "aliases": ["SUSE Linux GmbH"]
         },
         {
             "domains": ["swiftstack.com"],
