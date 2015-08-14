@@ -3276,7 +3276,7 @@
             "emails": ["duhzecca@gmail.com", "eduardo.cruz@fit-tecnologia.org.br"]
         },
         {
-            "launchpad_id": "duk",
+            "launchpad_id": "duktesora",
             "companies": [
                 {
                     "company_name": "Tesora",
@@ -8216,17 +8216,6 @@
             "emails": ["peter@parelastic.com", "peter@tesora.com"]
         },
         {
-            "launchpad_id": "petr-malik",
-            "companies": [
-                {
-                    "company_name": "Tesora",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Petr Malik",
-            "emails": ["pmalik@parelastic.com", "pmalik@tesora.com", "petr.malik@hotmail.com"]
-        },
-        {
             "github_id": "philips",
             "companies": [
                 {
@@ -8286,6 +8275,17 @@
             ],
             "user_name": "Pradeep Kilambi",
             "emails": ["pkilambi@redhat.com","pkilambi@cisco.com", "praddevel@gmail.com"]
+        },
+        {
+            "launchpad_id": "pmalik",
+            "companies": [
+                {
+                    "company_name": "Tesora",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Petr Malik",
+            "emails": ["pmalik@parelastic.com", "pmalik@tesora.com", "petr.malik@hotmail.com"]
         },
         {
             "github_id": "pmenglund",
