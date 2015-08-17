@@ -79,7 +79,11 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
         {%else%}
             <div class="header">{%html author_link %} ({%html company_link %})</div>
         {%/if%}
-        <div class="header">${date_str} in {%html module_link%}</div>
+        <div class="header">${date_str} in {%html module_link%}
+            {%if record_type == "mark" || record_type == "review" || record_type == "patch" %}
+                {%if branch != "master" %}(${branch}){%/if%}
+            {%/if%}
+        </div>
 
         {%if record_type == "commit" %}
             <div class="header">Commit &ldquo;${subject}&rdquo;</div>

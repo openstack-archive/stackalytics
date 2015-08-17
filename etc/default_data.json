@@ -13697,6 +13697,18 @@
                     "tag_to": "HEAD",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
+                },
+                {
+                    "branch": "feature/pecan",
+                    "tag_from": "2015.1.0rc1",
+                    "tag_to": "HEAD",
+                    "release_name": "Liberty"
+                },
+                {
+                    "branch": "feature/qos",
+                    "tag_from": "2015.1.0rc1",
+                    "tag_to": "HEAD",
+                    "release_name": "Liberty"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/neutron.git",
