@@ -95,6 +95,10 @@ def extend_record(record):
                 record['mention_date'])
         record['blueprint_link'] = make_blueprint_link(record['module'],
                                                        record['name'])
+    elif record['record_type'] in ['bugr', 'bugf']:
+        record['number'] = record['web_link'].split('/')[-1]
+        record['title'] = filter_bug_title(record['title'])
+        record['status_class'] = re.sub('\s+', '', record['status'])
 
     return record
 
@@ -307,3 +311,7 @@ def make_page_title(project_type_inst, release, module_inst, company,
         if release != 'all':
             s += ' during OpenStack %s release' % release.capitalize()
     return s
+
+
+def filter_bug_title(title):
+    return re.sub(r'^(?:Bug #\d+.+:\s+)"(.*)"', r'\1', title)

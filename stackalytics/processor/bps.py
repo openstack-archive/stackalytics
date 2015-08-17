@@ -41,7 +41,17 @@ def log(repo, modified_since):
     for record_draft in launchpad_utils.lp_bug_generator(module,
                                                          modified_since):
 
+        # record_draft can be a bug or bug target and
+        # in the latter case it can be from a different module
+        bug_target = record_draft['bug_target_name'].split('/')
+        target_module = bug_target[0]
+        if target_module != module:
+            continue  # ignore foreigners
+
         record = {}
+
+        if len(bug_target) == 2:
+            record['release'] = bug_target[1]  # treat target as release
 
         for field in LINK_FIELDS:
             link = record_draft[field + '_link']
@@ -58,7 +68,7 @@ def log(repo, modified_since):
 
         bug_id = _get_bug_id(record_draft['web_link'])
         record['module'] = module
-        record['id'] = utils.get_bug_id(module, bug_id)
+        record['id'] = utils.make_bug_id(bug_id, module, record.get('release'))
 
         LOG.debug('New bug: %s', record)
         yield record

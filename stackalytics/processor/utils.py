@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import calendar
 import cgi
 import datetime
 import gzip
@@ -69,7 +70,7 @@ def member_date_to_timestamp(d):
 
 
 def iso8601_to_timestamp(s):
-    return int(time.mktime(iso8601.parse_date(s).timetuple()))
+    return calendar.timegm(iso8601.parse_date(s).utctimetuple())
 
 
 def timestamp_to_date(timestamp):
@@ -232,8 +233,11 @@ def get_blueprint_id(module, name):
     return module + ':' + name
 
 
-def get_bug_id(module, bug_id):
-    return module + '/' + bug_id
+def make_bug_id(bug_id, module, release=None):
+    if release:
+        return '/'.join([module, release, bug_id])
+    else:
+        return '/'.join([module, bug_id])
 
 
 def get_patch_id(review_id, patch_number):

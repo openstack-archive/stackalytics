@@ -150,3 +150,12 @@ Implements Blueprint ''' + (
         get_default.side_effect = make({'param': 'foo'})
         self.assertEqual(['foo'], parameters.get_parameter({}, 'param'))
         self.assertEqual([], parameters.get_parameter({}, 'other'))
+
+    def test_filter_bug_title(self):
+        bug_title = ('Bug #1459454 in Barbican: "Stored key certificate '
+                     'order does not set PK on generated container"')
+        expected = ('Stored key certificate order does not set PK '
+                    'on generated container')
+
+        actual = helpers.filter_bug_title(bug_title)
+        self.assertEqual(expected, actual)

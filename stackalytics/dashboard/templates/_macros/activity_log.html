@@ -151,9 +151,9 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div><b>Mention count: ${mention_count}, last mention on ${mention_date_str}</b></div>
             {%/if%}
         {%elif ((record_type == "bugf") || (record_type == "bugr")) %}
-            <div class="header">&ldquo;${title}&rdquo;</div>
-            <div>Status: <span class="status${status}">${status}</span></div>
-            <div>Importance: ${importance}</div>
+            <div class="header">Bug &ldquo;${title}&rdquo; (<a href="${web_link}" class="ext_link">${number}</a>)</div>
+            <div>Status: <span class="status${status_class}">${status}</span></div>
+            <div>Importance: <span class="importance${importance}">${importance}</span></div>
         {%elif record_type == "ci_vote" %}
             <div class="header">New CI vote in change request ${review_number}
                  {%if is_merged %}(<span style="color: green;">Merged</span>){%/if%}</div>
