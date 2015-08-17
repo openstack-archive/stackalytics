@@ -12,6 +12,7 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import copy
 
 from oslo_log import log as logging
 
@@ -88,3 +89,16 @@ def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
 def delete_user(runtime_storage_inst, user):
     LOG.debug('Delete user: %s', user)
     runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
+
+
+def update_user_profile(stored_user, user):
+    # update stored_user with user and return it
+    if stored_user:
+        updated_user = copy.deepcopy(stored_user)
+        updated_user.update(user)
+        updated_user['emails'] = list(set(stored_user.get('emails', [])) |
+                                      set(user.get('emails', [])))
+    else:
+        updated_user = copy.deepcopy(user)
+    updated_user['static'] = True
+    return updated_user

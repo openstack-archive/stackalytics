@@ -190,11 +190,8 @@ def _store_users(runtime_storage_inst, users):
     for user in users:
         stored_user = user_processor.load_user(runtime_storage_inst,
                                                user_id=user['user_id'])
-        if stored_user:
-            stored_user.update(user)
-            user = stored_user
-        user['static'] = True
-        user_processor.store_user(runtime_storage_inst, user)
+        updated_user = user_processor.update_user_profile(stored_user, user)
+        user_processor.store_user(runtime_storage_inst, updated_user)
 
 
 def _store_companies(runtime_storage_inst, companies):
