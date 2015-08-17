@@ -10306,6 +10306,17 @@
             "emails": ["sulochan@gmail.com", "sulochan.acharya@rackspace.co.uk"]
         },
         {
+            "launchpad_id": "sun-jing22",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sun Jing",
+            "emails": ["sun.jing22@zte.com.cn", "jingsun59@163.com"]
+        },
+        {
             "launchpad_id": "sunshuai",
             "companies": [
                 {
