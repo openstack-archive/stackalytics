@@ -943,10 +943,14 @@
                 {
                     "company_name": "HP",
                     "end_date": "2015-Jul-01"
+                },
+                {
+                    "company_name": "NEC",
+                    "end_date": null
                 }
             ],
             "user_name": "Anusha Ramineni",
-            "emails": ["anusha.iiitm@gmail.com"]
+            "emails": ["anusha.iiitm@gmail.com", "anusha.ramineni@nectechnologies.in"]
         },
         {
             "launchpad_id": "anusree-a04",
