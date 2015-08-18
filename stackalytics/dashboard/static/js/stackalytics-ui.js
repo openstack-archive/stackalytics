@@ -15,6 +15,12 @@
  limitations under the License.
  */
 
+String.prototype.trunc =
+    function (n) {
+        if (this.length <= n) return this;
+        return this.substr(0, this.substr(0, n).lastIndexOf(' ')) + "&hellip;";
+    };
+
 function _createTimeline(data) {
     var plot = $.jqplot('timeline', data, {
         gridPadding: {
@@ -108,7 +114,7 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
 
                 for (i = 0; i < data.length; i++) {
                     if (i < limit - 1) {
-                        chartData.push([data[i].name, data[i].metric]);
+                        chartData.push([data[i].name.trunc(30), data[i].metric]);
                     } else {
                         aggregate += data[i].metric;
                     }
@@ -131,7 +137,7 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                 }
 
                 if (i == limit) {
-                    chartData.push([data[i - 1].name, data[i - 1].metric]);
+                    chartData.push([data[i - 1].name.trunc(30), data[i - 1].metric]);
                 } else if (i > limit) {
                     chartData.push(["others", aggregate]);
                 }
