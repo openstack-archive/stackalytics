@@ -3409,6 +3409,21 @@
            "emails": ["m.ogura@ntt.com", "eathdragon77@gmail.com"]
         },
         {
+            "launchpad_id": "ed--cranford",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2015-Aug-07"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ed Cranford",
+            "emails": ["ed.cranford@gmail.com", "ed@slumberheart.com"]
+        },
+        {
             "launchpad_id": "ed-leafe",
             "companies": [
                 {
