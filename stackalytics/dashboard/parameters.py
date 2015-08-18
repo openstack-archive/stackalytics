@@ -17,6 +17,7 @@ import flask
 from oslo_config import cfg
 from oslo_log import log as logging
 from six.moves.urllib import parse
+import time
 
 from stackalytics.dashboard import vault
 
@@ -72,7 +73,12 @@ def get_default(param_name):
             runtime_storage_inst = vault.get_runtime_storage()
             releases = runtime_storage_inst.get_by_key('releases')
             if releases:
-                release = releases[-1]['release_name']
+                for r in releases:
+                    if r['end_date'] > time.time():
+                        release = r['release_name']
+                        break
+                else:
+                    release = releases[-1]['release_name']
             else:
                 release = 'all'
         DEFAULTS['release'] = release.lower()
