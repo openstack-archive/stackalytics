@@ -122,10 +122,6 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
-                    "end_date": "2015-Jan-02"
-                },
-                {
-                    "company_name": "ThoughtWorks",
                     "end_date": null
                 }
             ],
@@ -738,7 +734,7 @@
             "launchpad_id": "andersonvom",
             "companies": [
                 {
-                    "company_name": "Rackspace",
+                    "company_name": "ThoughtWorks",
                     "end_date": null
                 }
             ],
