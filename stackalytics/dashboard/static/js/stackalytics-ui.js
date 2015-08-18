@@ -220,22 +220,22 @@ function renderPunchCard(chart_id, chart_data) {
         },
         axes: {
             xaxis: {
-                label: 'Hour',
+                label: 'hour, UTC',
                 labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                 tickOptions: {
                     formatter: function (format, val) {
-                        if (val < 0 || val > 24) { return "" }
+                        if (val < 0 || val > 23) { return "" }
                         return val;
                     }
                 }
             },
             yaxis: {
-                label: 'Day of week',
+                label: 'day of week',
                 labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                 tickOptions: {
                     formatter: function (format, val) {
                         if (val < 0 || val > 6) { return "" }
-                        var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                        var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].reverse();
                         return labels[val];
                     }
                 }

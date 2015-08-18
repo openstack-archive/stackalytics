@@ -20,7 +20,6 @@ import operator
 import time
 
 import flask
-import six
 
 from stackalytics.dashboard import decorators
 from stackalytics.dashboard import helpers
@@ -205,18 +204,18 @@ def cores():
 
 def _get_punch_card_data(records):
     punch_card_raw = []  # matrix days x hours
-    for wday in six.moves.range(0, 7):
+    for wday in range(7):
         punch_card_raw.append([0] * 24)
     for record in records:
         tt = datetime.datetime.fromtimestamp(record.date).timetuple()
         punch_card_raw[tt.tm_wday][tt.tm_hour] += 1
 
     punch_card_data = []  # format for jqplot bubble renderer
-    for wday in six.moves.range(0, 7):
-        for hour in six.moves.range(0, 24):
+    for wday in range(7):
+        for hour in range(24):
             v = punch_card_raw[wday][hour]
             if v:
-                punch_card_data.append([hour, wday, v, v])
+                punch_card_data.append([hour, 6 - wday, v, v])  # upside down
 
     # add corner point, otherwise chart doesn't know the bounds
     if punch_card_raw[0][0] == 0:
