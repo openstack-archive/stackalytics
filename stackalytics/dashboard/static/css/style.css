@@ -497,3 +497,9 @@ div.stackamenu li.current-menu-item a span {
     color: red;
     margin: 0.5em 0;
 }
+
+#punch_card {
+    margin-top: 1em;
+    width: 99%;
+    height: 350px;
+}
