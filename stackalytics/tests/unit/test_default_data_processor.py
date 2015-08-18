@@ -20,7 +20,7 @@ import testtools
 
 from stackalytics.processor import default_data_processor
 from stackalytics.processor import normalizer
-from tests.unit import test_data
+from stackalytics.tests.unit import test_data
 
 
 class TestDefaultDataProcessor(testtools.TestCase):

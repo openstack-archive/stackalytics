@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from tests.api import test_api
+from stackalytics.tests.api import test_api
 
 
 class TestAPIModules(test_api.TestAPI):
