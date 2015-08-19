@@ -555,6 +555,17 @@
             "emails": ["aleksiyantsa@gmail.com", "aleksiyantsa@ispras.ru"]
         },
         {
+            "launchpad_id": "aleskrivak",
+            "companies": [
+                {
+                    "company_name": "Ultimum Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aleš Křivák",
+            "emails": ["ales.krivak@ultimumtechnologies.com", "ales.krivak@gmail.com"]
+        },
+        {
             "launchpad_id": "alex-gaynor",
             "companies": [
                 {
