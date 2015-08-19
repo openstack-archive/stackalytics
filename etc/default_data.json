@@ -2026,6 +2026,18 @@
             "emails": ["chmouel@chmouel.com", "launchpad@chmouel.com", "chmouel.boudjnah@rackspace.co.uk", "chmouel@openstack.org", "chmouel@enovance.com", "chmouel@redhat.com"]
         },
         {
+
+            "launchpad_id": "chowdhury-imtiaz",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Imtiaz Chowdhury",
+            "emails": ["imtiaz.chowdhury@workday.com"]
+        },
+        {
             "launchpad_id": "chris-buccella",
             "gerrit_id": "hdd",
             "companies": [
