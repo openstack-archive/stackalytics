@@ -2275,6 +2275,10 @@
             "companies": [
                 {
                     "company_name": "Anchor",
+                    "end_date": "2015-Aug-14"
+                },
+                {
+                    "company_name": "HP",
                     "end_date": null
                 }
             ],
