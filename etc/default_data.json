@@ -6108,6 +6108,17 @@
             "emails": ["kim.jensen2@hp.com", "kim.jensen@twcable.com"]
         },
         {
+            "launchpad_id": "kimura-tatsuro",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tatsuro Kimura",
+            "emails": ["kimura.tatsuro@lab.ntt.co.jp", "ktatsuro1024@gmail.com"]
+        },
+        {
             "launchpad_id": "kiwik-chenrui",
             "companies": [
                 {
