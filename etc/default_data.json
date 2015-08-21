@@ -12367,7 +12367,7 @@
             "company_name": "Atomia"
         },
         {
-            "domains": ["att.com", "attinteractive.com"],
+            "domains": ["att.com", "attinteractive.com", "research.att.com"],
             "company_name": "AT&T",
             "aliases": ["AT&T Mobility"]
         },
