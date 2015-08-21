@@ -822,6 +822,17 @@
             "emails": ["andrew@parelastic.com", "andrew@tesora.com", "abramley@bram-mac.local"]
         },
         {
+            "launchpad_id": "andrw-wng",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Wang",
+            "emails": ["andrw.wng@gmail.com"]
+        },
+        {
             "launchpad_id": "andy-edmonds",
             "companies": [
                 {
