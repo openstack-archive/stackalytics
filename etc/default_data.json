@@ -6730,6 +6730,21 @@
             "emails": ["mageshgv@gmail.com", "magesh.gv@oneconvergence.com"]
         },
         {
+            "launchpad_id": "mahati-chamarthy",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2015-Jun-30"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mahati",
+            "emails": ["mahati.chamarthy@gmail.com", "mahati.chamarthy@intel.com"]
+        },
+        {
             "launchpad_id": "maheshkumar-pandurangan",
             "companies": [
                 {
