@@ -2922,6 +2922,14 @@
             "primary_key": "04095c5001aaa68bd9ba53319874c2158cbc10ea",
             "module": "openstack-manuals",
             "subject": "Regenerate sitemap"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I66a1165d0eedf8388a6e8673427580e9128e2f88"],
+            "primary_key": "cb686e31f74c6eda88d467ba432e045b53703382",
+            "module": "openstack-manuals",
+            "subject": "Update sitemap.xml file"
         }
     ]
 }
