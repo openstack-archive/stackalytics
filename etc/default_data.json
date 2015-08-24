@@ -4269,6 +4269,17 @@
             "emails": ["gong.yongsheng@99cloud.net", "gong_ys2013@yahoo.com", "gong_ys2004@aliyun.com", "gongysh@unitedstack.com", "gongysh@cn.ibm.com", "gongysh@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "gouthamr",
+            "companies": [
+                {
+                    "company_name": "NetApp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Goutham Pacha Ravi",
+            "emails": [ "gouthamr@netapp.com", "gouthampravi@gmail.com"]
+        },
+        {
             "launchpad_id": "gpocentek",
             "companies": [
                 {
