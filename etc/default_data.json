@@ -1374,6 +1374,17 @@
             "emails": ["bertrand.lallau@gmail.com", "bertrand.lallau@thalesgroup.com"]
         },
         {
+            "launchpad_id": "bethelwell",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Beth Elwell",
+            "emails": ["elizabeth.elwell@hp.com", "e.r.elwell@gmail.com"]
+        },
+        {
             "github_id": "bfirsh",
             "companies": [
                 {
