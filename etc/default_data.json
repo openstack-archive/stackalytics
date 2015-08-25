@@ -3259,6 +3259,14 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Aug-19"
+                },
+                {
+                    "company_name": "NextGrail",
+                    "end_date": "2015-Sep-08"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
@@ -13090,6 +13098,10 @@
         {
             "domains": ["nexenta.com"],
             "company_name": "Nexenta"
+        },
+        {
+            "domains": ["nextgrail.com"],
+            "company_name": "NextGrail"
         },
         {
             "domains": ["nimbisservices.com"],
