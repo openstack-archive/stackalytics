@@ -7603,6 +7603,25 @@
             "emails": ["michael@the-davies.net"]
         },
         {
+            "launchpad_id": "mrostecki",
+            "companies": [
+                {
+                    "company_name": "Allegro",
+                    "end_date": "2015-Aug-07"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2015-Aug-19"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michal Rostecki",
+            "emails": ["mrostecki@mirantis.com", "michal.rostecki@gmail.com", "michal.rostecki@allegrogroup.com"]
+        },
+        {
             "launchpad_id": "mshuler",
             "companies": [
                 {
