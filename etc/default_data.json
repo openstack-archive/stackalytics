@@ -2256,11 +2256,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Aug-21"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "James E. Blair",
-            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org"]
+            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org", "jeblair@us.ibm.com"]
         },
         {
             "launchpad_id": "corywright",
