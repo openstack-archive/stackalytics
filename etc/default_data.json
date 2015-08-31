@@ -10823,6 +10823,18 @@
             "emails": ["will.wolf@rackspace.com", "throughnothing@gmail.com"]
         },
         {
+            "launchpad_id": "tiago.pasqualini",
+            "gerrit_id": "tiago.pasqualini",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tiago Pasqualini",
+            "emails": ["tiago.pasqualini@gmail.com", "tiagop.silva@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "tim-miller-0",
             "companies": [
                 {
