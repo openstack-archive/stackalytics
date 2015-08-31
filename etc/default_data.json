@@ -4763,6 +4763,17 @@
             "emails": ["wanghua.humble@gmail.com", "wanghua7@huawei.com"]
         },
         {
+            "launchpad_id": "hurgleburgler",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Diana Whitten",
+            "emails": ["hurgleburgler@gmail.com", "diana.whitten@hp.com"]
+        },
+        {
             "launchpad_id": "huyujie",
             "companies": [
                 {
