@@ -23,6 +23,17 @@
             "emails": ["chris@pistoncloud.com", "chris@slicehost.com"]
         },
         {
+            "launchpad_id": "1-tim-z",
+            "companies": [
+                {
+                    "company_name": "SwiftStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tim Burke",
+            "emails": ["tim@swiftstack.com", "timburke@alumni.rice.edu"]
+        },
+        {
             "launchpad_id": "1lex",
             "companies": [
                 {
@@ -628,6 +639,17 @@
             ],
             "user_name": "Alexei Kornienko",
             "emails": ["alexei.kornienko@gmail.com", "akornienko@mirantis.com"]
+        },
+        {
+            "launchpad_id": "alexisl",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexis Lee",
+            "emails": ["alexisl@hp.com", "lxsli@hp.com"]
         },
         {
             "launchpad_id": "alexpilotti",
