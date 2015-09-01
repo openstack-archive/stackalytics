@@ -9683,6 +9683,17 @@
             "emails": ["sebastien.badia@enovance.com", "sbadia@redhat.com"]
         },
         {
+            "launchpad_id": "scassiba",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Samuel Cassiba",
+            "emails": ["sam@cassiba.com", "samuel.cassiba@workday.com"]
+        },
+        {
             "github_id": "schneems",
             "companies": [
                 {
