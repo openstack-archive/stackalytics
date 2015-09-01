@@ -15185,7 +15185,7 @@
         {
             "id": "openstack",
             "title": "OpenStack",
-            "modules": ["openstack-official", "governance", "api-wg"]
+            "modules": ["openstack-official", "governance", "api-wg", "openstack-user-stories"]
         },
         {
             "id": "tc-approved-release",
