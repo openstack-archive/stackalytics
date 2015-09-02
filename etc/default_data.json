@@ -12340,6 +12340,26 @@
             "emails": ["ziad.sawalha@rackspace.com", "github@highbridgellc.com", "gihub@highbridgellc.com", "ziad@sawalha.com", "gerrit@highbridgellc.com"]
         },
         {
+            "launchpad_id": "zrzhit",
+            "gerrit_id": "zrzhit",
+            "companies": [
+                {
+                    "company_name": "SINA",
+                    "end_date": "2013-Jan-15"
+                },
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": "2015-Apr-30"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rongze Zhu",
+            "emails": ["zrzhit@gmail.com", "rongze@ustack.com", "rongze@unitedstack.com", "rzhu@mirantis.com"]
+        },
+        {
             "launchpad_id": "zulcss",
             "companies": [
                 {
