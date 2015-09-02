@@ -6018,6 +6018,17 @@
             "emails": ["kanzhe.jiang@bigswitch.com", "kanzhe@gmail.com"]
         },
         {
+            "launchpad_id": "kasey-alusi",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kasey Alusi",
+            "emails": ["kasey.alusi@gmail.com"]
+        },
+        {
             "launchpad_id": "kaushikc",
             "companies": [
                 {
@@ -10068,6 +10079,17 @@
             ],
             "user_name": "Sinval Vieira",
             "emails": ["sinval@lsd.ufcg.edu.br", "sinvalneto01@gmail.com"]
+        },
+        {
+            "launchpad_id": "sirisha.areti",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sirisha Areti",
+            "emails": ["sirisha.areti@hotmail.com"]
         },
         {
             "launchpad_id": "sjayanthi",
