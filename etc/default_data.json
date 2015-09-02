@@ -14595,6 +14595,11 @@
             "organization": "openstack"
         },
         {
+            "module": "openstack-user-stories",
+            "uri": "git://git.openstack.org/openstack/openstack-user-stories.git",
+            "organization": "openstack"
+        },
+        {
             "module": "vmware-nsx",
             "uri": "git://git.openstack.org/openstack/vmware-nsx.git",
             "organization": "openstack",
