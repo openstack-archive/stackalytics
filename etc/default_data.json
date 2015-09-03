@@ -6797,6 +6797,18 @@
             "emails": ["madhusudhan.openstack@gmail.com", "madhusudhan.kandadai@hp.com"]
         },
         {
+           "launchpad_id": "madorn",
+           "gerrit_id": "madorn",
+           "companies": [
+               {
+                   "company_name": "Rackspace",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Matt Dorn",
+           "emails": ["madorn@gmail.com", "matt.dorn@rackspace.com"]
+        },
+        {
             "launchpad_id": "magesh-gv",
             "companies": [
                 {
