@@ -30,14 +30,7 @@ def _get_bug_id(web_link):
     return web_link[web_link.rfind('/') + 1:]
 
 
-def log(repo, modified_since):
-    module = repo['module']
-    LOG.debug('Retrieving list of bugs for module: %s', module)
-
-    if not launchpad_utils.lp_module_exists(module):
-        LOG.debug('Module %s does not exist at Launchpad', module)
-        return
-
+def _log_module(module, primary_module, modified_since):
     for record_draft in launchpad_utils.lp_bug_generator(module,
                                                          modified_since):
 
@@ -67,8 +60,24 @@ def log(repo, modified_since):
                 record[field] = utils.iso8601_to_timestamp(date)
 
         bug_id = _get_bug_id(record_draft['web_link'])
-        record['module'] = module
-        record['id'] = utils.make_bug_id(bug_id, module, record.get('release'))
+        record['module'] = primary_module
+        record['id'] = utils.make_bug_id(bug_id, primary_module,
+                                         record.get('release'))
 
         LOG.debug('New bug: %s', record)
         yield record
+
+
+def log(repo, modified_since):
+    repo_module = repo['module']
+    modules = [repo_module] + repo.get('aliases', [])
+
+    for module in modules:
+        if not launchpad_utils.lp_module_exists(module):
+            LOG.debug('Module %s does not exist at Launchpad, skip it', module)
+            continue
+
+        LOG.debug('Retrieving list of bugs for module: %s', module)
+
+        for record in _log_module(module, repo_module, modified_since):
+            yield record

@@ -26,14 +26,7 @@ LINK_FIELDS = ['owner', 'drafter', 'starter', 'completer',
 DATE_FIELDS = ['date_created', 'date_completed', 'date_started']
 
 
-def log(repo):
-    module = repo['module']
-    LOG.debug('Retrieving list of blueprints for module: %s', module)
-
-    if not launchpad_utils.lp_module_exists(module):
-        LOG.debug('Module %s does not exist at Launchpad', module)
-        return
-
+def _log_module(module, primary_module):
     for record in launchpad_utils.lp_blueprint_generator(module):
         for field in LINK_FIELDS:
             link = record[field + '_link']
@@ -45,8 +38,22 @@ def log(repo):
             if date:
                 record[field] = utils.iso8601_to_timestamp(date)
 
-        record['module'] = module
-        record['id'] = utils.get_blueprint_id(module, record['name'])
+        record['module'] = primary_module
+        record['id'] = utils.get_blueprint_id(primary_module, record['name'])
 
         LOG.debug('New blueprint: %s', record)
         yield record
+
+
+def log(repo):
+    repo_module = repo['module']
+    modules = [repo_module] + repo.get('aliases', [])
+
+    for module in modules:
+        if not launchpad_utils.lp_module_exists(module):
+            LOG.debug('Module %s does not exist at Launchpad, skip it', module)
+            return
+
+        LOG.debug('Retrieving list of blueprints for module: %s', module)
+        for record in _log_module(module, repo_module):
+            yield record

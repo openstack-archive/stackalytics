@@ -468,6 +468,7 @@ class RecordProcessor(object):
         bpd['primary_key'] = 'bpd:' + record['id']
         bpd['launchpad_id'] = bpd_author
         bpd['date'] = record['date_created']
+        bpd['web_link'] = record.get('web_link')
 
         self._update_record_and_user(bpd)
 

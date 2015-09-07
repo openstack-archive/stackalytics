@@ -219,3 +219,32 @@ class TestBps(testtools.TestCase):
         actual = list(bps.log(repo, modified_since))
 
         self.assertEqual(expected, actual)
+
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_module_exists')
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
+    def test_log_module_alias(self, lp_bug_generator, lp_module_exists):
+        # bug linked to another project should not appear
+        repo = {
+            'module': 'savanna',
+            'aliases': ['sahara']
+        }
+        modified_since = 1234567890
+        lp_bug_generator.return_value = iter([BUG])
+        lp_module_exists.side_effect = iter([False, True])
+
+        expected = [{
+            'assignee': 'slukjanov',
+            'date_created': 1433252154,
+            'date_fix_committed': 1433266265,
+            'id': 'savanna/1458945',
+            'importance': 'Medium',
+            'module': 'savanna',  # should be the same as primary module name
+            'owner': 'samueldmq',
+            'status': 'Fix Released',
+            'title': 'Bug #1458945 in Sahara: "Use graduated oslo.policy"',
+            'web_link': 'https://bugs.launchpad.net/sahara/+bug/1458945'
+        }]
+
+        actual = list(bps.log(repo, modified_since))
+
+        self.assertEqual(expected, actual)

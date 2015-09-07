@@ -6,30 +6,39 @@ Blueprint &ldquo;{{ blueprint.title }}&rdquo; report
 {% endblock %}
 
 {% block content %}
-<h1>Blueprint &ldquo;{{ blueprint.name }}&rdquo;</h1>
+<h1>Blueprint &ldquo;{{ blueprint.title }}&rdquo;</h1>
 
-<div><span class="label">Title:</span> {{ blueprint.title }}</div>
-<div><span class="label">URL:</span> <a href="https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}">https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}</a></div>
-<div><span class="label">Module:</span> {{blueprint.module}}</div>
+<div><span class="label">Name:</span> {{ blueprint.name }}</div>
+<div><span class="label">URL:</span>
+  {% if blueprint.web_link %}
+  <a href="{{ blueprint.web_link }}" class="ext_link">{{ blueprint.web_link }}</a>
+  {% else %}
+  <a href="https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}" class="ext_link">https://blueprints.launchpad.net/{{ blueprint.module }}/+spec/{{ blueprint.name }}</a>
+  {% endif %}
+</div>
+<div><span class="label">Module:</span> {{ blueprint.module_link | safe }}</div>
 <div><span class="label">Status:</span> <span class="status{{blueprint.lifecycle_status}}">{{blueprint.lifecycle_status}}</span></div>
-<div><span class="label">Priority:</span> <span class="status{{blueprint.priority}}">{{blueprint.priority}}</span></div>
+<div><span class="label">Priority:</span> <span class="specpriority{{blueprint.priority}}">{{blueprint.priority}}</span></div>
 <div><span class="label">Definition Status:</span> <span class="specstatus{{blueprint.definition_status}}">{{blueprint.definition_status}}</span></div>
 <div><span class="label">Implementation Status:</span> <span class="specdelivery{{blueprint.implementation_status}}">{{blueprint.implementation_status}}</span></div>
 <div><span class="label">Direction:</span> {% if blueprint.direction_approved %} Approved {% else %} Needs Approval {% endif %}</div>
-<div><span class="label">Registered By:</span> {{blueprint.author_name}} ({{ blueprint.company_name }})</div>
-<div><span class="label">Registered On:</span> {{blueprint.date_str}}</div>
+<div><span class="label">Registered By:</span> {{ blueprint.author_link | safe }} ({{ blueprint.company_link | safe }})</div>
+<div><span class="label">Registered On:</span> {{ blueprint.date_str }}</div>
 {% if blueprint.mention_count %}
 <div><span class="label">Popularity:</span> mentioned {{blueprint.mention_count}} times, last on {{blueprint.mention_date_str}}</div>
+{% endif %}
+{% if blueprint.specification_url %}
+<div><span class="label">Specification:</span> <a href="{{ blueprint.specification_url }}" class="ext_link">{{ blueprint.specification_url }}</a></div>
 {% endif %}
 
 {% if blueprint.summary %}
 <h2>Summary</h2>
-<div class="message">{{  blueprint.summary | safe }}</div>
+<div class="record"><div class="message">{{  blueprint.summary | safe }}</div></div>
 {% endif %}
 
 {% if blueprint.whiteboard %}
 <h2>Whiteboard</h2>
-<div class="message">{{  blueprint.whiteboard }}</div>
+<div class="record"><div class="message">{{  blueprint.whiteboard }}</div></div>
 {% endif %}
 
 {{ activity_log.show_activity_log(blueprint_id=blueprint.id, gravatar_size=64) }}
