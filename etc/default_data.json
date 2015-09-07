@@ -4226,6 +4226,21 @@
             "emails": ["git-harry@live.co.uk"]
         },
         {
+            "launchpad_id": "glacierrdev",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2015-Apr-31"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Durnosvystov",
+            "emails": ["glacierr.dev@gmail.com", "mdurnosvistov@mirantis.com"]
+        },
+        {
             "launchpad_id": "glongwave",
             "gerrit_id": "gcb",
             "companies": [
