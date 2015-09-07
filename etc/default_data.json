@@ -9732,6 +9732,17 @@
             "emails": ["sebastien.badia@enovance.com", "sbadia@redhat.com"]
         },
         {
+            "launchpad_id": "scarvalhojr",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergio de Carvalho",
+            "emails": ["scarvalhojr@gmail.com", "sergio.carvalho@workday.com"]
+        },
+        {
             "launchpad_id": "scassiba",
             "companies": [
                 {
