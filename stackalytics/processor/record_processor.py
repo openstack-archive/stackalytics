@@ -333,7 +333,8 @@ class RecordProcessor(object):
         review['primary_key'] = review['id']
         if owner.get('username'):
             review['gerrit_id'] = owner['username']
-        review['author_name'] = owner['name']
+        review['author_name'] = (owner.get('name') or owner.get('username')
+                                 or 'Anonymous Coward')  # do it like gerrit
         if owner.get('email'):
             review['author_email'] = owner['email'].lower()
         review['date'] = record['createdOn']
