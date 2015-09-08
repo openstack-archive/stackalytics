@@ -2070,6 +2070,17 @@
             "emails": ["chmouel@chmouel.com", "launchpad@chmouel.com", "chmouel.boudjnah@rackspace.co.uk", "chmouel@openstack.org", "chmouel@enovance.com", "chmouel@redhat.com"]
         },
         {
+            "launchpad_id": "choudharyvikas16",
+            "companies": [
+                {
+                    "company_name": "Imaginea Technologies Inc",
+                    "end_date": null
+                }
+            ],
+            "user_name": "vikaschoudhary16",
+            "emails": ["choudharyvikas16@gmail.com", "vikas.choudhary@imaginea.com"]
+        },
+        {
 
             "launchpad_id": "chowdhury-imtiaz",
             "companies": [
