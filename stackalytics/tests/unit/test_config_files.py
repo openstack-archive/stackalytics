@@ -20,6 +20,8 @@ import jsonschema
 import six
 import testtools
 
+from stackalytics.processor import normalizer
+
 
 def dict_raise_on_duplicates(ordered_pairs):
     """Reject duplicate keys."""
@@ -176,3 +178,13 @@ class TestConfigFiles(testtools.TestCase):
     def test_test_default_data_whitespace_issues(self):
         self._verify_default_data_whitespace_issues(
             'etc/test_default_data.json')
+
+    def _validate_default_data_correctness(self, file_name):
+        data = self._read_file(file_name)
+        normalizer.normalize_default_data(data)
+
+    def test_default_data_user_profiles_correctness(self):
+        self._validate_default_data_correctness('etc/default_data.json')
+
+    def test_test_default_data_user_profiles_correctness(self):
+        self._validate_default_data_correctness('etc/test_default_data.json')
