@@ -420,6 +420,62 @@ class TestRecordProcessor(testtools.TestCase):
             record_processor_inst.runtime_storage_inst, user_id='john_doe')
         self.assertEqual('John_Doe', user['gerrit_id'])
 
+    def test_process_review_without_name(self):
+        record_processor_inst = self.make_record_processor()
+
+        records = list(record_processor_inst.process([
+            {
+                'record_type': 'review',
+                'module': 'sandbox',
+                "project": "openstack-dev/sandbox",
+                "branch": "master",
+                "id": "I8ecdd044c45e93589b42c3166167c30a3bd0ed5f",
+                "number": "220784", "subject": "hello,i will commit",
+                "owner": {"email": "1102012941@qq.com", "username": "yl"},
+                "createdOn": 1441524597,
+                "patchSets": [
+                    {
+                        "number": "1",
+                        "revision": "95f73967a869db6748b22c6562fbfc09c08ef910",
+                        "uploader": {
+                            "email": "foo@qq.com"},
+                        "createdOn": 1441524597,
+                        "author": {
+                            "email": "1102012941@qq.com"},
+                        "approvals": [
+                            {"type": "Code-Review",
+                             "value": "-1",
+                             "grantedOn": 1441524601,
+                             "by": {
+                                 "email": "congressci@gmail.com",
+                                 "username": "vmware-congress-ci"}}]}]}
+        ]))
+
+        expected_review = {
+            'user_id': 'yl',
+            'author_email': '1102012941@qq.com',
+            'author_name': 'yl',
+            'company_name': '*independent',
+        }
+
+        expected_patch = {
+            'user_id': 'foo@qq.com',
+            'author_email': 'foo@qq.com',
+            'author_name': 'Anonymous Coward',
+            'company_name': '*independent',
+        }
+
+        expected_mark = {
+            'user_id': 'vmware-congress-ci',
+            'author_email': 'congressci@gmail.com',
+            'author_name': 'vmware-congress-ci',
+            'company_name': '*independent',
+        }
+
+        self.assertRecordsMatch(expected_review, records[0])
+        self.assertRecordsMatch(expected_patch, records[1])
+        self.assertRecordsMatch(expected_mark, records[2])
+
     def generate_bugs(self, assignee=None, date_fix_committed=None,
                       status='Confirmed'):
         yield {

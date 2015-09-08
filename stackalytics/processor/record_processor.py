@@ -366,7 +366,9 @@ class RecordProcessor(object):
         uploader = patch['uploader']
         if uploader.get('username'):
             patch_record['gerrit_id'] = uploader['username']
-        patch_record['author_name'] = uploader['name']
+        patch_record['author_name'] = (uploader.get('name')
+                                       or uploader.get('username')
+                                       or 'Anonymous Coward')
         if uploader.get('email'):
             patch_record['author_email'] = uploader['email'].lower()
         patch_record['module'] = review['module']
@@ -387,7 +389,7 @@ class RecordProcessor(object):
         mark['date'] = approval['grantedOn']
         mark['primary_key'] = (review['id'] + str(mark['date']) + mark['type'])
         mark['gerrit_id'] = reviewer['username']
-        mark['author_name'] = reviewer['name']
+        mark['author_name'] = reviewer.get('name') or reviewer.get('username')
         mark['author_email'] = reviewer['email'].lower()
         mark['module'] = review['module']
         mark['branch'] = review['branch']
