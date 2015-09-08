@@ -3194,11 +3194,15 @@
                 },
                 {
                     "company_name": "Internap",
+                    "end_date": "2015-Aug-21"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "David Moreau Simard",
-            "emails": ["moi@dmsimard.com", "dmsimard@iweb.com", "dmsimard@internap.com"]
+            "emails": ["moi@dmsimard.com", "dmsimard@iweb.com", "dmsimard@internap.com", "dms@redhat.com"]
         },
         {
             "launchpad_id": "docaedo",
