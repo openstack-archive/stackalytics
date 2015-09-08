@@ -1440,6 +1440,21 @@
             "emails": ["brad@nicira.com", "bhall@nicira.com"]
         },
         {
+            "launchpad_id": "bharath-ves",
+            "companies": [
+                {
+                    "company_name": "TATA",
+                    "end_date": "2015-Aug-06"
+                },
+                {
+                    "company_name": "Imaginea Technologies Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bharath Thiruveedula",
+            "emails": ["bharath_ves@hotmail.com", "bharath.thiruveedula@imaginea.com"]
+        },
+        {
             "launchpad_id": "bharathm",
             "companies": [
                 {
