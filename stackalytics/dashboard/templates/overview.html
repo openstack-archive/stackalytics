@@ -15,8 +15,7 @@
 {% set show_contribution_on_right = (user_id) or (company and not module) %}
 {% set show_user_profile = (user_id) %}
 {% set show_module_details = (module) %}
-{% set show_top_mentors_options = (metric == 'tm_marks') %}
-{% set show_review_ratio = (metric in ['marks', 'tm_marks']) %}
+{% set show_review_ratio = (metric in ['marks']) %}
 
 {% macro show_report_links(module=None, company=None, user_id=None) -%}
     {% if module %}
@@ -61,45 +60,6 @@
 
 </script>
 
-{% endblock %}
-
-{% block report_options %}
-    {% if show_top_mentors_options %}
-        <script type='text/javascript'>
-            $(document).ready(function () {
-                $('#review_nth').val('{{ review_nth }}');
-                $("#review_nth").select2();
-            });
-
-            function make_options() {
-                var options = getUrlVars();
-                options['review_nth'] = $('#review_nth').val();
-                return options;
-            }
-
-            function reload() {
-                window.location.search = $.map(make_options(),function (val, index) {
-                    return index + "=" + val;
-                }).join("&")
-            }
-
-            $(document).on('change', '#review_nth', function (evt) {
-                reload();
-            });
-        </script>
-        <div class="drop" style="margin-top: 1em;">
-            <label for="review_nth">Aggregate stats for first # reviews</label>
-            <select id="review_nth" name="review_nth"
-                    style="min-width: 140px;"
-                    data-placeholder="Select review #">
-                <option></option>
-                {% set review_number_options = [1, 2, 3, 4, 5, 10, 15] %}
-                {% for option in review_number_options %}
-                    <option value="{{ option }}">{{ option }}</option>
-                {% endfor %}
-            </select>
-        </div>
-    {% endif %}
 {% endblock %}
 
 {% block left_frame %}

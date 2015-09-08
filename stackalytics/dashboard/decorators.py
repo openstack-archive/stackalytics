@@ -206,17 +206,6 @@ def record_filter(ignore=None):
                             memory_storage_inst.get_record_ids_by_types(
                                 parameters.METRIC_TO_RECORD_TYPE[metric]))
 
-            if 'tm_marks' in metric:
-                filtered_ids = []
-                review_nth = int(parameters.get_parameter('review_nth')[0])
-                for record in memory_storage_inst.get_records(record_ids):
-                    parent = memory_storage_inst.get_record_by_primary_key(
-                        record['review_id'])
-                    if (parent and ('review_number' in parent) and
-                            (parent['review_number'] <= review_nth)):
-                        filtered_ids.append(record['record_id'])
-                record_ids = filtered_ids
-
             blueprint_id = params['blueprint_id']
             if blueprint_id:
                 record_ids = _intersect(
@@ -342,7 +331,6 @@ def aggregate_filter():
                 'commits': (None, None),
                 'loc': (loc_filter, None),
                 'marks': (mark_filter, mark_finalize),
-                'tm_marks': (mark_filter, mark_finalize),
                 'emails': (incremental_filter, None),
                 'bpd': (incremental_filter, None),
                 'bpc': (incremental_filter, None),

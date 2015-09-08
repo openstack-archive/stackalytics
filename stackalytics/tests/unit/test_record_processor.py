@@ -1194,36 +1194,6 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertTrue('mod:blueprint' in email['blueprint_id'])
         self.assertFalse('mod:invalid' in email['blueprint_id'])
 
-    def test_review_number(self):
-        record_processor_inst = self.make_record_processor()
-        runtime_storage_inst = record_processor_inst.runtime_storage_inst
-
-        runtime_storage_inst.set_records(record_processor_inst.process([
-            {'record_type': 'review',
-             'id': 'I111',
-             'subject': 'Fix AttributeError in Keypair._add_details()',
-             'owner': {'name': 'John Doe',
-                       'email': 'john_doe@gmail.com',
-                       'username': 'john_doe'},
-             'createdOn': 10,
-             'module': 'nova', 'branch': 'master'},
-            {'record_type': 'review',
-             'id': 'I222',
-             'subject': 'Fix AttributeError in Keypair._add_details()',
-             'owner': {'name': 'John Doe',
-                       'email': 'john_doe@gmail.com',
-                       'username': 'john_doe'},
-             'createdOn': 5,
-             'module': 'glance', 'branch': 'master'},
-        ]))
-        record_processor_inst.post_processing({})
-
-        review1 = runtime_storage_inst.get_by_primary_key('I111')
-        self.assertEqual(2, review1['review_number'])
-
-        review2 = runtime_storage_inst.get_by_primary_key('I222')
-        self.assertEqual(1, review2['review_number'])
-
     def test_mark_disagreement(self):
         record_processor_inst = self.make_record_processor(
             users=[

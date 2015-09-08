@@ -697,32 +697,6 @@ class RecordProcessor(object):
             if need_update:
                 yield record
 
-    def _update_reviews_with_sequence_number(self):
-        LOG.debug('Set review number in review records')
-
-        users_reviews = collections.defaultdict(list)
-        for record in self.runtime_storage_inst.get_all_records():
-            if record['record_type'] == 'review':
-                user_id = record.get('user_id')
-                review = {'date': record['date'], 'id': record['id']}
-                users_reviews[user_id].append(review)
-
-        reviews_index = {}
-        for reviews in six.itervalues(users_reviews):
-            reviews.sort(key=lambda x: x['date'])
-            review_number = 0
-            for review in reviews:
-                review_number += 1
-                review['review_number'] = review_number
-                reviews_index[review['id']] = review
-
-        for record in self.runtime_storage_inst.get_all_records():
-            if record['record_type'] == 'review':
-                review = reviews_index[record['id']]
-                if record.get('review_number') != review['review_number']:
-                    record['review_number'] = review['review_number']
-                    yield record
-
     def _determine_core_contributors(self):
         LOG.debug('Determine core contributors')
 
@@ -862,9 +836,6 @@ class RecordProcessor(object):
 
         self.runtime_storage_inst.set_records(
             self._update_records_with_releases(release_index))
-
-        self.runtime_storage_inst.set_records(
-            self._update_reviews_with_sequence_number())
 
         self.runtime_storage_inst.set_records(
             self._update_blueprints_with_mention_info())
