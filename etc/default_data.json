@@ -7473,6 +7473,17 @@
             "emails": ["woppin@gmail.com","michchap@cisco.com"]
         },
         {
+            "launchpad_id": "mick-mccarthy",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mick Mccarthy",
+            "emails": ["mick.mccarthy@workday.com"]
+        },
+        {
             "launchpad_id": "miguelgrinberg",
             "companies": [
                 {
