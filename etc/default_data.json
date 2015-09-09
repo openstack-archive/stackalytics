@@ -453,6 +453,17 @@
             "emails": ["agangil@vmware.com", "akashg1611@gmail.com"]
         },
         {
+            "launchpad_id": "akaszuba",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Artur Kaszuba",
+            "emails": ["akaszuba@mirantis.com"]
+        },
+        {
             "launchpad_id": "akbajaj",
             "companies": [
                 {
@@ -1019,6 +1030,17 @@
             "emails": ["aostapenko@mirantis.com", "andrey_ostapenko@symantec.com"]
         },
         {
+            "launchpad_id": "apalkina",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anastasia Palkina",
+            "emails": ["apalkina@mirantis.com"]
+        },
+        {
             "launchpad_id": "aplanas",
             "companies": [
                 {
@@ -1475,6 +1497,17 @@
             ],
             "user_name": "Jesse Proudman",
             "emails": ["jproudman@bluebox.net"]
+        },
+        {
+            "launchpad_id": "bmathews-l",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bruce Basil Mathews",
+            "emails": ["bmathews@mirantis.com"]
         },
         {
             "launchpad_id": "bmcconne",
@@ -3105,6 +3138,17 @@
             ],
             "user_name": "Dmitry Tantsur",
             "emails": ["divius.inside@gmail.com", "dtantsur@redhat.com"]
+        },
+        {
+            "launchpad_id": "dklenov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dmitry Klenov",
+            "emails": ["dklenov@mirantis.com"]
         },
         {
             "launchpad_id": "dlenwell",
@@ -6512,6 +6556,17 @@
             "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
         },
         {
+            "launchpad_id": "lefremova",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liubov Efremova",
+            "emails": ["lefremova@mirantis.com"]
+        },
+        {
             "launchpad_id": "leixin",
             "companies": [
                 {
@@ -6520,7 +6575,8 @@
                 }
             ],
             "user_name": "leixin",
-            "emails": ["leixin487@hotmail.com", "leixin@awcloud.com"]           },
+            "emails": ["leixin487@hotmail.com", "leixin@awcloud.com"]
+        },
         {
             "launchpad_id": "leseb",
             "companies": [
@@ -6631,6 +6687,17 @@
             ],
             "user_name": "Eohyung Lee",
             "emails": ["liquid@kt.com"]
+        },
+        {
+            "launchpad_id": "listomin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Leontiy Istomin",
+            "emails": ["listomin@mirantis.com"]
         },
         {
             "launchpad_id": "littleidea",
@@ -7836,6 +7903,17 @@
             ],
             "user_name": "Michael Bradford",
             "emails": ["michael_bradford@cable.comcast.com"]
+        },
+        {
+            "launchpad_id": "mzawadzki-f",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marek Zawadzki",
+            "emails": ["mzawadzki@mirantis.com"]
         },
         {
             "launchpad_id": "nakato",
@@ -9458,6 +9536,17 @@
             ],
             "user_name": "Robb Romans",
             "emails": ["robb.romans@rackspace.com", "robb@romans.me"]
+        },
+        {
+            "launchpad_id": "rrufanov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roman Rufanov",
+            "emails": ["rrufanov@mirantis.com"]
         },
         {
             "launchpad_id": "rsokolkov",
@@ -12173,6 +12262,17 @@
             "emails": ["ypraveen@gmail.com", "ypraveen@avinetworks.com"]
         },
         {
+            "launchpad_id": "ysboychakov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evgeny Sboychakov",
+            "emails": ["ysboychakov@mirantis.com"]
+        },
+        {
             "launchpad_id": "yugsuo",
             "companies": [
                 {
@@ -12659,7 +12759,7 @@
         {
             "domains": ["att.com", "attinteractive.com", "research.att.com"],
             "company_name": "AT&T",
-            "aliases": ["AT&T Mobility"]
+            "aliases": ["AT&T Mobility", "AT&T Services"]
         },
         {
             "domains": ["avaya.com"],
