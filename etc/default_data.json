@@ -8817,6 +8817,18 @@
             "emails": ["jim@geekdaily.org", "jim.meyer@hp.com"]
         },
         {
+            "launchpad_id": "pushkar-umaranikar",
+            "gerrit_id": "pushkarumaranikar",
+             "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pushkar Umaranikar",
+            "emails": ["pushkar.umaranikar@intel.com"]
+        },
+        {
             "launchpad_id": "pvo",
             "companies": [
                 {
