@@ -5650,6 +5650,18 @@
             "emails": ["josh.kearney@pistoncloud.com", "josh@jk0.org", "josh.kearney@rackspace.com"]
         },
         {
+            "launchpad_id": "jmckind",
+            "gerrit_id": "jmckind",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "John McKenzie",
+            "emails": ["jmckind@gmail.com", "jmckenzi@rackspace.com", "john.mckenzie@rackspace.com"]
+        },
+        {
             "launchpad_id": "jmeridth",
             "companies": [
                 {
