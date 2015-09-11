@@ -10709,6 +10709,18 @@
             "emails": ["sulochan@gmail.com", "sulochan.acharya@rackspace.co.uk"]
         },
         {
+            "launchpad_id": "sumant-murke",
+            "gerrit_id": "sumantmurke",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sumant Murke",
+            "emails": ["sumant.murke@intel.com"]
+        },
+        {
             "launchpad_id": "sun-jing22",
             "companies": [
                 {
