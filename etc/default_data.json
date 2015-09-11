@@ -1751,6 +1751,18 @@
             "emails": ["vivekanandan.bangarusamy@hp.com"]
         },
         {
+            "launchpad_id": "byron-g-mccollum",
+            "gerrit_id": "joe-dirt",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Byron Grant McCollum",
+            "emails": [ "bg@bgm.io" ]
+        },
+        {
             "launchpad_id": "c-kassen",
             "companies": [
                 {
