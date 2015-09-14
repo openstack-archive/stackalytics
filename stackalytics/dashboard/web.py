@@ -194,7 +194,7 @@ def get_engineers_extended(records, **kwargs):
             return
 
         user = vault.get_user_from_runtime_storage(record['id'])
-        record['company'] = user['companies'][-1]['company_name']
+        record['company'] = helpers.get_current_company(user)
         record['core'] = get_core_engineer_branch(user, modules)
         return record
 
@@ -434,7 +434,7 @@ def get_users_json(record_ids, **kwargs):
             if core_modules:
                 r['core'] = core_modules
                 if user['companies']:
-                    r['company_name'] = user['companies'][-1]['company_name']
+                    r['company_name'] = helpers.get_current_company(user)
                 add_flag = True
         if add_flag:
             result.append(r)

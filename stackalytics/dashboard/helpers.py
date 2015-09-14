@@ -16,6 +16,7 @@
 import datetime
 import operator
 import re
+import time
 
 import six
 
@@ -103,13 +104,22 @@ def extend_record(record):
     return record
 
 
+def get_current_company(user):
+    now = time.time()
+    idx = -1
+    for i, r in enumerate(user['companies']):
+        if now < r['end_date']:
+            idx = i
+    return user['companies'][idx]['company_name']
+
+
 def extend_user(user):
     user = user.copy()
 
     user['id'] = user['user_id']
     user['text'] = user['user_name']
     if user['companies']:
-        company_name = user['companies'][-1]['company_name']
+        company_name = get_current_company(user)
         user['company_link'] = make_link(
             company_name, '/', {'company': company_name, 'user_id': ''})
     else:
