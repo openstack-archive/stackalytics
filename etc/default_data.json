@@ -9505,6 +9505,18 @@
             "emails": ["ronak.malav.shah@gmail.com", "ronak@nuagenetworks.net"]
         },
         {
+            "launchpad_id": "ronald-de-rose",
+            "gerrit_id": "derosenet",
+            "companies": [
+                {
+                   "company_name": "Intel",
+                   "end_date": null
+                }
+            ],
+            "user_name": "derosenet",
+            "emails": ["ronald.de.rose@intel.com"]
+        },
+        {
             "launchpad_id": "rossella-o",
             "companies": [
                 {
