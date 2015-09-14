@@ -899,6 +899,17 @@
             "emails": ["ankita.wagh7@gmail.com", "ankita_wagh@symantec.com"]
         },
         {
+            "launchpad_id": "ankur-gupta-f",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ankur Gupta",
+            "emails": ["ankur.gupta@intel.com"]
+        },
+        {
             "launchpad_id": "ankurrishi",
             "companies": [
                 {
