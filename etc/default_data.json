@@ -10109,6 +10109,18 @@
             "emails": ["itzshamail@gmail.com"]
         },
         {
+            "launchpad_id": "shashirekha-j-gundur",
+            "gerrit_id": "shashirekha.j.gundur",
+            "companies": [
+                {
+                   "company_name": "Intel",
+                   "end_date": null
+                }
+            ],
+            "user_name": "Shashirekha Gundur",
+            "emails": ["shashirekha.j.gundur@intel.com", "shashi.j.gundur@gmail.com"]
+        },
+        {
             "launchpad_id": "shaunm-gnome",
             "companies": [
                 {
