@@ -4613,6 +4613,18 @@
             "emails": ["spring068@sina.cn", "han.rong3@zte.com.cn"]
         },
         {
+            "launchpad_id": "haomai",
+            "companies": [
+                {
+                    "company_name": "XSky",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Haomai Wang",
+            "emails": ["haomaiwang@gmail.com", "haomai@xsky.io",
+                       "haomai@xsky.com"]
+        },
+        {
             "launchpad_id": "haoning",
             "companies": [
                 {
