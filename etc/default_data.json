@@ -12837,6 +12837,10 @@
             "company_name": "Ansible"
         },
         {
+            "domains": ["apalia.net"],
+            "company_name": "Apalia"
+        },
+        {
             "domains": ["apple.com"],
             "company_name": "Apple, Inc."
         },
