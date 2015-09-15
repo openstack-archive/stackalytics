@@ -11939,6 +11939,17 @@
             "emails": ["waipengyip@yahoo.com", "waipengyip@gmail.com", "jake.yip@unimelb.edu.au"]
         },
         {
+            "launchpad_id": "walter-boring",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Walter A. Boring IV",
+            "emails": ["walter.boring@hp.com", "walter.boring@hpe.com", "waboring@hemna.com"]
+        },
+        {
             "launchpad_id": "wan-yen-hsu",
             "companies": [
                 {
