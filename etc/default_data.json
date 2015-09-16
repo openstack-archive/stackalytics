@@ -10390,6 +10390,18 @@
             "emails": ["sirisha.areti@hotmail.com"]
         },
         {
+           "launchpad_id": "siva-radhakrishnan",
+           "gerrit_id": "sivakrishnan",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Sivasathurappan Radhakrishnan",
+           "emails": ["siva.radhakrishnan@intel.com"]
+        },
+        {
             "launchpad_id": "sjayanthi",
             "companies": [
                 {
