@@ -9965,6 +9965,17 @@
             "emails": ["satnam@raintown.org"]
         },
         {
+            "launchpad_id": "satya-patibandla",
+            "companies": [
+                {
+                    "company_name": "Imaginea Technologies Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Satyanarayana Patibandla",
+            "emails": ["satya.patibandla@tcs.com", "satya.patibandla@gmail.com", "satya.patibandla@imaginea.com"]
+        },
+        {
             "launchpad_id": "sbadia",
             "companies": [
                 {
