@@ -6508,6 +6508,17 @@
             "emails": ["kispear@gmail.com", "kieran.spear@unimelb.edu.au", "kieran@aptira.com"]
         },
         {
+            "launchpad_id": "kurt-f-martin",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kurt Martin",
+            "emails": ["kurt.f.martin@hp.com", "kurt.f.martin@hpe.com"]
+        },
+        {
             "launchpad_id": "kylestev",
             "companies": [
                 {
