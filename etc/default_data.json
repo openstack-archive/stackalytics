@@ -307,7 +307,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Scott Adkins",
@@ -735,7 +735,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Andrew Mitry",
@@ -1003,7 +1003,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Anton Thaker",
@@ -2213,17 +2213,6 @@
             "emails": ["chris_p_robinson@hotmail.com", "chrisprobinson@outlook.com", "chris.p.robinson@hp.com"]
         },
         {
-            "launchpad_id": "chris.mauritz",
-            "companies": [
-                {
-                    "company_name": "Comcast",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Christopher Mauritz",
-            "emails": ["chris.mauritz@gmail.com"]
-        },
-        {
             "launchpad_id": "christophe.sauthier",
             "companies": [
                 {
@@ -2755,7 +2744,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-18"
                 }
             ],
             "user_name": "Daniel Speichert",
@@ -3836,17 +3825,6 @@
             ],
             "user_name": "Eric Martin",
             "emails": ["eric_martin4@cable.comcast.com"]
-        },
-        {
-            "launchpad_id": "eric-scholz1975",
-            "companies": [
-                {
-                    "company_name": "Comcast",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Eric Scholz",
-            "emails": ["eric_scholz@cable.comcast.com", "eric.scholz1975@gmail.com"]
         },
         {
             "github_id": "erikh",
@@ -4979,7 +4957,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Prashanth Hari",
@@ -6016,17 +5994,6 @@
             ],
             "user_name": "John Tran",
             "emails": ["jtran@attinteractive.com", "jhtran@att.com"]
-        },
-        {
-            "launchpad_id": "juan-perez",
-            "companies": [
-                {
-                    "company_name": "Comcast",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Juan Perez",
-            "emails": ["juan_perez@cable.comcast.com"]
         },
         {
             "launchpad_id": "juliaashleykreger",
@@ -7978,17 +7945,6 @@
             "emails": ["mvoelker@cisco.com", "mvoelker@vmware.com", "markvoelker@gmail.com"]
         },
         {
-            "launchpad_id": "mykeyjdm",
-            "companies": [
-                {
-                    "company_name": "Comcast",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Michael Bradford",
-            "emails": ["michael_bradford@cable.comcast.com"]
-        },
-        {
             "launchpad_id": "mzawadzki-f",
             "companies": [
                 {
@@ -8045,7 +8001,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Nathan Regola",
@@ -9638,7 +9594,7 @@
             "companies": [
                 {
                     "company_name": "Comcast",
-                    "end_date": null
+                    "end_date": "2015-Sep-16"
                 }
             ],
             "user_name": "Megan Rossetti",
