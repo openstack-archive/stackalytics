@@ -614,6 +614,17 @@
             "emails": ["alex.meade@rackspace.com", "hatboy112@yahoo.com", "mr.alex.meade@gmail.com"]
         },
         {
+            "launchpad_id": "alex-orourke",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex O'Rourke",
+            "emails": ["alex.orourke@hp.com", "alex.orourke@hpe.com"]
+        },
+        {
             "launchpad_id": "alex-schultz",
             "gerrit_id": "mwhahaha",
             "companies": [
