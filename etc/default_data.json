@@ -977,6 +977,17 @@
             "emails": ["akuno@lavabit.com", "anita.kuno@enovance.com", "anteaya@anteaya.info"]
         },
         {
+            "launchpad_id": "anthony-mic-lee",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anthony Lee",
+            "emails": ["anthony.mic.lee@hp.com", "anthony.mic.lee@hpe.com"]
+        },
+        {
             "launchpad_id": "anthony-veiga",
             "companies": [
                 {
