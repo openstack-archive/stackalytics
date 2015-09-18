@@ -5369,6 +5369,23 @@
             "emails": ["jaivish.kothari@nectechnologies.in", "janonymous.codevulture@gmail.com"]
         },
         {
+            "launchpad_id": "jaosorior",
+            "gerrit_id": "ejuaoso",
+            "github_id": "JAORMX",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": "2015-Aug-01"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Juan Antonio Osorio Robles",
+            "emails": ["jaosorior@redhat.com", "jaosorior@gmail.com", "juan.osorio.robles@ericsson.com"]
+        },
+        {
             "launchpad_id": "jasmeet-sidhu",
             "companies": [
                 {
