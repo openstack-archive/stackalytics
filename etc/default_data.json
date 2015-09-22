@@ -5878,6 +5878,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Jun-26"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
