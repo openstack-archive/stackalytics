@@ -15,8 +15,6 @@
 
 from oslo_log import log as logging
 import six
-from six.moves import http_client
-from six.moves.urllib import parse
 
 from stackalytics.processor import utils
 
@@ -54,14 +52,11 @@ def lp_profile_by_email(email):
 
 def lp_module_exists(module):
     uri = LP_URI_DEVEL % module
-    parsed_uri = parse.urlparse(uri)
-    conn = http_client.HTTPConnection(parsed_uri.netloc)
-    conn.request('GET', parsed_uri.path)
-    res = conn.getresponse()
+    request = utils.do_request(uri)
+
     LOG.debug('Checked uri: %(uri)s, status: %(status)s',
-              {'uri': uri, 'status': res.status})
-    conn.close()
-    return res.status != 404
+              {'uri': uri, 'status': request.status_code})
+    return request.status_code != 404
 
 
 def lp_blueprint_generator(module):

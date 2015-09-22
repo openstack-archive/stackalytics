@@ -16,5 +16,7 @@ psutil<2.0.0,>=1.1.1
 PyGithub
 python-memcached>=1.56
 PyYAML>=3.1.0
+requests>=2.5.2
+requests-file
 sh
 six>=1.9.0

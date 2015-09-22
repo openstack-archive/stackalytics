@@ -17,8 +17,6 @@ import calendar
 import cgi
 import datetime
 import gzip
-import io
-import json
 import random
 import re
 import time
@@ -26,6 +24,8 @@ import time
 import iso8601
 from oslo_config import cfg
 from oslo_log import log as logging
+import requests
+import requests_file
 import six
 
 
@@ -117,35 +117,52 @@ user_agents = [
 ]
 
 
+def do_request(uri, method='get'):
+    with requests.Session() as session:
+        session.mount('file://', requests_file.FileAdapter())
+        user_agent = random.choice(user_agents)
+
+        return session.request(method, uri, headers={'User-Agent': user_agent})
+
+
 def read_uri(uri):
     try:
-        req = six.moves.urllib.request.Request(
-            url=uri, headers={'User-Agent': random.choice(user_agents)})
-        fd = six.moves.urllib.request.urlopen(req)
-        if six.PY3:
-            fd = io.TextIOWrapper(fd)
-        raw = fd.read()
-        fd.close()
-        return raw
+        return do_request(uri).text
     except Exception as e:
-        LOG.warn('Error "%(error)s" while reading uri %(uri)s',
+        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
                  {'error': e, 'uri': uri})
 
 
 def read_json_from_uri(uri):
     try:
-        return json.loads(read_uri(uri))
+        return do_request(uri).json()
     except Exception as e:
         LOG.warn('Error "%(error)s" parsing json from uri %(uri)s',
                  {'error': e, 'uri': uri})
 
 
-def gzip_decompress(content):
+def _gzip_decompress(content):
     if six.PY3:
         return gzip.decompress(content).decode('utf8')
     else:
         gzip_fd = gzip.GzipFile(fileobj=six.moves.StringIO(content))
         return gzip_fd.read()
+
+
+def read_gzip_from_uri(uri):
+    try:
+        return _gzip_decompress(do_request(uri).content)
+    except Exception as e:
+        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
+                 {'error': e, 'uri': uri})
+
+
+def get_uri_last_modified(uri):
+    try:
+        return do_request(uri, method='head').headers['last-modified']
+    except Exception as e:
+        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
+                 {'error': e, 'uri': uri})
 
 
 def cmp_to_key(mycmp):  # ported from python 3
