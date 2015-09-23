@@ -4219,6 +4219,17 @@
             "emails": ["gaoqian1983@outlook.com"]
         },
         {
+            "launchpad_id": "gary-w-smith",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gary W. Smith",
+            "emails": ["gary.w.smith@hp.com", "gary.w.smith@hpe.com", "garysmith123@gmail.com"]
+        },
+        {
             "launchpad_id": "garyk",
             "companies": [
                 {
