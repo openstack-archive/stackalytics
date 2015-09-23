@@ -5635,6 +5635,17 @@
             "emails": ["liangliang.luo@easystack.cn", "jexbow@foxmail.com"]
         },
         {
+            "launchpad_id": "jgravel",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julie Gravel",
+            "emails": ["julie.gravel@hp.com", "julie.gravel@hpe.com"]
+        },
+        {
             "launchpad_id": "jhalterman",
             "companies": [
                 {
