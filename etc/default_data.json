@@ -12834,6 +12834,21 @@
             "emails": ["zxiiro@gmail.com", "thanh.ha@linuxfoundation.org"]
         },
         {
+            "launchpad_id": "zxkuqyb",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Sep-04"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "matthew wagoner",
+            "emails": ["zxkuqyb@gmail.com", "matthew.wagoner@hp.com"]
+        },
+        {
             "launchpad_id": "zyluo",
             "companies": [
                 {
