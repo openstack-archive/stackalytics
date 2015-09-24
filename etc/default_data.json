@@ -11954,6 +11954,17 @@
             "emails": ["vladik.romanovsky@enovance.com", "vromanso@redhat.com"]
         },
         {
+            "launchpad_id": "vmbrasseur",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "VM Brasseur",
+            "emails": ["openstack@vmbrasseur.email", "vmb@vmbrasseur.com"]
+        },
+        {
             "launchpad_id": "vmtrooper",
             "companies": [
                 {
