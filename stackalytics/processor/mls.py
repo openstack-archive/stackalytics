@@ -18,7 +18,6 @@ import re
 
 from oslo_log import log as logging
 import six
-from six.moves import http_client
 from six.moves.urllib import parse
 
 from stackalytics.processor import utils
@@ -60,31 +59,25 @@ def _get_mail_archive_links(uri):
     return [parse.urljoin(uri, link) for link in links]
 
 
-def _link_content_changed(link, runtime_storage_inst):
-    LOG.debug('Check changes for mail archive located at uri: %s', link)
-    parsed_uri = parse.urlparse(link)
-    conn = http_client.HTTPConnection(parsed_uri.netloc)
-    conn.request('HEAD', parsed_uri.path)
-    res = conn.getresponse()
-    last_modified = res.getheader('last-modified')
-    conn.close()
+def _uri_content_changed(uri, runtime_storage_inst):
+    LOG.debug('Check changes for mail archive located at: %s', uri)
+    last_modified = utils.get_uri_last_modified(uri)
 
-    if last_modified != runtime_storage_inst.get_by_key('mail_link:' + link):
+    if last_modified != runtime_storage_inst.get_by_key('mail_link:' + uri):
         LOG.debug('Mail archive changed, last modified at: %s', last_modified)
-        runtime_storage_inst.set_by_key('mail_link:' + link, last_modified)
+        runtime_storage_inst.set_by_key('mail_link:' + uri, last_modified)
         return True
 
     return False
 
 
 def _retrieve_mails(uri):
-    LOG.debug('Retrieving mail archive from uri: %s', uri)
-    content = utils.read_uri(uri)
+    LOG.debug('Retrieving mail archive from: %s', uri)
+    content = utils.read_gzip_from_uri(uri)
     if not content:
-        LOG.error('Error reading mail archive from uri: %s', uri)
+        LOG.error('Error reading mail archive from: %s', uri)
         return
 
-    content = utils.gzip_decompress(content)
     LOG.debug('Mail archive is loaded, start processing')
 
     content += TRAILING_RECORD
@@ -116,7 +109,7 @@ def log(uri, runtime_storage_inst):
 
     links = _get_mail_archive_links(uri)
     for link in links:
-        if _link_content_changed(link, runtime_storage_inst):
+        if _uri_content_changed(link, runtime_storage_inst):
             for mail in _retrieve_mails(link):
                 LOG.debug('New mail: %s', mail['message_id'])
                 yield mail
