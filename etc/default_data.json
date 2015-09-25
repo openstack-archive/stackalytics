@@ -2299,11 +2299,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Sep-18"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Clint Byrum",
-            "emails": ["clint@fewbar.com", "clint.byrum@hp.com", "clint@ubuntu.com"]
+            "emails": ["clint@fewbar.com", "clint.byrum@hp.com", "clint@ubuntu.com", "cbyrum@us.ibm.com"]
         },
         {
             "launchpad_id": "cmsj",
