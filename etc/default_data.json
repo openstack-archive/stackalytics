@@ -12373,6 +12373,17 @@
             "emails": ["haifeng.yan@hp.com", "yanheven@gmail.com", "yanhf@chinanetcenter.com", "yanheven@qq.com"]
         },
         {
+            "launchpad_id": "yankcrime",
+            "companies": [
+                {
+                    "company_name": "DataCentred",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yankcrime",
+            "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com"]
+        },
+        {
             "launchpad_id": "yapengwu",
             "companies": [
                 {
@@ -13213,6 +13224,10 @@
         {
             "domains": ["d-red.jp"],
             "company_name": "Daikanyama RED"
+        },
+        {
+            "domains": ["datacentred.co.uk", "datacentred.io"],
+            "company_name": "DataCentred"
         },
         {
             "domains": ["debian.org"],
