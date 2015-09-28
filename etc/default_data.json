@@ -9034,6 +9034,18 @@
             "emails": ["joe.hakim.rahme@enovance.com", "jhakimra@redhat.com"]
         },
         {
+            "launchpad_id": "rahulunair",
+            "gerrit_id": "rahulunair",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rahul U Nair",
+            "emails": ["rahulunair@gmail.com", "hqp365@my.utsa.edu"]
+        },
+        {
             "launchpad_id": "raildo",
             "gerrit_id": "raildo",
             "companies": [
