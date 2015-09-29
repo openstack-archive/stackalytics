@@ -9691,6 +9691,22 @@
             "emails": ["ronald.de.rose@intel.com"]
         },
         {
+            "launchpad_id": "ronaldbradford",
+            "gerrit_id": "ronaldbradford",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2015-Aug-17"
+                },
+                {
+                   "company_name": "HP",
+                   "end_date": null
+                }
+            ],
+            "user_name": "Ronald Bradford",
+            "emails": ["ronald.bradford@gmail.com", "me@ronaldbradford.com"]
+        },
+        {
             "launchpad_id": "rossella-o",
             "companies": [
                 {
