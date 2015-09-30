@@ -189,6 +189,19 @@
             "emails": ["abhijeet.jain@nectechnologies.in", "abhijeetjpjain@gmail.com", "abhijeet_jain@ymail.com"]
         },
         {
+            "launchpad_id": "abhishek-srivastav",
+            "github_id": "srivastav-abhishek",
+            "gerrit_id": "Abhishek",
+            "companies": [
+                {
+                    "company_name": "Maplelabs",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abhishek Srivastav",
+            "emails": ["abhishek.srivastav@maplelabs.com"]
+        },
+        {
             "launchpad_id": "abhishekl",
             "companies": [
                 {
@@ -10342,6 +10355,19 @@
             ],
             "user_name": "Shanthakumar K",
             "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com"]
+        },
+        {
+            "launchpad_id": "sheshananda",
+            "github_id": "sheshanand",
+            "gerrit_id": "sheshananda",
+            "companies": [
+                {
+                   "company_name": "Maplelabs",
+                   "end_date": null
+                }
+            ],
+            "user_name": "Sheshananda Naidu",
+            "emails": ["sheshananda.naidu@maplelabs.com"]
         },
         {
             "launchpad_id": "shilla-saebi",
