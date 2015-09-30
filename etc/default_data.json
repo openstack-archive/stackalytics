@@ -11044,11 +11044,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Aug-20"
+                },
+                {
+                    "company_name": "Intel",
                     "end_date": null
                 }
             ],
             "user_name": "Susanne Balle",
-            "emails": ["sleipnir012@gmail.com", "susanne.balle@hp.com"]
+            "emails": ["sleipnir012@gmail.com", "susanne.balle@hp.com", "susanne.balle@intel.com"]
         },
         {
             "launchpad_id": "sushil-kumar2",
