@@ -190,15 +190,15 @@ function showSummary(base_url) {
                         var master = tableData[i].releases[last_release];
                         if (master.review_url) {
                             tableData[i].ci_tested = "<a href=\"" + master.review_url +
-                                    "\" target=\"_blank\" title=\"Click for details\"><span style=\"color: #008000\">&#x2714;</span></a>";
+                                    "\" target=\"_blank\" title=\"CI is enabled on master. Click to see the latest results\"><span style=\"color: #00A000\">&#x2714;</span></a>";
                         } else {
-                            tableData[i].ci_tested = "<span style=\"color: #808080\">&#x2714;</span>";
+                            tableData[i].ci_tested = "<span style=\"color: #909090\" title=\"CI is configured, but no results observed\">&#x2714;</span>";
                         }
                     } else {
-                        tableData[i].ci_tested = "<span style=\"color: #808080\">&#x2714;</span>";
+                        tableData[i].ci_tested = "<span style=\"color: #909090\" title=\"CI is configured, but no results observed\">&#x2714;</span>";
                     }
                 } else {
-                    tableData[i].ci_tested = "<span style=\"color: darkred\">&#x2716;</span>";
+                    tableData[i].ci_tested = "<span style=\"color: darkred\" title=\"CI is not configured\">&#x2716;</span>";
                 }
 
                 var maintainers_list = [];
