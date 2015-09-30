@@ -36,6 +36,11 @@
             "domains": [""]
         },
         {
+            "company_name": "Some Test Company",
+            "domains": [""],
+            "aliases": ["Duo", "Uno"]
+        },
+        {
             "company_name": "Hewlett-Packard",
             "domains": ["hp.com"]
         },
