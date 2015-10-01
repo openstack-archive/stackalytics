@@ -10029,6 +10029,18 @@
             "emails": ["sandy@darksecretsoftware.com", "sandy@sandywalsh.com"]
         },
         {
+            "launchpad_id": "sanket-lawangare-d",
+            "gerrit_id": "sanket.lawangare",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sanket.lawangare",
+            "emails": ["sanket.lawangare@gmail.com", "csg341@my.utsa.edu"]
+        },
+        {
             "launchpad_id": "santhoshkumar",
             "companies": [
                 {
