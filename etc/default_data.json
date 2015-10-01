@@ -4636,6 +4636,17 @@
             "emails": ["guoshan@awcloud.com"]
         },
         {
+            "launchpad_id": "guoyongxhzhf",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guo Yong",
+            "emails": ["guoyongxhzhf@163.com"]
+        },
+        {
             "launchpad_id": "gus",
             "companies": [
                 {
