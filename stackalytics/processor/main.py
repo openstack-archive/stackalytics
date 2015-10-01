@@ -240,8 +240,10 @@ def apply_corrections(uri, runtime_storage_inst):
 
 def process_project_list(runtime_storage_inst, project_list_uri):
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
+    releases = runtime_storage_inst.get_by_key('releases') or {}
 
-    official_module_groups = governance.read_projects_yaml(project_list_uri)
+    official_module_groups = governance.process_official_list(releases)
+
     LOG.debug('Update module groups with official: %s', official_module_groups)
     module_groups.update(official_module_groups)
 
