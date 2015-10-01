@@ -15518,51 +15518,123 @@
         },
         {
             "release_name": "Austin",
-            "end_date": "2010-Oct-21"
+            "end_date": "2010-Oct-21",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Bexar",
-            "end_date": "2011-Feb-03"
+            "end_date": "2011-Feb-03",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Cactus",
-            "end_date": "2011-Apr-15"
+            "end_date": "2011-Apr-15",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Diablo",
-            "end_date": "2011-Sep-22"
+            "end_date": "2011-Sep-22",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Essex",
-            "end_date": "2012-Apr-05"
+            "end_date": "2012-Apr-05",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Folsom",
-            "end_date": "2012-Oct-04"
+            "end_date": "2012-Oct-04",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Grizzly",
-            "end_date": "2013-Apr-04"
+            "end_date": "2013-Apr-04",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Havana",
-            "end_date": "2013-Oct-17"
+            "end_date": "2013-Oct-17",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Icehouse",
-            "end_date": "2014-Apr-17"
+            "end_date": "2014-Apr-17",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Juno",
-            "end_date": "2014-Oct-16"
+            "end_date": "2014-Oct-16",
+            "refs": {
+                "governance": {
+                    "type": "legacy",
+                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=5923e6e2eacf961cf2d97b21b0b38cc29461b7af"
+                }
+            }
         },
         {
             "release_name": "Kilo",
-            "end_date": "2015-Apr-30"
+            "end_date": "2015-Apr-30",
+            "refs": {
+                "governance": {
+                    "type": "early_big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=c13377dd51e78977d673b64a9a47915b7e4bfe1d"
+                }
+            }
         },
         {
             "release_name": "Liberty",
-            "end_date": "2015-Oct-15"
+            "end_date": "2015-Oct-15",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
         }
     ],
     "mail_lists": [

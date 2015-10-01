@@ -64,6 +64,9 @@
                     },
                     "end_date": {
                         "$ref": "#/definitions/date_format"
+                    },
+                    "refs": {
+                        "type": "object"
                     }
                 },
                 "required": ["release_name", "end_date"],

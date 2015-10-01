@@ -33,19 +33,51 @@ def _make_module_group(module_groups, name):
     return m
 
 
-def read_projects_yaml(project_list_uri):
-    LOG.debug('Process list of projects from uri: %s', project_list_uri)
-    content = yaml.safe_load(utils.read_uri(project_list_uri))
-    module_groups = collections.defaultdict(lambda: {'modules': []})
+def read_legacy_programs_yaml(module_groups, release_name, content):
+    all_official = module_groups['openstack-official']
 
-    all_official = _make_module_group(module_groups, 'openstack-official')
+    for name, info in six.iteritems(content):
+        # for one program
+        # group_id = name.lower()
+        # if 'codename' in info:
+        #     name = '%s (%s)' % (info['codename'], name)
+        #     group_id = '%s-group' % info['codename'].lower()
+        #
+        # module_groups[group_id]['module_group_name'] = name
+        # module_groups[group_id]['tag'] = 'program'
 
-    for tag in TAGS:
-        _make_module_group(module_groups, tag)
+        for module in info['projects']:
+            mn = module['repo'].split('/')[1]  # module_name
+
+            # module_groups[group_id]['releases'][release_name].append(mn)
+            all_official['releases'][release_name].append(mn)
+
+
+def read_early_big_tent_projects_yaml(module_groups, release_name, content):
+    all_official = module_groups['openstack-official']
+
+    for name, info in six.iteritems(content):
+        # group_id = '%s-group' % name.lower()
+        # module_groups[group_id]['module_group_name'] = '%s Official' % name
+        # module_groups[group_id]['tag'] = 'program'
+
+        for module in info['projects']:
+            repo_split = module['repo'].split('/')
+            if len(repo_split) < 2:
+                continue  # valid repo must be in form of 'org/module'
+            mn = repo_split[1]
+
+            # module_groups[group_id]['releases'][release_name].append(mn)
+            all_official['releases'][release_name].append(mn)
+
+
+def read_big_tent_projects_yaml(module_groups, release_name, content):
+    all_official = module_groups['openstack-official']
 
     for name, project in six.iteritems(content):
         group_id = '%s-group' % name.lower()
-        module_groups[group_id]['module_group_name'] = '%s Official' % name
+        module_groups[group_id]['module_group_name'] = (
+            '%s Official' % name.title())
         module_groups[group_id]['tag'] = 'program'
 
         for d_name, deliverable in six.iteritems(project['deliverables']):
@@ -53,20 +85,66 @@ def read_projects_yaml(project_list_uri):
                 repo_split = repo.split('/')
                 if len(repo_split) < 2:
                     continue  # valid repo must be in form of 'org/module'
-                module_name = repo_split[1]
 
-                module_groups[group_id]['modules'].append(module_name)
+                mn = repo_split[1]  # module_name
 
-                all_official['modules'].append(module_name)
+                module_groups[group_id]['modules'].append(mn)
+                all_official['releases'][release_name].append(mn)
 
                 tags = deliverable.get('tags', [])
                 for tag in tags:
                     if tag in TAGS:
-                        module_groups[tag]['modules'].append(module_name)
+                        module_groups[tag]['modules'].append(mn)
+
+
+def _make_default_module_groups():
+    # create default module groups
+    module_groups = collections.defaultdict(lambda: {'modules': []})
+
+    # openstack official
+    _make_module_group(module_groups, 'openstack-official')
+    module_groups['openstack-official']['releases'] = (
+        collections.defaultdict(list))
+
+    # tags
+    for tag in TAGS:
+        _make_module_group(module_groups, tag)
+
+    return module_groups
+
+
+GOVERNANCE_PROCESSORS = {
+    'legacy': read_legacy_programs_yaml,
+    'early_big_tent': read_early_big_tent_projects_yaml,
+    'big_tent': read_big_tent_projects_yaml,
+}
+
+
+def process_official_list(releases):
+    module_groups = _make_default_module_groups()
+    releases_with_refs = (r for r in releases if r.get('refs'))
+
+    for release in releases_with_refs:
+        ref_governance = release['refs'].get('governance')
+        if not ref_governance:
+            continue
+
+        gov_type = ref_governance['type']
+        gov_source = ref_governance['source']
+        release_name = release['release_name'].lower()
+
+        LOG.debug('Process governance content from uri: %s', gov_source)
+        content = yaml.safe_load(utils.read_uri(gov_source))
+
+        GOVERNANCE_PROCESSORS[gov_type](module_groups, release_name, content)
 
     # set ids for module groups
     for group_id, group in six.iteritems(module_groups):
         group['id'] = group_id
         group['modules'].sort()
+
+        if 'releases' in group:
+            for gr in six.itervalues(group['releases']):
+                gr.sort()
 
     return module_groups

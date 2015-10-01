@@ -62,7 +62,7 @@ Sahara:
 class TestGovernance(testtools.TestCase):
 
     @mock.patch('stackalytics.processor.utils.read_uri')
-    def test_read_official_projects_yaml(self, read_uri):
+    def test_process_official_list(self, read_uri):
         read_uri.return_value = SAMPLE
 
         expected = {
@@ -95,13 +95,21 @@ class TestGovernance(testtools.TestCase):
             'openstack-official': {
                 'id': 'openstack-official',
                 'module_group_name': 'openstack-official',
-                'modules': ['python-saharaclient', 'sahara',
-                            'sahara-dashboard', 'sahara-extra',
-                            'sahara-image-elements', 'sahara-specs'],
+                'modules': [],
+                'releases': {
+                    'liberty': ['python-saharaclient', 'sahara',
+                                'sahara-dashboard', 'sahara-extra',
+                                'sahara-image-elements', 'sahara-specs'],
+                },
                 'tag': 'project_type'
             },
         }
 
-        actual = governance.read_projects_yaml('uri')
+        releases = [{
+            'release_name': 'Liberty',
+            'refs': {'governance': {'type': 'big_tent', 'source': 'uri'}}
+        }]
+
+        actual = governance.process_official_list(releases)
 
         self.assertEqual(expected, actual)
