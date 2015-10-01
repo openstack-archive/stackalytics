@@ -178,7 +178,7 @@ function showSummary(base_url) {
 
                 var releases_list = [];
                 for (var j = 0; j < tableData[i].releases_info.length; j++) {
-                    releases_list.push("<a href=\"" + tableData[i].releases_info[j].wiki + "\" target=\"_blank\">" +
+                    releases_list.push("<a href=\"" + tableData[i].releases_info[j].wiki + "\">" +
                             tableData[i].releases_info[j].name + "</a>");
                 }
                 tableData[i].in_trunk = releases_list.join(" ");
@@ -189,13 +189,23 @@ function showSummary(base_url) {
                         var last_release = tableData[i].releases_info[tableData[i].releases_info.length - 1].release_id;
                         var master = tableData[i].releases[last_release];
                         if (master.review_url) {
+                            var ci_result = master.ci_result;
+                            var ci_result_str;
+                            var ci_title;
+                            if (ci_result) {
+                                ci_result_str = "<span style=\"color: limegreen; font-size: 130%;\">&#x2714;</span>";
+                                ci_title = "CI is enabled on master and the latest job SUCCEED";
+                            } else {
+                                ci_result_str = "<span style=\"color: darkred\">&#x2714;</span>";
+                                ci_title = "CI is enabled on master and the latest job FAILED";
+                            }
                             tableData[i].ci_tested = "<a href=\"" + master.review_url +
-                                    "\" target=\"_blank\" title=\"CI is enabled on master. Click to see the latest results\"><span style=\"color: #00A000\">&#x2714;</span></a>";
+                                    "\" title=\"" + ci_title + "\">" + ci_result_str + "</a>";
                         } else {
-                            tableData[i].ci_tested = "<span style=\"color: #909090\" title=\"CI is configured, but no results observed\">&#x2714;</span>";
+                            tableData[i].ci_tested = "<span style=\"color: goldenrod\" title=\"CI is configured, but no results observed\">&#x2716;</span>";
                         }
                     } else {
-                        tableData[i].ci_tested = "<span style=\"color: #909090\" title=\"CI is configured, but no results observed\">&#x2714;</span>";
+                        tableData[i].ci_tested = "<span style=\"color: goldenrod\" title=\"CI is configured, but no results observed\">&#x2716;</span>";
                     }
                 } else {
                     tableData[i].ci_tested = "<span style=\"color: darkred\" title=\"CI is not configured\">&#x2716;</span>";
@@ -208,7 +218,7 @@ function showSummary(base_url) {
                         var mn = maintainer.name;
                         if (maintainer.launchpad_id) {
                             maintainers_list.push("<a href=\"http://stackalytics.com/?user_id=" +
-                                maintainer.launchpad_id + "\" target=\"_blank\">" + mn + "</a>");
+                                maintainer.launchpad_id + "\">" + mn + "</a>");
                         }
                         else if (maintainer.irc) {
                             maintainers_list.push("<a href=\"irc:" + maintainer.irc + "\">" + mn + "</a>");
