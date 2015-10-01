@@ -5153,11 +5153,15 @@
                 },
                 {
                     "company_name": "Instituto de Telecomunicacoes",
+                    "end_date": "2015-Sep-13"
+                },
+                {
+                    "company_name": "Intel",
                     "end_date": null
                 }
             ],
             "user_name": "Igor Duarte Cardoso",
-            "emails": ["igordcard@gmail.com", "icardoso@av.it.pt"]
+            "emails": ["igor.duarte.cardoso@intel.com", "igordcard@gmail.com", "icardoso@av.it.pt"]
         },
         {
             "launchpad_id": "ilyaalekseyev",
