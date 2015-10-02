@@ -385,6 +385,18 @@
            ]
         },
         {
+           "launchpad_id": "ahsanmohsin04",
+           "gerrit_id": "ahsan518",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Syed Ahsan Shamim Zaidi",
+           "emails": ["ahsanmohsin04@yahoo.com", "tvj515@my.utsa.edu", "ahsanmx518@gmail.com"]
+        },
+        {
             "launchpad_id": "aignatov",
             "companies": [
                 {
