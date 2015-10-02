@@ -1511,7 +1511,7 @@
             "launchpad_id": "bharath-ves",
             "companies": [
                 {
-                    "company_name": "TATA",
+                    "company_name": "Tata",
                     "end_date": "2015-Aug-06"
                 },
                 {
@@ -2935,7 +2935,7 @@
             "launchpad_id": "deenac",
             "companies": [
                 {
-                    "company_name": "hastexo",
+                    "company_name": "Hastexo",
                     "end_date": null
                 }
             ],
@@ -7232,7 +7232,7 @@
             "launchpad_id": "mark-xiett",
             "companies": [
                 {
-                    "company_name": "ZTE corporation",
+                    "company_name": "ZTE Corporation",
                     "end_date": null
                 }
             ],
@@ -7889,7 +7889,7 @@
                     "end_date": "2015-Jun-15"
                 },
                 {
-                    "company_name": "independent",
+                    "company_name": "*independent",
                     "end_date": "2015-Jul-23"
                 },
                 {
@@ -13067,7 +13067,7 @@
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
               "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy",
               "unaffillated", "Unafflicated", "Unafiliated", "Unaffialiated", "Unaffiliation", "Unaffilicated", "Unaffilinated",
-              "indepedent", "Unaffiliatd", "Anonomous", "unaffiliated student", "Personal", "Unalliliated"]
+              "indepedent", "Unaffiliatd", "Anonomous", "unaffiliated student", "Personal", "Unalliliated", "Unafillated"]
         },
         {
             "domains": ["360.cn"],
@@ -13105,6 +13105,10 @@
         {
             "domains": ["acelio.com"],
             "company_name": "Acelio"
+        },
+        {
+            "domains": ["akanda.io"],
+            "company_name": "Akanda"
         },
         {
             "domains": ["alcatel-lucent.com"],
@@ -13277,8 +13281,16 @@
             "aliases": ["Canoncail, Ltd.", "Ubuntu Canonical"]
         },
         {
+            "domains": ["catalyst.net.nz"],
+            "company_name": "Catalyst IT"
+        },
+        {
             "domains": ["centraldesktop.com"],
             "company_name": "Central Desktop"
+        },
+        {
+            "domains": ["centurylink.com"],
+            "company_name": "CenturyLink"
         },
         {
             "domains": ["cern.ch"],
@@ -13330,6 +13342,10 @@
             "company_name": "CloudFounders"
         },
         {
+            "domains": ["cloudfoundry.org"],
+            "company_name": "Cloud Foundry"
+        },
+        {
             "domains": ["cloudscaling.com"],
             "company_name": "Cloudscaling"
         },
@@ -13354,9 +13370,17 @@
             "company_name": "Coraid"
         },
         {
+            "domains": ["coreos.com"],
+            "company_name": "CoreOS"
+        },
+        {
             "domains": ["corvisa.com"],
             "company_name": "Corvisa",
             "aliases": ["Corvisa Services"]
+        },
+        {
+            "domains": ["cray.com"],
+            "company_name": "Cray"
         },
         {
             "domains": ["crs4.it"],
@@ -13552,6 +13576,10 @@
             "aliases": ["Hitachi Data Systems", "Hitachi India"]
         },
         {
+            "domains": ["heroku.com"],
+            "company_name": "Heroku"
+        },
+        {
             "domains": ["hihuron.com"],
             "company_name": "Huron",
             "aliases": ["Huron Technologies"]
@@ -13596,6 +13624,10 @@
             "domains": ["igbmc.fr"],
             "company_name": "IGBMC",
             "aliases": ["IGBMC biological research lab"]
+        },
+        {
+            "domains": ["imaginea.com"],
+            "company_name": "Imaginea Technologies Inc."
         },
         {
             "domains": ["inaugust.com"],
@@ -13726,6 +13758,10 @@
         {
             "domains": ["lavabit.com"],
             "company_name": "Lavabit"
+        },
+        {
+            "domains": ["letv.com"],
+            "company_name": "Letv Cloud Computing"
         },
         {
             "domains": ["lgcns.com"],
@@ -14030,6 +14066,10 @@
             "company_name": "Reduxio"
         },
         {
+            "domains": ["rightscale.com"],
+            "company_name": "Rightscale"
+        },
+        {
             "domains": ["rizu.mu"],
             "company_name": "Rizumu"
         },
@@ -14210,6 +14250,10 @@
             "aliases": ["Ubisoft Entertainment"]
         },
         {
+            "domains": ["ultimumtechnologies.com"],
+            "company_name": "Ultimum Technologies"
+        },
+        {
             "domains": ["umd.edu"],
             "company_name": "University of Maryland"
         },
@@ -14253,6 +14297,10 @@
             "company_name": "VCE"
         },
         {
+            "domains": ["verilume.com"],
+            "company_name": "Verilume"
+        },
+        {
             "domains": ["versa-networks.com"],
             "company_name": "Versa Networks"
         },
@@ -14275,6 +14323,10 @@
             "company_name": "VMware",
             "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture",
               "VMware Software"]
+        },
+        {
+            "domains": ["walmart.com"],
+            "company_name": "Walmart"
         },
         {
             "domains": ["wanclouds.net"],
@@ -14319,6 +14371,10 @@
             "company_name": "Xlab"
         },
         {
+            "domains": ["xsky.io", "xsky.com"],
+            "company_name": "XSky"
+        },
+        {
             "domains": ["yahoo-inc.com"],
             "company_name": "Yahoo!"
         },
@@ -14338,6 +14394,11 @@
             "domains": ["zelin.io"],
             "company_name": "Zelin",
             "aliases": ["zelin.io"]
+        },
+        {
+            "domains": ["zetta.io"],
+            "company_name": "Zetta.IO Technology AS",
+            "aliases": ["Zetta.IO"]
         },
         {
             "domains": ["zhaw.ch"],
