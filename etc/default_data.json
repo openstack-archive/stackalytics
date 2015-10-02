@@ -2396,7 +2396,7 @@
                 }
             ],
             "user_name": "James E. Blair",
-            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org", "jeblair@us.ibm.com"]
+            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org", "jeblair@us.ibm.com", "jeblair@linux.vnet.ibm.com"]
         },
         {
             "launchpad_id": "corywright",
