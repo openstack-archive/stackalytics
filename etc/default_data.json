@@ -15632,6 +15632,16 @@
             "refs": {
                 "governance": {
                     "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=0417e315bcb3dfbd4350253357a933dde5913e14"
+                }
+            }
+        },
+        {
+            "release_name": "Mitaka",
+            "end_date": "2015-Apr-07",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
             }
