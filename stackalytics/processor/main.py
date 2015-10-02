@@ -249,20 +249,21 @@ def process_project_list(runtime_storage_inst, project_list_uri):
     LOG.debug('Update module groups with official: %s', official_module_groups)
     module_groups.update(official_module_groups)
 
+    # make list of OpenStack unofficial projects
     others = module_groups['openstack-others']
     off_rm = module_groups['openstack-official']['releases']
     official = dict((r, set(m)) for r, m in six.iteritems(off_rm))
+
+    for module in module_groups['openstack']['modules']:
+        for r, off_m in six.iteritems(official):
+            if module not in off_m:
+                others['releases'][r].append(module)
 
     # register modules as module groups
     repos = runtime_storage_inst.get_by_key('repos') or []
     for repo in repos:
         module = repo['module']
         module_groups[module] = utils.make_module_group(module, tag='module')
-
-        # check if repo is official or not
-        for r, off_m in six.iteritems(official):
-            if module not in off_m:
-                others['releases'][r].append(module)
 
     # register module 'unknown' - used for emails not mapped to any module
     module_groups['unknown'] = utils.make_module_group('unknown', tag='module')
