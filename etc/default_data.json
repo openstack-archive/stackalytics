@@ -15638,7 +15638,7 @@
         },
         {
             "release_name": "Mitaka",
-            "end_date": "2015-Apr-07",
+            "end_date": "2016-Apr-07",
             "refs": {
                 "governance": {
                     "type": "big_tent",
@@ -15668,7 +15668,7 @@
         },
         {
             "id": "tc-approved-release",
-            "title": "tc-approved",
+            "title": "tc-approved-release",
             "child": true,
             "modules": ["tc-approved-release"]
         },
@@ -15683,6 +15683,11 @@
             "title": "type:library",
             "child": true,
             "modules": ["type:library"]
+        },
+        {
+            "id": "openstack-others",
+            "title": "OpenStack Others",
+            "modules": ["openstack-others", "unknown"]
         },
         {
             "id": "stackforge",
