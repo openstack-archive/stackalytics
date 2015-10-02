@@ -23,6 +23,20 @@ import testtools
 from stackalytics.processor import normalizer
 
 
+IGNORED_COMPANIES = ['*robots', 'April', 'Chelsio Communications',
+                     'CloudRunner.io', 'Datera', 'Facebook',
+                     'Fermi National Accelerator Laboratory', 'Github',
+                     'H3C',
+                     'Huaxin Hospital, First Hospital of Tsinghua University',
+                     'InfluxDB', 'Kickstarter', 'National Security Agency',
+                     'OpenStack Foundation', 'OpenStack Korea User Group',
+                     'ProphetStor', 'SVA System Vertrieb Alexander GmbH',
+                     'Sencha', 'Stark & Wayne LLC', 'Styra',
+                     'Suranee University of Technology',
+                     'The Linux Foundation', 'UTi Worldwide', 'Undead Labs',
+                     'Violin Memory', 'docCloud', 'npm']
+
+
 def dict_raise_on_duplicates(ordered_pairs):
     """Reject duplicate keys."""
     d = {}
@@ -188,3 +202,28 @@ class TestConfigFiles(testtools.TestCase):
 
     def test_test_default_data_user_profiles_correctness(self):
         self._validate_default_data_correctness('etc/test_default_data.json')
+
+    def _validate_user_companies(self, file_name):
+        data = self._read_file(file_name)
+        users = data['users']
+        companies = data['companies']
+        company_names = []
+        for company in companies:
+            company_names.append(company['company_name'])
+            for alias in company.get('aliases', []):
+                company_names.append(alias)
+
+        for user in users:
+            for company in user['companies']:
+                if not company['company_name'] in IGNORED_COMPANIES:
+                    error_msg = ('Company "%s" is unknown. Please add it into'
+                                 ' the list of companies in default_data.json '
+                                 'file' % company['company_name'])
+                    self.assertTrue(company['company_name'] in company_names,
+                                    error_msg)
+
+    def test_default_data_user_companies(self):
+        self._validate_user_companies('etc/default_data.json')
+
+    def test_test_default_data_user_companies(self):
+        self._validate_user_companies('etc/test_default_data.json')
