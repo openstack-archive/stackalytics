@@ -77,19 +77,30 @@ class TestGovernance(testtools.TestCase):
             'tc-approved-release': {
                 'id': 'tc-approved-release',
                 'module_group_name': 'tc-approved-release',
-                'modules': ['sahara', 'sahara-extra', 'sahara-image-elements'],
+                'modules': [],
+                'releases': {
+                    'liberty': ['sahara', 'sahara-extra',
+                                'sahara-image-elements'],
+                },
                 'tag': 'project_type'
             },
             'type:library': {
                 'id': 'type:library',
                 'module_group_name': 'type:library',
-                'modules': ['python-saharaclient', 'sahara-dashboard'],
+                'modules': [],
+                'releases': {
+                    'liberty': ['python-saharaclient', 'sahara-dashboard'],
+                },
                 'tag': 'project_type'
             },
             'type:service': {
                 'id': 'type:service',
                 'module_group_name': 'type:service',
-                'modules': ['sahara', 'sahara-extra', 'sahara-image-elements'],
+                'modules': [],
+                'releases': {
+                    'liberty': ['sahara', 'sahara-extra',
+                                'sahara-image-elements'],
+                },
                 'tag': 'project_type'
             },
             'openstack-official': {
@@ -103,6 +114,13 @@ class TestGovernance(testtools.TestCase):
                 },
                 'tag': 'project_type'
             },
+            'openstack-others': {
+                'id': 'openstack-others',
+                'module_group_name': 'openstack-others',
+                'modules': [],
+                'releases': {},
+                'tag': 'project_type'
+            }
         }
 
         releases = [{

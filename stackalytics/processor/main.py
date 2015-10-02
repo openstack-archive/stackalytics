@@ -16,7 +16,7 @@
 from oslo_config import cfg
 from oslo_log import log as logging
 import psutil
-from six.moves.urllib import parse
+import six
 
 from stackalytics.processor import bps
 from stackalytics.processor import config
@@ -129,7 +129,8 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     for branch in branches:
         LOG.debug('Processing commits in repo: %s, branch: %s', uri, branch)
 
-        vcs_key = 'vcs:' + str(parse.quote_plus(uri) + ':' + branch)
+        vcs_key = 'vcs:' + str(six.moves.urllib.parse.quote_plus(uri) +
+                               ':' + branch)
         last_id = runtime_storage_inst.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
@@ -144,7 +145,8 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
 
         LOG.debug('Processing reviews for repo: %s, branch: %s', uri, branch)
 
-        rcs_key = 'rcs:' + str(parse.quote_plus(uri) + ':' + branch)
+        rcs_key = 'rcs:' + str(six.moves.urllib.parse.quote_plus(uri) +
+                               ':' + branch)
         last_id = runtime_storage_inst.get_by_key(rcs_key)
 
         review_iterator = rcs_inst.log(repo, branch, last_id,
@@ -247,11 +249,20 @@ def process_project_list(runtime_storage_inst, project_list_uri):
     LOG.debug('Update module groups with official: %s', official_module_groups)
     module_groups.update(official_module_groups)
 
+    others = module_groups['openstack-others']
+    off_rm = module_groups['openstack-official']['releases']
+    official = dict((r, set(m)) for r, m in six.iteritems(off_rm))
+
     # register modules as module groups
     repos = runtime_storage_inst.get_by_key('repos') or []
     for repo in repos:
         module = repo['module']
         module_groups[module] = utils.make_module_group(module, tag='module')
+
+        # check if repo is official or not
+        for r, off_m in six.iteritems(official):
+            if module not in off_m:
+                others['releases'][r].append(module)
 
     # register module 'unknown' - used for emails not mapped to any module
     module_groups['unknown'] = utils.make_module_group('unknown', tag='module')

@@ -30,6 +30,7 @@ def _make_module_group(module_groups, name):
     m = module_groups[name]  # object created by defaultdict
     m['tag'] = 'project_type'
     m['module_group_name'] = name
+    m['releases'] = collections.defaultdict(list)
     return m
 
 
@@ -37,15 +38,6 @@ def read_legacy_programs_yaml(module_groups, release_name, content):
     all_official = module_groups['openstack-official']
 
     for name, info in six.iteritems(content):
-        # for one program
-        # group_id = name.lower()
-        # if 'codename' in info:
-        #     name = '%s (%s)' % (info['codename'], name)
-        #     group_id = '%s-group' % info['codename'].lower()
-        #
-        # module_groups[group_id]['module_group_name'] = name
-        # module_groups[group_id]['tag'] = 'program'
-
         for module in info['projects']:
             mn = module['repo'].split('/')[1]  # module_name
 
@@ -57,10 +49,6 @@ def read_early_big_tent_projects_yaml(module_groups, release_name, content):
     all_official = module_groups['openstack-official']
 
     for name, info in six.iteritems(content):
-        # group_id = '%s-group' % name.lower()
-        # module_groups[group_id]['module_group_name'] = '%s Official' % name
-        # module_groups[group_id]['tag'] = 'program'
-
         for module in info['projects']:
             repo_split = module['repo'].split('/')
             if len(repo_split) < 2:
@@ -94,7 +82,7 @@ def read_big_tent_projects_yaml(module_groups, release_name, content):
                 tags = deliverable.get('tags', [])
                 for tag in tags:
                     if tag in TAGS:
-                        module_groups[tag]['modules'].append(mn)
+                        module_groups[tag]['releases'][release_name].append(mn)
 
 
 def _make_default_module_groups():
@@ -103,8 +91,9 @@ def _make_default_module_groups():
 
     # openstack official
     _make_module_group(module_groups, 'openstack-official')
-    module_groups['openstack-official']['releases'] = (
-        collections.defaultdict(list))
+
+    # openstack others
+    _make_module_group(module_groups, 'openstack-others')
 
     # tags
     for tag in TAGS:
