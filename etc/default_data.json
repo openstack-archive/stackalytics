@@ -9820,6 +9820,18 @@
             "emails": ["rainer.toebbicke@cern.ch"]
         },
         {
+            "launchpad_id": "ruchiparmar143",
+            "gerrit_id": "Ruchi143",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+           "user_name": "Ruchi Parmar",
+           "emails": ["ruchiparmar143@ymail.com", "cuz150@my.utsa.edu", "ruchip143@gmail.com"]
+        },
+        {
             "launchpad_id": "rupakg",
             "companies": [
                 {
