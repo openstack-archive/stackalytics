@@ -5365,6 +5365,18 @@
             "emails": ["jaimegildesagredo@gmail.com"]
         },
         {
+            "launchpad_id": "jaiveek-shah",
+            "gerrit_id": "JaiveekShah",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaiveek Shah",
+            "emails": ["jaiveek.shah@gmail.com", "mli435@my.utsa.edu"]
+        },
+        {
             "launchpad_id": "jake-hyperboledesign",
             "companies": [
                 {
