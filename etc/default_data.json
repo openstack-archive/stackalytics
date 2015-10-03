@@ -4715,6 +4715,17 @@
             "emails": ["haoning@awcloud.com"]
         },
         {
+            "launchpad_id": "happycamp",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jlvillal",
+            "emails": ["launchpad.net@sodarock.com", "openstack.org@sodarock.com", "john.l.villalovos@intel.com"]
+        },
+        {
             "launchpad_id": "hareesh-puthalath",
             "companies": [
                 {
