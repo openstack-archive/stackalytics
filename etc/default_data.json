@@ -1299,6 +1299,17 @@
             "emails": ["aurlapova@mirantis.com", "a.urlapova@gmail.com"]
         },
         {
+            "launchpad_id": "avelar-richard",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "razone",
+            "emails": ["csravelar@gmail.com"]
+        },
+        {
             "launchpad_id": "avinash-prasad",
             "companies": [
                 {
