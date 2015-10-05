@@ -10458,6 +10458,18 @@
             "emails": ["shiva075gowda@gmail.com", "shivam@hp.com"]
         },
         {
+            "launchpad_id": "shravya-g90",
+            "gerrit_id": "ShravyaGaddam",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shravya Gaddam",
+            "emails": ["shravya.g90@gmail.com", "shravya.gaddam@utsa.edu"]
+        },
+        {
             "launchpad_id": "shrirangphadke",
             "gerrit_id": "shrirangphadke",
             "companies": [
