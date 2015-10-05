@@ -8484,6 +8484,19 @@
             "emails": ["nuaafe@gmail.com", "wtie@cisco.com"]
         },
         {
+            "launchpad_id": "o-lemasle",
+            "gerrit_id": "olivierlemasle",
+            "github_id": "olivierlemasle",
+            "companies": [
+                {
+                    "company_name": "Apalia",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Olivier Lemasle",
+            "emails": ["olivier.lemasle@apalia.net", "o.lemasle@gmail.com"]
+        },
+        {
             "launchpad_id": "o-tony",
             "companies": [
                 {
