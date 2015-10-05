@@ -43,7 +43,6 @@ def _retrieve_member(uri, member_id, html_parser):
     if not content:
         return {}
 
-    content = six.text_type(content, 'utf8')
     member = {}
 
     for rec in re.finditer(NAME_AND_DATE_PATTERN, content):
