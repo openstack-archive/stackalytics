@@ -18,7 +18,7 @@ import re
 
 from oslo_log import log as logging
 import paramiko
-
+import time
 
 LOG = logging.getLogger(__name__)
 
@@ -38,11 +38,9 @@ class Rcs(object):
     def get_project_list(self):
         pass
 
-    def log(self, repo, branch, last_id):
+    def log(self, repo, branch, last_retrieval_time, status=None,
+            grab_comments=False):
         return []
-
-    def get_last_id(self, repo, branch):
-        return -1
 
     def close(self):
         pass
@@ -89,17 +87,15 @@ class Gerrit(Rcs):
             LOG.exception(e)
             return False
 
-    def _get_cmd(self, project_organization, module, branch, sort_key=None,
-                 is_open=False, limit=PAGE_LIMIT, grab_comments=False):
+    def _get_cmd(self, project_organization, module, branch, age=0,
+                 status=None, limit=PAGE_LIMIT, grab_comments=False):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
                'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
-               'limit:%(limit)s' %
+               'limit:%(limit)s age:%(age)ss' %
                {'ogn': project_organization, 'module': module,
-                'branch': branch, 'limit': limit})
-        if is_open:
-            cmd += ' is:open'
-        if sort_key:
-            cmd += ' resume_sortkey:%016x' % sort_key
+                'branch': branch, 'limit': limit, 'age': age})
+        if status:
+            cmd += ' status:%s' % status
         if grab_comments:
             cmd += ' --comments'
         return cmd
@@ -123,36 +119,46 @@ class Gerrit(Rcs):
             return False
 
     def _poll_reviews(self, project_organization, module, branch,
-                      start_id=0, last_id=0, is_open=False,
-                      grab_comments=False):
-        sort_key = start_id
-        last_id = last_id or 0
+                      last_retrieval_time, status=None, grab_comments=False):
+        age = 0
+        proceed = True
 
-        while True:
-            cmd = self._get_cmd(project_organization, module, branch, sort_key,
-                                is_open, grab_comments=grab_comments)
+        # the algorithm retrieves reviews by age; the next page is started
+        # with the time of the oldest; it is possible that the oldest
+        # will be included in consequent result (as the age offsets to local
+        # machine timestamp, but evaluated remotely), so we need to track all
+        # ids and ignore those we've already seen
+        processed = set()
+
+        while proceed:
+            cmd = self._get_cmd(project_organization, module, branch,
+                                age=age, status=status,
+                                grab_comments=grab_comments)
             LOG.debug('Executing command: %s', cmd)
             exec_result = self._exec_command(cmd)
             if not exec_result:
                 break
             stdin, stdout, stderr = exec_result
 
-            proceed = False
+            proceed = False  # assume there are no more reviews available
             for line in stdout:
                 review = json.loads(line)
 
-                if 'sortKey' in review:
-                    sort_key = int(review['sortKey'], 16)
-                    if sort_key <= last_id:
+                if 'number' in review:  # choose reviews not summary
+
+                    if review['number'] in processed:
+                        continue  # already seen that
+
+                    last_updated = int(review['lastUpdated'])
+                    if last_updated < last_retrieval_time:  # too old
                         proceed = False
                         break
 
-                    proceed = True
+                    proceed = True  # have at least one review, can dig deeper
+                    age = max(age, int(time.time()) - last_updated)
+                    processed.add(review['number'])
                     review['module'] = module
                     yield review
-
-            if not proceed:
-                break
 
     def get_project_list(self):
         exec_result = self._exec_command('gerrit ls-projects')
@@ -163,47 +169,15 @@ class Gerrit(Rcs):
 
         return result
 
-    def log(self, repo, branch, last_id, grab_comments=False):
-        # poll new reviews from the top down to last_id
-        LOG.debug('Poll new reviews for module: %s', repo['module'])
-        for review in self._poll_reviews(repo['organization'],
-                                         repo['module'], branch,
-                                         last_id=last_id,
-                                         grab_comments=grab_comments):
+    def log(self, repo, branch, last_retrieval_time, status=None,
+            grab_comments=False):
+        # poll reviews down from top between last_r_t and current_r_t
+        LOG.debug('Poll reviews for module: %s', repo['module'])
+        for review in self._poll_reviews(
+                repo['organization'], repo['module'], branch,
+                last_retrieval_time, status=status,
+                grab_comments=grab_comments):
             yield review
-
-        # poll open reviews from last_id down to bottom
-        LOG.debug('Poll open reviews for module: %s', repo['module'])
-        start_id = None
-        if last_id:
-            start_id = last_id + 1  # include the last review into query
-        for review in self._poll_reviews(repo['organization'],
-                                         repo['module'], branch,
-                                         start_id=start_id, is_open=True,
-                                         grab_comments=grab_comments):
-            yield review
-
-    def get_last_id(self, repo, branch):
-        LOG.debug('Get last id for module: %s', repo['module'])
-
-        cmd = self._get_cmd(repo['organization'], repo['module'],
-                            branch, limit=1)
-        LOG.debug('Executing command: %s', cmd)
-        exec_result = self._exec_command(cmd)
-        if not exec_result:
-            return None
-        stdin, stdout, stderr = exec_result
-
-        last_id = None
-        for line in stdout:
-            review = json.loads(line)
-            if 'sortKey' in review:
-                last_id = int(review['sortKey'], 16)
-                break
-
-        LOG.debug('Module %(module)s last id is %(id)s',
-                  {'module': repo['module'], 'id': last_id})
-        return last_id
 
     def close(self):
         self.client.close()
