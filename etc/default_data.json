@@ -8330,11 +8330,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2015-Aug-07"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Nikhil Komawar",
-            "emails": ["nikhil.komawar@rackspace.com", "nikhilskomawar@gmail.com", "nik.komawar@gmail.com"]
+            "emails": ["nikhil.komawar@rackspace.com", "nikhilskomawar@gmail.com", "nik.komawar@gmail.com", "nkomawa@us.ibm.com"]
         },
         {
             "launchpad_id": "nikunj2512",
