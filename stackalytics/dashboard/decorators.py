@@ -292,6 +292,28 @@ def mark_finalize(record):
     return new_record
 
 
+def ci_filter(result, record, param_id, context):
+    result_by_param = result[getattr(record, param_id)]
+
+    result_by_param['metric'] += 1
+
+    key = 'success' if record.value else 'failure'
+    result_by_param[key] = result_by_param.get(key, 0) + 1
+
+
+def ci_finalize(record):
+    new_record = record.copy()
+
+    metric = record.get('metric')
+    if metric:
+        new_record['success_ratio'] = '%.1f%%' % (
+            (record.get('success', 0) * 100.0) / metric)
+    else:
+        new_record['success_rate'] = helpers.INFINITY_HTML
+
+    return new_record
+
+
 def person_day_filter(result, record, param_id, context):
     day = utils.timestamp_to_day(record.date)
     # fact that record-days are grouped by days in some order is used
@@ -338,7 +360,7 @@ def aggregate_filter():
                 'resolved-bugs': (incremental_filter, None),
                 'members': (incremental_filter, None),
                 'person-day': (person_day_filter, None),
-                'ci': (None, None),
+                'ci': (ci_filter, ci_finalize),
                 'patches': (None, None),
             }
             if metric not in metric_to_filters_map:

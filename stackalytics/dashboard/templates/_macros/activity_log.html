@@ -80,7 +80,7 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">{%html author_link %} ({%html company_link %})</div>
         {%/if%}
         <div class="header">${date_str} in {%html module_link%}
-            {%if record_type == "mark" || record_type == "review" || record_type == "patch" %}
+            {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "ci" %}
                 {%if branch != "master" %}(${branch}){%/if%}
             {%/if%}
         </div>
@@ -162,8 +162,8 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">CI vote in merged change request
                <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_number}</a>
              </div>
-            <div>Parsed result: {%if value == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
-            <div>Message: ${message}</div>
+            <div>{%if value == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
+            <div class="message">${message}</div>
             <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
         {%elif record_type == "member" %}
             <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
