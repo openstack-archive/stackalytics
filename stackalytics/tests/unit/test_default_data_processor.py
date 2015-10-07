@@ -97,3 +97,61 @@ class TestDefaultDataProcessor(testtools.TestCase):
                            'module_group_name': 'stackforge',
                            'modules': ['tux'],
                            'tag': 'organization'}, dd['module_groups'])
+
+    @mock.patch('stackalytics.processor.utils.read_json_from_uri')
+    def test_update_with_driverlog(self, mock_read_from_json):
+        default_data = {'repos': [{'module': 'cinder', }], 'users': []}
+        driverlog_dd = {'drivers': [{
+            'project_id': 'openstack/cinder',
+            'vendor': 'VMware',
+            'name': 'VMware VMDK Driver',
+            'ci': {
+                'id': 'vmwareminesweeper',
+                'success_pattern': 'Build successful',
+                'failure_pattern': 'Build failed'
+            }
+        }]}
+        mock_read_from_json.return_value = driverlog_dd
+
+        default_data_processor._update_with_driverlog_data(default_data, 'uri')
+
+        expected_user = {
+            'user_id': 'ci:vmware_vmdk_driver',
+            'user_name': 'VMware VMDK Driver',
+            'static': True,
+            'companies': [
+                {'company_name': 'VMware', 'end_date': None}],
+        }
+        self.assertIn(expected_user, default_data['users'])
+        self.assertIn(driverlog_dd['drivers'][0],
+                      default_data['repos'][0]['drivers'])
+
+    @mock.patch('stackalytics.processor.utils.read_json_from_uri')
+    def test_update_with_driverlog_specific_repo(self, mock_read_from_json):
+        default_data = {'repos': [{'module': 'fuel-plugin-mellanox', }],
+                        'users': []}
+        driverlog_dd = {'drivers': [{
+            'project_id': 'openstack/fuel',
+            'repo': 'stackforge/fuel-plugin-mellanox',
+            'vendor': 'Mellanox',
+            'name': 'ConnectX-3 Pro Network Adapter Support plugin',
+            'ci': {
+                'id': 'mellanox',
+                'success_pattern': 'SUCCESS',
+                'failure_pattern': 'FAILURE'
+            }
+        }]}
+        mock_read_from_json.return_value = driverlog_dd
+
+        default_data_processor._update_with_driverlog_data(default_data, 'uri')
+
+        expected_user = {
+            'user_id': 'ci:connectx_3_pro_network_adapter_support_plugin',
+            'user_name': 'ConnectX-3 Pro Network Adapter Support plugin',
+            'static': True,
+            'companies': [
+                {'company_name': 'Mellanox', 'end_date': None}],
+        }
+        self.assertIn(expected_user, default_data['users'])
+        self.assertIn(driverlog_dd['drivers'][0],
+                      default_data['repos'][0]['drivers'])

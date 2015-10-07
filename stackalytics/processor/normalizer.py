@@ -45,8 +45,8 @@ def _normalize_user(user):
         launchpad_id=user.get('launchpad_id'),
         emails=user.get('emails'),
         gerrit_id=user.get('gerrit_id'),
-        github_id=user.get('user_id'),
-        ldap_id=user.get('ldap_id'))
+        github_id=user.get('github_id'),
+        ldap_id=user.get('ldap_id')) or user.get('user_id')
 
 
 def _normalize_users(users):

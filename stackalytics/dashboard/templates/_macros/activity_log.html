@@ -158,10 +158,11 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">Bug &ldquo;${title}&rdquo; (<a href="${web_link}" class="ext_link">${number}</a>)</div>
             <div>Status: <span class="status${status_class}">${status}</span></div>
             <div>Importance: <span class="importance${importance}">${importance}</span></div>
-        {%elif record_type == "ci_vote" %}
-            <div class="header">New CI vote in change request ${review_number}
-                 {%if is_merged %}(<span style="color: green;">Merged</span>){%/if%}</div>
-            <div>Parsed result: {%if ci_result == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
+        {%elif record_type == "ci" %}
+            <div class="header">CI vote in merged change request
+               <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_number}</a>
+             </div>
+            <div>Parsed result: {%if value == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
             <div>Message: ${message}</div>
             <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
         {%elif record_type == "member" %}

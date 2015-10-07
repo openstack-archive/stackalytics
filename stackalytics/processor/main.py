@@ -75,22 +75,6 @@ def _record_typer(record_iterator, record_type):
         yield record
 
 
-def _process_reviews(record_iterator, ci_map, module, branch):
-    for record in record_iterator:
-        yield record
-
-        for driver_info in driverlog.find_ci_result(record, ci_map):
-            driver_info['record_type'] = 'ci_vote'
-            driver_info['module'] = module
-            driver_info['branch'] = branch
-
-            release = branch.lower()
-            if release.find('/') > 0:
-                driver_info['release'] = release.split('/')[1]
-
-            yield driver_info
-
-
 def _process_repo(repo, runtime_storage_inst, record_processor_inst,
                   rcs_inst):
     uri = repo['uri']
@@ -154,16 +138,32 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
                                        grab_comments=('ci' in repo))
         review_iterator_typed = _record_typer(review_iterator, 'review')
 
-        if 'ci' in repo:  # add external CI data
-            review_iterator_typed = _process_reviews(
-                review_iterator_typed, repo['ci'], repo['module'], branch)
-
         processed_review_iterator = record_processor_inst.process(
             review_iterator_typed)
         runtime_storage_inst.set_records(processed_review_iterator,
                                          utils.merge_records)
 
         runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
+
+        if 'drivers' in repo:
+            LOG.debug('Processing CI votes for repo: %s, branch: %s',
+                      uri, branch)
+
+            rcs_key = 'ci:%s:%s' % (quoted_uri, branch)
+            last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
+            current_retrieval_time = int(time.time())
+
+            review_iterator = rcs_inst.log(repo, branch, last_retrieval_time,
+                                           status='merged', grab_comments=True)
+            review_iterator = driverlog.log(review_iterator, repo['drivers'])
+            review_iterator_typed = _record_typer(review_iterator, 'ci')
+
+            processed_review_iterator = record_processor_inst.process(
+                review_iterator_typed)
+            runtime_storage_inst.set_records(processed_review_iterator,
+                                             utils.merge_records)
+
+            runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
 
 
 def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
@@ -264,6 +264,9 @@ def process_project_list(runtime_storage_inst, project_list_uri):
     for repo in repos:
         module = repo['module']
         module_groups[module] = utils.make_module_group(module, tag='module')
+
+        if 'drivers' in repo:
+            module_groups[module]['has_drivers'] = True
 
     # register module 'unknown' - used for emails not mapped to any module
     module_groups['unknown'] = utils.make_module_group('unknown', tag='module')
