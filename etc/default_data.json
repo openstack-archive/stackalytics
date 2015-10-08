@@ -5875,6 +5875,18 @@
             "emails": ["jmeridth@gmail.com", "jason.meridth@rackspace.com"]
         },
         {
+            "launchpad_id": "jnimish77",
+            "gerrit_id": "Nimish_Joshi",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nimish Joshi",
+            "emails": ["pyn905@my.utsa.edu", "jnimish77@gmail.com"]
+        },
+        {
             "launchpad_id": "joe-arnold",
             "companies": [
                 {
