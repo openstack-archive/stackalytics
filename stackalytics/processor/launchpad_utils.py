@@ -14,6 +14,7 @@
 # limitations under the License.
 
 from oslo_log import log as logging
+import requests
 import six
 
 from stackalytics.processor import utils
@@ -29,6 +30,8 @@ BUG_STATUSES = ['New', 'Incomplete', 'Opinion', 'Invalid', 'Won\'t Fix',
 LP_URI_V1 = 'https://api.launchpad.net/1.0/%s'
 LP_URI_DEVEL = 'https://api.launchpad.net/devel/%s'
 
+launchpad_session = requests.Session()
+
 
 def link_to_launchpad_id(link):
     return link[link.find('~') + 1:]
@@ -37,7 +40,7 @@ def link_to_launchpad_id(link):
 def lp_profile_by_launchpad_id(launchpad_id):
     LOG.debug('Lookup user id %s at Launchpad', launchpad_id)
     uri = LP_URI_V1 % ('~' + launchpad_id)
-    lp_profile = utils.read_json_from_uri(uri)
+    lp_profile = utils.read_json_from_uri(uri, session=launchpad_session)
     utils.validate_lp_display_name(lp_profile)
     return lp_profile
 
@@ -45,7 +48,7 @@ def lp_profile_by_launchpad_id(launchpad_id):
 def lp_profile_by_email(email):
     LOG.debug('Lookup user email %s at Launchpad', email)
     uri = LP_URI_V1 % ('people/?ws.op=getByEmail&email=' + email)
-    lp_profile = utils.read_json_from_uri(uri)
+    lp_profile = utils.read_json_from_uri(uri, session=launchpad_session)
     utils.validate_lp_display_name(lp_profile)
     return lp_profile
 
@@ -63,7 +66,7 @@ def lp_blueprint_generator(module):
     uri = LP_URI_DEVEL % (module + '/all_specifications')
     while uri:
         LOG.debug('Reading chunk from uri %s', uri)
-        chunk = utils.read_json_from_uri(uri)
+        chunk = utils.read_json_from_uri(uri, session=launchpad_session)
 
         if not chunk:
             LOG.warn('No data was read from uri %s', uri)
@@ -84,7 +87,7 @@ def lp_bug_generator(module, modified_since):
 
     while uri:
         LOG.debug('Reading chunk from uri %s', uri)
-        chunk = utils.read_json_from_uri(uri)
+        chunk = utils.read_json_from_uri(uri, session=launchpad_session)
 
         if not chunk:
             LOG.warn('No data was read from uri %s', uri)
@@ -95,7 +98,8 @@ def lp_bug_generator(module, modified_since):
 
             related_tasks_uri = record['related_tasks_collection_link']
             LOG.debug('Reading related task from uri %s', related_tasks_uri)
-            related_tasks = utils.read_json_from_uri(related_tasks_uri)
+            related_tasks = utils.read_json_from_uri(related_tasks_uri,
+                                                     session=launchpad_session)
             if not related_tasks:
                 LOG.warn('No data was read from uri %s', uri)
             elif related_tasks['entries']:
