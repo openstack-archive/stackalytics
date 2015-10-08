@@ -44,10 +44,6 @@ PROCESSOR_OPTS = [
                help='SSH key for gerrit review system access'),
     cfg.StrOpt('ssh-username', default='user',
                help='SSH username for gerrit review system access'),
-    cfg.StrOpt('project-list-uri',
-               default=('https://git.openstack.org/cgit/'
-                        'openstack/governance/plain/reference/projects.yaml'),
-               help='The address of file with the official projects list'),
     cfg.StrOpt('driverlog-data-uri',
                default='https://git.openstack.org/cgit/'
                        'stackforge/driverlog/plain/etc/default_data.json',

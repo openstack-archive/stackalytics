@@ -11,7 +11,6 @@ usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
                               [--members-look-ahead MEMBERS_LOOK_AHEAD]
                               [--nodebug] [--nouse-syslog]
                               [--nouse-syslog-rfc-format] [--noverbose]
-                              [--project-list-uri PROJECT_LIST_URI]
                               [--review-uri REVIEW_URI]
                               [--runtime-storage-uri RUNTIME_STORAGE_URI]
                               [--sources-root SOURCES_ROOT]
@@ -70,8 +69,6 @@ optional arguments:
   --nouse-syslog-rfc-format
                         The inverse of --use-syslog-rfc-format
   --noverbose           The inverse of --verbose
-  --project-list-uri PROJECT_LIST_URI
-                        The address of file with the official projects list
   --review-uri REVIEW_URI
                         URI of review system
   --runtime-storage-uri RUNTIME_STORAGE_URI
@@ -90,8 +87,8 @@ optional arguments:
                         (Optional) Enables or disables syslog rfc5424 format
                         for logging. If enabled, prefixes the MSG part of the
                         syslog message with APP-NAME (RFC5424). The format
-                        without the APP-NAME is deprecated in K, and will be
-                        removed in M, along with this option.
+                        without the APP-NAME is deprecated in Kilo, and will
+                        be removed in Mitaka, along with this option.
   --verbose, -v         If set to false, will disable INFO logging level,
                         making WARNING the default.
   --version             show program's version number and exit

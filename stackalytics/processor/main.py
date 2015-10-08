@@ -240,7 +240,7 @@ def apply_corrections(uri, runtime_storage_inst):
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 
-def process_project_list(runtime_storage_inst, project_list_uri):
+def process_project_list(runtime_storage_inst):
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}
     releases = runtime_storage_inst.get_by_key('releases') or {}
 
@@ -287,7 +287,7 @@ def main():
                                    default_data,
                                    cfg.CONF.driverlog_data_uri)
 
-    process_project_list(runtime_storage_inst, cfg.CONF.project_list_uri)
+    process_project_list(runtime_storage_inst)
 
     update_pids(runtime_storage_inst)
 
