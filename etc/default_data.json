@@ -12544,6 +12544,17 @@
             "emails": ["xiaobo@awcloud.com"]
         },
         {
+            "launchpad_id": "xinze",
+            "companies": [
+                {
+                    "company_name": "XSky",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xinze Chi",
+            "emails": ["xmdxcxz@gmail.com", "xinze@xsky.com"]
+        },
+        {
             "launchpad_id": "xtoddx",
             "companies": [
                 {
