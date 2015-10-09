@@ -295,8 +295,11 @@ def make_commit_message(record):
 
 def make_page_title(project_type_inst, release, module_inst, company,
                     user_inst):
-    is_openstack = (project_type_inst['id'] in
-                    ['openstack', 'stackforge', 'all', 'integrated', 'other'])
+    pt_class = project_type_inst['id']
+    if project_type_inst.get('parent'):
+        pt_class = project_type_inst['parent']['id']
+    is_openstack = pt_class == 'all' or pt_class[:9] == 'openstack'
+
     if company or user_inst:
         if user_inst:
             s = user_inst['user_name']
@@ -313,10 +316,13 @@ def make_page_title(project_type_inst, release, module_inst, company,
     if module_inst:
         s += ' to %s' % module_inst['module_group_name']
     if is_openstack:
+        s += ' in'
         if release != 'all':
-            s += ' in %s release' % release.capitalize()
+            if company or user_inst:
+                s += ' OpenStack'
+            s += ' %s release' % release.capitalize()
         else:
-            s += ' in all releases'
+            s += ' all releases'
     else:
         if release != 'all':
             s += ' during OpenStack %s release' % release.capitalize()

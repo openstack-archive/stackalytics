@@ -87,8 +87,9 @@ Implements Blueprint ''' + (
     @mock.patch('stackalytics.dashboard.vault.get_vault')
     @mock.patch('stackalytics.dashboard.vault.get_user_from_runtime_storage')
     def test_make_page_title(self, user_patch, vault_patch):
-        def _pt(id, title=None):
-            return dict(id=id.lower(), title=title or id)
+        def _pt(id, title=None, is_openstack=True):
+            return dict(id=id.lower(), title=title or id,
+                        parent=dict(id='openstack') if is_openstack else None)
 
         user_inst = {'user_name': 'John Doe'}
         module_inst = {'module_group_name': 'neutron'}
@@ -99,24 +100,27 @@ Implements Blueprint ''' + (
         self.assertEqual('OpenStack community contribution in Havana release',
                          helpers.make_page_title(
                              _pt('OpenStack'), 'Havana', None, None, None))
-        self.assertEqual('Mirantis contribution in Havana release',
+        self.assertEqual('Mirantis contribution in OpenStack Havana release',
                          helpers.make_page_title(
                              _pt('Stackforge'), 'Havana', None, 'Mirantis',
                              None))
-        self.assertEqual('John Doe contribution in Havana release',
+        self.assertEqual('John Doe contribution in OpenStack Havana release',
                          helpers.make_page_title(
                              _pt('all'), 'Havana', None, None, user_inst))
         self.assertEqual(
-            'John Doe (Mirantis) contribution to neutron in Havana release',
+            'John Doe (Mirantis) contribution to neutron in OpenStack Havana '
+            'release',
             helpers.make_page_title(
                 _pt('all'), 'Havana', module_inst, 'Mirantis', user_inst))
         self.assertEqual('Ansible community contribution during OpenStack '
                          'Havana release',
                          helpers.make_page_title(
-                             _pt('Ansible'), 'Havana', None, None, None))
+                             _pt('Ansible', is_openstack=False),
+                             'Havana', None, None, None))
         self.assertEqual('Docker community contribution',
                          helpers.make_page_title(
-                             _pt('Docker'), 'all', None, None, None))
+                             _pt('Docker', is_openstack=False),
+                             'all', None, None, None))
 
     @mock.patch('flask.request')
     @mock.patch('stackalytics.dashboard.parameters.get_default')

@@ -5,7 +5,7 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
-    <title>{% block title %}{% endblock %}</title>
+    <title>Stackalytics {% if page_title %}| {{ page_title }} {% endif %}</title>
 
     {% if not page_title %}
     <meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, code reviews, statistics on bugs, blueprints and emails"/>

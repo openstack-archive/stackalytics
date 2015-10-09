@@ -1,8 +1,6 @@
 {% extends "reports/base_report.html" %}
 
-{% block title %}
-External CI status for {{ module }} for the last {{ days }} days
-{% endblock %}
+{% set page_title = "Status of drivers testing in " + module.title() + " during recent " + days + " days" %}
 
 {% block scripts %}
     <script type="text/javascript">

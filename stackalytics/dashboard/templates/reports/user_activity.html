@@ -3,9 +3,7 @@
 {% import '_macros/contribution_summary.html' as contribution_summary %}
 {% import '_macros/user_profile.html' as user_profile %}
 
-{% block title %}
-{{ user.user_name }} activity in OpenStack
-{% endblock %}
+{% set page_title = user.user_name + " | OpenStack activity report"  %}
 
 {% block scripts %}
     <script type="text/javascript">

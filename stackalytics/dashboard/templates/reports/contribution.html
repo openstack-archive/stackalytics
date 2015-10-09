@@ -1,8 +1,6 @@
 {% extends "reports/base_report.html" %}
 
-{% block title %}
-Contribution into {{ module }} for the last {{ days }} days
-{% endblock %}
+{% set page_title = "Contribution into " + module + " during the recent " + days + " days" %}
 
 {% block scripts %}
     <script type="text/javascript">
