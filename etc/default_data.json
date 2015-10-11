@@ -10678,6 +10678,18 @@
             "emails": ["sirisha.areti@hotmail.com"]
         },
         {
+            "launchpad_id": "sirushtim",
+            "gerrit_id": "sirushtim",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sirushti Murugesan",
+            "emails": ["sirushtim@gmail.com", "sirushti.murugesan@hp.com", "sirus@hp.com"]
+        },
+        {
            "launchpad_id": "siva-radhakrishnan",
            "gerrit_id": "sivakrishnan",
            "companies": [
