@@ -32,7 +32,11 @@
 <div>Total commits: <b>${commit_count}</b></div>
 <div>Total LOC: <b>${loc}</b></div>
 <div>Review stat (-2, -1, +1, +2, A): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}, ${marks["A"]}</b></div>
-<div>Change Requests: <b>${change_request_count}</b></div>
+<div>Change Requests: <b>${change_request_count}</b>
+ {%if abandoned_change_requests_count > 0 %}
+   <span>(${abandoned_change_requests_count} of them abandoned)</span>
+ {%/if%}
+</div>
 <div>Patch Sets: <b>${patch_set_count}</b></div>
 <div>Draft Blueprints: <b>${drafted_blueprint_count}</b></div>
 <div>Completed Blueprints: <b>${completed_blueprint_count}</b></div>

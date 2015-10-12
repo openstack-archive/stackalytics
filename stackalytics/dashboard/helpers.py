@@ -192,6 +192,7 @@ def get_contribution_summary(records):
     resolved_bug_count = 0
     patch_set_count = 0
     change_request_count = 0
+    abandoned_change_requests_count = 0
 
     for record in records:
         record_type = record.record_type
@@ -222,6 +223,8 @@ def get_contribution_summary(records):
             patch_set_count += 1
         elif record_type == 'review':
             change_request_count += 1
+            if record.status == 'ABANDONED':
+                abandoned_change_requests_count += 1
 
     result = {
         'drafted_blueprint_count': drafted_blueprint_count,
@@ -234,6 +237,7 @@ def get_contribution_summary(records):
         'resolved_bug_count': resolved_bug_count,
         'patch_set_count': patch_set_count,
         'change_request_count': change_request_count,
+        'abandoned_change_requests_count': abandoned_change_requests_count,
     }
     return result
 
