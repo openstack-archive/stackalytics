@@ -9021,11 +9021,15 @@
             "companies": [
                 {
                     "company_name": "Symantec",
+                    "end_date": "2015-Aug-28"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Priti Desai",
-            "emails": ["priti_desai@symantec.com", "pritidesai8@gmail.com"]
+            "emails": ["pdesai@us.ibm.com", "priti_desai@symantec.com", "pritidesai8@gmail.com"]
         },
         {
             "launchpad_id": "pshige",
