@@ -17,6 +17,7 @@ from oslo_config import cfg
 from oslo_log import log as logging
 import psutil
 import six
+import time
 
 from stackalytics.processor import bps
 from stackalytics.processor import config
@@ -93,6 +94,7 @@ def _process_reviews(record_iterator, ci_map, module, branch):
 def _process_repo(repo, runtime_storage_inst, record_processor_inst,
                   rcs_inst):
     uri = repo['uri']
+    quoted_uri = six.moves.urllib.parse.quote_plus(uri)
     LOG.info('Processing repo uri: %s', uri)
 
     LOG.debug('Processing blueprints for repo uri: %s', uri)
@@ -129,8 +131,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     for branch in branches:
         LOG.debug('Processing commits in repo: %s, branch: %s', uri, branch)
 
-        vcs_key = 'vcs:' + str(six.moves.urllib.parse.quote_plus(uri) +
-                               ':' + branch)
+        vcs_key = 'vcs:%s:%s' % (quoted_uri, branch)
         last_id = runtime_storage_inst.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
@@ -145,11 +146,11 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
 
         LOG.debug('Processing reviews for repo: %s, branch: %s', uri, branch)
 
-        rcs_key = 'rcs:' + str(six.moves.urllib.parse.quote_plus(uri) +
-                               ':' + branch)
-        last_id = runtime_storage_inst.get_by_key(rcs_key)
+        rcs_key = 'rcs:%s:%s' % (quoted_uri, branch)
+        last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
+        current_retrieval_time = int(time.time())
 
-        review_iterator = rcs_inst.log(repo, branch, last_id,
+        review_iterator = rcs_inst.log(repo, branch, last_retrieval_time,
                                        grab_comments=('ci' in repo))
         review_iterator_typed = _record_typer(review_iterator, 'review')
 
@@ -162,8 +163,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         runtime_storage_inst.set_records(processed_review_iterator,
                                          utils.merge_records)
 
-        last_id = rcs_inst.get_last_id(repo, branch)
-        runtime_storage_inst.set_by_key(rcs_key, last_id)
+        runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
 
 
 def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
