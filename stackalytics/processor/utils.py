@@ -109,33 +109,40 @@ def check_email_validity(email):
 
 
 user_agents = [
-    'Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Gecko/20100101 Firefox/32.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_6) AppleWebKit/537.78.2',
-    'Mozilla/5.0 (Windows NT 6.3; WOW64) Gecko/20100101 Firefox/32.0',
-    'Mozilla/5.0 (Macintosh; Intel Mac OS X) Chrome/37.0.2062.120',
+    'Mozilla/5.0 (X11; Ubuntu; Linux x86_64) Gecko/20100101 Firefox/41.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/600.8.9',
+    'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X) Chrome/45.0.2062.120',
     'Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko'
 ]
 
 
-def do_request(uri, method='get'):
-    with requests.Session() as session:
-        session.mount('file://', requests_file.FileAdapter())
-        user_agent = random.choice(user_agents)
+def _session_request(session, uri, method):
+    session.mount('file://', requests_file.FileAdapter())
+    user_agent = random.choice(user_agents)
 
-        return session.request(method, uri, headers={'User-Agent': user_agent})
+    return session.request(method, uri, headers={'User-Agent': user_agent})
 
 
-def read_uri(uri):
+def do_request(uri, method='get', session=None):
+    if session:
+        return _session_request(session, uri, method)
+    else:
+        with requests.Session() as session:
+            return _session_request(session, uri, method)
+
+
+def read_uri(uri, session=None):
     try:
-        return do_request(uri).text
+        return do_request(uri, session=session).text
     except Exception as e:
         LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
                  {'error': e, 'uri': uri})
 
 
-def read_json_from_uri(uri):
+def read_json_from_uri(uri, session=None):
     try:
-        return do_request(uri).json()
+        return do_request(uri, session=session).json()
     except Exception as e:
         LOG.warn('Error "%(error)s" parsing json from uri %(uri)s',
                  {'error': e, 'uri': uri})
