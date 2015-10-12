@@ -2,9 +2,7 @@
 {% import '_macros/activity_log.html' as activity_log %}
 {% import '_macros/contribution_summary.html' as contribution_summary %}
 
-{% block title %}
-{{ company_name }} activity in OpenStack
-{% endblock %}
+{% set page_title = company_name + " | OpenStack activity report"  %}
 
 {% block scripts %}
     <script type="text/javascript">

@@ -1,8 +1,6 @@
 {% extends "reports/base_report.html" %}
 
-{% block title %}
-Open change requests report for {{ module }}
-{% endblock %}
+{% set page_title = "Open change requests in " + module %}
 
 {% block scripts %}
     <script type="text/javascript">
@@ -24,7 +22,7 @@ Open change requests report for {{ module }}
 {% endblock %}
 
 {% block content %}
-<h1>Open change requests for {{ module }}</h1>
+<h1>Open change requests in {{ module }}</h1>
 
 <h3>Summary</h3>
 <ul>

@@ -1,9 +1,7 @@
 {% extends "reports/base_report.html" %}
 {% import '_macros/activity_log.html' as activity_log %}
 
-{% block title %}
-Blueprint &ldquo;{{ blueprint.title }}&rdquo; report
-{% endblock %}
+{% set page_title = 'The activity log for blueprint "' + blueprint.title + '"' %}
 
 {% block content %}
 <h1>Blueprint &ldquo;{{ blueprint.title }}&rdquo;</h1>

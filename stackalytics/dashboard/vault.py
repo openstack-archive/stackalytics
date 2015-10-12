@@ -154,6 +154,14 @@ def _init_project_types(vault):
     runtime_storage_inst = vault['runtime_storage']
     project_types = runtime_storage_inst.get_by_key('project_types') or {}
 
+    # add ref from child to parent
+    parent_pt = None
+    for pt in project_types:
+        if pt.get('child'):
+            pt['parent'] = parent_pt
+        else:
+            parent_pt = pt
+
     vault['project_types'] = project_types
     vault['project_types_index'] = dict((pt['id'], pt) for pt in project_types)
 
