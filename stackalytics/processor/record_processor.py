@@ -547,17 +547,12 @@ class RecordProcessor(object):
         yield record
 
     def _process_ci(self, record):
-        ci_vote = dict((k, v) for k, v in six.iteritems(record)
-                       if k not in ['reviewer'])
+        ci_vote = dict((k, v) for k, v in six.iteritems(record))
 
-        reviewer = record['reviewer']
-        ci_vote['primary_key'] = ('%s:%s' % (reviewer['username'],
-                                  ci_vote['date']))
-        ci_vote['user_id'] = reviewer['username']
-        ci_vote['gerrit_id'] = reviewer['username']
-        ci_vote['author_name'] = reviewer.get('name') or reviewer['username']
-        ci_vote['author_email'] = (
-            reviewer.get('email') or reviewer['username']).lower()
+        ci_vote['primary_key'] = '%s:%s' % (record['review_id'],
+                                            record['driver_name'])
+        ci_vote['author_name'] = record['driver_name']
+        ci_vote['author_email'] = record['user_id']
 
         self._update_record_and_user(ci_vote)
 
@@ -576,7 +571,7 @@ class RecordProcessor(object):
             'bp': self._process_blueprint,
             'bug': self._process_bug,
             'member': self._process_member,
-            'ci_vote': self._process_ci,
+            'ci': self._process_ci,
         }
 
         for record in record_iterator:

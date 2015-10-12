@@ -12,68 +12,115 @@
 # implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+import copy
 
 import testtools
 
 from stackalytics.processor import driverlog
+
+COMMENT_SUCCESS = {
+    'message': 'Patch Set 2: build successful',
+    'reviewer': {'username': 'virt-ci'},
+    'timestamp': 1234567890
+}
+
+COMMENT_FAILURE = {
+    'message': 'Patch Set 2: build failed',
+    'reviewer': {'username': 'virt-ci'},
+    'timestamp': 1234567880
+}
+
+REVIEW = {
+    'record_type': 'review',
+    'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
+    'module': 'nova',
+    'branch': 'master',
+    'status': 'MERGED',
+    'number': '97860',
+    'patchSets': [{'number': '1'}, {'number': '2'}],
+    'comments': [
+        {'message': 'Patch Set 2: build successful',
+            'reviewer': {'username': 'other-ci'}, },
+        {'message': 'Patch Set 2: job started',
+            'reviewer': {'username': 'virt-ci'}, }]
+}
+
+DRIVER = {
+    'name': 'Virt Nova Driver',
+    'vendor': 'Virt Inc',
+    'ci': {
+        'id': 'virt-ci',
+        'success_pattern': 'successful',
+        'failure_pattern': 'failed',
+    }
+}
+
+DRIVER_NON_EXISTENT = {
+    'name': 'No Virt Nova Driver',
+    'vendor': 'No Virt Inc',
+    'ci': {
+        'id': 'no-virt-ci',
+        'success_pattern': 'successful',
+        'failure_pattern': 'failed',
+    }
+}
 
 
 class TestDriverlog(testtools.TestCase):
     def setUp(self):
         super(TestDriverlog, self).setUp()
 
-    def test_find_ci_result_voting_ci(self):
-        review = {
-            'record_type': 'review',
-            'id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
-            'module': 'nova',
-            'branch': 'master',
-            'status': 'NEW',
-            'number': '97860',
-            'patchSets': [
-                {'number': '1',
-                 'approvals': [
-                     {'type': 'Verified', 'description': 'Verified',
-                      'value': '1', 'grantedOn': 1234567890 - 1,
-                      'by': {
-                          'name': 'Batman',
-                          'email': 'batman@openstack.org',
-                          'username': 'batman'}},
-                     {'type': 'Verified', 'description': 'Verified',
-                      'value': '-1', 'grantedOn': 1234567890,
-                      'by': {
-                          'name': 'Pikachu',
-                          'email': 'pikachu@openstack.org',
-                          'username': 'pikachu'}},
-                 ]}],
-            'comments': [
-                {'message': 'Patch Set 1: build successful',
-                 'reviewer': {'username': 'batman'},
-                 'timestamp': 1234567890}
-            ]}
+    def test_find_ci_result_success(self):
+        drivers = [DRIVER]
+        review = copy.deepcopy(REVIEW)
+        review['comments'].append(COMMENT_SUCCESS)
 
-        ci_map = {
-            'batman': {
-                'name': 'Batman Driver',
-                'vendor': 'Gotham Inc',
-                'ci': {
-                    'id': 'batman'
-                }
-            }
-        }
-
-        res = list(driverlog.find_ci_result(review, ci_map))
+        res = list(driverlog.log([review], drivers))
 
         expected_result = {
-            'reviewer': {'username': 'batman'},
-            'ci_result': True,
-            'is_merged': False,
+            'user_id': 'ci:virt_nova_driver',
+            'value': True,
             'message': 'build successful',
             'date': 1234567890,
+            'branch': 'master',
             'review_id': 'I1045730e47e9e6ad31fcdfbaefdad77e2f3b2c3e',
             'review_number': '97860',
-            'driver_name': 'Batman Driver',
-            'driver_vendor': 'Gotham Inc',
+            'driver_name': 'Virt Nova Driver',
+            'driver_vendor': 'Virt Inc',
+            'module': 'nova',
         }
         self.assertEqual(1, len(res), 'One CI result is expected')
         self.assertEqual(expected_result, res[0])
+
+    def test_find_ci_result_failure(self):
+        drivers = [DRIVER]
+        review = copy.deepcopy(REVIEW)
+        review['comments'].append(COMMENT_FAILURE)
+
+        res = list(driverlog.log([review], drivers))
+
+        self.assertEqual(1, len(res), 'One CI result is expected')
+        self.assertEqual(False, res[0]['value'])
+
+    def test_find_ci_result_non_existent(self):
+        drivers = [DRIVER_NON_EXISTENT]
+        review = copy.deepcopy(REVIEW)
+        review['comments'].append(COMMENT_SUCCESS)
+
+        res = list(driverlog.log([REVIEW], drivers))
+
+        self.assertEqual(0, len(res), 'No CI results expected')
+
+    def test_find_ci_result_last_vote_only(self):
+        # there may be multiple comments from the same CI,
+        # only the last one is important
+        drivers = [DRIVER]
+
+        review = copy.deepcopy(REVIEW)
+        review['comments'].append(COMMENT_FAILURE)
+        review['comments'].append(COMMENT_SUCCESS)
+
+        res = list(driverlog.log([review], drivers))
+
+        self.assertEqual(1, len(res), 'One CI result is expected')
+        self.assertEqual(True, res[0]['value'])

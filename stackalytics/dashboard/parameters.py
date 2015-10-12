@@ -54,7 +54,7 @@ METRIC_TO_RECORD_TYPE = {
     'resolved-bugs': ['bugr'],
     'members': ['member'],
     'person-day': ['mark', 'patch', 'email', 'bpd', 'bugf'],
-    'ci': ['ci_vote'],
+    'ci': ['ci'],
     'patches': ['patch'],
 }
 

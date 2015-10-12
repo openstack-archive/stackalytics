@@ -21,7 +21,6 @@ import memcache
 from oslo_config import cfg
 from oslo_log import log as logging
 import six
-from six.moves.urllib import parse
 
 from stackalytics.processor import config
 from stackalytics.processor import utils
@@ -84,14 +83,19 @@ def import_data(memcached_inst, fd):
 def get_repo_keys(memcached_inst):
     for repo in (memcached_inst.get('repos') or []):
         uri = repo['uri']
+        quoted_uri = six.moves.urllib.parse.quote_plus(uri)
+
+        yield 'bug_modified_since-%s' % repo['module']
+
         branches = {repo.get('default_branch', 'master')}
         for release in repo.get('releases'):
             if 'branch' in release:
                 branches.add(release['branch'])
 
         for branch in branches:
-            yield 'vcs:' + str(parse.quote_plus(uri) + ':' + branch)
-            yield 'rcs:' + str(parse.quote_plus(uri) + ':' + branch)
+            yield 'vcs:%s:%s' % (quoted_uri, branch)
+            yield 'rcs:%s:%s' % (quoted_uri, branch)
+            yield 'ci:%s:%s' % (quoted_uri, branch)
 
 
 def export_data(memcached_inst, fd):

@@ -16,77 +16,88 @@
 import re
 
 from oslo_log import log as logging
+from stackalytics.processor import user_processor
 
 LOG = logging.getLogger(__name__)
 
 
-def _find_vote(review, ci_id, patch_set_number):
-    """Finds vote corresponding to ci_id."""
-    for patch_set in review['patchSets']:
-        if patch_set['number'] == patch_set_number:
-            for approval in (patch_set.get('approvals') or []):
-                if approval['type'] not in ['Verified', 'VRIF']:
-                    continue
-
-                if approval['by'].get('username') == ci_id:
-                    return approval['value'] in ['1', '2']
-
-    return None
-
-
-def find_ci_result(review, ci_map):
+def _find_ci_result(review, drivers):
     """For a given stream of reviews yields results produced by CIs."""
 
     review_id = review['id']
     review_number = review['number']
-    ci_already_seen = set()
+
+    ci_id_set = set(d['ci']['id'] for d in drivers)
+    candidate_drivers = [d for d in drivers]
+
+    last_patch_set_number = review['patchSets'][-1]['number']
 
     for comment in reversed(review.get('comments') or []):
-        reviewer_id = comment['reviewer'].get('username')
-        if reviewer_id not in ci_map:
-            continue
+        comment_author = comment['reviewer'].get('username')
+        if comment_author not in ci_id_set:
+            continue  # not any of registered CIs
 
         message = comment['message']
-        m = re.match(r'Patch Set (?P<number>\d+):(?P<message>.*)',
-                     message, flags=re.DOTALL)
-        if not m:
-            continue  # do not understand comment
 
-        patch_set_number = m.groupdict()['number']
-        message = m.groupdict()['message'].strip()
+        prefix = 'Patch Set'
+        if comment['message'].find(prefix) != 0:
+            continue  # look for special messages only
+
+        prefix = 'Patch Set %s:' % last_patch_set_number
+        if comment['message'].find(prefix) != 0:
+            break  # all comments from the latest patch set already parsed
+        message = message[len(prefix):].strip()
 
         result = None
-        ci = ci_map[reviewer_id]['ci']
+        matched_drivers = set()
 
-        # try to get result by parsing comment message
-        success_pattern = ci.get('success_pattern')
-        failure_pattern = ci.get('failure_pattern')
+        for driver in candidate_drivers:
+            ci = driver['ci']
+            if ci['id'] != comment_author:
+                continue
 
-        if success_pattern and re.search(success_pattern, message):
-            result = True
-        elif failure_pattern and re.search(failure_pattern, message):
-            result = False
+            # try to get result by parsing comment message
+            success_pattern = ci.get('success_pattern')
+            failure_pattern = ci.get('failure_pattern')
 
-        # try to get result from vote
-        if result is None:
-            result = _find_vote(review, ci['id'], patch_set_number)
+            message_lines = (l for l in message.split('\n') if l.strip())
 
-        if result is not None:
-            is_merged = (
-                review['status'] == 'MERGED' and
-                patch_set_number == review['patchSets'][-1]['number'] and
-                ci['id'] not in ci_already_seen)
+            line = ''
+            for line in message_lines:
+                if success_pattern and re.search(success_pattern, line):
+                    result = True
+                    break
+                elif failure_pattern and re.search(failure_pattern, line):
+                    result = False
+                    break
 
-            ci_already_seen.add(ci['id'])
+            if result is not None:
+                matched_drivers.add(driver['name'])
+                record = {
+                    'user_id': user_processor.make_user_id(
+                        ci_id=driver['name']),
+                    'value': result,
+                    'message': line,
+                    'date': comment['timestamp'],
+                    'branch': review['branch'],
+                    'review_id': review_id,
+                    'review_number': review_number,
+                    'driver_name': driver['name'],
+                    'driver_vendor': driver['vendor'],
+                    'module': review['module']
+                }
+                if review['branch'].find('/') > 0:
+                    record['release'] = review['branch'].split('/')[1]
 
-            yield {
-                'reviewer': comment['reviewer'],
-                'ci_result': result,
-                'is_merged': is_merged,
-                'message': message,
-                'date': comment['timestamp'],
-                'review_id': review_id,
-                'review_number': review_number,
-                'driver_name': ci_map[reviewer_id]['name'],
-                'driver_vendor': ci_map[reviewer_id]['vendor'],
-            }
+                yield record
+
+        candidate_drivers = [d for d in candidate_drivers
+                             if d['name'] not in matched_drivers]
+        if not candidate_drivers:
+            break  # found results from all drivers
+
+
+def log(review_iterator, drivers):
+    for record in review_iterator:
+        for driver_info in _find_ci_result(record, drivers):
+            yield driver_info
