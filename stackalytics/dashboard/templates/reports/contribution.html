@@ -23,7 +23,7 @@
         });
 
         $(document).ready(function () {
-            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "positive_ratio", "disagreements", "disagreement_ratio",
+            var table_column_names = ["index", "link", "metric", "-2", "-1", "1", "2", "A", "x", "positive_ratio", "disagreements", "disagreement_ratio",
                                       "review_ratio", "commit", "email"];
             var table_id = "review_stats_table";
 
@@ -95,7 +95,7 @@
                             "aaData": tableData,
                             "aoColumns": tableColumns,
                             "aoColumnDefs": [
-                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] },
+                                { "sClass": "center", "aTargets": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14] },
                                 { "sType": "ratio", "aTargets": [8, 10]}
                             ]
                         });
@@ -144,11 +144,12 @@
                 <th>#</th>
                 <th>Engineer</th>
                 <th>Reviews</th>
-                <th>-2</th>
-                <th>-1</th>
-                <th>+1</th>
-                <th>+2</th>
-                <th>A</th>
+                <th title="Do not merge (-2)">-2</th>
+                <th title="Patch needs further work (-1)">-1</th>
+                <th title="Looks good (+1)">+1</th>
+                <th title="Looks good for core (+2)">+2</th>
+                <th title="Approve">A</th>
+                <th title="Abandon">x</th>
                 <th>+ %</th>
                 <th>Disagreements</th>
                 <th>Ratio</th>

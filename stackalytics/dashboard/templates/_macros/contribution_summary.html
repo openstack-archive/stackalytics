@@ -29,9 +29,14 @@
 
 <script id="contribution_template" type="text/x-jquery-tmpl">
 {% raw %}
-<div>Total commits: <b>${commit_count}</b></div>
-<div>Total LOC: <b>${loc}</b></div>
-<div>Review stat (-2, -1, +1, +2, A): <b>${marks["-2"]}, ${marks["-1"]}, ${marks["1"]}, ${marks["2"]}, ${marks["A"]}</b></div>
+<div>Commits: <b>${commit_count}</b></div>
+<div>LOCs: <b>${loc}</b></div>
+<div>Do not merge (-2): <b>${marks["-2"]}</b>
+<div>Patch needs further work (-1): <b>${marks["-1"]}</b>
+<div>Looks good (+1): <b>${marks["1"]}</b>
+<div>Looks good for core (+2): <b>${marks["2"]}</b>
+<div>Approve: <b>${marks["A"]}</b>
+<div>Abandon: <b>${marks["x"]}</b>
 <div>Change Requests: <b>${change_request_count}</b>
  {%if abandoned_change_requests_count > 0 %}
    <span>(${abandoned_change_requests_count} of them abandoned)</span>

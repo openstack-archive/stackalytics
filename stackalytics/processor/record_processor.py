@@ -428,6 +428,17 @@ class RecordProcessor(object):
 
                 yield self._make_mark_record(record, patch, approval)
 
+        # check for abandon action
+        if record.get('status') == 'ABANDONED':
+            for comment in reversed(record.get('comments') or []):
+                if comment['message'] == 'Abandoned':
+                    action = dict(type='Abandon', value=0)
+                    action['by'] = comment['reviewer']
+                    action['grantedOn'] = comment['timestamp']
+
+                    yield self._make_mark_record(
+                        record, record['patchSets'][-1], action)
+
     def _guess_module(self, record):
         subject = record['subject'].lower()
         pos = len(subject)
@@ -818,7 +829,7 @@ class RecordProcessor(object):
 
             patch_id = utils.get_patch_id(record['review_id'], record['patch'])
             if record['user_id'] == patch_id_to_user_id.get(patch_id):
-                if record['type'].find('Self-') < 0:
+                if record['type'][:5] == 'Self-':
                     record['type'] = 'Self-%s' % record['type']
                     yield record
 

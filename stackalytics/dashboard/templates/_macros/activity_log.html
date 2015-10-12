@@ -106,11 +106,13 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">
                 {%if (type == "Workflow" && value == 1) %}
-                Approved
+                Approve
                 {%elif (type == "Self-Workflow" && value == 1) %}
-                Self-Approved
+                Self-Approve
                 {%elif (type == "Workflow" && value == -1) %}
                 Work in progress
+                {%elif (type == "Abandon" || type == "Self-Abandon") %}
+                ${type}
                 {%else%}
                 ${type}: <span class="review_mark">${value}</span>
                 {%/if%}

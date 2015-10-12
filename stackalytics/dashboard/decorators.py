@@ -247,6 +247,9 @@ def mark_filter(result, record, param_id, context):
     if record_type == 'Code-Review':
         result_by_param['metric'] += 1
         value = record.value
+    elif record_type == 'Abandon':
+        result_by_param['metric'] += 1
+        value = 'x'
     elif record.type == 'Workflow':
         if record.value == 1:
             value = 'A'
@@ -265,7 +268,7 @@ def mark_finalize(record):
     positive = 0
     numeric = 0
     mark_distribution = []
-    for key in [-2, -1, 1, 2, 'A']:
+    for key in [-2, -1, 1, 2, 'A', 'x']:
         if key in record:
             if key in [1, 2]:
                 positive += record[key]

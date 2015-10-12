@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import itertools
+
 from oslo_config import cfg
 from oslo_log import log as logging
 import psutil
@@ -134,8 +136,12 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
         current_retrieval_time = int(time.time())
 
-        review_iterator = rcs_inst.log(repo, branch, last_retrieval_time,
-                                       grab_comments=('ci' in repo))
+        review_iterator = itertools.chain(
+            rcs_inst.log(repo, branch, last_retrieval_time, status='open'),
+            rcs_inst.log(repo, branch, last_retrieval_time, status='merged'),
+            rcs_inst.log(repo, branch, last_retrieval_time, status='abandoned',
+                         grab_comments=True),
+        )
         review_iterator_typed = _record_typer(review_iterator, 'review')
 
         processed_review_iterator = record_processor_inst.process(
