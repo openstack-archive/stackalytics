@@ -459,6 +459,8 @@ class RecordProcessor(object):
 
         if not record.get('blueprint_id'):
             del record['body']
+        elif len(record['body']) > 4000:
+            record['body'] = record['body'][:4000] + '...'
 
         yield record
 
