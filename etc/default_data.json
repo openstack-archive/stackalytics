@@ -6279,6 +6279,18 @@
             "emails": ["kallebe.monteiro@lsbd.ufc.br"]
         },
         {
+            "launchpad_id": "kalyani030592",
+            "gerrit_id": "kalyani",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kalyani Shinde",
+            "emails": ["kalyani030592@gmail.com", "rnq797@my.utsa.edu"]
+        },
+        {
             "launchpad_id": "kanaderohan",
             "gerrit_id": "kanaderohan",
             "companies": [
