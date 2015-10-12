@@ -13608,6 +13608,11 @@
             "company_name": "FathomDB"
         },
         {
+            "domains": ["firma.seznam.cz"],
+            "company_name": "Seznam.cz",
+            "aliases": ["Seznam.cz, a.s."]
+        },
+        {
             "domains": ["fit-tecnologia.org.br"],
             "company_name": "FIT Instituto de Tecnologia",
             "aliases": ["FIT"]
