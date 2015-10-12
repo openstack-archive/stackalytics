@@ -25,8 +25,7 @@ External CI status for {{ module }} for the last {{ days }} days
         });
 
         $(document).ready(function () {
-            var table_column_names = ["name", "merge_run_count", "merge_success_rate", "merge_date_str", "merge_result",
-                                      "total_run_count", "total_success_rate", "total_date_str"];
+            var table_column_names = ["name", "merge_run_count", "merge_success_rate", "merge_date_str", "merge_result"];
             var table_id = "summary_stats_table";
 
             $.ajax({
@@ -49,55 +48,41 @@ External CI status for {{ module }} for the last {{ days }} days
                     for (i = 0; i < activity.length; i++) {
                         var ai = activity[i];
 
-                        if (ai.branch != "master") {
-                            continue;
-                        }
-
                         var ci_id = ai.user_id;
 
                         var ci = ci_map[ci_id];
                         if (!ci) {
-                            ci = {total_run_count: 0, total_success: 0, merge_run_count: 0, merge_success: 0,
-                                  merge_date: 0, total_date: 0, merge_result: "N/A",
+                            ci = {merge_run_count: 0, merge_success: 0,
+                                  merge_date: 0, merge_result: "N/A",
                                   merge_date_str: "N/A", "total_date_str": "N/A"};
                         }
                         ci.id = ai.user_id;
-                        ci.name = "<a href=\"https://review.openstack.org/#/q/reviewer:" + ai.user_id +
-                                "+project:openstack/{{ module }},n,z\" target=\"_blank\">" + ai.user_id + "</a>";
+                        ci.name = "<a href=\"/?metric=ci&user_id=" + ai.user_id +
+                                "&module={{ module }}\">" + ai.driver_name + "</a>";
                         ci_id_to_name[ci_id] = ci.name;
 
-                        ci.total_run_count ++;
-                        if (ai.ci_result) {
-                            ci.total_success ++;
-                        }
-                        if (ai.is_merged) {
-                            var review_id = ai.review_number;
-                            if (!review_ids_set[review_id]) {
-                                review_ids_set[review_id] = review_id;
-                                review_ids.push({review_id: review_id, date_str: ai.date_str});
-                            }
-
-                            if (!res_map[ci_id]) {
-                                res_map[ci_id] = {};
-                            }
-                            res_map[ci_id][review_id] = ai.ci_result;
-
-                            ci.merge_run_count ++;
-                            if (ai.ci_result) {
-                                ci.merge_success ++;
-                            }
-                            if (ai.date > ci.merge_date) {
-                                ci.merge_date = ai.date;
-                                ci.merge_date_str = ai.date_str;
-                                ci.merge_result = (ai.ci_result)? "<span style=\"color: green\">&#x2714;</span>":
-                                                                  "<span style=\"color: red\">&#x2716;</span>";
-                            }
+                        var review_id = ai.review_number;
+                        if (!review_ids_set[review_id]) {
+                            review_ids_set[review_id] = review_id;
+                            review_ids.push({review_id: review_id, date_str: ai.date_str});
                         }
 
-                        if (ai.date > ci.total_date) {
-                            ci.total_date = ai.date;
-                            ci.total_date_str = ai.date_str;
+                        if (!res_map[ci_id]) {
+                            res_map[ci_id] = {};
                         }
+                        res_map[ci_id][review_id] = ai.value;
+
+                        ci.merge_run_count ++;
+                        if (ai.value) {
+                            ci.merge_success ++;
+                        }
+                        if (ai.date > ci.merge_date) {
+                            ci.merge_date = ai.date;
+                            ci.merge_date_str = ai.date_str;
+                            ci.merge_result = (ai.value)? "<span style=\"color: green\">&#x2714;</span>":
+                                                              "<span style=\"color: red\">&#x2716;</span>";
+                        }
+
                         ci_map[ci_id] = ci;
                     }
 
@@ -106,16 +91,11 @@ External CI status for {{ module }} for the last {{ days }} days
                         var c = ci_map[ci_id];
 
                         if (c.merge_run_count > 0) {
-                            c.merge_success_rate = Math.round(c.merge_success / c.merge_run_count * 100) + "%";
+                            c.merge_success_rate = Math.round(100 * c.merge_success / c.merge_run_count) + "%";
                         } else {
                             c.merge_success_rate = "-";
                         }
 
-                        if (c.total_run_count > 0) {
-                            c.total_success_rate = Math.round(c.total_success / c.total_run_count * 100) + "%";
-                        } else {
-                            c.total_success_rate = "-";
-                        }
                         tableData.push(c);
                     }
 
@@ -131,8 +111,8 @@ External CI status for {{ module }} for the last {{ days }} days
                         "aaData": tableData,
                         "aoColumns": tableColumns,
                         "aoColumnDefs": [
-                            { "sClass": "center", "aTargets": [1, 2, 3, 4, 5, 6, 7] },
-                            { "sType": "ratio", "aTargets": [2, 6]}
+                            { "sClass": "center", "aTargets": [1, 2, 3, 4] },
+                            { "sType": "ratio", "aTargets": [2]}
                         ]
                     }).show();
                     $("#" + table_id + "_loading").hide();
@@ -144,7 +124,7 @@ External CI status for {{ module }} for the last {{ days }} days
                     table.append(table_head);
                     var table_head_row = $("<tr></tr>");
                     table_head.append(table_head_row);
-                    table_head_row.append($("<th rowspan='2'>CI</th>"));
+                    table_head_row.append($("<th rowspan='2'>Driver</th>"));
                     var table_second_head_row = $("<tr></tr>");
                     table_head.append(table_second_head_row);
                     var table_body = $("<tbody></tbody>");
@@ -165,7 +145,8 @@ External CI status for {{ module }} for the last {{ days }} days
                         }
                         prev_date = date;
                         count++;
-                        table_second_head_row.append($("<th title='" + review_ids[i].review_id + "'></th>"));
+                        table_second_head_row.append($("<th title='Change request " + review_ids[i].review_id +
+                            "'><span style='font-size: 60%;'>" + review_ids[i].review_id + "</span></th>"));
                     }
 
                     if (count > 0) {
@@ -180,19 +161,23 @@ External CI status for {{ module }} for the last {{ days }} days
                             var review_id = review_ids[i].review_id;
 
                             var color = "#cfcfcf";
+                            var title = "N/A";
+
                             if (res_map[ci_id]) {
                                 var res = res_map[ci_id][review_id];
                                 if (res == true) {
                                     color = "#40bf00";
+                                    title = "SUCCESS";
                                 } else if (res == false) {
                                     color = "#bf4000";
+                                    title = "FAILURE";
                                 }
                             }
                             const url = "https://review.openstack.org/#/c/" + review_id;
                             var cell = $("<td></td>");
-                            cell.css("background-color", color).css("cursor", "pointer").prop("title", url);
+                            cell.css("background-color", color).css("cursor", "pointer").prop("url", url).prop("title", title + " - " + url);
                             cell.click(function(evt) {
-                                window.open($(this).prop("title"));
+                                window.open($(this).prop("url"));
                             });
                             table_row.append(cell);
                         }
@@ -228,31 +213,24 @@ External CI status for {{ module }} for the last {{ days }} days
 {% endblock %}
 
 {% block content %}
-<h1>External CI status for {{ module }} for the last {{ days }} days</h1>
+<h1>Status of drivers testing in {{ module|title }} during recent {{ days }} days</h1>
 
-<h2>Summary</h2>
+<p>List of drivers is taken from <a href="/report/driverlog" target="_blank">DriverLog</a>.
+  The status is based on job results from the latest patch in merged change requests (thus assuming that the job is executed on code close to the master).
+  Missing or misconfigured drivers can be updated by commit into DriverLog's
+  <a href="https://git.openstack.org/cgit/stackforge/driverlog/tree/etc/default_data.json" target="_blank">default_data.json</a>.
+</p>
 
-    <p>Overall stats for external CIs. <i>Merged patch sets</i> - results of test execution on the last patch set in the
-    merged change request (assuming that it is almost the same as to run tests against master). <i>All patch sets</i> -
-    results of test execution on all patch sets.</p>
-    <p>List of CIs is taken from <a href="/report/driverlog">DriverLog</a> and can be updated by commit into its
-        <a href="https://git.openstack.org/cgit/stackforge/driverlog/tree/etc/default_data.json">default_data.json</a></p>
+<h2>Drivers summary</h2>
 
     <table id="summary_stats_table" style="display: none;">
         <thead>
             <tr>
-                <th rowspan="2">CI</th>
-                <th colspan="4" title="Stats for the last patch set in the merged change request">Merged patch sets</th>
-                <th colspan="3">All patch sets</th>
-            </tr>
-            <tr>
-                <th>Total runs</th>
+                <th>Driver</th>
+                <th>CI votes</th>
                 <th>Success, %</th>
-                <th>Last run</th>
-                <th>Last result</th>
-                <th>Total runs</th>
-                <th>Success, %</th>
-                <th>Last run</th>
+                <th>Latest run</th>
+                <th>Latest result</th>
             </tr>
         </thead>
         <tbody>
@@ -261,10 +239,7 @@ External CI status for {{ module }} for the last {{ days }} days
 
     <div id="summary_stats_table_loading" class="select2-loading" style="width: 7em;">Loading...</div>
 
-<h2>Status for merged changed requests</h2>
-
-    <p>Status of CI test execution for every merged patch set grouped by days. Green cell - tests ran successfully,
-    red cell - tests failed, grey cell - tests results not found.</p>
+<h2>Status per change requests</h2>
 
     <div id="table_status_container"></div>
     <div id="table_status_container_loading" class="select2-loading" style="width: 7em;">Loading...</div>

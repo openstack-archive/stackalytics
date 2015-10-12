@@ -16,14 +16,15 @@
 {% set show_user_profile = (user_id) %}
 {% set show_module_details = (module) %}
 {% set show_review_ratio = (metric in ['marks']) %}
+{% set show_ci = (metric in ['ci']) %}
 
 {% macro show_report_links(module=None, company=None, user_id=None) -%}
     {% if module %}
         <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module_inst.module_group_name }}</a></b></div>
         <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module_inst.module_group_name }}</a></b></div>
         <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module_inst.module_group_name }}</a></b></div>
-        {% if module_inst.ci %}
-            <div><b><a href="/report/ci/{{ module }}/7" target="_blank">External CI status for {{ module_inst.module_group_name }} for the last 7 days</a></b></div>
+        {% if module_inst.has_drivers %}
+            <div><b><a href="/report/ci/{{ module }}/7" target="_blank">Status of drivers testing in {{ module_inst.module_group_name }} during recent 7 days</a></b></div>
         {% endif %}
     {% endif %}
     {% if company %}
@@ -46,6 +47,9 @@
         {% if show_review_ratio %}
         renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id",
                 ["index", "link", "mark_ratio", "metric"]);
+        {% elif show_ci %}
+        renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id",
+                ["index", "link", "metric", "success_ratio"]);
         {% else %}
         renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id");
         {% endif %}
@@ -95,11 +99,14 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Contributor</th>
+                <th>{% if show_ci %}Driver{% else %}Contributor{% endif %}</th>
                 {% if show_review_ratio %}
                     <th>-2|-1|+1|+2|A (+ ratio)</th>
                 {% endif %}
                 <th>{{ metric_label }}</th>
+                {% if show_ci %}
+                    <th>Success</th>
+                {% endif %}
             </tr>
         </thead>
         <tbody>

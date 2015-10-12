@@ -587,6 +587,8 @@ def timeline(records, **kwargs):
 
     if ('commits' in metric) or ('loc' in metric):
         handler = lambda record: record.loc
+    elif 'ci' in metric:
+        handler = lambda record: 0 if record.value else 1
     else:
         handler = lambda record: 0
 

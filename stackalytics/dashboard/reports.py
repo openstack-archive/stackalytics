@@ -152,8 +152,8 @@ def contribution(module, days):
 @decorators.templated()
 @decorators.exception_handler()
 def external_ci(module, days):
-    if int(days) > 30:
-        days = 30
+    if int(days) > 100:
+        days = 100
 
     return {
         'module': module,
