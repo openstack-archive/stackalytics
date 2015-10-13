@@ -7630,15 +7630,11 @@
                 },
                 {
                     "company_name": "HP",
-                    "end_date": "2015-Sep-08"
-                },
-                {
-                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Morgan Fainberg",
-            "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com", "mdrnstm@us.ibm.com"]
+            "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com"]
         },
         {
             "launchpad_id": "med",
