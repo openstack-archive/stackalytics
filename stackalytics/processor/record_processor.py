@@ -831,7 +831,7 @@ class RecordProcessor(object):
 
             patch_id = utils.get_patch_id(record['review_id'], record['patch'])
             if record['user_id'] == patch_id_to_user_id.get(patch_id):
-                if record['type'][:5] == 'Self-':
+                if record['type'][:5] != 'Self-':
                     record['type'] = 'Self-%s' % record['type']
                     yield record
 
