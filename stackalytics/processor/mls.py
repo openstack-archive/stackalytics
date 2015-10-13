@@ -48,7 +48,7 @@ MESSAGE_PATTERNS = {
                                re.IGNORECASE),
 }
 
-TRAILING_RECORD = ('From ishakhat at mirantis.com  Tue Sep 17 07:30:43 2013'
+TRAILING_RECORD = ('From ishakhat at mirantis.com  Tue Sep 17 07:30:43 2013\n'
                    'From: ')
 
 
@@ -71,6 +71,20 @@ def _uri_content_changed(uri, runtime_storage_inst):
     return False
 
 
+def _optimize_body(email_body):
+    result = []
+    for line in email_body.split('\n'):
+        line = line.strip()
+
+        if line[:1] == '>' or line[:8] == '--------':
+            continue  # ignore replies and part delimiters
+
+        if (not result) or (result and result[-1] != line):
+            result.append(line)
+
+    return '\n'.join(result)
+
+
 def _retrieve_mails(uri):
     LOG.debug('Retrieving mail archive from: %s', uri)
     content = utils.read_gzip_from_uri(uri)
@@ -90,6 +104,8 @@ def _retrieve_mails(uri):
 
         email['date'] = int(email_utils.mktime_tz(
             email_utils.parsedate_tz(email['date'])))
+
+        email['body'] = _optimize_body(email['body'])
 
         for pattern_name, pattern in six.iteritems(MESSAGE_PATTERNS):
             collection = set()
