@@ -13223,7 +13223,8 @@
               "Unaffliated", "test", "Unffiliated", "independent user", "me", "my", "unaffeliated", "Unaffilaited",
               "Unaffiliaited", "Unaffilated", "Personal user", "independent user - Unaffiliated", "Unaffliliated", "dummy",
               "unaffillated", "Unafflicated", "Unafiliated", "Unaffialiated", "Unaffiliation", "Unaffilicated", "Unaffilinated",
-              "indepedent", "Unaffiliatd", "Anonomous", "unaffiliated student", "Personal", "Unalliliated", "Unafillated"]
+              "indepedent", "Unaffiliatd", "Anonomous", "unaffiliated student", "Personal", "Unalliliated", "Unafillated",
+              "Not Affiliated", "Unaffilited"]
         },
         {
             "domains": ["360.cn"],
@@ -13921,6 +13922,10 @@
             "company_name": "Lavabit"
         },
         {
+            "domains": ["lenovo.com"],
+            "company_name": "Lenovo"
+        },
+        {
             "domains": ["letv.com"],
             "company_name": "Letv Cloud Computing"
         },
@@ -14464,6 +14469,10 @@
         {
             "domains": ["verilume.com"],
             "company_name": "Verilume"
+        },
+        {
+            "domains": ["veritas.com"],
+            "company_name": "Veritas"
         },
         {
             "domains": ["versa-networks.com"],
