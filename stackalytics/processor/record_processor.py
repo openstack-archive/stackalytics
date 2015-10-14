@@ -593,7 +593,7 @@ class RecordProcessor(object):
                 yield r
 
     def _update_records_with_releases(self, release_index):
-        LOG.debug('Update records with releases')
+        LOG.info('Update records with releases')
 
         for record in self.runtime_storage_inst.get_all_records():
             if record['primary_key'] in release_index:
@@ -606,7 +606,7 @@ class RecordProcessor(object):
                 yield record
 
     def _update_records_with_user_info(self):
-        LOG.debug('Update user info in records')
+        LOG.info('Update user info in records')
 
         for record in self.runtime_storage_inst.get_all_records():
             company_name = record['company_name']
@@ -625,7 +625,7 @@ class RecordProcessor(object):
                 yield record
 
     def _update_commits_with_merge_date(self):
-        LOG.debug('Update commits with merge date')
+        LOG.info('Update commits with merge date')
 
         change_id_to_date = {}
         for record in self.runtime_storage_inst.get_all_records():
@@ -649,7 +649,7 @@ class RecordProcessor(object):
                             yield record
 
     def _update_blueprints_with_mention_info(self):
-        LOG.debug('Process blueprints and calculate mention info')
+        LOG.info('Process blueprints and calculate mention info')
 
         valid_blueprints = {}
         mentioned_blueprints = {}
@@ -706,7 +706,7 @@ class RecordProcessor(object):
                 yield record
 
     def _determine_core_contributors(self):
-        LOG.debug('Determine core contributors')
+        LOG.info('Determine core contributors')
 
         module_branches = collections.defaultdict(set)
         quarter_ago = int(time.time()) - 60 * 60 * 24 * 30 * 3  # a quarter ago
@@ -752,7 +752,7 @@ class RecordProcessor(object):
                 yield mark
 
     def _update_marks_with_disagreement(self):
-        LOG.debug('Process marks to find disagreements')
+        LOG.info('Process marks to find disagreements')
 
         cores = set()
         for user in self.runtime_storage_inst.get_all_users():
@@ -788,7 +788,7 @@ class RecordProcessor(object):
                 yield processed
 
     def _update_members_company_name(self):
-        LOG.debug('Update members with company names')
+        LOG.info('Update members with company names')
 
         for record in self.runtime_storage_inst.get_all_records():
             if record['record_type'] != 'member':
@@ -819,7 +819,7 @@ class RecordProcessor(object):
             user_processor.store_user(self.runtime_storage_inst, user)
 
     def _update_self_made_marks(self):
-        LOG.debug('Update self-made marks')
+        LOG.info('Update self-made marks')
         patch_id_to_user_id = {}
         for record in self.runtime_storage_inst.get_all_records():
             if record['record_type'] == 'patch':

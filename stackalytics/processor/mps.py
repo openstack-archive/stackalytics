@@ -18,6 +18,7 @@ import re
 import time
 
 from oslo_log import log as logging
+import requests
 import six
 
 from stackalytics.processor import utils
@@ -36,9 +37,9 @@ def strip_garbage(s):
     return re.sub(r'\s+', ' ', re.sub(GARBAGE_PATTERN, '', s))
 
 
-def _retrieve_member(uri, member_id, html_parser):
+def _retrieve_member(requests_session, uri, member_id, html_parser):
 
-    content = utils.read_uri(uri)
+    content = utils.read_uri(uri, session=requests_session)
 
     if not content:
         return {}
@@ -84,11 +85,13 @@ def log(uri, runtime_storage_inst, days_to_update_members, members_look_ahead):
     cnt_empty = 0
     cur_index = last_member_index + 1
     html_parser = six.moves.html_parser.HTMLParser()
+    requests_session = requests.Session()
 
     while cnt_empty < members_look_ahead:
 
         profile_uri = uri + str(cur_index)
-        member = _retrieve_member(profile_uri, str(cur_index), html_parser)
+        member = _retrieve_member(requests_session, profile_uri,
+                                  str(cur_index), html_parser)
 
         if 'member_name' not in member:
             cnt_empty += 1
@@ -103,5 +106,6 @@ def log(uri, runtime_storage_inst, days_to_update_members, members_look_ahead):
 
         time.sleep(random.random() * 5)
 
+    requests_session.close()
     LOG.debug('Last_member_index: %s', last_member_index)
     runtime_storage_inst.set_by_key('last_member_index', last_member_index)
