@@ -99,9 +99,9 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
             <div class="header">Review &ldquo;${parent_subject}&rdquo;</div>
-            <div>Review submitted by: {%html parent_author_link %} ({%html parent_company_link %})</div>
+            <div>Change request by: {%html parent_author_link %} ({%html parent_company_link %})</div>
             {%if patch_author_link != parent_author_link %}
-                <div>Patch submitted by: {%html patch_author_link %} ({%html patch_company_link %})</div>
+                <div>Patch by: {%html patch_author_link %} ({%html patch_company_link %})</div>
             {%/if%}
             <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">
@@ -114,11 +114,11 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 {%elif (type == "Abandon" || type == "Self-Abandon") %}
                 ${type}
                 {%else%}
-                ${type}: <span class="review_mark">${value}</span>
+                ${type}: <span class="review_mark">${((value>0)? "+": "") + value}</span>
                 {%/if%}
             </div>
         {%elif record_type == "review" %}
-            <div class="header">New change request &ldquo;${subject}&rdquo;</div>
+            <div class="header">Change request &ldquo;${subject}&rdquo;</div>
             <div>Current Status: ${status}</div>
             <div>Change Id: <a href="${url}" target="_blank">${id}</a></div>
         {%elif record_type == "patch" %}
