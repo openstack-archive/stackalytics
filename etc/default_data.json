@@ -2719,6 +2719,17 @@
             "emails": ["daniel.kuffner@gmail.com", "dkuffner@chilicat.net"]
         },
         {
+            "launchpad_id": "daniel-mellado",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Mellado",
+            "emails": ["dmellado@redhat.com", "danielmelladoarea@gmail.com"]
+        },
+        {
             "launchpad_id": "danms",
             "companies": [
                 {
