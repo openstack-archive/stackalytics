@@ -7690,6 +7690,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-09"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
