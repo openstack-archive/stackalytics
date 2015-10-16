@@ -2938,6 +2938,22 @@
             "primary_key": "60ac49529da128e67e43d21636c02e67caac1377",
             "module": "openstack-manuals",
             "subject": "Update sitemap.xml file"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I0c6f7edcec77f978b20b1a6d828fbf8081946cb6"],
+            "primary_key": "8b9ab4bb8b158785b6c050c3a0c87a45828e3364",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap.xml for Liberty"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["Ic0a9ae6a9b6ab13b17ee4e32e24478b643e23099"],
+            "primary_key": "bc5213dadfaa007267ed85baa356334de21d9caf",
+            "module": "api-site",
+            "subject": "Regenerate sitemap.xml for Liberty"
         }
     ]
 }
