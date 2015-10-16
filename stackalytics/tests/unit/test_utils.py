@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import mock
 import testtools
 
 from stackalytics.processor import utils
@@ -123,3 +124,76 @@ class TestUtils(testtools.TestCase):
         profile = None
         utils.validate_lp_display_name(profile)
         self.assertEqual(None, profile)
+
+    def test_pipeline_processor(self):
+        counter = dict(n=0)
+        consumed = []
+        log = mock.Mock()
+
+        def get_all_items():
+            for i in range(5):
+                counter['n'] += 1
+                yield i
+
+        def single_pass_uno():
+            log('single_pass_uno:begin')
+
+            def pass_1(s):
+                yield s
+
+            yield pass_1
+
+            log('single_pass_uno:end')
+
+        def single_pass_duo():
+            log('single_pass_duo:begin')
+
+            def pass_1(s):
+                yield s + 10
+
+            yield pass_1
+
+            log('single_pass_duo:end')
+
+        def double_pass():
+            log('double_pass:begin')
+            r = set()
+
+            def pass_1(s):
+                if s % 2:
+                    r.add(s)
+
+            yield pass_1
+
+            log('double_pass:middle')
+
+            def pass_2(s):
+                if s in r:
+                    yield s * 100
+
+            yield pass_2
+
+            log('double_pass:end')
+
+        def consume(r):
+            for x in r:
+                consumed.append(x)
+
+        processors = [single_pass_uno, double_pass, single_pass_duo]
+        pipeline_processor = utils.make_pipeline_processor(processors)
+        consume(pipeline_processor(get_all_items))
+
+        self.assertEqual(10, counter['n'])  # twice by 5 elements
+
+        expected = [0, 10, 1, 11, 2, 12, 3, 13, 4, 14, 100, 300]
+        self.assertEqual(expected, consumed)
+
+        log.assert_has_calls([
+            mock.call('single_pass_uno:begin'),
+            mock.call('double_pass:begin'),
+            mock.call('single_pass_duo:begin'),
+            mock.call('single_pass_uno:end'),
+            mock.call('double_pass:middle'),
+            mock.call('single_pass_duo:end'),
+            mock.call('double_pass:end'),
+        ])

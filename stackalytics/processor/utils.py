@@ -317,3 +317,41 @@ def validate_lp_display_name(lp_profile):
     if lp_profile:
         if "<email address hidden>" == lp_profile['display_name']:
             lp_profile['display_name'] = lp_profile['name']
+
+
+def make_pipeline_processor(processors):
+
+    def get_passes(_processors):
+        # every processor yields one or more record handlers
+        # this function groups record handlers by pass and returns list of them
+        processor_generators = [p() for p in _processors]
+
+        work = True
+        while work:
+            work = False
+            record_handlers = []
+
+            for generator in processor_generators:
+                try:
+                    record_handlers.append(next(generator))
+                except StopIteration:
+                    pass
+
+            if record_handlers:
+                work = True
+                yield record_handlers
+
+    def pipeline_processor(record_generator):
+
+        # for every pass
+        for one_pass in get_passes(processors):
+            # iterate every record in producer
+            for record in record_generator():
+                # iterate over record handlers within single pass
+                for record_handler in one_pass:
+                    # feed record to the handler
+                    for r in record_handler(record) or []:
+                        # yield processed record
+                        yield r
+
+    return pipeline_processor

@@ -16,6 +16,7 @@
 import bisect
 import collections
 import copy
+import functools
 import time
 
 from oslo_log import log as logging
@@ -599,7 +600,7 @@ class RecordProcessor(object):
     def _update_records_with_releases(self, release_index):
         LOG.info('Update records with releases')
 
-        for record in self.runtime_storage_inst.get_all_records():
+        def record_handler(record):
             if record['primary_key'] in release_index:
                 release = release_index[record['primary_key']]
             else:
@@ -609,10 +610,12 @@ class RecordProcessor(object):
                 record['release'] = release
                 yield record
 
+        yield record_handler
+
     def _update_records_with_user_info(self):
         LOG.info('Update user info in records')
 
-        for record in self.runtime_storage_inst.get_all_records():
+        def record_handler(record):
             company_name = record['company_name']
             user_id = record['user_id']
             author_name = record['author_name']
@@ -628,16 +631,23 @@ class RecordProcessor(object):
                            'company': company_name, 'record': record})
                 yield record
 
+        yield record_handler
+
     def _update_commits_with_merge_date(self):
         LOG.info('Update commits with merge date')
 
         change_id_to_date = {}
-        for record in self.runtime_storage_inst.get_all_records():
+
+        def record_handler_pass_1(record):
             if (record['record_type'] == 'review' and
                     record.get('status') == 'MERGED'):
                 change_id_to_date[record['id']] = record['lastUpdated']
 
-        for record in self.runtime_storage_inst.get_all_records():
+        yield record_handler_pass_1
+
+        LOG.info('Update commits with merge date: pass 2')
+
+        def record_handler_pass_2(record):
             if record['record_type'] == 'commit':
                 change_id_list = record.get('change_id')
                 if change_id_list and len(change_id_list) == 1:
@@ -652,12 +662,15 @@ class RecordProcessor(object):
                                                      'record': record})
                             yield record
 
+        yield record_handler_pass_2
+
     def _update_blueprints_with_mention_info(self):
         LOG.info('Process blueprints and calculate mention info')
 
         valid_blueprints = {}
         mentioned_blueprints = {}
-        for record in self.runtime_storage_inst.get_all_records():
+
+        def record_handler_pass_1(record):
             for bp in record.get('blueprint_id', []):
                 if bp in mentioned_blueprints:
                     mentioned_blueprints[bp]['count'] += 1
@@ -675,6 +688,8 @@ class RecordProcessor(object):
                     'date': record['date']
                 }
 
+        yield record_handler_pass_1
+
         for bp_name, bp in six.iteritems(valid_blueprints):
             if bp_name in mentioned_blueprints:
                 bp['count'] = mentioned_blueprints[bp_name]['count']
@@ -683,7 +698,9 @@ class RecordProcessor(object):
                 bp['count'] = 0
                 bp['date'] = 0
 
-        for record in self.runtime_storage_inst.get_all_records():
+        LOG.info('Process blueprints and calculate mention info: pass 2')
+
+        def record_handler_pass_2(record):
             need_update = False
 
             valid_bp = set([])
@@ -709,19 +726,23 @@ class RecordProcessor(object):
             if need_update:
                 yield record
 
+        yield record_handler_pass_2
+
     def _determine_core_contributors(self):
         LOG.info('Determine core contributors')
 
         module_branches = collections.defaultdict(set)
         quarter_ago = int(time.time()) - 60 * 60 * 24 * 30 * 3  # a quarter ago
 
-        for record in self.runtime_storage_inst.get_all_records():
+        def record_handler(record):
             if (record['record_type'] == 'mark' and
                     record['date'] > quarter_ago and
                     record['value'] in [2, -2]):
                 module_branch = (record['module'], record['branch'])
                 user_id = record['user_id']
                 module_branches[user_id].add(module_branch)
+
+        yield record_handler
 
         for user in self.runtime_storage_inst.get_all_users():
             core_old = user.get('core')
@@ -767,7 +788,7 @@ class RecordProcessor(object):
         marks_per_patch = collections.defaultdict(
             lambda: {'patch_number': 0, 'marks': []})
 
-        for record in self.runtime_storage_inst.get_all_records():
+        def record_handler(record):
             if (record['record_type'] == 'mark' and
                     record['type'] == 'Code-Review'):
                 review_id = record['review_id']
@@ -786,17 +807,19 @@ class RecordProcessor(object):
                 marks_per_patch[review_id]['patch_number'] = patch_number
                 marks_per_patch[review_id]['marks'].append(record)
 
+        yield record_handler
+
         # purge the rest
         for marks_patch in marks_per_patch.values():
-            for processed in self._close_patch(cores, marks_patch['marks']):
-                yield processed
+            self.runtime_storage_inst.set_records(
+                self._close_patch(cores, marks_patch['marks']))
 
     def _update_members_company_name(self):
         LOG.info('Update members with company names')
 
-        for record in self.runtime_storage_inst.get_all_records():
+        def record_handler(record):
             if record['record_type'] != 'member':
-                continue
+                return
 
             company_draft = record['company_draft']
             company_name = self.domains_index.get(
@@ -804,7 +827,7 @@ class RecordProcessor(object):
                     utils.normalize_company_draft(company_draft))
 
             if company_name == record['company_name']:
-                continue
+                return
 
             LOG.debug('Update record %s, company name changed to %s',
                       record, company_name)
@@ -822,24 +845,21 @@ class RecordProcessor(object):
             }]
             user_processor.store_user(self.runtime_storage_inst, user)
 
+        yield record_handler
+
     def post_processing(self, release_index):
-        self.runtime_storage_inst.set_records(
-            self._update_records_with_user_info())
+        processors = [
+            self._update_records_with_user_info,
+            self._update_commits_with_merge_date,
+            functools.partial(self._update_records_with_releases,
+                              release_index),
+            self._update_blueprints_with_mention_info,
+            self._determine_core_contributors,
+            self._update_members_company_name,
+            self._update_marks_with_disagreement,
+        ]
 
-        self.runtime_storage_inst.set_records(
-            self._update_commits_with_merge_date())
+        pipeline_processor = utils.make_pipeline_processor(processors)
 
-        self.runtime_storage_inst.set_records(
-            self._update_records_with_releases(release_index))
-
-        self.runtime_storage_inst.set_records(
-            self._update_blueprints_with_mention_info())
-
-        self._determine_core_contributors()
-
-        # disagreement calculation must go after determining core contributors
-        self.runtime_storage_inst.set_records(
-            self._update_marks_with_disagreement())
-
-        self.runtime_storage_inst.set_records(
-            self._update_members_company_name())
+        self.runtime_storage_inst.set_records(pipeline_processor(
+            self.runtime_storage_inst.get_all_records))
