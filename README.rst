@@ -16,10 +16,10 @@ Project Info
 -------------
 
  * Web-site: http://stackalytics.com/
- * Source Code: http://git.openstack.org/cgit/stackforge/stackalytics
+ * Source Code: http://git.openstack.org/cgit/openstack/stackalytics
  * Wiki: https://wiki.openstack.org/wiki/Stackalytics
  * Launchpad: https://launchpad.net/stackalytics
  * Blueprints: https://blueprints.launchpad.net/stackalytics
  * Bugs: https://bugs.launchpad.net/stackalytics
- * Code Reviews: https://review.openstack.org/#q,status:open+stackalytics,n,z
+ * Code Reviews: https://review.openstack.org/#q,status:open+project:openstack/stackalytics,n,z
  * IRC: #openstack-stackalytics at freenode
