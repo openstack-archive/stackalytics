@@ -10107,11 +10107,15 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2015-Oct-18"
+                },
+                {
+                    "company_name": "Servosity",
                     "end_date": null
                 }
             ],
             "user_name": "Sam Yaple",
-            "emails": ["sam@yaple.net", "sam.yaple@rackspace.com"]
+            "emails": ["sam@yaple.net", "samuel@yaple.net", "syaple@servosity.com", "sam.yaple@rackspace.com"]
         },
         {
             "launchpad_id": "sahid-ferdjaoui",
@@ -14293,6 +14297,10 @@
             "domains": ["seagate.com"],
             "company_name": "Seagate",
             "aliases": ["Seagate Technology"]
+        },
+        {
+            "domains": ["servosity.com"],
+            "company_name": "Servosity"
         },
         {
             "domains": ["siaras.com"],
