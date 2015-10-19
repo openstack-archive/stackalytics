@@ -106,8 +106,8 @@
         },
         {
             "module": "stackalytics",
-            "organization": "stackforge",
-            "uri": "git://git.openstack.org/stackforge/stackalytics.git"
+            "organization": "openstack",
+            "uri": "git://git.openstack.org/openstack/stackalytics.git"
         }
     ],
 
@@ -269,7 +269,7 @@
         {
             "id": "all",
             "title": "All",
-            "modules": ["openstack", "openstack-infra", "openstack-dev", "stackforge", "unknown"]
+            "modules": ["openstack", "openstack-infra", "openstack-dev", "unknown"]
         },
         {
             "id": "openstack",
@@ -298,11 +298,6 @@
             "id": "openstack-others",
             "title": "OpenStack Others",
             "modules": ["openstack-others", "unknown"]
-        },
-        {
-            "id": "stackforge",
-            "title": "Stackforge",
-            "modules": ["stackforge"]
         }
     ]
 }

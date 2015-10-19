@@ -15580,8 +15580,8 @@
             "aliases": [
                 "fuel"
             ],
-            "uri": "git://git.openstack.org/stackforge/fuel-main.git",
-            "organization": "stackforge"
+            "uri": "git://git.openstack.org/openstack/fuel-main.git",
+            "organization": "openstack"
         },
         {
             "module": "api-wg",
@@ -15773,9 +15773,6 @@
         },
         {
             "organization": "openstack-ops"
-        },
-        {
-            "organization": "stackforge"
         },
         {
             "organization": "cloudfoundry",
@@ -16027,7 +16024,7 @@
         {
             "id": "all",
             "title": "All",
-            "modules": ["openstack", "openstack-infra", "openstack-dev", "stackforge", "unknown"]
+            "modules": ["openstack", "openstack-infra", "openstack-dev", "unknown"]
         },
         {
             "id": "openstack",
@@ -16056,11 +16053,6 @@
             "id": "openstack-others",
             "title": "OpenStack Others",
             "modules": ["openstack-others", "unknown"]
-        },
-        {
-            "id": "stackforge",
-            "title": "Stackforge",
-            "modules": ["stackforge"]
         },
         {
             "id": "complementary",

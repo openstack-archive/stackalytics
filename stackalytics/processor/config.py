@@ -26,7 +26,7 @@ CONNECTION_OPTS = [
 PROCESSOR_OPTS = [
     cfg.StrOpt('default-data-uri',
                default='https://git.openstack.org/cgit/'
-                       'stackforge/stackalytics/plain/etc/default_data.json',
+                       'openstack/stackalytics/plain/etc/default_data.json',
                help='URI for default data'),
     cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
@@ -34,7 +34,7 @@ PROCESSOR_OPTS = [
                help='Number of days to update members'),
     cfg.StrOpt('corrections-uri',
                default=('https://git.openstack.org/cgit/'
-                        'stackforge/stackalytics/plain/etc/corrections.json'),
+                        'openstack/stackalytics/plain/etc/corrections.json'),
                help='The address of file with corrections data'),
     cfg.StrOpt('review-uri', default='gerrit://review.openstack.org',
                help='URI of review system'),
@@ -46,7 +46,7 @@ PROCESSOR_OPTS = [
                help='SSH username for gerrit review system access'),
     cfg.StrOpt('driverlog-data-uri',
                default='https://git.openstack.org/cgit/'
-                       'stackforge/driverlog/plain/etc/default_data.json',
+                       'openstack/driverlog/plain/etc/default_data.json',
                help='URI for default data'),
     cfg.IntOpt('members-look-ahead', default=250,
                help='How many member profiles to look ahead after the last'),
