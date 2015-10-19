@@ -13211,6 +13211,17 @@
             "emails": ["zerodivisible@gmail.com"]
         },
         {
+            "launchpad_id": "zhang-jinnan",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jin Nan Zhang",
+            "emails": ["zhang.jinnan@99cloud.net", "zhangjinnan87@gmail.com"]
+        },
+        {
             "launchpad_id": "zhangjialong",
             "companies": [
                 {
