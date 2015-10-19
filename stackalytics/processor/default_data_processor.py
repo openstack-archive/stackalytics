@@ -159,6 +159,10 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
     LOG.info('Reading DriverLog data from uri: %s', driverlog_data_uri)
     driverlog_data = utils.read_json_from_uri(driverlog_data_uri)
 
+    if not driverlog_data:
+        LOG.warn('DriverLog data is not available')
+        return
+
     module_cis = collections.defaultdict(list)
     for driver in driverlog_data['drivers']:
         if 'ci' not in driver:

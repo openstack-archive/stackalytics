@@ -83,7 +83,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     quoted_uri = six.moves.urllib.parse.quote_plus(uri)
     LOG.info('Processing repo uri: %s', uri)
 
-    LOG.debug('Processing blueprints for repo uri: %s', uri)
+    LOG.info('Processing blueprints for repo uri: %s', uri)
     bp_iterator = lp.log(repo)
     bp_iterator_typed = _record_typer(bp_iterator, 'bp')
     processed_bp_iterator = record_processor_inst.process(
@@ -91,7 +91,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     runtime_storage_inst.set_records(processed_bp_iterator,
                                      utils.merge_records)
 
-    LOG.debug('Processing bugs for repo uri: %s', uri)
+    LOG.info('Processing bugs for repo uri: %s', uri)
     current_date = utils.date_to_timestamp('now')
     bug_modified_since = runtime_storage_inst.get_by_key(
         'bug_modified_since-%s' % repo['module'])
@@ -115,7 +115,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
             branches.add(release['branch'])
 
     for branch in branches:
-        LOG.debug('Processing commits in repo: %s, branch: %s', uri, branch)
+        LOG.info('Processing commits in repo: %s, branch: %s', uri, branch)
 
         vcs_key = 'vcs:%s:%s' % (quoted_uri, branch)
         last_id = runtime_storage_inst.get_by_key(vcs_key)
@@ -130,7 +130,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         last_id = vcs_inst.get_last_id(branch)
         runtime_storage_inst.set_by_key(vcs_key, last_id)
 
-        LOG.debug('Processing reviews for repo: %s, branch: %s', uri, branch)
+        LOG.info('Processing reviews for repo: %s, branch: %s', uri, branch)
 
         rcs_key = 'rcs:%s:%s' % (quoted_uri, branch)
         last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
@@ -152,8 +152,8 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
 
         if 'drivers' in repo:
-            LOG.debug('Processing CI votes for repo: %s, branch: %s',
-                      uri, branch)
+            LOG.info('Processing CI votes for repo: %s, branch: %s',
+                     uri, branch)
 
             rcs_key = 'ci:%s:%s' % (quoted_uri, branch)
             last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
