@@ -610,7 +610,7 @@
                 }
             ],
             "user_name": "Aleš Křivák",
-            "emails": ["ales.krivak@ultimumtechnologies.com", "ales.krivak@gmail.com"]
+            "emails": ["ales.krivak@ultimum.io", "ales.krivak@ultimumtechnologies.com", "ales.krivak@gmail.com"]
         },
         {
             "launchpad_id": "alex-gaynor",
@@ -14466,7 +14466,7 @@
             "aliases": ["Ubisoft Entertainment"]
         },
         {
-            "domains": ["ultimumtechnologies.com"],
+            "domains": ["ultimum.io", "ultimumtechnologies.com"],
             "company_name": "Ultimum Technologies"
         },
         {
