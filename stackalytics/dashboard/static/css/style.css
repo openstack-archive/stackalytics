@@ -503,3 +503,7 @@ div.stackamenu li.current-menu-item a span {
     width: 99%;
     height: 350px;
 }
+
+.disabled {
+    color: grey;
+}

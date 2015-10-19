@@ -290,7 +290,7 @@ def keep_safe_chars(s):
 def make_module_group(module_group_id, name=None, modules=None, tag='module'):
     return {'id': module_group_id,
             'module_group_name': name or module_group_id,
-            'modules': modules or [module_group_id],
+            'modules': modules or {module_group_id},
             'tag': tag}
 
 BAD_NAME_SUFFIXES = ['Ltd', 'Pvt', 'Inc', 'GmbH', 'AG', 'Corporation', 'Corp',

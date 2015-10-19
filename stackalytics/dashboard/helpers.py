@@ -128,7 +128,7 @@ def extend_user(user):
     return user
 
 
-def extend_module(module_id):
+def extend_module(module_id, project_type, release):
     module_id_index = vault.get_vault()['module_id_index']
     module_id = module_id.lower()
 
@@ -142,12 +142,19 @@ def extend_module(module_id):
     if name[0].islower():
         name = name.capitalize()
 
+    # (module, release) pairs
+    own_sub_modules = set(vault.resolve_modules([module_id], [release]))
+    visible_sub_modules = own_sub_modules & set(vault.resolve_modules(
+        vault.resolve_project_types([project_type]), [release]))
+
     child_modules = []
-    for m in module['modules']:
-        child = {'module_name': m}
+    for m, r in own_sub_modules:
+        child = {'module_name': m, 'visible': (m, r) in visible_sub_modules}
         if m in repos_index:
             child['repo_uri'] = repos_index[m]['uri']
         child_modules.append(child)
+
+    child_modules.sort(key=lambda x: x['module_name'])
 
     return {
         'id': module_id,

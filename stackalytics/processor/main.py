@@ -263,7 +263,7 @@ def process_project_list(runtime_storage_inst):
     for module in module_groups['openstack']['modules']:
         for r, off_m in six.iteritems(official):
             if module not in off_m:
-                others['releases'][r].append(module)
+                others['releases'][r].add(module)
 
     # register modules as module groups
     repos = runtime_storage_inst.get_by_key('repos') or []

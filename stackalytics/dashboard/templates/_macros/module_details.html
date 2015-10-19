@@ -10,7 +10,6 @@
                 for (var i=0; i < module.modules.length; i++) {
                     module.modules[i].uri = makeURI('/', {module: module.modules[i].module_name});
                 }
-                console.log(module);
                 $("#module_details_template").tmpl(data["module"]).appendTo("#module_details_container");
             }
         });
@@ -42,7 +41,9 @@
             {%else%}
             Modules:
             {%each(index,module) modules %}{%if index>0 %}, {%/if%}
-                <a href="${module.uri}">${module.module_name}</a>{%/each%}
+                {%if module.visible %}
+                    <a href="${module.uri}">${module.module_name}</a>{%else%}
+                    <span title="Not available in current project type and release" class="disabled">${module.module_name}</span>{%/if%}{%/each%}
             {%/if%}
         </div>
     </div>

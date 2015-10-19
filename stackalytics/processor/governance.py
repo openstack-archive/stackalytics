@@ -30,7 +30,7 @@ def _make_module_group(module_groups, name):
     m = module_groups[name]  # object created by defaultdict
     m['tag'] = 'project_type'
     m['module_group_name'] = name
-    m['releases'] = collections.defaultdict(list)
+    m['releases'] = collections.defaultdict(set)
     return m
 
 
@@ -42,7 +42,7 @@ def read_legacy_programs_yaml(module_groups, release_name, content):
             mn = module['repo'].split('/')[1]  # module_name
 
             # module_groups[group_id]['releases'][release_name].append(mn)
-            all_official['releases'][release_name].append(mn)
+            all_official['releases'][release_name].add(mn)
 
 
 def read_early_big_tent_projects_yaml(module_groups, release_name, content):
@@ -56,7 +56,7 @@ def read_early_big_tent_projects_yaml(module_groups, release_name, content):
             mn = repo_split[1]
 
             # module_groups[group_id]['releases'][release_name].append(mn)
-            all_official['releases'][release_name].append(mn)
+            all_official['releases'][release_name].add(mn)
 
 
 def read_big_tent_projects_yaml(module_groups, release_name, content):
@@ -76,18 +76,18 @@ def read_big_tent_projects_yaml(module_groups, release_name, content):
 
                 mn = repo_split[1]  # module_name
 
-                module_groups[group_id]['modules'].append(mn)
-                all_official['releases'][release_name].append(mn)
+                module_groups[group_id]['modules'].add(mn)
+                all_official['releases'][release_name].add(mn)
 
                 tags = deliverable.get('tags', [])
                 for tag in tags:
                     if tag in TAGS:
-                        module_groups[tag]['releases'][release_name].append(mn)
+                        module_groups[tag]['releases'][release_name].add(mn)
 
 
 def _make_default_module_groups():
     # create default module groups
-    module_groups = collections.defaultdict(lambda: {'modules': []})
+    module_groups = collections.defaultdict(lambda: {'modules': set()})
 
     # openstack official
     _make_module_group(module_groups, 'openstack-official')
@@ -130,10 +130,5 @@ def process_official_list(releases):
     # set ids for module groups
     for group_id, group in six.iteritems(module_groups):
         group['id'] = group_id
-        group['modules'].sort()
-
-        if 'releases' in group:
-            for gr in six.itervalues(group['releases']):
-                gr.sort()
 
     return module_groups

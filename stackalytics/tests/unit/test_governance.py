@@ -69,55 +69,55 @@ class TestGovernance(testtools.TestCase):
             'sahara-group': {
                 'id': 'sahara-group',
                 'module_group_name': 'Sahara Official',
-                'modules': ['python-saharaclient', 'sahara',
+                'modules': {'python-saharaclient', 'sahara',
                             'sahara-dashboard', 'sahara-extra',
-                            'sahara-image-elements', 'sahara-specs'],
+                            'sahara-image-elements', 'sahara-specs'},
                 'tag': 'program'
             },
             'tc-approved-release': {
                 'id': 'tc-approved-release',
                 'module_group_name': 'tc-approved-release',
-                'modules': [],
+                'modules': set(),
                 'releases': {
-                    'liberty': ['sahara', 'sahara-extra',
-                                'sahara-image-elements'],
+                    'liberty': {'sahara', 'sahara-extra',
+                                'sahara-image-elements'},
                 },
                 'tag': 'project_type'
             },
             'type:library': {
                 'id': 'type:library',
                 'module_group_name': 'type:library',
-                'modules': [],
+                'modules': set(),
                 'releases': {
-                    'liberty': ['python-saharaclient', 'sahara-dashboard'],
+                    'liberty': {'python-saharaclient', 'sahara-dashboard'},
                 },
                 'tag': 'project_type'
             },
             'type:service': {
                 'id': 'type:service',
                 'module_group_name': 'type:service',
-                'modules': [],
+                'modules': set(),
                 'releases': {
-                    'liberty': ['sahara', 'sahara-extra',
-                                'sahara-image-elements'],
+                    'liberty': {'sahara', 'sahara-extra',
+                                'sahara-image-elements'},
                 },
                 'tag': 'project_type'
             },
             'openstack-official': {
                 'id': 'openstack-official',
                 'module_group_name': 'openstack-official',
-                'modules': [],
+                'modules': set(),
                 'releases': {
-                    'liberty': ['python-saharaclient', 'sahara',
+                    'liberty': {'python-saharaclient', 'sahara',
                                 'sahara-dashboard', 'sahara-extra',
-                                'sahara-image-elements', 'sahara-specs'],
+                                'sahara-image-elements', 'sahara-specs'},
                 },
                 'tag': 'project_type'
             },
             'openstack-others': {
                 'id': 'openstack-others',
                 'module_group_name': 'openstack-others',
-                'modules': [],
+                'modules': set(),
                 'releases': {},
                 'tag': 'project_type'
             }

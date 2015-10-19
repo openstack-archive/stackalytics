@@ -341,7 +341,9 @@ def get_company(company_name, **kwargs):
 @decorators.cached()
 @decorators.jsonify('module')
 def get_module(module_id, **kwargs):
-    module = helpers.extend_module(module_id)
+    project_type = parameters.get_single_parameter(kwargs, 'project_type')
+    release = parameters.get_single_parameter(kwargs, 'release')
+    module = helpers.extend_module(module_id, project_type, release)
     if not module:
         flask.abort(404)
     return module
