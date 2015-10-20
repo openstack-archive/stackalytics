@@ -2954,6 +2954,14 @@
             "primary_key": "bc5213dadfaa007267ed85baa356334de21d9caf",
             "module": "api-site",
             "subject": "Regenerate sitemap.xml for Liberty"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I47326c0c1365b0b2748ebda8f50a947123e855d0"],
+            "primary_key": "8d4aca4f9ab221b054a335474765b3f24b700771",
+            "module": "api-site",
+            "subject": "Regenerate sitemap.xml"
         }
     ]
 }
