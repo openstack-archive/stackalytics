@@ -913,6 +913,17 @@
             "emails": ["andy.edmonds@gmail.com", "andy@edmonds.be"]
         },
         {
+            "launchpad_id": "aniketanikhindi",
+            "companies": [
+                {
+                    "company_name": "Calsoft",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aniket Anikhindi",
+            "emails": ["aniketanikhindi@gmail.com", "aniket.anikhindi@calsoftinc.com"]
+        },
+        {
             "launchpad_id": "anish7",
             "companies": [
                 {
