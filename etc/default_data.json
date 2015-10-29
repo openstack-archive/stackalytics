@@ -4837,6 +4837,22 @@
             "emails": ["harlowja@gmail.com", "harlowja@yahoo-inc.com", "harlowja@outlook.com"]
         },
         {
+            "launchpad_id": "harshada-kakad",
+            "gerrit_id": "harshada.kakad",
+            "companies": [
+                {
+                    "company_name": "Izel Technologies",
+                    "end_date": "2015-Jul-10"
+                },
+                {
+                    "company_name": "Metsi Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Harshada Mangesh Kakad",
+            "emails": ["harshadak.openstack@gmail.com", "harshada.kakad@izeltech.com", "harshadak@metsi.co.uk"]
+        },
+        {
             "launchpad_id": "harshit-3",
             "companies": [
                 {
@@ -14181,6 +14197,10 @@
             "domains": ["metaswitch.com"],
             "company_name": "Metaswitch",
             "aliases": ["Metaswitch Networks"]
+        },
+        {
+            "domains": ["metsi.co.uk"],
+            "company_name": "Metsi Technologies"
         },
         {
             "domains": ["microsoft.com"],
