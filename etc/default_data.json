@@ -12441,6 +12441,17 @@
             "emails": ["wl3617@qq.com", "long.wang@bj.cs2c.com.cn", "wanglong@cse.buaa.edu.cn"]
         },
         {
+            "launchpad_id": "wangxf-s",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangxf",
+            "emails": ["wangxf@awcloud.com", "xiaofeix.wang@gmail.com"]
+        },
+        {
             "launchpad_id": "wangxiyuan",
             "companies": [
                 {
