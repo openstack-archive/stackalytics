@@ -11503,11 +11503,15 @@
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": "2015-Nov-02"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Telles Mota Vidal Nóbrega",
-            "emails": ["tellesmvn@lsd.ufcg.edu.br", "tellesnobrega@gmail.com"]
+            "emails": ["tenobreg@redhat.com", "tellesnobrega@gmail.com", "tellesmvn@lsd.ufcg.edu.br"]
         },
         {
             "launchpad_id": "termie",
