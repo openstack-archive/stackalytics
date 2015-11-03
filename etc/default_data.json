@@ -3202,6 +3202,17 @@
             "emails": ["dhami@noironetworks.com","mandeep.dhami@gmail.com"]
         },
         {
+            "launchpad_id": "diana-clarke",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Diana Clarke",
+            "emails": ["diana.joan.clarke@gmail.com", "diana.clarke@redhat.com"]
+        },
+        {
             "launchpad_id": "diane-fleming",
             "companies": [
                 {
