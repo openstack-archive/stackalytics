@@ -10215,6 +10215,22 @@
             "emails": ["sammiestoel@gmail.com", "sstoelinga@mirantis.com"]
         },
         {
+            "launchpad_id": "samueldmq",
+            "gerrit_id": "samueldmq",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": "2015-Aug-31"
+                },
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Samuel de Medeiros Queiroz",
+            "emails": ["samueldmq@gmail.com"]
+        },
+        {
             "launchpad_id": "sandy-sandywalsh",
             "companies": [
                 {
