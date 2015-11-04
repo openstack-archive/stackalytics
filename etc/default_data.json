@@ -13028,6 +13028,17 @@
             "emails": ["yunlingzeng@hotmail.com", "zengyunling@huawei.com"]
         },
         {
+            "launchpad_id": "zerodivisible",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michal Stolarczyk",
+            "emails": ["zerodivisible@gmail.com"]
+        },
+        {
             "launchpad_id": "zhangjialong",
             "companies": [
                 {
