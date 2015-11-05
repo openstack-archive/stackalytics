@@ -50,6 +50,8 @@ PROCESSOR_OPTS = [
                help='URI for default data'),
     cfg.IntOpt('members-look-ahead', default=250,
                help='How many member profiles to look ahead after the last'),
+    cfg.IntOpt('read-timeout', default=120,
+               help='Number of seconds to wait for remote response'),
 ]
 
 DASHBOARD_OPTS = [

@@ -11,6 +11,7 @@ usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
                               [--members-look-ahead MEMBERS_LOOK_AHEAD]
                               [--nodebug] [--nouse-syslog]
                               [--nouse-syslog-rfc-format] [--noverbose]
+                              [--read-timeout READ_TIMEOUT]
                               [--review-uri REVIEW_URI]
                               [--runtime-storage-uri RUNTIME_STORAGE_URI]
                               [--sources-root SOURCES_ROOT]
@@ -69,6 +70,8 @@ optional arguments:
   --nouse-syslog-rfc-format
                         The inverse of --use-syslog-rfc-format
   --noverbose           The inverse of --verbose
+  --read-timeout READ_TIMEOUT
+                        Number of seconds to wait for remote response
   --review-uri REVIEW_URI
                         URI of review system
   --runtime-storage-uri RUNTIME_STORAGE_URI
