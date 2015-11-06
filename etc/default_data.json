@@ -14530,6 +14530,10 @@
             "company_name": "Ultimum Technologies"
         },
         {
+            "domains": [ "umcloud.com"],
+            "company_name": "UMCloud"
+        },
+        {
             "domains": ["umd.edu"],
             "company_name": "University of Maryland"
         },
