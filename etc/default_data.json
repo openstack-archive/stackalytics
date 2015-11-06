@@ -4891,11 +4891,15 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2015-Nov-01"
+                },
+                {
+                    "company_name": "UMCloud",
                     "end_date": null
                 }
             ],
             "user_name": "Yaguang Tang",
-            "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com"]
+            "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com", "yaguang@umcloud.com"]
         },
         {
             "launchpad_id": "hfamily15",
