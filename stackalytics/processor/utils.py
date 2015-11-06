@@ -121,7 +121,8 @@ def _session_request(session, uri, method):
     session.mount('file://', requests_file.FileAdapter())
     user_agent = random.choice(user_agents)
 
-    return session.request(method, uri, headers={'User-Agent': user_agent})
+    return session.request(method, uri, headers={'User-Agent': user_agent},
+                           timeout=cfg.CONF.read_timeout)
 
 
 def do_request(uri, method='get', session=None):
