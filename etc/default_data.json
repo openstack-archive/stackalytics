@@ -4670,6 +4670,17 @@
             "emails": ["hzgaott@corp.netease.com", "gtt116@gmail.com", "gtt116@126.com"]
         },
         {
+            "launchpad_id": "guang-yee",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guang Yee",
+            "emails": ["guang.yee@hpe.com", "guang.yee@hp.com"]
+        },
+        {
             "launchpad_id": "guilhem-fr",
             "companies": [
                 {
