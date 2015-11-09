@@ -15935,7 +15935,7 @@
         },
         {
             "module_group_name": "monasca-group",
-            "modules": ["monasca-agent", "cookbook-monasca-agent", "monasca-api", "cookbook-monasca-api", "monasca-notification", "cookbook-monasca-notification", "monasca-persister", "cookbook-monasca-persister", "cookbook-monasca-schema", "monasca-thresh", "cookbook-monasca-thresh", "monasca-agent", "monasca-ceilometer", "monasca-common", "monasca-ui", "monasca-vagrant", "monasca-statsd", "python-monascaclient", "stacktach-klugman", "stacktach-notification-utils", "stacktach-notigen", "stacktach-quince", "stacktach-quincy", "stacktach-sandbox", "stacktach-shoebox", "stacktach-simport", "stacktach-stackdistiller", "stacktach-timex", "stacktach-winchester"]
+            "modules": ["monasca-agent", "cookbook-monasca-agent", "monasca-api", "monasca-log-api", "cookbook-monasca-api", "monasca-notification", "cookbook-monasca-notification", "monasca-persister", "cookbook-monasca-persister", "cookbook-monasca-schema", "monasca-thresh", "cookbook-monasca-thresh", "monasca-agent", "monasca-ceilometer", "monasca-common", "monasca-ui", "monasca-vagrant", "monasca-statsd", "python-monascaclient", "stacktach-klugman", "stacktach-notification-utils", "stacktach-notigen", "stacktach-quince", "stacktach-quincy", "stacktach-sandbox", "stacktach-shoebox", "stacktach-simport", "stacktach-stackdistiller", "stacktach-timex", "stacktach-winchester"]
         },
         {
             "module_group_name": "rally-group",
