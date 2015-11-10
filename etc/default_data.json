@@ -2190,6 +2190,17 @@
             "emails": ["chetan.p@hp.com","chetan6033@gmail.com"]
         },
         {
+            "launchpad_id": "chio-fai-sam-leong",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sam Leong",
+            "emails": ["chio-fai-sam.leong@hpe.com", "chio-fai-sam.leong@hp.com"]
+        },
+        {
 
             "launchpad_id": "chiradeep",
             "companies": [
