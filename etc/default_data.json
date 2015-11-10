@@ -10511,6 +10511,17 @@
             "emails": ["sean_mcginnis@dell.com", "sean.mcginnis@gmail.com", "sean.mcginnis@gmx.com"]
         },
         {
+            "launchpad_id": "sean-perry-a",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Perry",
+            "emails": ["sean.perry@hp.com", "sean.perry@hpe.com"]
+        },
+        {
             "launchpad_id": "seif",
             "companies": [
                 {
