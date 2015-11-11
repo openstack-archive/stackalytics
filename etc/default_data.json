@@ -5532,6 +5532,26 @@
            ]
         },
         {
+           "launchpad_id": "jamielennox",
+           "gerrit_id": "jamielennox",
+           "companies": [
+               {
+                   "company_name": "Red Hat",
+                   "end_date": "2015-Oct-23"
+               },
+               {
+                   "company_name": "IBM",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Jamie Lennox",
+           "emails": [
+               "jamielennox@gmail.com",
+               "jamielennox@redhat.com",
+               "jlennox@redhat.com"
+           ]
+        },
+        {
             "github_id": "jamtur01",
             "companies": [
                 {
