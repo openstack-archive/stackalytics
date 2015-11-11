@@ -521,12 +521,22 @@ class RecordProcessor(object):
         yield bug_created
 
         FIXED_BUGS = ['Fix Committed', 'Fix Released']
-        if 'date_fix_committed' in record and record['status'] in FIXED_BUGS:
+        if (('date_fix_committed' in record or 'date_fix_released' in record)
+                and record['status'] in FIXED_BUGS):
             bug_fixed = record.copy()
             bug_fixed['primary_key'] = 'bugr:' + record['id']
             bug_fixed['record_type'] = 'bugr'
             bug_fixed['launchpad_id'] = record.get('assignee') or '*unassigned'
-            bug_fixed['date'] = record['date_fix_committed']
+            # It appears that launchpad automatically sets the
+            # date_fix_committed field when a bug moves from an open
+            # state to Fix Released, however it isn't clear that this
+            # is documented. So, we take the commit date if it is
+            # present or the release date if no commit date is
+            # present.
+            bug_fixed['date'] = (
+                record['date_fix_committed'] or
+                record['date_fix_released']
+            )
 
             self._update_record_and_user(bug_fixed)
 

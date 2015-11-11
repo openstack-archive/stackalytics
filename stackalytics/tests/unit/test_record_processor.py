@@ -477,6 +477,7 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertRecordsMatch(expected_mark, records[2])
 
     def generate_bugs(self, assignee=None, date_fix_committed=None,
+                      date_fix_released=None,
                       status='Confirmed'):
         yield {
             'record_type': 'bug',
@@ -485,6 +486,7 @@ class TestRecordProcessor(testtools.TestCase):
             'assignee': assignee,
             'date_created': 1234567890,
             'date_fix_committed': date_fix_committed,
+            'date_fix_released': date_fix_released,
             'module': 'nova',
             'status': status
         }
@@ -524,6 +526,7 @@ class TestRecordProcessor(testtools.TestCase):
     def test_process_bug_fix_released(self):
         record = self.generate_bugs(status='Fix Released',
                                     date_fix_committed=1234567891,
+                                    date_fix_released=1234567892,
                                     assignee='assignee')
         record_processor_inst = self.make_record_processor()
         bugs = list(record_processor_inst.process(record))
@@ -539,6 +542,27 @@ class TestRecordProcessor(testtools.TestCase):
             'record_type': 'bugr',
             'launchpad_id': 'assignee',
             'date': 1234567891,
+        }, bugs[1])
+
+    def test_process_bug_fix_released_without_committed(self):
+        record = self.generate_bugs(status='Fix Released',
+                                    date_fix_committed=None,
+                                    date_fix_released=1234567892,
+                                    assignee='assignee')
+        record_processor_inst = self.make_record_processor()
+        bugs = list(record_processor_inst.process(record))
+        self.assertEqual(len(bugs), 2)
+        self.assertRecordsMatch({
+            'primary_key': 'bugf:bug_id',
+            'record_type': 'bugf',
+            'launchpad_id': 'owner',
+            'date': 1234567890,
+        }, bugs[0])
+        self.assertRecordsMatch({
+            'primary_key': 'bugr:bug_id',
+            'record_type': 'bugr',
+            'launchpad_id': 'assignee',
+            'date': 1234567892,
         }, bugs[1])
 
     def test_process_bug_fix_committed_without_assignee(self):

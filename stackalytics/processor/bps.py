@@ -23,7 +23,7 @@ LOG = logging.getLogger(__name__)
 
 LINK_FIELDS = ['owner', 'assignee']
 BUG_FIELDS = ['web_link', 'status', 'title', 'importance']
-DATE_FIELDS = ['date_created', 'date_fix_committed']
+DATE_FIELDS = ['date_created', 'date_fix_committed', 'date_fix_released']
 
 
 def _get_bug_id(web_link):
