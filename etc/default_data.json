@@ -15934,16 +15934,23 @@
               "fuel-docs",
               "fuel-library",
               "fuel-main",
+              "fuel-menu",
+              "fuel-mirror",
               "fuel-nailgun-agent",
+              "fuel-octane",
               "fuel-ostf",
               "fuel-ostf-plugin",
+              "fuel-plugins",
               "fuel-provision",
               "fuel-specs",
+              "fuel-stats",
               "fuel-tasklib",
               "fuel-upgrade",
               "fuel-web",
-              "fuel-plugins",
-              "python-fuelclient"
+              "fuel-qa",
+              "python-fuelclient",
+              "network-checker",
+              "shotgun"
             ]
         },
         {
