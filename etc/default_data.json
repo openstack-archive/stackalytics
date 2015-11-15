@@ -16040,7 +16040,7 @@
         },
         {
             "module_group_name": "vitrage-group",
-            "modules": ["vitrage", "vitrage-dashboard", "vitrage-specs"]
+            "modules": ["vitrage", "python-vitrageclient", "vitrage-dashboard", "vitrage-specs"]
         }
     ],
     "releases": [
