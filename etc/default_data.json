@@ -1590,6 +1590,17 @@
             "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com"]
         },
         {
+            "launchpad_id": "biswajeeban",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Biswajeeban Mishra",
+            "emails": ["mishra@inf.u-szeged.hu"]
+        },
+        {
             "launchpad_id": "blueboxjesse",
             "companies": [
                 {
