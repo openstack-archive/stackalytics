@@ -2883,6 +2883,17 @@
             "emails": ["davidh@il.ibm.com", "david.hadas@gmail.com"]
         },
         {
+            "launchpad_id": "david-j-hu",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David J Hu",
+            "emails": ["david.hu@hpe.com", "david.hu@hp.com"]
+        },
+        {
             "launchpad_id": "david-lyle",
             "companies": [
                 {
