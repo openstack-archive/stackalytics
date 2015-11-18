@@ -8747,6 +8747,17 @@
             "emails": ["tony@bakeyournoodle.com", "tony.breeds@rackspace.com"]
         },
         {
+            "launchpad_id": "octopuszhang",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "OctopusZhang",
+            "emails": ["zhang.yufei@99cloud.net", "1004988384@qq.com"]
+        },
+        {
             "launchpad_id": "ogazitt",
             "companies": [
                 {
