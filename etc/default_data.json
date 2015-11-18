@@ -1228,6 +1228,17 @@
             "emails": ["ashishsingh2k8@gmail.com"]
         },
         {
+            "launchpad_id": "ashlee-i",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashlee Young",
+            "emails": ["ashlee@onosfw.com", "ashlee@wildernessvoice.com"]
+        },
+        {
             "launchpad_id": "ashleighfarnham-deactivatedaccount",
             "companies": [
                 {
@@ -15947,6 +15958,141 @@
                     "tag_from": "1.0.0.0rc1"
                 }
             ]
+        },
+        {
+            "module": "releng",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/releng.git"
+        },
+        {
+            "module": "compass4nfv",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/compass4nfv.git"
+        },
+        {
+            "module": "onosfw",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/onosfw.git"
+        },
+        {
+            "module": "joid",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/joid.git"
+        },
+        {
+            "module": "yardstick",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/yardstick.git"
+        },
+        {
+            "module": "apex",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/apex.git"
+        },
+        {
+            "module": "moon",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/moon.git"
+        },
+        {
+            "module": "sfc",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/sfc.git"
+        },
+        {
+            "module": "copper",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/copper.git"
+        },
+        {
+            "module": "vswitchperf",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/vswitchperf.git"
+        },
+        {
+            "module": "functest",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/functest.git"
+        },
+        {
+            "module": "opnfvdocs",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/opnfvdocs.git"
+        },
+        {
+            "module": "genesisreq",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/genesisreq.git"
+        },
+        {
+            "module": "octopus",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/octopus.git"
+        },
+        {
+            "module": "lsoapi",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/lsoapi.git"
+        },
+        {
+            "module": "qtip",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/qtip.git"
+        },
+        {
+            "module": "escalator",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/escalator.git"
+        },
+        {
+            "module": "availability",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/availability.git"
+        },
+        {
+            "module": "storperf",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/storperf.git"
+        },
+        {
+            "module": "multisite",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/multisite.git"
+        },
+        {
+            "module": "parser",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/parser.git"
+        },
+        {
+            "module": "enfv",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/enfv.git"
+        },
+        {
+            "module": "conductor",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/conductor.git"
+        },
+        {
+            "module": "genesis",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/genesis.git"
+        },
+        {
+            "module": "promise",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/promise.git"
+        },
+        {
+            "module": "bottlenecks",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/bottlenecks.git"
+        },
+        {
+            "module": "doctor",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/doctor.git"
         }
     ],
     "project_sources": [
@@ -16257,7 +16403,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes", "jclouds", "cloudfoundry", "ovs", "pypa-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes", "jclouds", "cloudfoundry", "opnfv", "ovs", "pypa-group"]
         },
         {
             "id": "ansible-group",
@@ -16288,6 +16434,12 @@
             "title": "Kubernetes",
             "child": true,
             "modules": ["kubernetes"]
+        },
+        {
+            "id": "opnfv-group",
+            "title": "OPNFV",
+            "child": true,
+            "modules": ["opnfv"]
         },
         {
             "id": "ovs-group",
