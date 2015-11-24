@@ -11810,6 +11810,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Nov-13"
+                },
+                {
+                    "company_name": "Time Warner Cable",
                     "end_date": null
                 }
             ],
