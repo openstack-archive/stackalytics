@@ -833,6 +833,17 @@
             "emails": ["andrea.frittoli@gmail.com", "andrea.frittoli@hp.com", "frittoli@hp.com", "andrea.frittoli@hpe.com", "frittoli@hpe.com", "andreaf@hpe.com"]
         },
         {
+            "launchpad_id": "andrea-rosa-m",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrea Rosa",
+            "emails": ["andrea.rosa@hp.com", "andrea.rosa@hpe.com"]
+        },
+        {
             "launchpad_id": "andrew-mccrae",
             "companies": [
                 {
