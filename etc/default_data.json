@@ -15518,7 +15518,7 @@
                 },
                 {
                     "tag_to": "HEAD",
-                    "release_name": "Liberty",
+                    "release_name": "Mitaka",
                     "tag_from": "5.0.0.0rc1"
                 }
             ],
