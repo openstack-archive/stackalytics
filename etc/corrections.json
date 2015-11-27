@@ -2962,6 +2962,14 @@
             "primary_key": "8d4aca4f9ab221b054a335474765b3f24b700771",
             "module": "api-site",
             "subject": "Regenerate sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I2e3881d3d5c632831956dca50321f08223ae5c98"],
+            "primary_key": "24bddc5da2dfcf0925c0f11f3d4406d46e368ae0",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap"
         }
     ]
 }
