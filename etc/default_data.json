@@ -13268,6 +13268,17 @@
             "emails": ["zealot0630@gmail.com", "zangmingjie@corp.netease.com"]
         },
         {
+            "launchpad_id": "zeih",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Martin Oemke",
+            "emails": ["zeih@zeih.eu"]
+        },
+        {
             "github_id": "zeke",
             "companies": [
                 {
