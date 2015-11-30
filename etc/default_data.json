@@ -16181,6 +16181,31 @@
             "module": "doctor",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/doctor.git"
+        },
+        {
+            "module": "osops-example-configs",
+            "organization": "openstack",
+            "uri": "git://github.com/openstack/osops-example-configs.git"
+        },
+        {
+            "module": "osops-tools-contrib",
+            "organization": "openstack",
+            "uri": "git://github.com/openstack/osops-tools-contrib.git"
+        },
+        {
+            "module": "osops-tools-generic",
+            "organization": "openstack",
+            "uri": "git://github.com/openstack/osops-tools-generic.git"
+        },
+        {
+            "module": "osops-tools-logging",
+            "organization": "openstack",
+            "uri": "git://github.com/openstack/osops-tools-logging.git"
+        },
+        {
+            "module": "osops-tools-monitoring",
+            "organization": "openstack",
+            "uri": "https://github.com/openstack/osops-tools-monitoring.git"
         }
     ],
     "project_sources": [
