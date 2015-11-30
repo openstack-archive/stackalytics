@@ -11181,6 +11181,21 @@
             "emails": ["sumitnaiksatam@gmail.com", "snaiksat@cisco.com"]
         },
         {
+            "launchpad_id": "sofer-athlan-guyot",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jun-24"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sofer Athlan-Guyot",
+            "emails": ["sathlang@redhat.com", "chem@sathlan.org", "sofer.athlan-guyot@enovance.com"]
+        },
+        {
             "launchpad_id": "sombrafam",
             "companies": [
                 {
