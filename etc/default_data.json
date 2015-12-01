@@ -173,6 +173,17 @@
             "emails": ["toshio@fedoraproject.org", "a.badger@gmail.com"]
         },
         {
+            "launchpad_id": "abhic",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abhisek Chatterjee",
+            "emails": ["abhic@ozlabs.org"]
+        },
+        {
             "launchpad_id": "abhijeet-jain",
             "gerrit_id": "Abhijeet.Jain",
             "companies": [
