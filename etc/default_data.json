@@ -3899,6 +3899,18 @@
             "emails": ["ekotowski@gmail.com", "ekotowski@hp.com"]
         },
         {
+            "launchpad_id": "electrocucaracha",
+            "gerrit_id": "electrocucaracha",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Morales",
+            "emails": ["victor.morales@intel.com", "chipahuac@hotmail.com", "electrocucaracha@gmail.com"]
+        },
+        {
             "launchpad_id": "ellen-hui",
             "companies": [
                 {
