@@ -13057,6 +13057,17 @@
             "emails": ["yapengwu@gmail.com", "yapeng.wu@huawei.com"]
         },
         {
+            "launchpad_id": "yarko-tymciurak",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yarko Tymciurak",
+            "emails": ["yarkot1@gmail.com", "yarko.tymciurak@intel.com"]
+        },
+        {
             "launchpad_id": "yatinkumbhare-c",
             "companies": [
                 {
