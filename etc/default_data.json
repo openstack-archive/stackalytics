@@ -6238,6 +6238,17 @@
             "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com", "jordan.pittier@cloudwatt.com", "jordan.pittier@scality.com"]
         },
         {
+            "launchpad_id": "jose-eduardo-jr",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jose Mello",
+            "emails": ["jose.eduardo.jr@gmail.com", "jose.melo@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "joseph-r-email",
             "companies": [
                 {
