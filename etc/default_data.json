@@ -1931,6 +1931,18 @@
             "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com"]
         },
         {
+            "launchpad_id": "castulo-martinez",
+            "gerrit_id": "cas",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Castulo J. Martinez",
+            "emails": ["castulo.martinez@intel.com"]
+        },
+        {
             "launchpad_id": "cbehrens",
             "companies": [
                 {
