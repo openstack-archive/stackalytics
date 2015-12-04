@@ -7883,6 +7883,18 @@
             "emails": ["mayank.kumar@hp.com","mayank0107@yahoo.co.in"]
         },
         {
+            "launchpad_id": "mbonell",
+            "gerrit_id": "mbonell",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marcela Bonell",
+            "emails": ["marcela.bonell.manjarrez@intel.com", "marcelabonell@gmail.com"]
+        },
+        {
             "launchpad_id": "mdrnstm",
             "companies": [
                 {
