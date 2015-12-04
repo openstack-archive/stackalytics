@@ -2977,6 +2977,18 @@
             "emails": ["david.pursehouse@sonymobile.com"]
         },
         {
+            "launchpad_id": "david-tardivel",
+            "gerrit_id": "David.T",
+            "companies": [
+                {
+                    "company_name": "B<>COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "David TARDIVEL",
+            "emails": ["david.tardivel@b-com.com"]
+        },
+        {
             "launchpad_id": "davide-guerri",
             "companies": [
                 {
@@ -13798,6 +13810,10 @@
             "company_name": "Axway"
         },
         {
+            "domains": ["b-com.com"],
+            "company_name": "B<>COM",
+            "aliases": ["IRT B<>COM", "B-COM"]
+        },        {
             "domains": ["b1-systems.de"],
             "company_name": "B1 Systems"
         },
