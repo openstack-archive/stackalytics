@@ -11833,6 +11833,18 @@
             "emails": ["thang.pham@us.ibm.com", "thang.pham@simplivity.com", "thang.g.pham@gmail.com"]
         },
         {
+           "launchpad_id": "theizaakk",
+           "gerrit_id": "izaakk",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Hector I Gonzalez",
+           "emails": ["hector.isaac.gonzalez.mendoza@intel.com", "theizaakk@gmail.com"]
+        },
+        {
             "launchpad_id": "therve",
             "companies": [
                 {
