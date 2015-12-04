@@ -9452,6 +9452,17 @@
             "user_name": "Major Hayden",
             "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
         },
+     {
+           "launchpad_id": "raddaoui-ala",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Ala Raddaoui",
+           "emails": ["raddaoui.ala@intel.com"]
+       },
         {
             "launchpad_id": "rahmu",
             "companies": [
