@@ -4473,6 +4473,10 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2015-Nov-27"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
