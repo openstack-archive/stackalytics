@@ -5937,6 +5937,18 @@
             "emails": ["jean-daniel.bonnetot@ovh.net", "jean-daniel.bonnetot@corp.ovh.com", "gounini@geekarea.fr"]
         },
         {
+            "launchpad_id": "jeffrey4l",
+            "gerrit_id": "Jeffrey4l",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeffrey Zhang",
+            "emails": ["zhang.lei.fly@gmail.com"]
+        },
+        {
             "launchpad_id": "jejbcan",
             "companies": [
                 {
