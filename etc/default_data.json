@@ -4463,6 +4463,17 @@
             ],
             "user_name": "Gary Kotton",
             "emails": ["gkotton@vmware.com", "gkotton@redhat.com", "garyk@radware.com"]
+         },
+         {
+            "launchpad_id": "gbraad",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gerard Braad",
+            "emails": ["me@gbraad.nl", "gerard@unitedstack.com"]
         },
         {
             "launchpad_id": "geekinutah",
