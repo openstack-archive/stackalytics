@@ -13647,6 +13647,18 @@
             "emails": ["ziad.sawalha@rackspace.com", "github@highbridgellc.com", "gihub@highbridgellc.com", "ziad@sawalha.com", "gerrit@highbridgellc.com"]
         },
         {
+            "launchpad_id": "zoukeke",
+            "gerrit_id": "zoukeke",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zou Keke",
+            "emails": ["zoukeke@cmss.chinamobile.com"]
+        },
+        {
             "launchpad_id": "zrzhit",
             "gerrit_id": "zrzhit",
             "companies": [
