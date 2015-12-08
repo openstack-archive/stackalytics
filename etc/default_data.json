@@ -8389,6 +8389,17 @@
             "emails": ["michael_simo@cable.comcast.com", "os@mpmsimo.com"]
         },
         {
+            "launchpad_id": "mqliang",
+            "companies": [
+                {
+                    "company_name": "Netease",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liang Mingqiang",
+            "emails": ["mqliang.zju@gmail.com", "hzliangmingqiang@corp.netease.com"]
+        },
+        {
             "launchpad_id": "mr-rods",
             "companies": [
                 {
