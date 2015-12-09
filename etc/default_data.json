@@ -6326,6 +6326,17 @@
             "emails": ["jose.eduardo.jr@gmail.com", "jose.melo@fit-tecnologia.org.br"]
         },
         {
+            "launchpad_id": "jose-falavinha",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jose Falavinha",
+            "emails": ["jose.falavinha@hotmail.com", "jose.falavinha@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "joseph-r-email",
             "companies": [
                 {
