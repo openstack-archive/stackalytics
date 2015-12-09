@@ -2785,6 +2785,17 @@
             "emails": ["daisy.ycguo@gmail.com", "guoyingc@cn.ibm.com"]
         },
         {
+            "launchpad_id": "damien-rannou",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Damien RANNOU",
+            "emails": ["damien.rannou@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "dan-prince",
             "companies": [
                 {
