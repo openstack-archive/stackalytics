@@ -2893,6 +2893,17 @@
             "emails": ["danwent@gmail.com", "dan@nicira.com"]
         },
         {
+            "launchpad_id": "darkwsh-g",
+            "companies": [
+                {
+                    "company_name": "xiangcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shaohui Wang",
+            "emails": ["darkwsh@gmail.com", "wangshaohui@xiangcloud.com.cn"]
+        },
+        {
             "launchpad_id": "darren-birkett",
             "companies": [
                 {
@@ -15100,6 +15111,10 @@
         {
             "domains": ["xerox.com"],
             "company_name": "Xerox"
+        },
+        {
+            "domains": ["xiangcloud.com.cn"],
+            "company_name": "xiangcloud"
         },
         {
             "domains": ["xlab.si"],
