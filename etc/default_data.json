@@ -6322,6 +6322,21 @@
             "emails": ["johnson.dantis@hp.com"]
         },
         {
+            "launchpad_id": "jonpaul-sullivan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-May-22"
+                },
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jon-Paul Sullivan",
+            "emails": ["j3p0uk@hotmail.com", "jonpsull@cisco.com", "jonpaul.sullivan@hp.com"]
+        },
+        {
             "launchpad_id": "jordan-pittier",
             "companies": [
                 {
