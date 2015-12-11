@@ -4554,6 +4554,17 @@
             "emails": ["guillaume.giamarchi@gmail.com"]
         },
         {
+            "launchpad_id": "gh965852614",
+            "companies": [
+                {
+                    "company_name": "xiangcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hang Geng",
+            "emails": ["genghanghang@xiangcloud.com.cn", "genghang888@gmail.com"]
+        },
+        {
             "launchpad_id": "ghe.rivero",
             "companies": [
                 {
