@@ -11118,6 +11118,17 @@
             "emails": ["solomon@docker.com"]
         },
         {
+            "launchpad_id": "sibaoli",
+            "companies": [
+                {
+                    "company_name": "Kylin Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bao Li",
+            "emails": ["sibaoli@gmail.com", "bao.li@kylin-cloud.com"]
+        },
+        {
             "launchpad_id": "sileht",
             "companies": [
                 {
