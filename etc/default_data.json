@@ -9145,6 +9145,17 @@
             "emails": ["syn@ronin.io", "florian.hines@gmail.com"]
         },
         {
+            "launchpad_id": "panhaiyang",
+            "companies": [
+                {
+                    "company_name": "xiangcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "benben",
+            "emails": ["panhaiyang@xiangcloud.com"]
+        },
+        {
             "launchpad_id": "parath",
             "companies": [
                 {
