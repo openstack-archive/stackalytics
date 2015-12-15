@@ -13276,11 +13276,15 @@
             "companies": [
                 {
                     "company_name": "Reliance",
+                    "end_date": "2015-Oct-30"
+                },
+                {
+                    "company_name": "Walmart",
                     "end_date": null
                 }
             ],
             "user_name": "Yatin Kumbhare",
-            "emails": ["yatinkumbhare@gmail.com", "yatin.kumbhare@ril.com"]
+            "emails": ["yatinkumbhare@gmail.com", "ykumbhare@walmartlabs.com"]
         },
         {
             "launchpad_id": "ybabenko",
