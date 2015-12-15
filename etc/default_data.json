@@ -5279,6 +5279,17 @@
             "emails": ["huangtianhua@huawei.com", "tiantian223@163.com"]
         },
         {
+            "launchpad_id": "huayue",
+            "companies": [
+                {
+                    "company_name": "xiangcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JingXin Li",
+            "emails": ["huayuev5@gmail.com", "xjl__ljx@163.com"]
+        },
+        {
             "launchpad_id": "hubcap",
             "companies": [
                 {
