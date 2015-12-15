@@ -5893,6 +5893,21 @@
             "emails": ["jason.straw@rackspace.com"]
         },
         {
+            "launchpad_id": "javaloveme",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": "2015-Apr-20"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Javeme",
+            "emails": ["zhangmei.li@easystack.cn", "javaloveme@gmail.com"]
+        },
+        {
             "launchpad_id": "jay-clark",
             "companies": [
                 {
