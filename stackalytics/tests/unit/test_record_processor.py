@@ -476,20 +476,17 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertRecordsMatch(expected_patch, records[1])
         self.assertRecordsMatch(expected_mark, records[2])
 
-    def generate_bugs(self, assignee=None, date_fix_committed=None,
-                      date_fix_released=None,
-                      status='Confirmed'):
-        yield {
+    def generate_bugs(self, status='Confirmed', **kwargs):
+        rec = {
             'record_type': 'bug',
             'id': 'bug_id',
             'owner': 'owner',
-            'assignee': assignee,
             'date_created': 1234567890,
-            'date_fix_committed': date_fix_committed,
-            'date_fix_released': date_fix_released,
             'module': 'nova',
             'status': status
         }
+        rec.update(kwargs)
+        yield rec
 
     def test_process_bug_not_fixed(self):
         record = self.generate_bugs()
@@ -546,7 +543,6 @@ class TestRecordProcessor(testtools.TestCase):
 
     def test_process_bug_fix_released_without_committed(self):
         record = self.generate_bugs(status='Fix Released',
-                                    date_fix_committed=None,
                                     date_fix_released=1234567892,
                                     assignee='assignee')
         record_processor_inst = self.make_record_processor()

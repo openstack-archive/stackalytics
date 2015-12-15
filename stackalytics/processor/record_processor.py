@@ -534,7 +534,7 @@ class RecordProcessor(object):
             # present or the release date if no commit date is
             # present.
             bug_fixed['date'] = (
-                record['date_fix_committed'] or
+                record.get('date_fix_committed') or
                 record['date_fix_released']
             )
 
