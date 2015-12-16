@@ -7552,11 +7552,15 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
+                    "end_date": "2015-Dec-15"
+                },
+                {
+                    "company_name": "SAP",
                     "end_date": null
                 }
             ],
             "user_name": "Marc Koderer",
-            "emails": ["m.koderer@telekom.de", "marc@koderer.com"]
+            "emails": ["marc.koderer@sap.com", "m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
             "launchpad_id": "madhusudhan-kandadai",
