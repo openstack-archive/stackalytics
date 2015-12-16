@@ -16263,7 +16263,12 @@
         {
             "module": "libcontainer",
             "organization": "docker",
-            "uri": "https://github.com/docker/libcontainer.git"
+            "uri": "https://github.com/opencontainers/runc.git"
+        },
+        {
+            "module": "libnetwork",
+            "organization": "docker",
+            "uri": "https://github.com/docker/libnetwork.git"
         },
         {
             "module": "distribution",
