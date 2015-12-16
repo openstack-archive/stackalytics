@@ -11892,6 +11892,22 @@
             "emails": ["galiu@pivotal.io"]
         },
         {
+            "launchpad_id": "szhsong",
+            "gerrit_id": "ZhihaiSong",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2015-Oct-23"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhihai Song",
+            "emails": ["zhihai.song@easystack.cn", "szhsong@cn.ibm.com", "zhhsng@gmail.com"]
+        },
+        {
             "launchpad_id": "taget-9",
             "gerrit_id": "Eli",
             "companies": [
