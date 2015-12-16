@@ -2261,6 +2261,22 @@
             "emails": ["chenkang@awcloud.com"]
         },
         {
+            "launchpad_id": "chestack",
+            "gerrit_id": "wangbo",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2014-Dec-26"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bo Wang",
+            "emails": ["bo.wang@easystack.cn", "wangbo_bupt@163.com", "wbwangbo@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "chetan6033",
             "companies": [
                 {
