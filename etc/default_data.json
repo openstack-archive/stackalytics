@@ -4858,7 +4858,7 @@
             "launchpad_id": "gtt116",
             "companies": [
                 {
-                    "company_name": "Netease",
+                    "company_name": "NetEase",
                     "end_date": null
                 }
             ],
@@ -8520,7 +8520,7 @@
             "launchpad_id": "mqliang",
             "companies": [
                 {
-                    "company_name": "Netease",
+                    "company_name": "NetEase",
                     "end_date": null
                 }
             ],
@@ -11599,7 +11599,7 @@
             "launchpad_id": "stanzgy",
             "companies": [
                 {
-                    "company_name": "Netease",
+                    "company_name": "NetEase",
                     "end_date": null
                 }
             ],
@@ -13552,7 +13552,7 @@
             "gerrit_id": "zealot",
             "companies": [
                 {
-                    "company_name": "Netease",
+                    "company_name": "NetEase",
                     "end_date": null
                 }
             ],
@@ -14727,7 +14727,7 @@
         },
         {
             "domains": ["netease.com"],
-            "company_name": "Netease"
+            "company_name": "NetEase"
         },
         {
             "domains": ["netone.co.jp"],
