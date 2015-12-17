@@ -12387,6 +12387,18 @@
             "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com"]
         },
         {
+            "launchpad_id": "travis-truman",
+            "gerrit_id": "trumant",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Travis Truman",
+            "emails": ["trumant@gmail.com", "travis_truman@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "treinish",
             "companies": [
                 {
