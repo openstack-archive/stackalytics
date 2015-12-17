@@ -15061,6 +15061,10 @@
             "aliases": ["Tata Consultancy Services", "Tata Consultancy Services Limited"]
         },
         {
+            "domains": ["tegile.com"],
+            "company_name": "Tegile Systems"
+        },
+        {
             "domains": ["telefonica.com"],
             "company_name": "Telefonica I+D"
         },
