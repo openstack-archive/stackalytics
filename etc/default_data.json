@@ -4583,6 +4583,7 @@
         },
         {
             "launchpad_id": "gh965852614",
+            "gerrit_id": "HangGeng",
             "companies": [
                 {
                     "company_name": "xiangcloud",
