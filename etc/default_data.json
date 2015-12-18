@@ -16763,7 +16763,7 @@
         {
             "module_group_name": "docker-group",
             "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust",
-                "compose", "docker-py"]
+                "compose", "docker-py", "libnetwork"]
         },
         {
             "module_group_name": "ansible-group",
