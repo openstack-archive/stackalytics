@@ -12354,11 +12354,15 @@
             "companies": [
                 {
                     "company_name": "NetApp",
+                    "end_date": "2015-Dec-11"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Tom Barron",
-            "emails": ["tpb@dyncloud.net", "whuisit@gmail.com"]
+            "emails": ["tpb@dyncloud.net", "whuisit@gmail.com", "tbarron@redhat.com"]
         },
         {
             "launchpad_id": "tr3buchet",
