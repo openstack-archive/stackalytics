@@ -4878,6 +4878,21 @@
             "emails": ["guang.yee@hpe.com", "guang.yee@hp.com"]
         },
         {
+            "launchpad_id": "guduru-sirisha",
+            "companies": [
+                {
+                    "company_name": "Persistent Systems",
+                    "end_date": "2014-Sep-12"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sirisha Guduru",
+            "emails": ["sirishaguduru99@gmail.com", "sguduru@walmartlabs.com"]
+        },
+        {
             "launchpad_id": "guilhem-fr",
             "companies": [
                 {
