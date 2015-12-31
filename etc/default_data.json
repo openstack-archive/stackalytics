@@ -2912,7 +2912,7 @@
             "launchpad_id": "darkwsh-g",
             "companies": [
                 {
-                    "company_name": "xiangcloud",
+                    "company_name": "XiangCloud",
                     "end_date": null
                 }
             ],
@@ -4586,7 +4586,7 @@
             "gerrit_id": "HangGeng",
             "companies": [
                 {
-                    "company_name": "xiangcloud",
+                    "company_name": "XiangCloud",
                     "end_date": null
                 }
             ],
@@ -5314,7 +5314,7 @@
             "launchpad_id": "huayue",
             "companies": [
                 {
-                    "company_name": "xiangcloud",
+                    "company_name": "XiangCloud",
                     "end_date": null
                 }
             ],
@@ -9210,7 +9210,7 @@
             "launchpad_id": "panhaiyang",
             "companies": [
                 {
-                    "company_name": "xiangcloud",
+                    "company_name": "XiangCloud",
                     "end_date": null
                 }
             ],
@@ -15279,7 +15279,7 @@
         },
         {
             "domains": ["xiangcloud.com.cn"],
-            "company_name": "xiangcloud"
+            "company_name": "XiangCloud"
         },
         {
             "domains": ["xlab.si"],
