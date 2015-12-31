@@ -99,11 +99,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Alex Barclay",
-            "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com"]
+            "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com", "alex.barclay@hpe.com"]
         },
         {
             "launchpad_id": "a-gorodnev",
@@ -228,11 +232,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Abitha Palaniappan",
-            "emails": ["abitha.palaniappan@gmail.com", "abitha.palaniappan@hp.com"]
+            "emails": ["abitha.palaniappan@gmail.com", "abitha.palaniappan@hp.com", "abitha.palaniappan@hpe.com"]
         },
         {
             "launchpad_id": "academicgareth",
@@ -385,6 +393,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -449,6 +461,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -475,11 +491,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "ZhiQiang Fan",
-            "emails": ["aji.zqfan@gmail.com", "zhiqiang.fan@huawei.com", "zhi-qiang.fan@hp.com"]
+            "emails": ["aji.zqfan@gmail.com", "zhiqiang.fan@huawei.com", "zhi-qiang.fan@hp.com", "zhi-qiang.fan@hpe.com"]
         },
         {
             "launchpad_id": "aju",
@@ -519,11 +539,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ajay Bajaj",
-            "emails": ["akbajaj@hp.com"]
+            "emails": ["akbajaj@hp.com", "akbajaj@hpe.com"]
         },
         {
              "launchpad_id": "akhivin",
@@ -566,11 +590,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Al Miller",
-            "emails": ["al.miller@ajmiller.net", "ajmiller@ajmiller.net", "al.miller@hp.com"]
+            "emails": ["al.miller@ajmiller.net", "ajmiller@ajmiller.net", "al.miller@hp.com", "al.miller@hpe.com"]
         },
         {
             "launchpad_id": "al592b",
@@ -722,11 +750,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Alexis Lee",
-            "emails": ["alexisl@hp.com", "lxsli@hp.com"]
+            "emails": ["alexisl@hp.com", "lxsli@hp.com", "alexisl@hpe.com", "lxsli@hpe.com"]
         },
         {
             "launchpad_id": "alexpilotti",
@@ -745,11 +777,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Allison Randal",
-            "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com"]
+            "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com", "allison.randal@hpe.com"]
         },
         {
             "launchpad_id": "alyson-rodrigues-rosa",
@@ -1018,11 +1054,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ankur Rishi",
-            "emails": ["ankur.rishi@gmail.com", "ankur.rishi@hp.com"]
+            "emails": ["ankur.rishi@gmail.com", "ankur.rishi@hp.com", "ankur.rishi@hpe.com"]
         },
         {
             "launchpad_id": "annegentle",
@@ -1063,6 +1103,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -1217,6 +1261,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -1304,33 +1352,45 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ashleigh Farnham",
-            "emails": ["ashleighfarnham@gmail.com", "ashleigh.farnham@hp.com"]
+            "emails": ["ashleighfarnham@gmail.com", "ashleigh.farnham@hp.com", "ashleigh.farnham@hpe.com"]
         },
         {
             "launchpad_id": "ashokkumaran-b",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ashok kumaran B",
-            "emails": ["ashokkumaran.b@gmail.com","ashokkumaran.b@hp.com"]
+            "emails": ["ashokkumaran.b@gmail.com", "ashokkumaran.b@hp.com", "ashokkumaran.b@hpe.com"]
         },
         {
             "launchpad_id": "ashraf-vazeer",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ashraf Vazeer",
-            "emails": ["ashrafvaz@gmail.com", "ashraf.vazeer@hp.com"]
+            "emails": ["ashrafvaz@gmail.com", "ashraf.vazeer@hp.com", "ashraf.vazeer@hpe.com"]
         },
         {
            "launchpad_id": "ashu",
@@ -1600,11 +1660,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Beth Elwell",
-            "emails": ["elizabeth.elwell@hp.com", "e.r.elwell@gmail.com"]
+            "emails": ["elizabeth.elwell@hp.com", "elizabeth.elwell@hpe.com", "e.r.elwell@gmail.com"]
         },
         {
             "github_id": "bfirsh",
@@ -1659,11 +1723,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Bharath M",
-            "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com"]
+            "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com", "bharath.m@hpe.com"]
         },
         {
             "launchpad_id": "biswajeeban",
@@ -1866,11 +1934,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Brian Tully",
-            "emails": ["brian.tully@hp.com", "brian.tully@gmail.com"]
+            "emails": ["brian.tully@hp.com", "brian.tully@gmail.com", "brian.tully@hpe.com"]
         },
         {
             "launchpad_id": "briancurtin",
@@ -1933,11 +2005,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Vivekanandan B",
-            "emails": ["vivekanandan.bangarusamy@hp.com"]
+            "emails": ["vivekanandan.bangarusamy@hp.com", "vivekanandan.bangarusamy@hpe.com"]
         },
         {
             "launchpad_id": "byron-g-mccollum",
@@ -1978,11 +2054,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Carl Baldwin",
-            "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com"]
+            "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com", "carl.baldwin@hpe.com"]
         },
         {
             "launchpad_id": "castulo-martinez",
@@ -2313,11 +2393,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "chetanpatige",
-            "emails": ["chetan.p@hp.com","chetan6033@gmail.com"]
+            "emails": ["chetan.p@hp.com", "chetan6033@gmail.com", "chetan.p@hpe.com"]
         },
         {
             "launchpad_id": "chio-fai-sam-leong",
@@ -2409,11 +2493,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Chris Robinson",
-            "emails": ["chris_p_robinson@hotmail.com", "chrisprobinson@outlook.com", "chris.p.robinson@hp.com"]
+            "emails": ["chris_p_robinson@hotmail.com", "chrisprobinson@outlook.com", "chris.p.robinson@hp.com", "chris.p.robinson@hpe.com"]
         },
         {
             "launchpad_id": "christophe.sauthier",
@@ -2491,11 +2579,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Clint Adams",
-            "emails": ["clint.adams@hp.com", "clint@debian.org", "clint@gcfm.net"]
+            "emails": ["clint.adams@hp.com", "clint@debian.org", "clint@gcfm.net", "clint.adams@hpe.com"]
         },
         {
             "launchpad_id": "clint-fewbar",
@@ -2517,6 +2609,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -2608,11 +2704,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Craig Vyvial",
-            "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com", "craig.vyvial@hp.com"]
+            "emails": ["craig.vyvial@rackspace.com", "cp16net@gmail.com", "craig.vyvial@hp.com", "craig.vyvial@hpe.com"]
         },
         {
            "launchpad_id": "cpallares",
@@ -2650,6 +2750,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -2808,11 +2912,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Davide Agnello",
-            "emails": ["davide_agnello@hotmail.com", "davide.agnello@hp.com"]
+            "emails": ["davide_agnello@hotmail.com", "davide.agnello@hp.com", "davide.agnello@hpe.com"]
         },
         {
             "launchpad_id": "daijing",
@@ -3208,11 +3316,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Deepali Verneya",
-            "emails": ["deepali.verneya@hp.com"]
+            "emails": ["deepali.verneya@hp.com", "deepali.verneya@hpe.com"]
         },
         {
             "launchpad_id": "degdoo",
@@ -3269,6 +3381,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -3359,11 +3475,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Dan Stangel",
-            "emails": ["dgstangel@gmail.com", "dan.stangel@hp.com"]
+            "emails": ["dgstangel@gmail.com", "dan.stangel@hp.com", "dan.stangel@hpe.com"]
         },
         {
             "launchpad_id": "dguitarbite",
@@ -3615,6 +3735,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -3679,11 +3803,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Cian O'Driscoll",
-            "emails": ["cian@hp.com", "cian.o-driscoll@hp.com"]
+            "emails": ["cian@hp.com", "cian.o-driscoll@hp.com", "cian.o-driscoll@hpe.com"]
         },
         {
             "github_id": "drnic",
@@ -3739,6 +3867,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -3748,7 +3880,8 @@
                 "donald.stufft@gmail.com",
                 "donald.stufft@nebula.com",
                 "donald.stufft@rackspace.com",
-                "donald.stufft@hp.com"
+                "donald.stufft@hp.com",
+                "donald.stufft@hpe.com"
             ]
         },
         {
@@ -3812,11 +3945,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Duncan Thomas",
-            "emails": ["duncan.thomas@hp.com", "duncan.thomas@gmail.com"]
+            "emails": ["duncan.thomas@hp.com", "duncan.thomas@gmail.com", "duncan.thomas@hpe.com"]
         },
         {
             "launchpad_id": "dustin",
@@ -4024,11 +4161,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Edmond Kotowski",
-            "emails": ["ekotowski@gmail.com", "ekotowski@hp.com"]
+            "emails": ["ekotowski@gmail.com", "ekotowski@hp.com", "ekotowski@hpe.com"]
         },
         {
             "launchpad_id": "electrocucaracha",
@@ -4237,6 +4378,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -4252,11 +4397,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Mark Atwood",
-            "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com"]
+            "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com", "mark.atwood@hpe.com"]
         },
         {
             "launchpad_id": "fengxy",
@@ -4500,11 +4649,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Gandharva S",
-            "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com"]
+            "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com", "gandharvas@hpe.com"]
         },
         {
             "launchpad_id": "gaojie",
@@ -4646,11 +4799,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ghe Rivero",
-            "emails": ["ghe.rivero@hp.com", "ghe@debian.org", "ghe.rivero@gmail.com", "ghe.rivero@stackops.com", "ghe@rivero.io"]
+            "emails": ["ghe.rivero@hp.com", "ghe@debian.org", "ghe.rivero@gmail.com", "ghe.rivero@stackops.com", "ghe@rivero.io", "ghe.rivero@hpe.com"]
         },
         {
             "launchpad_id": "ghezal",
@@ -5305,11 +5462,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Hong Wong",
-            "emails": ["hong.wong@hp.com"]
+            "emails": ["hong.wong@hp.com", "hong.wong@hpe.com"]
         },
         {
             "launchpad_id": "houshengbo",
@@ -5476,11 +5637,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Robert Clark",
-            "emails": ["hyakuhei@gmail.com", "robert.clark@hp.com"]
+            "emails": ["hyakuhei@gmail.com", "robert.clark@hp.com", "robert.clark@hpe.com"]
         },
         {
             "launchpad_id": "i-kumagai",
@@ -5661,11 +5826,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ishant Tyagi",
-            "emails": ["ishant.tyagi@hp.com","tyagi.ishant@gmail.com"]
+            "emails": ["ishant.tyagi@hp.com", "tyagi.ishant@gmail.com", "ishant.tyagi@hpe.com"]
         },
         {
             "launchpad_id": "ishii-hisaharu",
@@ -6015,11 +6184,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Jay Clark",
-            "emails": ["jason.t.clark@hp.com", "jay.clark@gmail.com"]
+            "emails": ["jason.t.clark@hp.com", "jay.clark@gmail.com", "jason.t.clark@hpe.com"]
         },
         {
             "launchpad_id": "jay-lau-513",
@@ -6164,11 +6337,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Jonathan Harker",
-            "emails": ["code@gentlydownthe.net", "jesusaurus@inbox.com", "k.jonathan.harker@hp.com"]
+            "emails": ["code@gentlydownthe.net", "jesusaurus@inbox.com", "k.jonathan.harker@hp.com", "k.jonathan.harker@hpe.com"]
         },
         {
             "launchpad_id": "jexbow",
@@ -6202,11 +6379,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Jonathan Halterman",
-            "emails": ["jhalterman@gmail.com", "jonathan.halterman@hp.com", "jhalterman@hp.com"]
+            "emails": ["jhalterman@gmail.com", "jonathan.halterman@hp.com", "jhalterman@hp.com", "jonathan.halterman@hpe.com"]
         },
         {
             "launchpad_id": "jiangwt100",
@@ -6648,11 +6829,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Julia Kreger",
-            "emails": ["juliaashleykreger@gmail.com", "julia.ash.kreger@hp.com"]
+            "emails": ["juliaashleykreger@gmail.com", "julia.ash.kreger@hp.com", "julia.ash.kreger@hpe.com"]
         },
         {
             "launchpad_id": "julien-marinfrisonroche",
@@ -7001,11 +7186,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Kiall Mac Innes",
-            "emails": ["kiall@managedit.ie", "kiall@hp.com", "kiall@macinnes.ie"]
+            "emails": ["kiall@managedit.ie", "kiall@hp.com", "kiall@macinnes.ie", "kiall@hpe.com"]
         },
         {
             "launchpad_id": "kim-jensen2",
@@ -7076,11 +7265,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Koteswara Rao Kelam",
-            "emails": ["koteswara.kelam@hp.com", "koti.kelam@gmail.com"]
+            "emails": ["koteswara.kelam@hp.com", "koti.kelam@gmail.com", "koteswara.kelam@hpe.com"]
         },
         {
             "launchpad_id": "kowshik",
@@ -7130,11 +7323,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Colleen Murphy",
-            "emails": ["colleen@gazlene.net", "cmurphy@hp.com", "colleen@puppetlabs.com"]
+            "emails": ["colleen@gazlene.net", "cmurphy@hp.com", "colleen@puppetlabs.com", "cmurphy@hpe.com"]
         },
         {
             "launchpad_id": "krotscheck",
@@ -7261,11 +7458,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Dong Ma",
-            "emails": ["winterma.dong@gmail.com", "dong.ma@hp.com"]
+            "emails": ["winterma.dong@gmail.com", "dong.ma@hp.com", "dong.ma@hpe.com"]
         },
         {
             "launchpad_id": "ldbragst",
@@ -7358,22 +7559,30 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Liem Nguyen",
-            "emails": ["liem.m.nguyen@hp.com", "liem_m_nguyen@hp.com", "liem.m.nguyen@gmail.com"]
+            "emails": ["liem.m.nguyen@hp.com", "liem_m_nguyen@hp.com", "liem.m.nguyen@gmail.com", "liem_m_nguyen@hpe.com"]
         },
         {
             "launchpad_id": "lifeless",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Robert Collins",
-            "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com"]
+            "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com", "rbtcollins@hpe.com"]
         },
         {
             "launchpad_id": "lin-hua-cheng",
@@ -7552,11 +7761,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "lokesh s",
-            "emails": ["slokesh184@gmail.com", "lokesh.s@hp.com"]
+            "emails": ["slokesh184@gmail.com", "lokesh.s@hp.com", "lokesh.s@hpe.com"]
         },
         {
             "launchpad_id": "loquacity",
@@ -7629,6 +7842,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -7667,11 +7884,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Madhusudhan Kandadai",
-            "emails": ["madhusudhan.openstack@gmail.com", "madhusudhan.kandadai@hp.com"]
+            "emails": ["madhusudhan.openstack@gmail.com", "madhusudhan.kandadai@hp.com", "madhusudhan.kandadai@hpe.com"]
         },
         {
            "launchpad_id": "madorn",
@@ -7716,11 +7937,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Maheshkumar Pandurangan",
-            "emails": ["maheshkumar.pandurangan@hp.com"]
+            "emails": ["maheshkumar.pandurangan@hp.com", "maheshkumar.pandurangan@hpe.com"]
         },
         {
             "launchpad_id": "maksimov",
@@ -7812,11 +8037,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Mark Sturdevant",
-            "emails": ["mark.sturdevant@hp.com", "markstur@hp.com"]
+            "emails": ["mark.sturdevant@hp.com", "markstur@hp.com", "mark.sturdevant@hpe.com"]
         },
         {
             "launchpad_id": "mark-xiett",
@@ -8028,6 +8257,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -8146,11 +8379,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Mayank",
-            "emails": ["mayank.kumar@hp.com","mayank0107@yahoo.co.in"]
+            "emails": ["mayank.kumar@hp.com", "mayank0107@yahoo.co.in", "mayank.kumar@hpe.com"]
         },
         {
             "launchpad_id": "mbonell",
@@ -8173,11 +8410,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Morgan Fainberg",
-            "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com"]
+            "emails": ["morgan.fainberg@gmail.com", "morgan@fainberg.net", "morgan.fainberg@hp.com", "m@metacloud.com", "morgan@metacloud.com", "morgan.fainberg@hpe.com"]
         },
         {
             "launchpad_id": "med",
@@ -8449,11 +8690,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Augustina Ragwitz",
-            "emails": ["aragwitz+lp@pobox.com", "aragwitz+openstack@pobox.com", "augustina.ragwitz@hp.com"]
+            "emails": ["aragwitz+lp@pobox.com", "aragwitz+openstack@pobox.com", "augustina.ragwitz@hp.com", "augustina.ragwitz@hpe.com"]
         },
         {
             "launchpad_id": "mjblack",
@@ -8740,11 +8985,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Sachi King",
-            "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io", "sachi.king@hp.com"]
+            "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io", "sachi.king@hp.com", "sachi.king@hpe.com"]
         },
         {
             "launchpad_id": "namei-unix",
@@ -8806,11 +9055,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "neethi shashidhar",
-            "emails": ["neethi209@gmail.com", "neethi.shashidhar@hp.com"]
+            "emails": ["neethi209@gmail.com", "neethi.shashidhar@hp.com", "neethi.shashidhar@hpe.com"]
         },
         {
             "launchpad_id": "neillc",
@@ -8946,22 +9199,30 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Nikunj Agarwal",
-            "emails": ["nikunj.aggarwal@hp.com","nikunj2512@gmail.com"]
+            "emails": ["nikunj.aggarwal@hp.com", "nikunj2512@gmail.com", "nikunj.aggarwal@hpe.com"]
         },
         {
             "launchpad_id": "nileshkumar-govindbhai-patel",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Nileshkumar Patel",
-            "emails": ["nileshkumar-govindbhai.patel@hp.com"]
+            "emails": ["nileshkumar-govindbhai.patel@hp.com", "nileshkumar-govindbhai.patel@hpe.com"]
         },
         {
             "launchpad_id": "niu-zglinux",
@@ -9005,6 +9266,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -9071,6 +9336,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -9139,11 +9408,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Omri Gazitt",
-            "emails": ["ogazitt@gmail.com", "omri.gazitt@hp.com"]
+            "emails": ["ogazitt@gmail.com", "omri.gazitt@hp.com", "omri.gazitt@hpe.com"]
         },
         {
             "launchpad_id": "oleksandr-minakov",
@@ -9552,22 +9825,30 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Phani Pawan",
-            "emails": ["ppawan@hp.com", "phani.p3@gmail.com"]
+            "emails": ["ppawan@hp.com", "phani.p3@gmail.com", "ppawan@hpe.com"]
         },
         {
             "launchpad_id": "pradeep-av",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Pradeep Kumar",
-            "emails": ["pradeep.av@hp.com"]
+            "emails": ["pradeep.av@hp.com", "pradeep.av@hpe.com"]
         },
         {
             "launchpad_id": "praneshpg",
@@ -9621,11 +9902,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "prdsilva",
-            "emails": ["preethi.dsilva@hp.com", "preethidsilva@gmail.com"]
+            "emails": ["preethi.dsilva@hp.com", "preethidsilva@gmail.com", "preethi.dsilva@hpe.com"]
         },
         {
             "launchpad_id": "priti-desai",
@@ -9682,11 +9967,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Jim Meyer",
-            "emails": ["jim@geekdaily.org", "jim.meyer@hp.com"]
+            "emails": ["jim@geekdaily.org", "jim.meyer@hp.com", "jim.meyer@hpe.com"]
         },
         {
             "launchpad_id": "pushkar-umaranikar",
@@ -9927,11 +10216,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ricardo Carrillo Cruz",
-            "emails": ["ricardo.carrillo.cruz@gmail.com", "ricardo.carrillo.cruz@hp.com"]
+            "emails": ["ricardo.carrillo.cruz@gmail.com", "ricardo.carrillo.cruz@hp.com", "ricardo.carrillo.cruz@hpe.com"]
         },
         {
             "launchpad_id": "rconradharris",
@@ -10041,11 +10334,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Rakesh H S",
-            "emails": ["rh-s@hp.com","rakeshhs1@gmail.com"]
+            "emails": ["rh-s@hp.com", "rakeshhs1@gmail.com", "rh-s@hpe.com"]
         },
         {
             "launchpad_id": "richard-hagarty",
@@ -10111,11 +10408,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ryan Peters",
-            "emails": ["rjpeter2@gmail.com", "ryan.peters@hp.com"]
+            "emails": ["rjpeter2@gmail.com", "ryan.peters@hp.com", "ryan.peters@hpe.com"]
         },
         {
             "launchpad_id": "rjuvvadi",
@@ -10202,11 +10503,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Ryan Moore",
-            "emails": ["rmoore08@gmail.com", "ryan.moore@hp.com"]
+            "emails": ["rmoore08@gmail.com", "ryan.moore@hp.com", "ryan.moore@hpe.com"]
         },
         {
             "launchpad_id": "rmschn",
@@ -10409,11 +10714,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Romil Gupta",
-            "emails": ["romilg@hp.com", "romilgupta19@gmail.com"]
+            "emails": ["romilg@hp.com", "romilgupta19@gmail.com", "romilg@hpe.com"]
         },
         {
             "launchpad_id": "ronak-malav-shah",
@@ -10447,8 +10756,12 @@
                     "end_date": "2015-Aug-17"
                 },
                 {
-                   "company_name": "HP",
-                   "end_date": null
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
                 }
             ],
             "user_name": "Ronald Bradford",
@@ -10567,6 +10880,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -10774,6 +11091,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -10819,11 +11140,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Sarada A",
-            "emails": ["sarada.a@hp.com"]
+            "emails": ["sarada.a@hp.com", "sarada.a@hpe.com"]
         },
         {
             "launchpad_id": "sarob",
@@ -10964,6 +11289,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -10994,11 +11323,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Steven Deaton",
-            "emails": ["sdeaton2@gmail.com", "steven.deaton@rackspace.com", "sld@hp.com"]
+            "emails": ["sdeaton2@gmail.com", "steven.deaton@rackspace.com", "sld@hp.com", "sld@hpe.com"]
         },
         {
             "launchpad_id": "sean-gossard",
@@ -11065,11 +11398,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Selvakumar S",
-            "emails": ["selvakumar.s2@hp.com", "selvakumar.nms@gmail.com", "selvakumar-s2@hp.com"]
+            "emails": ["selvakumar.s2@hp.com", "selvakumar.nms@gmail.com", "selvakumar-s2@hp.com", "selvakumar.s2@hpe.com"]
         },
         {
             "launchpad_id": "sergey.vilgelm",
@@ -11148,11 +11485,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Shanthakumar K",
-            "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com"]
+            "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com", "shanthakumar.k@hpe.com"]
         },
         {
             "launchpad_id": "sheshananda",
@@ -11265,11 +11606,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Shweta",
-            "emails": ["shweta.shrivastava@hp.com"]
+            "emails": ["shweta.shrivastava@hp.com", "shweta.shrivastava@hpe.com"]
         },
         {
             "launchpad_id": "shykes",
@@ -11374,11 +11719,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Sirushti Murugesan",
-            "emails": ["sirushtim@gmail.com", "sirushti.murugesan@hp.com", "sirus@hp.com"]
+            "emails": ["sirushtim@gmail.com", "sirushti.murugesan@hp.com", "sirus@hp.com", "sirushti.murugesan@hpe.com"]
         },
         {
            "launchpad_id": "siva-radhakrishnan",
@@ -11397,22 +11746,30 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Swaroop Jayanthi",
-            "emails": ["sjayanthi@hp.com"]
+            "emails": ["sjayanthi@hp.com", "sjayanthi@hpe.com"]
         },
         {
             "launchpad_id": "sjmc7",
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Steve McLellan",
-            "emails": ["steve.mclellan@hp.com", "steven.j.mclellan@gmail.com"]
+            "emails": ["steve.mclellan@hp.com", "steven.j.mclellan@gmail.com", "steve.mclellan@hpe.com"]
         },
         {
             "launchpad_id": "skanddh",
@@ -11467,11 +11824,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Nikhil Manchanda",
-            "emails": ["slicknik@gmail.com", "nikhil.manchanda@hp.com", "nikhil@manchanda.me"]
+            "emails": ["slicknik@gmail.com", "nikhil.manchanda@hp.com", "nikhil@manchanda.me", "nikhil.manchanda@hpe.com"]
         },
         {
             "launchpad_id": "sliim",
@@ -11753,11 +12114,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Steve Leon",
-            "emails": ["kokhang@gmail.com", "steve.leon@hp.com"]
+            "emails": ["kokhang@gmail.com", "steve.leon@hp.com", "steve.leon@hpe.com"]
         },
         {
             "launchpad_id": "steve-lewis",
@@ -11802,6 +12167,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -11907,11 +12276,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Sushil Kumar",
-            "emails": ["skm.net@gmail.com", "sushil.kumar3@hp.com"]
+            "emails": ["skm.net@gmail.com", "sushil.kumar3@hp.com", "sushil.kumar3@hpe.com"]
         },
         {
             "launchpad_id": "svendowideit",
@@ -11955,11 +12328,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Min Wang",
-            "emails": ["swiftwangster@gmail.com", "min.wang6@hp.com"]
+            "emails": ["swiftwangster@gmail.com", "min.wang6@hp.com", "min.wang6@hpe.com"]
         },
         {
             "launchpad_id": "sylvain-bauza",
@@ -12107,11 +12484,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "James Polley",
-            "emails": ["jp@jamezpolley.com", "james.polley@hp.com"]
+            "emails": ["jp@jamezpolley.com", "james.polley@hp.com", "james.polley@hpe.com"]
         },
         {
             "launchpad_id": "teabee89",
@@ -12491,11 +12872,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Travis McPeak",
-            "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com"]
+            "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com", "travis.mcpeak@hpe.com"]
         },
         {
             "launchpad_id": "travis-truman",
@@ -12518,6 +12903,10 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -12615,11 +13004,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Unmesh Gurjar",
-            "emails": ["unmesh.gurjar@vertex.co.in", "unmesh.gurjar@nttdata.com", "unmesh.gurjar@hp.com"]
+            "emails": ["unmesh.gurjar@vertex.co.in", "unmesh.gurjar@nttdata.com", "unmesh.gurjar@hp.com", "unmesh.gurjar@hpe.com"]
         },
         {
             "launchpad_id": "usrleon",
@@ -12846,11 +13239,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Vipul Sabhaya",
-            "emails": ["vipuls@gmail.com", "vipul.sabhaya@hp.com"]
+            "emails": ["vipuls@gmail.com", "vipul.sabhaya@hp.com", "vipul.sabhaya@hpe.com"]
         },
         {
             "launchpad_id": "vishalcdac07",
@@ -13003,6 +13400,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
@@ -13101,11 +13502,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Wan-yen Hsu",
-            "emails": ["wan-yen.hsu@hp.com"]
+            "emails": ["wan-yen.hsu@hp.com", "wan-yen.hsu@hpe.com"]
         },
         {
             "launchpad_id": "wanglong",
@@ -13156,11 +13561,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Chris Johnson",
-            "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com"]
+            "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com", "wchrisjohnson@hpe.com"]
         },
         {
             "launchpad_id": "wei-d-chen",
@@ -13433,11 +13842,15 @@
                 },
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Yan Haifeng",
-            "emails": ["haifeng.yan@hp.com", "yanheven@gmail.com", "yanhf@chinanetcenter.com", "yanheven@qq.com"]
+            "emails": ["haifeng.yan@hp.com", "yanheven@gmail.com", "yanhf@chinanetcenter.com", "yanheven@qq.com", "haifeng.yan@hpe.com"]
         },
         {
             "launchpad_id": "yankcrime",
@@ -13680,6 +14093,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
