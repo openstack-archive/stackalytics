@@ -1440,6 +1440,7 @@
         },
         {
             "launchpad_id": "basilbaby",
+            "gerrit_id": "basilbaby",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -1447,7 +1448,7 @@
                 }
             ],
             "user_name": "Basil Baby",
-            "emails": ["basilbaby@gmail.com"]
+            "emails": ["basilbaby@gmail.com", "basil_baby@cable.comcast.com"]
         },
         {
             "launchpad_id": "battu-amulya",
