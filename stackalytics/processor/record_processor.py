@@ -45,9 +45,9 @@ class RecordProcessor(object):
     def _get_release(self, timestamp):
         release_index = bisect.bisect(self.releases_dates, timestamp)
         if release_index >= len(self.releases):
-            LOG.warn('Timestamp %s is beyond releases boundaries, the last '
-                     'release will be used. Please consider adding a '
-                     'new release into default_data.json', timestamp)
+            LOG.warning('Timestamp %s is beyond releases boundaries, the last '
+                        'release will be used. Please consider adding a '
+                        'new release into default_data.json', timestamp)
             release_index = len(self.releases) - 1
         return self.releases[release_index]['release_name']
 

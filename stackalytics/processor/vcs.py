@@ -121,8 +121,8 @@ class Git(Vcs):
                 return {}
 
             if uri != self.repo['uri']:
-                LOG.warn('Repo uri %(uri)s differs from cloned %(old)s',
-                         {'uri': self.repo['uri'], 'old': uri})
+                LOG.warning('Repo uri %(uri)s differs from cloned %(old)s',
+                            {'uri': self.repo['uri'], 'old': uri})
                 os.chdir('..')
                 shutil.rmtree(self.folder)
 
