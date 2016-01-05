@@ -105,7 +105,7 @@ class TestRecordProcessor(testtools.TestCase):
         record_processor_inst = self.make_record_processor()
         email = 'foo@boo.com'
         res = record_processor_inst._get_company_by_email(email)
-        self.assertEqual(None, res)
+        self.assertIsNone(res)
 
     # get_lp_info
 
@@ -387,7 +387,7 @@ class TestRecordProcessor(testtools.TestCase):
             user_id='johndoe@ibm.com')
         self.assertIn('johndoe@ibm.com', user['emails'])
         self.assertEqual('IBM', user['companies'][0]['company_name'])
-        self.assertEqual(None, user['launchpad_id'])
+        self.assertIsNone(user['launchpad_id'])
 
     def test_process_review_new_user(self):
         # User is known to LP, but new to us
@@ -1023,7 +1023,7 @@ class TestRecordProcessor(testtools.TestCase):
                 'companies': [{'company_name': 'IBM', 'end_date': 0}]}
         runtime_storage_inst = record_processor_inst.runtime_storage_inst
         self.assertEqual(2, runtime_storage_inst.get_by_key('user:count'))
-        self.assertEqual(None, user_processor.load_user(
+        self.assertIsNone(user_processor.load_user(
             runtime_storage_inst, 1))
         self.assertEqual(user, user_processor.load_user(
             runtime_storage_inst, 2))

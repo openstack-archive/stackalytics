@@ -123,7 +123,7 @@ class TestUtils(testtools.TestCase):
 
         profile = None
         utils.validate_lp_display_name(profile)
-        self.assertEqual(None, profile)
+        self.assertIsNone(profile)
 
     def test_pipeline_processor(self):
         counter = dict(n=0)
