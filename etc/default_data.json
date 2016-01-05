@@ -14477,13 +14477,20 @@
             "company_name": "Hortonworks"
         },
         {
-            "domains": ["hp.com", "hpe.com"],
+            "domains": ["hp.com"],
             "company_name": "HP",
-            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division", "Hewlett Packard",
-              "Hewlett-Packard Company", "Hewlett-Packard", "Hewllet-Packard", "HP R and D", "HP Cloud OS", "HP Networking",
-              "hewelett-packard company", "HewlettPackard", "Hewlett-Pack", "Hewlitt-Packard", "Hewlett-PackardHP India Software Operations",
-              "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion", "Hewlett-Packard India Software Operations",
-              "Hewlett Packard Enterprise", "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte", "Hewlett Packard Romania",
+            "aliases": ["Hewlett Packard", "Hewlett-Packard Company", "Hewlett-Packard",
+              "Hewllet-Packard", "hewelett-packard company", "HewlettPackard", "Hewlett-Pack",
+              "Hewlitt-Packard"]
+        },
+        {
+            "domains": ["hpe.com"],
+            "company_name": "HPE",
+            "aliases": ["HP Cloud", "HP ES GD China", "HP, IBM", "HP Software", "HP Storage Division",
+              "HP R and D", "HP Cloud OS", "HP Networking", "Hewlett-PackardHP India Software Operations",
+              "HP cloud services", "HP India software Operation", "HP Labs", "Hewlett-Packard Helion",
+              "Hewlett-Packard India Software Operations", "Hewlett Packard Enterprise",
+              "Hewlett-Packard Enterprise", "Hewlett-Packard Singapore Pte", "Hewlett Packard Romania",
               "HP Helion Public Cloud", "HP Japan", "HP Korea", "HP Helion", "HP Costa Rica", "China HP"]
         },
         {
