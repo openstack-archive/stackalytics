@@ -11505,6 +11505,17 @@
             "emails": ["somikbehera@gmail.com", "somik@nicira.com"]
         },
         {
+            "launchpad_id": "song-ruixia",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "SongRuixia",
+            "emails": ["song.ruixia@zte.com.cn"]
+        },
+        {
             "launchpad_id": "soren",
             "companies": [
                 {
