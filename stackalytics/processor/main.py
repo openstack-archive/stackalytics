@@ -242,7 +242,7 @@ def apply_corrections(uri, runtime_storage_inst):
         if 'primary_key' in c:
             valid_corrections.append(c)
         else:
-            LOG.warn('Correction misses primary key: %s', c)
+            LOG.warning('Correction misses primary key: %s', c)
     runtime_storage_inst.apply_corrections(valid_corrections)
 
 

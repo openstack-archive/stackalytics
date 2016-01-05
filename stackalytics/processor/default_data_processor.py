@@ -77,7 +77,7 @@ def _retrieve_project_list_from_gerrit(project_source):
         gerrit_inst.close()
     except Exception as e:
         LOG.exception(e)
-        LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
+        LOG.warning('Fail to retrieve list of projects. Keep it unmodified')
         return
 
     organization = project_source['organization']
@@ -109,7 +109,7 @@ def _retrieve_project_list_from_github(project_source):
         github_repos = github.get_organization(organization).get_repos()
     except Exception as e:
         LOG.exception(e)
-        LOG.warn('Fail to retrieve list of projects. Keep it unmodified')
+        LOG.warning('Fail to retrieve list of projects. Keep it unmodified')
         return
 
     for repo in github_repos:
@@ -160,7 +160,7 @@ def _update_with_driverlog_data(default_data, driverlog_data_uri):
     driverlog_data = utils.read_json_from_uri(driverlog_data_uri)
 
     if not driverlog_data:
-        LOG.warn('DriverLog data is not available')
+        LOG.warning('DriverLog data is not available')
         return
 
     module_cis = collections.defaultdict(list)

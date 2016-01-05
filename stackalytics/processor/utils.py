@@ -137,16 +137,16 @@ def read_uri(uri, session=None):
     try:
         return do_request(uri, session=session).text
     except Exception as e:
-        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
-                 {'error': e, 'uri': uri})
+        LOG.warning('Error "%(error)s" retrieving uri %(uri)s',
+                    {'error': e, 'uri': uri})
 
 
 def read_json_from_uri(uri, session=None):
     try:
         return do_request(uri, session=session).json()
     except Exception as e:
-        LOG.warn('Error "%(error)s" parsing json from uri %(uri)s',
-                 {'error': e, 'uri': uri})
+        LOG.warning('Error "%(error)s" parsing json from uri %(uri)s',
+                    {'error': e, 'uri': uri})
 
 
 def _gzip_decompress(content):
@@ -161,16 +161,16 @@ def read_gzip_from_uri(uri):
     try:
         return _gzip_decompress(do_request(uri).content)
     except Exception as e:
-        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
-                 {'error': e, 'uri': uri})
+        LOG.warning('Error "%(error)s" retrieving uri %(uri)s',
+                    {'error': e, 'uri': uri})
 
 
 def get_uri_last_modified(uri):
     try:
         return do_request(uri, method='head').headers['last-modified']
     except Exception as e:
-        LOG.warn('Error "%(error)s" retrieving uri %(uri)s',
-                 {'error': e, 'uri': uri})
+        LOG.warning('Error "%(error)s" retrieving uri %(uri)s',
+                    {'error': e, 'uri': uri})
 
 
 def cmp_to_key(mycmp):  # ported from python 3

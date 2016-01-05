@@ -69,7 +69,7 @@ def lp_blueprint_generator(module):
         chunk = utils.read_json_from_uri(uri, session=launchpad_session)
 
         if not chunk:
-            LOG.warn('No data was read from uri %s', uri)
+            LOG.warning('No data was read from uri %s', uri)
             break
 
         for record in chunk['entries']:
@@ -90,7 +90,7 @@ def lp_bug_generator(module, modified_since):
         chunk = utils.read_json_from_uri(uri, session=launchpad_session)
 
         if not chunk:
-            LOG.warn('No data was read from uri %s', uri)
+            LOG.warning('No data was read from uri %s', uri)
             break
 
         for record in chunk['entries']:
@@ -101,7 +101,7 @@ def lp_bug_generator(module, modified_since):
             related_tasks = utils.read_json_from_uri(related_tasks_uri,
                                                      session=launchpad_session)
             if not related_tasks:
-                LOG.warn('No data was read from uri %s', uri)
+                LOG.warning('No data was read from uri %s', uri)
             elif related_tasks['entries']:
                 for related_task in related_tasks['entries']:
                     yield related_task
