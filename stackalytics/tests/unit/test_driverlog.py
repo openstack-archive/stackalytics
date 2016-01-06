@@ -100,7 +100,7 @@ class TestDriverlog(testtools.TestCase):
         res = list(driverlog.log([review], drivers))
 
         self.assertEqual(1, len(res), 'One CI result is expected')
-        self.assertEqual(False, res[0]['value'])
+        self.assertFalse(res[0]['value'])
 
     def test_find_ci_result_non_existent(self):
         drivers = [DRIVER_NON_EXISTENT]
@@ -123,4 +123,4 @@ class TestDriverlog(testtools.TestCase):
         res = list(driverlog.log([review], drivers))
 
         self.assertEqual(1, len(res), 'One CI result is expected')
-        self.assertEqual(True, res[0]['value'])
+        self.assertTrue(res[0]['value'])
