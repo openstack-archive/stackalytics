@@ -7560,6 +7560,17 @@
             "emails": ["liang.bo@99cloud.net", "onetown@gmail.com", "liang.bo.os@99cloud.net"]
         },
         {
+            "launchpad_id": "licayun",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lica",
+            "emails": ["licayun@hotmail.com"]
+        },
+        {
             "launchpad_id": "liemmn",
             "companies": [
                 {
