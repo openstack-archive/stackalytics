@@ -11985,6 +11985,17 @@
             "emails": ["song.ruixia@zte.com.cn"]
         },
         {
+            "launchpad_id": "songmingyan",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yan songming",
+            "emails": ["neutron@zte.com.cn"]
+        },
+        {
             "launchpad_id": "soren",
             "companies": [
                 {
