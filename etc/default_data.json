@@ -339,6 +339,17 @@
             "emails": ["a.vinsh1@comcast.net", "adam.vinsh@twcable.com", "adam.vinsh@hp.com"]
         },
         {
+            "launchpad_id": "adesin-yin",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yindesheng",
+            "emails": ["yin.desheng@zte.com.cn"]
+        },
+        {
             "launchpad_id": "aditirav",
             "companies": [
                 {
