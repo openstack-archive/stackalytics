@@ -16277,27 +16277,31 @@
                     "tag_from": "1.8.0"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "1.10.0"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
-                    "tag_from": "1.13.0"
+                    "tag_from": "1.13.1"
                 },
                 {
                     "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "2.3.0",
                     "release_name": "Kilo",
                     "tag_from": "2.2.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "branch": "stable/liberty",
+                    "tag_to": "2.5.0",
                     "release_name": "Liberty",
-                    "tag_from": "2.3.0rc1"
+                    "tag_from": "2.3.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Mitaka",
+                    "tag_from": "2.5.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/swift.git",
