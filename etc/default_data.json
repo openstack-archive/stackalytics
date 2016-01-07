@@ -3551,6 +3551,17 @@
             "emails": ["dfleming@austin.rr.com", "diflemin@cisco.com", "diflemin@ebay.com", "diane.fleming@rackspace.com"]
         },
         {
+            "launchpad_id": "dimalg",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dimitry Ushakov",
+            "emails": ["dimitry.ushakov@rackspace.com", "dimalg@yahoo.com"]
+        },
+        {
             "launchpad_id": "dims-v",
             "companies": [
                 {
