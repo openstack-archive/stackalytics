@@ -6429,6 +6429,17 @@
             "emails": ["jim.rollenhagen@rackspace.com", "jim@jimrollenhagen.com"]
         },
         {
+            "launchpad_id": "jimmy-mccrory",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jimmy McCrory",
+            "emails": ["jimmy.mccrory@gmail.com", "jmccrory@walmartlabs.com"]
+        },
+        {
             "launchpad_id": "jing",
             "companies": [
                 {
@@ -15794,7 +15805,7 @@
               "VMware Software"]
         },
         {
-            "domains": ["walmart.com"],
+            "domains": ["walmart.com", "walmartlabs.com"],
             "company_name": "Walmart"
         },
         {
