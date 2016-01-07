@@ -13551,6 +13551,17 @@
             "emails": ["wan-yen.hsu@hp.com", "wan-yen.hsu@hpe.com"]
         },
         {
+            "launchpad_id": "wang-zengzhi",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zengzhi Wang",
+            "emails": ["wang.zengzhi@zte.com.cn"]
+        },
+        {
             "launchpad_id": "wanglong",
             "companies": [
                 {
