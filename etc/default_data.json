@@ -15135,6 +15135,10 @@
             "company_name": "Instituto de Telecomunicacoes"
         },
         {
+            "domains": ["itri.org.tw"],
+            "company_name": "Industrial Technology Research Institute"
+        },
+        {
             "domains": ["itsyn.com"],
             "company_name": "IT Synergy"
         },
