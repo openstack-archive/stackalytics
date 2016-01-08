@@ -17075,6 +17075,11 @@
             "uri": "https://github.com/docker/docker-network.git"
         },
         {
+            "module": "engine-api",
+            "organization": "docker",
+            "uri": "https://github.com/docker/engine-api.git"
+        },
+        {
             "module": "libcontainer",
             "organization": "docker",
             "uri": "https://github.com/opencontainers/runc.git"
@@ -17470,7 +17475,7 @@
         },
         {
             "module_group_name": "docker-group",
-            "modules": ["docker", "docker-registry", "docker-network", "libcontainer", "distribution", "machine", "swarm", "libtrust",
+            "modules": ["docker", "docker-registry", "docker-network", "engine-api", "libcontainer", "distribution", "machine", "swarm", "libtrust",
                 "compose", "docker-py", "libnetwork"]
         },
         {
