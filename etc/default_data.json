@@ -12676,6 +12676,17 @@
            "emails": ["hector.isaac.gonzalez.mendoza@intel.com", "theizaakk@gmail.com"]
         },
         {
+            "launchpad_id": "thelo-gaultier-9",
+            "companies": [
+                {
+                    "company_name": "Industrial Technology Research Institute",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thelo Gaultier",
+            "emails": ["thelo.gaultier@gmail.com"]
+         },
+        {
             "launchpad_id": "therve",
             "companies": [
                 {
