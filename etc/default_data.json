@@ -5184,6 +5184,17 @@
             "emails": ["guslees@gmail.com", "angus.lees@rackspace.com"]
         },
         {
+            "launchpad_id": "guy-kim088",
+            "companies": [
+                {
+                    "company_name": "Industrial Technology Research Institute",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guy Kim",
+            "emails": ["guy.kim088@gmail.com"]
+        },
+        {
             "launchpad_id": "h-aramaki",
             "gerrit_id": "haramaki",
             "companies": [
