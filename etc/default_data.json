@@ -3018,6 +3018,21 @@
             "emails": ["dangchb@awcloud.com"]
         },
         {
+            "launchpad_id": "daniel-a-nguyen",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dan Nguyen",
+            "emails": ["daniel.a.nguyen@hpe.com", "daniel.a.nguyen@hp.com", "dan.nguyens.mail@gmail.com"]
+        },
+        {
             "launchpad_id": "daniel-kuffner",
             "companies": [
                 {
