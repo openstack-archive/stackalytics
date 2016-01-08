@@ -7712,6 +7712,17 @@
             "emails": ["andrew@cloudscaling.com", "acs@parvuscaptus.com"]
         },
         {
+            "launchpad_id": "liu-lixiu",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liuxiuli",
+            "emails": ["liu.lixiu@zte.com.cn"]
+        },
+        {
             "launchpad_id": "liudong78",
             "companies": [
                 {
