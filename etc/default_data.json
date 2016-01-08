@@ -1720,6 +1720,18 @@
             "emails": ["bharath_ves@hotmail.com", "bharath.thiruveedula@imaginea.com"]
         },
         {
+            "launchpad_id": "bharathkrishna",
+            "gerrit_id": "bharathkrishna",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bharath Krishna",
+            "emails": ["m.bharathkrishna@gmail.com", "bkrishna@walmartlabs.com"]
+        },
+        {
             "launchpad_id": "bharathm",
             "companies": [
                 {
