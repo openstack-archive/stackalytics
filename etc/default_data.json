@@ -1527,6 +1527,18 @@
             "emails": ["mkislins@yahoo-inc.com", "mkislinska@griddynamics.com"]
         },
         {
+            "launchpad_id": "bardia-keyoumarsi",
+            "gerrit_id": "bkeyoumarsi",
+            "companies": [
+                {
+                    "company_name": "Coho Data",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bardia Keyoumarsi",
+            "emails": ["bardia@keyoumarsi.com", "bardia.keyoumarsi@cohodata.com"]
+        },
+        {
             "launchpad_id": "bartosz-gorski",
             "companies": [
                 {
@@ -14912,6 +14924,10 @@
         {
             "domains": ["codethink.co.uk"],
             "company_name": "Codethink"
+        },
+        {
+            "domains": ["cohodata.com"],
+            "company_name": "Coho Data"
         },
         {
             "domains": ["colt.net"],
