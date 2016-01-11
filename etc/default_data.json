@@ -17701,7 +17701,7 @@
         },
         {
             "id": "openstack-others",
-            "title": "OpenStack Others",
+            "title": "Others",
             "modules": ["openstack-others", "unknown"]
         },
         {
