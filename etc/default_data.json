@@ -17398,16 +17398,20 @@
     "project_sources": [
         {
             "organization": "openstack",
-            "exclude": ["openstack", "gantt", "python-ganttclient"]
+            "exclude": ["openstack", "gantt", "python-ganttclient"],
+            "uri": "github://"
         },
         {
-            "organization": "openstack-dev"
+            "organization": "openstack-dev",
+            "uri": "github://"
         },
         {
-            "organization": "openstack-infra"
+            "organization": "openstack-infra",
+            "uri": "github://"
         },
         {
-            "organization": "openstack-ops"
+            "organization": "openstack-ops",
+            "uri": "github://"
         },
         {
             "organization": "cloudfoundry",
