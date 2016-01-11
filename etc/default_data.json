@@ -10103,6 +10103,17 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+            "launchpad_id": "qunyingran",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "qunyingran",
+            "emails": ["ran.qunying@zte.com.cn"]
+        },
+        {
             "launchpad_id": "r-thorsten",
             "companies": [
                 {
