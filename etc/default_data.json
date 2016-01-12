@@ -10745,10 +10745,14 @@
                 {
                     "company_name": "Universidade Federal de Campina Grande",
                     "end_date": "2015-Aug-21"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
                 }
             ],
             "user_name": "Rodrigo Duarte",
-            "emails": ["rodrigods@lsd.ufcg.edu.br", "rodrigodsousa@gmail.com"]
+            "emails": ["rodrigods@lsd.ufcg.edu.br", "rodrigodsousa@gmail.com", "rduartes@redhat.com"]
         },
         {
             "launchpad_id": "roeyc",
