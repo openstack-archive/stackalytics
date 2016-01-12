@@ -13766,6 +13766,17 @@
             "emails": ["weike@awcloud.com", "weike.cs@gmail.com"]
         },
         {
+            "launchpad_id": "wengjiangang",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JianGang Weng",
+            "emails": ["weng.jiangang@zte.com.cn"]
+        },
+        {
             "launchpad_id": "wenjianhn",
             "companies": [
                 {
