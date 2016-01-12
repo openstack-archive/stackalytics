@@ -7667,6 +7667,18 @@
             "emails": ["liang.bo@99cloud.net", "onetown@gmail.com", "liang.bo.os@99cloud.net"]
         },
         {
+            "launchpad_id": "liaoishere",
+            "gerrit_id": "LiaoPenghui",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liao Penghui",
+            "emails": ["liaoishere@gmail.com", "liaopenghui@unitedstack.com"]
+        },
+        {
             "launchpad_id": "licayun",
             "companies": [
                 {
