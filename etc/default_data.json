@@ -4650,6 +4650,22 @@
             "emails": ["fungi@yuggoth.org", "jeremy@openstack.org"]
         },
         {
+            "launchpad_id": "furlongm",
+            "gerrit_id": "furlongm",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": "2015-Feb-27"
+                },
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marcus Furlong",
+            "emails": ["furlongm@unimelb.edu.au", "marcus@aptira.com", "furlongm@gmail.com"]
+        },
+        {
             "launchpad_id": "gabor.antal",
             "gerrit_id": "antal",
             "companies": [
