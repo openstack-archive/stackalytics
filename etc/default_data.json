@@ -2230,6 +2230,22 @@
             "emails": ["christopher_dearborn@dell.com", "cdearbor@comcast.net"]
         },
         {
+            "launchpad_id": "cdent",
+            "gerrit_id": "chdent",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2015-Nov-13"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Dent",
+            "emails": ["chdent@redhat.com", "cdent@anticdent.org", "cdent@mirantis.com", "chris.dent@gmail.com"]
+        },
+        {
             "launchpad_id": "cerberus",
             "companies": [
                 {
