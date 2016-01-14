@@ -14398,6 +14398,25 @@
             "emails": ["yunlingzeng@hotmail.com", "zengyunling@huawei.com"]
         },
         {
+            "launchpad_id": "zeratul-j",
+            "companies": [
+                {
+                    "company_name": "Canonical",
+                    "end_date": "2015-Jan-11"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Jan-15"
+                },
+                {
+                    "company_name": "UMCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julian Wang",
+            "emails": ["seshiro.wang@gmail.com", "julian.wang@canonical.com", "jwang@mirantis.com", "julian.wang@umcloud.com"]
+        },
+        {
             "launchpad_id": "zerodivisible",
             "companies": [
                 {
