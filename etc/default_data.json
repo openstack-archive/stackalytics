@@ -7533,6 +7533,17 @@
             "emails": ["kispear@gmail.com", "kieran.spear@unimelb.edu.au", "kieran@aptira.com"]
         },
         {
+            "launchpad_id": "kszab",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Károly Szabó",
+            "emails": ["kszab@inf.u-szeged.hu"]
+        },
+        {
             "launchpad_id": "kurt-f-martin",
             "companies": [
                 {
