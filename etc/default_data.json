@@ -628,6 +628,22 @@
             "emails": ["alopgeek@gmail.com", "abelopez@cisco.com", "al592b@att.com"]
         },
         {
+            "launchpad_id": "alaski",
+            "gerrit_id": "alaski",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2016-Jan-08"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Laski",
+            "emails": ["andrew.laski@rackspace.com", "andrew@lascii.com", "alaski@mirantis.com", "alaski@gmail.com"]
+        },
+        {
             "launchpad_id": "aldavud",
             "companies": [
                 {
