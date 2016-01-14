@@ -487,11 +487,15 @@
             "companies": [
                 {
                     "company_name": "Reliance",
+                    "end_date": "2016-Jan-08"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Ajaya Agrawal",
-            "emails": ["ajaya.agrawal@ril.com", "ajku.agr@gmail.com"]
+            "emails": ["ajku.agr@gmail.com","ajaya.agrawal@ril.com"]
         },
         {
             "launchpad_id": "aji-zqfan",
