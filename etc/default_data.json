@@ -13767,6 +13767,17 @@
             "emails": ["wang.zengzhi@zte.com.cn"]
         },
         {
+            "launchpad_id": "wangliangfu",
+            "companies": [
+                {
+                    "company_name": "UMCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wang Liangfu",
+            "emails": ["wangliangfu@outlook.com"]
+        },
+        {
             "launchpad_id": "wanglong",
             "companies": [
                 {
