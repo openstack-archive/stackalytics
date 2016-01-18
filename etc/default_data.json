@@ -3028,6 +3028,21 @@
             "emails": ["damien.rannou@corp.ovh.com"]
         },
         {
+            "launchpad_id": "damon-devops",
+            "companies": [
+                {
+                    "company_name": "Institute of Computing Technology of the Chinese Academy of Sciences",
+                    "end_date": "2014-Apr-20"
+                },
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Wang",
+            "emails": ["wangwei@unitedstack.com", "damon.devops@gmail.com", "mathematrix@foxmail.com"]
+        },
+        {
             "launchpad_id": "dan-prince",
             "companies": [
                 {
@@ -15352,6 +15367,11 @@
               "International Business Machines Corporation", "IBM UK Ltd", "IBM Ireland", "IBM Cloud Infrastructure Services",
               "IBM Deutschland", "IBM Malaysia", "IBM Haifa", "IBM Global Services", "IBM Softlayer", "IBM Cloud Division",
               "IBM Malaysia Sdn Bhd", "IBM India Private"]
+        },
+        {
+            "domains": ["ict.ac.cn"],
+            "company_name": "ICT",
+            "aliases": ["Institute of Computing Technology of the Chinese Academy of Sciences", "中科院计算所"]
         },
         {
             "domains": ["ifca.unican.es"],
