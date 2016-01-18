@@ -2351,6 +2351,17 @@
             "emails": ["simon.sy.chang@gmail.com", "schang@tesora.com"]
         },
         {
+            "launchpad_id": "changzhi",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhi Chang",
+            "emails": ["changzhi@unitedstack.com", "changzhi1990@gmail.com"]
+        },
+        {
             "github_id": "chanwit",
             "companies": [
                 {
