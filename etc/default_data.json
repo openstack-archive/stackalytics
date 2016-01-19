@@ -4379,6 +4379,18 @@
            ]
         },
         {
+            "launchpad_id": "erezak",
+            "gerrit_id": "erez",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Erez A. Korn",
+            "emails": ["ek844y@att.com", "erakorn@outlook.com"]
+        },
+        {
             "launchpad_id": "eric-martin4",
             "companies": [
                 {
