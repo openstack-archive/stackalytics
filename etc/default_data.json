@@ -8231,6 +8231,18 @@
             "emails": ["martin.andre@gmail.com", "m.andre@redhat.com", "martin.andre@kvhasia.com"]
         },
         {
+           "launchpad_id": "marcus-g-williams",
+           "gerrit_id": "mgkwill",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Marcus Williams",
+           "emails": ["marcus.williams@intel.com", "marcus.g.williams@gmail.com"]
+        },
+        {
             "launchpad_id": "marcusvrn",
             "companies": [
                 {
