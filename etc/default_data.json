@@ -9478,6 +9478,17 @@
             "emails": ["nileshkumar-govindbhai.patel@hp.com", "nileshkumar-govindbhai.patel@hpe.com"]
         },
         {
+            "launchpad_id": "ning-sun",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ning Sun",
+            "emails": ["ning.sun@intel.com"]
+        },
+        {
             "launchpad_id": "niu-zglinux",
             "companies": [
                 {
