@@ -6056,6 +6056,17 @@
             "emails": ["itoumsn@nttdata.co.jp"]
         },
         {
+            "launchpad_id": "itsuugo",
+            "companies": [
+                {
+                    "company_name": "Midokura",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Antonio Ojea",
+            "emails": ["itsuugo@gmail.com", "aojea@midokura.com"]
+        },
+        {
             "launchpad_id": "iurygregory",
             "gerrit_id": "iurygregory",
             "companies": [
