@@ -6572,6 +6572,17 @@
             "emails": ["jhalterman@gmail.com", "jonathan.halterman@hp.com", "jhalterman@hp.com", "jonathan.halterman@hpe.com"]
         },
         {
+            "launchpad_id": "jhinman",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "John Hinman",
+            "emails": ["john.hinman@intel.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
