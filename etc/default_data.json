@@ -8254,6 +8254,18 @@
             "emails": ["martin.andre@gmail.com", "m.andre@redhat.com", "martin.andre@kvhasia.com"]
         },
         {
+            "launchpad_id": "manjunath-ranganathaiah",
+            "gerrit_id": "mrangana",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Manjunath Ranganathaiah",
+            "emails": ["manjunath.ranganathaiah@intel.com"]
+        },
+        {
            "launchpad_id": "marcus-g-williams",
            "gerrit_id": "mgkwill",
            "companies": [
