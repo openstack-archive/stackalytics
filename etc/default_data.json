@@ -10703,6 +10703,18 @@
             "emails": ["ripal.nathuji@calxeda.com", "ripal@nathuji.com"]
         },
         {
+            "launchpad_id": "ritu-sood",
+            "gerrit_id": "rsood",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ritu Sood",
+            "emails": ["ritu.sood.@intel.com", "ritus.sood@gmail.com"]
+        },
+        {
             "launchpad_id": "rjpeter2",
             "companies": [
                 {
