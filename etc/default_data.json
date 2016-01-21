@@ -3663,6 +3663,18 @@
             "emails": ["dfleming@austin.rr.com", "diflemin@cisco.com", "diflemin@ebay.com", "diane.fleming@rackspace.com"]
         },
         {
+            "launchpad_id": "dileep-ranganathan",
+            "gerrit_id": "DileepRanganathan",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dileep Ranganathan",
+            "emails": ["dileep.ranganathan@intel.com"]
+        },
+        {
             "launchpad_id": "dimalg",
             "companies": [
                 {
