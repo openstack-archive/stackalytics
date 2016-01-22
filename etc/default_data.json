@@ -12670,6 +12670,21 @@
             "emails": ["svendowideit@home.org.au"]
         },
         {
+            "launchpad_id": "swaminathan-vasudevan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Swaminathan Vasudevan",
+            "emails": ["souminathan@yahoo.com", "swaminathan.vasudevan@hp.com", "swaminathan.vasudevan@hpe.com"]
+        },
+        {
             "launchpad_id": "swamireddy",
             "companies": [
                 {
