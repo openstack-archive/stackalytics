@@ -1790,6 +1790,17 @@
             "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com", "bharath.m@hpe.com"]
         },
         {
+            "launchpad_id": "binzhou",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bin Zhou",
+            "emails": ["zhou.bin9@zte.com.cn"]
+        },
+        {
             "launchpad_id": "biswajeeban",
             "companies": [
                 {
