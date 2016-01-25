@@ -1536,6 +1536,17 @@
             "emails": ["azher-ullah.khan@hp.com", "azher-ullah.khan@hpe.com", "aukhan@hp.com", "aukhan@hpe.com", "azkhan@hpe.com"]
         },
         {
+            "github_id": "azhou-nicira",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andy Zhou",
+            "emails": ["azhou@nicira.com", "azhou@ovn.org"]
+        },
+        {
             "launchpad_id": "azilli",
             "companies": [
                 {
@@ -1810,6 +1821,17 @@
             ],
             "user_name": "Biswajeeban Mishra",
             "emails": ["mishra@inf.u-szeged.hu"]
+        },
+        {
+            "github_id": "blp",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ben Pfaff",
+            "emails": ["blp@nicira.com", "blp@ovn.org"]
         },
         {
             "launchpad_id": "blueboxjesse",
@@ -6779,6 +6801,17 @@
             "emails": ["joe@topjian.net"]
         },
         {
+            "github_id": "joestringer",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Stringer",
+            "emails": ["joestringer@nicira.com", "joe@ovn.org"]
+        },
+        {
             "launchpad_id": "joffrey-k",
             "companies": [
                 {
@@ -7001,6 +7034,17 @@
             "emails": ["j.petazzoni@docker.com"]
         },
         {
+            "github_id": "jpettit",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Justin Pettit",
+            "emails": ["jpettit@nicira.com", "jpettit@ovn.org"]
+        },
+        {
             "launchpad_id": "jpichon",
             "companies": [
                 {
@@ -7021,6 +7065,17 @@
             ],
             "user_name": "Jonathan Proulx",
             "emails": ["jon@csail.mit.edu", "jon@jonproulx.com"]
+        },
+        {
+            "github_id": "jrajahalme",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jarno Rajahalme",
+            "emails": ["jrajahalme@nicira.com", "jarno@ovn.org"]
         },
         {
             "launchpad_id": "jsavak",
@@ -11879,6 +11934,17 @@
             ],
             "user_name": "Sheshananda Naidu",
             "emails": ["sheshananda.naidu@maplelabs.com"]
+        },
+        {
+            "github_id": "shettyg",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gurucharan Shetty",
+            "emails": ["shettyg@nicira.com", "guru@ovn.org"]
         },
         {
             "launchpad_id": "shilla-saebi",
