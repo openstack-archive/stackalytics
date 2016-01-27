@@ -7717,6 +7717,17 @@
             "emails": ["kurt.f.martin@hp.com", "kurt.f.martin@hpe.com"]
         },
         {
+            "launchpad_id": "kyle-jorgensen",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kyle Jorgensen",
+            "emails": ["kyle.jorgensen@workday.com"]
+        },
+        {
             "launchpad_id": "kylestev",
             "companies": [
                 {
