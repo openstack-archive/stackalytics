@@ -6942,6 +6942,22 @@
             "emails": ["j3p0uk@hotmail.com", "jonpsull@cisco.com", "jonpaul.sullivan@hp.com"]
         },
         {
+            "launchpad_id": "joon-myung-kang",
+            "gerrit_id": "joonmyung",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joon-Myung Kang",
+            "emails": ["joonmyung.kang@gmail.com", "joon-myung.kang@hp.com", "joon-myung.kang@hpe.com"]
+        },
+        {
             "launchpad_id": "jordan-pittier",
             "companies": [
                 {
