@@ -6654,6 +6654,17 @@
             "emails": ["john.hinman@intel.com"]
         },
         {
+            "launchpad_id": "ji-xuepeng",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xuepeng Ji",
+            "emails": ["ji.xuepeng@zte.com.cn"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
