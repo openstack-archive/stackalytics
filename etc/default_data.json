@@ -13995,6 +13995,18 @@
             "emails": ["vpvutharkar@ebaysf.com"]
         },
         {
+            "launchpad_id": "w-miller",
+            "gerrit_id": "w-miller",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Will Miller",
+            "emails": ["wmiller@cray.com"]
+        },
+        {
             "launchpad_id": "w-wanghong",
             "companies": [
                 {
