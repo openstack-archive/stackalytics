@@ -12959,6 +12959,22 @@
             ]
         },
         {
+            "launchpad_id": "tangchen",
+            "gerrit_id": "tangchen",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2016-Jan-28"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tang Chen",
+            "emails": ["chen.tang@easystack.cn", "tangchen@cn.fujitsu.com", "imtangchen@gmail.com"]
+        },
+        {
             "launchpad_id": "tangmeiyan77",
             "companies": [
                 {
