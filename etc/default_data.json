@@ -3610,6 +3610,10 @@
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
+                    "end_date": "2015-Dec-31"
+                },
+                {
+                    "company_name": "SAP",
                     "end_date": null
                 }
             ],
