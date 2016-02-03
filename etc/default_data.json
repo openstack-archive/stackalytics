@@ -14141,6 +14141,18 @@
             "emails": ["wangzhh@awcloud.com", "wzh_1993@126.com"]
         },
         {
+            "launchpad_id": "wanlong-gao",
+            "gerrit_id": "allen",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Allen Gao",
+            "emails": ["wanlong.gao@gmail.com", "wanlong.gao@easystack.cn"]
+        },
+        {
             "launchpad_id": "wchrisjohnson",
             "companies": [
                 {
