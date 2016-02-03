@@ -5853,10 +5853,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2015-Sep-16"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
                 }
             ],
             "user_name": "Prashanth Hari",
-            "emails": ["prashanth_hari@cable.comcast.com", "hvprash@gmail.com"]
+            "emails": ["prashanth_hari@cable.comcast.com", "prashanth.hari@walmart.com", "hvprash@gmail.com"]
         },
         {
             "launchpad_id": "hwbi2008",
