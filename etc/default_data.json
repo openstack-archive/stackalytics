@@ -10701,6 +10701,17 @@
             "emails": ["reachharkirat@gmail.com", "harkirat@brocade.com"]
         },
         {
+            "launchpad_id": "realitix",
+            "companies": [
+                {
+                    "company_name": "Thales",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jean-Sebastien Bevilacqua",
+            "emails": ["realitix@gmail.com", "jean-sebastien.bevilacqua@thalesgroup.com"]
+        },
+        {
             "launchpad_id": "redbo",
             "companies": [
                 {
