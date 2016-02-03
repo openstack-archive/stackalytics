@@ -5233,6 +5233,17 @@
             "emails": ["graham@hayes.ie", "graham.hayes@hp.com", "graham@managedit.ie", "graham.hayes@hpe.com"]
         },
         {
+            "launchpad_id": "gregfaust",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Greg Faust",
+            "emails": ["gregfaust@gmail.com","gregory_faust@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "greghaynes",
             "companies": [
                 {
