@@ -1314,6 +1314,17 @@
             "emails": ["arnaud.jost@ovh.net"]
         },
         {
+            "launchpad_id": "arnaud-morin",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arnaud Morin",
+            "emails": ["arnaud.morin@corp.ovh.net", "arnaud.morin@gmail.com"]
+        },
+        {
             "launchpad_id": "arnaudleg",
             "companies": [
                 {
