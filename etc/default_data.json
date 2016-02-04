@@ -6957,6 +6957,22 @@
             "emails": ["johnson.dantis@hp.com"]
         },
         {
+            "launchpad_id": "jokke",
+            "gerrit_id": "jokke",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2016-Feb-03"
+                }
+            ],
+            "user_name": "Erno Kuvaja",
+            "emails": ["jokke@usr.fi", "jokke@hp.com"]
+        },
+        {
             "launchpad_id": "jonpaul-sullivan",
             "companies": [
                 {
