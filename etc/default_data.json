@@ -7317,11 +7317,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Jan-20"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
             "user_name": "Kanagaraj Manickam",
-            "emails": ["mkr1481@gmail.com", "kanagaraj.manickam@hp.com", "kanagaraj.manickam@hpe.com"]
+            "emails": ["mkr1481@gmail.com", "kanagaraj.manickam@hp.com", "kanagaraj.manickam@hpe.com", "kanagaraj.manickam@huawei.com"]
         },
         {
             "launchpad_id": "kannan",
