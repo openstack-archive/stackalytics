@@ -7227,6 +7227,17 @@
             "emails": ["justin@fathomdb.com", "superstack@superstack.org"]
         },
         {
+            "launchpad_id": "justin-howard",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Justin Howard",
+            "emails": ["justin_howard@cable.comcast.com"]
+        },
+        {
             "launchpad_id": "jwy",
             "companies": [
                 {
