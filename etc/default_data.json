@@ -18021,6 +18021,11 @@
             "uri": "git://git.opnfv.org/bottlenecks.git"
         },
         {
+            "module": "fuel@opnfv",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/fuel.git"
+        },
+        {
             "module": "doctor",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/doctor.git"
