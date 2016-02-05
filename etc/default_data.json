@@ -10749,6 +10749,17 @@
             "emails": ["michael.barton@rackspace.com", "mike@weirdlooking.com", "mike-launchpad@weirdlooking.com"]
         },
         {
+            "launchpad_id": "reddfoxx",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Giles Fox",
+            "emails": ["reddfoxx@gmail.com", "giles_fox@comcast.com"]
+        },
+        {
             "launchpad_id": "reldan",
             "companies": [
                 {
