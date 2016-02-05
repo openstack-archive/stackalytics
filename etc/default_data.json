@@ -9856,6 +9856,18 @@
             "emails": ["novel.kumar@gmail.com"]
         },
         {
+            "launchpad_id": "npustchi",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Navid Pustchi",
+            "emails": ["npustchi@gmail.com", "navid.pustchi@intel.com"]
+
+        },
+        {
             "launchpad_id": "ntata",
             "companies": [
                 {
