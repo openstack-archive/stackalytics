@@ -12220,6 +12220,17 @@
             "emails": ["sibaoli@gmail.com", "bao.li@kylin-cloud.com"]
         },
         {
+            "launchpad_id": "sigmavirus24",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ian Cordasco",
+            "emails": ["graffatcolmingov@gmail.com", "ian.cordasco@rackspace.com"]
+        },
+        {
             "launchpad_id": "sileht",
             "companies": [
                 {
