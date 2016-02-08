@@ -4228,6 +4228,18 @@
             "emails": ["lalasjtu@gmail.com", "penfzhan@cisco.com"]
         },
         {
+            "launchpad_id": "eantyshev",
+            "gerrit_id": "eantyshev",
+            "companies": [
+                {
+                    "company_name": "Virtuozzo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evgeny Antyshev",
+            "emails": ["eantyshev@parallels.com", "eantyshev@virtuozzo.com"]
+        },
+        {
            "launchpad_id": "earthdragon77",
            "gerrit_id": "Mahito",
            "companies": [
@@ -8946,6 +8958,18 @@
             "emails": ["andy.rothfusz@docker.com"]
         },
         {
+            "launchpad_id": "mfeoktistov",
+            "gerrit_id": "mfeoktistov",
+            "companies": [
+                {
+                    "company_name": "Virtuozzo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mikhail Feoktistov",
+            "emails": ["mfeoktistov@parallels.com", "mfeoktistov@virtuozzo.com"]
+        },
+        {
             "launchpad_id": "mfisch",
             "companies": [
                 {
@@ -9259,6 +9283,18 @@
             ],
             "user_name": "Mark Muehl",
             "emails": ["mmuehl@gmail.com"]
+        },
+        {
+            "launchpad_id": "mnestratov",
+            "gerrit_id": "mnestratov",
+            "companies": [
+                {
+                    "company_name": "Virtuozzo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maxim Nestratov",
+            "emails": ["mnestratov@parallels.com", "mnestratov@virtuozzo.com"]
         },
         {
             "launchpad_id": "mohankumar-n",
@@ -16519,6 +16555,11 @@
             "domains": ["virtualtech.jp"],
             "company_name": "Virtualtech",
             "aliases": ["VirtualTech Japan Inc."]
+        },
+        {
+            "domains": ["virtuozzo.com", "openvz.org"],
+            "company_name": "Virtuozzo",
+            "aliases": ["OpenVZ"]
         },
         {
             "domains": ["vmturbo.com"],
