@@ -2785,6 +2785,21 @@
            "emails": ["swapnilkulkarni2608@gmail.com", "coolsvap@redhat.com", "coolsvap@gmail.com", "me@coolsvap.net"]
         },
         {
+            "launchpad_id": "coreypobrien",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2015-Jul-20"
+                },
+                {
+                     "company_name": "Rackspace",
+                     "end_date": null
+                }
+            ],
+            "user_name": "Corey O'Brien",
+            "emails": ["coreypobrien@gmail.com", "corey.obrien@rackspace.com"]
+        },
+        {
             "launchpad_id": "corvus",
             "companies": [
                 {
