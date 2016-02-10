@@ -8607,6 +8607,17 @@
             "emails": ["mark.mcclain@dreamhost.com", "mmcclain@yahoo-inc.com", "mark@akanda.io", "mark@mcclain.xyz"]
         },
         {
+            "launchpad_id": "markstgodard",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark St.Godard",
+            "emails": ["markstgodard@gmail.com"]
+        },
+        {
             "launchpad_id": "markus-groben",
             "gerrit_id": "markus-groben",
             "companies": [
