@@ -10162,6 +10162,17 @@
             "emails": ["aparathyras@stackmasters.eu"]
         },
         {
+            "launchpad_id": "patanella",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guido Patanella",
+            "emails": ["patanella@gmail.com"]
+        },
+        {
             "launchpad_id": "patrick-crews",
             "companies": [
                 {
