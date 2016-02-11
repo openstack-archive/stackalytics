@@ -9364,6 +9364,18 @@
             "emails": ["nmohankumar1011@gmail.com", "mohankumar.n@huawei.com"]
         },
         {
+           "launchpad_id": "mohit-motiani",
+           "gerrit_id": "mohit.motiani",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Mohit Motiani",
+           "emails": ["mohit.motiani@intel.com"]
+        },
+        {
             "launchpad_id": "mordred",
             "github_id": "emonty",
             "companies": [
