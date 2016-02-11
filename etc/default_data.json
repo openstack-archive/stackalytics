@@ -7459,6 +7459,18 @@
             "emails": ["kanzhe.jiang@bigswitch.com", "kanzhe@gmail.com"]
         },
         {
+           "launchpad_id": "karthik-prabhu-vinod",
+           "gerrit_id": "kprabhuv",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Karthik Prabhu Vinod",
+           "emails": ["karthik.prabhu.vinod@intel.com"]
+        },
+        {
             "launchpad_id": "kasey-alusi",
             "companies": [
                 {
