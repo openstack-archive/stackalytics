@@ -8524,6 +8524,17 @@
             "emails": ["luckyvega.g@gmail.com", "caizhiyuan1@huawei.com"]
         },
         {
+            "launchpad_id": "luis-daniel-castellanos",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Castellanos",
+            "emails": ["luis.daniel.castellanos@intel.com", "daniel.castellanos0289@gmail.com"]
+        },
+        {
             "launchpad_id": "luke-larussa",
             "companies": [
                 {
