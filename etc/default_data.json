@@ -12921,6 +12921,17 @@
             "emails": ["stig.openstack@telfer.org", "stelfer@cray.com"]
         },
         {
+            "launchpad_id": "strigazi",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Spyros Trigazis",
+            "emails": ["strigazi@gmail.com", "spyridon.trigazis@cern.ch"]
+        },
+        {
             "launchpad_id": "subbu",
             "companies": [
                 {
