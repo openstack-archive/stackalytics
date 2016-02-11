@@ -2310,6 +2310,20 @@
             "emails": ["chdent@redhat.com", "cdent@anticdent.org", "cdent@mirantis.com", "chris.dent@gmail.com"]
         },
         {
+            "launchpad_id": "celik-esra",
+            "gerrit_id": "esracelik",
+            "companies": [
+                {
+                    "company_name": "TUBITAK",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Esra Celik",
+            "emails": [
+                "celik.esra@tubitak.gov.tr"
+            ]
+        },
+        {
             "launchpad_id": "cerberus",
             "companies": [
                 {
@@ -16522,6 +16536,10 @@
         {
             "domains": ["toronto.edu"],
             "company_name": "University of Toronto"
+        },
+        {
+            "domains": ["tubitak.gov.tr"],
+            "company_name": "TUBITAK"
         },
         {
             "domains": ["tunnelvisionlabs.com"],
