@@ -376,6 +376,21 @@
             "emails": ["scott.adkins@walmart.com", "scott_adkins@cable.comcast.com", "adkinss@gmail.com"]
         },
         {
+            "launchpad_id": "adolfo-duarte",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adolfo Duarte",
+            "emails": ["adolfo.duarte@hp.com", "adolfo.duarte@hpe.com"]
+        },
+        {
             "launchpad_id": "adriansmith",
             "companies": [
                 {
