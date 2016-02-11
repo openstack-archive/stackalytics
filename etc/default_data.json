@@ -8350,6 +8350,18 @@
             "emails": ["luwei@awcloud.com"]
         },
         {
+            "launchpad_id": "luz-cazares",
+            "gerrit_id": "luzcazares",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Luz Cazares",
+            "emails": ["luz.cazares@intel.com"]
+        },
+        {
             "launchpad_id": "lxstar01",
             "companies": [
                 {
