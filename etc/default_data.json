@@ -7222,6 +7222,18 @@
             "emails": ["jrajahalme@nicira.com", "jarno@ovn.org"]
         },
         {
+            "launchpad_id": "jrod-d",
+            "gerrit_id": "jrod",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Rodriguez Jr",
+            "emails": ["jrod@rackspace.com"]
+        },
+        {
             "launchpad_id": "jsavak",
             "companies": [
                 {
