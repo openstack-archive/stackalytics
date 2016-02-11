@@ -3696,6 +3696,21 @@
             "emails": ["pranav@aptira.com", "dguitarbite@gmail.com"]
         },
         {
+            "launchpad_id": "dguryanov",
+            "companies": [
+                {
+                    "company_name": "Virtuozzo",
+                    "end_date": "2016-Feb-07"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dmitry Guryanov",
+            "emails": ["dguryanov@mirantis.com", "dguryanov@virtuozzo.com", "dguryanov@parallels.com"]
+        },
+        {
             "launchpad_id": "dhami",
             "companies": [
                 {
