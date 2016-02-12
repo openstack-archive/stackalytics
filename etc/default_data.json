@@ -6353,6 +6353,18 @@
             "emails": ["yueli.m@gmail.com", "james.li@rackspace.com"]
         },
         {
+            "launchpad_id": "james-o-benson",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JamesOBenson",
+            "emails": ["james.o.benson@gmail.com"]
+        },
+
+        {
             "launchpad_id": "james-reeves5546",
             "companies": [
                 {
