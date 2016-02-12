@@ -11219,6 +11219,18 @@
             "emails": ["rlucio@vmem.com"]
         },
         {
+            "launchpad_id": "rmevans88",
+            "gerrit_id": "rmevans",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ryan Evans",
+            "emails": ["rmevans88@gmail.com"]
+        },
+        {
             "launchpad_id": "rmoore08",
             "companies": [
                 {
