@@ -4326,6 +4326,18 @@
             "emails": ["ed@leafe.com", "ed@openstack.org"]
         },
         {
+            "launchpad_id": "ediardo",
+            "gerrit_id": "ediardo",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eddie Ramirez",
+            "emails": ["eddie.ramirez@intel.com", "djedi.r@gmail.com"]
+        },
+        {
             "launchpad_id": "edward-hope-morley",
             "companies": [
                 {
