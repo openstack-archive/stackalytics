@@ -1268,6 +1268,18 @@
             "emails": ["apps.desh@gmail.com", "aproovad@tintri.com"]
         },
         {
+           "launchpad_id": "aqsa-fatima2011",
+           "gerrit_id": "Aqsaxvv092",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Aqsa Fatima",
+           "emails": [ "aqsa.fatima2011@gmail.com"]
+        },
+        {
             "launchpad_id": "aradhana1-singh",
             "gerrit_id": "asingh",
             "companies": [
