@@ -10032,6 +10032,18 @@
             "user_name": "Wei Tie",
             "emails": ["nuaafe@gmail.com", "wtie@cisco.com"]
         },
+      {
+            "launchpad_id": "nugguviswanathcse",
+            "gerrit_id": "nuggu",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Viswanath Nuggu",
+            "emails": ["nugguviswanathcse@gmail.com"]
+        },
         {
             "launchpad_id": "o-lemasle",
             "gerrit_id": "olivierlemasle",
