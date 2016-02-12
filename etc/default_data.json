@@ -13937,6 +13937,18 @@
             "emails": ["vandita_arora@cable.comcast.com"]
         },
         {
+            "launchpad_id": "varun-vr850",
+            "gerrit_id": "Varunkvn",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Varun Kavalipurapu",
+            "emails": ["varun.vr850@gmail.com"]
+        },
+        {
             "launchpad_id": "vbatts",
             "companies": [
                 {
