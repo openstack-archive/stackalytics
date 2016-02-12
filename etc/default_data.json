@@ -1268,6 +1268,18 @@
             "emails": ["apps.desh@gmail.com", "aproovad@tintri.com"]
         },
         {
+            "launchpad_id": "aradhana1-singh",
+            "gerrit_id": "asingh",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aradhana Singh",
+            "emails": ["aradhana1.singh@intel.com"]
+        },
+        {
             "launchpad_id": "arahal",
             "companies": [
                 {
