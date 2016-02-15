@@ -3125,6 +3125,17 @@
             "emails": ["daisy.ycguo@gmail.com", "guoyingc@cn.ibm.com"]
         },
         {
+            "launchpad_id": "dalees",
+            "companies": [
+                {
+                    "company_name": "Catalyst IT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dale Smith",
+            "emails": ["dale@catalyst-eu.net", "dale@catalyst.net.nz", "dalees@gmail.com"]
+        },
+        {
             "launchpad_id": "damien-rannou",
             "companies": [
                 {
