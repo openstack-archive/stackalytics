@@ -5858,6 +5858,17 @@
             "emails": ["hovyakov@gmail.com", "hovyakov@griddynamics.com", "dkhovyakov@griddynamics.com"]
         },
         {
+            "launchpad_id": "howardthegeek",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Howard Abrams",
+            "emails": ["howard.abrams@gmail.com"]
+        },
+        {
             "launchpad_id": "hpeter",
             "companies": [
                 {
@@ -9703,6 +9714,17 @@
             ],
             "user_name": "Nachi Ueno",
             "emails": ["nachi@nttmcl.com", "nachi@ntti3.com", "openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
+        },
+        {
+            "launchpad_id": "ndonegan",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Niall Donegan",
+            "emails": ["niall.donegan@workday.com"]
         },
         {
             "launchpad_id": "neethi209",
