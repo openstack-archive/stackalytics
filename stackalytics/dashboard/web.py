@@ -402,6 +402,32 @@ def get_bpd(records, **kwargs):
     return result
 
 
+@app.route('/api/1.0/stats/languages')
+@decorators.exception_handler()
+@decorators.response()
+@decorators.cached()
+@decorators.jsonify('stats')
+@decorators.record_filter()
+def get_languages(records, **kwargs):
+    result = []
+    languages = collections.defaultdict(int)
+    for record in records:
+        if record.record_type in ['tr']:
+            languages[record.value] += record.loc
+
+    for lang, val in six.iteritems(languages):
+        result.append({
+            'id': lang,
+            'name': lang,
+            'metric': val,
+        })
+
+    result.sort(key=lambda x: x['metric'], reverse=True)
+    utils.add_index(result)
+
+    return result
+
+
 @app.route('/api/1.0/users')
 @decorators.exception_handler()
 @decorators.response()
@@ -587,12 +613,16 @@ def timeline(records, **kwargs):
     week_stat_commits = dict((c, 0) for c in weeks)
     week_stat_commits_hl = dict((c, 0) for c in weeks)
 
+    commits_handler = lambda record: 1
+    if 'translations' in metric:
+        commits_handler = lambda record: record.loc
+
     if ('commits' in metric) or ('loc' in metric):
-        handler = lambda record: record.loc
+        loc_handler = lambda record: record.loc
     elif 'ci' in metric:
-        handler = lambda record: 0 if record.value else 1
+        loc_handler = lambda record: 0 if record.value else 1
     else:
-        handler = lambda record: 0
+        loc_handler = lambda record: 0
 
     # fill stats with the data
     if 'person-day' in metric:
@@ -616,14 +646,14 @@ def timeline(records, **kwargs):
         for record in records:
             week = record.week
             if start_week <= week < end_week:
-                week_stat_loc[week] += handler(record)
-                week_stat_commits[week] += 1
+                week_stat_loc[week] += loc_handler(record)
+                week_stat_commits[week] += commits_handler(record)
                 if 'members' in metric:
                     if record.date >= start_date:
                         week_stat_commits_hl[week] += 1
                 else:
                     if record.release == release_name:
-                        week_stat_commits_hl[week] += 1
+                        week_stat_commits_hl[week] += commits_handler(record)
 
     if 'all' == release_name and 'members' not in metric:
         week_stat_commits_hl = week_stat_commits

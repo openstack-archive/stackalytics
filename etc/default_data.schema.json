@@ -21,6 +21,9 @@
                     "ldap_id": {
                         "type": "string"
                     },
+                    "zanata_id": {
+                        "type": "string"
+                    },
                     "user_name": {
                         "type": "string"
                     },

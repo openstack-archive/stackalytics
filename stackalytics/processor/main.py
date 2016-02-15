@@ -34,6 +34,7 @@ from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import utils
 from stackalytics.processor import vcs
+from stackalytics.processor import zanata
 
 LOG = logging.getLogger(__name__)
 
@@ -180,6 +181,15 @@ def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
     runtime_storage_inst.set_records(processed_mail_iterator)
 
 
+def _process_translation_stats(runtime_storage_inst, record_processor_inst):
+    translation_iterator = zanata.log(runtime_storage_inst,
+                                      cfg.CONF.translation_team_uri)
+    translation_iterator_typed = _record_typer(translation_iterator, 'i18n')
+    processed_translation_iterator = record_processor_inst.process(
+        translation_iterator_typed)
+    runtime_storage_inst.set_records(processed_translation_iterator)
+
+
 def _process_member_list(uri, runtime_storage_inst, record_processor_inst):
     member_iterator = mps.log(uri, runtime_storage_inst,
                               cfg.CONF.days_to_update_members,
@@ -226,6 +236,9 @@ def process(runtime_storage_inst, record_processor_inst):
     for mail_list in mail_lists:
         _process_mail_list(mail_list, runtime_storage_inst,
                            record_processor_inst)
+
+    LOG.info('Processing translations stats')
+    _process_translation_stats(runtime_storage_inst, record_processor_inst)
 
     _post_process_records(record_processor_inst, repos)
 

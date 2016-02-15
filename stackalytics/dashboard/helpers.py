@@ -200,6 +200,7 @@ def get_contribution_summary(records):
     patch_set_count = 0
     change_request_count = 0
     abandoned_change_requests_count = 0
+    translations = 0
 
     for record in records:
         record_type = record.record_type
@@ -236,6 +237,8 @@ def get_contribution_summary(records):
             change_request_count += 1
             if record.status == 'ABANDONED':
                 abandoned_change_requests_count += 1
+        elif record_type == 'tr':
+            translations += record.loc
 
     result = {
         'drafted_blueprint_count': drafted_blueprint_count,
@@ -249,6 +252,7 @@ def get_contribution_summary(records):
         'patch_set_count': patch_set_count,
         'change_request_count': change_request_count,
         'abandoned_change_requests_count': abandoned_change_requests_count,
+        'translations': translations,
     }
     return result
 
