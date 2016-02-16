@@ -12328,6 +12328,17 @@
             "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com", "shanthakumar.k@hpe.com"]
         },
         {
+            "launchpad_id": "shawnmaten",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shawn Aten",
+            "emails": ["shawnmaten@gmail.com"]
+        },
+        {
             "launchpad_id": "sheshananda",
             "github_id": "sheshanand",
             "gerrit_id": "sheshananda",
