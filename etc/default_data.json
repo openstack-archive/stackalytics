@@ -366,10 +366,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2015-Sep-16"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
                 }
             ],
             "user_name": "Scott Adkins",
-            "emails": ["scott_adkins@cable.comcast.com", "adkinss@gmail.com"]
+            "emails": ["scott.adkins@walmart.com", "scott_adkins@cable.comcast.com", "adkinss@gmail.com"]
         },
         {
             "launchpad_id": "adriansmith",
