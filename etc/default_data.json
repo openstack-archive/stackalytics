@@ -2774,6 +2774,17 @@
             "emails": ["clint@fewbar.com", "clint.byrum@hp.com", "clint@ubuntu.com", "cbyrum@us.ibm.com"]
         },
         {
+            "launchpad_id": "cloudhollyb",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Holly Bazemore",
+            "emails": ["cloudhollyb@gmail.com"]
+        },
+        {
             "launchpad_id": "cmsj",
             "companies": [
                 {
@@ -8437,6 +8448,17 @@
             "emails": ["luckyvega.g@gmail.com", "caizhiyuan1@huawei.com"]
         },
         {
+            "launchpad_id": "luke-larussa",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Luke Larussa",
+            "emails": ["luke.larussa@gmail.com"]
+        },
+        {
             "launchpad_id": "luwei",
             "companies": [
                 {
@@ -10567,6 +10589,17 @@
             ],
             "user_name": "Martin Englund",
             "emails": ["martin@englund.nu"]
+        },
+        {
+            "github_id": "pnkmtt",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Panik",
+            "emails": ["pnkmtt@gmail.com"]
         },
         {
             "launchpad_id": "ppawan",
