@@ -7241,6 +7241,18 @@
             "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org"]
         },
         {
+            "launchpad_id": "joshuatrivette",
+            "gerrit_id": "trivette",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joshua Trivette",
+            "emails": ["joshuatrivette@gmail.com"]
+        },
+        {
             "github_id": "jpetazzo",
             "companies": [
                 {
