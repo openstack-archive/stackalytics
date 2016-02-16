@@ -10568,6 +10568,17 @@
             "emails": ["ppawan@hp.com", "phani.p3@gmail.com", "ppawan@hpe.com"]
         },
         {
+            "launchpad_id": "ppiela",
+            "companies": [
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peter Piela",
+            "emails": ["ppiela@cray.com"]
+        },
+        {
             "launchpad_id": "pradeep-av",
             "companies": [
                 {
