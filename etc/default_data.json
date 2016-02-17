@@ -2459,6 +2459,17 @@
             "emails": ["chanwit@gmail.com"]
         },
         {
+            "launchpad_id": "chdzsp",
+            "companies": [
+                {
+                    "company_name": "Kylin Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhong Shengping",
+            "emails": ["chdzsp@163.com", "shengping.zhong@kylin-cloud.com", "chdzsp@gmail.com"]
+        },
+        {
             "launchpad_id": "chelsea-winfree",
             "gerrit_id": "chellygel",
             "companies": [
