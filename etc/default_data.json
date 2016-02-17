@@ -10277,6 +10277,18 @@
             "emails": ["pablo.a.fuente@intel.com"]
         },
         {
+            "launchpad_id": "palecrow",
+            "gerrit_id": "mborland",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Borland",
+            "emails": ["matt.borland@hpe.com", "matt.borland@hp.com", "palecrow@gmail.com"]
+        },
+        {
             "launchpad_id": "palvarez89",
             "gerrit_id": "pedroalvarez",
             "github_id": "palvarez89",
