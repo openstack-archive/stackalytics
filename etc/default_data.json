@@ -1111,6 +1111,18 @@
             "emails": ["anne@openstack.org", "anne.gentle@rackspace.com", "annegentle@justwriteclick.com"]
         },
         {
+            "launchpad_id": "annie-lezil",
+            "gerrit_id": "alezil",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Annie Lezil",
+            "emails": ["annie.lezil@gmail.com"]
+        },
+        {
             "launchpad_id": "anotherjesse",
             "companies": [
                 {
