@@ -169,6 +169,8 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
         {%elif record_type == "member" %}
             <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
+        {%elif record_type == "tr" %}
+            <div class="header">Translated ${loc} terms into ${language}</div>
         {%/if%}
     </div>
     </div>

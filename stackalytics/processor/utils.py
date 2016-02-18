@@ -27,6 +27,7 @@ from oslo_log import log as logging
 import requests
 import requests_file
 import six
+import yaml
 
 
 LOG = logging.getLogger(__name__)
@@ -121,7 +122,8 @@ def _session_request(session, uri, method):
     session.mount('file://', requests_file.FileAdapter())
     user_agent = random.choice(user_agents)
 
-    return session.request(method, uri, headers={'User-Agent': user_agent},
+    headers = {'User-Agent': user_agent, 'Accept': 'application/json'}
+    return session.request(method, uri, headers=headers,
                            timeout=cfg.CONF.read_timeout)
 
 
@@ -146,6 +148,14 @@ def read_json_from_uri(uri, session=None):
         return do_request(uri, session=session).json()
     except Exception as e:
         LOG.warning('Error "%(error)s" parsing json from uri %(uri)s',
+                    {'error': e, 'uri': uri})
+
+
+def read_yaml_from_uri(uri):
+    try:
+        return yaml.safe_load(read_uri(uri))
+    except Exception as e:
+        LOG.warning('Error "%(error)s" parsing yaml from uri %(uri)s',
                     {'error': e, 'uri': uri})
 
 

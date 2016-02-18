@@ -96,7 +96,8 @@ class RecordProcessor(object):
                     return self.domains_index[m]
         return None
 
-    def _create_user(self, launchpad_id, email, gerrit_id, user_name):
+    def _create_user(self, launchpad_id, email, gerrit_id, zanata_id,
+                     user_name):
         company = (self._get_company_by_email(email) or
                    self._get_independent())
         emails = []
@@ -104,7 +105,8 @@ class RecordProcessor(object):
             emails = [email]
         user = {
             'user_id': user_processor.make_user_id(
-                emails=emails, launchpad_id=launchpad_id, gerrit_id=gerrit_id),
+                emails=emails, launchpad_id=launchpad_id, gerrit_id=gerrit_id,
+                zanata_id=zanata_id),
             'launchpad_id': launchpad_id,
             'user_name': user_name or '',
             'companies': [{
@@ -115,6 +117,8 @@ class RecordProcessor(object):
         }
         if gerrit_id:
             user['gerrit_id'] = gerrit_id
+        if zanata_id:
+            user['zanata_id'] = zanata_id
         return user
 
     def _get_lp_info(self, email):
@@ -182,7 +186,8 @@ class RecordProcessor(object):
 
         # collect ordinary fields
         for key in ['seq', 'user_name', 'user_id', 'gerrit_id', 'github_id',
-                    'launchpad_id', 'companies', 'static', 'ldap_id']:
+                    'launchpad_id', 'companies', 'static', 'ldap_id',
+                    'zanata_id']:
             value = next((v.get(key) for v in user_profiles if v.get(key)),
                          None)
             if value:
@@ -255,19 +260,34 @@ class RecordProcessor(object):
         else:
             user_g = {}
 
+        zanata_id = record.get('zanata_id')
+        if zanata_id:
+            user_z = user_processor.load_user(
+                self.runtime_storage_inst, zanata_id=zanata_id) or {}
+            if ((not user_z) and (not launchpad_id) and
+                    (not user_e.get('launchpad_id'))):
+                # query LP
+                guessed_lp_id = zanata_id
+                user_name = self._get_lp_user_name(guessed_lp_id)
+                if user_name != guessed_lp_id:
+                    launchpad_id = guessed_lp_id
+        else:
+            user_z = {}
+
         user_l = user_processor.load_user(
             self.runtime_storage_inst, launchpad_id=launchpad_id) or {}
 
-        if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq')) and
-                user_e.get('seq')):
+        if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq') ==
+             user_z.get('seq')) and user_e.get('seq')):
             # sequence numbers are set and the same, merge is not needed
             user = user_e
         else:
-            user = self._create_user(launchpad_id, email, gerrit_id, user_name)
+            user = self._create_user(launchpad_id, email, gerrit_id, zanata_id,
+                                     user_name)
 
-            if user_e or user_l or user_g:
+            if user_e or user_l or user_g or user_z:
                 user = self._merge_user_profiles(
-                    [user_e, user_l, user_g, user])
+                    [user_e, user_l, user_g, user_z, user])
             else:
                 # create new
                 if not user_name:
@@ -586,6 +606,24 @@ class RecordProcessor(object):
 
         yield ci_vote
 
+    def _process_translation(self, record):
+        # todo split translation and approval
+        translation = record.copy()
+        user_id = user_processor.make_user_id(zanata_id=record['zanata_id'])
+
+        translation['record_type'] = 'tr'
+        translation['primary_key'] = '%s:%s:%s' % (
+            user_id, record['module'], record['date'])
+        translation['author_name'] = user_id
+
+        # following fields are put into standard fields stored in dashboard mem
+        translation['loc'] = record['translated']
+        translation['value'] = record['language']
+
+        self._update_record_and_user(translation)
+
+        yield translation
+
     def _renew_record_date(self, record):
         record['week'] = utils.timestamp_to_week(record['date'])
         if ('release' not in record) or (not record['release']):
@@ -600,6 +638,7 @@ class RecordProcessor(object):
             'bug': self._process_bug,
             'member': self._process_member,
             'ci': self._process_ci,
+            'i18n': self._process_translation,
         }
 
         for record in record_iterator:

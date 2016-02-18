@@ -19,6 +19,7 @@ usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
                               [--ssh-key-filename SSH_KEY_FILENAME]
                               [--ssh-username SSH_USERNAME]
                               [--syslog-log-facility SYSLOG_LOG_FACILITY]
+                              [--translation-team-uri TRANSLATION_TEAM_URI]
                               [--use-syslog] [--use-syslog-rfc-format]
                               [--verbose] [--version] [--watch-log-file]
 
@@ -96,6 +97,8 @@ optional arguments:
   --syslog-log-facility SYSLOG_LOG_FACILITY
                         Syslog facility to receive log lines. This option is
                         ignored if log_config_append is set.
+  --translation-team-uri TRANSLATION_TEAM_URI
+                        URI for translation team data
   --use-syslog          Use syslog for logging. Existing syslog format is
                         DEPRECATED and will be changed later to honor RFC5424.
                         This option is ignored if log_config_append is set.
