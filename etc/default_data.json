@@ -10921,6 +10921,18 @@
             "emails": ["joe.hakim.rahme@enovance.com", "jhakimra@redhat.com"]
         },
         {
+            "launchpad_id": "rahuldantuluri",
+            "gerrit_id": "RahulDV",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Venkat Rahul Dantuluri",
+            "emails": ["rahuldantuluri@gmail.com"]
+        },
+        {
             "launchpad_id": "rahulunair",
             "gerrit_id": "rahulunair",
             "companies": [
