@@ -11699,10 +11699,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2015-Sep-16"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
                 }
             ],
             "user_name": "Megan Rossetti",
-            "emails": ["megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
+            "emails": ["megan.rossetti@walmart.com", "megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
         },
         {
             "launchpad_id": "rosso-af",
