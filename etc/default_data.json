@@ -7859,6 +7859,18 @@
             "emails": ["lakshman@aptira.com", "vit.lakshman@gmail.com"]
         },
         {
+            "launchpad_id": "kn-matsumoto",
+            "gerrit_id": "kn-matsumoto",
+            "companies": [
+                {
+                    "company_name": "KDDI",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kentaro Matsumoto",
+            "emails": ["kn-matsumoto@kddi.com"]
+        },
+        {
             "launchpad_id": "kong",
             "gerrit_id": "kong",
             "companies": [
@@ -16296,6 +16308,10 @@
         {
             "domains": ["kau.se"],
             "company_name": "Karlstad Universitet"
+        },
+        {
+            "domains": ["kddi.com"],
+            "company_name": "KDDI"
         },
         {
             "domains": ["kent.ac.uk"],
