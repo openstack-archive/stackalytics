@@ -14643,6 +14643,17 @@
             "emails": ["wl3617@qq.com", "long.wang@bj.cs2c.com.cn", "wanglong@cse.buaa.edu.cn"]
         },
         {
+            "launchpad_id": "wangwenjun",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "WenjunWang1992",
+            "emails": ["10191230@zte.com.cn"]
+        },
+        {
             "launchpad_id": "wangxf-s",
             "companies": [
                 {
