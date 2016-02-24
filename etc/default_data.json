@@ -10511,6 +10511,22 @@
             "emails": ["pbozeman@gmail.com"]
         },
         {
+            "launchpad_id": "pckruith",
+            "gerrit_id": "pkruithofjr",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": "2015-Dec-01"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pieter Kruithof",
+            "emails": ["pkruithofjr@gmail.com","pieter.c.kruithof-jr@hp.com","pieter.kruithof.jr@intel.com"]
+        },
+        {
             "launchpad_id": "pcp33307",
             "companies": [
                 {
