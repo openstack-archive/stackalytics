@@ -1539,6 +1539,21 @@
             "emails": ["atomic@tesora.com", "atomic777@gmail.com"]
         },
         {
+            "launchpad_id": "auggy",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Augustina Ragwitz",
+            "emails": ["aragwitz+lp@pobox.com", "aragwitz+openstack@pobox.com", "augustina.ragwitz@hp.com", "augustina.ragwitz@hpe.com", "auggy@cpan.org"]
+        },
+        {
             "launchpad_id": "aurlapova",
             "companies": [
                 {
@@ -9436,21 +9451,6 @@
             ],
             "user_name": "Rakesh Mishra",
             "emails": ["mishra.rakesh510@gmail.com", "rakesh.ku.mishra@ril.com"]
-        },
-        {
-            "launchpad_id": "missaugustina",
-            "companies": [
-                {
-                    "company_name": "HP",
-                    "end_date": "2015-Oct-31"
-                },
-                {
-                    "company_name": "HPE",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Augustina Ragwitz",
-            "emails": ["aragwitz+lp@pobox.com", "aragwitz+openstack@pobox.com", "augustina.ragwitz@hp.com", "augustina.ragwitz@hpe.com"]
         },
         {
             "launchpad_id": "mjblack",
