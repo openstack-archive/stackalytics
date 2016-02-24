@@ -10995,6 +10995,18 @@
             "emails": ["dua_rajdeep@yahoo.com", "rajdeepd@vmware.com"]
         },
         {
+            "launchpad_id": "ramamani-yeleswarapu",
+            "gerrit_id": "Rama_Y",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ramamani Yeleswarapu",
+            "emails": ["ramamani.yeleswarapu@intel.com"]
+        },
+        {
             "launchpad_id": "ramanjieee",
             "gerrit_id": "Ramanjaneya",
             "companies": [
