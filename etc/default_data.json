@@ -12559,6 +12559,19 @@
             "emails": ["shrirang.phadke@izeltech.com"]
         },
         {
+            "launchpad_id": "shu-mutou",
+            "gerrit_id": "shu.mutow",
+            "zanata_id": "shu",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shu Muto",
+            "emails": ["shu-mutou@rf.jp.nec.com"]
+        },
+        {
             "launchpad_id": "shu-shen",
             "gerrit_id": "shushen",
             "companies": [
