@@ -2760,6 +2760,18 @@
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
         },
         {
+            "launchpad_id": "ck-khullar",
+            "gerrit_id": "chetna",
+            "companies": [
+                {
+                    "company_name":"Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chetna",
+            "emails": ["ck.khullar@gmail.com"]
+        },
+        {
             "launchpad_id": "claire921",
             "companies": [
                 {
