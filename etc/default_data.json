@@ -10635,6 +10635,18 @@
             "emails": ["paulmontgomery.code@gmail.com", "paul.montgomery@rackspace.com"]
         },
         {
+            "launchpad_id": "pavlk-jakub",
+            "gerrit_id": "pupapaik",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jakub Pavlik",
+            "emails": ["pavlk.jakub@gmail.com", "jakub.pavlik@tcpcloud.eu", "j.pavlik@tcpcloud.eu"]
+        },
+        {
             "launchpad_id": "pawel-palucki",
             "gerrit_id": "pawel.palucki",
             "companies": [
@@ -17066,6 +17078,11 @@
         {
             "domains": ["taobao.com"],
             "company_name": "Taobao"
+        },
+        {
+            "domains": ["tcpcloud.eu"],
+            "company_name": "tcp cloud",
+            "aliases": ["tcp cloud a.s."]
         },
         {
             "domains": ["tcs.com"],
