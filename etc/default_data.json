@@ -6821,6 +6821,22 @@
             "emails": ["jerome.david.gallard@gmail.com", "jerome.gallard@orange.com", "gallard.jerome@gmail.com"]
         },
         {
+            "launchpad_id": "jesse-pretorius",
+            "github_id": "odyssey4me",
+            "companies": [
+                {
+                    "company_name": "BCX",
+                    "end_date": "2014-Oct-31"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Monty Taylor",
+            "emails": ["jesse.pretorius@rackspace.co.uk", "jesse.pretorius@gmail.com"]
+        },
+        {
             "launchpad_id": "jesusaurus",
             "companies": [
                 {
@@ -15829,6 +15845,11 @@
         {
             "domains": ["bacoosta.com"],
             "company_name": "Bacoosta IT Services"
+        },
+        {
+            "domains": ["bcx.com", "bcx.co.za"],
+            "company_name": "BCX",
+            "aliases": ["Business Connexion"]
         },
         {
             "domains": ["bestbuy.com"],
