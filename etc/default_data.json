@@ -9905,6 +9905,18 @@
             "emails": ["namei.unix@gmail.com"]
         },
         {
+            "launchpad_id": "narender-soorineeda",
+            "gerrit_id": "Narender",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Narender",
+            "emails": ["narender.soorineeda@gmail.com"]
+        },
+        {
             "launchpad_id": "nate-johnston",
             "companies": [
                 {
