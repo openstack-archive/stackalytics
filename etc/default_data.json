@@ -2990,6 +2990,18 @@
             "emails": ["cpuguy83@gmail.com"]
         },
         {
+            "launchpad_id": "craig-sterrett",
+            "gerrit_id": "CraigSterrett",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craig Sterrett",
+            "emails": ["craig.sterrett@intel.com"]
+        },
+        {
             "launchpad_id": "craige",
             "companies": [
                 {
