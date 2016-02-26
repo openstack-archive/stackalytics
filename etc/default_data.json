@@ -13479,6 +13479,18 @@
             "emails": ["sun.jing22@zte.com.cn", "jingsun59@163.com"]
         },
         {
+            "launchpad_id": "sunku-ranganath",
+            "gerrit_id": "sunkuranganath",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sunku Ranganath",
+            "emails": ["sunku.ranganath@intel.com"]
+        },
+        {
             "launchpad_id": "sunshuai",
             "companies": [
                 {
