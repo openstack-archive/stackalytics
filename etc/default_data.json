@@ -9573,6 +9573,19 @@
             "emails": ["mmuehl@gmail.com"]
         },
         {
+           "launchpad_id": "mmuppidi",
+           "gerrit_id": "mohan.muppidi",
+           "github_id": "mmuppidi",
+           "companies": [
+               {
+                     "company_name": "Intel",
+                     "end_date": null
+               }
+            ],
+            "user_name": "Mohan Muppidi",
+            "emails": ["mkumar2301@gmail.com"]
+        },
+        {
             "launchpad_id": "mnestratov",
             "gerrit_id": "mnestratov",
             "companies": [
