@@ -6503,6 +6503,22 @@
             "emails": ["admin@jakedahn.com", "jake@ansolabs.com"]
         },
         {
+            "launchpad_id": "james-arendt-7",
+            "gerrit_id": "jwarendt",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "James Arendt",
+            "emails": ["james.arendt@hpe.com", "james.arendt@hp.com"]
+        },
+        {
             "launchpad_id": "james-li-3",
             "companies": [
                 {
