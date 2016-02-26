@@ -6385,6 +6385,18 @@
             "emails": ["ivoks@ubuntu.com", "ante.karamatic@canonical.com"]
         },
         {
+            "launchpad_id": "iz-brandon",
+            "gerrit_id": "izbrandon",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brandon Irizarry",
+            "emails": ["iz.brandon@yahoo.com"]
+        },
+        {
             "launchpad_id": "jacek-swiderski",
             "companies": [
                 {
