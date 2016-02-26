@@ -11523,6 +11523,19 @@
             "emails": ["robert_myers@earthlink.net", "robert.myers@rackspace.com", "myer0052@gmail.com"]
         },
         {
+            "launchpad_id": "robert-simai",
+            "gerrit_id": "rsimai",
+            "zanata_id": "rsimai",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robert Simai",
+            "emails": ["robert.simai@suse.com"]
+        },
+        {
             "launchpad_id": "roberto-moral",
             "companies": [
                 {
