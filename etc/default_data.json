@@ -7741,6 +7741,19 @@
             "emails": ["kasey.alusi@gmail.com"]
         },
         {
+            "launchpad_id": "kato-tomoyuki",
+            "gerrit_id": "to222",
+            "zanata_id": "to222",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "KATO Tomoyuki",
+            "emails": ["kato.tomoyuki@jp.fujitsu.com"]
+        },
+        {
             "launchpad_id": "kaushikc",
             "companies": [
                 {
