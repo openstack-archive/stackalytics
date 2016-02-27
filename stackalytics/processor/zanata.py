@@ -34,7 +34,7 @@ ZANATA_FIRST_RECORD = '2015-08-31'  # must be Monday
 
 # We limit the projects and versions to reduce number of requests to Zanata API
 ZANATA_VERSION_PATTERN = re.compile(r'^(master)$')
-ZANATA_PROJECT_PATTERN = re.compile(r'(horizon$|.*guide|.*manual)')
+ZANATA_PROJECT_PATTERN = re.compile(r'(horizon$|.*guide|.*manual|.*doc)')
 
 zanata_session = requests.Session()
 
