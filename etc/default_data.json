@@ -9512,6 +9512,17 @@
             "emails": ["woppin@gmail.com","michchap@cisco.com"]
         },
         {
+            "launchpad_id": "michele",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michele Baldessari",
+            "emails": ["michele@baldessari.info","michele@acksyn.org","michele@redhat.com","mbaldess@redhat.com"]
+        },
+        {
             "launchpad_id": "mick-mccarthy",
             "companies": [
                 {
