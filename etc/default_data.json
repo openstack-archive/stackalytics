@@ -10610,11 +10610,15 @@
             "companies": [
                 {
                     "company_name": "Symantec",
+                    "end_date": "2015-Feb-09"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Oleksandr Minakov",
-            "emails": ["alexander_minakov@symantec.com", "aminakov@mirantis.com", "oleksandr.minakov@gmail.com"]
+            "emails": ["aminakov@mirantis.com", "oleksandr.minakov@gmail.com", "alexander_minakov@symantec.com"]
         },
         {
             "launchpad_id": "olkonami",
