@@ -2024,6 +2024,22 @@
             "emails": ["bnemec@us.ibm.com", "openstack@nemebean.com", "bnemec@redhat.com"]
         },
         {
+            "launchpad_id": "bob-haddleton",
+            "gerrit_id": "bobh",
+            "companies": [
+                {
+                    "company_name": "Alcatel-Lucent",
+                    "end_date": "2016-Jan-14"
+                },
+                {
+                    "company_name": "Nokia",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bob Haddleton",
+            "emails": ["bob.haddleton@nokia.com"]
+        },
+        {
             "launchpad_id": "bob-melander",
             "companies": [
                 {
