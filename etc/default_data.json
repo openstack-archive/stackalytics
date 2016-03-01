@@ -324,6 +324,18 @@
             "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com"]
         },
         {
+            "launchpad_id": "adam-tengler",
+            "gerrit_id": "Tux",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adam Tengler",
+            "emails": ["adam.tengler@tcpcloud.eu", "a.tengler@tcpcloud.eu", "tuxstarcraft@gmail.com"]
+        },
+        {
             "launchpad_id": "adam-vinsh",
             "companies": [
                 {
@@ -594,6 +606,18 @@
              ],
             "user_name": "Alexey Khivin",
             "emails": ["akhivin@mirantis.com", "akhivin@gmail.com"]
+        },
+        {
+            "launchpad_id": "akomarek",
+            "gerrit_id": "cznewt",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ales Komarek",
+            "emails": ["ales.komarek@tcpcloud.eu", "ales.komarek@newt.cz", "mail@newt.cz", "a.komarek@tcpcloud.eu"]
         },
         {
 
@@ -3292,6 +3316,18 @@
             "emails": ["dane.fichter@jhuapl.edu"]
         },
         {
+            "launchpad_id": "daneel23",
+            "gerrit_id": "daneel",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiri Konecny",
+            "emails": ["daneel23@atlas.cz", "jiri.konecny@tcpcloud.eu"]
+        },
+        {
             "launchpad_id": "dangchb",
             "companies": [
                 {
@@ -4930,6 +4966,18 @@
             "emails": [ "frode.nordahl@gmail.com", "frode@powertech.no" ]
         },
         {
+            "launchpad_id": "fpytloun",
+            "gerrit_id": "fpytloun",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Filip Pytloun",
+            "emails": ["filip@pytloun.cz", "filip.pytloun@tcpcloud.eu"]
+        },
+        {
             "launchpad_id": "freyes",
             "gerrit_id": "freyes",
             "companies": [
@@ -5911,6 +5959,18 @@
             ],
             "user_name": "Mikhail Khodos",
             "emails": ["hodosmb@gmail.com", "mikhail.khodos@nexenta.com"]
+        },
+        {
+            "launchpad_id": "holanova-al",
+            "gerrit_id": "sfinga",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alena Holanova",
+            "emails": ["holanova.al@gmail.com", "alena.holanova@tcpcloud.eu"]
         },
         {
             "launchpad_id": "holzman",
@@ -8472,6 +8532,18 @@
             "emails": ["andrew@linuxjedi.co.uk"]
         },
         {
+            "launchpad_id": "liquid",
+            "gerrit_id": "jkauf",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jan Kaufman",
+            "emails": ["liquid@nano.cz", "jan.kaufman909@gmail.com", "jan.kaufman@tcpcloud.eu"]
+        },
+        {
             "launchpad_id": "liquid-x",
             "companies": [
                 {
@@ -8839,6 +8911,18 @@
             "emails": ["maheshkumar.pandurangan@hp.com", "maheshkumar.pandurangan@hpe.com"]
         },
         {
+            "launchpad_id": "majklkcz",
+            "gerrit_id": "majklkcz",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Kuty",
+            "emails": ["6du1ro.n@gmail.com", "mail@majklk.cz", "michael.kuty@tcpcloud.eu", "m.kuty@tcpcloud.eu"]
+        },
+        {
             "launchpad_id": "maksimov",
             "companies": [
                 {
@@ -8913,6 +8997,18 @@
             ],
             "user_name": "Marcus V R Nascimento",
             "emails": ["marcusvrn@gmail.com", "marcus.nascimento@fit-tecnologia.org.br"]
+        },
+        {
+            "launchpad_id": "marek-celoud",
+            "gerrit_id": "marco",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marek Celoud",
+            "emails": ["marek.celoud@tcpcloud.eu", "m.celoud@tcpcloud.eu"]
         },
         {
             "launchpad_id": "margaret-frances",
@@ -10494,6 +10590,18 @@
             ],
             "user_name": "Olga Kopylova",
             "emails": ["olkonami@gmail.com", "okopylova@mirantis.com"]
+        },
+        {
+            "launchpad_id": "ondrej-smola-2",
+            "gerrit_id": "smolaon",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ondrej Smola",
+            "emails": ["ondrej.smola@tcpcloud.eu"]
         },
         {
             "launchpad_id": "oomichi",
@@ -14475,6 +14583,18 @@
             ],
             "user_name": "Mark Gloshen",
             "emails": ["mark.gloshen@workday.com"]
+        },
+        {
+            "launchpad_id": "v-mikes-z",
+            "gerrit_id": "vmikes",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vlastimil Mikes",
+            "emails": ["v.mikes@tcpcloud.eu", "vlastimil.mikes@tcpcloud.eu"]
         },
         {
             "launchpad_id": "vaidyanath-m",
