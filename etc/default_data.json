@@ -8314,6 +8314,18 @@
             "emails": ["peter@balland.net", "pballand@vmware.com", "peter@congress-dev.localdomain"]
         },
         {
+            "launchpad_id": "lachlan-evenson",
+            "gerrit_id": "lachlan.evenson",
+            "companies": [
+                {
+                    "company_name": "Lithium Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lachlan Evenson",
+            "emails": ["lachlan.evenson@lithium.com"]
+        },
+        {
             "launchpad_id": "lakhindr",
             "companies": [
                 {
@@ -16859,6 +16871,10 @@
         {
             "domains": ["linagora.com"],
             "company_name": "Linagora"
+        },
+        {
+            "domains": ["lithium.com"],
+            "company_name": "Lithium Technologies"
         },
         {
             "domains": ["locaweb.com.br"],
