@@ -14204,6 +14204,21 @@
             "emails": ["thomas@goirand.fr", "zigo@debian.org"]
         },
         {
+            "launchpad_id": "thomas-hsiao",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thomas Hsiao",
+            "emails": ["thomas.hsiao@gmail.com", "thomas.hsiao@hpe.com", "thomas.hsiao@hp.com"]
+        },
+        {
             "launchpad_id": "thowe-g",
             "companies": [
                 {
