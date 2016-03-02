@@ -1080,6 +1080,18 @@
             "emails": ["andy.edmonds@gmail.com", "andy@edmonds.be"]
         },
         {
+            "launchpad_id": "andybotting",
+            "gerrit_id": "andybotting",
+            "companies": [
+                {
+                    "company_name": "University of Melbourne",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andy Botting",
+            "emails": ["andy@andybotting.com", "andrew.botting@unimelb.edu.au", "nectar@andybotting.com"]
+        },
+        {
             "launchpad_id": "aniketanikhindi",
             "companies": [
                 {
