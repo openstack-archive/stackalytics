@@ -12678,6 +12678,21 @@
             "user_name": "Sean M. Collins",
             "emails": ["sean@coreitpro.com", "scollins@mirantis.com", "sean_collins2@cable.comcast.com"]
         },
+        {
+            "launchpad_id": "scott-dangelo",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "scottda",
+            "emails": ["scott.dangelo@hp.com", "scott.dangelo@hpe.com",  "scott.dangelo@gmail.com"]
+        },
          {
             "github_id": "scottfrederick",
             "companies": [
