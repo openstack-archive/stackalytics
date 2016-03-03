@@ -15949,6 +15949,17 @@
             "emails": ["zhen.fang@easystack.cn","fangzhenzyou@gmail.com"]
         },
         {
+            "launchpad_id": "zheng-yao1",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "YaoZheng",
+            "emails": ["zheng.yao1@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zhengzhenyu",
             "companies": [
                 {
