@@ -15870,6 +15870,17 @@
             "emails": ["zerodivisible@gmail.com"]
         },
         {
+            "launchpad_id": "zhang-hao16",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhanghao",
+            "emails": ["zhang.hao16@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zhang-jinnan",
             "companies": [
                 {
