@@ -9708,7 +9708,7 @@
             ]
         },
         {
-            "launchpad_id": "mikalstill",
+            "launchpad_id": "mikal",
             "companies": [
                 {
                     "company_name": "Canonical",
@@ -9720,7 +9720,7 @@
                 }
             ],
             "user_name": "Michael Still",
-            "emails": ["michael.still@canonical.com", "mikal@stillhq.com"]
+            "emails": ["michael.still@canonical.com", "mikal@stillhq.com", "michael.still@rackspace.com"]
         },
   {
             "launchpad_id": "mike-carden",
