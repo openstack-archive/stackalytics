@@ -15578,6 +15578,17 @@
             "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com"]
         },
         {
+            "launchpad_id": "yao3690093-o",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ice Yao",
+            "emails": ["yao3690093@gmail.com", "yao.xiabing@99cloud.net"]
+        },
+        {
             "launchpad_id": "yapengwu",
             "companies": [
                 {
