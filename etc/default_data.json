@@ -7090,6 +7090,18 @@
             "emails": ["ji.xuepeng@zte.com.cn"]
         },
         {
+            "launchpad_id": "jiahao.liang",
+            "gerrit_id": "Jiahao.liang",
+            "companies": [
+                {
+                    "company_name": "One Convergence",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiahao Liang",
+            "emails": ["gzliangjiahao@gmail.com", "jiahao.liang@oneconvergence.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
