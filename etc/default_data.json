@@ -177,6 +177,18 @@
             "emails": ["toshio@fedoraproject.org", "a.badger@gmail.com"]
         },
         {
+            "launchpad_id": "abe-music",
+            "gerrit_id": "abemusic",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abe Music",
+            "emails": ["abe.music@gmail.com", "abmusic@cisco.com"]
+        },
+        {
             "launchpad_id": "abhic",
             "companies": [
                 {
