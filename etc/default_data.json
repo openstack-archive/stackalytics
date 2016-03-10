@@ -12614,6 +12614,18 @@
             "emails": ["saschpe@suse.de", "saschpe@gmx.de"]
         },
         {
+            "launchpad_id": "satish-venkatasubramanian-7",
+            "gerrit_id": "satish-venkatasubramanian-7",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Satish Venkatasubramanian",
+            "emails": ["satish.venkatasubramanian@gmail.com"]
+        },
+        {
             "github_id": "satnam6502",
             "companies": [
                 {
