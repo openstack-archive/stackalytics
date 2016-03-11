@@ -15760,6 +15760,17 @@
             "emails": ["ysboychakov@mirantis.com"]
         },
         {
+            "launchpad_id": "yu-kasuya",
+            "companies": [
+                {
+                    "company_name": "KDDI",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuki Kasuya",
+            "emails": ["yu-kasuya@kddilabs.jp"]
+        },
+        {
             "launchpad_id": "yugsuo",
             "companies": [
                 {
@@ -16944,8 +16955,9 @@
             "company_name": "Karlstad Universitet"
         },
         {
-            "domains": ["kddi.com"],
-            "company_name": "KDDI"
+            "domains": ["kddi.com", "kddilabs.jp"],
+            "company_name": "KDDI",
+            "aliases": ["KDDI", "KDDI R&D Laboratories"]
         },
         {
             "domains": ["kent.ac.uk"],
