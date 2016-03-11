@@ -15092,6 +15092,17 @@
             "emails": ["vmtrooper@gmail.com", "trevor.robertsjr@vce.com"]
         },
         {
+            "launchpad_id": "vmud213",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "vinay kumar muddu",
+            "emails": ["vinay50muddu@yahoo.com"]
+        },
+        {
             "launchpad_id": "vnaboychenko",
             "gerrit_id": "vnaboichenko",
             "companies": [
