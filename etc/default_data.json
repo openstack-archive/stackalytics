@@ -4847,6 +4847,19 @@
             "emails": ["sskripnick@mirantis.com", "eyerediskin@gmail.com"]
         },
         {
+            "launchpad_id": "f-kloeker",
+            "gerrit_id": "eumel8",
+            "zanata_id": "eumel8",
+            "companies": [
+                {
+                    "company_name": "Deutsche Telekom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Frank Kloeker",
+            "emails": ["f.kloeker@telekom.de", "eumel@arcor.de"]
+        },
+        {
             "launchpad_id": "fabien-boucher",
             "companies": [
                 {
