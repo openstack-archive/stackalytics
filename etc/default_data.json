@@ -12350,6 +12350,18 @@
             "emails": ["russellhaering@gmail.com", "russell.haering@rackspace.com"]
         },
         {
+            "launchpad_id": "rustinpeace",
+            "gerrit_id": "Rustinpeace",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rust Shen",
+            "emails": ["jingyuan@unitedstack.com", "rustinpeace@163.com"]
+        },
+        {
             "launchpad_id": "ryan-petrello",
             "gerrit_id": "ryanpetrello",
             "companies": [
