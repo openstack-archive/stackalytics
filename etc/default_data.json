@@ -16282,6 +16282,17 @@
             "emails": ["zhu.rong@99cloud.net", "aaronzhu1020@gmail.com"]
         },
         {
+            "launchpad_id": "zhugaoxiao",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gaoxiao Zhu",
+            "emails": ["zhugaoxiao@gmail.com", "zhu.gaoxiao@h3c.com"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
