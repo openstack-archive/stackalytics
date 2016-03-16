@@ -15486,6 +15486,17 @@
             "emails": ["wudx05@gmail.com", "wudx@awcloud.com"]
         },
         {
+            "launchpad_id": "wujun",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wujun",
+            "emails": ["wujun@awcloud.com"]
+        },
+        {
             "launchpad_id": "wuyuting",
             "companies": [
                 {
