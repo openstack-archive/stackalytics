@@ -7100,6 +7100,18 @@
             "emails": ["jhalterman@gmail.com", "jonathan.halterman@hp.com", "jhalterman@hp.com", "jonathan.halterman@hpe.com"]
         },
         {
+            "launchpad_id": "jhamhader",
+            "gerrit_id": "yuvalbr",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuval Brik",
+            "emails": ["yuval@brik.org.il", "yuval.brik@huawei.com"]
+        },
+        {
             "launchpad_id": "jhinman",
             "companies": [
                 {
