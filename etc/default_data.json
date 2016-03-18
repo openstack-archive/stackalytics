@@ -917,10 +917,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2015-Sep-16"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
                 }
             ],
             "user_name": "Andrew Mitry",
-            "emails": ["andrew_mitry@cable.comcast.com", "amitry@gmail.com"]
+            "emails": ["andrew.mitry@walmart.com", "andrew_mitry@cable.comcast.com", "amitry@gmail.com"]
         },
         {
             "launchpad_id": "amrith",
@@ -1255,10 +1259,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2015-Sep-16"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
                 }
             ],
             "user_name": "Anton Thaker",
-            "emails": ["antont8443@gmail.com"]
+            "emails": ["anton.thaker@walmart.com", "antont8443@gmail.com"]
         },
         {
             "launchpad_id": "antonym",
