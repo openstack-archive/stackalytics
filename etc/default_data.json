@@ -10909,6 +10909,9 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-May-15"
+                },
+                {   "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
