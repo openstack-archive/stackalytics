@@ -10147,6 +10147,17 @@
             "emails": ["mthompson@a10networks.com", "miket@a10networks.com"]
         },
         {
+            "launchpad_id": "multi-task",
+            "companies": [
+                {
+                    "company_name": "Letv Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhengwei Gao",
+            "emails": ["gaozhengwei1@letv.com", "multi_task@163.com"]
+        },
+        {
             "launchpad_id": "mvoelker",
             "companies": [
                 {
