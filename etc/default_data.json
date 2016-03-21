@@ -4064,11 +4064,15 @@
                 },
                 {
                     "company_name": "Akanda",
+                    "end_date": "2015-Dec-18"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "David Lenwell",
-            "emails": ["david@pistoncloud.com", "dlenwell@bluebox.net", "dlenwell@gmail.com", "david@akanda.io"]
+            "emails": ["david@pistoncloud.com", "dlenwell@bluebox.net", "dlenwell@gmail.com", "david@akanda.io", "david.fra.lenwell@hpe.com"]
         },
         {
             "launchpad_id": "dlfryar",
