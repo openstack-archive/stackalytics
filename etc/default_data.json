@@ -16539,7 +16539,8 @@
             "domains": ["b-com.com"],
             "company_name": "B<>COM",
             "aliases": ["IRT B<>COM", "B-COM"]
-        },        {
+        },
+        {
             "domains": ["b1-systems.de"],
             "company_name": "B1 Systems"
         },
@@ -16555,6 +16556,11 @@
         {
             "domains": ["bestbuy.com"],
             "company_name": "Best Buy"
+        },
+        {
+            "domains": ["betacloud-solutions.de", "betacloud.io", "betacloud.xyz"],
+            "company_name": "Betacloud Solutions GmbH",
+            "aliases": ["Betacloud", "Betacloud Solutions"]
         },
         {
             "domains": ["bigswitch.com"],
