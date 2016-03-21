@@ -1828,6 +1828,17 @@
             "emails": ["berendt@b1-systems.de", "mail@cberendt.net", "christian@berendt.io"]
         },
         {
+            "launchpad_id": "berendt-betacloud",
+            "companies": [
+                {
+                    "company_name": "Betacloud Solutions GmbH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christian Berendt",
+            "emails": ["berendt@betacloud-solutions.de", "berendt@betacloud.io", "berendt@betacloud.xyz"]
+        },
+        {
             "launchpad_id": "bertiefulton",
             "gerrit_id": "bertie.fultonsap.com",
             "companies": [
