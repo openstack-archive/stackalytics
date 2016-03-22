@@ -2435,6 +2435,18 @@
             "emails": ["ccarlino@hpe.com", "ccarlino@hp.com", "chuckjcarlino@gmail.com"]
         },
         {
+            "launchpad_id": "ccesario",
+            "gerrit_id": "ccesario",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Carlos Cesario",
+            "emails": ["carloscesario@gmail.com", "ccesario@tecnomega.com.br"]
+        },
+        {
             "launchpad_id": "cdearbor",
             "gerrit_id": "cdearbor",
             "companies": [
