@@ -14620,11 +14620,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Mar-05"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Travis McPeak",
-            "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com", "travis.mcpeak@hpe.com"]
+            "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com", "travis.mcpeak@hpe.com", "tmcpeak@us.ibm.com"]
         },
         {
             "launchpad_id": "travis-truman",
