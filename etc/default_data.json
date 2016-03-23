@@ -2641,6 +2641,17 @@
             "emails": ["chen.qiaomin@99cloud.net", "qiaomin032@sina.com"]
         },
         {
+            "launchpad_id": "chen-xueying1",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XueyingChen",
+            "emails": ["chen.xueying1@zte.com.cn"]
+        },
+        {
             "launchpad_id": "chen-zheng",
             "gerrit_id": "jackychen",
             "companies": [
