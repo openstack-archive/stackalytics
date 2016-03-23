@@ -4238,11 +4238,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Mar-18"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Doug Hellmann",
-            "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com", "doug@doughellmann.com"]
+            "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com", "doug@doughellmann.com", "dhellmann@redhat.com"]
         },
         {
             "github_id": "dqmihn",
