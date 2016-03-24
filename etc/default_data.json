@@ -6435,6 +6435,7 @@
         },
         {
             "launchpad_id": "ilyaalekseyev",
+            "zanata_id": "adiantum",
             "companies": [
                 {
                     "company_name": "Grid Dynamics",
@@ -6442,6 +6443,10 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2015-Oct-18"
+                },
+                {
+                    "company_name": "CloudDC",
                     "end_date": null
                 }
             ],
@@ -16729,6 +16734,10 @@
         {
             "domains": ["cloudbau.de"],
             "company_name": "Cloudbau"
+        },
+        {
+            "domains": ["clouddc.ru"],
+            "company_name": "CloudDC"
         },
         {
             "domains": ["cloudenablers.com"],
