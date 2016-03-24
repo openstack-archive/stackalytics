@@ -5714,6 +5714,17 @@
             "emails": ["hzgaott@corp.netease.com", "gtt116@gmail.com", "gtt116@126.com"]
         },
         {
+            "launchpad_id": "gu-weiwei",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guweiwei",
+            "emails": ["gu.weiwei@zte.com.cn","00035657@zte.com.cn"]
+        },
+        {
             "launchpad_id": "guang-yee",
             "companies": [
                 {
