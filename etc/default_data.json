@@ -16019,6 +16019,17 @@
             "emails": ["yuxcer@126.com", "yuxcer@gmail.com"]
         },
         {
+            "launchpad_id": "yuyafei",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yuyafei",
+            "emails": ["yuyafei@zte.com.cn", "woshiyuyafei@126.com"]
+        },
+        {
             "launchpad_id": "z8715000",
             "companies": [
                 {
