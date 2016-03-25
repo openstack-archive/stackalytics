@@ -2970,6 +2970,30 @@
             "primary_key": "24bddc5da2dfcf0925c0f11f3d4406d46e368ae0",
             "module": "openstack-manuals",
             "subject": "Regenerate sitemap"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I7a1ee577e962921896c362a74fe0a6e2a73a9405"],
+            "primary_key": "e078ca192c8df230b8bf76c4a8cdf9489579355c",
+            "module": "activity-board",
+            "subject": "OpenStack community activity report Q3, 2015"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I9e787e797bc69f224a3ed6ea67db54484e748347"],
+            "primary_key": "7b8482172ccd2762d0015f08d85556d0ba4ab54b",
+            "module": "activity-board",
+            "subject": "OpenStack community activity report Q4, 2015"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": ["I4a38dc0bbd1497fb13933deb691ec9e8ca992c86"],
+            "primary_key": "bdf1746617c27a24abe6aca7a9dfcf3cbeedca68",
+            "module": "openstack-manuals",
+            "subject": "Cleanup the common/ directory"
         }
     ]
 }
