@@ -15898,6 +15898,24 @@
             "emails": ["yogesh.srikrishnan@rackspace.com", "yoga80@yahoo.com"]
         },
         {
+            "launchpad_id": "yolanda",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yolanda Robla-Mota",
+            "emails": [
+                "yolanda.robla-mota@hp.com",
+                "yolanda.robla-mota@hpe.com"
+            ]
+        },
+        {
             "launchpad_id": "yongiman",
             "companies": [
                 {
