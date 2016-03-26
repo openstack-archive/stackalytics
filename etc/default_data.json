@@ -8266,6 +8266,17 @@
             "emails": ["kn-matsumoto@kddi.com"]
         },
         {
+            "launchpad_id": "knikolla",
+            "companies": [
+                {
+                    "company_name": "Boston University",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kristi Nikolla",
+            "emails": ["knikolla@bu.edu"]
+        },
+        {
             "launchpad_id": "kong",
             "gerrit_id": "kong",
             "companies": [
@@ -16686,6 +16697,10 @@
             "domains": ["brocade.com"],
             "company_name": "Brocade",
             "aliases": ["Brocade Communication", "Brocade Communications", "Brocade Communications Systems"]
+        },
+        {
+            "domains": ["bu.edu"],
+            "company_name": "Boston University"
         },
         {
             "domains": ["bull.net"],
