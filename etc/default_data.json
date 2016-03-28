@@ -16270,6 +16270,17 @@
             "emails": ["zhen.fang@easystack.cn","fangzhenzyou@gmail.com"]
         },
         {
+            "launchpad_id": "zheng-hongzhe32",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hongzhezheng",
+            "emails": ["zheng.hongzhe32@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zheng-yao1",
             "companies": [
                 {
