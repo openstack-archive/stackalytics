@@ -7524,6 +7524,17 @@
             "emails": ["johnson.dantis@hp.com"]
         },
         {
+            "launchpad_id": "joker946",
+            "companies": [
+                {
+                    "company_name": "Servionica",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Chadin",
+            "emails": ["a.chadin@servionica.ru"]
+        },
+        {
             "launchpad_id": "jokke",
             "gerrit_id": "jokke",
             "companies": [
@@ -17623,6 +17634,10 @@
             "domains": ["seagate.com"],
             "company_name": "Seagate",
             "aliases": ["Seagate Technology"]
+        },
+        {
+            "domains": ["servionica.ru"],
+            "company_name": "Servionica"
         },
         {
             "domains": ["servosity.com"],
