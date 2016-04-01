@@ -13860,6 +13860,10 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
