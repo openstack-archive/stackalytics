@@ -2183,6 +2183,21 @@
             "emails": ["joseph.breu@rackspace.com", "breu@breu.org"]
         },
         {
+            "launchpad_id": "brian-haley",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Haley",
+            "emails": ["brianphaley@gmail.com", "brian.haley@hp.com", "brian.haley@hpe.com"]
+        },
+        {
             "launchpad_id": "brian-shang-dev",
             "companies": [
                 {
