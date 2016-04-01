@@ -6627,6 +6627,18 @@
             "emails": ["itsuugo@gmail.com", "aojea@midokura.com"]
         },
         {
+            "launchpad_id": "itsvaishnavi",
+            "gerrit_id": "Vaishnavi",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vaishnavi",
+            "emails": ["itsvaishnavi@gmail.com"]
+        },
+        {
             "launchpad_id": "iurygregory",
             "gerrit_id": "iurygregory",
             "companies": [
