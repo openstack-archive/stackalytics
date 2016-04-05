@@ -15712,6 +15712,17 @@
            ]
         },
         {
+            "launchpad_id": "xavvior",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alex Szarka",
+            "emails": ["xavvior@gmail.com"]
+        },
+        {
             "launchpad_id": "xdeller",
             "user_name": "Andrey Korolyov",
             "companies": [
