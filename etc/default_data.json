@@ -13035,6 +13035,18 @@
             "emails": ["sgossard@parelastic.com", "sgossard@tesora.com", "seangossard@usa.com"]
         },
         {
+            "launchpad_id": "sean-handley",
+            "gerrit_id": "seanhandley",
+            "companies": [
+                {
+                    "company_name": "DataCentred",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Handley",
+            "emails": ["sean.handley@datacentred.co.uk", "sean@datacentred.co.uk", "sean.handley@gmail.com"]
+        },
+        {
             "launchpad_id": "sean-mccully",
             "companies": [
                 {
