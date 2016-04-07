@@ -3823,6 +3823,18 @@
             "emails": ["dencaval@gmail.com", "denis.cavalcante@lsbd.ufc.br"]
         },
         {
+           "launchpad_id": "denise-d-gregg",
+           "gerrit_id": "denise.gregg",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Denise Gregg",
+           "emails": ["denise.d.gregg@intel.com"]
+        },
+        {
             "launchpad_id": "dennis-kusidlo",
             "gerrit_id": "dkusidlo",
             "companies": [
