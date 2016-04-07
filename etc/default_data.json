@@ -7089,6 +7089,22 @@
             "emails": ["jean-daniel.bonnetot@ovh.net", "jean-daniel.bonnetot@corp.ovh.com", "gounini@geekarea.fr"]
         },
         {
+            "launchpad_id": "jean-philippe-evrard",
+            "github_id": "evrardjp",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Mar-18"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jean-Philippe Evrard",
+            "emails": ["jean-philippe.evrard@rackspace.co.uk", "jean-philippe.evrard@belnet.be", "jean-philippe@evrard.me"]
+        },
+        {
             "launchpad_id": "jeff-fischer",
             "companies": [
                 {
