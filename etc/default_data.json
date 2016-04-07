@@ -9710,6 +9710,21 @@
             "emails": ["megan.baker@workday.com"]
         },
         {
+            "launchpad_id": "melwitt",
+            "companies": [
+                {
+                    "company_name": "Yahoo!",
+                    "end_date": "2016-Mar-29"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "melanie witt",
+            "emails": ["melwitt@yahoo-inc.com", "melwittt@gmail.com", "melwitt@redhat.com"]
+        },
+        {
             "launchpad_id": "mestery",
             "companies": [
                 {
