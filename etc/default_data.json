@@ -15188,6 +15188,18 @@
             "emails": ["vijayendrabvs@gmail.com", "vbhamidipati@ebaysf.com", "vbhamidipati@paypal.com"]
         },
         {
+           "launchpad_id": "vinay-potluri",
+           "gerrit_id": "vinaypotluri",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Vinay Potluri",
+           "emails": ["vinay.potluri@intel.com"]
+        },
+        {
             "launchpad_id": "vincegt",
             "companies": [
                 {
