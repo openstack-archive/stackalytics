@@ -11770,6 +11770,21 @@
             "emails": ["raphael_mondesir@cable.comcast.com", "raphmraph@gmail.com"]
         },
         {
+            "launchpad_id": "rawlin-peters",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rawlin Peters",
+            "emails": ["rawlin.peters@hpe.com"]
+        },
+        {
             "launchpad_id": "raymond-angelone",
             "companies": [
                 {
