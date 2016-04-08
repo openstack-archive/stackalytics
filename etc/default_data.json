@@ -16195,6 +16195,17 @@
             "emails": ["yuyafei@zte.com.cn", "woshiyuyafei@126.com"]
         },
         {
+            "launchpad_id": "yuywz",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wenzhi Yu",
+            "emails": ["wenzhi_yu@163.com", "yuywz@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "z8715000",
             "companies": [
                 {
