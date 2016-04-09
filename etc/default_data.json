@@ -5894,6 +5894,17 @@
             "emails": ["spring068@sina.cn", "han.rong3@zte.com.cn"]
         },
         {
+            "launchpad_id": "haobing1",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "haobing",
+            "emails": ["hao.bing1@zte.com.cn"]
+        },
+        {
             "launchpad_id": "haomai",
             "companies": [
                 {
