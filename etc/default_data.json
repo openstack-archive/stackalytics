@@ -8767,17 +8767,6 @@
             "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com", "rbtcollins@hpe.com"]
         },
         {
-            "launchpad_id": "limamauricio",
-            "companies": [
-                {
-                    "company_name": "Hitachi",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Mauricio Lima",
-            "emails": ["mauriciolimab@gmail.com", "mauricio.lima@lsbd.ufc.br"]
-        },
-        {
             "launchpad_id": "lin-hua-cheng",
             "companies": [
                 {
@@ -9632,6 +9621,17 @@
             ],
             "user_name": "Maurice Schreiber",
             "emails": ["maurice.schreiber@sap.com"]
+        },
+        {
+            "launchpad_id": "mauricio-lima",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mauricio Lima",
+            "emails": ["mauriciolimab@gmail.com", "mauricio.lima@lsbd.ufc.br"]
         },
         {
             "launchpad_id": "max-lobur",
