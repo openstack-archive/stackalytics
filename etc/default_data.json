@@ -8886,6 +8886,18 @@
             "emails": ["liuhh@awcloud.com", "lhh_youzi@163.com"]
         },
         {
+            "launchpad_id": "liujunpeng",
+            "gerrit_id":"liujunpeng",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liujunpeng",
+            "emails": ["liujunpeng@inspur.com"]
+        },
+        {
             "launchpad_id": "liusheng",
             "companies": [{
                 "company_name": "Huawei",
@@ -17329,6 +17341,10 @@
             "domains": ["inria.fr"],
             "company_name": "Inria",
             "aliases": ["INRIA"]
+        },
+        {
+            "domains": ["inspur.com"],
+            "company_name": "Inspur"
         },
         {
             "domains": ["intel.com"],
