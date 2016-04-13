@@ -12141,11 +12141,15 @@
             "companies": [
                 {
                     "company_name": "Yahoo!",
+                    "end_date": "2016-Apr-06"
+                },
+                {
+                    "company_name": "Intel",
                     "end_date": null
                 }
             ],
             "user_name": "Ruby Loo",
-            "emails": ["rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
+            "emails": ["ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
         },
         {
             "launchpad_id": "rlucio",
