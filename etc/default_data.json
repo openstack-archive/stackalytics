@@ -18258,9 +18258,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "12.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "13.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/nova.git",
@@ -18314,9 +18320,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "8.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "9.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/keystone.git",
@@ -18365,9 +18377,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "7.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "8.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/cinder.git",
@@ -18421,9 +18439,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "11.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "12.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/glance.git",
@@ -18477,9 +18501,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "7.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "8.0.0.0rc1"
                 },
                 {
                     "branch": "feature/pecan",
@@ -18545,9 +18575,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "8.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "9.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/horizon.git",
@@ -18599,9 +18635,15 @@
                     "tag_from": "2.3.0"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "2.5.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "2.7.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/swift.git",
@@ -18912,9 +18954,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "5.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "6.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/heat.git",
@@ -18975,9 +19023,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "5.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "6.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/ceilometer.git",
@@ -19192,9 +19246,15 @@
                     "tag_from": "2015.1.0rc1"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "3.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "4.0.0.0rc1"
                 }
             ]
         },
@@ -19420,9 +19480,15 @@
                     "tag_from": "2015.1.0"
                 },
                 {
+                    "branch": "stable/mitaka",
                     "tag_to": "HEAD",
                     "release_name": "Mitaka",
                     "tag_from": "1.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "2.0.0.0rc1"
                 }
             ]
         },
@@ -19852,6 +19918,16 @@
         {
             "release_name": "Mitaka",
             "end_date": "2016-Apr-07",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=march-2016-elections"
+                }
+            }
+        },
+        {
+            "release_name": "Newton",
+            "end_date": "2016-Oct-05",
             "refs": {
                 "governance": {
                     "type": "big_tent",
