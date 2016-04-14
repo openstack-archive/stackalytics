@@ -3496,6 +3496,17 @@
             "emails": ["dmellado@redhat.com", "danielmelladoarea@gmail.com"]
         },
         {
+            "launchpad_id": "daniel-pawlik",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Pawlik",
+            "emails": ["daniel.pawlik@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "danms",
             "companies": [
                 {
