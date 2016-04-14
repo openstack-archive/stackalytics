@@ -1718,6 +1718,17 @@
             "emails": ["mkislins@yahoo-inc.com", "mkislinska@griddynamics.com"]
         },
         {
+            "launchpad_id": "bailin-zhang",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "bailin.zhang",
+            "emails": ["bailin.zhang@hotmail.com"]
+        },
+        {
             "launchpad_id": "bardia-keyoumarsi",
             "gerrit_id": "bkeyoumarsi",
             "companies": [
