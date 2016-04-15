@@ -7842,6 +7842,22 @@
             "emails": ["jon@csail.mit.edu", "jon@jonproulx.com"]
         },
         {
+            "launchpad_id": "jprovost-sh",
+            "gerrit_id": "jprovost",
+            "companies": [
+                {
+                    "company_name": "iWeb",
+                    "end_date": "2013-Oct-30"
+                },
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonathan Provost",
+            "emails": ["jprovost@iweb.com", "jprovost@internap.com", "jprovost.sh@gmail.com"]
+        },
+        {
             "github_id": "jrajahalme",
             "companies": [
                 {
