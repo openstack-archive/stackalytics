@@ -10736,6 +10736,17 @@
             "emails": ["nmarkov@mirantis.com", "enchantner@gmail.com"]
         },
         {
+            "launchpad_id": "nmarsella",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nate Marsella",
+            "emails": ["nmarsell@redhat.com"]
+        },
+        {
             "launchpad_id": "noav",
             "companies": [
                 {
