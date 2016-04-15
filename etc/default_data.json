@@ -336,6 +336,17 @@
             "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com"]
         },
         {
+            "launchpad_id": "adam-kijak",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Adam Kijak",
+            "emails": ["adam.kijak@ovh.pl"]
+        },
+        {
             "launchpad_id": "adam-tengler",
             "gerrit_id": "Tux",
             "companies": [
