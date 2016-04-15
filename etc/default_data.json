@@ -18267,14 +18267,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18329,14 +18327,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18386,14 +18382,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18448,14 +18442,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18510,14 +18502,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18584,14 +18574,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -18963,14 +18951,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -19032,14 +19018,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -19096,14 +19080,12 @@
                     "tag_from": "2013.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "2013.2"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -19255,14 +19237,12 @@
                     "tag_from": "0.1"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "icehouse-eol",
                     "release_name": "Icehouse",
                     "tag_from": "0.3"
                 },
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "2014.2",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
@@ -19495,8 +19475,7 @@
             "uri": "git://git.openstack.org/openstack/barbican.git",
             "releases": [
                 {
-                    "branch": "stable/juno",
-                    "tag_to": "HEAD",
+                    "tag_to": "juno-eol",
                     "release_name": "Juno",
                     "tag_from": "2014.1"
                 },
