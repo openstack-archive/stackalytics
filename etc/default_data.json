@@ -6127,17 +6127,6 @@
             "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com", "yaguang@umcloud.com"]
         },
         {
-            "launchpad_id": "hfamily15",
-            "companies": [
-                {
-                    "company_name": "LG CNS",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Ha Hyun",
-            "emails": ["hfamily15@gmail.com", "hahyun0523@lgcns.com"]
-        },
-        {
             "launchpad_id": "hferenc",
             "companies": [
                 {
@@ -11866,6 +11855,17 @@
             "user_name": "Rawlin Peters",
             "emails": ["rawlin.peters@hpe.com"]
         },
+        {
+             "launchpad_id": "raymon-ha",
+             "companies": [
+                 {
+                     "company_name": "OpenStack Korea User Group",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Ha Hyun",
+             "emails": ["hfamily15@gmail.com", "raymon.ha@kakaocorp.com"]
+         },
         {
             "launchpad_id": "raymond-angelone",
             "companies": [
