@@ -9226,6 +9226,10 @@
             "companies": [
                 {
                     "company_name": "One Convergence",
+                    "end_date": "2016-Mar-31"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
