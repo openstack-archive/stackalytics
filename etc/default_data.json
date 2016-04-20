@@ -4711,6 +4711,21 @@
             "emails": ["erwan.gallen@cloudwatt.com", "dev@zinux.com"]
         },
         {
+            "launchpad_id": "eghobo",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": "2016-Feb-05"
+                },
+                {
+                    "company_name": "Teradata",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Egor Guz",
+            "emails": ["egor.guz@teradata.com", "eguz@walmartlabs.com", "guz_egor@yahoo.com"]
+        },
+        {
             "launchpad_id": "eharney",
             "companies": [
                 {
@@ -18033,6 +18048,10 @@
         {
             "domains": ["telekom.de"],
             "company_name": "Deutsche Telekom"
+        },
+        {
+            "domains": ["teradata.com"],
+            "company_name": "Teradata"
         },
         {
             "domains": ["tesora.com", "parelastic.com"],
