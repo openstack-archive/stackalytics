@@ -6908,6 +6908,17 @@
             "emails": ["jprovazn@redhat.com", "jan.provaznik@gmail.com"]
         },
         {
+            "launchpad_id": "jangpro2",
+            "companies": [
+                {
+                    "company_name": "LG CNS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jangpro2",
+            "emails": ["jangseon.ryu@gmail.com"]
+        },
+        {
             "launchpad_id": "janonymous",
             "gerrit_id": "Janonymous",
             "companies": [
