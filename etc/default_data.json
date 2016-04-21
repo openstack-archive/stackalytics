@@ -8767,6 +8767,17 @@
             "emails": ["letterj@racklabs.com", "letterj@gmail.com"]
         },
         {
+            "launchpad_id": "lhinds",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Luke Hinds",
+            "emails": ["lhinds@redhat.com", "lukehinds@gmail.com"]
+        },
+        {
             "launchpad_id": "liang-bo",
             "companies": [
                 {
