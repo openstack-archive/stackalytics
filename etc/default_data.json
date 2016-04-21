@@ -11243,6 +11243,18 @@
             "emails": ["paulmontgomery.code@gmail.com", "paul.montgomery@rackspace.com"]
         },
         {
+            "launchpad_id": "pavel-cizinsky",
+            "gerrit_id": "LotharKAtt",
+            "companies": [
+                {
+                    "company_name": "tcp cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pavel Cizinsky",
+            "emails": ["pavel.cizinsky@tcpcloud.eu", "pavel.cizinsky@seznam.cz"]
+        },
+        {
             "launchpad_id": "pavlk-jakub",
             "gerrit_id": "pupapaik",
             "companies": [
