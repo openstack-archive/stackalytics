@@ -6926,12 +6926,12 @@
             "launchpad_id": "jangpro2",
             "companies": [
                 {
-                    "company_name": "LG CNS",
+                    "company_name": "OpenStack Korea User Group",
                     "end_date": null
                 }
             ],
-            "user_name": "jangpro2",
-            "emails": ["jangseon.ryu@gmail.com"]
+            "user_name": "Jangseon Ryu",
+            "emails": ["jangseon.ryu@gmail.com", "jangseon@lgcns.com"]
         },
         {
             "launchpad_id": "janonymous",
