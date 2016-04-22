@@ -20175,6 +20175,11 @@
             "uri": "git://git.opnfv.org/doctor.git"
         },
         {
+            "module": "kvmfornfv",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/kvmfornfv.git"
+        },
+        {
             "module": "ipv6",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/ipv6.git"
