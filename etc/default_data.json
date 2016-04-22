@@ -16170,6 +16170,18 @@
             "emails": ["yevgen_runts@epam.com", "yevhenrunts@gmail.com"]
         },
         {
+            "launchpad_id": "yihleong",
+            "gerrit_id": "yihleongsun",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yih Leong Sun",
+            "emails": ["yihleong@gmail.com", "yih.leong.sun@intel.com"]
+        },
+        {
             "launchpad_id": "ynshenoy",
             "companies": [
                 {
