@@ -14158,6 +14158,17 @@
             "emails": ["sbaker@redhat.com", "steve@stevebaker.org"]
         },
         {
+            "launchpad_id": "stevemar",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steve Martinelli",
+            "emails": ["stevemar@ca.ibm.com", "s.martinelli@gmail.com"]
+        },
+        {
             "launchpad_id": "stevendgonzales",
             "companies": [
                 {
