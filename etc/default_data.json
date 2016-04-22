@@ -16018,6 +16018,17 @@
             "emails": ["xuao@awcloud.com"]
         },
         {
+            "launchpad_id": "xuchao",
+            "companies": [
+                {
+                    "company_name": "China Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xuchao",
+            "emails": ["xuchao@chinacloud.com.cn"]
+        },
+        {
             "launchpad_id": "xuhj",
             "companies": [
                 {
@@ -17062,6 +17073,10 @@
         {
             "domains": ["cern.ch"],
             "company_name": "CERN"
+        },
+        {
+            "domains": ["chinacloud.com.cn"],
+            "company_name": "China Cloud"
         },
         {
             "domains": ["chinamobile.com", "cmss.chinamobile.com"],
