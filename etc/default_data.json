@@ -69,6 +69,17 @@
             "emails": ["andrew@andrewspiers.net", "andrew.spiers@unimelb.edu.au"]
         },
         {
+            "launchpad_id": "36429515-3",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xiewj",
+            "emails": ["xie.wenjun2@zte.com.cn"]
+        },
+        {
             "launchpad_id": "6-morgan",
             "companies": [
                 {
