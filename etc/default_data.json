@@ -4286,6 +4286,17 @@
             "emails": ["dolph.mathews@gmail.com", "dolph.mathews@rackspace.com"]
         },
         {
+           "launchpad_id": "dong-wenshuai",
+           "companies": [
+               {
+                   "company_name": "ZTE Corporation",
+                   "end_date": null
+               }
+           ],
+           "user_name": "dongwenshuai",
+           "emails": ["dong.wenshuai@zte.com.cn"]
+        },
+        {
            "launchpad_id": "donovan-4",
            "gerrit_id": "donovan-4",
            "companies": [
