@@ -16662,6 +16662,17 @@
             "emails": ["zhang.jinnan@99cloud.net", "zhangjinnan87@gmail.com"]
         },
         {
+            "launchpad_id": "zhang-shaoman",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shaoman Zhang",
+            "emails": ["zhang.shaoman@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zhangjialong",
             "companies": [
                 {
