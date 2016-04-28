@@ -7874,6 +7874,18 @@
             "emails": ["joshuatrivette@gmail.com"]
         },
         {
+            "launchpad_id": "jpena-c",
+            "gerrit_id": "jpena",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Javier Peña",
+            "emails": ["jpena@redhat.com"]
+        },
+        {
             "github_id": "jpetazzo",
             "companies": [
                 {
