@@ -985,6 +985,17 @@
             "emails": ["alok-kumar.maurya@hp.com", "alok-kumar.maurya@hpe.com"]
         },
         {
+            "launchpad_id": "alokjani",
+            "companies": [
+                {
+                    "company_name": "Reliance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alok Jani",
+            "emails": ["alokjani.web@gmail.com", "alok.jani@ril.com"]
+        },
+        {
             "launchpad_id": "alyson-rodrigues-rosa",
             "companies": [
                 {
