@@ -6930,7 +6930,7 @@
             "companies": [
                 {
                     "company_name": "NTT",
-                    "end_date": null
+                    "end_date": "2014-Jul-31"
                 }
             ],
             "user_name": "Masanori Itoh",
@@ -15172,6 +15172,17 @@
             ],
             "user_name": "Thang Pham",
             "emails": ["thang.pham@us.ibm.com", "thang.pham@simplivity.com", "thang.g.pham@gmail.com"]
+        },
+        {
+            "launchpad_id": "thatsdone",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Masanori Itoh",
+            "emails": ["masanori.itoh@gmail.com", "masanori.itoh@hpe.com"]
         },
         {
            "launchpad_id": "theizaakk",
