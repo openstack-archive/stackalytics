@@ -14242,11 +14242,15 @@
             "companies": [
                 {
                     "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
                     "end_date": null
                 }
             ],
             "user_name": "Stephane Miller",
-            "emails": ["stephane@alum.mit.edu", "cinerama@hp.com"]
+            "emails": ["stephane@alum.mit.edu", "cinerama@hp.com", "cinerama@hpe.com"]
         },
         {
             "launchpad_id": "steve-leon",
