@@ -9992,6 +9992,19 @@
             "emails": ["andy.rothfusz@docker.com"]
         },
         {
+            "launchpad_id": "mf6510",
+            "gerrit_id": "ciello89",
+            "zanata_id": "ciello89",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Marcellin Fom Tchassem",
+            "emails": ["mf6510@att.com"]
+        },
+        {
             "launchpad_id": "mfeoktistov",
             "gerrit_id": "mfeoktistov",
             "companies": [
