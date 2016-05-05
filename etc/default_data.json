@@ -15949,6 +15949,17 @@
             "emails": ["dave.jungler@gmail.com", "wei.d.chen@intel.com"]
         },
         {
+            "launchpad_id": "wei.zhijun",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Zhi Jun",
+            "emails": ["wzj334965317@outlook.com", "wei.zhijun@99cloud.net"]
+        },
+        {
             "launchpad_id": "weike",
             "companies": [
                 {
