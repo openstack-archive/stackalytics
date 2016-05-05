@@ -8436,6 +8436,17 @@
             "emails": ["kiall@managedit.ie", "kiall@hp.com", "kiall@macinnes.ie", "kiall@hpe.com"]
         },
         {
+            "launchpad_id": "kienha9922",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kien Ha",
+            "emails": ["kienha9922@gmail.com"]
+        },
+        {
             "launchpad_id": "kim-jensen2",
             "companies": [
                 {
