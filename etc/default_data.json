@@ -9914,6 +9914,10 @@
                 },
                 {
                     "company_name": "In August",
+                    "end_date": "2016-May-05"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
