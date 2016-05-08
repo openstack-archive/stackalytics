@@ -4473,6 +4473,10 @@
                 },
                 {
                     "company_name": "IBM",
+                    "end_date": "2016-May-04"
+                },
+                {
+                    "company_name": "Ansible",
                     "end_date": null
                 }
             ],
