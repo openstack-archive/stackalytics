@@ -3154,11 +3154,15 @@
                 },
                 {
                     "company_name": "IBM",
+                    "end_date": "2016-May-04"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "James E. Blair",
-            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org", "jeblair@us.ibm.com", "jeblair@linux.vnet.ibm.com"]
+            "emails": ["corvus@gnu.org", "corvus@inaugust.com", "jeblair@hp.com", "james.blair@rackspace.com", "jeblair@openstack.org", "jeblair@us.ibm.com", "jeblair@linux.vnet.ibm.com", "jeblair@redhat.com"]
         },
         {
             "launchpad_id": "corywright",
