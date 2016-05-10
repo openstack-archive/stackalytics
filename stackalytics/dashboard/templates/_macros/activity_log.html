@@ -83,6 +83,9 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "ci" %}
                 {%if branch != "master" %}(${branch}){%/if%}
             {%/if%}
+            {%if record_type == "commit" %}
+                {%if branches.substring(0, 6) != "master" %}(${branches}){%/if%}
+            {%/if%}
         </div>
 
         {%if record_type == "commit" %}
