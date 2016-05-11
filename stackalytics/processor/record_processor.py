@@ -461,6 +461,10 @@ class RecordProcessor(object):
                     action['by'] = comment['reviewer']
                     action['grantedOn'] = comment['timestamp']
 
+                    if ('email' not in action['by'] or
+                            'username' not in action['by']):
+                        continue  # ignore
+
                     yield self._make_mark_record(
                         record, record['patchSets'][-1], action)
 
