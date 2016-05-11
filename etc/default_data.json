@@ -4938,6 +4938,21 @@
            ]
         },
         {
+            "launchpad_id": "engapa",
+            "gerrit_id": "engapa",
+            "companies": [
+                {
+                    "company_name": "BBVA",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Enrique Garcia Pablos",
+            "emails": [
+                "enrique.garcia.pablos@bbva.com",
+                "engapa@gmail.com"
+            ]
+        },
+        {
             "launchpad_id": "erezak",
             "gerrit_id": "erez",
             "companies": [
@@ -17209,6 +17224,10 @@
         {
             "domains": ["bacoosta.com"],
             "company_name": "Bacoosta IT Services"
+        },
+        {
+            "domains": ["bbva.com"],
+            "company_name": "BBVA"
         },
         {
             "domains": ["bcx.com", "bcx.co.za"],
