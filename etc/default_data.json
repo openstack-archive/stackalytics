@@ -6590,6 +6590,18 @@
             "emails": ["masayuki.igawa@gmail.com", "igawa@mxs.nes.nec.co.jp", "mas-igawa@ut.jp.nec.com", "masayuki.igawa@hpe.com"]
         },
         {
+            "launchpad_id": "igor-ataide",
+            "gerrit_id": "igorn",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Igor Natanael Sousa",
+            "emails": ["igornsa@lsd.ufcg.edu.br", "igornatanaelsousa@gmail.com"]
+        },
+        {
             "launchpad_id": "igordcard",
             "companies": [
                 {
