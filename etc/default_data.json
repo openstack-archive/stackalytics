@@ -16363,6 +16363,17 @@
             "emails": ["yao3690093@gmail.com", "yao.xiabing@99cloud.net"]
         },
         {
+            "launchpad_id": "yaoyuan",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yaoyuan",
+            "emails": ["asmile.yy@gmail.com", "yao.yuan3@zte.com.cn"]
+        },
+        {
             "launchpad_id": "yapengwu",
             "companies": [
                 {
