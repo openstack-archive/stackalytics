@@ -2379,6 +2379,18 @@
             "emails": ["vivekanandan.bangarusamy@hp.com", "vivekanandan.bangarusamy@hpe.com"]
         },
         {
+            "launchpad_id": "bx-wang",
+            "gerrit_id": "binean",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "tingwang",
+            "emails": ["ting.wang@easystack.cn", "bx_wang@outlook.com"]
+        },
+        {
             "launchpad_id": "byron-g-mccollum",
             "gerrit_id": "joe-dirt",
             "companies": [
