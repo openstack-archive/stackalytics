@@ -80,7 +80,7 @@ def log(runtime_storage_inst, translation_team_uri):
                     if user_stats_item['savedState'] == 'Translated':
                         record = dict(
                             zanata_id=user_id,
-                            date=day,
+                            date=user_stats_item['savedDate'],
                             language_code=user_stats_item['localeId'],
                             language=user_stats_item['localeDisplayName'],
                             # Todo: not always consistent to the official name
