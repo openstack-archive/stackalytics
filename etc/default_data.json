@@ -479,6 +479,18 @@
             "emails": ["adrian@17od.com", "adrian_f_smith@dell.com", "adrian.smith@workday.com"]
         },
         {
+            "launchpad_id": "afaranha",
+            "gerrit_id": "afaranha",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andre Aranha",
+            "emails": ["afaranha@lsd.ufcg.edu.br", "andre.f.aranha@gmail.com"]
+        },
+        {
              "launchpad_id": "agalkin",
              "gerrit_id": "agalkin",
              "companies": [
