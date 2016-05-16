@@ -6442,6 +6442,18 @@
             "emails": ["hugh@wherenow.org"]
         },
         {
+            "launchpad_id": "hugonicodemos",
+            "gerrit_id": "nicodemos",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hugo Nicodemos",
+            "emails": ["hugonicodemos@gmail.com", "nicodemos@lsd.ufcg.edu.br"]
+        },
+        {
             "launchpad_id": "humble00",
             "gerrit_id": "humble00",
             "companies": [
