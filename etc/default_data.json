@@ -5163,6 +5163,18 @@
             "emails": ["fausto.marzi@ericsson.com", "fausto.marzi@gmail.com", "fausto.marzi@hp.com", "fausto.marzi@hpe.com"]
         },
         {
+            "launchpad_id": "fellypefca",
+            "gerrit_id": "fellypefca",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fellype Cavalcante",
+            "emails": ["fellypefca@lsd.ufcg.edu.br", "fellype.cavalcante@gmail.com"]
+        },
+        {
             "launchpad_id": "fengxy",
             "companies": [
                 {
