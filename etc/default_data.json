@@ -18385,6 +18385,10 @@
             "company_name": "Tieto"
         },
         {
+            "domains": ["tigera.io"],
+            "company_name": "Tigera"
+        },
+        {
             "domains": ["tintri.com"],
             "company_name": "Tintri"
         },
