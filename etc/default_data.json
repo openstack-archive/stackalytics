@@ -8932,6 +8932,17 @@
             "emails": ["liang.bo@99cloud.net", "onetown@gmail.com", "liang.bo.os@99cloud.net"]
         },
         {
+            "launchpad_id": "liang-jingtao",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liangjingtao",
+            "emails": ["liang.jingtao@zte.com.cn"]
+        },
+        {
             "launchpad_id": "liaoishere",
             "gerrit_id": "LiaoPenghui",
             "companies": [
