@@ -8120,6 +8120,17 @@
             "emails": ["jpark@bluehost.com", "jun.park.earth@gmail.com"]
         },
         {
+            "launchpad_id": "junqing",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wang Junqing",
+            "emails": ["wangjunqing@cmss.chinamobile.com", "junqingwang@139.com"]
+        },
+        {
             "launchpad_id": "justin-fathomdb",
             "companies": [
                 {
