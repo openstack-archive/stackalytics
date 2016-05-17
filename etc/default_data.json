@@ -13320,6 +13320,18 @@
             "emails": ["satya.patibandla@tcs.com", "satya.patibandla@gmail.com", "satya.patibandla@imaginea.com"]
         },
         {
+            "launchpad_id": "sauloaislan",
+            "gerrit_id": "SauloAislan",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Saulo Eleuterio",
+            "emails": ["sauloa@lsd.ufcg.edu.br", "aislansaulo@gmail.com"]
+        },
+        {
             "launchpad_id": "sbadia",
             "companies": [
                 {
