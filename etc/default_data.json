@@ -405,10 +405,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -2242,10 +2238,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -3038,10 +3030,6 @@
             "companies": [
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -8526,10 +8514,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -10019,10 +10003,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -10119,10 +10099,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -15001,10 +14977,6 @@
                 },
                 {
                     "company_name": "Time Warner Cable",
-                    "end_date": "2016-May-18"
-                },
-                {
-                    "company_name": "Charter",
                     "end_date": null
                 }
             ],
@@ -17406,10 +17378,6 @@
             "company_name": "CERN"
         },
         {
-            "domains": ["charter.com", "twcable.com"],
-            "company_name": "Charter"
-        },
-        {
             "domains": ["chinacloud.com.cn"],
             "company_name": "China Cloud"
         },
@@ -18433,10 +18401,6 @@
             "company_name": "Tigera"
         },
         {
-            "domains": ["timewarnercable.com"],
-            "company_name": "Time Warner Cable"
-        },
-        {
             "domains": ["tintri.com"],
             "company_name": "Tintri"
         },
@@ -18451,6 +18415,10 @@
         {
             "domains": ["tunnelvisionlabs.com"],
             "company_name": "Tunnel Vision Laboratories"
+        },
+        {
+            "domains": ["twcable.com"],
+            "company_name": "Time Warner Cable"
         },
         {
             "domains": ["ubisoft.com"],
