@@ -12377,6 +12377,18 @@
             "emails": ["rh-s@hp.com", "rakeshhs1@gmail.com", "rh-s@hpe.com"]
         },
         {
+            "launchpad_id": "ricardoas",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ricardo Araújo Santos",
+            "emails": ["ricardo@lsd.ufcg.edu.br", "ricoaraujosantos@gmail.com"]
+
+        },
+        {
             "launchpad_id": "richard-hagarty",
             "companies": [
                 {
