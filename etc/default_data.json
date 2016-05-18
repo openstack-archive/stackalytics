@@ -16919,6 +16919,17 @@
             "emails": ["zhang.shaoman@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhang-wenyan3",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhang-wenyan3",
+            "emails": ["zhang.wenyan3@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zhangjialong",
             "companies": [
                 {
