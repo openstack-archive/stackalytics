@@ -12166,6 +12166,7 @@
         },
         {
              "launchpad_id": "raymon-ha",
+             "zanata_id": "raymon_ha",
              "companies": [
                  {
                      "company_name": "OpenStack Korea User Group",
