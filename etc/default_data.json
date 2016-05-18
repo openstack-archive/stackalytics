@@ -7555,6 +7555,17 @@
             "emails": ["lawrancejing@gmail.com", "jing.liuqing@99cloud.net"]
         },
         {
+            "launchpad_id": "jiwei",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "WeiJi",
+            "emails": ["ji.wei3@zte.com.cn"]
+        },
+        {
             "launchpad_id": "jjohnsonkoilraj",
             "companies": [
                 {
