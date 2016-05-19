@@ -15416,6 +15416,21 @@
             "emails": ["uckey.1067@gmail.com"]
         },
         {
+            "launchpad_id": "uestc-shi",
+            "companies": [
+                {
+                     "company_name": "Orange",
+                     "end_date": "2015-Sep-30"
+                },
+                {
+                     "company_name": "China Mobile",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "peiqishi",
+             "emails": ["shipeiqi@cmss.chinamobile.com", "uestc.shi@gmail.com"]
+        },
+        {
             "launchpad_id": "ukeshkumar",
             "companies": [
                 {
