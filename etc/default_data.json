@@ -19624,10 +19624,9 @@
                     "tag_from": "2013.1.rc2"
                 },
                 {
-                    "branch": "stable/icehouse",
-                    "tag_to": "HEAD",
+                    "tag_to": "7dcdb23",
                     "release_name": "Icehouse",
-                    "tag_from": "2013.2"
+                    "tag_from": "2013.1.rc2"
                 },
                 {
                     "tag_to": "faba059",
