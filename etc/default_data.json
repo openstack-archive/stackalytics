@@ -9496,6 +9496,21 @@
             "emails": ["martin.andre@gmail.com", "m.andre@redhat.com", "martin.andre@kvhasia.com"]
         },
         {
+            "launchpad_id": "manikantha-tadi",
+            "companies": [
+                {
+                    "company_name": "Tata",
+                    "end_date": "2015-Jul-06"
+                },
+                {
+                    "company_name": "Imaginea Technologies Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Manikanta Srinivas Tadi",
+            "emails": ["manikantha.tadi@gmail.com", "srinivas.tadi@imaginea.com"]
+        },
+        {
             "launchpad_id": "manjunath-ranganathaiah",
             "gerrit_id": "mrangana",
             "companies": [
