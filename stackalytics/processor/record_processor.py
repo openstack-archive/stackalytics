@@ -616,8 +616,8 @@ class RecordProcessor(object):
         user_id = user_processor.make_user_id(zanata_id=record['zanata_id'])
 
         translation['record_type'] = 'tr'
-        translation['primary_key'] = '%s:%s:%s' % (
-            user_id, record['module'], record['date'])
+        translation['primary_key'] = '%s:%s:%s:%s' % (
+            user_id, record['module'], record['date'], record['branch'])
         translation['author_name'] = user_id
 
         # following fields are put into standard fields stored in dashboard mem
