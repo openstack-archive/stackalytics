@@ -101,6 +101,9 @@ def extend_record(record):
         record['title'] = filter_bug_title(record['title'])
         record['status_class'] = re.sub('\s+', '', record['status'])
 
+    elif record['record_type'] == 'tr':
+        record['date_str'] = format_date(record['date'])  # no need for hours
+
     return record
 
 
