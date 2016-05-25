@@ -15,6 +15,8 @@
 
 import functools
 import json
+import os
+import stat
 
 import jsonschema
 import six
@@ -227,3 +229,11 @@ class TestConfigFiles(testtools.TestCase):
 
     def test_test_default_data_user_companies(self):
         self._validate_user_companies('etc/test_default_data.json')
+
+    def test_file_mode(self):
+        files = os.listdir('etc')
+        for f in ('etc/%s' % f for f in files):
+            st = os.stat(f)
+            x_flag = stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
+            self.assertFalse(bool(st.st_mode & x_flag),
+                             msg='File %s should not be executable' % f)
