@@ -80,11 +80,11 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header">{%html author_link %} ({%html company_link %})</div>
         {%/if%}
         <div class="header">${date_str} in {%html module_link%}
-            {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "ci" %}
+            {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "ci" || record_type == "tr" %}
                 {%if branch != "master" %}(${branch}){%/if%}
             {%/if%}
             {%if record_type == "commit" %}
-                {%if branches.substring(0, 6) != "master" %}(${branches}){%/if%}
+                {%if branches.indexOf("master") < 0 %}(${branches}){%/if%}
             {%/if%}
         </div>
 
