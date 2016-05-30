@@ -8605,6 +8605,17 @@
             "emails": ["chenrui.momo@gmail.com", "kiwik.chenrui@huawei.com"]
         },
         {
+            "launchpad_id": "kkalynovskyi",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kostyantyn Kalynovskyi",
+            "emails": ["kkalynovskyi@gmail.com"]
+        },
+        {
             "launchpad_id": "klkumar",
             "companies": [
                 {
