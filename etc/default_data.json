@@ -3774,11 +3774,15 @@
             "companies": [
                 {
                     "company_name": "Sony Mobile Communications",
+                    "end_date": "2016-May-13"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "David Pursehouse",
-            "emails": ["david.pursehouse@sonymobile.com"]
+            "emails": ["david.pursehouse@gmail.com", "david.pursehouse@sonymobile.com"]
         },
         {
             "launchpad_id": "david-tardivel",
