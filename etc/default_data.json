@@ -5677,6 +5677,18 @@
             "emails": ["git-harry@live.co.uk"]
         },
         {
+            "launchpad_id": "giuseppecossu",
+            "gerrit_id": "gcossu",
+            "companies": [
+                {
+                    "company_name": "CREATE-NET",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Giuseppe Cossu",
+            "emails": ["giuseppecossu@gmail.com", "gcossu@create-net.org", "giuseppe.cossu@create-net.org"]
+        },
+        {
             "launchpad_id": "glacierrdev",
             "companies": [
                 {
