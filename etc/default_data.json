@@ -1270,6 +1270,18 @@
             "emails": ["jesse@gigantor.local", "jesse@aire.local", "anotherjesse@gmail.com"]
         },
         {
+            "launchpad_id": "ansreas",
+            "gerrit_id": "florath",
+            "companies": [
+                {
+                    "company_name": "flonatel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andreas Florath",
+            "emails": ["andreas@florath.net"]
+        },
+        {
             "launchpad_id": "anteaya",
             "companies": [
                 {
@@ -17769,6 +17781,11 @@
             "domains": ["fit-tecnologia.org.br"],
             "company_name": "FIT Instituto de Tecnologia",
             "aliases": ["FIT"]
+        },
+        {
+            "domains": ["florath.net"],
+            "company_name": "flonatel",
+            "aliases": ["florath nanosystems & telecommunications"]
         },
         {
             "domains": ["fnal.gov"],
