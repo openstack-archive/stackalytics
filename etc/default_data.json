@@ -18846,7 +18846,7 @@
                     "tag_from": "13.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/nova.git",
+            "uri": "https://git.openstack.org/openstack/nova",
             "module": "nova",
             "organization": "openstack"
         },
@@ -18906,7 +18906,7 @@
                     "tag_from": "9.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/keystone.git",
+            "uri": "https://git.openstack.org/openstack/keystone",
             "module": "keystone",
             "organization": "openstack"
         },
@@ -18961,7 +18961,7 @@
                     "tag_from": "8.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/cinder.git",
+            "uri": "https://git.openstack.org/openstack/cinder",
             "module": "cinder",
             "organization": "openstack"
         },
@@ -19021,7 +19021,7 @@
                     "tag_from": "12.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/glance.git",
+            "uri": "https://git.openstack.org/openstack/glance",
             "module": "glance",
             "organization": "openstack"
         },
@@ -19093,7 +19093,7 @@
                     "release_name": "Liberty"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/neutron.git",
+            "uri": "https://git.openstack.org/openstack/neutron",
             "module": "neutron",
             "organization": "openstack"
         },
@@ -19153,7 +19153,7 @@
                     "tag_from": "9.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/horizon.git",
+            "uri": "https://git.openstack.org/openstack/horizon",
             "module": "horizon",
             "organization": "openstack"
         },
@@ -19213,7 +19213,7 @@
                     "tag_from": "2.7.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/swift.git",
+            "uri": "https://git.openstack.org/openstack/swift",
             "module": "swift",
             "organization": "openstack"
         },
@@ -19260,7 +19260,7 @@
                     "tag_from": "1.8.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-keystoneclient.git",
+            "uri": "https://git.openstack.org/openstack/python-keystoneclient",
             "module": "python-keystoneclient",
             "organization": "openstack"
         },
@@ -19307,7 +19307,7 @@
                     "tag_from": "2.31.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-novaclient.git",
+            "uri": "https://git.openstack.org/openstack/python-novaclient",
             "module": "python-novaclient",
             "organization": "openstack"
         },
@@ -19349,7 +19349,7 @@
                     "tag_from": "1.5.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-cinderclient.git",
+            "uri": "https://git.openstack.org/openstack/python-cinderclient",
             "module": "python-cinderclient",
             "organization": "openstack"
         },
@@ -19391,7 +19391,7 @@
                     "tag_from": "1.1.1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-glanceclient.git",
+            "uri": "https://git.openstack.org/openstack/python-glanceclient",
             "module": "python-glanceclient",
             "organization": "openstack"
         },
@@ -19438,7 +19438,7 @@
                     "tag_from": "4.0.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-neutronclient.git",
+            "uri": "https://git.openstack.org/openstack/python-neutronclient",
             "module": "python-neutronclient",
             "organization": "openstack"
         },
@@ -19480,7 +19480,7 @@
                     "tag_from": "2.6.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-swiftclient.git",
+            "uri": "https://git.openstack.org/openstack/python-swiftclient",
             "module": "python-swiftclient",
             "organization": "openstack"
         },
@@ -19530,7 +19530,7 @@
                     "tag_from": "6.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/heat.git",
+            "uri": "https://git.openstack.org/openstack/heat",
             "module": "heat",
             "organization": "openstack"
         },
@@ -19552,7 +19552,7 @@
                     "tag_from": "0.2.5"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-heatclient.git",
+            "uri": "https://git.openstack.org/openstack/python-heatclient",
             "module": "python-heatclient",
             "organization": "openstack"
         },
@@ -19597,7 +19597,7 @@
                     "tag_from": "6.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/ceilometer.git",
+            "uri": "https://git.openstack.org/openstack/ceilometer",
             "module": "ceilometer",
             "organization": "openstack"
         },
@@ -19614,7 +19614,7 @@
                     "tag_from": "1.0.6"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/python-ceilometerclient.git",
+            "uri": "https://git.openstack.org/openstack/python-ceilometerclient",
             "module": "python-ceilometerclient",
             "organization": "openstack"
         },
@@ -19647,7 +19647,7 @@
                     "tag_from": "2015.1.0"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/oslo-incubator.git",
+            "uri": "https://git.openstack.org/openstack/oslo-incubator",
             "module": "oslo-incubator",
             "organization": "openstack"
         },
@@ -19664,7 +19664,7 @@
                     "tag_from": "1.2.1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/oslo.config.git",
+            "uri": "https://git.openstack.org/openstack/oslo.config",
             "module": "oslo.config",
             "organization": "openstack"
         },
@@ -19696,7 +19696,7 @@
                     "tag_from": "7dcdb23"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/openstack-manuals.git",
+            "uri": "https://git.openstack.org/openstack/openstack-manuals",
             "module": "openstack-manuals",
             "organization": "openstack"
         },
@@ -19713,7 +19713,7 @@
                     "tag_from": "0.11"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/openstack-doc-tools.git",
+            "uri": "https://git.openstack.org/openstack/openstack-doc-tools",
             "module": "openstack-doc-tools",
             "organization": "openstack"
         },
@@ -19730,7 +19730,7 @@
                     "tag_from": "2013.2"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/operations-guide.git",
+            "uri": "https://git.openstack.org/openstack/operations-guide",
             "module": "operations-guide",
             "organization": "openstack"
         },
@@ -19747,7 +19747,7 @@
                     "tag_from": "15cfe96"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/training-guides.git",
+            "uri": "https://git.openstack.org/openstack/training-guides",
             "module": "training-guides",
             "organization": "openstack"
         },
@@ -19764,7 +19764,7 @@
                     "tag_from": "2013.2"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/api-site.git",
+            "uri": "https://git.openstack.org/openstack/api-site",
             "module": "api-site",
             "organization": "openstack"
         },
@@ -19773,7 +19773,7 @@
             "aliases": [
                 "savanna"
             ],
-            "uri": "git://git.openstack.org/openstack/sahara.git",
+            "uri": "https://git.openstack.org/openstack/sahara",
             "organization": "openstack",
             "releases": [
                 {
@@ -19818,7 +19818,7 @@
         },
         {
             "module": "sahara-dashboard",
-            "uri": "git://git.openstack.org/openstack/sahara-dashboard.git",
+            "uri": "https://git.openstack.org/openstack/sahara-dashboard",
             "organization": "openstack",
             "releases": [
                 {
@@ -19835,7 +19835,7 @@
         },
         {
             "module": "python-saharaclient",
-            "uri": "git://git.openstack.org/openstack/python-saharaclient.git",
+            "uri": "https://git.openstack.org/openstack/python-saharaclient",
             "organization": "openstack",
             "releases": [
                 {
@@ -19855,22 +19855,22 @@
             "aliases": [
                 "fuel"
             ],
-            "uri": "git://git.openstack.org/openstack/fuel-main.git",
+            "uri": "https://git.openstack.org/openstack/fuel-main",
             "organization": "openstack"
         },
         {
             "module": "api-wg",
-            "uri": "git://git.openstack.org/openstack/api-wg.git",
+            "uri": "https://git.openstack.org/openstack/api-wg",
             "organization": "openstack"
         },
         {
             "module": "openstack-user-stories",
-            "uri": "git://git.openstack.org/openstack/openstack-user-stories.git",
+            "uri": "https://git.openstack.org/openstack/openstack-user-stories",
             "organization": "openstack"
         },
         {
             "module": "vmware-nsx",
-            "uri": "git://git.openstack.org/openstack/vmware-nsx.git",
+            "uri": "https://git.openstack.org/openstack/vmware-nsx",
             "organization": "openstack",
             "releases": [
                 {
@@ -19882,7 +19882,7 @@
         },
         {
             "module": "oslo.versionedobjects",
-            "uri": "git://git.openstack.org/openstack/oslo.versionedobjects.git",
+            "uri": "https://git.openstack.org/openstack/oslo.versionedobjects",
             "organization": "openstack",
             "releases": [
                 {
@@ -20017,7 +20017,7 @@
         {
             "module": "barbican",
             "organization": "openstack",
-            "uri": "git://git.openstack.org/openstack/barbican.git",
+            "uri": "https://git.openstack.org/openstack/barbican",
             "releases": [
                 {
                     "tag_to": "juno-eol",
@@ -20052,172 +20052,172 @@
         {
             "module": "releng",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/releng.git"
+            "uri": "https://git.opnfv.org/releng"
         },
         {
             "module": "compass4nfv",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/compass4nfv.git"
+            "uri": "https://git.opnfv.org/compass4nfv"
         },
         {
             "module": "onosfw",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/onosfw.git"
+            "uri": "https://git.opnfv.org/onosfw"
         },
         {
             "module": "joid",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/joid.git"
+            "uri": "https://git.opnfv.org/joid"
         },
         {
             "module": "yardstick",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/yardstick.git"
+            "uri": "https://git.opnfv.org/yardstick"
         },
         {
             "module": "apex",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/apex.git"
+            "uri": "https://git.opnfv.org/apex"
         },
         {
             "module": "moon",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/moon.git"
+            "uri": "https://git.opnfv.org/moon"
         },
         {
             "module": "sfc",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/sfc.git"
+            "uri": "https://git.opnfv.org/sfc"
         },
         {
             "module": "copper",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/copper.git"
+            "uri": "https://git.opnfv.org/copper"
         },
         {
             "module": "vswitchperf",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/vswitchperf.git"
+            "uri": "https://git.opnfv.org/vswitchperf"
         },
         {
             "module": "functest",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/functest.git"
+            "uri": "https://git.opnfv.org/functest"
         },
         {
             "module": "opnfvdocs",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/opnfvdocs.git"
+            "uri": "https://git.opnfv.org/opnfvdocs"
         },
         {
             "module": "genesisreq",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/genesisreq.git"
+            "uri": "https://git.opnfv.org/genesisreq"
         },
         {
             "module": "octopus",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/octopus.git"
+            "uri": "https://git.opnfv.org/octopus"
         },
         {
             "module": "lsoapi",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/lsoapi.git"
+            "uri": "https://git.opnfv.org/lsoapi"
         },
         {
             "module": "qtip",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/qtip.git"
+            "uri": "https://git.opnfv.org/qtip"
         },
         {
             "module": "escalator",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/escalator.git"
+            "uri": "https://git.opnfv.org/escalator"
         },
         {
             "module": "availability",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/availability.git"
+            "uri": "https://git.opnfv.org/availability"
         },
         {
             "module": "storperf",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/storperf.git"
+            "uri": "https://git.opnfv.org/storperf"
         },
         {
             "module": "multisite",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/multisite.git"
+            "uri": "https://git.opnfv.org/multisite"
         },
         {
             "module": "parser",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/parser.git"
+            "uri": "https://git.opnfv.org/parser"
         },
         {
             "module": "enfv",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/enfv.git"
+            "uri": "https://git.opnfv.org/enfv"
         },
         {
             "module": "conductor",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/conductor.git"
+            "uri": "https://git.opnfv.org/conductor"
         },
         {
             "module": "genesis",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/genesis.git"
+            "uri": "https://git.opnfv.org/genesis"
         },
         {
             "module": "promise",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/promise.git"
+            "uri": "https://git.opnfv.org/promise"
         },
         {
             "module": "bottlenecks",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/bottlenecks.git"
+            "uri": "https://git.opnfv.org/bottlenecks"
         },
         {
             "module": "fuel@opnfv",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/fuel.git"
+            "uri": "https://git.opnfv.org/fuel"
         },
         {
             "module": "doctor",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/doctor.git"
+            "uri": "https://git.opnfv.org/doctor"
         },
         {
             "module": "kvmfornfv",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/kvmfornfv.git"
+            "uri": "https://git.opnfv.org/kvmfornfv"
         },
         {
             "module": "ipv6",
             "organization": "opnfv",
-            "uri": "git://git.opnfv.org/ipv6.git"
+            "uri": "https://git.opnfv.org/ipv6"
         },
         {
             "module": "osops-example-configs",
             "organization": "openstack",
-            "uri": "git://github.com/openstack/osops-example-configs.git"
+            "uri": "https://github.com/openstack/osops-example-configs"
         },
         {
             "module": "osops-tools-contrib",
             "organization": "openstack",
-            "uri": "git://github.com/openstack/osops-tools-contrib.git"
+            "uri": "https://github.com/openstack/osops-tools-contrib"
         },
         {
             "module": "osops-tools-generic",
             "organization": "openstack",
-            "uri": "git://github.com/openstack/osops-tools-generic.git"
+            "uri": "https://github.com/openstack/osops-tools-generic"
         },
         {
             "module": "osops-tools-logging",
             "organization": "openstack",
-            "uri": "git://github.com/openstack/osops-tools-logging.git"
+            "uri": "https://github.com/openstack/osops-tools-logging"
         },
         {
             "module": "osops-tools-monitoring",
