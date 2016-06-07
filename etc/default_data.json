@@ -19496,9 +19496,14 @@
                     "tag_from": "2.23.0"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "3.3.1",
                     "release_name": "Mitaka",
                     "tag_from": "2.31.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "3.3.1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/python-novaclient.git",
