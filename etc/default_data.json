@@ -20283,6 +20283,7 @@
             "modules": [
               "fuel-agent",
               "fuel-astute",
+              "fuel-menu",
               "fuel-nailgun-agent",
               "fuel-provision",
               "fuel-tasklib",
