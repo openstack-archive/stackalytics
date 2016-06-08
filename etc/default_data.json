@@ -16847,6 +16847,18 @@
             "emails": ["yihleong@gmail.com", "yih.leong.sun@intel.com"]
         },
         {
+            "launchpad_id": "yj2311",
+            "gerrit_id": "JackieYuan",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JackieYuan",
+            "emails": ["jing.yuan@easystack.cn", "yj2311@126.com"]
+        },
+        {
             "launchpad_id": "ynshenoy",
             "companies": [
                 {
