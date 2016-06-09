@@ -3014,6 +3014,18 @@
             "emails": ["christophe@sauthier.com", "christophe.sauthier@objectif-libre.com"]
         },
         {
+            "launchpad_id": "christopher-m-spencer",
+            "gerrit_id": "chrisspencer",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christopher Spencer",
+            "emails": ["christopher.m.spencer@intel.com"]
+        },
+        {
             "launchpad_id": "chungg",
             "companies": [
                 {
