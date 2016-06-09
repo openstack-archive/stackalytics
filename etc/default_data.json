@@ -10950,6 +10950,18 @@
             "emails": ["narender.soorineeda@gmail.com"]
         },
         {
+            "launchpad_id": "nate-graf",
+            "gerrit_id": "nategraf",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nate Graf",
+            "emails": ["nate.graf@rackspace.com"]
+        },
+        {
             "launchpad_id": "nate-johnston",
             "companies": [
                 {
