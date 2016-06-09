@@ -4219,6 +4219,18 @@
             "emails": ["dhami@noironetworks.com","mandeep.dhami@gmail.com"]
         },
         {
+            "launchpad_id": "dharini-chandrasekar",
+            "gerrit_id": "dharinic",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dharini Chandrasekar",
+            "emails": ["dharini.chandrasekar@intel.com", "dhar41092@gmail.com"]
+        },
+        {
             "launchpad_id": "diana-clarke",
             "companies": [
                 {
