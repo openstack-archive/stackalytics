@@ -1184,6 +1184,18 @@
             "emails": ["aniketanikhindi@gmail.com", "aniket.anikhindi@calsoftinc.com"]
         },
         {
+            "launchpad_id": "anindita-das",
+            "gerrit_id": "anudas",
+            "companies": [
+                {
+                    "company_name":"Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anindita Das",
+            "emails": ["anindita.das@intel.com", "anindita.das@utexas.edu"]
+        },
+        {
             "launchpad_id": "anish7",
             "companies": [
                 {
