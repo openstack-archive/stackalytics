@@ -7343,6 +7343,18 @@
             "emails": ["jay.lau.513@gmail.com", "liugya@cn.ibm.com"]
         },
         {
+            "launchpad_id": "jaycen-v-grant",
+            "gerrit_id": "jvgrant",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": "2014-Jun-24"
+                }
+            ],
+            "user_name": "Jaycen Grant",
+            "emails": ["jaycen.v.grant@intel.com"]
+        },
+        {
             "launchpad_id": "jaypipes",
             "companies": [
                 {
