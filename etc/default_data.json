@@ -10446,6 +10446,17 @@
             "emails": ["michael.ogorman@gmail.com"]
         },
         {
+            "launchpad_id": "michael-w-turvey",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Turvey",
+            "emails": ["michael.w.turvey@intel.com"]
+        },
+        {
             "launchpad_id": "michaeltchapman",
             "companies": [
                 {
