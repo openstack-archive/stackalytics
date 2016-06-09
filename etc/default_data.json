@@ -9276,8 +9276,8 @@
                     "end_date": null
                 }
             ],
-            "user_name": "Lisa Smith",
-            "emails": ["lisa.smith@intel.com", "lisasmith@example.com"]
+            "user_name": "Justin Wilson",
+            "emails": ["justin.wilson@intel.com"]
         },
         {
             "launchpad_id": "jwy",
