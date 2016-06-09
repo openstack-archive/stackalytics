@@ -15784,6 +15784,18 @@
             "emails": ["vaidyanath.m@gmail.com", "vaidyanath.manogaran@ril.com"]
         },
         {
+            "launchpad_id": "valw",
+            "gerrit_id": "valw",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Val Wanjura",
+            "emails": ["val.wanjura@rackspace.com"]
+        },
+       {
             "launchpad_id": "vancsics",
             "companies": [
                 {
