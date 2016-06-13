@@ -13625,6 +13625,22 @@
             "emails": ["sebastien.badia@enovance.com", "sbadia@redhat.com"]
         },
         {
+            "launchpad_id": "sbalukoff",
+            "gerrit_id": "sbalukoff",
+            "companies": [
+                {
+                    "company_name": "Blue Box",
+                    "end_date": "2016-May-01"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stephen Balukoff",
+            "emails": ["stephen@balukoff.com", "sbalukoff@us.ibm.com", "sbalukoff@bluebox.net"]
+        },
+        {
             "launchpad_id": "scarvalhojr",
             "companies": [
                 {
