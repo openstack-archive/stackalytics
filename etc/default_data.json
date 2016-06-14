@@ -14761,6 +14761,19 @@
             "emails": ["sridhar.gaddam@enovance.com", "sgaddam@redhat.com"]
         },
         {
+            "launchpad_id": "stanicke",
+            "gerrit_id": "stanislavulrych",
+            "zanata_id": "stanislavulrych",
+            "companies": [
+                {
+                    "company_name": "Ultimum Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stanislav Ulrych",
+            "emails": ["stanislav.ulrych@ultimum.io", "stanislav.ulrych@ultimumtechnologies.com", "stanicke@gmail.com"]
+        },
+        {
             "launchpad_id": "stanzgy",
             "companies": [
                 {
