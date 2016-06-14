@@ -2497,6 +2497,18 @@
             "emails": ["caleb@calebgroom.com", "cgroom@rackspace.com"]
         },
         {
+            "launchpad_id": "caowei-e",
+            "gerrit_id": "caowei",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Cao",
+            "emails": ["cao.wei@99cloud.net", "caowei_e@aliyun.com"]
+        },
+        {
             "launchpad_id": "carl-baldwin",
             "companies": [
                 {
