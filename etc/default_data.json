@@ -1331,6 +1331,17 @@
             "emails": ["anthony_veiga@cable.comcast.com"]
         },
         {
+            "launchpad_id": "anthony-washington",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anthony Washington",
+            "emails": ["anthony.washington@intel.com", "awashington251@gmail.com"]
+        },
+        {
             "launchpad_id": "antont8443",
             "companies": [
                 {
