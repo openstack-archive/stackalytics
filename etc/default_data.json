@@ -18834,6 +18834,11 @@
             "company_name": "Servosity"
         },
         {
+            "domains": ["sgitg.sgcc.com.cn"],
+            "company_name": "BeiJing Guodiantong Network Co.,Ltd.",
+            "aliases": ["GDT"]
+        },
+        {
             "domains": ["siaras.com"],
             "company_name": "Siaras"
         },
