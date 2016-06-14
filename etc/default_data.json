@@ -2193,6 +2193,18 @@
             "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com", "carl.baldwin@hpe.com"]
         },
         {
+            "launchpad_id": "cassandraburnias",
+            "gerrit_id": "cassandraburnias",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cassandra Burnias",
+            "emails": ["cassandraburnias@hotmail.com", "cassandra.burnias@rackspace.com"]
+        },
+        {
             "launchpad_id": "castulo-martinez",
             "gerrit_id": "cas",
             "companies": [
