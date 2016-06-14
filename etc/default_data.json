@@ -10631,6 +10631,18 @@
             "user_name": "Michael Carden",
             "emails": ["mike.carden@gmail.com", "crash@michaelcarden.net"]
         },
+              {
+           "launchpad_id": "mikecincotamayo",
+           "gerrit_id": "mtamayo",
+           "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Tamayo",
+            "emails": ["mike.j.tamayo@intel.com", "mikecincotamayo@gmail.com"]
+        },
         {
             "launchpad_id": "mikemason010",
             "gerrit_id" : "mac4",
