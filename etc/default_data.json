@@ -7434,7 +7434,7 @@
             "companies": [
                 {
                     "company_name": "Intel",
-                    "end_date": "2014-Jun-24"
+                    "end_date": null
                 }
             ],
             "user_name": "Jaycen Grant",
