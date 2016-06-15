@@ -9454,6 +9454,18 @@
             "emails": ["liuhh@awcloud.com", "lhh_youzi@163.com"]
         },
         {
+            "launchpad_id": "liujiong",
+            "gerrit_id":"liujiong",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liujiong",
+            "emails": ["liujiong@gohighsec.com"]
+        },
+        {
             "launchpad_id": "liujunpeng",
             "gerrit_id":"liujunpeng",
             "companies": [
@@ -18267,6 +18279,10 @@
         {
             "domains": ["godaddy.com"],
             "company_name": "GoDaddy"
+        },
+        {
+            "domains": ["gohighsec.com"],
+            "company_name": "GohighSec"
         },
         {
             "domains": ["google.com"],
