@@ -21014,7 +21014,7 @@
         },
         {
             "module_group_name": "murano-group",
-            "modules": ["murano", "python-muranoclient", "murano-dashboard", "murano-agent", "murano-specs", "murano-apps"]
+            "modules": ["murano", "python-muranoclient", "murano-dashboard", "murano-agent", "murano-specs"]
         },
         {
             "module_group_name": "solum-group",
