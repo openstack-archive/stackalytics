@@ -6487,6 +6487,18 @@
             "emails": ["reachme@hgadgil.net"]
         },
         {
+            "launchpad_id": "hhktony",
+            "gerrit_id": "xutao",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tony Xu",
+            "emails": ["hhktony@gmail.com", "xutao@t2cloud.net"]
+        },
+        {
             "launchpad_id": "hmunfru",
             "companies": [
                 {
@@ -19141,6 +19153,10 @@
             "domains": ["symantec.com"],
             "company_name": "Symantec",
             "aliases": ["Symantec Software and Services"]
+        },
+        {
+            "domains": ["t2cloud.net"],
+            "company_name": "t2cloud"
         },
         {
             "domains": ["tail-f.com"],
