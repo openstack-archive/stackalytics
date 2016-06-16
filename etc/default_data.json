@@ -1625,6 +1625,21 @@
                        "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
+            "launchpad_id": "ashish-kumar-gupta",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashish Kumar Gupta",
+            "emails": ["ashish-kumar.gupta@hpe.com", "ashish-kumar.gupta@hp.com"]
+        },
+        {
             "launchpad_id": "ashish-singh7",
             "companies": [
                 {
