@@ -8085,9 +8085,7 @@
             "user_name": "Jonas Pfannschmidt",
             "emails": ["jonas.pfannschmidt@hp.com","jonas.pfannschmidt@hpe.com"]
         },
-
-
-        {
+       {
             "launchpad_id": "jonpaul-sullivan",
             "companies": [
                 {
@@ -9343,6 +9341,17 @@
             ],
             "user_name": "Robert Collins",
             "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com", "rbtcollins@hpe.com"]
+        },
+        {
+            "launchpad_id": "liminliu",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liu Li Min",
+            "emails": ["liulm@certusnet.com.cn","larrylimin@126.com"]
         },
         {
             "launchpad_id": "lin-hua-cheng",
@@ -18155,6 +18164,10 @@
         {
             "domains": ["cern.ch"],
             "company_name": "CERN"
+        },
+        {
+            "domains": ["certusnet.com"],
+            "company_name": "CertusNet"
         },
         {
             "domains": ["charter.com", "twcable.com"],
