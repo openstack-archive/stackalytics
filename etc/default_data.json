@@ -11799,7 +11799,9 @@
             "user_name": "OpenStack Robot",
             "emails": ["review@openstack.org", "jenkins@review.openstack.org",
                 "jenkins@openstack.org", "hudson@openstack.org",
-                "openstack-infra@lists.openstack.org", "info@bitergia.com"]
+                "openstack-infra@lists.openstack.org", "info@bitergia.com",
+                "zuul@zuul.openstack.org", "zuul@openstack.org"
+            ]
         },
         {
             "launchpad_id": "opilotte",
