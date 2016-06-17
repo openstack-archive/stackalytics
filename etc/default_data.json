@@ -9274,6 +9274,19 @@
             "emails": ["leixin487@hotmail.com", "leixin@awcloud.com"]
         },
         {
+            "launchpad_id": "lenka-husakova",
+            "gerrit_id": "lenkahusakova",
+            "zanata_id": "lenkahusakova",
+            "companies": [
+                {
+                    "company_name": "Ultimum Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lenka Husáková",
+            "emails": ["lenka.husakova@ultimum.io"]
+        },
+        {
             "launchpad_id": "leseb",
             "companies": [
                 {
