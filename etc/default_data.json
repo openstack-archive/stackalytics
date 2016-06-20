@@ -6274,6 +6274,21 @@
             "emails": ["h-aramaki@netone.co.jp"]
         },
         {
+            "launchpad_id": "hanchao-v",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": "2016-Jun-08"
+                },
+                {
+                    "company_name": "ISCAS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Han Chao",
+            "emails": ["hanchao@iscas.ac.cn"]
+        },
+        {
             "launchpad_id": "hanjiabao",
             "companies": [
                 {
@@ -18663,6 +18678,11 @@
         {
             "domains": ["iroquoisystems.com"],
             "company_name": "IroquoiSystems"
+        },
+        {
+            "domains": ["iscas.ac.cn"],
+            "company_name": "ISCAS",
+            "aliases": ["Institute of Software Chinese Academy of Sciences", "中国科学院软件研究所", "中科院软件所"]
         },
         {
             "domains": ["isi.edu"],
