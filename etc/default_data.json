@@ -69,6 +69,18 @@
             "emails": ["andrew@andrewspiers.net", "andrew.spiers@unimelb.edu.au"]
         },
         {
+            "launchpad_id": "307419146-q",
+            "gerrit_id": "liyf",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liyifeng",
+            "emails": ["307419146@qq.com", "yifeng.li@easystack.cn"]
+        },
+        {
             "launchpad_id": "36429515-3",
             "companies": [
                 {
