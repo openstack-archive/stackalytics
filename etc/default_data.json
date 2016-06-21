@@ -16558,6 +16558,22 @@
             "emails": ["ved_lad@symantec.com", "ved_lad@symantec40.com", "vedlad@gmail.com"]
         },
         {
+            "launchpad_id": "venkatamaheshkotha",
+            "gerrit_id": "venkatamahesh",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Jun-08"
+                },
+                {
+                    "company_name": "Infinite",
+                    "end_date": null
+                }
+            ],
+            "user_name": "venkatamahesh",
+            "emails": ["venkata.kotha@infinite.com", "venkatamaheshkotha@gmail.com"]
+        },
+        {
             "launchpad_id": "vey-julien",
             "gerrit_id": "julienvey",
             "companies": [
@@ -18898,6 +18914,11 @@
         {
             "domains": ["inaugust.com"],
             "company_name": "In August"
+        },
+        {
+            "domains": ["infinite.com"],
+            "company_name": "Infinite",
+            "aliases": ["Infinite Computer Solutions India Ltd"]
         },
         {
             "domains": ["infoblox.com"],
