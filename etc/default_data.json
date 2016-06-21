@@ -3507,6 +3507,22 @@
             "emails": ["crosbymichael@gmail.com"]
         },
         {
+            "launchpad_id": "csavignan",
+            "zanata_id": "liced",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Apr-25"
+                },
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cédric Savignan",
+            "emails": ["liced@liced.fr", "cedric.savignan@orange.com"]
+        },
+        {
             "launchpad_id": "cschwede",
             "companies": [
                 {
