@@ -3262,11 +3262,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-May-31"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Chris Jones",
-            "emails": ["cmsj@tenshu.net"]
+            "emails": ["cmsj@tenshu.net", "chjones@redhat.com", "cmsj@redhat.com"]
         },
         {
             "launchpad_id": "cody-somerville",
