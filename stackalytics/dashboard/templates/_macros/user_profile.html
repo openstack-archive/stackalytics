@@ -38,6 +38,9 @@
             {%if github_id %}
                 <div>Github: <a href="https://github.com/${github_id}" target="_blank">${github_id}</a></div>
             {%/if%}
+            {%if zanata_id %}
+                <div>Zanata: <a href="https://translate.openstack.org/profile/view/${zanata_id}" target="_blank">${zanata_id}</a></div>
+            {%/if%}
             {%if ldap_id %}
                 <div>LDAP: ${ldap_id}</div>
             {%/if%}
