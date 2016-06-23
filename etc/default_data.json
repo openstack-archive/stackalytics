@@ -8381,6 +8381,7 @@
         },
         {
             "launchpad_id": "jose-eduardo-jr",
+            "zanata_id": "josemello",
             "companies": [
                 {
                     "company_name": "Hitachi",
@@ -8388,7 +8389,7 @@
                 }
             ],
             "user_name": "Jose Mello",
-            "emails": ["jose.eduardo.jr@gmail.com", "jose.melo@fit-tecnologia.org.br"]
+            "emails": ["jose.eduardo.jr@gmail.com", "jose.melo@fit-tecnologia.org.br", "jose.mello@hds.com"]
         },
         {
             "launchpad_id": "jose-falavinha",
