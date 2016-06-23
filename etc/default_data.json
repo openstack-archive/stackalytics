@@ -4017,6 +4017,17 @@
             "emails": ["david.tardivel@b-com.com"]
         },
         {
+            "launchpad_id": "david-zhw1982",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wei.zhang",
+            "emails": ["david_zhw1982@163.com","zhang.wei57@zte.com.cn"]
+        },
+        {
             "launchpad_id": "davide-guerri",
             "companies": [
                 {
