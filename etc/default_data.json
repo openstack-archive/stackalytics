@@ -17266,6 +17266,18 @@
             "emails": ["wes_gurney@cable.comcast.com"]
         },
         {
+            "launchpad_id": "wh-ubuntuone",
+            "gerrit_id": "bowtie",
+            "companies": [
+                {
+                    "company_name": "Cisco",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ken Wronkiewicz",
+            "emails": ["wh-openstack@wirewd.com", "wh-ubuntuone@wirewd.com"]
+        },
+        {
             "launchpad_id": "wingwj",
             "companies": [
                 {
