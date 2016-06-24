@@ -41,21 +41,9 @@ def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
 
 
 def store_user(runtime_storage_inst, user):
-    write_flag = False
-
     if not user.get('seq'):
         user['seq'] = runtime_storage_inst.inc_user_count()
         LOG.debug('New user: %s', user)
-        write_flag = True
-    else:
-        stored_user = runtime_storage_inst.get_by_key(
-            'user:%d' % user.get('seq'))
-        if stored_user != user:
-            LOG.debug('User updated: %s', user)
-            write_flag = True
-
-    if not write_flag:
-        return
 
     runtime_storage_inst.set_by_key('user:%d' % user['seq'], user)
     if user.get('user_id'):
