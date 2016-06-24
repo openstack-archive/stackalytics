@@ -14747,6 +14747,18 @@
             "emails": ["mehdi.abaakouk@enovance.com", "mabaakou@redhat.com", "sileht@redhat.com", "sileht@sileht.net"]
         },
         {
+            "launchpad_id": "simak-jan",
+            "gerrit_id": "honzas",
+            "companies": [
+                {
+                    "company_name": "Seznam.cz",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jan Šimák",
+            "emails": ["simak.jan@gmail.com"]
+        },
+        {
             "launchpad_id": "simon-l-v",
             "companies": [
                 {
