@@ -18237,6 +18237,17 @@
             "emails": ["zhouhy@awcloud.com"]
         },
         {
+            "launchpad_id": "zhoujm-cri",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhou Jianming",
+            "emails": ["zhoujm_cri@hotmail.com", "jm_zhou@126.com", "zhoujianming@h3c.com"]
+        },
+        {
             "launchpad_id": "zhu-rong",
             "companies": [
                 {
