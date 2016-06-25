@@ -16081,6 +16081,17 @@
             "emails": ["tiago.pasqualini@gmail.com", "tiagop.silva@fit-tecnologia.org.br"]
         },
         {
+            "launchpad_id": "tian-mingming",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tian Mingming",
+            "emails": ["tian.mingming@h3c.com", "tianming20052004@163.com"]
+        },
+        {
             "launchpad_id": "tianshan",
             "companies": [
                 {
