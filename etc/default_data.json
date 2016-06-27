@@ -17962,6 +17962,17 @@
             "emails": ["zeke@sikelianos.com"]
         },
         {
+            "launchpad_id": "zengluul",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zenglulu",
+            "emails": ["zengluul@gmail.com", "zeng.lulu@h3c.com"]
+        },
+        {
             "launchpad_id": "zengyunling",
             "companies": [
                 {
