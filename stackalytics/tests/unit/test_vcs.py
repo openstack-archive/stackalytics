@@ -135,6 +135,7 @@ Co-Authored-By: Tupac Shakur <tupac.shakur@openstack.com>
 Also: Bob Dylan <bob.dylan@openstack.com>
 Co-Authored: Anonymous <correct@email.com>
 Co-Author-By: Anonymous2 <correct@email2.com>
+co-authored-by: brian.tully@hp.com
 Co-Author: Winnie the Pooh winnie222@openstack.org
 
 diff_stat:
@@ -216,4 +217,9 @@ diff_stat:
         self.assertIn(
             {'author_name': 'Winnie the Pooh',
              'author_email': 'winnie222@openstack.org'},
+            commits[7]['coauthor'])
+
+        self.assertIn(
+            {'author_name': '',
+             'author_email': 'brian.tully@hp.com'},
             commits[7]['coauthor'])
