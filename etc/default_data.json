@@ -5410,12 +5410,26 @@
             "launchpad_id": "ethuleau",
             "companies": [
                 {
+                    "company_name": "Orange",
+                    "end_date": "2013-Jan-31"
+                },
+                {
                     "company_name": "Cloudwatt",
+                    "end_date": "2016-Feb-29"
+                },
+                {
+                    "company_name": "Juniper Networks",
                     "end_date": null
                 }
             ],
             "user_name": "\u00c9douard Thuleau",
-            "emails": ["edouard.thuleau@orange.com", "thuleau@gmail.com", "edouard.thuleau@cloudwatt.com", "edouard1.thuleau@orange.com"]
+            "emails": [
+                "edouard.thuleau@orange.com",
+                "thuleau@gmail.com",
+                "edouard.thuleau@cloudwatt.com",
+                "edouard1.thuleau@orange.com",
+                "ethuleau@juniper.net"
+            ]
         },
         {
             "launchpad_id": "ettore-simone",
