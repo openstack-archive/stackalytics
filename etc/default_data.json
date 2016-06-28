@@ -17128,6 +17128,18 @@
             "emails": ["wang.zengzhi@zte.com.cn"]
         },
         {
+            "launchpad_id": "wangjianhe",
+            "companies": [
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangjianhe-chinac",
+            "emails": ["wangjianhe@chinac.com"]
+
+        },
+        {
             "launchpad_id": "wangliangfu",
             "companies": [
                 {
