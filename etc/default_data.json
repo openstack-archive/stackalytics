@@ -17117,6 +17117,17 @@
             "emails": ["wan-yen.hsu@hp.com", "wan-yen.hsu@hpe.com"]
         },
         {
+            "launchpad_id": "wang-ping5",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ping035627",
+            "emails": ["wang.ping5@zte.com.cn", "present.wp@icloud.com"]
+        },
+        {
             "launchpad_id": "wang-zengzhi",
             "companies": [
                 {
@@ -18023,6 +18034,17 @@
             ],
             "user_name": "Jin Nan Zhang",
             "emails": ["zhang.jinnan@99cloud.net", "zhangjinnan87@gmail.com"]
+        },
+        {
+            "launchpad_id": "zhang-ke106",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "249043822",
+            "emails": ["zhang.ke106@zte.com.cn", "zhangke909@qq.com"]
         },
         {
             "launchpad_id": "zhang-shaoman",
