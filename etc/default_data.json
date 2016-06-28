@@ -4115,6 +4115,17 @@
             "emails": ["dborodaenko@mirantis.com", "angdraug@gmail.com"]
         },
         {
+            "launchpad_id": "dcwangmit01",
+            "user_name": "David C Wang",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "emails": ["dcwangmit01@gmail.com", "davwang4@cisco.com"]
+        },
+        {
             "github_id": "ddollar",
             "user_name": "David Dollar",
             "companies": [
