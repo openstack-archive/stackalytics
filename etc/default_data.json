@@ -9826,6 +9826,17 @@
             "emails": ["liujunpeng@inspur.com"]
         },
         {
+            "launchpad_id": "liuqing",
+            "companies": [
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liu Qing",
+            "emails": ["liuqing@chinac.com"]
+        },
+        {
             "launchpad_id": "liusheng",
             "companies": [{
                 "company_name": "Huawei",
@@ -18639,6 +18650,11 @@
             "domains": ["charter.com", "twcable.com"],
             "company_name": "Charter"
         },
+        {
+            "domains": ["chinac.com"],
+            "company_name": "Chinac"
+        },
+
         {
             "domains": ["chinacloud.com.cn"],
             "company_name": "China Cloud"
