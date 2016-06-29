@@ -18128,6 +18128,17 @@
             "emails": ["zhang.wenyan3@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhanghuan",
+            "companies": [
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhang Huan",
+            "emails": ["zhanghuan@chinac.com"]
+        },
+        {
             "launchpad_id": "zhangjialong",
             "companies": [
                 {
