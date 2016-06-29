@@ -9887,6 +9887,15 @@
             "emails": ["liusheng1175@126.com", "liusheng@huawei.com", "liusheng2048@gmail.com"]
         },
         {
+            "launchpad_id": "liusu",
+            "companies": [{
+                "company_name": "Chinac",
+                "end_date": null
+            }],
+            "user_name": "liusu",
+            "emails": ["liusu8788@gmail.com", "liusu@chinac.com"]
+        },
+        {
             "launchpad_id": "liyingjun",
             "companies": [
                 {
