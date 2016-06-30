@@ -28,6 +28,10 @@ PAGE_LIMIT = 100
 REQUEST_COUNT_LIMIT = 20
 
 
+class RcsException(Exception):
+    pass
+
+
 class Rcs(object):
     def __init__(self):
         pass
@@ -56,7 +60,7 @@ class Gerrit(Rcs):
             if not self.port:
                 self.port = DEFAULT_PORT
         else:
-            raise Exception('Invalid rcs uri %s' % uri)
+            raise RcsException('Invalid rcs uri %s' % uri)
 
         self.key_filename = None
         self.username = None
@@ -71,7 +75,7 @@ class Gerrit(Rcs):
         self.key_filename = kwargs.get('key_filename')
         self.username = kwargs.get('username')
 
-        return self._connect()
+        self._connect()
 
     def _connect(self):
         try:
@@ -79,13 +83,12 @@ class Gerrit(Rcs):
                                 key_filename=self.key_filename,
                                 username=self.username)
             LOG.debug('Successfully connected to Gerrit')
-            return True
         except Exception as e:
             LOG.error('Failed to connect to gerrit %(host)s:%(port)s. '
-                      'Error: %(err)s', {'host': self.hostname,
-                                         'port': self.port, 'err': e})
-            LOG.exception(e)
-            return False
+                      'Error: %(err)s',
+                      {'host': self.hostname, 'port': self.port, 'err': e},
+                      exc_info=True)
+            raise RcsException('Failed to connect to gerrit: %s' % e)
 
     def _get_cmd(self, project_organization, module, branch, age=0,
                  status=None, limit=PAGE_LIMIT, grab_comments=False):
@@ -113,10 +116,8 @@ class Gerrit(Rcs):
             return self.client.exec_command(cmd)
         except Exception as e:
             LOG.error('Error %(error)s while execute command %(cmd)s',
-                      {'error': e, 'cmd': cmd})
-            LOG.exception(e)
-            self.request_count = REQUEST_COUNT_LIMIT
-            return False
+                      {'error': e, 'cmd': cmd}, exc_info=True)
+            raise RcsException('Failed to execute command: %s', cmd)
 
     def _poll_reviews(self, project_organization, module, branch,
                       last_retrieval_time, status=None, grab_comments=False):
@@ -163,7 +164,7 @@ class Gerrit(Rcs):
     def get_project_list(self):
         exec_result = self._exec_command('gerrit ls-projects')
         if not exec_result:
-            raise Exception("Unable to retrieve list of projects from gerrit.")
+            raise RcsException("Gerrit returned no projects")
         stdin, stdout, stderr = exec_result
         result = [line.strip() for line in stdout]
 

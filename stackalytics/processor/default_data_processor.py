@@ -75,10 +75,9 @@ def _retrieve_project_list_from_gerrit(project_source):
 
         project_list = gerrit_inst.get_project_list()
         gerrit_inst.close()
-    except Exception as e:
-        LOG.exception(e)
-        LOG.warning('Fail to retrieve list of projects. Keep it unmodified')
-        return
+    except rcs.RcsException:
+        LOG.error('Failed to retrieve list of projects')
+        raise
 
     organization = project_source['organization']
     LOG.debug('Get list of projects for organization %s', organization)
@@ -108,9 +107,9 @@ def _retrieve_project_list_from_github(project_source):
     try:
         github_repos = github.get_organization(organization).get_repos()
     except Exception as e:
-        LOG.exception(e)
-        LOG.warning('Fail to retrieve list of projects. Keep it unmodified')
-        return
+        LOG.error('Failed to retrieve list of projects from GitHub: %s',
+                  e, exc_info=True)
+        raise
 
     for repo in github_repos:
         yield {

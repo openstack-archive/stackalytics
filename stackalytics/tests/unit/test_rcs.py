@@ -41,9 +41,8 @@ class TestRcs(testtools.TestCase):
         mock_client.connect = mock_connect
 
         gerrit = rcs.Gerrit('gerrit://review.openstack.org')
-        setup_result = gerrit.setup(username='user', key_filename='key')
+        gerrit.setup(username='user', key_filename='key')
 
-        self.assertTrue(setup_result)
         mock_connect.assert_called_once_with(
             'review.openstack.org', port=rcs.DEFAULT_PORT, key_filename='key',
             username='user')
@@ -58,9 +57,9 @@ class TestRcs(testtools.TestCase):
         mock_connect.side_effect = Exception
 
         gerrit = rcs.Gerrit('gerrit://review.openstack.org')
-        setup_result = gerrit.setup(username='user', key_filename='key')
+        self.assertRaises(rcs.RcsException, gerrit.setup,
+                          username='user', key_filename='key')
 
-        self.assertFalse(setup_result)
         mock_connect.assert_called_once_with(
             'review.openstack.org', port=rcs.DEFAULT_PORT, key_filename='key',
             username='user')
