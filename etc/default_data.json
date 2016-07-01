@@ -18098,6 +18098,17 @@
             "emails": ["zerodivisible@gmail.com"]
         },
         {
+          "launchpad_id": "zhang-haixia",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "HaiXia Zhang",
+            "emails": ["zhang.haixia@h3c.com"]
+        },
+        {
             "launchpad_id": "zhang-hao16",
             "companies": [
                 {
