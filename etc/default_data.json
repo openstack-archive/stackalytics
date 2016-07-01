@@ -18298,6 +18298,19 @@
             ],
             "user_name": "Zhongyue Luo",
             "emails": ["lzyeval@gmail.com", "zhongyue.nah@intel.com"]
+        },
+        {
+            "launchpad_id": "zzxwill",
+            "gerrit_id": "zzxwill",
+            "zanata_id": "zzxwill",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zzxwill",
+            "emails": ["zzxwill@gmail.com"]
         }
     ],
     "companies": [
