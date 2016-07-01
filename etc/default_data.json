@@ -12642,6 +12642,21 @@
             "emails": ["ppiela@cray.com"]
         },
         {
+           "launchpad_id": "prabhu-murthy",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "prabhm",
+            "emails": ["prabhu.m4@hpe.com", "prabhu.m4@hp.com"]
+        },
+        {
             "launchpad_id": "pradeep-av",
             "companies": [
                 {
