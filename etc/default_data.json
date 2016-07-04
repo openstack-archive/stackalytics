@@ -9020,6 +9020,18 @@
             "emails": ["kuangching.wang@gmail.com", "kc.wang@bigswitch.com"]
         },
         {
+            "launchpad_id": "kdemina",
+            "gerrit_id": "kdemina",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ksenia Svechnikova",
+            "emails": ["ksvechnikova@mirantis.com", "kdemina@mirantis.com"]
+        },
+        {
             "launchpad_id": "ke-wu",
             "companies": [
                 {
