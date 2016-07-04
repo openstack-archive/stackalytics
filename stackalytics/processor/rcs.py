@@ -26,6 +26,7 @@ DEFAULT_PORT = 29418
 GERRIT_URI_PREFIX = r'^gerrit:\/\/'
 PAGE_LIMIT = 100
 REQUEST_COUNT_LIMIT = 20
+SSH_ERRORS_LIMIT = 5
 
 
 class RcsException(Exception):
@@ -70,6 +71,7 @@ class Gerrit(Rcs):
         self.client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
         self.request_count = 0
+        self.error_count = 0
 
     def setup(self, **kwargs):
         self.key_filename = kwargs.get('key_filename')
@@ -117,7 +119,17 @@ class Gerrit(Rcs):
         except Exception as e:
             LOG.error('Error %(error)s while execute command %(cmd)s',
                       {'error': e, 'cmd': cmd}, exc_info=True)
-            raise RcsException('Failed to execute command: %s', cmd)
+            self.request_count = REQUEST_COUNT_LIMIT
+            raise RcsException(e)
+
+    def _exec_command_with_retrial(self, cmd):
+        while self.error_count < SSH_ERRORS_LIMIT:
+            try:
+                return self._exec_command(cmd)
+            except RcsException:
+                self.error_count += 1
+
+        raise RcsException('Too many SSH errors, aborting')
 
     def _poll_reviews(self, project_organization, module, branch,
                       last_retrieval_time, status=None, grab_comments=False):
@@ -136,7 +148,7 @@ class Gerrit(Rcs):
                                 age=age, status=status,
                                 grab_comments=grab_comments)
             LOG.debug('Executing command: %s', cmd)
-            exec_result = self._exec_command(cmd)
+            exec_result = self._exec_command_with_retrial(cmd)
             if not exec_result:
                 break
             stdin, stdout, stderr = exec_result
@@ -162,7 +174,7 @@ class Gerrit(Rcs):
                     yield review
 
     def get_project_list(self):
-        exec_result = self._exec_command('gerrit ls-projects')
+        exec_result = self._exec_command_with_retrial('gerrit ls-projects')
         if not exec_result:
             raise RcsException("Gerrit returned no projects")
         stdin, stdout, stderr = exec_result

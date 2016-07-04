@@ -124,3 +124,66 @@ class TestRcs(testtools.TestCase):
                       '--format JSON project:\'openstack/nova\' branch:master '
                       'limit:100 age:0s status:merged --comments'),
         ])
+
+    @mock.patch('paramiko.SSHClient')
+    @mock.patch('time.time')
+    def test_log_error_tolerated(self, mock_time, mock_client_cons):
+        mock_client = mock.Mock()
+        mock_client_cons.return_value = mock_client
+
+        mock_exec = mock.Mock()
+        mock_client.exec_command = mock_exec
+        mock_exec.side_effect = [
+            Exception,
+            ('', [REVIEW_ONE, REVIEW_END_LINE], ''),  # one review and summary
+            Exception,
+            ('', [REVIEW_END_LINE], ''),  # only summary = no more reviews
+        ]
+
+        gerrit = rcs.Gerrit('uri')
+
+        repo = dict(organization='openstack', module='nova')
+        branch = 'master'
+        last_retrieval_time = 1444000000
+        mock_time.return_value = 1444333333
+        records = list(gerrit.log(repo, branch, last_retrieval_time))
+
+        self.assertEqual(1, len(records))
+        self.assertEqual('229382', records[0]['number'])
+
+        mock_client.exec_command.assert_has_calls([
+            mock.call('gerrit query --all-approvals --patch-sets '
+                      '--format JSON project:\'openstack/nova\' branch:master '
+                      'limit:100 age:0s'),
+            mock.call('gerrit query --all-approvals --patch-sets '
+                      '--format JSON project:\'openstack/nova\' branch:master '
+                      'limit:100 age:111111s'),
+        ])
+
+    @mock.patch('paramiko.SSHClient')
+    @mock.patch('time.time')
+    def test_log_error_fatal(self, mock_time, mock_client_cons):
+        mock_client = mock.Mock()
+        mock_client_cons.return_value = mock_client
+
+        mock_exec = mock.Mock()
+        mock_client.exec_command = mock_exec
+        mock_exec.side_effect = [Exception] * rcs.SSH_ERRORS_LIMIT
+
+        gerrit = rcs.Gerrit('uri')
+
+        repo = dict(organization='openstack', module='nova')
+        branch = 'master'
+        last_retrieval_time = 1444000000
+        mock_time.return_value = 1444333333
+
+        try:
+            list(gerrit.log(repo, branch, last_retrieval_time))
+            self.fail('Gerrit.log should raise RcsException, but it did not')
+        except rcs.RcsException:
+            pass
+
+        mock_client.exec_command.assert_has_calls([
+            mock.call('gerrit query --all-approvals --patch-sets '
+                      '--format JSON project:\'openstack/nova\' branch:master '
+                      'limit:100 age:0s')] * rcs.SSH_ERRORS_LIMIT)
