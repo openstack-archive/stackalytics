@@ -26,7 +26,7 @@ DEFAULT_PORT = 29418
 GERRIT_URI_PREFIX = r'^gerrit:\/\/'
 PAGE_LIMIT = 100
 REQUEST_COUNT_LIMIT = 20
-SSH_ERRORS_LIMIT = 5
+SSH_ERRORS_LIMIT = 10
 
 
 class RcsException(Exception):
@@ -65,6 +65,7 @@ class Gerrit(Rcs):
 
         self.key_filename = None
         self.username = None
+        self.ssh_errors_limit = SSH_ERRORS_LIMIT
 
         self.client = paramiko.SSHClient()
         self.client.load_system_host_keys()
@@ -76,6 +77,7 @@ class Gerrit(Rcs):
     def setup(self, **kwargs):
         self.key_filename = kwargs.get('key_filename')
         self.username = kwargs.get('username')
+        self.ssh_errors_limit = kwargs.get('gerrit_retry') or SSH_ERRORS_LIMIT
 
         self._connect()
 
@@ -123,7 +125,7 @@ class Gerrit(Rcs):
             raise RcsException(e)
 
     def _exec_command_with_retrial(self, cmd):
-        while self.error_count < SSH_ERRORS_LIMIT:
+        while self.error_count < self.ssh_errors_limit:
             try:
                 return self._exec_command(cmd)
             except RcsException:

@@ -56,6 +56,8 @@ PROCESSOR_OPTS = [
                help='How many member profiles to look ahead after the last'),
     cfg.IntOpt('read-timeout', default=120,
                help='Number of seconds to wait for remote response'),
+    cfg.IntOpt('gerrit-retry', default=10,
+               help='How many times to retry after Gerrit errors'),
 ]
 
 DASHBOARD_OPTS = [

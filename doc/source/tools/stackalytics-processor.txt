@@ -3,6 +3,7 @@ usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
                               [--days_to_update_members DAYS_TO_UPDATE_MEMBERS]
                               [--debug] [--default-data-uri DEFAULT_DATA_URI]
                               [--driverlog-data-uri DRIVERLOG_DATA_URI]
+                              [--gerrit-retry GERRIT_RETRY]
                               [--git-base-uri GIT_BASE_URI]
                               [--log-config-append PATH]
                               [--log-date-format DATE_FORMAT]
@@ -44,6 +45,8 @@ optional arguments:
                         URI for default data
   --driverlog-data-uri DRIVERLOG_DATA_URI
                         URI for default data
+  --gerrit-retry GERRIT_RETRY
+                        How many times to retry after Gerrit errors
   --git-base-uri GIT_BASE_URI
                         git base location
   --log-config-append PATH, --log_config PATH
@@ -98,7 +101,7 @@ optional arguments:
                         Syslog facility to receive log lines. This option is
                         ignored if log_config_append is set.
   --translation-team-uri TRANSLATION_TEAM_URI
-                        URI for translation team data
+                        URI of translation team data
   --use-syslog          Use syslog for logging. Existing syslog format is
                         DEPRECATED and will be changed later to honor RFC5424.
                         This option is ignored if log_config_append is set.
