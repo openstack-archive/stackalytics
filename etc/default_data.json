@@ -7181,6 +7181,18 @@
             "emails": ["igor.duarte.cardoso@intel.com", "igordcard@gmail.com"]
         },
         {
+            "launchpad_id": "igormilovanovic",
+            "gerrit_id": "igor",
+            "companies": [
+                {
+                    "company_name": "Ammeon",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Igor Milovanović",
+            "emails": ["igor.milovanovic@ammeon.com"]
+        },
+        {
             "launchpad_id": "ilyaalekseyev",
             "zanata_id": "adiantum",
             "companies": [
@@ -18623,6 +18635,11 @@
         {
             "domains": ["amadeus.com"],
             "company_name": "Amadeus"
+        },
+        {
+          "domains": ["ammeon.com"],
+          "company_name": "Ammeon",
+          "aliases": ["Ammeon Ltd."]
         },
         {
             "domains": ["ampliphae.com"],
