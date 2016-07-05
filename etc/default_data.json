@@ -19926,6 +19926,10 @@
             "aliases": ["The University of Melbourne"]
         },
         {
+            "domains": ["unionpay.com"],
+            "company_name": "China UnionPay"
+        },
+        {
             "domains": ["upv.es"],
             "company_name": "UPV"
         },
