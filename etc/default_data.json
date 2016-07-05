@@ -18870,6 +18870,10 @@
             "company_name": "Cloud Foundry"
         },
         {
+            "domains": ["cloudin.cn", "cloudin.ren"],
+            "company_name": "Cloudin"
+        },
+        {
             "domains": ["cloudscaling.com"],
             "company_name": "Cloudscaling"
         },
