@@ -10308,6 +10308,17 @@
             "emails": ["manjunath.ranganathaiah@intel.com"]
         },
         {
+            "launchpad_id": "maoshuai",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shuai Mao ",
+            "emails": ["fwsakura@163.com"]
+        },
+        {
            "launchpad_id": "marcus-g-williams",
            "gerrit_id": "mgkwill",
            "companies": [
