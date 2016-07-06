@@ -94,7 +94,8 @@ def _retrieve_project_list_from_gerrit(project_source):
             'module': name,
             'organization': org,
             'uri': repo_uri,
-            'releases': []
+            'releases': [],
+            'has_gerrit': True,
         }
 
 
@@ -147,7 +148,14 @@ def _update_project_list(default_data):
     repos = _retrieve_project_list_from_sources(
         default_data['project_sources'])
     if repos:
-        default_data['repos'] += [r for r in repos
+        # update pre-configured
+        repos_dict = dict((r['uri'], r) for r in repos)
+        for r in default_data['repos']:
+            if r['uri'] in repos_dict:
+                r.update(repos_dict[r['uri']])
+
+        # update default data
+        default_data['repos'] += [r for r in repos_dict.values()
                                   if r['uri'] not in configured_repos]
 
     default_data['module_groups'] += _create_module_groups_for_project_sources(

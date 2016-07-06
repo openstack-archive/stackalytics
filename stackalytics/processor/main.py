@@ -131,6 +131,9 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
         last_id = vcs_inst.get_last_id(branch)
         runtime_storage_inst.set_by_key(vcs_key, last_id)
 
+        if 'has_gerrit' not in repo:
+            continue  # do not poll reviews for those that do not have them
+
         LOG.info('Processing reviews for repo: %s, branch: %s', uri, branch)
 
         rcs_key = 'rcs:%s:%s' % (quoted_uri, branch)

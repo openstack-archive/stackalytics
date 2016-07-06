@@ -65,6 +65,7 @@ class TestDefaultDataProcessor(testtools.TestCase):
                  'uri': 'git://git.openstack.org/openstack/nova',
                  'organization': 'openstack'},
                 {'module': 'qa', 'uri': 'git://git.openstack.org/openstack/qa',
+                 'has_gerrit': True,
                  'organization': 'openstack'},
             ]
             dd = {
@@ -87,6 +88,10 @@ class TestDefaultDataProcessor(testtools.TestCase):
             self.assertIn('qa', set([r['module'] for r in dd['repos']]))
             self.assertIn('nova', set([r['module'] for r in dd['repos']]))
             self.assertIn('tux', set([r['module'] for r in dd['repos']]))
+
+            self.assertIn('has_gerrit', dd['repos'][0])
+            self.assertNotIn('has_gerrit', dd['repos'][1])
+            self.assertNotIn('has_gerrit', dd['repos'][2])
 
             self.assertEqual(2, len(dd['module_groups']))
             self.assertIn({'id': 'openstack',
