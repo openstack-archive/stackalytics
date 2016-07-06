@@ -2,5 +2,6 @@
 {% import '_macros/activity_log.html' as activity_log %}
 
 {% block content %}
-{{ activity_log.show_activity_log(gravatar_size=64, show_all=False) }}
+{{ activity_log.show_activity_log(gravatar_size=64, show_all=False,
+    show_twitter=True) }}
 {% endblock %}

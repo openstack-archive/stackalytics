@@ -2,41 +2,36 @@
 
 {% set gravatar_size = 64 %}
 
-{% if record.record_type == "commit" %}
-  {% set tweet = "Commit by " + record.author + " in " + record.module %}
-{% elif record.record_type == "mark" %}
-  {% if (record.type == "Workflow" and record.value == 1) %}
-    {% set tweet =  record.author_name + " approved patch by " + record.parent_author_name %}
-  {% elif (record.type == "Self-Workflow" and record.value == 1) %}
-    {% set tweet = record.author_name + " self-approved patch in " + record.module %}
-  {% elif (record.type == "Workflow" and record.value == -1) %}
-    {% set tweet = record.author_name + " works on patch in " + record.module %}
-  {% elif (record.type == "Abandon" or record.type == "Self-Abandon") %}
-    {% set tweet = record.author_name + " abandoned patch in " + record.module %}
-  {% else %}
-    {% if record.value > 0 %}
-      {% set v = "+" %}
-    {% endif %}
-    {% set v = v ~ record.value %}
-    {% set tweet = record.parent_author_name + " got " + v + " from " + record.author_name + " on patch in " + record.module %}
-  {% endif %}
-{% elif record.record_type == "review" %}
-  {% set tweet = record.status + " change request by " + record.author_name + " in " + record.module %}
-{% elif record.record_type == "patch" %}
-  {% set tweet = "New patch by " + record.author_name + " in " + record.module %}
-{% elif record.record_type == "tr" %}
-  {% set tweet = record.author_name + " translated " + record.loc + " words into " + record.language %}
-{% endif %}
-
-{% set page_title = tweet %}
-
 {% block scripts %}
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+  }(document, "script", "twitter-wjs"));
+  </script>
+
   <script type="text/javascript">
     $(document).ready(function () {
-      var r = {};
-      r.author_email = "{{ record.author_email }}";
+      var r = {{ record | tojson | safe}};
       extendWithGravatar(r, {{ gravatar_size }});
-      $("#gravatar").append("<img src=" + r.gravatar + ">")
+      extendWithTweet(r);
+      $("#gravatar").append("<img src=" + r.gravatar + ">");
+      $("#tweet").append("<a href=\"https://twitter.com/intent/tweet?text=" + r.tweet + "\" class=\"twitter-share-button\" data-via=\"stackalytics\">Tweet</a>");
+      document.title = r.tweet;
+      if (window.twttr.widgets) {
+        window.twttr.widgets.load();
+      }
     });
   </script>
 {% endblock %}
@@ -213,10 +208,7 @@
             into {{ record.language }}</div>
         {% endif %}
 
-        <div style="margin-top: 1em;">
-          <a href="https://twitter.com/intent/tweet?text={{ tweet }}" class="twitter-share-button" data-via="stackalytics">Tweet</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
+        <div style="margin-top: 1em;" id="tweet"></div>
 
       </div>
 

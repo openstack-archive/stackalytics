@@ -21,6 +21,7 @@
 
 <div id="punch_card"></div>
 
-{{ activity_log.show_activity_log(user_id=user.user_id, show_user_gravatar=false, gravatar_size=64) }}
+{{ activity_log.show_activity_log(user_id=user.user_id,
+    show_user_gravatar=false, gravatar_size=64, show_twitter=True) }}
 
 {% endblock %}

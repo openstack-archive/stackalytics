@@ -27,6 +27,7 @@
         {% if module_inst.has_drivers %}
             <div><b><a href="/report/ci/{{ module }}/7" target="_blank">Status of drivers testing in {{ module_inst.module_group_name }} during recent 7 days</a></b></div>
         {% endif %}
+        <div><b><a href="/report/activity?module={{ module }}&project_type={{ project_type }}&release={{ release }}" target="_blank">Show activity report for {{ module }}</a></b></div>
     {% endif %}
     {% if company %}
         <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}</a></b></div>

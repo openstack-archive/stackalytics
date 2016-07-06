@@ -1,5 +1,26 @@
 {% macro show_activity_log(user_id=None, company=None, blueprint_id=None,
-show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True) -%}
+show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True,
+show_twitter=False) -%}
+
+{% if show_twitter %}
+<script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+{% endif %}
 
 <script type="text/javascript">
     var page_size = 10;
@@ -34,6 +55,9 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 }
                 $.each(data["activity"], function() {
                     extendWithGravatar(this, {{ gravatar_size }});
+                    {% if show_twitter %}
+                    extendWithTweet(this);
+                    {% endif %}
                 });
                 $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
                 $('.ext_link').click(function (event) {
@@ -44,6 +68,9 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
                 $(".expand-button").click(function () {
                     $("#content-" + this.id).slideToggle('fast');
                 });
+                if (window.twttr.widgets) {
+                  window.twttr.widgets.load();
+                }
             }
         });
     }
@@ -174,6 +201,12 @@ show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True)
             <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
         {%elif record_type == "tr" %}
             <div class="header">Translated ${loc} words into ${language}</div>
+        {%/if%}
+
+        {%if tweet %}
+        <div style="margin-top: 1em;">
+          <a href="https://twitter.com/intent/tweet?text=${tweet}&url=${tweet_url}" class="twitter-share-button" data-via="stackalytics">Tweet</a>
+        </div>
         {%/if%}
     </div>
     </div>

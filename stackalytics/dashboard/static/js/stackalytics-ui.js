@@ -266,6 +266,42 @@ function extendWithGravatar(record, image_size) {
     });
 }
 
+function extendWithTweet(record) {
+    var tweet = null;
+
+    if (record.record_type == "commit") {
+        tweet = "«" + record.subject + "» is committed by " + record.author_name + " in " + record.module;
+    } else if (record.record_type == "mark") {
+        if (record.type == "Workflow" && record.value == 1) {
+            tweet = record.author_name + " approved «" + record.parent_subject + "» in " + record.module + ":P";
+        } else if (record.type == "Self-Workflow" && record.value == 1) {
+            tweet = record.author_name + " self-approved patch in " + record.module;
+        } else if (record.type == "Workflow" && record.value == -1) {
+            tweet = record.author_name + " work in progress on patch in " + record.module;
+        } else if (record.type == "Abandon" || record.type == "Self-Abandon") {
+            tweet = record.author_name + " abandoned patch in " + record.module;
+        } else {
+            var smile = [";(", ":(", "", ":)", ":D"][record.value + 2];
+            tweet = "Got " + ((record.value > 0)? "+": "") + record.value + " from " + record.author_name + " on patch in " + record.module + smile;
+        }
+    } else if (record.record_type == "review") {
+        tweet = record.status + " change request by " + record.author_name + " in " + record.module;
+    } else if (record.record_type == "patch") {
+        tweet = record.author_name + " submitted «" + record.parent_subject + "» in " + record.module;
+    } else if (record.record_type == "email") {
+        tweet = record.author_name + " emails about " + record.subject;
+    } else if (record.record_type == "bpd" || record.record_type == "bpc") {
+        tweet = "Blueprint «" + record.title + "» in " + record.module;
+    } else if (record.record_type == "bugf" || record.record_type == "bugr") {
+        tweet = record.status + " bug «" + record.title + "» in " + record.module + " " + record.web_link;
+    } else if (record.record_type == "tr") {
+        tweet = record.author_name + " translated " + record.loc + " words into " + record.language;
+    }
+
+    record.tweet = tweet;
+    record.tweet_url = "http://stackalytics.com/report/record/" + record.primary_key;
+}
+
 function encodeURI(s) {
     s = encodeURIComponent(s);
     s = s.replace("*", "%2A");

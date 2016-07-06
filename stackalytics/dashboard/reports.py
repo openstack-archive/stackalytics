@@ -272,7 +272,7 @@ def company_activity(company):
     return result
 
 
-@blueprint.route('/record/<record_id>')
+@blueprint.route('/record/<path:record_id>')
 @decorators.templated()
 @decorators.exception_handler()
 def record(record_id):
