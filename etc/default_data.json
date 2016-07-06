@@ -1946,6 +1946,17 @@
             "emails": ["bardia@keyoumarsi.com", "bardia.keyoumarsi@cohodata.com"]
         },
         {
+            "launchpad_id": "bartekzurawski1",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bartek Zurawski",
+            "emails": ["bartek.zurawski@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "bartosz-gorski",
             "companies": [
                 {
