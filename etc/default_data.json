@@ -16034,6 +16034,17 @@
             "emails": ["tenobreg@redhat.com", "tellesnobrega@gmail.com", "tellesmvn@lsd.ufcg.edu.br"]
         },
         {
+          "launchpad_id": "teng-fei",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Teng Fei",
+            "emails": ["teng.fei@h3c.com", "feige0304@163.com"]
+        },
+        {
             "launchpad_id": "termie",
             "companies": [
                 {
