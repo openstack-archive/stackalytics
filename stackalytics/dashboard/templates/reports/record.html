@@ -1,0 +1,227 @@
+{% extends "reports/base_report.html" %}
+
+{% set gravatar_size = 64 %}
+
+{% if record.record_type == "commit" %}
+  {% set tweet = "Commit by " + record.author + " in " + record.module %}
+{% elif record.record_type == "mark" %}
+  {% if (record.type == "Workflow" and record.value == 1) %}
+    {% set tweet =  record.author_name + " approved patch by " + record.parent_author_name %}
+  {% elif (record.type == "Self-Workflow" and record.value == 1) %}
+    {% set tweet = record.author_name + " self-approved patch in " + record.module %}
+  {% elif (record.type == "Workflow" and record.value == -1) %}
+    {% set tweet = record.author_name + " works on patch in " + record.module %}
+  {% elif (record.type == "Abandon" or record.type == "Self-Abandon") %}
+    {% set tweet = record.author_name + " abandoned patch in " + record.module %}
+  {% else %}
+    {% if record.value > 0 %}
+      {% set v = "+" %}
+    {% endif %}
+    {% set v = v ~ record.value %}
+    {% set tweet = record.parent_author_name + " got " + v + " from " + record.author_name + " on patch in " + record.module %}
+  {% endif %}
+{% elif record.record_type == "review" %}
+  {% set tweet = record.status + " change request by " + record.author_name + " in " + record.module %}
+{% elif record.record_type == "patch" %}
+  {% set tweet = "New patch by " + record.author_name + " in " + record.module %}
+{% elif record.record_type == "tr" %}
+  {% set tweet = record.author_name + " translated " + record.loc + " words into " + record.language %}
+{% endif %}
+
+{% set page_title = tweet %}
+
+{% block scripts %}
+  <script type="text/javascript">
+    $(document).ready(function () {
+      var r = {};
+      r.author_email = "{{ record.author_email }}";
+      extendWithGravatar(r, {{ gravatar_size }});
+      $("#gravatar").append("<img src=" + r.gravatar + ">")
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <h2>Contribution Record</h2>
+
+  <div>
+
+    <div class="record">
+      <div style="float: left;" id="gravatar">
+      </div>
+
+      <div style="margin-left: {{ gravatar_size * 1.4 }}px;">
+
+        {% if record.coauthor %}
+          <div class="header">
+            {% for value in record.coauthor %}
+              {% if loop.index>0 %}, {% endif %}
+              {{ value.author_link | safe }} ({{ value.company_link | safe }})
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="header">{{ record.author_link | safe }}
+            ({{ record.company_link | safe }})
+          </div>
+        {% endif %}
+
+        <div class="header">{{ record.date_str }}
+          in {{ record.module_link | safe }}
+          {% if record.record_type in ["mark", "review", "patch", "ci", "tr"] %}
+            {% if record.branch != "master" %}({{ record.branch }}){% endif %}
+          {% endif %}
+          {% if record.record_type == "commit" %}
+            {% if record.branches.find("master") < 0 %}({{ record.branches }})
+            {% endif %}
+          {% endif %}
+        </div>
+
+        {% if record.record_type == "commit" %}
+          <div class="header">Commit &ldquo;{{ record.subject }}&rdquo;</div>
+          <div class="tweet">{{ record.tweet | safe }}</div>
+          {% if record.commit_date_str != "" and record.commit_date_str != date_str %}
+            <div>Commit date: {{ record.commit_date_str }}</div>
+          {% endif %}
+          {% if record.correction_comment != "" %}
+            <div style='font-weight: bold; color: red;'>Commit corrected:
+              <span>{{ record.correction_comment }}</span></div>
+          {% endif %}
+          <div><span
+              style="color: green">+<span>{{ record.lines_added }}</span></span>
+            <span style="color: blue">- <span>{{ record.lines_deleted }}</span></span>
+          </div>
+
+        {% elif record.record_type == "mark" %}
+          <div class="header">
+            Review &ldquo;{{ record.parent_subject }}&rdquo;</div>
+          <div>Change request by: {{ record.parent_author_link | safe }}
+            ({{ record.parent_company_link | safe }})
+          </div>
+          {% if record.patch_author_link != record.parent_author_link %}
+            <div>Patch by: {{ record.patch_author_link | safe }}
+              ({{ record.patch_company_link | safe }})
+            </div>
+          {% endif %}
+          <div>Change Id: <a href="{{ record.parent_url }}"
+                             target="_blank"> {{ record.review_id }}</a></div>
+          <div
+              style="color: {% if record.value > 0 %} green {% else %} blue {% endif %}">
+            {% if (record.type == "Workflow" and record.value == 1) %}
+              Approve
+            {% elif (record.type == "Self-Workflow" and record.value == 1) %}
+              Self-Approve
+            {% elif (record.type == "Workflow" and record.value == -1) %}
+              Work in progress
+            {% elif (record.type == "Abandon" or record.type == "Self-Abandon") %}
+              {{ record.type }}
+            {% else %}
+              {{ record.type }}:
+              <span class="review_mark">{% if record.value > 0 %}+{% endif %}{{ record.value }}</span>
+            {% endif %}
+          </div>
+
+        {% elif record.record_type == "review" %}
+          <div class="header">Change
+            request &ldquo;{{ record.subject }}&rdquo;</div>
+          <div>Current Status: {{ record.status }}</div>
+          <div>Change Id: <a href="{{ record.url }}"
+                             target="_blank">{{ record.id }}</a></div>
+
+        {% elif record.record_type == "patch" %}
+          <div class="header">Patch
+            #{{ record.number }} &ldquo;{{ record.parent_subject }}&rdquo;</div>
+          <div>Change Id: <a href="{{ record.parent_url }}"
+                             target="_blank">{{ record.review_id }}</a></div>
+
+        {% elif record.record_type == "email" %}
+          <div class="header">
+            {% if email_link != "" %}
+              <a href='{{ record.email_link }}'>
+            {% endif %}
+            Email &ldquo;{{ record.subject }}&rdquo;
+            {% if email_link != "" %}
+              </a>
+            {% endif %}
+          </div>
+          {% if blueprint_id_count %}
+            <div>Mentions blueprints:
+              {% for value in blueprint_links %}
+                {{ value | safe }}
+              {% endfor %}
+            </div>
+          {% endif %}
+          {% if body %}
+            <div>Email:</div>
+            <div class="tweet">{{ record.body }}</div>
+          {% endif %}
+
+        {% elif ((record.record_type == "bpd") or (record.record_type == "bpc")) %}
+          <div class="header">Blueprint &ldquo;{{ record.title }}&rdquo;
+            ({{ blueprint_link | safe }})
+          </div>
+          <div class="tweet">{{ record.summary }}</div>
+
+          <div>Priority: <span
+              class="specpriority{{ record.priority }}">{{ record.priority }}</span>
+          </div>
+          <div>Status: <span
+              class="status{{ record.lifecycle_status }}">{{ record.lifecycle_status }}</span>
+            (<span
+                class="specstatus{{ record.definition_status }}">{{ record.definition_status }}</span>,
+            <span
+                class="specdelivery{{ record.implementation_status }}">{{ record.implementation_status }}</span>)
+          </div>
+          {% if mention_count %}
+            <div><b>Mention count: {{ record.mention_count }}, last mention
+              on {{ record.mention_date_str }}</b></div>
+          {% endif %}
+
+        {% elif ((record.record_type == "bugf") or (record.record_type == "bugr")) %}
+          <div class="header">Bug &ldquo;{{ record.title }}&rdquo; (<a
+              href="{{ record.web_link }}"
+              class="ext_link">{{ record.number }}</a>)
+          </div>
+          <div>Status: <span
+              class="status{{ record.status_class }}">{{ record.status }}</span>
+          </div>
+          <div>Importance: <span
+              class="importance{{ record.importance }}">{{ record.importance }}</span>
+          </div>
+
+        {% elif record.record_type == "ci" %}
+          <div class="header">CI vote in merged change request
+            <a href="https://review.openstack.org/#/c/{{ record.review_number }}"
+               target="_blank">{{ record.review_number }}</a>
+          </div>
+          <div>{% if value == true %}
+            <span style="color: green">Success</span>{% else %}
+            <span style="color: red">Failure</span>{% endif %}</div>
+          <div class="tweet">{{ record.tweet }}</div>
+          <div>Change Id: <a
+              href="https://review.openstack.org/#/c/{{ record.review_number }}"
+              target="_blank">{{ record.review_id }}</a></div>
+
+        {% elif record_type == "member" %}
+          <div class="header"><a href="{{ record.member_uri }}"
+                                 target="_blank">Registered</a> in OpenStack
+            Foundation
+          </div>
+
+        {% elif record_type == "tr" %}
+          <div class="header">Translated {{ record.loc }} words
+            into {{ record.language }}</div>
+        {% endif %}
+
+        <div style="margin-top: 1em;">
+          <a href="https://twitter.com/intent/tweet?text={{ tweet }}" class="twitter-share-button" data-via="stackalytics">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+{% endblock %}

@@ -272,6 +272,19 @@ def company_activity(company):
     return result
 
 
+@blueprint.route('/record/<record_id>')
+@decorators.templated()
+@decorators.exception_handler()
+def record(record_id):
+    memory_storage_inst = vault.get_memory_storage()
+    record_obj = memory_storage_inst.get_record_by_primary_key(record_id)
+    if not record_obj:
+        flask.abort(404)
+
+    result = dict(record=helpers.get_activity([record_obj], 0, 1)[0])
+    return result
+
+
 @blueprint.route('/activity')
 @decorators.templated()
 @decorators.exception_handler()
