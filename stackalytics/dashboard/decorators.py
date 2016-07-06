@@ -393,7 +393,7 @@ def exception_handler():
             except Exception as e:
                 if isinstance(e, exceptions.HTTPException):
                     raise  # ignore Flask exceptions
-                LOG.exception(e)
+                LOG.error(e, exc_info=True)
                 flask.abort(404)
 
         return exception_handler_decorated_function

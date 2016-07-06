@@ -131,7 +131,8 @@ class Gerrit(Rcs):
             except RcsException:
                 self.error_count += 1
 
-        raise RcsException('Too many SSH errors, aborting')
+        raise RcsException('Too many SSH errors, aborting. Consider '
+                           'increasing "gerrit_retry" value')
 
     def _poll_reviews(self, project_organization, module, branch,
                       last_retrieval_time, status=None, grab_comments=False):

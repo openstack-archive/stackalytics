@@ -174,13 +174,13 @@ class RecordProcessor(object):
         lp_ids = set(u.get('launchpad_id') for u in user_profiles
                      if u.get('launchpad_id'))
         if len(lp_ids) > 1:
-            LOG.info('Ambiguous launchpad ids: %s on profiles: %s',
-                     lp_ids, user_profiles)
+            LOG.debug('Ambiguous launchpad ids: %s on profiles: %s',
+                      lp_ids, user_profiles)
         g_ids = set(u.get('gerrit_id') for u in user_profiles
                     if u.get('gerrit_id'))
         if len(g_ids) > 1:
-            LOG.info('Ambiguous gerrit ids: %s on profiles: %s',
-                     g_ids, user_profiles)
+            LOG.debug('Ambiguous gerrit ids: %s on profiles: %s',
+                      g_ids, user_profiles)
 
         merged_user = {}  # merged user profile
 

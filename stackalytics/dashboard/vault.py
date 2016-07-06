@@ -86,8 +86,8 @@ def get_vault():
 
             flask.current_app.stackalytics_vault = vault
         except Exception as e:
-            LOG.critical('Failed to initialize application: %s', e)
-            LOG.exception(e)
+            LOG.critical('Failed to initialize application: %s', e,
+                         exc_info=True)
             flask.abort(500)
 
     if not getattr(flask.request, 'stackalytics_updated', None):
