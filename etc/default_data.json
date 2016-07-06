@@ -6897,6 +6897,17 @@
             "emails": ["hpeter@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "huang-huayong2",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "huang.huayong",
+            "emails": ["huang.huayong2@zte.com.cn"]
+        },
+        {
             "launchpad_id": "huangsm",
             "companies": [
                 {
