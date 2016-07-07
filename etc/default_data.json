@@ -8047,6 +8047,18 @@
             "emails": ["gzliangjiahao@gmail.com", "jiahao.liang@oneconvergence.com"]
         },
         {
+            "launchpad_id": "jiangpch",
+            "gerrit_id":"jiangpch",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jiangpch",
+            "emails": ["jiangpch@gohighsec.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
@@ -9812,6 +9824,18 @@
             "emails": ["listomin@mirantis.com"]
         },
         {
+            "launchpad_id": "liteng",
+            "gerrit_id":"liteng",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liteng",
+            "emails": ["liteng@gohighsec.com"]
+        },
+        {
             "launchpad_id": "littleidea",
             "companies": [
                 {
@@ -9865,6 +9889,18 @@
             ],
             "user_name": "Dong Liu",
             "emails": ["willowd878@gmail.com", "liudong78@huawei.com"]
+        },
+        {
+            "launchpad_id": "liuhaijie",
+            "gerrit_id":"liuhaijie",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "HaijieLiu",
+            "emails": ["liuhj@gohighsec.com"]
         },
         {
             "launchpad_id": "liuhh",
@@ -9929,6 +9965,18 @@
             }],
             "user_name": "liusu",
             "emails": ["liusu8788@gmail.com", "liusu@chinac.com"]
+        },
+        {
+            "launchpad_id": "liyanhang",
+            "gerrit_id":"liyanhang",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liyanhang",
+            "emails": ["liyh@gohighsec.com"]
         },
         {
             "launchpad_id": "liyingjun",
@@ -18037,6 +18085,18 @@
             "emails": ["yuntongjin@gmail.com", "yuntong.jin@intel.com"]
         },
         {
+            "launchpad_id": "yushb",
+            "gerrit_id":"yushangbin",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yushangbin",
+            "emails": ["yushb@gohighsec.com"]
+        },
+        {
             "launchpad_id": "yuxcer",
             "companies": [
                 {
@@ -18269,6 +18329,18 @@
             ],
             "user_name": "zhang-wenyan3",
             "emails": ["zhang.wenyan3@zte.com.cn"]
+        },
+        {
+            "launchpad_id": "zhanghj",
+            "gerrit_id":"HaiJieZhang",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhanghaijie",
+            "emails": ["zhanghj@gohighsec.com"]
         },
         {
             "launchpad_id": "zhanghuan",
