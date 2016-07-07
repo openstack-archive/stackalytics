@@ -2824,6 +2824,21 @@
             "emails": ["chad.lung@gmail.com", "chad.lung@rackspace.com"]
         },
         {
+            "launchpad_id": "chamankang",
+            "companies": [
+                {
+                    "company_name": "KT Corporation",
+                    "end_date": "2014-May-31"
+                },
+                {
+                    "company_name": "OpenStack Korea User Group",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chulmin Kang",
+            "emails": ["chaman.kang@gmail.com"]
+        },
+        {
             "launchpad_id": "chandankumar-093047",
             "companies": [
                 {
