@@ -6098,6 +6098,17 @@
             "emails": ["ghe.rivero@hp.com", "ghe@debian.org", "ghe.rivero@gmail.com", "ghe.rivero@stackops.com", "ghe@rivero.io", "ghe.rivero@hpe.com"]
         },
         {
+            "launchpad_id": "gherlein",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Greg Herlein",
+            "emails": ["gherlein@herlein.com", "greherle@cisco.com"]
+        },
+        {
             "launchpad_id": "ghezal",
             "companies": [
                 {
