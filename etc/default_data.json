@@ -18548,6 +18548,17 @@
             "emails": ["zrzhit@gmail.com", "rongze@ustack.com", "rongze@unitedstack.com", "rzhu@mirantis.com"]
         },
         {
+            "launchpad_id": "ztehypervisor",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael liu",
+            "emails": ["ztehypervisor@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zulcss",
             "companies": [
                 {
