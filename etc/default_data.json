@@ -2596,6 +2596,19 @@
             "emails": ["cao.wei@99cloud.net", "caowei_e@aliyun.com"]
         },
         {
+            "launchpad_id": "career-thnam",
+            "gerrit_id": "career-thnam",
+            "zanata_id": "thnam",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Taekho Nam",
+            "emails": ["career.thnam@gmail.com", "thnam@smartx.kr"]
+        },
+        {
             "launchpad_id": "carl-baldwin",
             "companies": [
                 {
