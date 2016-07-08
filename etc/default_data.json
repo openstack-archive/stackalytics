@@ -9731,6 +9731,17 @@
             "emails": ["licayun@hotmail.com"]
         },
         {
+            "launchpad_id": "lichl",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Forest Lee",
+            "emails": ["lichl@hotmail.com"]
+        },
+        {
             "launchpad_id": "liemmn",
             "companies": [
                 {
