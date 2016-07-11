@@ -13933,6 +13933,7 @@
         },
         {
             "launchpad_id": "romilg",
+            "gerrit_id": "romilgupta19",
             "companies": [
                 {
                     "company_name": "HP",
@@ -13940,11 +13941,16 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Dec-05"
+                },
+                {
+                    "company_name": "Ericsson",
                     "end_date": null
                 }
+
             ],
             "user_name": "Romil Gupta",
-            "emails": ["romilg@hp.com", "romilgupta19@gmail.com", "romilg@hpe.com"]
+            "emails": ["romil.gupta@ericsson.com", "romilgupta19@gmail.com", "romilg@hp.com", "romilg@hpe.com"]
         },
         {
             "launchpad_id": "ronak-malav-shah",
