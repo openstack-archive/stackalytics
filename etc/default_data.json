@@ -3561,6 +3561,17 @@
             "emails": ["craigtracey@gmail.com", "ctracey@bluebox.net"]
         },
         {
+            "launchpad_id": "crazymozart",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yu Long",
+            "emails": ["yulong10@163.com", "yu.long@h3c.com", "yulong0115@163.com"]
+        },
+        {
             "launchpad_id": "cristian-a-sanchez",
             "gerrit_id": "casanch1",
             "companies": [
