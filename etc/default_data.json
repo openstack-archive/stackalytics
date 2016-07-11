@@ -12385,6 +12385,17 @@
             "emails": ["goppegard@pivotallabs.com"]
         },
         {
+            "github_id": "oss-xzdong",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xuanzhou Perry Dong",
+            "emails": ["oss_xzdong@163.com"]
+        },
+        {
             "launchpad_id": "p-draigbrady",
             "companies": [
                 {
