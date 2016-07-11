@@ -2243,17 +2243,6 @@
             "emails": ["blp@nicira.com", "blp@ovn.org"]
         },
         {
-            "launchpad_id": "blueboxjesse",
-            "companies": [
-                {
-                    "company_name": "Blue Box",
-                    "end_date": "2016-May-31"
-                }
-            ],
-            "user_name": "Jesse Proudman",
-            "emails": ["jproudman@bluebox.net"]
-        },
-        {
             "launchpad_id": "bmathews-l",
             "companies": [
                 {
@@ -8020,12 +8009,16 @@
             "github_id": "blueboxjesse",
             "companies": [
                 {
+                    "company_name": "Blue Box",
+                    "end_date": "2016-May-31"
+                },
+                {
                     "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Jesse Proudman",
-            "emails": ["j.proudman@us.ibm.com"]
+            "emails": ["j.proudman@us.ibm.com", "jproudman@bluebox.net", "jesse@jesseproudman.com"]
         },
         {
             "launchpad_id": "jesusaurus",
