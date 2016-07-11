@@ -2236,7 +2236,7 @@
             "companies": [
                 {
                     "company_name": "Blue Box",
-                    "end_date": null
+                    "end_date": "2016-May-31"
                 }
             ],
             "user_name": "Jesse Proudman",
@@ -7981,6 +7981,18 @@
             ],
             "user_name": "Jesse Pretorius",
             "emails": ["jesse.pretorius@rackspace.co.uk", "jesse.pretorius@gmail.com"]
+        },
+        {
+            "launchpad_id": "jesseproudman",
+            "github_id": "blueboxjesse",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jesse Proudman",
+            "emails": ["j.proudman@us.ibm.com"]
         },
         {
             "launchpad_id": "jesusaurus",
