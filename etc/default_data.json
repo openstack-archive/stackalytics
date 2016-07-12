@@ -12088,6 +12088,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Jul-11"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
