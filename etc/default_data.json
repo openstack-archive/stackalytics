@@ -689,6 +689,18 @@
             "emails": ["akbajaj@hp.com", "akbajaj@hpe.com"]
         },
         {
+             "launchpad_id": "akhila-kishore",
+             "gerrit_id": "kishoreakhila",
+             "companies": [
+                 {
+                     "company_name": "Intel",
+                     "end_date": null
+                 }
+             ],
+            "user_name": "Akhila Kishore",
+            "emails": ["akhila.kishore@intel.com"]
+        },
+        {
              "launchpad_id": "akhivin",
              "gerrit_id": "akhivin",
              "companies": [
