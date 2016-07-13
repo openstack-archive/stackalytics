@@ -17042,6 +17042,17 @@
             "emails": ["vbatts@gmail.com"]
         },
         {
+            "launchpad_id": "vdenisov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victor Denisov",
+            "emails": ["vdenisov@mirantis.com", "denisovenator@gmail.com"]
+        },
+        {
             "launchpad_id": "vedlad",
             "gerrit_id": "vedlad",
             "companies": [
