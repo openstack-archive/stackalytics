@@ -13708,6 +13708,17 @@
             "emails": ["ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
         },
         {
+            "launchpad_id": "rltaylo",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bob Taylor",
+            "emails": ["robert.taylor@walmart.com", "robert.taylor@wal-mart.com", "robertt@pobox.com"]
+        },
+        {
             "launchpad_id": "rlucio",
             "companies": [
                 {
