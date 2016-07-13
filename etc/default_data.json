@@ -270,6 +270,21 @@
             "emails": ["abhijeet.malawade@gmail.com", "abhijeet.malawade@nttdata.com"]
         },
         {
+            "launchpad_id": "abhishek-g-m",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abhishek G M",
+            "emails": ["abhishek.gm@hpe.com", "abhishek.g-m@hp.com"]
+        },
+        {
             "launchpad_id": "abhishek-srivastav",
             "github_id": "srivastav-abhishek",
             "gerrit_id": "Abhishek",
