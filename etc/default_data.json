@@ -3166,6 +3166,10 @@
                 },
                 {
                     "company_name": "Verilume",
+                    "end_date": "2016-Mar-04"
+                },
+                {
+                    "company_name": "Intralinks",
                     "end_date": null
                 }
             ],
@@ -19556,6 +19560,10 @@
         {
             "domains": ["internap.com"],
             "company_name": "Internap"
+        },
+        {
+            "domains": ["intralinks.com"],
+            "company_name": "Intralinks"
         },
         {
             "domains": ["inwinstack.com"],
