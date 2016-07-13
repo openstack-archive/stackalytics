@@ -8471,11 +8471,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Jun-17"
+                },
+                {
+                    "company_name": "Rackspace",
                     "end_date": null
                 }
             ],
             "user_name": "Michael Johnson",
-            "emails": ["johnsom@hp.com", "johnsomor@gmail.com", "michael.d.johnson@hpe.com"]
+            "emails": ["johnsom@hp.com", "johnsomor@gmail.com", "michael.d.johnson@hpe.com", "michael.johnsonus@rackspace.com"]
         },
         {
             "launchpad_id": "johnson-dantis",
