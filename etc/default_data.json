@@ -11448,6 +11448,18 @@
             "emails": ["ivarlazzaro@gmail.com"]
         },
         {
+            "launchpad_id": "mmalik4",
+            "gerrit_id": "mmalik4",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mohit Malik",
+            "emails": ["mohit.malik@intel.com"]
+        },
+        {
             "launchpad_id": "mmasaki",
             "companies": [
                 {
