@@ -15759,6 +15759,18 @@
             "emails": ["stephane@alum.mit.edu", "cinerama@hp.com", "cinerama@hpe.com"]
         },
         {
+            "launchpad_id": "stephen-watson",
+            "gerrit_id": "swatson",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stephen Watson",
+            "emails": ["stephen.watson@intel.com"]
+        },
+        {
             "launchpad_id": "steve-leon",
             "companies": [
                 {
