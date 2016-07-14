@@ -215,6 +215,18 @@
             "emails": ["toshio@fedoraproject.org", "a.badger@gmail.com"]
         },
         {
+            "launchpad_id": "abashmak",
+            "gerrit_id": "abashmak",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Bashmakov",
+            "emails": ["alexander.bashmakov@intel.com", "abashmak@yahoo.com"]
+        },
+        {
             "launchpad_id": "abe-music",
             "gerrit_id": "abemusic",
             "companies": [
