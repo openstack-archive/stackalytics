@@ -14257,6 +14257,18 @@
             "emails": ["jingyuan@unitedstack.com", "rustinpeace@163.com"]
         },
         {
+            "launchpad_id": "rusty-lynch-intel",
+            "gerrit_id": "rusty",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rusty Lynch",
+            "emails": ["rusty.lynch@intel.com"]
+        },
+        {
             "launchpad_id": "ryan-brandt",
             "gerrit_id": "ryan-brandt",
             "companies": [
