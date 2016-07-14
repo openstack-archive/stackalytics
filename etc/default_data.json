@@ -13105,6 +13105,18 @@
             "emails": ["ran.qunying@zte.com.cn"]
         },
         {
+            "launchpad_id": "qwang",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Qin Wang",
+            "gerrit_id": "qwang",
+            "emails": ["qin.wang@intel.com"]
+        },
+        {
             "launchpad_id": "r-thorsten",
             "companies": [
                 {
