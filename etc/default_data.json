@@ -728,6 +728,18 @@
             "emails": ["akhivin@mirantis.com", "akhivin@gmail.com"]
         },
         {
+             "launchpad_id": "akilan-pughazhendi",
+             "gerrit_id": "AkilP",
+             "companies": [
+                 {
+                     "company_name": "Intel",
+                     "end_date": null
+                 }
+             ],
+            "user_name": "Akilan Pughazhendi",
+            "emails": ["akilan.pughazhendi@intel.com"]
+        },
+        {
             "launchpad_id": "akomarek",
             "gerrit_id": "cznewt",
             "companies": [
