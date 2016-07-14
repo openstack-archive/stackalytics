@@ -11400,6 +11400,18 @@
             "emails": ["mikeyp@lahondaresearch.org"]
         },
         {
+           "launchpad_id": "milan.potdar",
+           "gerrit_id": "milanpotdar",
+           "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Milan Potdar",
+            "emails": ["milan.potdar@intel.com", "milan.potdar@gmail.com"]
+        },
+        {
             "launchpad_id": "millet",
             "companies": [
                 {
