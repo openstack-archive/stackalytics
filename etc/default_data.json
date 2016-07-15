@@ -11930,6 +11930,17 @@
             "emails": ["nerminamiller@gmail.com"]
         },
         {
+            "launchpad_id": "newgoliath",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Judd Maltin",
+            "emails": ["judd_maltin@dell.com", "judd@newgoliath.com"]
+        },
+        {
             "launchpad_id": "nfedotov",
             "user_name": "Nikolay Fedotov",
             "companies": [
