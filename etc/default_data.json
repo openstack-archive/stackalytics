@@ -22012,7 +22012,7 @@
         },
         {
             "module_group_name": "mistral-group",
-            "modules": ["python-mistralclient", "mistral", "mistral-extra", "mistral-dashboard"]
+            "modules": ["python-mistralclient", "mistral", "mistral-extra", "mistral-dashboard", "mistral-specs", "mistral-lib"]
         },
         {
             "module_group_name": "murano-group",
