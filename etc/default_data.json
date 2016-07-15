@@ -17539,6 +17539,17 @@
             "emails": ["wan-yen.hsu@hp.com", "wan-yen.hsu@hpe.com"]
         },
         {
+            "launchpad_id": "wang-junjie",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wang Junjie",
+            "emails": ["wang-junjie@outlook.com", "wang.junjiea@h3c.com"]
+        },
+        {
             "launchpad_id": "wang-ping5",
             "companies": [
                 {
