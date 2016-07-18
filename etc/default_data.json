@@ -6864,6 +6864,18 @@
             "emails": ["houshengbo@hotmail.com", "sbhou@cn.ibm.com"]
         },
         {
+            "launchpad_id": "houwch",
+            "gerrit_id":"houweichao",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "houweichao",
+            "emails": ["houwch@gohighsec.com"]
+        },
+        {
             "launchpad_id": "hovyakov",
             "companies": [
                 {
