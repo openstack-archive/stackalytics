@@ -14698,6 +14698,21 @@
             "emails": ["stephen@balukoff.com", "sbalukoff@us.ibm.com", "sbalukoff@bluebox.net"]
         },
         {
+            "launchpad_id": "sc",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stefano Canepa",
+            "emails": ["stefano.canepa@hpe.com", "sc@linux.it", "stefano@canepa.ge.it", "stefano.canepa@hp.com"]
+        },
+        {
             "launchpad_id": "scarvalhojr",
             "companies": [
                 {
