@@ -10518,6 +10518,8 @@
         },
         {
             "launchpad_id": "maoshuai",
+            "gerrit_id": "shuaimao",
+            "zanata_id": "maoshuai",
             "companies": [
                 {
                     "company_name": "H3C",
