@@ -5227,6 +5227,17 @@
             "emails": ["edwardbadboy@gmail.com", "zhengsheng@awcloud.com"]
         },
         {
+            "launchpad_id": "egafford",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Elise Gafford",
+            "emails": ["egafford@redhat.com"]
+        },
+        {
             "launchpad_id": "egallen",
             "companies": [
                 {
