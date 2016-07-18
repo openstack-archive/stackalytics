@@ -5736,6 +5736,21 @@
             "emails": ["fengzhr@awcloud.com"]
         },
         {
+            "launchpad_id": "ffernand",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2016-Jan-26"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Flavio Fernandes",
+            "emails": ["flavio@flaviof.com", "flavio.fernandes@ibm.com"]
+        },
+        {
             "launchpad_id": "ficoos",
             "companies": [
                 {
