@@ -9892,6 +9892,17 @@
             "emails": ["lichl@hotmail.com"]
         },
         {
+            "launchpad_id": "lichunhan",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lichunhan",
+            "emails": ["chunhan_ryan@163.com","li.chunhan@h3c.com"]
+        },
+        {
             "launchpad_id": "liemmn",
             "companies": [
                 {
