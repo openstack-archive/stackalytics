@@ -10237,6 +10237,17 @@
             "emails": ["slokesh184@gmail.com", "lokesh.s@hp.com", "lokesh.s@hpe.com"]
         },
         {
+            "launchpad_id": "lony",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yu Long",
+            "emails": ["yulongxn@163.com"]
+        },
+        {
             "launchpad_id": "loquacity",
             "companies": [
                 {
