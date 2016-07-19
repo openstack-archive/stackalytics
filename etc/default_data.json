@@ -18752,6 +18752,17 @@
             "emails": ["zhangjl@awcloud.com", "zhangjl_cn@qq.com"]
         },
         {
+            "launchpad_id": "zhangjianfeng",
+            "companies": [
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangjianfeng",
+            "emails": ["kill51216@163.com", "zhangjianfeng@chinac.com"]
+        },
+        {
             "launchpad_id": "zhangleiqiang",
             "companies": [
                 {
