@@ -18920,6 +18920,17 @@
             "emails": ["zhu.rong@99cloud.net", "aaronzhu1020@gmail.com"]
         },
         {
+            "launchpad_id": "zhu-xuanlong",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhuxuanlong",
+            "emails": ["zhu.xuanlong@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zhugaoxiao",
             "companies": [
                 {
