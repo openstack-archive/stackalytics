@@ -16081,6 +16081,17 @@
             "emails": ["sun.jing22@zte.com.cn", "jingsun59@163.com"]
         },
         {
+            "launchpad_id": "sunanchen",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sunanchen",
+            "emails": ["sunanchen0122@gmail.com", "kf.sunanchen@h3c.com", "506067684@qq.com"]
+        },
+        {
             "launchpad_id": "sungjin",
             "gerrit_id": "sungjin",
             "zanata_id": "ujuc",
