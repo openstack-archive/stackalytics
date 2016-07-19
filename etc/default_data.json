@@ -9986,6 +9986,17 @@
             "emails": ["lindycoder@gmail.com", "mroy@iweb.com", "martin.roy@internap.com"]
         },
         {
+            "launchpad_id": "linlin",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "linlin",
+            "emails": ["469923498@qq.com", "kf.linlin@h3c.com"]
+        },
+        {
             "launchpad_id": "linuxjedi",
             "companies": [
                 {
