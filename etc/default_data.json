@@ -16824,6 +16824,17 @@
             "emails": ["tom.pollard@codethink.co.uk", "tom_pollard@hotmail.co.uk"]
         },
         {
+            "launchpad_id": "tomjosekal",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tom Jose Kalapura",
+            "emails": ["tomjosekal@gmail.com", "tkalapura@walmartlabs.com", "tkalapura@walmart.com"]
+        },
+        {
             "launchpad_id": "torgomatic",
             "companies": [
                 {
