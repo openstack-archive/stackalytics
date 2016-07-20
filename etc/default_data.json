@@ -5694,6 +5694,17 @@
             "emails": ["me@mark.atwood.name", "fallenpegasus@gmail.com", "mark.atwood@gmail.com", "matwood@redhat.com", "mark.atwood@hp.com", "mark.atwood@hpe.com"]
         },
         {
+            "launchpad_id": "fang-he",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fang He",
+            "emails": ["fang.he@hotmail.com", "fang.he@h3c.com"]
+        },
+        {
             "launchpad_id": "fausto-marzi",
             "gerrit_id": "fausto.marzi",
             "companies": [
