@@ -13366,6 +13366,22 @@
             "emails": ["raildo@lsd.ufcg.edu.br"]
         },
         {
+            "launchpad_id": "rajasi-kulkarni",
+            "gerrit_id": "RajasiKulkarni",
+            "companies": [
+                {
+                    "company_name": "Persistent Systems",
+                    "end_date": "2016-Jan-08"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rajasi Kulkarni",
+            "emails": ["rajasikulkarni18@gmail.com"]
+        },
+        {
             "launchpad_id": "rajdeepd",
             "companies": [
                 {
