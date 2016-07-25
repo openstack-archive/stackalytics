@@ -13874,6 +13874,17 @@
             "emails": ["kukura@noironetworks.com","rkukura@redhat.com"]
         },
         {
+            "launchpad_id": "rkumar-b",
+            "companies": [
+                {
+                    "company_name": "Nimble Storage",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Raunak Kumar",
+            "emails": ["rkumar@nimblestorage.com", "raunak.kumar@nimblestorage.com"]
+        },
+        {
             "launchpad_id": "rlane",
             "companies": [
                 {
@@ -15744,6 +15755,17 @@
             ],
             "user_name": "Yan songming",
             "emails": ["neutron@zte.com.cn"]
+        },
+        {
+             "launchpad_id": "sonia-ghanekar",
+            "companies": [
+                {
+                    "company_name": "Nimble Storage",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sonia Ghanekar",
+            "emails": ["sonia.ghanekar@nimblestorage.com"]
         },
         {
             "launchpad_id": "sonu-sudhakaran",
@@ -20180,6 +20202,10 @@
         {
             "domains": ["nimbleengineering.io"],
             "company_name": "Nimble Engineering AS"
+        },
+        {
+            "domains": ["nimblestorage.com"],
+            "company_name": "Nimble Storage"
         },
         {
             "domains": ["nimbula.com"],
