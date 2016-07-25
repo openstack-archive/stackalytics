@@ -3379,6 +3379,17 @@
             "emails": ["cmsj@tenshu.net", "chjones@redhat.com", "cmsj@redhat.com"]
         },
         {
+            "launchpad_id": "coco-gao",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "coco-Gao",
+            "emails": ["419546439@qq.com", "gaojh4@lenovo.com"]
+        },
+        {
             "launchpad_id": "cody-somerville",
             "companies": [
                 {
