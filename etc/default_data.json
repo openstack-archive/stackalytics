@@ -21995,26 +21995,6 @@
             "uri": "https://github.com/docker/docker-py.git"
         },
         {
-            "module": "kubernetes",
-            "organization": "kubernetes",
-            "uri": "https://github.com/kubernetes/kubernetes.git"
-        },
-        {
-            "module": "kubernetes.github.io",
-            "organization": "kubernetes",
-            "uri": "https://github.com/kubernetes/kubernetes.github.io.git"
-        },
-        {
-            "module": "frakti",
-            "organization": "kubernetes",
-            "uri": "https://github.com/kubernetes/frakti.git"
-        },
-        {
-            "module": "heapster",
-            "organization": "kubernetes",
-            "uri": "https://github.com/kubernetes/heapster.git"
-        },
-        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
@@ -22303,6 +22283,11 @@
         },
         {
             "organization": "cloudfoundry",
+            "uri": "github://"
+        },
+        {
+            "organization": "kubernetes",
+            "module_group_id": "kubernetes-group",
             "uri": "github://"
         }
     ],
@@ -22607,7 +22592,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes", "jclouds", "cloudfoundry", "opnfv", "ovs", "pypa-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "ovs", "pypa-group"]
         },
         {
             "id": "ansible-group",
@@ -22637,7 +22622,7 @@
             "id": "kubernetes-group",
             "title": "Kubernetes",
             "child": true,
-            "modules": ["kubernetes"]
+            "modules": ["kubernetes-group"]
         },
         {
             "id": "opnfv-group",
