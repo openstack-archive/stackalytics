@@ -9978,6 +9978,18 @@
             "emails": ["robertc@robertcollins.net", "rbtcollins@hp.com", "rbtcollins@hpe.com"]
         },
         {
+            "launchpad_id": "lijing",
+            "gerrit_id":"lijing",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lijing",
+            "emails": ["lijing@gohighsec.com"]
+        },
+        {
             "launchpad_id": "liminliu",
             "companies": [
                 {
