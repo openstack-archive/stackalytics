@@ -6658,6 +6658,17 @@
             "emails": ["h-aramaki@netone.co.jp"]
         },
         {
+            "launchpad_id": "h3c-hanchao",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "openstackhc",
+            "emails": ["409007319@qq.com", "han.chaob@h3c.com"]
+        },
+        {
             "launchpad_id": "hanchao-v",
             "companies": [
                 {
