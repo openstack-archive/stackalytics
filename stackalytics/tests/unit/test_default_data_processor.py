@@ -103,6 +103,36 @@ class TestDefaultDataProcessor(testtools.TestCase):
                            'modules': ['tux'],
                            'tag': 'organization'}, dd['module_groups'])
 
+    def test_update_project_list_ext_project_source(self):
+        with mock.patch('stackalytics.processor.default_data_processor.'
+                        '_retrieve_project_list_from_github') as retriever:
+            retriever.return_value = [
+                {'module': 'kubernetes',
+                 'uri': 'git://github.com/kubernetes/kubernetes',
+                 'organization': 'kubernetes'},
+            ]
+            dd = {
+                'repos': [],
+                'project_sources': [
+                    {'organization': 'kubernetes',
+                     'uri': 'github://',
+                     'module_group_id': 'kubernetes-group'},
+                ],
+                'module_groups': [],
+            }
+
+            default_data_processor._update_project_list(dd)
+
+            self.assertEqual(1, len(dd['repos']))
+            self.assertIn('kubernetes',
+                          set([r['module'] for r in dd['repos']]))
+
+            self.assertEqual(1, len(dd['module_groups']))
+            self.assertIn({'id': 'kubernetes-group',
+                           'module_group_name': 'kubernetes',
+                           'modules': ['kubernetes'],
+                           'tag': 'organization'}, dd['module_groups'])
+
     @mock.patch('stackalytics.processor.utils.read_json_from_uri')
     def test_update_with_driverlog(self, mock_read_from_json):
         default_data = {'repos': [{'module': 'cinder', }], 'users': []}
