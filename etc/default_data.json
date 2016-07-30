@@ -17838,6 +17838,8 @@
         },
         {
             "launchpad_id": "wang-junjie",
+            "gerrit_id": "wang-junjie",
+            "zanata_id": "petro",
             "companies": [
                 {
                     "company_name": "H3C",
