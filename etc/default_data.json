@@ -18230,6 +18230,22 @@
             "emails": ["xiaobo@awcloud.com"]
         },
         {
+            "launchpad_id": "xiaohhui",
+            "gerrit_id": "HongHuiXiao",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2016-Jul-22"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hong Hui Xiao",
+            "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "xiaohonghui@huawei.com"]
+        },
+        {
             "launchpad_id": "xinze",
             "companies": [
                 {
