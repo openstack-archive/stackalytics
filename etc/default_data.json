@@ -16097,6 +16097,10 @@
                 {
                     "company_name": "HPE",
                     "end_date": "2016-Jun-24"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
                 }
             ],
             "user_name": "Steve Kowalik",
