@@ -179,6 +179,9 @@
                     },
                     "default_branch": {
                         "type": "string"
+                    },
+                    "module_group_id": {
+                        "type": "string"
                     }
                 },
                 "required": ["organization"],

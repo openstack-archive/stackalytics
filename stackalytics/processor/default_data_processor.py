@@ -127,15 +127,24 @@ def _create_module_groups_for_project_sources(project_sources, repos):
     for repo in repos:
         organizations[repo['organization']].append(repo['module'])
 
-    ps_organizations = dict([(ps.get('organization'),
-                              ps.get('module_group_name') or
-                              ps.get('organization'))
-                             for ps in project_sources])
+    # organization -> (module_group_id, module_group_name)
+    ps_organizations = dict(
+        [(ps.get('organization'),
+          (ps.get('module_group_id') or ps.get('organization'),
+           ps.get('module_group_name') or ps.get('organization')))
+         for ps in project_sources])
 
     module_groups = []
     for ogn, modules in six.iteritems(organizations):
+        module_group_id = ogn
+        module_group_name = ogn
+
+        if ogn in ps_organizations:
+            module_group_id = ps_organizations[ogn][0]
+            module_group_name = ps_organizations[ogn][1]
+
         module_groups.append(utils.make_module_group(
-            ogn, name=ps_organizations.get(ogn, ogn), modules=modules,
+            module_group_id, name=module_group_name, modules=modules,
             tag='organization'))
 
     return module_groups
