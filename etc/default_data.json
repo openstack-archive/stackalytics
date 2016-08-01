@@ -8443,6 +8443,18 @@
             "emails": ["pyn905@my.utsa.edu", "jnimish77@gmail.com"]
         },
         {
+            "launchpad_id": "jnowak",
+            "github_id": "pigmej",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jedrzej Nowak",
+            "emails": ["jnowak@mirantis.com", "pigmej@gmail.com", "mail@jedrzejnowak.pl"]
+        },
+        {
             "launchpad_id": "joe-arnold",
             "companies": [
                 {
@@ -14616,6 +14628,18 @@
             "emails": ["sajuptpm@gmail.com", "saju.madhavan@ril.com"]
         },
         {
+            "launchpad_id": "salmon",
+            "github_id": "lukaszo",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lukasz Oles",
+            "emails": ["loles@mirantis.com", "lukaszoles@gmail.com"]
+        },
+        {
             "launchpad_id": "salvatore-orlando",
             "companies": [
                 {
@@ -17361,6 +17385,18 @@
             ],
             "user_name": "Ved Lad",
             "emails": ["ved_lad@symantec.com", "ved_lad@symantec40.com", "vedlad@gmail.com"]
+        },
+        {
+            "launchpad_id": "vefimova",
+            "github_id": "vefimova",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Victoria Efimova",
+            "emails": ["vefimova@mirantis.com"]
         },
         {
             "launchpad_id": "venkatamaheshkotha",
