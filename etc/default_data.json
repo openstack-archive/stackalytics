@@ -10161,6 +10161,17 @@
             "emails": ["liu.lixiu@zte.com.cn"]
         },
         {
+            "launchpad_id": "liu-wei81",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Liu",
+            "emails": ["liu.wei81@zte.com.cn"]
+        },
+        {
             "launchpad_id": "liu-yong8",
             "companies": [
                 {
