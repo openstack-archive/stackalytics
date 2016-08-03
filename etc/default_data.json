@@ -12267,6 +12267,18 @@
             "emails": ["ning.sun@intel.com"]
         },
         {
+            "launchpad_id": "nishpatwa",
+            "gerrit_id": "npatwa",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nish Patwa",
+            "emails": ["nish.patwa@intel.com"]
+        },
+        {
             "launchpad_id": "niu-zglinux",
             "companies": [
                 {
