@@ -11959,6 +11959,18 @@
             "emails": ["sachi.king@anchor.com.au", "chroniclinux@gmail.com", "nakato@nakato.io", "sachi.king@hp.com", "sachi.king@hpe.com"]
         },
         {
+            "launchpad_id": "nakul-dahiwade",
+            "gerrit_id": "nakul.dahiwade",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nakul Dahiwade",
+            "emails": ["nakul.dahiwade@intel.com", "nakuldahiwade@gmail.com"]
+        },
+        {
             "launchpad_id": "namei-unix",
             "companies": [
                 {
