@@ -15183,6 +15183,18 @@
             "emails": ["shaohef@126.com", "shaohe.feng@intel.com"]
         },
         {
+            "launchpad_id": "shashank-kumar-shankar",
+            "gerrit_id": "skshankar",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shashank Kumar Shankar",
+            "emails": ["shashank.kumar.shankar@intel.com", "shank4804@gmail.com"]
+        },
+        {
             "launchpad_id": "shashirekha-j-gundur",
             "gerrit_id": "shashirekha.j.gundur",
             "companies": [
