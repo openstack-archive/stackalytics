@@ -103,6 +103,17 @@
             "emails": ["lu.bin2@zte.com.cn"]
         },
         {
+            "launchpad_id": "453528434-f",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ZhangChuanjin",
+            "emails": ["453528434@qq.com"]
+        },
+        {
             "launchpad_id": "6-morgan",
             "companies": [
                 {
