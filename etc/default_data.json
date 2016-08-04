@@ -15367,6 +15367,18 @@
             "emails": ["shuichiro.makigaki@gmail.com"]
         },
         {
+            "launchpad_id": "shunde-zhang",
+            "gerrit_id": "shundezhang",
+            "companies": [
+                {
+                    "company_name": "Aptira",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shunde Zhang",
+            "emails": ["shunde@aptira.com", "shunde.p.zhang@gmail.com"]
+        },
+        {
             "launchpad_id": "shuo-yang",
             "gerrit_id": "syang",
             "companies": [
