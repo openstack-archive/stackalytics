@@ -18764,6 +18764,18 @@
             "emails": ["yushb@gohighsec.com"]
         },
         {
+            "launchpad_id": "yusuke12",
+            "zanata_id": "yusuke1219",
+            "companies": [
+                {
+                    "company_name": "ADOC International",
+                    "end_date": null
+                }
+                ],
+                "user_name": "Yusuke Higashino",
+                "emails": ["yusuke_higashino@adoc.co.jp"]
+        },
+        {
             "launchpad_id": "yuxcer",
             "companies": [
                 {
@@ -19432,6 +19444,10 @@
         {
             "domains": ["acelio.com"],
             "company_name": "Acelio"
+        },
+        {
+            "domains": ["adoc.com"],
+            "company_name": "ADOC International"
         },
         {
             "domains": ["akanda.io"],
