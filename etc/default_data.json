@@ -8691,6 +8691,17 @@
             "user_name": "Jonas Pfannschmidt",
             "emails": ["jonas.pfannschmidt@hp.com","jonas.pfannschmidt@hpe.com"]
         },
+        {
+            "launchpad_id": "jonnary-liu",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jonnary",
+            "emails": ["liu.xuefeng1@zte.com.cn"]
+        },
        {
             "launchpad_id": "jonpaul-sullivan",
             "companies": [
