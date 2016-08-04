@@ -2121,23 +2121,13 @@
             "launchpad_id": "berendt",
             "companies": [
                 {
-                    "company_name": "B1 Systems",
+                    "company_name": "B1 Systems GmbH",
                     "end_date": null
                 }
             ],
             "user_name": "Christian Berendt",
-            "emails": ["berendt@b1-systems.de", "mail@cberendt.net", "christian@berendt.io"]
-        },
-        {
-            "launchpad_id": "berendt-betacloud",
-            "companies": [
-                {
-                    "company_name": "Betacloud Solutions GmbH",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Christian Berendt",
-            "emails": ["berendt@betacloud-solutions.de", "berendt@betacloud.io", "berendt@betacloud.xyz"]
+            "emails": ["berendt@b1-systems.de", "mail@cberendt.net", "christian@berendt.io",
+                       "berendt@betacloud-solutions.de", "berendt@betacloud.io", "berendt@betacloud.xyz"]
         },
         {
             "launchpad_id": "bertiefulton",
@@ -19561,7 +19551,7 @@
         },
         {
             "domains": ["b1-systems.de"],
-            "company_name": "B1 Systems"
+            "company_name": "B1 Systems GmbH"
         },
         {
             "domains": ["bacoosta.com"],
@@ -19579,11 +19569,6 @@
         {
             "domains": ["bestbuy.com"],
             "company_name": "Best Buy"
-        },
-        {
-            "domains": ["betacloud-solutions.de", "betacloud.io", "betacloud.xyz"],
-            "company_name": "Betacloud Solutions GmbH",
-            "aliases": ["Betacloud", "Betacloud Solutions"]
         },
         {
             "domains": ["bigswitch.com"],
