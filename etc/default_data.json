@@ -1462,6 +1462,17 @@
             "emails": ["anthony.washington@intel.com", "awashington251@gmail.com"]
         },
         {
+            "launchpad_id": "anton-kremenetsky",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anton Kremenetsky",
+            "emails": ["anton.kremenetsky@yandex.ru", "tonixx23@gmail.com"]
+        },
+        {
             "launchpad_id": "antont8443",
             "companies": [
                 {
