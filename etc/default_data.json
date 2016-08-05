@@ -18454,6 +18454,21 @@
             "emails": ["yejia@unitedstack.com", "xyj.asmy@gmail.com"]
         },
         {
+            "launchpad_id": "yalogr",
+            "companies": [
+                {
+                   "company_name": "*independent",
+                   "end_date": "2014-Aug-05"
+                },
+                {
+                    "company_name": "Letv Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lg.yue",
+            "emails": ["yuelongguang@letv.com", "yuelongguang@le.com", "bigclouds@163.com", "yalogr@163.com"]
+        },
+        {
             "launchpad_id": "yamamoto",
             "user_name": "YAMAMOTO Takashi",
             "companies": [
@@ -20227,7 +20242,7 @@
             "company_name": "Lenovo"
         },
         {
-            "domains": ["letv.com"],
+            "domains": ["letv.com", "le.com"],
             "company_name": "Letv Cloud Computing"
         },
         {
