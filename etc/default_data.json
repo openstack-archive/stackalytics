@@ -6660,13 +6660,14 @@
         },
         {
             "launchpad_id": "h3c-hanchao",
+            "zanata_id": "openstackhc",
             "companies": [
                 {
                     "company_name": "H3C",
                     "end_date": null
                 }
             ],
-            "user_name": "openstackhc",
+            "user_name": "hanchao",
             "emails": ["409007319@qq.com", "han.chaob@h3c.com"]
         },
         {
