@@ -18497,6 +18497,17 @@
             "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com"]
         },
         {
+            "launchpad_id": "yanwei",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "YanWei",
+            "emails": ["yan.wei7@zte.com.cn","vxlinux@163.com"]
+        },
+        {
             "launchpad_id": "yao3690093-o",
             "companies": [
                 {
