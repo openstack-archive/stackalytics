@@ -15182,6 +15182,17 @@
             "emails": ["selvakumar.s2@hp.com", "selvakumar.nms@gmail.com", "selvakumar-s2@hp.com", "selvakumar.s2@hpe.com"]
         },
         {
+            "launchpad_id": "senk",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robin Naundorf",
+            "emails": ["r.naundorf@fh-muenster.de"]
+        },
+        {
             "launchpad_id": "sergey.vilgelm",
             "companies": [
                 {
