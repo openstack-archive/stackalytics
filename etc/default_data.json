@@ -3178,11 +3178,15 @@
             "companies": [
                 {
                     "company_name": "Imaginea Technologies Inc.",
+                    "end_date": "2016-Jul-29"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "vikaschoudhary16",
-            "emails": ["choudharyvikas16@gmail.com", "vikas.choudhary@imaginea.com"]
+            "emails": ["choudharyvikas16@gmail.com", "vikas.choudhary@imaginea.com", "vichoudh@redhat.com"]
         },
         {
 
