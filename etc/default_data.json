@@ -18469,6 +18469,17 @@
             "emails": ["yejia@unitedstack.com", "xyj.asmy@gmail.com"]
         },
         {
+            "launchpad_id": "y-maruyama",
+            "companies": [
+                {
+                    "company_name": "TOKYO SYSTEM HOUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yasunori Maruyama",
+            "emails": ["y-maruyama@tsh-world.co.jp"]
+        },
+        {
             "launchpad_id": "yalogr",
             "companies": [
                 {
@@ -20809,6 +20820,10 @@
         {
             "domains": ["toronto.edu"],
             "company_name": "University of Toronto"
+        },
+        {
+            "domains": ["tsh-world.co.jp"],
+            "company_name": "TOKYO SYSTEM HOUSE"
         },
         {
             "domains": ["tubitak.gov.tr"],
