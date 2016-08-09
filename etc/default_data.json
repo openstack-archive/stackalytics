@@ -16148,6 +16148,26 @@
             "emails": ["stephen.watson@intel.com"]
         },
         {
+            "launchpad_id": "stephenfinucane",
+            "gerrit_id": "sfinucan",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": "2016-Jul-15"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stephen Finucane",
+            "emails": [
+                "stephen.finucane@intel.com",
+                "sfinucan@redhat.com",
+                "stephenfinucane@hotmail.com"
+            ]
+        },
+        {
             "launchpad_id": "steve-leon",
             "companies": [
                 {
