@@ -15673,6 +15673,21 @@
             "emails": ["skanddh@gmail.com", "seungkyu.ahn@samsung.com"]
         },
         {
+            "launchpad_id": "skazi",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Jun-30"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jacek Tomasiak",
+            "emails": ["jacek.tomasiak@gmail.com", "jtomasiak@suse.com"]
+        },
+        {
             "launchpad_id": "skhotta",
             "companies": [
                 {
