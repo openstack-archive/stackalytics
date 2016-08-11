@@ -16381,6 +16381,18 @@
             "emails": ["gang.sungjin@gmail.com", "potopro@gmail.com", "ujuc@ujuc.kr"]
         },
         {
+            "launchpad_id": "sunjh1999",
+            "gerrit_id": "HenryS",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Henry Sun",
+            "emails": ["2994859298@qq.com"]
+        },
+        {
             "launchpad_id": "sunku-ranganath",
             "gerrit_id": "sunkuranganath",
             "companies": [
