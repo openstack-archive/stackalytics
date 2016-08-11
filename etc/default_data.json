@@ -21287,6 +21287,19 @@
         {
             "releases": [
                 {
+                    "branch": "debian/newton",
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "00313fdb"
+                }
+            ],
+            "uri": "git://git.openstack.org/openstack/deb-auto-backports.git",
+            "module": "deb-auto-backports",
+            "organization": "openstack"
+        },
+        {
+            "releases": [
+                {
                     "tag_to": "2012.1",
                     "release_name": "Essex",
                     "tag_from": "2011.3"
