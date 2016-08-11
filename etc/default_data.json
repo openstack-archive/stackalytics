@@ -13274,6 +13274,18 @@
             "emails": ["pdesai@us.ibm.com", "priti_desai@symantec.com", "pritidesai8@gmail.com"]
         },
         {
+           "launchpad_id": "prudhvi-rao-shedimbi",
+           "gerrit_id": "pshedimb",
+           "companies": [
+               {
+                   "company_name": "Intel",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Prudhvi Rao Shedimbi",
+           "emails": ["prudhvi.rao.shedimbi@intel.com", "kunni.prudhvi@gmail.com"]
+       },
+        {
             "launchpad_id": "pshige",
             "companies": [
                 {
