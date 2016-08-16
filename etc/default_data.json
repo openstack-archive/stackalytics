@@ -18214,6 +18214,18 @@
             "emails": ["dave.jungler@gmail.com", "wei.d.chen@intel.com"]
         },
         {
+            "launchpad_id": "wei-li",
+            "gerrit_id": "liwei1",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liwei",
+            "emails": ["wei.li@easystack.cn"]
+        },
+        {
             "launchpad_id": "wei.zhijun",
             "companies": [
                 {
