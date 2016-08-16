@@ -161,7 +161,9 @@ def _update_project_list(default_data):
         repos_dict = dict((r['uri'], r) for r in repos)
         for r in default_data['repos']:
             if r['uri'] in repos_dict:
-                r.update(repos_dict[r['uri']])
+                for k, v in repos_dict[r['uri']].items():
+                    if k not in r:
+                        r[k] = v
 
         # update default data
         default_data['repos'] += [r for r in repos_dict.values()
