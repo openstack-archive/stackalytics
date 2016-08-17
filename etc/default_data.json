@@ -12719,6 +12719,19 @@
             "emails": ["oss_xzdong@163.com"]
         },
         {
+            "launchpad_id": "otsuka-f",
+            "gerrit_id": "otsuka",
+            "zanata_id": "otsuka",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hayato Otsuka",
+            "emails": ["hotsuka@mirantis.com"]
+        },
+        {
             "launchpad_id": "p-draigbrady",
             "companies": [
                 {
