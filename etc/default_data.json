@@ -22836,6 +22836,32 @@
             ]
         },
         {
+            "module_group_name": "fuel-ccp",
+            "modules": [
+                "openstack/fuel-ccp",
+                "openstack/fuel-ccp-ci-config",
+                "openstack/fuel-ccp-debian-base",
+                "openstack/fuel-ccp-entrypoint",
+                "openstack/fuel-ccp-etcd",
+                "openstack/fuel-ccp-glance",
+                "openstack/fuel-ccp-heat",
+                "openstack/fuel-ccp-horizon",
+                "openstack/fuel-ccp-installer",
+                "openstack/fuel-ccp-ironic",
+                "openstack/fuel-ccp-keystone",
+                "openstack/fuel-ccp-mariadb",
+                "openstack/fuel-ccp-memcached",
+                "openstack/fuel-ccp-neutron",
+                "openstack/fuel-ccp-nova",
+                "openstack/fuel-ccp-openstack-base",
+                "openstack/fuel-ccp-rabbitmq",
+                "openstack/fuel-ccp-searchlight",
+                "openstack/fuel-ccp-specs",
+                "openstack/fuel-ccp-stacklight",
+                "openstack/fuel-ccp-tests"
+            ]
+        },
+        {
             "module_group_name": "group-based-policy-group",
             "modules": ["group-based-policy", "group-based-policy-ui",
             "group-based-policy-automation", "group-based-policy-specs",
