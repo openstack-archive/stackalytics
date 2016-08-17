@@ -9484,6 +9484,21 @@
             "emails": ["kienha9922@gmail.com"]
         },
         {
+            "launchpad_id": "kieran-forde",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": "2016-Aug-17"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kieran Forde",
+            "emails": ["kieran.forde@gmail.com"]
+        },
+        {
             "launchpad_id": "kim-jensen2",
             "companies": [
                 {
