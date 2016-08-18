@@ -22848,7 +22848,7 @@
             ]
         },
         {
-            "module_group_name": "fuel-ccp",
+            "module_group_name": "fuel-ccp-group",
             "modules": [
                 "openstack/fuel-ccp",
                 "openstack/fuel-ccp-ci-config",
