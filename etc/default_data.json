@@ -18487,6 +18487,18 @@
             "emails": ["xianghui@cn.ibm.com", "hui.xiang@canonical.com"]
         },
         {
+            "launchpad_id": "xianming-mao",
+            "gerrit_id": "Mars",
+            "companies":[
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xianming.mao",
+            "emails": ["xianming.mao@easystack.cn"]
+        },
+        {
             "launchpad_id": "xiaobo-2",
             "companies": [
                 {
