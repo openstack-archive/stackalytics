@@ -16440,6 +16440,8 @@
         },
         {
             "launchpad_id": "sunanchen",
+            "gerrit_id": "SunAnChen",
+            "zanata_id": "sunanchen",
             "companies": [
                 {
                     "company_name": "H3C",
