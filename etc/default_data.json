@@ -18914,6 +18914,17 @@
             "emails": ["ysboychakov@mirantis.com"]
         },
         {
+            "launchpad_id": "yu-changcai",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Einst Crazy",
+            "emails": ["yu.changcai@99cloud.net", "einstcrazy@gmail.com"]
+        },
+        {
             "launchpad_id": "yu-kasuya",
             "companies": [
                 {
