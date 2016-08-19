@@ -22681,10 +22681,6 @@
     ],
     "module_groups": [
         {
-            "module_group_name": "libra-group",
-            "modules": ["libra", "python-libraclient"]
-        },
-        {
             "module_group_name": "fuel-plugins-group",
             "modules": [
               "fuel-plugin-6wind-virtual-accelerator",
@@ -22875,27 +22871,27 @@
         {
             "module_group_name": "fuel-ccp-group",
             "modules": [
-                "openstack/fuel-ccp",
-                "openstack/fuel-ccp-ci-config",
-                "openstack/fuel-ccp-debian-base",
-                "openstack/fuel-ccp-entrypoint",
-                "openstack/fuel-ccp-etcd",
-                "openstack/fuel-ccp-glance",
-                "openstack/fuel-ccp-heat",
-                "openstack/fuel-ccp-horizon",
-                "openstack/fuel-ccp-installer",
-                "openstack/fuel-ccp-ironic",
-                "openstack/fuel-ccp-keystone",
-                "openstack/fuel-ccp-mariadb",
-                "openstack/fuel-ccp-memcached",
-                "openstack/fuel-ccp-neutron",
-                "openstack/fuel-ccp-nova",
-                "openstack/fuel-ccp-openstack-base",
-                "openstack/fuel-ccp-rabbitmq",
-                "openstack/fuel-ccp-searchlight",
-                "openstack/fuel-ccp-specs",
-                "openstack/fuel-ccp-stacklight",
-                "openstack/fuel-ccp-tests"
+                "fuel-ccp",
+                "fuel-ccp-ci-config",
+                "fuel-ccp-debian-base",
+                "fuel-ccp-entrypoint",
+                "fuel-ccp-etcd",
+                "fuel-ccp-glance",
+                "fuel-ccp-heat",
+                "fuel-ccp-horizon",
+                "fuel-ccp-installer",
+                "fuel-ccp-ironic",
+                "fuel-ccp-keystone",
+                "fuel-ccp-mariadb",
+                "fuel-ccp-memcached",
+                "fuel-ccp-neutron",
+                "fuel-ccp-nova",
+                "fuel-ccp-openstack-base",
+                "fuel-ccp-rabbitmq",
+                "fuel-ccp-searchlight",
+                "fuel-ccp-specs",
+                "fuel-ccp-stacklight",
+                "fuel-ccp-tests"
             ]
         },
         {
@@ -22903,34 +22899,6 @@
             "modules": ["group-based-policy", "group-based-policy-ui",
             "group-based-policy-automation", "group-based-policy-specs",
             "python-group-based-policy-client"]
-        },
-        {
-            "module_group_name": "mistral-group",
-            "modules": ["python-mistralclient", "mistral", "mistral-extra", "mistral-dashboard", "mistral-specs", "mistral-lib"]
-        },
-        {
-            "module_group_name": "murano-group",
-            "modules": ["murano", "python-muranoclient", "murano-dashboard", "murano-agent", "murano-specs"]
-        },
-        {
-            "module_group_name": "solum-group",
-            "modules": ["python-solumclient", "solum", "solum-dashboard", "solum-infra-guestagent", "solum-specs"]
-        },
-        {
-            "module_group_name": "chef-group",
-            "modules": ["openstack-chef-repo", "cookbook-ceph", "cookbook-openstack-bare-metal", "cookbook-openstack-block-storage", "cookbook-openstack-client", "cookbook-openstack-common", "cookbook-openstack-compute", "cookbook-openstack-dashboard", "cookbook-openstack-data-processing", "cookbook-openstack-database", "cookbook-openstack-identity", "cookbook-openstack-image", "cookbook-openstack-integration-test", "cookbook-openstack-network", "cookbook-openstack-object-storage", "cookbook-openstack-ops-database", "cookbook-openstack-ops-messaging", "cookbook-openstack-orchestration", "cookbook-openstack-telemetry"]
-        },
-        {
-            "module_group_name": "magnetodb-group",
-            "modules": ["magnetodb", "python-magnetodbclient"]
-        },
-        {
-            "module_group_name": "monasca-group",
-            "modules": ["monasca-agent", "cookbook-monasca-agent", "monasca-api", "monasca-log-api", "cookbook-monasca-api", "monasca-notification", "cookbook-monasca-notification", "monasca-persister", "cookbook-monasca-persister", "cookbook-monasca-schema", "monasca-thresh", "cookbook-monasca-thresh", "monasca-agent", "monasca-ceilometer", "monasca-common", "monasca-ui", "monasca-vagrant", "monasca-statsd", "python-monascaclient", "stacktach-klugman", "stacktach-notification-utils", "stacktach-notigen", "stacktach-quince", "stacktach-quincy", "stacktach-sandbox", "stacktach-shoebox", "stacktach-simport", "stacktach-stackdistiller", "stacktach-timex", "stacktach-winchester"]
-        },
-        {
-            "module_group_name": "rally-group",
-            "modules": ["rally", "python-rallyclient", "osprofiler"]
         },
         {
             "module_group_name": "docker-group",
@@ -22944,14 +22912,6 @@
         {
             "module_group_name": "pypa-group",
             "modules": ["pip", "warehouse", "twine", "virtualenv"]
-        },
-        {
-            "module_group_name": "refstack-group",
-            "modules": ["refstack", "refstack-client"]
-        },
-        {
-            "module_group_name": "vitrage-group",
-            "modules": ["vitrage", "python-vitrageclient", "vitrage-dashboard", "puppet-vitrage", "vitrage-specs"]
         }
     ],
     "releases": [
