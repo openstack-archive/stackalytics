@@ -17429,11 +17429,15 @@
             "companies": [
                 {
                     "company_name": "HCL",
+                    "end_date": "2016-Jul-12"
+                },
+                {
+                    "company_name": "Infinite",
                     "end_date": null
                 }
             ],
             "user_name": "Ukesh Kumar",
-            "emails": ["ukeshkumar@gmail.com","ukeshkumar.v@hcl.com"]
+            "emails": ["ukeshkumar@gmail.com","ukeshkumar.v@hcl.com","ukesh.vasudevan@infinite.com"]
         },
         {
             "launchpad_id": "unmesh-gurjar",
