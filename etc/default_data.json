@@ -18401,6 +18401,17 @@
             "emails": ["wkqwu@cn.ibm.com", "wkq5325@gmail.com"]
         },
         {
+            "launchpad_id": "woodburn",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Woodburn",
+            "emails": ["john.l.woodburn@intel.com"]
+        },
+        {
             "launchpad_id": "wrongfan",
             "companies": [
                 {
