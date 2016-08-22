@@ -9772,6 +9772,18 @@
             "emails": ["kurt.f.martin@hp.com", "kurt.f.martin@hpe.com"]
         },
         {
+            "launchpad_id": "kvcobb",
+            "gerrit_id": "kvcobb",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kurtis Cobb",
+            "emails": ["kurtis.cobb@gmail.com", "kurtis.v.cobb@intel.com"]
+        },
+        {
             "launchpad_id": "kyle-jorgensen",
             "companies": [
                 {
