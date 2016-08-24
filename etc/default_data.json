@@ -18469,6 +18469,8 @@
         },
         {
             "launchpad_id": "wuyongpeng163",
+            "zanata_id": "wuyongpeng",
+            "gerrit_id": "wuyongpeng",
             "companies": [
                 {
                     "company_name": "H3C",
