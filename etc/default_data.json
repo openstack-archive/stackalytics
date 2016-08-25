@@ -1005,6 +1005,17 @@
             "emails": ["ap@pilotti.it", "apilotti@cloudbasesolutions.com"]
         },
         {
+            "launchpad_id": "alineb",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aline Bousquet",
+            "emails": ["albousque@gmail.com", "aline.bousquet@rackspace.co.uk"]
+        },
+        {
             "launchpad_id": "alistair-coles",
             "companies": [
                 {
