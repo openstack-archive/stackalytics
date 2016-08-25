@@ -15472,6 +15472,18 @@
             "emails": ["shiva075gowda@gmail.com", "shivam@hp.com", "shiva.kum.m@hpe.com"]
         },
         {
+            "launchpad_id": "shizhihui",
+            "gerrit_id": "shizhihui",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shizhihui",
+            "emails": ["zhihui.shi@easystack.cn"]
+        },
+        {
             "launchpad_id": "shravya-g90",
             "gerrit_id": "ShravyaGaddam",
             "companies": [
