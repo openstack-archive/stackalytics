@@ -10341,6 +10341,19 @@
             "emails": ["liuqing@chinac.com"]
         },
         {
+            "launchpad_id": "liuqing123",
+            "gerrit_id": "liuqing123",
+            "zanata_id": "liuqing",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liu Qing",
+            "emails": ["970717493@qq.com", "liu.qing@h3c.com"]
+        },
+        {
             "launchpad_id": "liusheng",
             "companies": [{
                 "company_name": "Huawei",
