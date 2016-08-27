@@ -20371,6 +20371,10 @@
             "company_name": "HyperHQ"
         },
         {
+            "domains": ["hystax.com"],
+            "company_name": "Hystax"
+        },
+        {
             "domains": ["ibm.com", "linux.vnet.ibm.com"],
             "company_name": "IBM",
             "aliases": ["IBM Australia", "IBM Canada", "IBM Canada Ltd", "IBM China", "IBM Corporation", "IBM India", "IBM Japan",
