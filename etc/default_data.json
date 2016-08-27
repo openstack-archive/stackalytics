@@ -6795,6 +6795,22 @@
             "emails": ["hardik.italia@hp.com", "hardik.italia@hpe.com"]
         },
         {
+            "launchpad_id": "hardik-parekh047",
+            "gerrit_id": "hparekh",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2016-Aug-19"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hardik Parekh",
+            "emails": ["hardik.parekh047@gmail.com"]
+        },
+        {
             "launchpad_id": "hareesh-puthalath",
             "companies": [
                 {
