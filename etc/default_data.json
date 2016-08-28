@@ -18505,6 +18505,8 @@
         },
         {
             "launchpad_id": "wuhan9087",
+            "gerrit_id": "wuhan",
+            "zanata_id": "h3c_wuhan",
             "companies": [
                 {
                     "company_name": "H3C",
