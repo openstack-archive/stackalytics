@@ -18907,6 +18907,17 @@
             "emails": ["yihleong@gmail.com", "yih.leong.sun@intel.com"]
         },
         {
+            "launchpad_id": "yizhihui",
+            "companies": [
+                {
+                    "company_name": "Eisoo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yizhihui",
+            "emails": ["yi.zhihui@eisoo.com"]
+        },
+        {
             "launchpad_id": "yj2311",
             "gerrit_id": "JackieYuan",
             "companies": [
@@ -20194,6 +20205,10 @@
         {
             "domains": ["ebay.com", "ebaysf.com"],
             "company_name": "eBay"
+        },
+        {
+            "domains": ["eisoo.com"],
+            "company_name": "Eisoo"
         },
         {
             "domains": ["embrane.com"],
