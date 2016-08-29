@@ -14093,6 +14093,17 @@
             "emails": ["kiran.ranganath@maplelabs.com", "kiran7193@gmail.com"]
         },
         {
+          "launchpad_id": "rkrum",
+            "companies": [
+                {
+                    "company_name": "Digital Pacific",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ross Krumbeck",
+            "emails": ["ross.krumbeck@gmail.com"]
+        },
+        {
             "launchpad_id": "rkukura",
             "companies": [
                 {
@@ -20169,6 +20180,10 @@
         {
             "domains": ["denali-systems.com"],
             "company_name": "Denali Systems"
+        },
+        {
+            "domains": ["digitalpacific.com.au"],
+            "company_name": "Digital Pacific"
         },
         {
             "domains": ["docker.com"],
