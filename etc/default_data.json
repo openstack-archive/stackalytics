@@ -5970,6 +5970,17 @@
             "emails": ["frodenas@gmail.com"]
         },
         {
+            "launchpad_id": "ftarasenko",
+            "companies": [
+                {
+                    "company_name": "itkey",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fedor Tarasenko",
+            "emails": ["ftarasenko@itkey.com", "feodor.tarasenko@gmail.com"]
+        },
+        {
             "launchpad_id": "fthiagogv",
             "companies": [
                 {
@@ -20553,6 +20564,11 @@
         {
             "domains": ["it.pt", "av.it.pt", "lx.it.pt", "co.it.pt"],
             "company_name": "Instituto de Telecomunicacoes"
+        },
+        {
+            "domains": ["itkey.com"],
+            "company_name": "itkey",
+            "aliases": ["ITKey"]
         },
         {
             "domains": ["itri.org.tw"],
