@@ -3734,6 +3734,17 @@
             "emails": ["cthier@gmail.com"]
         },
         {
+            "launchpad_id": "cuixiaoyu-8",
+            "companies": [
+                {
+                   "company_name": "H3C",
+                   "end_date": null
+                }
+            ],
+            "user_name": "cui xiaoyu",
+            "emails": ["cuixiaoyu@163.com","cui.xiaoyu@h3c.com"]
+        },
+        {
             "launchpad_id": "cweidenkeller",
             "companies": [
                 {
