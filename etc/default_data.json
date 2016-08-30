@@ -3139,6 +3139,17 @@
             "emails": ["chetan.p@hp.com", "chetan6033@gmail.com", "chetan.p@hpe.com"]
         },
         {
+            "launchpad_id": "chinabjalex",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wujian",
+            "emails": ["chinabjalex@gmail.com", "wujian@t2cloud.net"]
+        },
+        {
             "launchpad_id": "chio-fai-sam-leong",
             "companies": [
                 {
