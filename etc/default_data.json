@@ -16030,6 +16030,17 @@
             "emails": ["smaffulli@gmail.com"]
         },
         {
+            "launchpad_id": "smekel",
+            "companies": [
+                {
+                    "company_name": "Digital Pacific",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shaun Smekel",
+            "emails": ["shaun.smekel@theorem.net.au", "shaun.smekel@digitalpacific.com.au"]
+        },
+        {
             "launchpad_id": "smelikyan",
             "companies": [
                 {
