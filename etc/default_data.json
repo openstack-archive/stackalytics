@@ -16594,6 +16594,17 @@
             "emails": ["sujitha.neti@intel.com"]
         },
         {
+            "launchpad_id": "sulaganathan",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Satheesh Kumar Ulaganathan",
+            "emails": ["sulaganathan@walmart.com", "sulaganathan@walmartlabs.com", "satulag@gmail.com"]
+        },
+        {
             "launchpad_id": "sulochan-acharya",
             "companies": [
                 {
