@@ -1440,6 +1440,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Jul-15"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
