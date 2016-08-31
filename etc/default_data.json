@@ -12170,6 +12170,18 @@
             "emails": ["namei.unix@gmail.com"]
         },
         {
+            "launchpad_id": "nandini-tata",
+            "gerrit_id": "ntata",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nandini Tata",
+            "emails": ["nandini.tata@intel.com"]
+        },
+        {
             "launchpad_id": "narender-soorineeda",
             "gerrit_id": "Narender",
             "companies": [
@@ -12626,17 +12638,6 @@
             "user_name": "Navid Pustchi",
             "emails": ["npustchi@gmail.com", "navid.pustchi@intel.com"]
 
-        },
-        {
-            "launchpad_id": "ntata",
-            "companies": [
-                {
-                    "company_name": "Intel",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Nandini Tata",
-            "emails": ["nandini.tata@intel.com"]
         },
         {
             "launchpad_id": "nuaafe",
