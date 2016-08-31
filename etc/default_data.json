@@ -2504,6 +2504,17 @@
             "emails": ["brianphaley@gmail.com", "brian.haley@hp.com", "brian.haley@hpe.com"]
         },
         {
+            "launchpad_id": "brian-jf-fletcher",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Fletcher",
+            "emails": ["brian.jf.fletcher@gmail.com"]
+        },
+        {
             "launchpad_id": "brian-shang-dev",
             "companies": [
                 {
