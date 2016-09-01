@@ -10099,6 +10099,8 @@
         },
         {
             "launchpad_id": "lichunhan",
+            "gerrit_id": "lichunhan",
+            "zanata_id": "lichunhan",
             "companies": [
                 {
                     "company_name": "H3C",
