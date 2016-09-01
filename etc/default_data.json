@@ -14325,6 +14325,17 @@
             "emails": ["rmschn@gmail.com"]
         },
         {
+            "launchpad_id": "rnandu",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Raju",
+            "emails": ["raj.nanduri@workday.com"]
+        },
+        {
             "launchpad_id": "rnirmal",
             "companies": [
                 {
