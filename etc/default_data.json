@@ -20338,6 +20338,10 @@
             "company_name": "Digital Pacific"
         },
         {
+            "domains": ["dmm.com"],
+            "company_name": "DMM.com Labo"
+        },
+        {
             "domains": ["docker.com"],
             "company_name": "Docker"
         },
