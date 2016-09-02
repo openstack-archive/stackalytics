@@ -950,11 +950,15 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2016-Aug-26"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Alex Schultz",
-            "emails": ["alex.schultz@rackspace.com", "aschultz@next-development.com", "aschultz@mirantis.com"]
+            "emails": ["alex.schultz@rackspace.com", "aschultz@next-development.com", "aschultz@mirantis.com", "aschultz@aschultz.net", "aschultz@redhat.com"]
         },
         {
             "launchpad_id": "alexandra-settle",
