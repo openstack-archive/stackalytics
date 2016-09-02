@@ -18329,6 +18329,18 @@
             "emails": ["vpvutharkar@ebaysf.com"]
         },
         {
+            "launchpad_id": "w-hawari",
+            "companies": [
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wajdi Al-Hawari",
+            "gerrit_id": "wajdi",
+            "emails": ["w.hawari@gmail.com", "walhawari@internap.com"]
+        },
+        {
             "launchpad_id": "w-miller",
             "gerrit_id": "w-miller",
             "companies": [
