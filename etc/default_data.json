@@ -9975,6 +9975,19 @@
             "emails": ["winterma.dong@gmail.com", "dong.ma@hp.com", "dong.ma@hpe.com"]
         },
         {
+            "launchpad_id": "lawrencesu",
+            "gerrit_id": "lawrencesu",
+            "zanata_id": "lawrence",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhiyuan su",
+            "emails": ["suzhiyuan@inspur.com"]
+        },
+        {
             "launchpad_id": "ldbragst",
             "companies": [
                 {
