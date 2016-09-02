@@ -13325,6 +13325,17 @@
             "emails": ["pierre.rambaud@numergy.com", "pierre.rambaud86@gmail.com"]
         },
         {
+            "launchpad_id": "piyush0101",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Piyush Srivastava",
+            "emails": ["piyush.srivastava@workday.com"]
+        },
+        {
             "launchpad_id": "pkilambi",
             "companies": [
                 {
