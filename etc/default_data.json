@@ -11635,6 +11635,17 @@
             "emails": ["matthieu.huin@enovance.com", "mhuin@redhat.com"]
         },
         {
+            "launchpad_id": "miaohb",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "miaohb",
+            "emails": ["miao.hongbao@zte.com.cn"]
+        },
+        {
             "launchpad_id": "miarmak",
             "companies": [
                 {
