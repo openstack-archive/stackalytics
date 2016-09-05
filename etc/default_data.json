@@ -19305,6 +19305,17 @@
             "emails": ["yugsuo@gmail.com", "guangyu@unitedstack.com"]
         },
         {
+            "launchpad_id": "yujunz",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yujun Zhang",
+            "emails": ["zhang.yujunz@zte.com.cn", "zhangyujun@gmail.com"]
+        },
+        {
             "launchpad_id": "yunshen",
             "companies": [
                 {
