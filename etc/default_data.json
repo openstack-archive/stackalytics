@@ -13658,6 +13658,18 @@
             "emails": ["ran.qunying@zte.com.cn"]
         },
         {
+            "launchpad_id": "quzhaoyang",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Qu Zhaoyang",
+            "gerrit_id": "quzhaoyang",
+            "emails": ["qzyjy666@163.com","qu.zhaoyang@h3c.com"]
+        },
+        {
             "launchpad_id": "qwang",
             "companies": [
                 {
