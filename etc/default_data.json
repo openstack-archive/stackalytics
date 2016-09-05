@@ -19817,6 +19817,18 @@
             "emails": ["zhu.xuanlong@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhubingbing",
+            "gerrit_id": "zhubingbing",
+            "companies": [
+                 {
+                     "company_name": "99cloud",
+                     "end_date": null
+                 }
+            ],
+            "user_name": "zhubingbing",
+            "emails": ["zhubingbing10@gmail.com", "1392607554@qq.com", "zhu.bingbing@99cloud.net"]
+        },
+        {
             "launchpad_id": "zhugaoxiao",
             "companies": [
                 {
