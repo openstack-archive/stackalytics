@@ -13647,6 +13647,19 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+             "launchpad_id": "qiky",
+             "gerrit_id": "qiky",
+             "zanata_id": "qikaiyuan",
+             "companies": [
+                 {
+                     "company_name": "Inspur",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Kaiyuan Qi",
+             "emails": ["qiky@inspur.com"]
+        },
+        {
             "launchpad_id": "qunyingran",
             "companies": [
                 {
