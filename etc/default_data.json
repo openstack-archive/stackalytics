@@ -18460,6 +18460,21 @@
             "emails": ["wang.zengzhi@zte.com.cn"]
         },
         {
+            "launchpad_id": "wanghao749",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": "2016-Aug-14"
+                },
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wanghao",
+            "emails": ["sxmatch1986@gmail.com", "hwang7073@fiberhome.com"]
+        },
+        {
             "launchpad_id": "wangjianhe",
             "companies": [
                 {
@@ -20508,6 +20523,11 @@
         {
             "domains": ["fathomdb.com"],
             "company_name": "FathomDB"
+        },
+        {
+            "domains": ["fiberhome.com"],
+            "company_name": "Fiberhome",
+            "aliases": ["Fiberhome Telecommunication Technologies Co.,LTD"]
         },
         {
             "domains": ["firma.seznam.cz"],
