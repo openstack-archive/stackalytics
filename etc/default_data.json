@@ -6011,6 +6011,7 @@
         {
            "launchpad_id": "friendgct",
            "gerrit_id": "friendgct",
+           "zanata_id": "guochunting",
            "companies": [
                {
                    "company_name": "Inspur",
@@ -7199,6 +7200,19 @@
             ],
             "user_name": "Dmitry Khovyakov",
             "emails": ["hovyakov@gmail.com", "hovyakov@griddynamics.com", "dkhovyakov@griddynamics.com"]
+        },
+        {
+            "launchpad_id": "howardlee",
+            "gerrit_id": "howardlee",
+            "zanata_id": "lihongweibj",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "howard lee",
+            "emails": ["lihongweibj@inspur.com"]
         },
         {
             "launchpad_id": "howardthegeek",
@@ -10058,6 +10072,19 @@
             ],
             "user_name": "leixin",
             "emails": ["leixin487@hotmail.com", "leixin@awcloud.com"]
+        },
+        {
+            "launchpad_id": "leiyashuai",
+            "gerrit_id": "leiyashuai",
+            "zanata_id": "leiyashuai",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Lei",
+            "emails": ["leiyashuai@inspur.com"]
         },
         {
             "launchpad_id": "lenka-husakova",
@@ -19686,6 +19713,19 @@
             ],
             "user_name": "Qin Zhao",
             "emails": ["chaochin@gmail.com", "zhaoqin@cn.ibm.com"]
+        },
+        {
+            "launchpad_id": "zhaorenming",
+            "gerrit_id": "zhaorenming",
+            "zanata_id": "zhaorenming",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Emmanuel Zhao",
+            "emails": ["zhaorenming@inspur.com"]
         },
         {
             "launchpad_id": "zhaoxinyu",
