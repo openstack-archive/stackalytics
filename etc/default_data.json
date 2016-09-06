@@ -20739,6 +20739,11 @@
               "huawei storage system", "华为技术有限公司", "华为", "Huawei Technolgies"]
         },
         {
+            "domains": ["hust.edu.cn"],
+            "company_name": "HUST",
+            "aliases": ["Huazhong University of Science and Technology", "华中科技大学"]
+        },
+        {
             "domains": ["hyper.sh"],
             "company_name": "HyperHQ"
         },
