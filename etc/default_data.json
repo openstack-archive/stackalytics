@@ -6780,6 +6780,17 @@
             "emails": ["guy.kim088@gmail.com"]
         },
         {
+            "launchpad_id": "gvelu",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gnanasekar Velu",
+            "emails": ["gvelu@walmart.com", "gnanasekarkas@gmail.com"]
+        },
+        {
             "launchpad_id": "h-aramaki",
             "gerrit_id": "haramaki",
             "companies": [
