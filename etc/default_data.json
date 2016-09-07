@@ -18365,6 +18365,17 @@
             "emails": ["vkrayneva@mirantis.com"]
         },
         {
+            "launchpad_id": "vktiwar",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "vktiwar",
+            "emails": ["vtiwari@walmart.com", "varun.tiwari27@gmail.com"]
+        },
+        {
             "launchpad_id": "vkuklin",
             "companies": [
                 {
