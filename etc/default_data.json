@@ -12439,6 +12439,17 @@
             "emails": ["judd_maltin@dell.com", "judd@newgoliath.com"]
         },
         {
+             "launchpad_id": "newypei",
+             "companies": [
+                 {
+                     "company_name": "HUST",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Yipei Niu",
+             "emails": ["newypei@gmail.com"]
+        },
+        {
             "launchpad_id": "nfedotov",
             "user_name": "Nikolay Fedotov",
             "companies": [
