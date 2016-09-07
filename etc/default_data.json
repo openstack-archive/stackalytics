@@ -167,6 +167,17 @@
             "emails": ["a.gorodnev@gmail.com", "agorodnev@mirantis.com"]
         },
         {
+            "launchpad_id": "a6822342",
+            "companies": [
+              {
+                    "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                    "end_date":null
+              }
+            ],
+            "user_name":"liuzyu",
+            "emails": ["persistencelzy@gmail.com", "persistencelzy@163.com", "liuzeyu@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "aababilov",
             "companies": [
                 {
@@ -3618,6 +3629,17 @@
             ],
             "user_name": "Brian Goff",
             "emails": ["cpuguy83@gmail.com"]
+        },
+        {
+            "github_id": "cr-hui",
+            "companies": [
+                {
+                    "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                    "end_date":null
+                }
+            ],
+            "user_name":  "CR_hui",
+            "emails": ["cr_hui@126.com", "caoronghui@hnu.edu.cn"]
         },
         {
             "launchpad_id": "craig-bryant",
@@ -7096,6 +7118,17 @@
             "emails": ["hhktony@gmail.com", "xutao@t2cloud.net"]
         },
         {
+            "launchpad_id": "hjw",
+            "companies": [
+                {
+                    "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hejiawei",
+            "emails": ["h452577895@126.com", "hejiawei@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "hmunfru",
             "companies": [
                 {
@@ -9884,6 +9917,17 @@
             ],
             "user_name": "Károly Szabó",
             "emails": ["kszab@inf.u-szeged.hu"]
+        },
+        {
+            "launchpad_id": "kunliu",
+            "companies": [
+                {
+                    "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kunkun_Liu",
+            "emails": ["liukunk@126.com", "liukunk@hnu.edu.cn"]
         },
         {
             "launchpad_id": "kurt-f-martin",
@@ -15758,6 +15802,17 @@
             "emails": ["shiva075gowda@gmail.com", "shivam@hp.com", "shiva.kum.m@hpe.com"]
         },
         {
+            "launchpad_id": "shiyangkai333",
+            "companies":[
+                {
+                  "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                  "end_date": null
+                }
+            ],
+            "user_name":  "Yangkai Shi",
+            "emails": ["shiyangkai333@126.com", "shiyangkai@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "shizhihui",
             "gerrit_id": "shizhihui",
             "companies": [
@@ -19372,6 +19427,17 @@
             "emails": ["yu-kasuya@kddilabs.jp"]
         },
         {
+            "launchpad_id": "yueyuquan",
+            "companies": [
+                {
+                    "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                    "end_date":null
+                }
+            ],
+            "user_name":  "yueyuquan",
+            "emails": ["yueyuquan@gmail.com", "leyuquan@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "yugsuo",
             "companies": [
                 {
@@ -20010,6 +20076,17 @@
             ],
             "user_name": "Rongze Zhu",
             "emails": ["zrzhit@gmail.com", "rongze@ustack.com", "rongze@unitedstack.com", "rzhu@mirantis.com"]
+        },
+        {
+            "launchpad_id": "ztang",
+            "companies": [
+                {
+                      "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                      "end_date": null
+                }
+            ],
+            "user_name": "ztang",
+            "emails": ["ztang@hnu.edu.cn"]
         },
         {
             "launchpad_id": "ztehypervisor",
