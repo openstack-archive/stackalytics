@@ -2148,6 +2148,17 @@
             ]
         },
         {
+            "launchpad_id": "beasurajitroy",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Surajit Roy",
+            "emails": ["sroy@walmartlabs.com", "bea_surajit_roy@yahoo.com", "beasurajitroy@gmail.com"]
+        },
+        {
             "launchpad_id": "belliott",
             "companies": [
                 {
