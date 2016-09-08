@@ -23458,6 +23458,7 @@
             "modules": [
                 "fuel-ccp",
                 "fuel-ccp-ci-config",
+                "fuel-ccp-cinder",
                 "fuel-ccp-debian-base",
                 "fuel-ccp-entrypoint",
                 "fuel-ccp-etcd",
