@@ -5981,6 +5981,17 @@
            ]
         },
         {
+             "launchpad_id": "fmliu",
+             "companies": [
+                 {
+                     "company_name": "HUST",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Fangming Liu",
+             "emails": ["fmliu@hust.edu.cn"]
+        },
+        {
             "launchpad_id": "fnordahl",
             "gerrit_id": "fnordahl",
             "companies": [
@@ -16456,6 +16467,18 @@
             ],
             "user_name": "C\u00e9dric Soulas",
             "emails": ["soulascedric@gmail.com", "cedric.soulas@cloudwatt.com"]
+        },
+        {
+             "launchpad_id": "southeast02",
+             "gerrit_id": "southeast02",
+             "companies": [
+                 {
+                     "company_name": "HUST",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Dongfeng Huang",
+             "emails": ["yingfeicaozhang100527@gmail.com"]
         },
         {
             "launchpad_id": "sputnik13",
