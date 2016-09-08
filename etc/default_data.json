@@ -13731,7 +13731,7 @@
         {
              "launchpad_id": "qiky",
              "gerrit_id": "qiky",
-             "zanata_id": "qikaiyuan",
+             "zanata_id": "qiaiyuan",
              "companies": [
                  {
                      "company_name": "Inspur",
@@ -19988,6 +19988,18 @@
             ],
             "user_name": "Zhou Jianming",
             "emails": ["zhoujm_cri@hotmail.com", "jm_zhou@126.com", "zhoujianming@h3c.com"]
+        },
+        {
+            "launchpad_id": "zhouyunfeng",
+            "gerrit_id": "zhouyunfeng",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yunfeng zhou",
+            "emails": ["zhouyunfeng@inspur.com"]
         },
         {
             "launchpad_id": "zhu-rong",
