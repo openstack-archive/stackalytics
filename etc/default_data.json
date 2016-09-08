@@ -15630,6 +15630,17 @@
             "emails": ["r.naundorf@fh-muenster.de"]
         },
         {
+            "launchpad_id": "serenafeng",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "SerenaFeng",
+            "emails": ["feng.xiaowei@zte.com.cn","feng.xiaoewi@zte.com.cn"]
+        },
+        {
             "launchpad_id": "sergey.vilgelm",
             "companies": [
                 {
