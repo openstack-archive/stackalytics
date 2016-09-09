@@ -12825,6 +12825,18 @@
 
         },
         {
+            "launchpad_id": "nssven",
+            "gerrit_id": "nssven",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nickolay Smirnov",
+            "emails": ["nssven@gmail.com", "nsmirnov@hystax.com"]
+        },
+        {
             "launchpad_id": "nuaafe",
             "companies": [
                 {
