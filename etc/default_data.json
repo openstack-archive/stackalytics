@@ -19437,6 +19437,18 @@
             "user_name": "Praveen Yalagandula",
             "emails": ["ypraveen@gmail.com", "ypraveen@avinetworks.com"]
         },
+                {
+            "launchpad_id": "yryndenkova",
+            "gerrit_id": "yryndenkova",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yulia Ryndenkova",
+            "emails": ["yryndenkova@hystax.com", "ymikhalenkova@gmail.com"]
+        },
         {
             "launchpad_id": "ysboychakov",
             "companies": [
