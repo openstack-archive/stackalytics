@@ -1604,6 +1604,18 @@
             "emails": ["apalkina@mirantis.com"]
         },
         {
+            "launchpad_id": "apapsujko",
+            "gerrit_id": "apapsujko",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Papsujko",
+            "emails": ["apapsujko@gmail.com", "apapsujko@hystax.com"]
+        },
+        {
             "launchpad_id": "aparnavtce",
             "gerrit_id": "Aparna",
             "companies": [
