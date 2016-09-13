@@ -20617,6 +20617,11 @@
             "company_name": "MIT CSAIL"
         },
         {
+            "domains": ["csee.hnu.edu.cn"],
+            "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+            "aliases": ["湖南大学超级计算与云计算研究所"]
+        },
+        {
             "domains": ["cybera.ca"],
             "company_name": "Cybera"
         },
@@ -20835,11 +20840,6 @@
             "domains": ["hihuron.com"],
             "company_name": "Huron",
             "aliases": ["Huron Technologies"]
-        },
-        {
-            "domains": ["hnu.edu.cn"],
-            "company_name":"Hunan University, Institution of Supercomputing and Cloud Computing",
-            "aliases":["湖南大学超级计算与云计算研究所"]
         },
         {
             "domains": ["hortonworks.com"],
