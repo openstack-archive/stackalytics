@@ -114,6 +114,17 @@
             "emails": ["453528434@qq.com","zhang.chuanjin@h3c.com"]
         },
         {
+            "launchpad_id": "58750307-3",
+            "companies": [
+                {
+                    "company_name": "Dt Dream",
+                    "end_date": null
+                }
+            ],
+            "user_name": "dupengfei",
+            "emails": ["58750307@qq.com", "dupf@dtdream.com"]
+        },
+        {
             "launchpad_id": "6-morgan",
             "companies": [
                 {
@@ -20672,6 +20683,10 @@
             "domains": ["dreamhost.com"],
             "company_name": "DreamHost",
             "aliases": ["DreamHost, Inktank"]
+        },
+        {
+            "domains": ["dtdream.com"],
+            "company_name": "Dt Dream"
         },
         {
             "domains": ["earthlink.net"],
