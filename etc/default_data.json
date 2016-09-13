@@ -189,6 +189,18 @@
             "emails": ["aababilo@yahoo-inc.com", "ilovegnulinux@gmail.com", "aababilov@griddynamics.com"]
         },
         {
+            "launchpad_id": "aalekseenko",
+            "gerrit_id": "aalekseenko",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aleksey Alekseenko",
+            "emails": ["aalekseenko@hystax.com", "9118250541@mail.ru"]
+        },
+        {
             "launchpad_id": "aaron-lee",
             "companies": [
                 {
