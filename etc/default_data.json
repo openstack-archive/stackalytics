@@ -167,6 +167,17 @@
             "emails": ["a.gorodnev@gmail.com", "agorodnev@mirantis.com"]
         },
         {
+            "launchpad_id": "a-pugachev-wd",
+            "companies": [
+                {
+                    "company_name": "Workday",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Pugachev",
+            "emails": ["alexander.pugachev@workday.com"]
+        },
+        {
             "launchpad_id": "a6822342",
             "companies": [
               {
