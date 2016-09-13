@@ -7702,6 +7702,18 @@
             "emails": ["ishant.tyagi@hp.com", "tyagi.ishant@gmail.com", "ishant.tyagi@hpe.com"]
         },
         {
+            "launchpad_id": "ishashero",
+            "gerrit_id": "ishashero",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ivan Shashero",
+            "emails": ["ishashero@hystax.com"]
+        },
+        {
             "launchpad_id": "ishii-hisaharu",
             "companies": [
                 {
