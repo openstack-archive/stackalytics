@@ -18495,6 +18495,17 @@
             "emails": ["vsharshov@gmail.com", "vsharshov@mirantis.com"]
         },
         {
+            "launchpad_id": "vsokolov",
+            "user_name": "Vladimir Sokolov",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "emails": ["vsvastey@gmail.com", "vsokolov@hystax.com"]
+        },
+        {
             "launchpad_id": "vvutharkar",
             "companies": [
                 {
