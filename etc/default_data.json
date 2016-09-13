@@ -6353,6 +6353,17 @@
             "emails": ["genghanghang@xiangcloud.com.cn", "genghang888@gmail.com"]
         },
         {
+            "launchpad_id": "ghanshyammann",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ghanshyam Mann",
+            "emails": ["ghanshyammann@gmail.com", "ghanshyam.mann@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "ghe.rivero",
             "companies": [
                 {
