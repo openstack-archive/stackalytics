@@ -10910,6 +10910,21 @@
             "emails": ["marc.koderer@sap.com", "m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
+            "launchpad_id": "madhuri-rai07",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2015-Aug-28"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Madhuri Kumari",
+            "emails": ["madhuri.rai07@gmail.com", "madhuri.kumari@intel.com", "madhuri.kumari@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "madhusudhan-kandadai",
             "companies": [
                 {
