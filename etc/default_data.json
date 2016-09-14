@@ -11467,6 +11467,18 @@
             "emails": ["matt@mattfarina.com"]
         },
         {
+            "launchpad_id": "matthew-taylor-f",
+            "gerrit_id": "mtaylor22",
+            "companies": [
+                {
+                    "company_name": "Digital Pacific",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Taylor",
+            "emails": ["matthew.taylor@digitalpacific.com.au", "matt@mty.net.au"]
+        },
+        {
             "launchpad_id": "mattmont",
             "gerrit_id": "signed8bit",
             "companies": [
