@@ -1917,7 +1917,17 @@
            "user_name": "Ashwin Agate",
            "emails": ["ashwin.agate@hp.com","ashwin.agate@hpe.com"]
         },
-
+        {
+            "launchpad_id": "asmita",
+            "companies": [
+                {
+                    "company_name": "Infinite",
+                    "end_date": null
+                }
+            ],
+             "user_name": "asmita",
+             "emails": ["asmita.singh@infinite.com","asmitas43@gmail.com"]
+        },
         {
             "launchpad_id": "asomya",
             "companies": [
