@@ -10736,6 +10736,17 @@
             "emails": ["slokesh184@gmail.com", "lokesh.s@hp.com", "lokesh.s@hpe.com"]
         },
         {
+            "launchpad_id":"longxiongqiu123",
+            "companies": [
+                {
+                     "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                     "end_date": null
+                }
+            ],
+            "user_name":  "Xiongqiu",
+            "emails": ["longxiongqiu123@163.com", "lxq_cs@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "lony",
             "companies": [
                 {
