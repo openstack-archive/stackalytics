@@ -259,6 +259,26 @@
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
             }
+        },
+        {
+            "release_name": "Newton",
+            "end_date": "2016-Oct-05",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
+        },
+        {
+            "release_name": "Ocata",
+            "end_date": "2017-Feb-23",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
         }
     ],
 
