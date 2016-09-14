@@ -4886,6 +4886,18 @@
             "emails": ["dustin@null-ptr.net", "dlundquist@gmail.com", "dlundquist@bluebox.net"]
         },
         {
+            "launchpad_id": "dmakarov",
+            "gerrit_id": "dmakarov",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dmitriy Makarov",
+            "emails": ["dmakarov@hystax.com"]
+        },
+        {
             "github_id": "dmcgowan",
             "companies": [
                 {
