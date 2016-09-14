@@ -1788,6 +1788,18 @@
             "emails": ["arun.mithil@gmail.com", "mithil.arun@pluribusnetworks.com"]
         },
         {
+            "launchpad_id": "arundhiman86",
+            "gerrit_id": "arundhiman",
+            "companies": [
+                {
+                    "company_name": "Imaginea Technologies Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arun Dhiman",
+            "emails": ["arundhiman86@gmail.com", "arun.dhiman@imaginea.com"]
+        },
+        {
             "launchpad_id": "asalkeld",
             "companies": [
                 {
