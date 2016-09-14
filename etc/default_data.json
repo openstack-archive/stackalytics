@@ -1351,6 +1351,18 @@
             "emails": ["aniketanikhindi@gmail.com", "aniket.anikhindi@calsoftinc.com"]
         },
         {
+            "launchpad_id": "anikitenkov",
+            "gerrit_id": "anikitenkov",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Nikitenkov",
+            "emails": ["ainikitenkov@gmail.com", "anikitenkov@hystax.com"]
+        },
+        {
             "launchpad_id": "anindita-das",
             "gerrit_id": "anudas",
             "companies": [
