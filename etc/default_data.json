@@ -23508,6 +23508,30 @@
             "module": "osops-tools-monitoring",
             "organization": "openstack",
             "uri": "https://github.com/openstack/osops-tools-monitoring.git"
+        },
+        {
+            "module": "karbor",
+            "aliases": [
+                "smaug"
+            ],
+            "uri": "git://git.openstack.org/openstack/karbor.git",
+            "organization": "openstack"
+        },
+        {
+            "module": "python-karborclient",
+            "aliases": [
+                "python-smaugclient"
+            ],
+            "uri": "git://git.openstack.org/openstack/python-karborclient.git",
+            "organization": "openstack"
+        },
+        {
+            "module": "karbor-dashboard",
+            "aliases": [
+                "smaug-dashboard"
+            ],
+            "uri": "git://git.openstack.org/openstack/karbor-dashboard.git",
+            "organization": "openstack"
         }
     ],
     "project_sources": [
