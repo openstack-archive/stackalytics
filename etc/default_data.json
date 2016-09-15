@@ -3124,7 +3124,7 @@
             "launchpad_id": "charlie-j-llewellyn",
             "companies": [
                 {
-                    "company_name": "Skyscape Cloud Services Ltd",
+                    "company_name": "UKCloud",
                     "end_date": null
                 }
             ],
@@ -21691,10 +21691,6 @@
             "company_name": "Southern Illinois University"
         },
         {
-            "domains": ["skyscapecloud.com"],
-            "company_name": "Skyscape Cloud Services Ltd"
-        },
-        {
             "domains": ["snabb.co"],
             "company_name": "Snabb"
         },
@@ -21857,6 +21853,10 @@
             "domains": ["ubisoft.com"],
             "company_name": "Ubisoft",
             "aliases": ["Ubisoft Entertainment"]
+        },
+        {
+            "domains": ["ukcloud.com"],
+            "company_name": "UKCloud"
         },
         {
             "domains": ["ultimum.io", "ultimumtechnologies.com"],
