@@ -4921,15 +4921,19 @@
         },
         {
             "launchpad_id": "dlundquist",
-            "gerrit_id": "dustin.lundquist",
+            "gerrit_id": "dlundquist",
             "companies": [
                 {
                     "company_name": "Blue Box",
+                    "end_date": "2015-Jun-03"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Dustin Lundquist",
-            "emails": ["dustin@null-ptr.net", "dlundquist@gmail.com", "dlundquist@bluebox.net"]
+            "emails": ["dustin@null-ptr.net", "dlundquist@gmail.com", "dlundquist@bluebox.net", "dlundquist@linux.vnet.ibm.com", "dlundquist@us.ibm.com"]
         },
         {
             "launchpad_id": "dmakarov",
