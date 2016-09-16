@@ -18693,6 +18693,18 @@
             "emails": ["vsvastey@gmail.com", "vsokolov@hystax.com"]
         },
         {
+            "launchpad_id": "vstepurova",
+            "gerrit_id": "vstepurova",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Veronika Stepurova",
+            "emails": ["vstepurova@hystax.com", "nikentiy8@gmail.com"]
+        },
+        {
             "launchpad_id": "vvutharkar",
             "companies": [
                 {
