@@ -23521,6 +23521,121 @@
             "uri": "git://git.opnfv.org/pharos.git"
         },
         {
+            "module": "armband",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/armband.git"
+        },
+        {
+            "module": "cperf",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/cperf.git"
+        },
+        {
+            "module": "daisy",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/daisy.git"
+        },
+        {
+            "module": "domino",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/domino.git"
+        },
+        {
+            "module": "dovetail",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/dovetail.git"
+        },
+        {
+            "module": "dpacc",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/dpacc.git"
+        },
+        {
+            "module": "fastpathmetrics",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/fastpathmetrics.git"
+        },
+        {
+            "module": "fds",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/fds.git"
+        },
+        {
+            "module": "inspector",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/inspector.git"
+        },
+        {
+            "module": "models",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/models.git"
+        },
+        {
+            "module": "movie",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/movie.git"
+        },
+        {
+            "module": "netready",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/netready.git"
+        },
+        {
+            "module": "opera",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/opera.git"
+        },
+        {
+            "module": "oscar",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/oscar.git"
+        },
+        {
+            "module": "ovno",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/ovno.git"
+        },
+        {
+            "module": "ovsnfv",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/ovsnfv.git"
+        },
+        {
+            "module": "pinpoint",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/pinpoint.git"
+        },
+        {
+            "module": "policytest",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/policytest.git"
+        },
+        {
+            "module": "prediction",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/prediction.git"
+        },
+        {
+            "module": "rs",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/rs.git"
+        },
+        {
+            "module": "sdnvpn",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/sdnvpn.git"
+        },
+        {
+            "module": "securityscanning",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/securityscanning.git"
+        },
+        {
+            "module": "vnf_forwarding_graph",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/vnf_forwarding_graph.git"
+        },
+        {
             "module": "osops-example-configs",
             "organization": "openstack",
             "uri": "git://github.com/openstack/osops-example-configs.git"
