@@ -5972,6 +5972,17 @@
             "emails": ["fellypefca@lsd.ufcg.edu.br", "fellype.cavalcante@gmail.com"]
         },
         {
+            "launchpad_id": "feng-shengqin",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Feng Shengqin",
+            "emails": ["feng.shengqin@zte.com.cn"]
+        },
+        {
             "launchpad_id": "fengxy",
             "companies": [
                 {
