@@ -11175,6 +11175,17 @@
             "emails": ["manjunath.ranganathaiah@intel.com"]
         },
         {
+            "launchpad_id": "manoelrui",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "manoelrui",
+            "emails": ["manoelrui19@gmail.com","manoel.rui@lsbd.ufc.br"]
+        },
+        {
             "launchpad_id": "maoshuai",
             "gerrit_id": "shuaimao",
             "zanata_id": "maoshuai",
