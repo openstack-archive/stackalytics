@@ -13979,6 +13979,18 @@
              "emails": ["qiky@inspur.com"]
         },
         {
+            "launchpad_id": "qitianbiao",
+            "gerrit_id": "trisq",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "trisq",
+            "emails": ["qitianbiao@gmail.com", "qitianbiao@t2cloud.net"]
+        },
+        {
             "launchpad_id": "qunyingran",
             "companies": [
                 {
