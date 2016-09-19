@@ -5456,6 +5456,17 @@
             "emails": ["eddie.ramirez@intel.com", "djedi.r@gmail.com"]
         },
         {
+            "launchpad_id": "edurdneto",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "EduRDNeto",
+            "emails": ["edurdneto@hotmail.com", "eduardo.rodrigues@lsbd.ufc.br"]
+        },
+        {
             "launchpad_id": "edward-hope-morley",
             "companies": [
                 {
