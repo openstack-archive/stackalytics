@@ -15846,6 +15846,7 @@
         },
         {
             "launchpad_id": "senk",
+            "zanata_id": "senk",
             "companies": [
                 {
                     "company_name": "*independent",
