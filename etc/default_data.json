@@ -7854,6 +7854,18 @@
             "emails": ["ishii@nttmcl.com", "ishii.hisaharu@lab.ntt.co.jp"]
         },
         {
+            "launchpad_id": "istartsev",
+            "gerrit_id": "istartsev",
+            "companies": [
+                {
+                    "company_name": "Hystax",
+                    "end_date": null
+                }
+            ],
+            "user_name": "istartsev",
+            "emails": ["istartsev@hystax.com", "istartsev67@gmail.com"]
+        },
+        {
             "launchpad_id": "isviridov",
             "companies": [
                 {
