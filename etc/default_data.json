@@ -6992,6 +6992,18 @@
             "emails": ["spring068@sina.cn", "han.rong3@zte.com.cn"]
         },
         {
+            "launchpad_id": "hantim.lin",
+            "gerrit_id": "hantim.lin",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hantim.lin",
+            "emails": ["hantim.lin@gmail.com", "linhanchen@t2cloud.net"]
+        },
+        {
             "launchpad_id": "haobing1",
             "companies": [
                 {
