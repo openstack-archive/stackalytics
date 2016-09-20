@@ -22604,15 +22604,9 @@
                     "tag_from": "2.5.0"
                 },
                 {
-                    "branch": "stable/newton",
                     "tag_to": "HEAD",
                     "release_name": "Newton",
                     "tag_from": "2.7.0"
-                },
-                {
-                    "tag_to": "HEAD",
-                    "release_name": "Ocata",
-                    "tag_from": "2.9.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/swift.git",
