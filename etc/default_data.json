@@ -14144,6 +14144,22 @@
             "emails": ["rahul.unnikrishnan.nair@intel.com", "rahulunair@gmail.com", "hqp365@my.utsa.edu"]
         },
         {
+            "launchpad_id": "raiesmh08",
+            "gerrit_id": "raiesmh08",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2015-Jan-12"
+                },
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mh Raies",
+            "emails": ["mh.raies@nectechnologies.in", "mohd.raies@ericsson.com", "raiesmh08@gmail.com"]
+        },
+        {
             "launchpad_id": "raildo",
             "gerrit_id": "raildo",
             "companies": [
