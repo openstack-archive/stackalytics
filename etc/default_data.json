@@ -9347,6 +9347,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Sep-19"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
