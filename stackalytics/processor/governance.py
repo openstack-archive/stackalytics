@@ -76,6 +76,10 @@ def read_big_tent_projects_yaml(module_groups, release_name, content):
 
                 mn = repo_split[1]  # module_name
 
+                # todo (ishakhat): temporary ban all deb-* projects
+                if mn.startswith('deb-'):
+                    continue
+
                 module_groups[group_id]['modules'].add(mn)
                 all_official['releases'][release_name].add(mn)
 
