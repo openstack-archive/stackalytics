@@ -3604,6 +3604,17 @@
             "emails": ["colette.alexander@hp.com", "colettealexander@gmail.com"]
         },
         {
+            "launchpad_id": "coolias-lj",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "coolias",
+            "emails": ["coolias.lj@gmail.com", "xiechao@t2cloud.net"]
+        },
+        {
            "launchpad_id": "coolsvap",
            "gerrit_id": "coolsvap",
            "companies": [
