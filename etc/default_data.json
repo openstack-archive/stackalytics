@@ -8219,6 +8219,18 @@
             "emails": ["jaosorior@redhat.com", "jaosorior@gmail.com", "juan.osorio.robles@ericsson.com"]
         },
         {
+            "launchpad_id": "jarred-deeley",
+            "gerrit_id": "Jarred-Deeley",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jarred Deeley",
+            "emails": ["j.mcknight.d@gmail.com", "jarred.deeley@utsa.edu"]
+        },
+        {
             "launchpad_id": "jasmeet-sidhu",
             "companies": [
                 {
