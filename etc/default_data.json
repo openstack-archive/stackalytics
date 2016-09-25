@@ -17390,6 +17390,18 @@
             "emails": ["swamireddy@gmail.com", "swami.reddy@ril.com"]
         },
         {
+           "launchpad_id": "swan1991",
+           "gerrit_id": "Swan",
+           "companies": [
+               {
+                   "company_name": "*independent",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Swan",
+           "emails": ["swan1991m@gmail.com"]
+        },
+        {
             "launchpad_id": "swann-w",
             "companies": [
                 {
