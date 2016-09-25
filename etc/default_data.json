@@ -19497,6 +19497,18 @@
             "emails": ["y-maruyama@tsh-world.co.jp"]
         },
         {
+            "launchpad_id": "yab277",
+            "gerrit_id": "arundasan91",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arun Das",
+            "emails": ["yab277@my.utsa.edu", "arundas1991@gmail.com"]
+        },
+        {
             "launchpad_id": "yalogr",
             "companies": [
                 {
