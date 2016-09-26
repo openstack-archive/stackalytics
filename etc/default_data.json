@@ -5459,6 +5459,18 @@
             "emails": ["eddie.ramirez@intel.com", "djedi.r@gmail.com"]
         },
         {
+            "launchpad_id": "edigleisonb",
+            "gerrit_id": "edigleison.barbosa",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Edigleison Barbosa",
+            "emails": ["barbosaedigleison@gmail.com", "edigleison.barbosa@lsbd.ufc.br"]
+        },
+        {
             "launchpad_id": "edurdneto",
             "companies": [
                 {
