@@ -3899,6 +3899,8 @@
         },
         {
             "launchpad_id": "cuixiaoyu-8",
+            "gerrit_id": "cuixiaoyu",
+            "zanata_id": "cuixiaoyu",
             "companies": [
                 {
                    "company_name": "H3C",
