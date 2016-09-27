@@ -4210,6 +4210,22 @@
             "emails": ["darkwsh@gmail.com", "wangshaohui@xiangcloud.com.cn"]
         },
         {
+            "launchpad_id": "darragh-oreilly",
+            "gerrit_id": "darragh-oreilly",
+            "user_name": "Darragh O'Reilly",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "emails": ["dara2002-openstack@yahoo.com", "darragh.oreilly@hp.com", "darragh.oreilly@hpe.com"]
+        },
+        {
             "launchpad_id": "darren-birkett",
             "companies": [
                 {
