@@ -19999,6 +19999,18 @@
             "emails": ["zealot0630@gmail.com", "zangmingjie@corp.netease.com"]
         },
         {
+            "launchpad_id": "zealoussnow",
+            "gerrit_id": "LeoZhang",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Leo Zhang",
+            "emails": ["nguzcf@gmail.com", "zhangchengfei@t2cloud.net"]
+        },
+        {
             "launchpad_id": "zeih",
             "companies": [
                 {
