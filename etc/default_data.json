@@ -5074,6 +5074,18 @@
            "emails": ["donovan@catalyst.net.nz","git@gamma.net.nz"]
         },
         {
+            "launchpad_id": "donovan-francesco",
+            "github_id": "drifterza",
+            "companies": [
+                {
+                    "company_name": "Internet Solutions",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Donovan Francesco",
+            "emails": ["donovan.francesco@is.co.za", "donovan.francesco@gmail.com"]
+        },
+        {
            "launchpad_id": "doug-chivers",
            "gerrit_id": "dg",
            "companies": [
@@ -21380,6 +21392,10 @@
         {
             "domains": ["iroquoisystems.com"],
             "company_name": "IroquoiSystems"
+        },
+        {
+            "domains": ["is.co.za"],
+            "company_name": "Internet Solutions"
         },
         {
             "domains": ["iscas.ac.cn"],
