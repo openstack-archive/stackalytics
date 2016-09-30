@@ -283,6 +283,18 @@
             "emails": ["alexander.bashmakov@intel.com", "abashmak@yahoo.com"]
         },
         {
+            "launchpad_id": "abdul-azhar",
+            "gerrit_id": "abdul-azhar",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Abdul Azhar Mohammed",
+            "emails": ["abdulazharmohammed@gmail.com"]
+        },
+        {
             "launchpad_id": "abe-music",
             "gerrit_id": "abemusic",
             "companies": [
