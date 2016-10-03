@@ -1562,6 +1562,18 @@
             "emails": ["anthony.washington@intel.com", "awashington251@gmail.com"]
         },
         {
+            "launchpad_id": "antoinecabot",
+            "gerrit_id": "antoinecabot",
+            "companies": [
+                {
+                    "company_name": "B<>COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Antoine Cabot",
+            "emails": ["antoine.cabot@b-com.com", "antoinecabot83@gmail.com"]
+        },
+        {
             "launchpad_id": "anton-kremenetsky",
             "companies": [
                 {
