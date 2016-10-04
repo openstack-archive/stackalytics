@@ -6209,10 +6209,14 @@
                 {
                     "company_name": "Nimble Engineering AS",
                     "end_date": null
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
                 }
             ],
             "user_name": "Frode Nordahl",
-            "emails": [ "frode.nordahl@gmail.com", "frode@powertech.no" ]
+            "emails": [ "frode.nordahl@gmail.com", "frode@powertech.no", "frode@nimbleengineering.io", "frode.nordahl@canonical.com" ]
         },
         {
             "launchpad_id": "fpytloun",
