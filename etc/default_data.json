@@ -9030,6 +9030,21 @@
             "emails": ["johanni.thunstrom@workday.com"]
         },
         {
+            "launchpad_id": "john-davidge",
+            "companies": [
+                {
+                    "company_name": "Cisco Systems",
+                    "end_date": "2016-Apr-21"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "John Davidge",
+            "emails": ["jodavidg@cisco.com", "johnrdavidge@gmail.com", "john.davidge@rackspace.com"]
+        },
+        {
             "launchpad_id": "john-eo",
             "companies": [
                 {
