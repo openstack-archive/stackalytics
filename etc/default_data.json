@@ -9554,6 +9554,18 @@
             "emails": ["justin.wilson@intel.com"]
         },
         {
+            "launchpad_id": "jwcroppe",
+            "github_id": "jwcroppe",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joe Cropper",
+            "emails": ["jwcroppe@us.ibm.com", "cropper.joe@gmail.com"]
+        },
+        {
             "launchpad_id": "jwy",
             "companies": [
                 {
