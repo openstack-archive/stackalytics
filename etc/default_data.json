@@ -6677,6 +6677,17 @@
             "emails": ["eric.guo@easystack.cn", "guochbo@cn.ibm.com", "glongwave@gmail.com"]
         },
         {
+            "launchpad_id": "glonlas",
+            "companies": [
+                {
+                    "company_name": "Internap",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gerald Lonlas",
+            "emails": ["g.lonlas@gmail.com", "glonlas@internap.com"]
+        },
+        {
             "launchpad_id": "glucas-q",
             "companies": [
                 {
