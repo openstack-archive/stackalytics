@@ -6388,6 +6388,10 @@
                 },
                 {
                     "company_name": "Akanda",
+                    "end_date": "2016-Jun-16"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
