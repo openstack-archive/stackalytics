@@ -7630,6 +7630,18 @@
             "emails": ["hugonicodemos@gmail.com", "nicodemos@lsd.ufcg.edu.br"]
         },
         {
+            "launchpad_id": "huiweics",
+            "gerrit_id": "huiweics",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "huiweics",
+            "emails": ["huiweics@gmail.com", "huiw@certusnet.com.cn"]
+        },
+        {
             "launchpad_id": "humble00",
             "gerrit_id": "humble00",
             "companies": [
