@@ -1211,8 +1211,8 @@ class TestRecordProcessor(testtools.TestCase):
         self.assertEqual(0, bp2['mention_date'])
 
         email = runtime_storage_inst.get_by_primary_key('<another-message-id>')
-        self.assertTrue('mod:blueprint' in email['blueprint_id'])
-        self.assertFalse('mod:invalid' in email['blueprint_id'])
+        self.assertIn('mod:blueprint', email['blueprint_id'])
+        self.assertNotIn('mod:invalid', email['blueprint_id'])
 
     def test_mark_disagreement(self):
         record_processor_inst = self.make_record_processor(
