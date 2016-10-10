@@ -20366,6 +20366,17 @@
             "emails": ["zhangleiqiang@gmail.com", "zhangleiqiang@huawei.com"]
         },
         {
+            "launchpad_id": "zhangyujun",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhang Yujun",
+            "emails": ["zhangyujun.dupe@gmail.com"]
+        },
+        {
             "launchpad_id": "zhaohua-zhao",
             "gerrit_id": "zhaohua",
             "companies": [
