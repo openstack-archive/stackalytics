@@ -6515,6 +6515,17 @@
             "emails": ["george.peristerakis@enovance.com", "gperiste@redhat.com"]
         },
         {
+            "launchpad_id": "georgetian",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "George Tian",
+            "emails": ["tian694293774@gmail.com", "tianjie@t2cloud.net"]
+        },
+        {
             "launchpad_id": "german-eichberger",
             "companies": [
                 {
