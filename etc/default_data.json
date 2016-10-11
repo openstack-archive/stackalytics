@@ -20404,11 +20404,15 @@
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
+                    "end_date": "2016-Sep-23"
+                },
+                {
+                    "company_name": "EasyStack",
                     "end_date": null
                 }
             ],
             "user_name": "Zhang Yujun",
-            "emails": ["zhangyujun.dupe@gmail.com"]
+            "emails": ["yujun.zhang@easystack.cn","284517620@qq.com"]
         },
         {
             "launchpad_id": "zhaohua-zhao",
