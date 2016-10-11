@@ -7875,6 +7875,23 @@
             "emails": ["igor.milovanovic@ammeon.com"]
         },
         {
+            "launchpad_id": "ildiko-vancsa",
+            "gerrit_id": "ildikov",
+            "github_id": "ildikov",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": "2016-Jul-31"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ildiko Vancsa",
+            "emails": ["ildiko@openstack.org", "ildiko.vancsa@gmail.com", "ildiko.vancsa@ericsson.com"]
+        },
+        {
             "launchpad_id": "ilkykli",
             "companies": [
                 {
