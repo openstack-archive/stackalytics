@@ -7875,6 +7875,17 @@
             "emails": ["igor.milovanovic@ammeon.com"]
         },
         {
+            "launchpad_id": "ilkykli",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Keyang Li",
+            "emails": ["ilkykli@gmail.com","liky@certusnet.com.cn"]
+        },
+        {
             "launchpad_id": "ilyaalekseyev",
             "zanata_id": "adiantum",
             "companies": [
