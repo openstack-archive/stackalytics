@@ -13194,6 +13194,18 @@
             "emails": ["noguchimn@nttdata.co.jp"]
         },
         {
+            "launchpad_id": "norihiko-kawai",
+            "zanata_id": "adocmember",
+            "companies": [
+                {
+                   "company_name": "ADOC International",
+                   "end_date": null
+                }
+            ],
+            "user_name": "Norihiko Kawai",
+            "emails": ["norihiko_kawai@adoc.co.jp"]
+        },
+        {
             "launchpad_id": "notmyname",
             "companies": [
                 {
