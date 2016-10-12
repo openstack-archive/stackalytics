@@ -2550,6 +2550,7 @@
         },
         {
             "launchpad_id": "bogdando",
+            "github_id": "bogdando",
             "user_name": "Bogdan Dobrelya",
             "companies": [
                 {
@@ -5270,6 +5271,18 @@
             "emails": ["shrewsbury.dave@gmail.com"]
         },
         {
+            "launchpad_id": "dshulyak",
+            "github_id": "dshulyak",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dima Shulyak",
+            "emails": ["dshulyak@mirantis.com", "yashulyak@gmail.com"]
+        },
+        {
             "launchpad_id": "dstanek",
             "companies": [
                 {
@@ -7810,6 +7823,18 @@
             "emails": ["dilyin@mirantis.com", "idv1985@gmail.com"]
         },
         {
+            "launchpad_id": "idvoretskyi",
+            "github_id": "idvoretskyi",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ihor Dvoretskyi",
+            "emails": ["idvoretskyi@mirantis.com", "ihor.dvoretskyi@gmail.com"]
+        },
+        {
            "launchpad_id": "idzzy",
            "companies": [
                {
@@ -7877,6 +7902,18 @@
             ],
             "user_name": "Igor Milovanović",
             "emails": ["igor.milovanovic@ammeon.com"]
+        },
+        {
+            "launchpad_id": "ikhudoshyn",
+            "github_id": "gluke77",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Khudoshin",
+            "emails": ["ikhudoshyn@mirantis.com", "gluke77@ya.ru"]
         },
         {
             "launchpad_id": "ildiko-vancsa",
@@ -8027,6 +8064,18 @@
             ],
             "user_name": "Hisaharu Ishii",
             "emails": ["ishii@nttmcl.com", "ishii.hisaharu@lab.ntt.co.jp"]
+        },
+        {
+            "launchpad_id": "ishvedunov",
+            "github_id": "ivan4th",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ivan Shvedunov",
+            "emails": ["ishvedunov@mirantis.om", "ivan4th@gmail.com"]
         },
         {
             "launchpad_id": "istartsev",
@@ -8661,6 +8710,18 @@
             ],
             "user_name": "Jeff White",
             "emails": ["jeladi@yahoo.com"]
+        },
+        {
+            "launchpad_id": "jell",
+            "github_id": "jellonek",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Piotr Skamruk",
+            "emails": ["pskamruk@mirantis.com", "piotr.skamruk@gmail.com", "jell@jell.pl"]
         },
         {
             "launchpad_id": "jerome-gallard",
@@ -11226,6 +11287,18 @@
             "emails": ["marc.koderer@sap.com", "m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
+            "launchpad_id": "maciej-iai",
+            "github_id": "maciej-iai",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maciej Kwiek",
+            "emails": ["mkwiek@mirantis.com"]
+        },
+        {
             "launchpad_id": "madhuri-rai07",
             "companies": [
                 {
@@ -12642,6 +12715,7 @@
         },
         {
             "launchpad_id": "mrostecki",
+            "github_id": "nhlfr",
             "companies": [
                 {
                     "company_name": "Allegro",
@@ -14563,6 +14637,18 @@
             ],
             "user_name": "Ray Angelone",
             "emails": ["raymond_angelone@symantec.com", "angeloneray@gmail.com"]
+        },
+        {
+            "launchpad_id": "raytrac3r",
+            "github_id": "mattymo",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matthew Mosesohn",
+            "emails": ["mmosesohn@mirantis.com", "raytrac3r@gmail.com"]
         },
         {
             "launchpad_id": "rblee88",
@@ -18374,6 +18460,18 @@
             "emails": ["tyr@hp.com", "tyr@hpe.com"]
         },
         {
+            "launchpad_id": "tzn",
+            "github_id": "zen",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tomasz Napierala",
+            "emails": ["tnapierala@mirantis.com", "tomasz@napierala.org"]
+        },
+        {
             "launchpad_id": "u-matt-h",
             "companies": [
                 {
@@ -20246,6 +20344,18 @@
             ],
             "user_name": "Leo Zhang",
             "emails": ["nguzcf@gmail.com", "zhangchengfei@t2cloud.net"]
+        },
+        {
+            "launchpad_id": "zefciu",
+            "github_id": "zefciu",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Szymon Pyżalski",
+            "emails": ["spyzalski@mirantis.com", "zefciu@gmail.com", "szymon@pythonista.net"]
         },
         {
             "launchpad_id": "zeih",
