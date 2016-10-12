@@ -1452,11 +1452,14 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2016-Apr-12"
+                },
+                {   "company_name": "Cisco",
                     "end_date": null
                 }
             ],
             "user_name": "Anne Gentle",
-            "emails": ["anne@openstack.org", "anne.gentle@rackspace.com", "annegentle@justwriteclick.com"]
+            "emails": ["anne@openstack.org", "anne.gentle@rackspace.com", "annegentle@justwriteclick.com", "agentle@cisco.com"]
         },
         {
             "launchpad_id": "annie-lezil",
