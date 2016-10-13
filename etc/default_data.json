@@ -14904,6 +14904,18 @@
             "emails": ["riddhi.shah@rackspace.com", "ridhi.j.shah@gmail.com"]
         },
         {
+            "launchpad_id": "riku-kobane",
+            "zanata_id": "riku_kobane",
+            "companies": [
+                {
+                   "company_name": "ADOC International",
+                   "end_date": null
+                }
+            ],
+            "user_name": "Riku Kobane",
+            "emails": ["riku_kobane@adoc.co.jp"]
+        },
+        {
             "launchpad_id": "ripal-nathuji",
             "companies": [
                 {
