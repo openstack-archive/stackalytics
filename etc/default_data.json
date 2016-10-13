@@ -12778,6 +12778,17 @@
             "emails": ["gaozhengwei1@letv.com", "multi_task@163.com"]
         },
         {
+            "launchpad_id": "muraliselva-10",
+            "companies": [
+                {
+                    "company_name": "Infinite",
+                    "end_date": null
+                }
+            ],
+            "user_name": "muralidharan",
+            "emails": ["muraliselva.10@gmail.com", "muralidharan.selvaraj@infinite.com"]
+        },
+        {
             "launchpad_id": "mvoelker",
             "companies": [
                 {
