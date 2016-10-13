@@ -432,11 +432,11 @@
                 },
                 {
                     "company_name": "EMC",
-                    "end_date": null
+                    "end_date": "2016-Aug-19"
                 }
             ],
             "user_name": "Accela Zhao",
-            "emails": ["accelazh@gmail.com", "accela.zhao@emc.com"]
+            "emails": ["accelazh@gmail.com"]
         },
         {
             "launchpad_id": "achudnovets",
