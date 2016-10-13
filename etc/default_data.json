@@ -7912,7 +7912,7 @@
                     "end_date": null
                 }
             ],
-            "user_name": "Ilya Khudoshin",
+            "user_name": "Illia Khudoshin",
             "emails": ["ikhudoshyn@mirantis.com", "gluke77@ya.ru"]
         },
         {
@@ -11288,7 +11288,7 @@
         },
         {
             "launchpad_id": "maciej-iai",
-            "github_id": "maciej-iai",
+            "github_id": "nebril",
             "companies": [
                 {
                     "company_name": "Mirantis",
