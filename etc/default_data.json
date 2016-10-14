@@ -4208,6 +4208,10 @@
             "launchpad_id": "danny-al-gaaf",
             "companies": [
                 {
+                    "company_name": "SUSE",
+                    "end_date": "2013-Jun-30"
+                },
+                {
                     "company_name": "Deutsche Telekom",
                     "end_date": null
                 }
