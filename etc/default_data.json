@@ -20069,16 +20069,21 @@
             "launchpad_id": "yolanda.robla",
             "companies": [
                 {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                },
+                {
                     "company_name": "HP",
                     "end_date": "2015-Oct-31"
                 },
                 {
                     "company_name": "HPE",
-                    "end_date": null
+                    "end_date": "2016-Jun-01"
                 }
             ],
             "user_name": "Yolanda Robla-Mota",
             "emails": [
+                "yroblamo@redhat.com",
                 "yolanda.robla-mota@hp.com",
                 "yolanda.robla-mota@hpe.com"
             ]
