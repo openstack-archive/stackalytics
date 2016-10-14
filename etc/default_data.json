@@ -11578,11 +11578,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-07"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Mark Sturdevant",
-            "emails": ["mark.sturdevant@hp.com", "markstur@hp.com", "mark.sturdevant@hpe.com"]
+            "emails": ["mark.sturdevant@hp.com", "markstur@hp.com", "mark.sturdevant@hpe.com", "mark.sturdevant@ibm.com"]
         },
         {
             "launchpad_id": "mark-xiett",
