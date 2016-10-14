@@ -20985,6 +20985,10 @@
               "Not Affiliated", "Unaffilited"]
         },
         {
+            "domains": ["21viacloud.com"],
+            "company_name": "21viacloud"
+        },
+        {
             "domains": ["360.cn"],
             "company_name": "Qihoo 360 Technology Co"
         },
