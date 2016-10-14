@@ -19580,6 +19580,17 @@
             "emails": ["rongfan.wang@gmail.com", "rongfan.wang@plcloud.com"]
         },
         {
+            "launchpad_id": "wu-yucheng",
+            "companies": [
+                {
+                    "company_name": "21viacloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wuyucheng",
+            "emails": ["wu.yucheng@21viacloud.com"]
+        },
+        {
             "launchpad_id": "wudx05",
             "companies": [
                 {
