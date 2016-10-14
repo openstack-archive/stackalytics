@@ -10298,6 +10298,17 @@
             "emails": ["colleen@gazlene.net", "cmurphy@hp.com", "colleen@puppetlabs.com", "cmurphy@hpe.com"]
         },
         {
+            "launchpad_id": "krishnavinochand",
+            "companies": [
+                {
+                    "company_name": "Infinite",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vinoth",
+            "emails": ["krishnavinochand@gmail.com", "vinoth.kondiyaan@infinite.com"]
+        },
+        {
             "launchpad_id": "krotscheck",
             "companies": [
                 {
