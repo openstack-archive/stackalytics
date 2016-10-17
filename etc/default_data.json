@@ -15005,6 +15005,10 @@
                 },
                 {
                     "company_name": "Maplelabs",
+                    "end_date": "2016-Jul-29"
+                },
+                {
+                    "company_name": "University of California Riverside",
                     "end_date": null
                 }
             ],
@@ -22442,6 +22446,12 @@
             "domains": ["ubisoft.com"],
             "company_name": "Ubisoft",
             "aliases": ["Ubisoft Entertainment"]
+        },
+        {
+            "domains": ["ucr.edu"],
+            "company_name": "University of California Riverside",
+            "aliases": ["University of California Riverside", "UC Riverside",
+                        "UCR"]
         },
         {
             "domains": ["ukcloud.com"],
