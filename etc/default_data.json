@@ -3278,6 +3278,19 @@
             "emails": ["chenkang@awcloud.com"]
         },
         {
+            "launchpad_id": "chenyingnan",
+            "gerrit_id": "chenyingnan",
+            "zanata_id": "chenyingnan",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chenyingnan",
+            "emails": ["chenyingnan@inspur.com"]
+        },
+        {
             "launchpad_id": "chestack",
             "gerrit_id": "wangbo",
             "companies": [
