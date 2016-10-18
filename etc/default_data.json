@@ -16051,6 +16051,22 @@
             "emails": ["stephen@balukoff.com", "sbalukoff@us.ibm.com", "sbalukoff@bluebox.net"]
         },
         {
+            "launchpad_id": "sbelous",
+            "gerrit_id": "sbelous",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-18"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergey Belous",
+            "emails": ["sbelous@mirantis.com", "belous.py@gmail.com"]
+        },
+        {
             "launchpad_id": "sc",
             "companies": [
                 {
