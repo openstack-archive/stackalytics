@@ -14890,6 +14890,17 @@
             "emails": ["richard.hagarty@hp.com", "richard.hagarty@hpe.com"]
         },
         {
+            "launchpad_id": "richard.pioso",
+            "companies": [
+                {
+                    "company_name": "Dell",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Richard Pioso",
+            "emails": ["richard.pioso@dell.com"]
+        },
+        {
             "launchpad_id": "richardwheil",
             "companies": [
                 {
