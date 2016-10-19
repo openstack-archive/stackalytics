@@ -14233,6 +14233,21 @@
             "emails": ["pradeep.av@hp.com", "pradeep.av@hpe.com"]
         },
         {
+            "launchpad_id": "pradeep-singh-u",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2015-Dec-09"
+                },
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pradeep Kumar Singh",
+            "emails": ["ps4openstack@gmail.com", "pradeep.singh@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "prameswar",
             "gerrit_id": "prameswar",
             "companies": [
