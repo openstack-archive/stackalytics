@@ -2621,6 +2621,17 @@
             "emails": ["jones.bradley@me.com", "bradjone@cisco.com"]
         },
         {
+            "github_id": "branch-predictor",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Piotr Dałek",
+            "emails": ["ceph@predictor.org.pl", "git@predictor.org.pl"]
+        },
+        {
             "launchpad_id": "breu",
             "companies": [
                 {
@@ -3249,6 +3260,17 @@
             "emails": ["chen.zheng@easystack.cn", "czheng@cn.ibm.com"]
         },
         {
+            "github_id": "chengweiv5",
+            "companies": [
+                {
+                    "company_name": "QIYI",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chengwei Yang",
+            "emails": ["yangchengwei@qiyi.com", "me@chengweiyang.cn"]
+        },
+        {
             "launchpad_id": "chengyang",
             "companies": [
                 {
@@ -3311,6 +3333,17 @@
             ],
             "user_name": "chetanpatige",
             "emails": ["chetan.p@hp.com", "chetan6033@gmail.com", "chetan.p@hpe.com"]
+        },
+        {
+            "github_id": "chhabaramesh",
+            "companies": [
+                {
+                    "company_name": "SanDisk",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ramesh Chander Chhaba",
+            "emails": ["ramesh.chander@sandisk.com"]
         },
         {
             "launchpad_id": "chinabjalex",
@@ -3963,6 +3996,17 @@
             ],
             "user_name": "Conrad Weidenkeller",
             "emails": ["conrad@weidenkeller.com"]
+        },
+        {
+            "github_id": "cxwshawn",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaowei Chen",
+            "emails": ["chen.xiaowei@h3c.com", "cxwshawn@gmail.com"]
         },
         {
             "launchpad_id": "cyril-roelandt",
@@ -6137,6 +6181,17 @@
             "emails": ["flavio@flaviof.com", "flavio.fernandes@ibm.com"]
         },
         {
+            "github_id": "ffilz",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Frank S. Filz",
+            "emails": ["ffilzlnx@mindspring.com"]
+        },
+        {
             "launchpad_id": "ficoos",
             "companies": [
                 {
@@ -7818,6 +7873,17 @@
            ],
            "user_name": "Igor Degtiarov",
            "emails": ["idegtiarov@mirantis.com"]
+        },
+        {
+           "github_id": "idryomov",
+           "companies": [
+               {
+                   "company_name": "Red Hat",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Ilya Dryomov",
+           "emails": ["idryomov@gmail.com"]
         },
         {
             "launchpad_id": "idv1985",
@@ -14811,6 +14877,17 @@
             "emails": ["rellerreller@yahoo.com", "nathan.reller@jhuapl.edu", "nathan.s.reller@gmail.com"]
         },
         {
+            "github_id": "renhwztetecs",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "huanwen ren",
+            "emails": ["rhwlyw@163.com", "ren.huanwen@zte.com.cn"]
+        },
+        {
             "github_id": "reset",
             "companies": [
                 {
@@ -18731,6 +18808,17 @@
             "emails": ["vandita_arora@cable.comcast.com"]
         },
         {
+            "github_id": "varadakari",
+            "companies": [
+                {
+                    "company_name": "SanDisk",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Varada Kari",
+            "emails": ["varada.kari@sandisk.com"]
+        },
+        {
             "launchpad_id": "varun-gadiraju",
             "gerrit_id": "gadirajv",
             "companies": [
@@ -19591,6 +19679,17 @@
             ],
             "user_name": "Xinyu Chen",
             "emails": ["wizard_cxy@hotmail.com", "wizardcxy@126.com"]
+        },
+        {
+            "github_id": "wjwithagen",
+            "companies": [
+                {
+                    "company_name": "Digiware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Willem Jan Withagen",
+            "emails": ["wjw@digiware.nl"]
         },
         {
             "launchpad_id": "wkqwu",
@@ -21504,6 +21603,10 @@
             "company_name": "Digital Pacific"
         },
         {
+            "domains": ["digiware.nl"],
+            "company_name": "Digiware"
+        },
+        {
             "domains": ["dmm.com"],
             "company_name": "DMM.com Labo"
         },
@@ -22214,6 +22317,10 @@
             "company_name": "Pure Storage"
         },
         {
+            "domains": ["qiyi.com"],
+            "company_name": "QIYI"
+        },
+        {
             "domains": ["qrclab.com"],
             "company_name": "Quanta Research Cambridge"
         },
@@ -22268,6 +22375,10 @@
             "domains": ["samsung.com"],
             "company_name": "Samsung",
             "aliases": ["Samsung SDS", "Samsung India Software Operations"]
+        },
+        {
+            "domains": ["sandisk.com"],
+            "company_name": "SanDisk"
         },
         {
             "domains": ["sap.com"],
