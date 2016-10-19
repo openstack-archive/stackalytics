@@ -17308,6 +17308,10 @@
             "companies": [
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2016-Oct-18"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
