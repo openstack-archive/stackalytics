@@ -18381,6 +18381,21 @@
            ]
         },
         {
+            "launchpad_id": "tlashchova",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-10"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tetiana Lashchova",
+            "emails": ["tlashchova@mirantis.com", "tlashchova@gmail.com"]
+        },
+        {
             "launchpad_id": "tmazur",
             "companies": [
                 {
