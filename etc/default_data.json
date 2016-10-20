@@ -11868,6 +11868,25 @@
             "emails": ["mat128@gmail.com", "mmitchell@iweb.com", "mmitchell@internap.com"]
         },
         {
+            "launchpad_id": "mate-lakat",
+            "companies": [
+                {
+                    "company_name": "Citrix",
+                    "end_date": "2014-Dec-19"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Oct-09"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mate Lakat",
+            "emails": ["mate.lakat@citrix.com", "mlakat@suse.com"]
+        },
+        {
             "launchpad_id": "mathieu-rohon",
             "companies": [
                 {
