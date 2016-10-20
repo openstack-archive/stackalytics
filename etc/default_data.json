@@ -18829,6 +18829,21 @@
             "emails": ["vaidyanath.m@gmail.com", "vaidyanath.manogaran@ril.com"]
         },
         {
+            "launchpad_id": "vakovalchuk",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-18"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Valerii Kovalchuk",
+            "emails": ["vakovalchuk@mirantis.com", "kovvalole@gmail.com"]
+        },
+        {
             "launchpad_id": "valw",
             "gerrit_id": "valw",
             "companies": [
