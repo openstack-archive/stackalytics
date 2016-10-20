@@ -10772,11 +10772,15 @@
             "companies": [
                 {
                     "company_name": "UnitedStack",
+                    "end_date": "2016-Sep-04"
+                },
+                {
+                    "company_name": "PoleX",
                     "end_date": null
                 }
             ],
             "user_name": "Liao Penghui",
-            "emails": ["liaoishere@gmail.com", "liaopenghui@unitedstack.com"]
+            "emails": ["liaoishere@gmail.com", "liaopenghui@unitedstack.com", "penghui@polex.com.cn"]
         },
         {
             "launchpad_id": "licayun",
@@ -22334,6 +22338,10 @@
         {
             "domains": ["pluribusnetworks.com"],
             "company_name": "Pluribus Networks"
+        },
+        {
+            "domains": ["polex.com.cn"],
+            "company_name": "PoleX"
         },
         {
             "domains": ["powertech.no"],
