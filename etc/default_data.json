@@ -8070,6 +8070,18 @@
             "emails": ["ilkykli@gmail.com","liky@certusnet.com.cn"]
         },
         {
+            "launchpad_id": "ilya-p",
+            "gerrit_id": "IPO",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Popov",
+            "emails": ["ilvpopov.sbt@sberbank.ru", "ilya_p@hotmail.com"]
+        },
+        {
             "launchpad_id": "ilyaalekseyev",
             "zanata_id": "adiantum",
             "companies": [
