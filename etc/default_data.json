@@ -1408,11 +1408,15 @@
             "companies": [
                 {
                     "company_name": "Chelsio Communications",
+                    "end_date": "2015-Sep-11"
+                },
+                {
+                    "company_name": "Salesforce",
                     "end_date": null
                 }
             ],
             "user_name": "Anish Bhatt",
-            "emails": ["anish@chelsio.com", "anish7@gmail.com"]
+            "emails": ["anish@chelsio.com", "anish7@gmail.com", "anish.bhatt@salesforce.com"]
         },
         {
            "launchpad_id": "ankita-wagh7",
@@ -21533,6 +21537,11 @@
             "company_name": "Charter"
         },
         {
+            "domains": ["chelsio.com"],
+            "company_name": "Chelsio Communications",
+            "aliases": ["Chelsio", "Chelsio Communications Inc."]
+        },
+        {
             "domains": ["chinac.com"],
             "company_name": "Chinac"
         },
@@ -22478,6 +22487,11 @@
         {
             "domains": ["rizu.mu"],
             "company_name": "Rizumu"
+        },
+        {
+            "domains": ["salesforce.com"],
+            "company_name": "Salesforce",
+            "aliases": ["Salesforce.com"]
         },
         {
             "domains": ["samsung.com"],
