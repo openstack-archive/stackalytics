@@ -3126,6 +3126,21 @@
             "emails": ["chandankumar.093047@gmail.com", "chkumar@redhat.com"]
         },
         {
+            "launchpad_id": "chandrasekaran-natarajan",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chandrasekaran natarajan",
+            "emails": ["chandrasekaran.natarajan@hp.com", "chandrasekaran.natarajan@hpe.com"]
+        },
+        {
             "launchpad_id": "changbl",
             "companies": [
                 {
