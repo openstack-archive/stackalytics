@@ -6537,6 +6537,18 @@
             "emails": ["gandharva.s@hp.com", "gandharva666@gmail.com", "gandharvas@hpe.com"]
         },
         {
+            "launchpad_id": "gans-developer",
+            "gerrit_id": "gans",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ganpat Agarwal",
+            "emails": ["gans.developer@gmail.com", "ganpat.agarwal@walmart.com"]
+        },
+        {
             "launchpad_id": "gaojie",
             "companies": [
                 {
@@ -16048,6 +16060,18 @@
             ],
             "user_name": "sanket.lawangare",
             "emails": ["sanket.lawangare@gmail.com", "csg341@my.utsa.edu"]
+        },
+        {
+           "launchpad_id": "santhosh-fernandes",
+           "gerrit_id": "santhosh-fernandes",
+           "companies": [
+               {
+                   "company_name": "Walmart",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Santhosh Fernandes",
+           "emails": ["santhosh.fernandes@gmail.com", "santhosh.fernandes@walmart.com"]
         },
         {
             "launchpad_id": "santhoshkumar",
