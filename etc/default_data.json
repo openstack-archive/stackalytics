@@ -20255,6 +20255,17 @@
             "emails": ["yan.wei7@zte.com.cn","vxlinux@163.com"]
         },
         {
+            "launchpad_id": "yanzhiwei",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yan Zhiwei",
+            "emails": ["yan.zhiwei1@zte.com.cn"]
+        },
+        {
             "launchpad_id": "yao3690093-o",
             "companies": [
                 {
