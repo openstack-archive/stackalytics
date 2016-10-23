@@ -20002,6 +20002,19 @@
             "emails": ["andrey@xdel.ru", "akorolev@mirantis.com"]
         },
         {
+            "launchpad_id": "xhkjoe",
+            "zanata_id": "xhkjoe",
+            "gerrit_id": "xhkjoe",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hekang Xu",
+            "emails": ["1092181938@qq.com","xu.hekang@h3c.com"]
+        },
+        {
             "github_id": "xiang90",
             "companies": [
                 {
