@@ -20969,6 +20969,17 @@
             "emails": ["zhangleiqiang@gmail.com", "zhangleiqiang@huawei.com"]
         },
         {
+            "launchpad_id": "zhangyanying",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangyanying",
+            "emails": ["zhangyanying@inspur.com" ]
+        },
+        {
             "launchpad_id": "zhangyujun",
             "companies": [
                 {
