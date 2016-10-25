@@ -17252,6 +17252,17 @@
             "emails": ["sathlang@redhat.com", "chem@sathlan.org", "sofer.athlan-guyot@enovance.com"]
         },
         {
+            "launchpad_id": "sogabe",
+            "companies": [
+                {
+                    "company_name": "Yahoo! JAPAN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Takashi Sogabe",
+            "emails": ["tasogabe@yahoo-corp.jp", "takashi.sogabe@gmail.com"]
+        },
+        {
             "launchpad_id": "som-mishra",
             "gerrit_id": "smishra",
             "companies": [
@@ -22965,6 +22976,10 @@
         {
             "domains": ["xsky.io", "xsky.com"],
             "company_name": "XSky"
+        },
+        {
+            "domains": ["yahoo-corp.jp"],
+            "company_name": "Yahoo! JAPAN"
         },
         {
             "domains": ["yahoo-inc.com"],
