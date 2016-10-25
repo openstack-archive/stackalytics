@@ -7105,6 +7105,17 @@
             "emails": ["guang.yee@hpe.com", "guang.yee@hp.com"]
         },
         {
+            "launchpad_id": "guanzuoyu",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guanzy2016",
+            "emails": ["guan.zuoyu@zte.com.cn"]
+        },
+        {
             "launchpad_id": "guduru-sirisha",
             "companies": [
                 {
