@@ -11041,6 +11041,17 @@
             "emails": ["liteng@gohighsec.com"]
         },
         {
+            "launchpad_id": "liting19840711",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liting19840711",
+            "emails": ["li_ting@inspur.com"]
+        },
+        {
             "launchpad_id": "littleidea",
             "companies": [
                 {
