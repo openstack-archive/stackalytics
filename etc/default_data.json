@@ -5953,6 +5953,17 @@
             "emails": ["eric_martin4@cable.comcast.com"]
         },
         {
+            "launchpad_id": "eric-xie",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Xie",
+            "emails": ["eric_xiett@163.com"]
+        },
+        {
             "github_id": "erikh",
             "companies": [
                 {
