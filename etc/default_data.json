@@ -8737,6 +8737,18 @@
             "emails": ["jaycen.v.grant@intel.com"]
         },
         {
+            "launchpad_id": "jayconroy",
+            "gerrit_id": "jayconroy",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jay Conroy",
+            "emails": ["james.conroy@hpe.com", "jayryanconroy@gmail.com"]
+        },
+        {
             "launchpad_id": "jaypipes",
             "companies": [
                 {
