@@ -20815,6 +20815,17 @@
             "emails": ["zeke@sikelianos.com"]
         },
         {
+            "launchpad_id": "zengjianfang",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jianfang",
+            "emails": ["zeng.jianfang@zte.com.cn"]
+        },
+        {
             "launchpad_id": "zengluul",
             "zanata_id": "zenglulu",
             "gerrit_id": "zenglulu",
