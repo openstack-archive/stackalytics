@@ -16623,6 +16623,17 @@
             "emails": ["shaohef@126.com", "shaohe.feng@intel.com"]
         },
         {
+            "launchpad_id": "shaomingwu",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shaomingwu",
+            "emails": ["shaomingwu@inspur.com"]
+        },
+        {
             "launchpad_id": "shasha.tavil",
             "gerrit_id": "shasha.tavil",
             "companies": [
