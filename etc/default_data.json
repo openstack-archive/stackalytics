@@ -18766,6 +18766,18 @@
             "emails": ["ttcl@mac.com", "troy.toman@rackspace.com"]
         },
         {
+            "launchpad_id": "trygve-vea-gmail",
+            "gerrit_id": "trygve.vea",
+            "companies": [
+                {
+                    "company_name": "Redpill Linpro",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Trygve Vea",
+            "emails": [ "trygve.vea@gmail.com" ]
+        },
+        {
             "launchpad_id": "tteggel",
             "companies": [
                 {
@@ -22624,6 +22636,11 @@
             "domains": ["redhat.com", "gluster.com", "enovance.com"],
             "company_name": "Red Hat",
             "aliases": ["Red Hat Canada, Inc", "Red Hat Czech, s.r.o.", "Red Hat, Inc., Bloomberg L.P.", "Red Hat India Pvt. Ltd.", "Red Hat Software", "eNovance"]
+        },
+        {
+            "domains": ["redpill-linpro.com"],
+            "company_name": "Redpill Linpro",
+            "aliases": ["Redpill Linpro AS", "Redpill Linpro AB"]
         },
         {
             "domains": ["reduxio.com"],
