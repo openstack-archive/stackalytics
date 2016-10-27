@@ -11230,6 +11230,15 @@
             "emails": ["liusu8788@gmail.com", "liusu@chinac.com"]
         },
         {
+            "launchpad_id": "liuxinrj",
+            "companies": [{
+                "company_name": "Inspur",
+                "end_date": null
+            }],
+            "user_name": "liuxinrj",
+            "emails": ["liuxinrj@inspur.com"]
+        },
+        {
             "launchpad_id": "liyanhang",
             "gerrit_id":"liyanhang",
             "companies": [
