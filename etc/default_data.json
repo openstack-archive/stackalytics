@@ -14046,6 +14046,17 @@
             "emails": ["paulmontgomery.code@gmail.com", "paul.montgomery@rackspace.com"]
         },
         {
+            "launchpad_id": "paulo-matias",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de São Carlos",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paulo Matias",
+            "emails": ["matias@ufscar.br"]
+        },
+        {
             "launchpad_id": "pavel-cizinsky",
             "gerrit_id": "LotharKAtt",
             "companies": [
@@ -22962,6 +22973,10 @@
             "company_name": "University of California Riverside",
             "aliases": ["University of California Riverside", "UC Riverside",
                         "UCR"]
+        },
+        {
+            "domains": ["ufscar.br"],
+            "company_name": "Universidade Federal de São Carlos"
         },
         {
             "domains": ["ukcloud.com"],
