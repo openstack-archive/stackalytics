@@ -15020,12 +15020,12 @@
             "launchpad_id": "realitix",
             "companies": [
                 {
-                    "company_name": "Thales",
+                    "company_name": "Linagora",
                     "end_date": null
                 }
             ],
             "user_name": "Jean-Sebastien Bevilacqua",
-            "emails": ["realitix@gmail.com", "jean-sebastien.bevilacqua@thalesgroup.com"]
+            "emails": ["realitix@gmail.com"]
         },
         {
             "launchpad_id": "redbo",
