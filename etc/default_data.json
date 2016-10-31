@@ -15950,6 +15950,21 @@
             "emails": ["rusty.lynch@intel.com"]
         },
         {
+            "launchpad_id": "rvasilets",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roman Vasylets",
+            "emails": ["pomeo92@gmail.com", "rvasilets@mirantis.com"]
+        },
+        {
             "launchpad_id": "ryan-brandt",
             "gerrit_id": "ryan-brandt",
             "companies": [
