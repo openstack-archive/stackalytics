@@ -20770,14 +20770,19 @@
         },
         {
             "launchpad_id": "yuxcer",
+            "gerrit_id": "yuxcer",
             "companies": [
                 {
-                    "company_name": "*independent",
+                    "company_name": "UnitedStack",
+                    "end_date": "2016-Aug-29"
+                },
+                {
+                    "company_name": "PoleX",
                     "end_date": null
                 }
             ],
-            "user_name": "Yuxingchao",
-            "emails": ["yuxcer@126.com", "yuxcer@gmail.com"]
+            "user_name": "Xingchao Yu",
+            "emails": ["yuxcer@126.com", "yuxcer@gmail.com", "xingchao@polex.com.cn", "xingchao@unitedstack.com"]
         },
         {
             "launchpad_id": "yuyafei",
