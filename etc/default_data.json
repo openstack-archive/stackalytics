@@ -11487,10 +11487,14 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
-            "user_name": "Elizabeth Krumbach Joseph",
+            "user_name": "Elizabeth K. Joseph",
             "emails": ["lyz@princessleia.com", "lyz@ubuntu.com"]
         },
         {
