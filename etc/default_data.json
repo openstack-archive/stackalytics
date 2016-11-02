@@ -13408,6 +13408,17 @@
             "emails": ["skywalker.nick@gmail.com", "mali@awcloud.com", "nick.ma@live.cn"]
         },
         {
+            "launchpad_id": "nicolasbock",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nicolas Bock",
+            "emails": ["nicolasbock@gmail.com", "nicolas.bock@suse.com"]
+        },
+        {
             "launchpad_id": "nijaba",
             "companies": [
                 {
