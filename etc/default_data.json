@@ -11902,6 +11902,19 @@
             "emails": ["mark.washenberger@rackspace.com", "mark.washenberger@markwash.net"]
         },
         {
+            "launchpad_id": "mars0618",
+            "gerrit_id": "Mars",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xianming.mao",
+            "emails": ["xianming.mao@easystack.cn"]
+        },
+
+        {
             "launchpad_id": "martyntaylor",
             "companies": [
                 {
@@ -20208,19 +20221,7 @@
             "emails": ["xianghui@cn.ibm.com", "hui.xiang@canonical.com"]
         },
         {
-            "launchpad_id": "xianming.mao",
-            "gerrit_id": "Mars",
-            "companies": [
-                {
-                    "company_name": "EasyStack",
-                    "end_date": null
-                }
-            ],
-            "user_name": "xianming.mao",
-            "emails": ["xianming.mao@easystack.cn"]
-        },
-        {
-            "launchpad_id": "xiaobo-2",
+           "launchpad_id": "xiaobo-2",
             "companies": [
                 {
                     "company_name": "Awcloud",
