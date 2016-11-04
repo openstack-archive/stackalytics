@@ -20150,12 +20150,16 @@
            "companies": [
                {
                    "company_name": "Catalyst IT",
+                   "end_date": "2016-Nov-02"
+               },
+               {
+                   "company_name": "Canonical",
                    "end_date": null
                }
            ],
            "user_name": "Xav Paice",
            "emails": [
-               "xav@catalyst.net.nz", "xavpaice@gmail.com"
+               "xav.paice@canonical.com", "xavpaice@gmail.com"
            ]
         },
         {
