@@ -8855,6 +8855,18 @@
             "emails": ["jean-philippe.evrard@rackspace.co.uk", "jean-philippe.evrard@belnet.be", "jean-philippe@evrard.me"]
         },
         {
+           "launchpad_id": "jeckxie",
+           "gerrit_id": "jeckxie",
+           "companies": [
+               {
+                   "company_name": "Inspur",
+                   "end_date": null
+               }
+           ],
+           "user_name": "jeckxie",
+           "emails": ["xiexiaozhe@inspur.com"]
+        },
+        {
             "launchpad_id": "jedwards20",
             "companies": [
                 {
