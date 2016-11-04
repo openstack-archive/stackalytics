@@ -3204,7 +3204,7 @@
                 }
             ],
             "user_name": "Charlie Llewellyn",
-            "emails": ["charlie.j.llewellyn@gmail.com", "cllewellyn@skyscapecloud.com"]
+            "emails": ["charlie.j.llewellyn@gmail.com", "cllewellyn@ukcloud.com"]
         },
         {
             "launchpad_id": "chdzsp",
@@ -15045,6 +15045,17 @@
             ],
             "user_name": "Rick Harris",
             "emails": ["rick.harris@rackspace.com", "rick@quasar.racklabs.com", "rconradharris@gmail.com"]
+        },
+        {
+            "launchpad_id": "rcoward",
+            "companies": [
+                {
+                    "company_name": "UKCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rob Coward",
+            "emails": ["rob@jive-videos.net", "rcoward@ukcloud.com"]
         },
         {
             "launchpad_id": "reach-abhishekj",
