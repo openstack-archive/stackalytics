@@ -2337,11 +2337,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Beth Elwell",
-            "emails": ["elizabeth.elwell@hp.com", "elizabeth.elwell@hpe.com", "e.r.elwell@gmail.com"]
+            "emails": ["elizabeth.elwell@hp.com", "elizabeth.elwell@hpe.com", "e.r.elwell@gmail.com", "belwell@redhat.com"]
         },
         {
             "github_id": "bfirsh",
