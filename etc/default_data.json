@@ -19820,6 +19820,17 @@
             "emails": ["wangliangfu@outlook.com"]
         },
         {
+            "launchpad_id": "wanglmopenstack",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wanglmopenstack",
+            "emails": ["wanglm@certusnet.com.cn","wanglm_openstack@163.com"]
+        },
+        {
             "launchpad_id": "wanglong",
             "companies": [
                 {
