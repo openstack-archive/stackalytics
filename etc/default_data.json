@@ -3607,6 +3607,17 @@
             "emails": ["clayton@oneill.net", "clayton.oneill@twcable.com"]
         },
         {
+            "launchpad_id": "clifhouck",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Clif Houck",
+            "emails": ["me@clifhouck.com", "clif.houck@rackspace.com"]
+        },
+        {
             "launchpad_id": "clint",
             "companies": [
                 {
