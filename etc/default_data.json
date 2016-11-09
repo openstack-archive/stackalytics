@@ -21495,6 +21495,17 @@
             "emails": ["zhugaoxiao@gmail.com", "zhu.gaoxiao@h3c.com"]
         },
         {
+            "launchpad_id": "zhuhq",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hongquan Zhu",
+            "emails": ["hqzhu918@163.com","zhuhq@certusnet.com.cn"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
