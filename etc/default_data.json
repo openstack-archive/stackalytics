@@ -14721,6 +14721,17 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+            "launchpad_id": "qianh",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "qianh",
+            "emails": ["qianh@certusnet.com.cn","qianhang1992@gmail.com"]
+        },
+        {
             "launchpad_id": "qiankun.zhang",
             "gerrit_id": "qiankun.zhang",
             "companies": [
