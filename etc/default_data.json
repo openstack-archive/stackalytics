@@ -21522,6 +21522,17 @@
             "emails": ["hqzhu918@163.com","zhuhq@certusnet.com.cn"]
         },
         {
+            "launchpad_id": "zhusz",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shangzhong Zhu",
+            "emails": ["zhu.shangzhong@zte.com.cn"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
