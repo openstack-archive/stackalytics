@@ -14709,6 +14709,18 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+            "launchpad_id": "qiankun.zhang",
+            "gerrit_id": "qiankun.zhang",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "qiankun.zhang",
+            "emails": ["zhangqiankun@sgitg.sgcc.com.cn", "zhqk1234567@126.com"]
+        },
+        {
              "launchpad_id": "qiky",
              "gerrit_id": "qiky",
              "zanata_id": "qiaiyuan",
@@ -22928,6 +22940,11 @@
         {
             "domains": ["servosity.com"],
             "company_name": "Servosity"
+        },
+        {
+            "domains": ["sgcc.com.cn"],
+            "company_name": "SG.Cloud",
+            "aliases": ["Beijing China-Power Information Technology CO.,LTD","NO.15,Xiaoying Rd(E),Qinghe,Haidian District"]
         },
         {
             "domains": ["sgitg.sgcc.com.cn"],
