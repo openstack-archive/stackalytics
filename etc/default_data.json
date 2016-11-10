@@ -9148,6 +9148,22 @@
             "emails": ["wentian@unitedstack.com", "jiangwt100@gmail.com"]
         },
         {
+            "launchpad_id": "jianhuiz",
+            "gerrit_id": "jianhuiz",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2014-May-11"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jianhuiz",
+            "emails": ["jianhui@outlook.com", "jianhui.zhou@huawei.com"]
+        },
+        {
             "launchpad_id": "jikyll",
             "gerrit_id": "jikyll",
             "companies": [
