@@ -9349,6 +9349,18 @@
             "emails": ["joe@topjian.net"]
         },
         {
+            "github_id": "joelio",
+            "launchpad_id": "joelio",
+            "companies": [
+                {
+                    "company_name": "DataCentred",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Joel Merrick",
+            "emails": ["joel.merrick@datacentred.co.uk","joel@smashthesystems.com"]
+        },
+        {
             "github_id": "joestringer",
             "companies": [
                 {
