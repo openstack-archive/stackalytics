@@ -3316,6 +3316,17 @@
             "emails": ["chengyang@awcloud.com"]
         },
         {
+            "launchpad_id": "chenhanxiao",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chenhanxiao",
+            "emails": ["chenhx@certusnet.com.cn"]
+        },
+        {
             "launchpad_id": "chenjhfrontend",
             "companies": [
                 {
