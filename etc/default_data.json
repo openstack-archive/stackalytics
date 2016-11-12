@@ -15695,6 +15695,17 @@
             "emails": ["ricardo.rocha@cern.ch", "ricardo@catalyst.net.nz", "rocha.porto@gmail.com"]
         },
         {
+            "launchpad_id": "rockstubborn",
+            "companies": [
+                {
+                    "company_name": "CertusNet",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shuy",
+            "emails": ["rockstubborn@hotmail.com", "chengs@certusnet.com.cn"]
+        },
+        {
             "launchpad_id": "rodrigo-barbieri2010",
             "gerrit_id": "ganso",
             "companies": [
