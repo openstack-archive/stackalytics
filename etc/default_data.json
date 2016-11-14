@@ -14623,6 +14623,17 @@
             "emails": ["prasoontelang@gmail.com", "prasoon.telang@pluribusnetworks.com"]
         },
         {
+            "launchpad_id": "pratapagoutham",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Goutham Pratapa",
+            "emails": [ "pratapagoutham@gmail.com"]
+        },
+        {
             "launchpad_id": "pratapvedula",
             "companies": [
                 {
