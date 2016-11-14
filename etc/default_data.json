@@ -17780,6 +17780,19 @@
             "emails": ["sridhar.gaddam@enovance.com", "sgaddam@redhat.com"]
         },
         {
+            "launchpad_id": "ssarabia",
+            "gerrit_id": "ssarabia",
+            "github_id": "soliosg",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Solio Sarabia",
+            "emails": ["solio.sarabia@intel.com", "soliosg@gmail.com"]
+        },
+        {
             "launchpad_id": "stanicke",
             "gerrit_id": "stanislavulrych",
             "zanata_id": "stanislavulrych",
