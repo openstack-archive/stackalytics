@@ -22561,6 +22561,10 @@
             "company_name": "Internap"
         },
         {
+            "domains": ["intracom-telecom.com"],
+            "company_name": "Intracom Telecom"
+        },
+        {
             "domains": ["intralinks.com"],
             "company_name": "Intralinks"
         },
