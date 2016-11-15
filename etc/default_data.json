@@ -8213,6 +8213,19 @@
             "emails": ["imsplitbit@gmail.com", "dsalinas@rackspace.com"]
         },
         {
+            "launchpad_id": "int32bit",
+            "gerrit_id": "int32bit",
+            "github_id": "int32bit",
+            "companies": [
+                {
+                    "company_name": "PoleX",
+                    "end_date": null
+                }
+            ],
+            "user_name": "int32bit",
+            "emails": ["krystism@gmail.com"]
+        },
+        {
 
             "launchpad_id": "invsblduck",
             "companies": [
