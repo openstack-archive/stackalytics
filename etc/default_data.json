@@ -1255,11 +1255,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Nov-11"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Andrea Frittoli",
-            "emails": ["andrea.frittoli@gmail.com", "andrea.frittoli@hp.com", "frittoli@hp.com", "andrea.frittoli@hpe.com", "frittoli@hpe.com", "andreaf@hpe.com"]
+            "emails": ["andrea.frittoli@gmail.com", "andrea.frittoli@hp.com", "frittoli@hp.com", "andrea.frittoli@hpe.com", "frittoli@hpe.com", "andreaf@hpe.com", "andrea.frittoli@uk.ibm.com"]
         },
         {
             "launchpad_id": "andrea-rosa-m",
