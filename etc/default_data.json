@@ -2644,6 +2644,17 @@
             "emails": ["ceph@predictor.org.pl", "git@predictor.org.pl"]
         },
         {
+            "launchpad_id": "braveliuchina",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "braveliu",
+            "emails": ["braveliuchina@gmail.com", "xiaoyong.liu@easystack.cn"]
+        },
+        {
             "launchpad_id": "breu",
             "companies": [
                 {
