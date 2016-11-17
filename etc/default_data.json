@@ -12892,10 +12892,14 @@
                 {
                     "company_name": "Comcast",
                     "end_date": "2016-Oct-17"
+                },
+                {
+                    "company_name": "Ellucian",
+                    "end_date": null
                 }
             ],
             "user_name": "Matthew J. Black",
-            "emails": ["mjblack@gmail.com", "matthew_black@cable.comcast.com"]
+            "emails": ["mjblack@gmail.com", "matthew_black@cable.comcast.com", "matt.black@ellucian.com"]
         },
         {
             "launchpad_id": "mmaleckk",
@@ -22334,6 +22338,10 @@
         {
             "domains": ["eisoo.com"],
             "company_name": "EISOO"
+        },
+        {
+            "domains": ["ellucian.com"],
+            "company_name": "Ellucian"
         },
         {
             "domains": ["embrane.com"],
