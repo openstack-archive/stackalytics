@@ -11025,6 +11025,18 @@
             "emails": ["liaoishere@gmail.com", "liaopenghui@unitedstack.com", "penghui@polex.com.cn"]
         },
         {
+            "launchpad_id": "liaozd",
+            "gerrit_id": "liaozd",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liao Zhuodi",
+            "emails": ["liao.zd@gmail.com", "liao_zd@hotmail.com", "liaozhuodi@t2cloud.net"]
+        },
+        {
             "launchpad_id": "licayun",
             "companies": [
                 {
