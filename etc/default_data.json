@@ -23231,7 +23231,8 @@
         },
         {
             "domains": ["t2cloud.net"],
-            "company_name": "t2cloud"
+            "company_name": "t2cloud",
+            "aliases": ["T2Cloud", "云图腾", "北京云途腾科技有限责任公司"]
         },
         {
             "domains": ["tail-f.com"],
