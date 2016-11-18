@@ -6019,6 +6019,17 @@
             "emails": ["ek844y@att.com", "erakorn@outlook.com"]
         },
         {
+            "launchpad_id": "eric-litao",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tao Li",
+            "emails": ["litao3721@126.com"]
+        },
+        {
             "launchpad_id": "eric-martin4",
             "companies": [
                 {
