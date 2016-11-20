@@ -19630,6 +19630,18 @@
             "emails": ["vijayendrabvs@gmail.com", "vbhamidipati@ebaysf.com", "vbhamidipati@paypal.com"]
         },
         {
+            "launchpad_id": "vijendra-soni",
+            "gerrit_id": "iamvijendra",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vijendra Soni",
+            "emails": ["vijendra.soni@cognizant.com"]
+        },
+        {
             "launchpad_id": "vikas-d-m",
             "companies": [
                 {
@@ -22246,6 +22258,11 @@
             "company_name": "Codethink"
         },
         {
+            "domains": ["cognizant.com"],
+            "company_name": "Cognizant",
+            "aliases": ["Cognizant Technology Solutions"]
+        },
+        {
             "domains": ["cohodata.com"],
             "company_name": "Coho Data"
         },
@@ -23581,6 +23598,7 @@
             "domains": ["zte.com.cn"],
             "company_name": "ZTE Corporation"
         }
+
     ],
     "repos": [
         {
