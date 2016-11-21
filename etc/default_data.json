@@ -15168,6 +15168,22 @@
             "emails": ["raphael_mondesir@cable.comcast.com", "raphmraph@gmail.com"]
         },
         {
+            "launchpad_id": "ravishekar-jethani",
+            "gerrit_id": "rsjethani",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": "2016-Aug-11"
+                },
+                {
+                    "company_name": "Great Software Laboratory",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ravi Shekhar Jethani",
+            "emails": ["rsjethani@gmail.com", "ravishekar.jethani@nttdata.com"]
+        },
+        {
             "launchpad_id": "rawlin-peters",
             "companies": [
                 {
