@@ -11633,6 +11633,18 @@
             "emails": ["luz.cazares@intel.com"]
         },
         {
+            "launchpad_id": "lvjiangzhao",
+            "gerrit_id": "lvjiangzhao",
+            "companies": [
+                {
+                    "company_name": "JD.COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lvjiangzhao",
+            "emails": ["jiangzhao_l@hotmail.com", "lvjiangzhao@jd.com"]
+        },
+        {
             "launchpad_id": "lxstar01",
             "companies": [
                 {
