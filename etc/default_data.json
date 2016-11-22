@@ -22540,7 +22540,8 @@
         },
         {
             "domains": ["gslab.com"],
-            "company_name": "Great Software Laboratory"
+            "company_name": "Great Software Laboratory",
+            "aliases": ["GS Lab"]
         },
         {
             "domains": ["guardian.co.uk", "theguardian.com"],
