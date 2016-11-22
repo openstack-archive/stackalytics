@@ -21211,6 +21211,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
