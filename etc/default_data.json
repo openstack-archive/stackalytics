@@ -19056,6 +19056,17 @@
             "emails": ["tomjosekal@gmail.com", "tkalapura@walmartlabs.com", "tkalapura@walmart.com"]
         },
         {
+            "launchpad_id": "toreanderson",
+            "companies": [
+                {
+                    "company_name": "Redpill Linpro",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tore Anderson",
+            "emails": [ "tore@redpill-linpro.com", "tore@fud.no" ]
+          },
+        {
             "launchpad_id": "torgomatic",
             "companies": [
                 {
