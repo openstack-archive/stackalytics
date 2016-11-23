@@ -9213,6 +9213,18 @@
             "user_name": "jianhuiz",
             "emails": ["jianhui@outlook.com", "jianhui.zhou@huawei.com"]
         },
+       {
+            "launchpad_id": "jianyi",
+            "gerrit_id": "jianyi",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jianyi",
+            "emails": ["jianyi@sgitg.sgcc.com.cn", "jian_yi1987@163.com"]
+        },
         {
             "launchpad_id": "jikyll",
             "gerrit_id": "jikyll",
