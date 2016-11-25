@@ -25120,6 +25120,93 @@
             ]
         },
         {
+            "module": "zaqar",
+            "organization": "openstack",
+            "uri": "git://git.openstack.org/openstack/zaqar.git",
+            "releases": [
+                {
+                    "tag_to": "icehouse-eol",
+                    "release_name": "Icehouse",
+                    "tag_from": "1733a05d8e4a36acb01d0c173d00097c67821cdb"
+                },
+                {
+                    "tag_to": "juno-eol",
+                    "release_name": "Juno",
+                    "tag_from": "2014.1.rc1"
+                },
+                {
+                    "tag_to": "kilo-eol",
+                    "release_name": "Kilo",
+                    "tag_from": "2014.2.rc1"
+                },
+                {
+                    "branch": "stable/liberty",
+                    "tag_to": "HEAD",
+                    "release_name": "Liberty",
+                    "tag_from": "2015.1.0rc1"
+                },
+                {
+                    "branch": "stable/mitaka",
+                    "tag_to": "HEAD",
+                    "release_name": "Mitaka",
+                    "tag_from": "1.0.0.0rc1"
+                },
+                {
+                    "branch": "stable/newton",
+                    "tag_to": "HEAD",
+                    "release_name": "Newton",
+                    "tag_from": "2.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Ocata",
+                    "tag_from": "3.0.0.0rc1"
+                }
+            ]
+        },
+        {
+            "module": "python-zaqarclient",
+            "organization": "openstack",
+            "uri": "git://git.openstack.org/openstack/python-zaqarclient.git",
+            "releases": [
+                {
+                    "tag_to": "0.1.0",
+                    "release_name": "Icehouse",
+                    "tag_from": "fcccf5e1ba8a26c265530ddd22f51a262971c8ce"
+                },
+                {
+                    "tag_to": "0.2.0",
+                    "release_name": "Juno",
+                    "tag_from": "0.1.0"
+                },
+                {
+                    "tag_to": "0.3.0",
+                    "release_name": "Kilo",
+                    "tag_from": "0.2.0"
+                },
+                {
+                    "tag_to": "1.0.0",
+                    "release_name": "Liberty",
+                    "tag_from": "0.3.0"
+                },
+                {
+                    "tag_to": "1.1.0",
+                    "release_name": "Mitaka",
+                    "tag_from": "1.0.0"
+                },
+                {
+                    "tag_to": "1.2.0",
+                    "release_name": "Newton",
+                    "tag_from": "1.1.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Ocata",
+                    "tag_from": "1.2.0"
+                }
+            ]
+        },
+        {
             "module": "releng",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/releng.git"
