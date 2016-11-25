@@ -12566,6 +12566,18 @@
             "emails": ["megan.baker@workday.com"]
         },
         {
+            "launchpad_id": "mei-zhifang97",
+            "gerrit_id": "meizhifang",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "meizhifang",
+            "emails": ["mei.zhifang97@zte.com.cn"]
+        },
+        {
             "launchpad_id": "mekala-sarath",
             "gerrit_id": "SarathMekala",
             "companies": [
