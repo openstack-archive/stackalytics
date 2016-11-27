@@ -3584,6 +3584,17 @@
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
         },
         {
+            "launchpad_id": "cissy.liu",
+            "companies": [
+                {
+                    "company_name":"H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cissy",
+            "emails": ["laly_liu@163.com", "liu.danb@h3c.com"]
+        },
+        {
             "launchpad_id": "ck-khullar",
             "gerrit_id": "chetna",
             "companies": [
