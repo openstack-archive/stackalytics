@@ -14803,6 +14803,18 @@
             "emails": ["pdesai@us.ibm.com", "priti_desai@symantec.com", "pritidesai8@gmail.com"]
         },
         {
+            "launchpad_id": "priyaboopalan",
+            "gerrit_id": "PriyaBoopalan",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Badhmapriya Boopalan",
+            "emails": ["badhmapriya.boopalan@cognizant.com", "priya.openstack@gmail.com"]
+        },
+        {
            "launchpad_id": "prudhvi-rao-shedimbi",
            "gerrit_id": "pshedimb",
            "companies": [
