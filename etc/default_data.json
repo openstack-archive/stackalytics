@@ -16845,11 +16845,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Nov-13"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "scottda",
-            "emails": ["scott.dangelo@hp.com", "scott.dangelo@hpe.com",  "scott.dangelo@gmail.com"]
+            "emails": ["scott.dangelo@gmail.com", "scott.dangelo@ibm.com", "scott.dangelo@hpe.com" ]
         },
          {
             "github_id": "scottfrederick",
