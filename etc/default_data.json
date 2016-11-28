@@ -20129,11 +20129,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Walter A. Boring IV",
-            "emails": ["walter.boring@hp.com", "walter.boring@hpe.com", "waboring@hemna.com"]
+            "emails": ["waboring@hemna.com", "walter.a.boring@ibm.com", "walter.boring@hp.com", "walter.boring@hpe.com"]
         },
         {
             "launchpad_id": "wan-yen-hsu",
