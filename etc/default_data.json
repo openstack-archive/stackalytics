@@ -10364,6 +10364,17 @@
             "emails": ["ke.wu@nebula.com", "ke.wu@ibeca.me"]
         },
         {
+            "launchpad_id": "kedy",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhao Kai",
+            "emails": ["zhao.kaia@h3c.com"]
+        },
+        {
             "launchpad_id": "keith-newstadt",
             "companies": [
                 {
