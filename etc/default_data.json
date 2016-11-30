@@ -16890,11 +16890,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Sean Dague",
-            "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com"]
+            "emails": ["sean@dague.net", "sdague@linux.vnet.ibm.com", "sean.dague@samsung.com", "sdague@gmail.com", "sean.dague@ibm.com"]
         },
         {
             "launchpad_id": "sdake",
