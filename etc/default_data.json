@@ -15551,11 +15551,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
             "user_name": "Richard Hagarty",
-            "emails": ["richard.hagarty@hp.com", "richard.hagarty@hpe.com"]
+            "emails": ["rich.hagarty@ibm.com", "rich.hagarty@gmail.com", "richard.hagarty@hp.com", "richard.hagarty@hpe.com"]
         },
         {
             "launchpad_id": "richard.pioso",
