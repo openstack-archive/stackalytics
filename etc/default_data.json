@@ -21269,6 +21269,18 @@
             "emails": ["wenzhi_yu@163.com", "yuywz@cn.ibm.com"]
         },
         {
+            "launchpad_id": "yyagi",
+            "zanata_id": "yukinori_yagisawa",
+            "companies": [
+                {
+                    "company_name": "ADOC International",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yukinori Yagisawa",
+            "emails": ["yukky37@gmail.com"]
+        },
+        {
             "launchpad_id": "z8715000",
             "companies": [
                 {
@@ -22069,7 +22081,7 @@
             "company_name": "Acelio"
         },
         {
-            "domains": ["adoc.com"],
+            "domains": ["adoc.co.jp"],
             "company_name": "ADOC International"
         },
         {
