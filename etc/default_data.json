@@ -1097,6 +1097,17 @@
             "emails": ["alistair.coles@hp.com", "alistair.coles@hpe.com"]
         },
         {
+            "github_id": "allencloud",
+            "companies":[
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Allen Sun",
+            "emails": ["allen.sun@daocloud.io", "shlallen1990@gmail.com"]
+        },
+        {
             "launchpad_id": "allison",
             "gerrit_id": "wendar",
             "companies": [
@@ -4651,6 +4662,17 @@
             "emails": ["daragh.bailey@gmail.com", "dbailey@hp.com", "dbailey@hpe.com"]
         },
         {
+            "github_id": "dbdd4us",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yunda Wang",
+            "emails": ["yunda.wang@daocloud.io", "wangtong2712@gmail.com"]
+        },
+        {
             "launchpad_id": "dborodaenko",
             "user_name": "Dmitry Borodaenko",
             "companies": [
@@ -6084,6 +6106,17 @@
             ],
             "user_name": "Eric Robinson",
             "emails": ["erobinso_2000@yahoo.com"]
+        },
+        {
+            "github_id": "erxian",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evelyn Xu",
+            "emails": ["evelyn.xu@daocloud.io"]
         },
         {
             "launchpad_id": "ethuleau",
@@ -14199,6 +14232,17 @@
             "emails": ["pablo.a.fuente@intel.com"]
         },
         {
+            "github_id": "pacoxu",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Paco Xu",
+            "emails": ["paco.xu@daocloud.io"]
+        },
+        {
             "launchpad_id": "palecrow",
             "gerrit_id": "mborland",
             "companies": [
@@ -15424,6 +15468,17 @@
             "emails": ["realitix@gmail.com"]
         },
         {
+            "github_id": "realityone",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiahua Zhou",
+            "emails": ["jiahua.zhou@daocloud.io"]
+        },
+        {
             "launchpad_id": "redbo",
             "companies": [
                 {
@@ -16483,6 +16538,17 @@
             ],
             "user_name": "Saju Madhavan",
             "emails": ["sajuptpm@gmail.com", "saju.madhavan@ril.com"]
+        },
+        {
+            "github_id": "sakeven",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sakeven Jiang",
+            "emails": ["sakeven.jiang@daocloud.io"]
         },
         {
             "launchpad_id": "salmon",
@@ -20427,6 +20493,17 @@
             "emails": ["wh-openstack@wirewd.com", "wh-ubuntuone@wirewd.com"]
         },
         {
+            "github_id": "windfarer",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Yang",
+            "emails": ["qizhao.yang@daocloud.io"]
+        },
+        {
             "launchpad_id": "wingwj",
             "companies": [
                 {
@@ -20845,6 +20922,17 @@
             ],
             "user_name": "Yan Haifeng",
             "emails": ["haifeng.yan@hp.com", "yanheven@gmail.com", "yanhf@chinanetcenter.com", "yanheven@qq.com", "haifeng.yan@hpe.com"]
+        },
+        {
+            "github_id": "yank1",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yan kay",
+            "emails": ["kay.yan@daocloud.io"]
         },
         {
             "launchpad_id": "yankcrime",
@@ -22453,6 +22541,10 @@
         {
             "domains": ["d-red.jp"],
             "company_name": "Daikanyama RED"
+        },
+        {
+            "domains": ["daocloud.io"],
+            "company_name": "DaoCloud"
         },
         {
             "domains": ["datacentred.co.uk", "datacentred.io"],
