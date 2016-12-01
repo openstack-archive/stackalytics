@@ -1184,6 +1184,18 @@
             "emails": ["amcreynolds@ebaysf.com", "amcreynolds@ebay.com"]
         },
         {
+            "launchpad_id": "amerzlyakov",
+            "gerrit_id": "antonio_96",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anton Merzlyakov",
+            "emails": ["avmerzlyakov.sbt@sberbank.ru", "amerzlyakov@selit.ru"]
+        },
+        {
             "launchpad_id": "amitry",
             "companies": [
                 {
