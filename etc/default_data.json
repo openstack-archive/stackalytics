@@ -20836,6 +20836,18 @@
             "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
         },
         {
+            "launchpad_id": "yangwanli",
+            "gerrit_id": "yangawnli",
+            "companies": [
+                {
+                    "company_name": "JD.COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yangwanli",
+            "emails": ["yangwanli@jd.com"]
+        },
+        {
             "launchpad_id": "yanheven",
             "companies": [
                 {
