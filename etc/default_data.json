@@ -2726,6 +2726,18 @@
             "emails": ["brian.jf.fletcher@gmail.com"]
         },
         {
+            "launchpad_id": "brian-rosmaita",
+            "gerrit_id": "brian-rosmaita",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian Rosmaita",
+            "emails": ["brian.rosmaita@rackspace.com", "rosmaita.fossdev@gmail.com"]
+        },
+        {
             "launchpad_id": "brian-shang-dev",
             "companies": [
                 {
