@@ -25231,6 +25231,11 @@
             "uri": "https://github.com/docker/swarm.git"
         },
         {
+            "module": "swarmkit",
+            "organization": "docker",
+            "uri": "https://github.com/docker/swarmkit.git"
+        },
+        {
             "module": "libtrust",
             "organization": "docker",
             "uri": "https://github.com/docker/libtrust.git"
