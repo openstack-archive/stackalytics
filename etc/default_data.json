@@ -17164,6 +17164,19 @@
             "emails": ["seungkyua@gmail.com"]
         },
         {
+            "launchpad_id": "shakhova-margarita",
+            "gerrit_id": "MargaritaShakhova",
+            "github_id": "MargaritaShakhova",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Margarita Shakhova",
+            "emails": ["mbshakhova.sbt@sberbank.ru", "shakhova.margarita@gmail.com"]
+        },
+        {
             "launchpad_id": "shamail-tahir",
             "gerrit_id": "shamail",
             "companies": [
