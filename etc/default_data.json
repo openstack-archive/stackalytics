@@ -11078,6 +11078,18 @@
             "emails": ["727030349@qq.com", "kf.lijingb@h3c.com"]
         },
         {
+            "launchpad_id": "leoliluo",
+            "gerrit_id": "gaoshilian",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shilian gao",
+            "emails": ["543950568@qq.com"]
+        },
+        {
             "launchpad_id": "leseb",
             "companies": [
                 {
