@@ -22744,6 +22744,11 @@
             "aliases": ["University of Kent"]
         },
         {
+            "domains": ["kinvolk.io"],
+            "company_name": "Kinvolk",
+            "aliases": ["Kinvolk GmbH"]
+        },
+        {
             "domains": ["kionetworks.com"],
             "company_name": "KIO Networks",
             "aliases": ["Kionetworks", "KIO", "Kio operaciones", "KIO-Networks"]
