@@ -13174,11 +13174,15 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2016-Nov-30"
+                },
+                {
+                    "company_name": "Kinvolk",
                     "end_date": null
                 }
             ],
             "user_name": "Michal Rostecki",
-            "emails": ["mrostecki@mirantis.com", "michal.rostecki@gmail.com", "michal.rostecki@allegrogroup.com"]
+            "emails": ["michal@kinvolk.io", "mrostecki@mirantis.com", "michal.rostecki@gmail.com", "michal.rostecki@allegrogroup.com"]
         },
         {
             "launchpad_id": "mshuler",
