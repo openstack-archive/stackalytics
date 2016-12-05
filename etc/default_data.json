@@ -6892,6 +6892,17 @@
             "emails": ["gessau@cisco.com", "gessau@gmail.com"]
         },
         {
+            "github_id": "gexinlucode",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xinlu Ge",
+            "emails": ["gexinlu.services@gmail.com","xinlu.ge@daocloud.io"]
+        },
+        {
             "github_id": "ggiamarchi",
             "companies": [
                 {
@@ -15040,6 +15051,17 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+            "github_id": "qar",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anran Qiao",
+            "emails": ["qiaoanran@gmail.com", "anran.qiao@daocloud.io"]
+        },
+        {
             "launchpad_id": "qianh",
             "companies": [
                 {
@@ -17339,6 +17361,17 @@
             ],
             "user_name": "Shanthakumar K",
             "emails": ["shanthakumar.k@hp.com", "shanthakumartk@gmail.com", "shanthakumar.k@hpe.com"]
+        },
+        {
+            "github_id": "shawnhe711",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shawn He",
+            "emails": ["sheng.he@daocloud.io"]
         },
         {
             "launchpad_id": "shawnmaten",
@@ -20951,6 +20984,17 @@
             ],
             "user_name": "xuxinkun",
             "emails": ["xuxinkun@gmail.com"]
+        },
+        {
+            "github_id": "xuzhenglun",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhenglun Xu",
+            "emails": ["xuzhenglun@gmail.com", "zhenglun.xu@daocloud.io"]
         },
         {
             "launchpad_id": "xychu2008",
