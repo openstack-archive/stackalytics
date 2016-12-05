@@ -16593,6 +16593,19 @@
             "user_name": "Saju Madhavan",
             "emails": ["sajuptpm@gmail.com", "saju.madhavan@ril.com"]
         },
+         {
+            "launchpad_id": "sakaryo",
+            "github_id": "sakaryo",
+            "zanata_id": "sakaryo",
+            "companies": [
+                {
+                    "company_name": "ADOC International",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ryohei Sakamoto",
+            "emails": ["ryohei_sakamoto@adoc.co.jp"]
+        },
         {
             "github_id": "sakeven",
             "companies": [
@@ -19263,6 +19276,18 @@
             ],
             "user_name": "Tom Jose Kalapura",
             "emails": ["tomjosekal@gmail.com", "tkalapura@walmartlabs.com", "tkalapura@walmart.com"]
+        },
+        {
+            "launchpad_id": "tomoki-amano",
+            "zanata_id": "tomoki_amano",
+            "companies": [
+                {
+                    "company_name": "ADOC International",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tomoki Amano",
+            "emails": ["tomoki_amano@adoc.co.jp"]
         },
         {
             "launchpad_id": "toreanderson",
