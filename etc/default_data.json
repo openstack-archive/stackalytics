@@ -25328,6 +25328,11 @@
             ]
         },
         {
+            "module": "containerd",
+            "organization": "docker",
+            "uri": "https://github.com/docker/containerd.git"
+        },
+        {
             "module": "docker",
             "organization": "docker",
             "uri": "https://github.com/docker/docker.git"
@@ -26229,7 +26234,7 @@
         {
             "module_group_name": "docker-group",
             "modules": ["docker", "docker-registry", "docker-network", "engine-api", "libcontainer", "distribution", "machine", "swarm", "swarmkit", "libtrust",
-                "compose", "docker-py", "libnetwork"]
+                "compose", "docker-py", "libnetwork", "containerd"]
         },
         {
             "module_group_name": "ansible-group",
