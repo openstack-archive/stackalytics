@@ -483,11 +483,15 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2016-Dec-04"
+                },
+                {
+                    "company_name": "GoDaddy",
                     "end_date": null
                 }
             ],
             "user_name": "Adam Harwell",
-            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com"]
+            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com", "aharwell@godaddy.com"]
         },
         {
             "launchpad_id": "adam-kijak",
