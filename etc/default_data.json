@@ -8388,7 +8388,12 @@
                 },
                 {
                     "company_name": "Midokura",
+                    "end_date": "2016-Sep-22"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
+
                 }
             ],
             "user_name": "Irena Berezovsky",
