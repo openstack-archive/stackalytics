@@ -20509,6 +20509,19 @@
             "emails": ["wangxiyuan@huawei.com", "wangxiyuan1007@gmail.com", "491745146@qq.com"]
         },
         {
+            "launchpad_id": "wangyuwei",
+            "gerrit_id": "wangyuwei",
+            "github_id": "AndiaQ",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangyuwei",
+            "emails": ["wangyuwei@unitedstack.com", "yuweifree@gmail.com"]
+        },
+        {
             "launchpad_id": "wangzhh",
             "companies": [
                 {
