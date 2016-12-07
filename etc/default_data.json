@@ -6814,11 +6814,11 @@
             "companies": [
                 {
                     "company_name": "UnitedStack",
-                    "end_date": null
+                    "end_date": "2016-Dec-09"
                 }
             ],
             "user_name": "Gerard Braad",
-            "emails": ["me@gbraad.nl", "gerard@unitedstack.com"]
+            "emails": ["me@gbraad.nl"]
         },
         {
             "launchpad_id": "geekinutah",
