@@ -11288,6 +11288,18 @@
             "emails": ["lihi.wishnitzer@toganetworks.com", "lihiwish@gmail.com"]
         },
         {
+            "launchpad_id": "lihong",
+            "gerrit_id": "lihong",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lihong7313",
+            "emails": ["38098369@qq.com"]
+        },
+        {
             "launchpad_id": "lijing",
             "gerrit_id":"lijing",
             "companies": [
