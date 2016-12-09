@@ -7915,6 +7915,22 @@
             "emails": ["hpeter@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "huachaomao",
+            "github_id": "Huachao",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Dec-04"
+                },
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Huachao Mao",
+            "emails": ["mao.huachao@99cloud.net", "huachaomao@gmail.com"]
+        },
+        {
             "launchpad_id": "huang-huayong2",
             "companies": [
                 {
