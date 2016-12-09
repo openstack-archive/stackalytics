@@ -19882,6 +19882,18 @@
             "emails": ["vefimova@mirantis.com"]
         },
         {
+            "launchpad_id": "venkataharshitha",
+            "gerrit_id": "venkataharshitha",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "venkataharshitha",
+            "emails": ["venkataharshitha186@gmail.com"]
+        },
+        {
             "launchpad_id": "venkatamaheshkotha",
             "gerrit_id": "venkatamahesh",
             "companies": [
