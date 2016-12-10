@@ -2,6 +2,7 @@
     "users": [
         {
             "launchpad_id": "0-doug",
+            "gerrit_id": "dougshelley",
             "companies": [
                 {
                     "company_name": "Tesora",
@@ -9,7 +10,7 @@
                 }
             ],
             "user_name": "Doug Shelley",
-            "emails": ["doug@parelastic.com", "doug@tesora.com"]
+            "emails": ["doug@parelastic.com", "doug@tesora.com", "dougshelley66@gmail.com"]
         },
         {
             "launchpad_id": "0x44",
