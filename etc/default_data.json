@@ -21413,11 +21413,15 @@
             "companies": [
                 {
                     "company_name": "Samsung",
+                    "end_date": "2016-Apr-14"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "John Haan",
-            "emails": ["seungjin77.han@samsung.com", "yongiman@gmail.com"]
+            "emails": ["yongiman@gmail.com"]
         },
         {
             "launchpad_id": "yorik-sar",
