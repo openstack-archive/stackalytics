@@ -12883,11 +12883,15 @@
             "companies": [
                 {
                     "company_name": "Cray",
+                    "end_date": "2016-Dec-02"
+                },
+                {
+                    "company_name": "StackHPC",
                     "end_date": null
                 }
             ],
             "user_name": "Mark Goddard",
-            "emails": ["mgoddard@cray.com"]
+            "emails": ["mgoddard@cray.com", "mark@stackhpc.com"]
         },
         {
             "launchpad_id": "mhu",
@@ -18426,6 +18430,17 @@
             "emails": ["sbaker@redhat.com", "steve@stevebaker.org"]
         },
         {
+            "launchpad_id": "stevejims",
+            "companies": [
+                {
+                    "company_name": "StackHPC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Steve Simpson",
+            "emails": ["stevejims@gmail.com", "steve@stackhpc.com"]
+        },
+        {
             "launchpad_id": "stevemar",
             "companies": [
                 {
@@ -18476,6 +18491,10 @@
                 {
                     "company_name": "Cray",
                     "end_date": "2015-Aug-14"
+                },
+                {
+                    "company_name": "StackHPC",
+                    "end_date": null
                 }
             ],
             "user_name": "Stig Telfer",
@@ -23757,6 +23776,10 @@
         {
             "domains": ["spilgames.com"],
             "company_name": "Spil Games"
+        },
+        {
+            "domains": ["stackhpc.com"],
+            "company_name": "StackHPC"
         },
         {
             "domains": ["stackinsider.com"],
