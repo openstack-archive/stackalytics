@@ -21655,6 +21655,18 @@
             "emails": ["yuyafei@zte.com.cn", "woshiyuyafei@126.com"]
         },
         {
+            "launchpad_id": "yuyangwang1985",
+            "gerrit_id": "YuYangWang",
+            "companies": [
+                {
+                    "company_name": "winhong",
+                    "end_date": null
+                }
+            ],
+            "user_name": "YuYang",
+            "emails": ["wangyy@winhong.com", "yuyangwang1985@gmail.com"]
+        },
+        {
             "launchpad_id": "yuywz",
             "companies": [
                 {
@@ -24073,6 +24085,11 @@
             "company_name": "Wind River",
             "aliases": ["Wind River Systems", "WindRiver System", "WindRiver"]
         },
+        {
+             "domains": ["winhong.com"],
+             "company_name": "winhong",
+             "aliases": ["winhong Technology","www.winhong.com"]
+         },
         {
             "domains": ["wipro.com"],
             "company_name": "Wipro",
