@@ -23,7 +23,7 @@ from stackalytics.processor import utils
 LOG = logging.getLogger(__name__)
 
 # list of supported tags
-TAGS = ['tc-approved-release', 'type:service', 'type:library']
+TAGS = ['tc:approved-release', 'type:service', 'type:library']
 
 
 def _make_module_group(module_groups, name):

@@ -26589,10 +26589,10 @@
             "modules": ["openstack-official", "governance", "api-wg", "openstack-user-stories"]
         },
         {
-            "id": "tc-approved-release",
-            "title": "tc-approved-release",
+            "id": "tc:approved-release",
+            "title": "tc:approved-release",
             "child": true,
-            "modules": ["tc-approved-release"]
+            "modules": ["tc:approved-release"]
         },
         {
             "id": "type:service",

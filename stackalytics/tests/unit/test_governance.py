@@ -42,7 +42,7 @@ Sahara:
         - openstack/sahara-extra
         - openstack/sahara-image-elements
       tags:
-        - tc-approved-release
+        - tc:approved-release
         - release:managed
         - release:cycle-with-milestones
         - release:has-stable-branches
@@ -74,9 +74,9 @@ class TestGovernance(testtools.TestCase):
                             'sahara-image-elements', 'sahara-specs'},
                 'tag': 'program'
             },
-            'tc-approved-release': {
-                'id': 'tc-approved-release',
-                'module_group_name': 'tc-approved-release',
+            'tc:approved-release': {
+                'id': 'tc:approved-release',
+                'module_group_name': 'tc:approved-release',
                 'modules': set(),
                 'releases': {
                     'liberty': {'sahara', 'sahara-extra',
