@@ -2424,6 +2424,19 @@
             "emails": ["brad@nicira.com", "bhall@nicira.com"]
         },
         {
+            "launchpad_id": "bharath-kumar3",
+            "gerrit_id": "bharathshetty4",
+            "github_id": "bharathshetty4",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "bharathshetty4",
+            "emails": ["shettybharath4@gmail.com"]
+        },
+        {
             "launchpad_id": "bharath-ves",
             "companies": [
                 {
