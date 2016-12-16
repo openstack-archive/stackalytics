@@ -11008,6 +11008,21 @@
             "emails": ["lachlan.evenson@lithium.com"]
         },
         {
+            "launchpad_id": "laetitiae",
+            "gerrit_id": "laetitiae",
+            "companies": [
+                {
+                    "company_name": "BBVA",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Leticia Garcia Martin",
+            "emails": [
+                "leti.garcia.martin@gmail.com",
+                "l.garcia.martin.contractor@bbva.com"
+            ]
+        },
+        {
             "launchpad_id": "lakhindr",
             "companies": [
                 {
