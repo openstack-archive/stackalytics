@@ -19564,6 +19564,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Dec-13"
+                },
+                {
+                    "company_name": "IBM",
                     "end_date": null
                 }
             ],
