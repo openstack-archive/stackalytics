@@ -22254,11 +22254,15 @@
             "companies": [
                 {
                     "company_name": "99cloud",
+                    "end_date": "2016-Dec-15"
+                },
+                {
+                    "company_name": "ZTE Corporation",
                     "end_date": null
                 }
             ],
-            "user_name": "zhu.rong",
-            "emails": ["zhu.rong@99cloud.net", "aaronzhu1020@gmail.com"]
+            "user_name": "zhurong",
+            "emails": ["zhu.rong1@zte.com.cn", "aaronzhu1121@gmail.com"]
         },
         {
             "launchpad_id": "zhu-shiping",
