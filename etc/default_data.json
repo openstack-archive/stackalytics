@@ -9892,6 +9892,17 @@
             "emails": ["joseph.robinson@rackspace.com", "joseph.r.email@gmail.com"]
         },
         {
+            "launchpad_id": "joseph15",
+            "companies": [
+                {
+                    "company_name": "JD.COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wang Feng",
+            "emails": ["yfwangfeng1@jd.com"]
+        },
+        {
             "launchpad_id": "joshnang",
             "companies": [
                 {
