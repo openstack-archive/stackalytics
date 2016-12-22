@@ -22,7 +22,7 @@ Sahara:
         - openstack/sahara-extra
         - openstack/sahara-image-elements
       tags:
-        - tc-approved-release
+        - "tc:approved-release"
         - release:managed
         - release:cycle-with-milestones
         - release:has-stable-branches
