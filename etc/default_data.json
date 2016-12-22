@@ -15720,6 +15720,17 @@
             "emails": ["rhwlyw@163.com", "ren.huanwen@zte.com.cn"]
         },
         {
+            "launchpad_id": "renyuquan",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "NickrenREN",
+            "emails": ["nickren19@gmail.com", "yuquan.ren@easystack.cn"]
+        },
+        {
             "github_id": "reset",
             "companies": [
                 {
