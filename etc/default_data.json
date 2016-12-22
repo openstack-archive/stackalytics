@@ -6888,11 +6888,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "Rackspace",
                     "end_date": null
                 }
             ],
             "user_name": "German Eichberger",
-            "emails": ["german.eichberger@hp.com", "german.eichberger@hpe.com"]
+            "emails": ["german.eichberger@rackspace.com", "german.eichberger@hpe.com", "german.eichberger@hp.com"]
         },
         {
             "launchpad_id": "gessau",
