@@ -1087,6 +1087,19 @@
             "emails": ["ap@pilotti.it", "apilotti@cloudbasesolutions.com"]
         },
         {
+            "launchpad_id": "alfnak",
+            "gerrit_id": "bargool",
+            "github_id": "bargool",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aleksey Nakoryakov",
+            "emails": ["anakoryakov.sbt@sberbank.ru", "bargool@gmail.com"]
+        },
+        {
             "launchpad_id": "alineb",
             "companies": [
                 {
