@@ -21514,6 +21514,21 @@
             "emails": ["yongiman@gmail.com"]
         },
         {
+            "launchpad_id": "yongle-li",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Oct-01"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fred Li",
+            "emails": ["yongle.li@gmail.com"]
+        },
+        {
             "launchpad_id": "yorik-sar",
             "companies": [
                 {
