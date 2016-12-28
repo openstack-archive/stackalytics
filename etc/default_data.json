@@ -14500,6 +14500,18 @@
             "emails": ["aparathyras@stackmasters.eu"]
         },
         {
+            "launchpad_id": "partha.b",
+            "gerrit_id": "pbera",
+            "companies": [
+                {
+                    "company_name": "AFour Technologies",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Partha Bera",
+            "emails": ["partha.bera@afourtech.com", "beevatsyu@gmail.com"]
+        },
+        {
             "launchpad_id": "patanella",
             "companies": [
                 {
@@ -22582,6 +22594,10 @@
         {
             "domains": ["adoc.co.jp"],
             "company_name": "ADOC International"
+        },
+        {
+            "domains": ["afourtech.com"],
+            "company_name": "AFour Technologies"
         },
         {
             "domains": ["akanda.io"],
