@@ -9186,6 +9186,17 @@
             "emails": ["jeladi@yahoo.com"]
         },
         {
+            "launchpad_id": "jelanliu",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mengwen Liu",
+            "emails": ["jelan1022@163.com"]
+        },
+        {
             "launchpad_id": "jell",
             "github_id": "jellonek",
             "companies": [
