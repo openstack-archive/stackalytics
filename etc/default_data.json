@@ -5060,11 +5060,15 @@
                 },
                 {
                     "company_name": "SUSE",
+                    "end_date": "2016-Dec-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Pranav Salunke",
-            "emails": ["pranav@aptira.com", "dguitarbite@gmail.com"]
+            "emails": ["dguitarbite@gmail.com"]
         },
         {
             "launchpad_id": "dguryanov",
