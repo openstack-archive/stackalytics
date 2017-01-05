@@ -9414,6 +9414,17 @@
             "emails": ["jianyi@sgitg.sgcc.com.cn", "jian_yi1987@163.com"]
         },
         {
+            "launchpad_id": "jiasen.lin",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jiasen.lin",
+            "emails": ["jiasen.lin@easystack.cn", "a383839105@qq.com"]
+        },
+        {
             "launchpad_id": "jikyll",
             "gerrit_id": "jikyll",
             "companies": [
