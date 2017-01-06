@@ -13232,6 +13232,17 @@
             "emails": ["marga.sfo@gmail.com", "millet@cisco.com"]
         },
         {
+            "launchpad_id": "miriamyumi",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Miriam Yumi",
+            "emails": ["miriamyume@gmail.com", "miriam.peixoto@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "mishra-rakesh510",
             "companies": [
                 {
