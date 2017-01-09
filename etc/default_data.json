@@ -4957,6 +4957,17 @@
             "emails": ["higginsd@gmail.com", "derekh@redhat.com"]
         },
         {
+            "launchpad_id": "desheng01",
+            "user_name": "desheng",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "emails": ["tttbxj@163.com"]
+        },
+        {
             "launchpad_id": "devananda",
             "companies": [
                 {
