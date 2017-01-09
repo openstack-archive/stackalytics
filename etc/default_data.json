@@ -22493,6 +22493,17 @@
             "emails": ["ziad.sawalha@rackspace.com", "github@highbridgellc.com", "gihub@highbridgellc.com", "ziad@sawalha.com", "gerrit@highbridgellc.com"]
         },
         {
+            "launchpad_id": "zinoviev.ii",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ivan Zinoviev",
+            "emails": ["zinoviev.ii@gmail.com"]
+        },
+        {
             "launchpad_id": "zoukeke",
             "gerrit_id": "zoukeke",
             "companies": [
