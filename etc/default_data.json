@@ -5915,6 +5915,22 @@
             "emails": ["egor.guz@teradata.com", "eguz@walmartlabs.com", "guz_egor@yahoo.com"]
         },
         {
+            "launchpad_id": "egonzalez90",
+            "gerrit_id": "egonzalez90",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Oct-31"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eduardo Gonzalez",
+            "emails": ["dabarren@gmail.com", "eduardo.gonzalez.gutierrez@ibm.com"]
+        },
+        {
             "launchpad_id": "eharney",
             "companies": [
                 {
