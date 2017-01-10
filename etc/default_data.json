@@ -21377,6 +21377,18 @@
             "emails": ["yangwanli@jd.com"]
         },
         {
+            "launchpad_id": "yangyang",
+            "gerrit_id": "yangyang",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yangyang",
+            "emails": ["472374263@qq.com"]
+        },
+        {
             "launchpad_id": "yanheven",
             "companies": [
                 {
