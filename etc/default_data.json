@@ -11401,6 +11401,17 @@
             "emails": ["liem.m.nguyen@hp.com", "liem_m_nguyen@hp.com", "liem.m.nguyen@gmail.com", "liem_m_nguyen@hpe.com"]
         },
         {
+            "launchpad_id": "lifan",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lifan",
+            "emails": ["lifan@awcloud.com"]
+        },
+        {
             "launchpad_id": "lifeless",
             "companies": [
                 {
@@ -11958,6 +11969,17 @@
             ],
             "user_name": "lvjiangzhao",
             "emails": ["jiangzhao_l@hotmail.com", "lvjiangzhao@jd.com"]
+        },
+        {
+            "launchpad_id": "lvxx",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lvxx",
+            "emails": ["lvxx@awcloud.com", "57320398@qq.com"]
         },
         {
             "launchpad_id": "lxstar01",
@@ -16529,6 +16551,17 @@
             "emails": ["rosso.af@gmail.com", "adriano.rosso@fit-tecnologia.org.br"]
         },
         {
+            "launchpad_id": "roy01cheng",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roy Cheng",
+            "emails": ["roy01cheng@hotmail.com"]
+        },
+        {
             "launchpad_id": "rromans",
             "companies": [
                 {
@@ -18887,6 +18920,17 @@
             ],
             "user_name": "Sven Dowideit",
             "emails": ["svendowideit@home.org.au"]
+        },
+        {
+            "launchpad_id": "svenmark",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sven mark",
+            "emails": ["masw@awcloud.com"]
         },
         {
             "launchpad_id": "swaminathan-vasudevan",
@@ -22386,6 +22430,17 @@
             ],
             "user_name": "Zhou Jianming",
             "emails": ["zhoujm_cri@hotmail.com", "jm_zhou@126.com", "zhoujianming@h3c.com"]
+        },
+        {
+            "launchpad_id": "zhouwei-wh",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhouwei.wh",
+            "emails": ["zhouwei.wh@awcloud.com"]
         },
         {
             "launchpad_id": "zhouyunfeng",
