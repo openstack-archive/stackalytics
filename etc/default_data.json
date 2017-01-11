@@ -25727,6 +25727,11 @@
             "uri": "https://github.com/docker/docker-py.git"
         },
         {
+            "module": "cri-o",
+            "organization": "kubernetes",
+            "uri": "https://github.com/kubernetes-incubator/cri-o.git"
+        },
+        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
