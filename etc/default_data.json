@@ -25845,6 +25845,76 @@
             "uri": "https://github.com/openvswitch/ovs.git"
         },
         {
+            "module": "origin",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/origin.git"
+        },
+        {
+            "module": "source-to-image",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/source-to-image.git"
+        },
+        {
+            "module": "openshift-tools",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/openshift-tools.git"
+        },
+        {
+            "module": "openshift-docs",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/openshift-docs.git"
+        },
+        {
+            "module": "openshift-ansible",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/openshift-ansible.git"
+        },
+        {
+            "module": "origin-ci-tool",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/origin-ci-tool.git"
+        },
+        {
+            "module": "origin-web-console",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/origin-web-console.git"
+        },
+        {
+            "module": "origin-aggregated-logging",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/origin-aggregated-logging.git"
+        },
+        {
+            "module": "ruby-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/ruby-ex.git"
+        },
+        {
+            "module": "django-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/django-ex.git"
+        },
+        {
+            "module": "nodejs-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/nodejs-ex.git"
+        },
+        {
+            "module": "rails-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/rails-ex.git"
+        },
+        {
+            "module": "cakephp-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/cakephp-ex.git"
+        },
+        {
+            "module": "golang-ex",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/golang-ex.git"
+        },
+        {
             "module": "ceph",
             "organization": "ceph",
             "uri": "https://github.com/ceph/ceph.git"
@@ -26842,7 +26912,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "ovs", "pypa-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group"]
         },
         {
             "id": "ansible-group",
@@ -26879,6 +26949,12 @@
             "title": "OPNFV",
             "child": true,
             "modules": ["opnfv"]
+        },
+        {
+            "id": "openshift-group",
+            "title": "OpenShift",
+            "child": true,
+            "modules": ["openshift"]
         },
         {
             "id": "ovs-group",
