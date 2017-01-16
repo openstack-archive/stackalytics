@@ -4148,6 +4148,21 @@
             "emails": ["cristian.schwede@enovance.com", "cschwede@redhat.com"]
         },
         {
+            "launchpad_id": "csmart",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2017-Jan-15"
+                },
+                {
+                    "company_name": "Rackspace",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Smart",
+            "emails": ["mail@csmart.io", "chris@distroguy.com", "distroguy@gmail.com"]
+        },
+        {
             "launchpad_id": "csravelar",
             "companies": [
                 {
