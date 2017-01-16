@@ -12105,6 +12105,17 @@
             "emails": ["mkwiek@mirantis.com"]
         },
         {
+            "launchpad_id": "maciej.jozefczyk",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maciej Jozefczyk",
+            "emails": ["maciej.jozefczyk@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "madhuri-rai07",
             "companies": [
                 {
