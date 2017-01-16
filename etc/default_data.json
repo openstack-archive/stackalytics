@@ -9229,6 +9229,21 @@
             "emails": ["pskamruk@mirantis.com", "piotr.skamruk@gmail.com", "jell@jell.pl"]
         },
         {
+            "launchpad_id": "jeremy.zhang",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": "2015-Oct-22"
+                },
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeremy Zhang",
+            "emails": ["zhangjun_inspur@163.com", "zhangjun850@fiberhome.com"]
+        },
+        {
             "launchpad_id": "jerome-gallard",
             "companies": [
                 {
