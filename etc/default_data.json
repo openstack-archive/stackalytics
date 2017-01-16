@@ -21886,6 +21886,17 @@
             "emails": ["zhang.yujunz@zte.com.cn", "zhangyujun@gmail.com"]
         },
         {
+            "launchpad_id": "yumeng+bao",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yumeng Bao",
+            "emails": ["bao.yumeng@zte.com.cn", "yumeng_bao@yahoo.com"]
+        },
+        {
             "launchpad_id": "yunshen",
             "companies": [
                 {
