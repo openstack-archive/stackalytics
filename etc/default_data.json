@@ -9177,6 +9177,17 @@
             "emails": ["jean-philippe.evrard@rackspace.co.uk", "jean-philippe.evrard@belnet.be", "jean-philippe@evrard.me"]
         },
         {
+            "launchpad_id": "jean.caron",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jean Caron",
+            "emails": ["jean.caron@corp.ovh.com"]
+        },
+        {
            "launchpad_id": "jeckxie",
            "gerrit_id": "jeckxie",
            "companies": [
