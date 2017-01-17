@@ -22304,6 +22304,17 @@
             "emails": ["zhanghj@gohighsec.com"]
         },
         {
+            "launchpad_id": "zhanghongtao",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ZhangHongtao",
+            "emails": ["zhanghongtao@fiberhome.com", "zhanghongtao0826@126.com"]
+        },
+        {
             "launchpad_id": "zhanghuan",
             "companies": [
                 {
