@@ -18,7 +18,7 @@ import memcache
 
 def check(expected, actual):
     if expected != actual:
-        print ('Expected: %s\nActual: %s' % (expected, actual))
+        print('Expected: %s\nActual: %s' % (expected, actual))
 
 
 def main():
