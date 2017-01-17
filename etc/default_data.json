@@ -11528,6 +11528,17 @@
             "emails": ["lijing@gohighsec.com"]
         },
         {
+            "launchpad_id":"lijinghong",
+            "companies": [
+                {
+                     "company_name": "Hunan University, Institution of Supercomputing and Cloud Computing",
+                     "end_date": null
+                }
+            ],
+            "user_name":  "lijinghong",
+            "emails": ["jh1229965510@163.com", "lijinghong@hnu.edu.cn"]
+        },
+        {
             "launchpad_id": "liminliu",
             "companies": [
                 {
