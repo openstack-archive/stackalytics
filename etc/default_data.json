@@ -23463,6 +23463,10 @@
             "company_name": "Harmonic"
         },
         {
+            "domains": ["harmonycloud.cn"],
+            "company_name": "HarmonyCloud"
+        },
+        {
             "domains": ["hastexo.com"],
             "company_name": "Hastexo",
             "aliases": ["hastexo Professional Services GmbH"]
