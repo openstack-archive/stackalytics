@@ -11842,6 +11842,18 @@
             "emails": ["liuxinrj@inspur.com"]
         },
         {
+            "launchpad_id": "lixing",
+            "gerrit_id": "lixing",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lixing",
+            "emails": ["lixing3@sgitg.sgcc.com.cn", "lixing0405@sina.com"]
+        },
+        {
             "launchpad_id": "liyanhang",
             "gerrit_id":"liyanhang",
             "companies": [
