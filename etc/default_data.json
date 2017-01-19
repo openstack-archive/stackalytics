@@ -6933,11 +6933,15 @@
                 {
                     "company_name": "UnitedStack",
                     "end_date": "2016-Dec-09"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
                 }
             ],
             "user_name": "Gerard Braad",
-            "emails": ["me@gbraad.nl"]
-        },
+            "emails": ["me@gbraad.nl", "gbraad@redhat.com"]
+         },
          {
             "launchpad_id": "gdwardlow",
             "companies": [
