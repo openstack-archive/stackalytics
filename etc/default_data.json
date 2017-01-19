@@ -20862,6 +20862,19 @@
             "emails": ["wang.zengzhi@zte.com.cn"]
         },
         {
+            "launchpad_id": "wangfang",
+            "gerrit_id": "wangfang",
+            "zanata_id": "wangfang",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangfang",
+            "emails": ["wangfang1101@163.com", "wang.fang@h3c.com"]
+        },
+        {
             "launchpad_id": "wanghao749",
             "companies": [
                 {
