@@ -18962,6 +18962,18 @@
             "emails": ["sumant.murke@intel.com"]
         },
         {
+            "launchpad_id": "sumitjami",
+            "gerrit_id": "nthforloop",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sumit Dilip Jamgade",
+            "emails": ["sjamgade@suse.com", "sumitjami@yahoo.com"]
+        },
+        {
             "launchpad_id": "sun-jing22",
             "companies": [
                 {
