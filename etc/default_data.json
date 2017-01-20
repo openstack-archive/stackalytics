@@ -21437,6 +21437,18 @@
             "emails": ["todd@ansolabs.com", "todd@rubidine.com", "xtoddx@gmail.com"]
         },
         {
+            "launchpad_id": "xu.hongzhi",
+            "gerrit_id": "xu.hongzhi",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xu.hongzhi",
+            "emails": ["xuhongzhi@sgitg.sgcc.com.cn", "toxhz@163.com"]
+        },
+        {
             "launchpad_id": "xuao",
             "companies": [
                 {
