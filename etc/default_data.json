@@ -10321,6 +10321,18 @@
             "emails": ["jun.zhongjun@huawei.com", "jun.zhongjun2@gmail.com"]
         },
         {
+            "launchpad_id": "junbo",
+            "gerrit_id": "junbo",
+            "companies": [
+                 {
+                     "company_name": "99cloud",
+                     "end_date": null
+                 }
+            ],
+            "user_name": "junbo",
+            "emails": ["jiang.junbo@99cloud.net", "junbo4242@gmail.com"]
+        },
+        {
             "launchpad_id": "junqing",
             "companies": [
                 {
