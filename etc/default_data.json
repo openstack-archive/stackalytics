@@ -27134,35 +27134,25 @@
     "project_types": [
         {
             "id": "all",
-            "title": "All",
+            "title": "OpenStack",
             "modules": ["openstack", "openstack-infra", "openstack-dev", "unknown"]
         },
         {
             "id": "openstack",
-            "title": "OpenStack",
+            "title": "Official",
+            "child": true,
             "modules": ["openstack-official", "governance", "api-wg", "openstack-user-stories"]
         },
         {
             "id": "tc:approved-release",
-            "title": "tc:approved-release",
+            "title": "TC-approved",
             "child": true,
             "modules": ["tc:approved-release"]
         },
         {
-            "id": "type:service",
-            "title": "type:service",
-            "child": true,
-            "modules": ["type:service"]
-        },
-        {
-            "id": "type:library",
-            "title": "type:library",
-            "child": true,
-            "modules": ["type:library"]
-        },
-        {
             "id": "openstack-others",
             "title": "Others",
+            "child": true,
             "modules": ["openstack-others", "unknown"]
         },
         {
