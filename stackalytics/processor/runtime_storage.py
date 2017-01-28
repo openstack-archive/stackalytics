@@ -19,6 +19,8 @@ import memcache
 from oslo_log import log as logging
 import six
 
+
+from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
@@ -122,6 +124,15 @@ class MemcachedStorage(RuntimeStorage):
             if need_update:
                 self.set_by_key(self._get_record_name(record_id), original)
                 self._commit_update(record_id)
+
+    def apply_user_corrections(self, user_corrections_iterator):
+        for user_correction in user_corrections_iterator:
+            stored_user = user_processor.load_user(self,
+                                                   user_id=user_correction[
+                                                       'user_id'])
+            updated_user = user_processor.update_user_profile(
+                stored_user, user_correction, is_correction=True)
+            user_processor.store_user(self, updated_user)
 
     def inc_user_count(self):
         return self.memcached.incr('user:count')
