@@ -3709,6 +3709,17 @@
             "emails": ["laly_liu@163.com", "liu.danb@h3c.com"]
         },
         {
+            "launchpad_id": "cjdc",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cristovao Cordeiro",
+            "emails": ["cjdcordeiro@gmail.com", "cristovao.cordeiro@cern.ch"]
+        },
+        {
             "launchpad_id": "ck-khullar",
             "gerrit_id": "chetna",
             "companies": [
