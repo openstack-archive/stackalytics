@@ -13715,6 +13715,21 @@
             "emails": ["michael@the-davies.net"]
         },
         {
+            "launchpad_id": "mriedem",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Riedemann",
+            "emails": [
+                "mriedem@us.ibm.com",
+                "mriedem@linux.vnet.ibm.com",
+                "mriedem.os@gmail.com"
+            ]
+        },
+        {
             "launchpad_id": "mrostecki",
             "github_id": "nhlfr",
             "companies": [
