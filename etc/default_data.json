@@ -11232,6 +11232,17 @@
             ]
         },
         {
+            "launchpad_id": "lakerzhou",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lakerzhou",
+            "emails": ["lakerzhou@gmail.com", "bzhou1@lenovo.com"]
+        },
+        {
             "launchpad_id": "lakhindr",
             "companies": [
                 {
