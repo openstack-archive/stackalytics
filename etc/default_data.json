@@ -16831,6 +16831,21 @@
             "emails": ["rushi.agr@gmail.com", "rushi.agrawal@ril.com"]
         },
         {
+            "launchpad_id": "rushil",
+            "companies": [
+                {
+                    "company_name": "NetApp",
+                    "end_date": "2015-Jul-24"
+                },
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rushil Chugh",
+            "emails": ["rchugh1@lenovo.com", "rushil.chugh@gmail.com"]
+        },
+        {
             "launchpad_id": "russell-sim",
             "companies": [
                 {
