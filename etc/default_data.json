@@ -6197,11 +6197,15 @@
                 },
                 {
                     "company_name": "tcp cloud",
+                    "end_date": "2016-Oct-31"
+                },
+                {
+                    "company_name": "Mirantis",
                     "end_date": null
                 }
             ],
             "user_name": "Petr Michalec",
-            "emails": ["petr.michalec@gmail.com", "petr.michalec@tcpcloud.eu", "epcim@apealive.net", "petr_michalec@cz.ibm.com"]
+            "emails": ["petr.michalec@gmail.com", "petr.michalec@tcpcloud.eu", "epcim@apealive.net", "petr_michalec@cz.ibm.com", "pmichalec@mirantis.com"]
         },
         {
             "launchpad_id": "erezak",
