@@ -8948,12 +8948,16 @@
             "launchpad_id": "jangseon-ryu",
             "companies": [
                 {
-                    "company_name": "OpenStack Korea User Group",
+                    "company_name": "LG CNS",
+                    "end_date": "2015-Jul-08"
+                } ,
+                {
+                    "company_name": "NAVER",
                     "end_date": null
                 }
             ],
             "user_name": "Jangseon Ryu",
-            "emails": ["jangseon.ryu@gmail.com", "jangseon@lgcns.com"]
+            "emails": ["jangseon.ryu@gmail.com", "jangseon@lgcns.com", "jangseon.ryu@navercorp.com"]
         },
         {
             "launchpad_id": "janonymous",
@@ -24045,6 +24049,10 @@
         {
             "domains": ["nasa.gov"],
             "company_name": "NASA"
+        },
+        {
+            "domains": ["navercorp.com"],
+            "company_name": "NAVER"
         },
         {
             "domains": ["navy.mil"],
