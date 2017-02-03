@@ -6522,6 +6522,17 @@
             "emails": ["fengbeihong@gmail.com", "shidonghao@t2cloud.net"]
         },
         {
+            "launchpad_id": "fengxia41103",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "fengxxia41103",
+            "emails": ["fxia1@lenovo.com"]
+        },
+        {
             "launchpad_id": "fengxy",
             "companies": [
                 {
