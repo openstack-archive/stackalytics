@@ -26670,6 +26670,22 @@
             ],
             "uri": "git://git.openstack.org/openstack/karbor-dashboard.git",
             "organization": "openstack"
+        },
+        {
+            "module": "mogan",
+            "aliases": [
+                "nimble"
+            ],
+            "uri": "git://git.openstack.org/openstack/mogan.git",
+            "organization": "openstack"
+        },
+        {
+            "module": "python-moganclient",
+            "aliases": [
+                "python-nimbleclient"
+            ],
+            "uri": "git://git.openstack.org/openstack/python-moganclient.git",
+            "organization": "openstack"
         }
     ],
     "project_sources": [
