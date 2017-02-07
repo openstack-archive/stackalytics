@@ -7282,6 +7282,17 @@
             "emails": ["goneri.lebouder@enovance.com", "gleboude@redhat.com"]
         },
         {
+            "launchpad_id": "gongxiao",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiao Gong",
+            "emails": ["gongxiao@fiberhome.com", "pamata@126.com"]
+        },
+        {
             "launchpad_id": "gongysh",
             "companies": [
                 {
