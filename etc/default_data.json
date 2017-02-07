@@ -2863,6 +2863,22 @@
             "emails": ["btorch@gmail.com", "marcelo.martins@rackspace.com"]
         },
         {
+            "launchpad_id": "bulat.gaifullin",
+            "gerrit_id": "bgaifullin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-06"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bulat Gaifullin",
+            "emails": ["gaifullinbf@gmail.com", "bgaifullin@mirantis.com"]
+        },
+        {
             "launchpad_id": "bureaufrancois",
             "gerrit_id": "Fdot",
             "companies": [
