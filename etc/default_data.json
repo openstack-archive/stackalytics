@@ -15161,8 +15161,24 @@
             ],
             "user_name": "Pepijn Oomen",
             "emails": [ "pepijn@redpill-linpro.com" ]
-          },
-          {
+        },
+        {
+            "launchpad_id": "pkholkin",
+            "gerrit_id": "pkholkin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Feb-09"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pavel Kholkin",
+            "emails": ["pkholkin@mirantis.com", "p.v.holkin@mail.ru"]
+        },
+        {
             "launchpad_id": "pkilambi",
             "companies": [
                 {
