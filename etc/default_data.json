@@ -6652,7 +6652,6 @@
             "user_name": "Frederic Lepied",
             "emails": ["frederic.lepied@enovance.com", "flepied@redhat.com"]
         },
-
         {
            "launchpad_id": "flwang",
            "gerrit_id": "flwang",
@@ -8477,6 +8476,23 @@
             ],
             "user_name": "Illia Khudoshyn",
             "emails": ["ikhudoshyn@mirantis.com", "gluke77@ya.ru"]
+        },
+
+        {
+            "launchpad_id": "ikutukov",
+            "gerrit_id": "ikutukov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-12"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Kutukov",
+            "emails": ["post.ilya@gmail.com", "ikutukov@mirantis.com"]
         },
         {
             "launchpad_id": "ildiko-vancsa",
