@@ -6484,6 +6484,17 @@
             "emails": ["fang.he@hotmail.com", "fang.he@h3c.com"]
         },
         {
+            "launchpad_id": "fangfei",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "fangfei",
+            "emails": ["fangfei@awcloud.com"]
+        },
+        {
             "launchpad_id": "fausto-marzi",
             "gerrit_id": "fausto.marzi",
             "companies": [
