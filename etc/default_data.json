@@ -8566,6 +8566,17 @@
             "emails": ["imsplitbit@gmail.com", "dsalinas@rackspace.com"]
         },
         {
+            "launchpad_id": "indicoliteplus",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "indicoliteplus",
+            "emails": ["indicoliteplus@gmail.com", "ccyu@fiberhome.com"]
+        },
+        {
             "launchpad_id": "int32bit",
             "gerrit_id": "int32bit",
             "github_id": "int32bit",
