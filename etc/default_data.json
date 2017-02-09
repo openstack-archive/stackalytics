@@ -11103,6 +11103,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Oct-28"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
