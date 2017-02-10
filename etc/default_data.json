@@ -8268,6 +8268,18 @@
             "emails": ["wanghua.humble@gmail.com", "wanghua7@huawei.com"]
         },
         {
+            "launchpad_id": "huntxu",
+            "gerrit_id": "huntxu",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hunt Xu",
+            "emails": ["mhuntxu@gmail.com"]
+        },
+        {
             "launchpad_id": "hurgleburgler",
             "companies": [
                 {
@@ -23715,6 +23727,11 @@
         {
             "domains": ["easystack.cn"],
             "company_name": "EasyStack"
+        },
+        {
+            "domains": ["eayun.com"],
+            "company_name": "Eayun",
+            "aliases": ["Eayun, Inc."]
         },
         {
             "domains": ["ebay.com", "ebaysf.com"],
