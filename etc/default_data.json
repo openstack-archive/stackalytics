@@ -13322,6 +13322,17 @@
             "emails": ["matthieu.huin@enovance.com", "mhuin@redhat.com"]
         },
         {
+            "launchpad_id": "miao-yanqiang",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yanqiang Miao",
+            "emails": ["miao.yanqiang@zte.com.cn"]
+        },
+        {
             "launchpad_id": "miaohb",
             "companies": [
                 {
@@ -26274,6 +26285,11 @@
             "module": "docker-py",
             "organization": "docker",
             "uri": "https://github.com/docker/docker-py.git"
+        },
+        {
+            "module": "docker.github.io",
+            "organization": "docker",
+            "uri": "https://github.com/docker/docker.github.io.git"
         },
         {
             "module": "cri-o",
