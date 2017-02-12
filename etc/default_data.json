@@ -3494,6 +3494,17 @@
             "emails": ["chenkang@awcloud.com"]
         },
         {
+            "launchpad_id": "chenyb4",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuanbin Chen",
+            "emails": ["cybing4@gmail.com", "yuanbin.chen@eayun.com"]
+        },
+        {
             "launchpad_id": "chenyingnan",
             "gerrit_id": "chenyingnan",
             "zanata_id": "chenyingnan",
