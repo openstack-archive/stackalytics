@@ -22768,6 +22768,18 @@
             "emails": ["yujun.zhang@easystack.cn","284517620@qq.com"]
         },
         {
+            "launchpad_id": "zhaochao1984",
+            "gerrit_id": "zhaochao",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhao Chao",
+            "emails": ["zhaochao1984@gmail.com"]
+        },
+        {
             "launchpad_id": "zhaohua-zhao",
             "gerrit_id": "zhaohua",
             "companies": [
