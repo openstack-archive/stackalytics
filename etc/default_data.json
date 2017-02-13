@@ -1268,11 +1268,11 @@
             "companies": [
                 {
                     "company_name": "Tesora",
-                    "end_date": null
+                    "end_date": "2017-Jan-30"
                 }
             ],
             "user_name": "Amrith Kumar",
-            "emails": ["amrith@parelastic.com", "amrith@tesora.com"]
+            "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith@amrith.org", "amrith.kumar@gmail.com"]
         },
         {
             "launchpad_id": "anand1712",
@@ -24743,7 +24743,7 @@
         {
             "domains": ["tesora.com", "parelastic.com"],
             "company_name": "Tesora",
-            "aliases": ["ParElastic Corp", "ParElastic", "Tesora.com"]
+            "aliases": ["ParElastic Corp", "ParElastic", "Tesora Inc"]
         },
         {
             "domains": ["thalesgroup.com", "mythalesgroup.com"],
