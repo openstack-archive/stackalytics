@@ -8195,6 +8195,18 @@
             "emails": ["hpeter@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "hrasiq",
+            "gerrit_id": "halves",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Heitor Ricardo Alves de Siqueira",
+            "emails": ["hrasiq@gmail.com", "heitorricardo.alvesdesiqueira@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "huachaomao",
             "github_id": "Huachao",
             "companies": [
