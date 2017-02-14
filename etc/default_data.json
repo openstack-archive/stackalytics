@@ -9146,6 +9146,18 @@
             "emails": ["jaosorior@redhat.com", "jaosorior@gmail.com", "juan.osorio.robles@ericsson.com"]
         },
         {
+            "launchpad_id": "jarrad-battaglia",
+            "gerrit_id": "jarrad-battaglia",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jarrad Battaglia",
+            "emails": ["jmbbat@gmail.com"]
+        },
+        {
             "launchpad_id": "jarred-deeley",
             "gerrit_id": "Jarred-Deeley",
             "companies": [
@@ -16139,6 +16151,18 @@
             ],
             "user_name": "Rich Bowen",
             "emails": ["rbowen@redhat.com", "rbowen@rcbowen.com"]
+        },
+        {
+            "launchpad_id": "rboyapat",
+            "gerrit_id": "rboyapat",
+            "companies": [
+                {
+                    "company_name": "Comcast",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ravi Kumar Boyapati",
+            "emails": ["rboyapat@gmail.com"]
         },
         {
             "launchpad_id": "rcarrillocruz",
