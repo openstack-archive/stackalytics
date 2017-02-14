@@ -12288,6 +12288,17 @@
             "emails": ["luis.daniel.castellanos@intel.com", "daniel.castellanos0289@gmail.com"]
         },
         {
+            "launchpad_id": "luizbag",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Luiz Gavioli",
+            "emails": ["luizbag@gmail.com", "luizbenedito.gavioli@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "luke-larussa",
             "companies": [
                 {
