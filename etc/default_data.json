@@ -12311,6 +12311,17 @@
             "emails": ["lxstar01@gmail.com", "liuxing@awcloud.com"]
         },
         {
+            "launchpad_id": "ly798",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Liu Yang",
+            "emails": ["yippeetry@gmail.com", "yang.liu@eayun.com"]
+        },
+        {
             "launchpad_id": "lyz",
             "companies": [
                 {
