@@ -16394,6 +16394,18 @@
             "emails": ["richardwheil@gmail.com"]
         },
         {
+            "launchpad_id": "richwellum",
+            "gerrit_id": "rwellum",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rich Wellum",
+            "emails": ["rwellum@lenovo.com", "richwellum@gmail.com"]
+        },
+        {
             "launchpad_id": "rick-aulino",
             "companies": [
                 {
