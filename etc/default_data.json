@@ -5854,6 +5854,17 @@
             "emails": ["dweimer@gmail.com", "dougw@sdsc.edu"]
         },
         {
+            "launchpad_id": "dwong",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "peng wang",
+            "emails": ["danielwang461@gmail.com"]
+        },
+        {
             "launchpad_id": "dzambonil",
             "companies": [
                 {
