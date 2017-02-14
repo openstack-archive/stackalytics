@@ -26550,6 +26550,11 @@
             "uri": "https://github.com/openshift/golang-ex.git"
         },
         {
+            "module": "openshift.org",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/openshift.org.git"
+        },
+        {
             "module": "ceph",
             "organization": "ceph",
             "uri": "https://github.com/ceph/ceph.git"
