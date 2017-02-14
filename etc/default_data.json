@@ -5761,6 +5761,17 @@
             "emails": ["dt-github@xr7.org", "dtroyer@gmail.com"]
         },
         {
+            "launchpad_id": "duanzw",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "duanzhiwei",
+            "emails": ["duanzw@awcloud.com"]
+        },
+        {
             "launchpad_id": "duhzecca",
             "companies": [
                 {
@@ -12082,6 +12093,17 @@
             ],
             "user_name": "Dean Li",
             "emails": ["liyh@gohighsec.com"]
+        },
+        {
+            "launchpad_id": "liyh-y",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liyueheng",
+            "emails": ["liyh@awcloud.com"]
         },
         {
             "launchpad_id": "liyingjun",
