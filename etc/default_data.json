@@ -12266,6 +12266,21 @@
             "emails": ["lorin@isi.edu", "lorin@nimbisservices.com"]
         },
         {
+            "launchpad_id": "lseki",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": null
+                },
+                {
+                    "company_name": "Lenovo",
+                    "end_date": "2015-Nov-03"
+                }
+            ],
+            "user_name": "Lucio Seki",
+            "emails": ["lucioseki@gmail.com", "luciomitsuru.seki@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "lucasagomes",
             "companies": [
                 {
