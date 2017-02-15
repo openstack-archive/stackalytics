@@ -3594,6 +3594,22 @@
             "emails": ["chinabjalex@gmail.com", "wujian@t2cloud.net"]
         },
         {
+            "launchpad_id": "chingsun",
+            "gerrit_id": "chingsun",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Jan-18"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ching Sun",
+            "emails": ["chingsun@gmail.com", "chingsun@hotmail.com", "ching.sun@huawei.com"]
+        },
+        {
             "launchpad_id": "chio-fai-sam-leong",
             "companies": [
                 {
