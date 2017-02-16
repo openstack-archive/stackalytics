@@ -26540,6 +26540,11 @@
             "uri": "https://github.com/kubernetes-incubator/cri-o.git"
         },
         {
+            "module": "cri-tools",
+            "organization": "kubernetes",
+            "uri": "https://github.com/kubernetes-incubator/cri-tools.git"
+        },
+        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
