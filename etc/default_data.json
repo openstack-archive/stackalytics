@@ -23021,6 +23021,17 @@
             "emails": ["xyzjerry@gmail.com", "jerryzhao@fortinet.com", "zhaoxinyu@huawei.com"]
         },
         {
+            "launchpad_id": "zhaoyi44",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yi Zhao",
+            "emails": ["zhaoyi@cmss.chinamobile.com", "zhaoyi44@hotmail.com"]
+        },
+        {
             "launchpad_id": "zhen-fang",
             "gerrit_id": "fangzhen",
             "companies": [
