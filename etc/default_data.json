@@ -14124,6 +14124,17 @@
             "emails": ["gaozhengwei1@letv.com", "multi_task@163.com"]
         },
         {
+            "launchpad_id": "munnangi2010",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Seetha Ramaiah Munnangi",
+            "emails": ["smunnangi@walmartlabs.com", "munnangi2010@gmail.com"]
+        },
+        {
             "launchpad_id": "muraliselva-10",
             "companies": [
                 {
