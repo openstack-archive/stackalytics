@@ -26667,6 +26667,16 @@
             "uri": "https://github.com/openshift/golang-ex.git"
         },
         {
+            "module": "openshift-ansible-contrib",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/openshift-ansible-contrib.git"
+        },
+        {
+            "module": "release@openshift",
+            "organization": "openshift",
+            "uri": "https://github.com/openshift/release.git"
+        },
+        {
             "module": "openshift.org",
             "organization": "openshift",
             "uri": "https://github.com/openshift/openshift.org.git"
