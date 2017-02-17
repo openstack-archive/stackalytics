@@ -237,3 +237,21 @@ class TestConfigFiles(testtools.TestCase):
             x_flag = stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH
             self.assertFalse(bool(st.st_mode & x_flag),
                              msg='File %s should not be executable' % f)
+
+    def _verify_users_one_open_interval(self, file_name):
+        users = self._read_file(file_name)['users']
+        for user in users:
+            ops = set([])
+            for c in user['companies']:
+                if not c['end_date']:
+                    ops.add(c['company_name'])
+
+            self.assertTrue(len(ops) <= 1,
+                            msg='More than 1 company is specified as current: '
+                                '%s. Please keep only one' % ', '.join(ops))
+
+    def test_default_data_users_one_open_interval(self):
+        self._verify_users_one_open_interval('etc/default_data.json')
+
+    def test_test_default_data_users_one_open_interval(self):
+        self._verify_users_one_open_interval('etc/test_default_data.json')
