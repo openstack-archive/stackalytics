@@ -279,6 +279,16 @@
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
             }
+        },
+        {
+            "release_name": "Pike",
+            "end_date": "2017-Aug-31",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
         }
     ],
 
