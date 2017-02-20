@@ -15925,6 +15925,22 @@
             "emails": ["ps4openstack@gmail.com", "pradeep.singh@nectechnologies.in"]
         },
         {
+            "launchpad_id": "pradeepkumar.ks",
+            "gerrit_id": "pradeepkumarks",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": "2017-Jan-31"
+                }
+            ],
+            "user_name": "pradeepkumarks",
+            "emails": ["pradeepkumar.ks@ericsson.com", "pk5294@att.com", "pradeep.sreenivas@gmail.com"]
+        },
+        {
             "launchpad_id": "prameswar",
             "gerrit_id": "prameswar",
             "companies": [
