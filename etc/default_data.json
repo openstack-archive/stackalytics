@@ -18649,6 +18649,17 @@
             "emails": ["jacek.tomasiak@gmail.com", "jtomasiak@suse.com"]
         },
         {
+            "launchpad_id": "skelso",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Scott Kelso",
+            "emails": ["sekelso@gmail.com", "skelso@lenovo.com"]
+        },
+        {
             "launchpad_id": "skhotta",
             "companies": [
                 {
