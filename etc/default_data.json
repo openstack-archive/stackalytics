@@ -16492,6 +16492,18 @@
             "emails": ["ramon@linux-labs.net", "racedo@redhat.com"]
         },
         {
+            "launchpad_id": "ranler",
+            "gerrit_id": "ranler",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ranler Cao",
+            "emails": ["caoran@fiberhome.com" , "ranlercao@gmail.com" ]
+        },
+        {
             "launchpad_id": "raphael-glon",
             "companies": [
                 {
