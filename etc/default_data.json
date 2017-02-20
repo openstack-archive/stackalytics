@@ -28173,13 +28173,23 @@
             "refs": {
                 "governance": {
                     "type": "big_tent",
-                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=sept-2016-elections"
                 }
             }
         },
         {
             "release_name": "Ocata",
             "end_date": "2017-Feb-23",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=jan-2017-elections"
+                }
+            }
+        },
+        {
+            "release_name": "Pike",
+            "end_date": "2017-Aug-31",
             "refs": {
                 "governance": {
                     "type": "big_tent",
