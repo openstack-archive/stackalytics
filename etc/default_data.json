@@ -22365,6 +22365,17 @@
             "emails": ["xianghui@cn.ibm.com", "hui.xiang@canonical.com"]
         },
         {
+            "launchpad_id": "xianghuizeng",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xianghui Zeng",
+            "emails": ["zeng.xianghui@zte.com.cn"]
+        },
+        {
            "launchpad_id": "xiaobo-2",
             "companies": [
                 {
