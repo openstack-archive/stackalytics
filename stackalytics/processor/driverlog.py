@@ -15,10 +15,7 @@
 
 import re
 
-from oslo_log import log as logging
 from stackalytics.processor import user_processor
-
-LOG = logging.getLogger(__name__)
 
 
 def _find_ci_result(review, drivers):

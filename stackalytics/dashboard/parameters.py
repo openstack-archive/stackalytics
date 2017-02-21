@@ -15,14 +15,10 @@
 
 import flask
 from oslo_config import cfg
-from oslo_log import log as logging
 from six.moves.urllib import parse
 import time
 
 from stackalytics.dashboard import vault
-
-
-LOG = logging.getLogger(__name__)
 
 
 DEFAULTS = {
