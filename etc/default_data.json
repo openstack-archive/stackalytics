@@ -23765,6 +23765,17 @@
             "emails": ["zhoujm_cri@hotmail.com", "jm_zhou@126.com", "zhoujianming@h3c.com"]
         },
         {
+            "launchpad_id": "zhoumo",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhoumo",
+            "emails": ["zhoumo@fiberhome.com"]
+        },
+        {
             "launchpad_id": "zhouwei-wh",
             "companies": [
                 {
