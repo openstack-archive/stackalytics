@@ -12164,6 +12164,17 @@
             "emails": ["lindycoder@gmail.com", "mroy@iweb.com", "martin.roy@internap.com"]
         },
         {
+            "launchpad_id": "lingandhui2",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lyxu",
+            "emails": ["lyxu@fiberhome.com"]
+        },
+        {
             "launchpad_id": "linlin",
             "gerrit_id": "linlin",
             "zanata_id": "linlin",
