@@ -2607,6 +2607,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Feb-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
