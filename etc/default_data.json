@@ -1421,6 +1421,18 @@
             "emails": ["andrea.rosa@hp.com", "andrea.rosa@hpe.com"]
         },
         {
+            "launchpad_id": "andrew-lhj",
+            "gerrit_id": "andrewliu",
+            "companies": [
+                {
+                    "company_name": "NAVER",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Andrew Liu",
+            "emails": ["andrew.lhj@gmail.com"]
+        },
+        {
             "launchpad_id": "andrew-mccrae",
             "companies": [
                 {
