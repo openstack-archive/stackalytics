@@ -24,6 +24,9 @@ CONNECTION_OPTS = [
 ]
 
 PROCESSOR_OPTS = [
+    cfg.StrOpt('default-data-file',
+               help='Default data file. This file is used instead of '
+                    'default-data-uri if specifying.'),
     cfg.StrOpt('default-data-uri',
                default='https://git.openstack.org/cgit/'
                        'openstack/stackalytics/plain/etc/default_data.json',
