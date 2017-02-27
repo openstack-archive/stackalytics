@@ -13789,11 +13789,15 @@
                 },
                 {
                     "company_name": "Samsung",
+                    "end_date": "2017-Jan-04"
+                },
+                {
+                    "company_name": "Nokia",
                     "end_date": null
                 }
             ],
             "user_name": "Mike Fedosin",
-            "emails": ["mfedosin@gmail.com", "mfedosin@mirantis.com"]
+            "emails": ["mfedosin@gmail.com", "mikhail.fedosin.ext@nokia.com", "mfedosin@mirantis.com"]
         },
         {
             "launchpad_id": "mfeoktistov",
