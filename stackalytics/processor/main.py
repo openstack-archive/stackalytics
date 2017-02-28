@@ -111,7 +111,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     vcs_inst.fetch()
 
     branches = {repo.get('default_branch', 'master')}
-    for release in repo.get('releases'):
+    for release in repo.get('releases', []):
         if 'branch' in release:
             branches.add(release['branch'])
 
