@@ -16974,6 +16974,22 @@
             "emails": ["rick.chen@prophetstor.com"]
         },
         {
+            "launchpad_id": "rico-lin",
+            "gerrit_id": "rico.lin",
+            "companies": [
+                {
+                    "company_name": "inwinSTACK",
+                    "end_date": "2017-Feb-24"
+                },
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rico Lin",
+            "emails": ["rico.lin@easystack.cn", "rico.lin.guanyu@gmail.com"]
+        },
+        {
             "launchpad_id": "ridhi-j-shah",
             "companies": [
                 {
