@@ -9926,6 +9926,18 @@
             "emails": ["liangliang.luo@easystack.cn", "jexbow@foxmail.com"]
         },
         {
+            "launchpad_id": "jfreud",
+            "gerrit_id": "jeremyfreudberg",
+            "companies": [
+                {
+                    "company_name": "Boston University",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeremy Freudberg",
+            "emails": ["jeremyfreudberg@gmail.com", "jfreud@bu.edu"]
+        },
+        {
             "launchpad_id": "jgravel",
             "companies": [
                 {
