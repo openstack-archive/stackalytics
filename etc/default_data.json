@@ -1900,6 +1900,22 @@
            "emails": [ "aqsa.fatima2011@gmail.com"]
         },
         {
+            "launchpad_id": "aqsamm",
+            "gerrit_id": "Aqsa",
+            "companies": [
+                {
+                    "company_name": "NUST",
+                    "end_date": "2016-Aug-31"
+                },
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aqsa Malik",
+            "emails": ["aqsamm@gmail.com", "aqsa.malik@neclab.eu"]
+        },
+        {
             "launchpad_id": "aradhana1-singh",
             "gerrit_id": "asingh",
             "companies": [
@@ -25260,6 +25276,10 @@
         {
             "domains": ["numergy.com", "numergy.fr"],
             "company_name": "Numergy"
+        },
+        {
+            "domains": ["nust.edu.pk"],
+            "company_name": "NUST"
         },
         {
             "domains": ["objectif-libre.com"],
