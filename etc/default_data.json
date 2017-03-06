@@ -9047,6 +9047,17 @@
             "emails": ["naveedm9@gmail.com", "naveed.massjouni@rackspace.com"]
         },
         {
+            "launchpad_id": "isantosp",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Iago Santos",
+            "emails": ["iagosantospardo@gmail.com", "iago.santos.pardo@cern.ch"]
+        },
+        {
             "launchpad_id": "ishant-tyagi",
             "companies": [
                 {
