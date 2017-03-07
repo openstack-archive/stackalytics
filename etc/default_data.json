@@ -5132,10 +5132,14 @@
             "companies": [
                 {
                     "company_name": "Google",
+                    "end_date": "2015-Jul-25"
+                },
+                {
+                    "company_name": "Caicloud",
                     "end_date": null
                 }
             ],
-            "emails": ["deyuan.eng@gmail.com"]
+            "emails": ["deyuan.deng@gmail.com", "deyuan@caicloud.io"]
         },
         {
             "launchpad_id": "debo",
@@ -8149,6 +8153,17 @@
             "emails": ["harlowja@gmail.com", "jxharlow@godaddy.com", "harlowja@yahoo-inc.com", "harlowja@outlook.com", "harlowja@fastmail.com"]
         },
         {
+            "github_id": "harryge00",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Haoyuan Ge",
+            "emails": ["haoyuan.ge@caicloud.io"]
+        },
+        {
             "launchpad_id": "harsh-mishra",
             "companies": [
                  {
@@ -8889,6 +8904,17 @@
             "emails": ["igor.milovanovic@ammeon.com"]
         },
         {
+            "github_id": "ijumps",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhaole Yang",
+            "emails": ["bigerjump@gmail.com", "zhaole@caicloud.io"]
+        },
+        {
             "launchpad_id": "ikhudoshyn",
             "github_id": "gluke77",
             "companies": [
@@ -8900,7 +8926,6 @@
             "user_name": "Illia Khudoshyn",
             "emails": ["ikhudoshyn@mirantis.com", "gluke77@ya.ru"]
         },
-
         {
             "launchpad_id": "ikutukov",
             "gerrit_id": "ikutukov",
@@ -11376,6 +11401,17 @@
             ],
             "user_name": "Kenneth Reitz",
             "emails": ["me@kennethreitz.org"]
+        },
+        {
+            "github_id": "keontang",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiyuan Tang",
+            "emails": ["ikeontang@gmail.com", "tangjiyuan@caicloud.io"]
         },
         {
             "launchpad_id": "kevin-zhao",
@@ -14459,11 +14495,15 @@
             "companies": [
                 {
                     "company_name": "NetEase",
+                    "end_date": "2015-Oct-30"
+                },
+                {
+                    "company_name": "Caicloud",
                     "end_date": null
                 }
             ],
             "user_name": "Liang Mingqiang",
-            "emails": ["mqliang.zju@gmail.com", "hzliangmingqiang@corp.netease.com"]
+            "emails": ["mqliang.zju@gmail.com", "hzliangmingqiang@corp.netease.com", "mqliang@caicloud.io"]
         },
         {
             "launchpad_id": "mr-rods",
@@ -15815,6 +15855,17 @@
             ],
             "user_name": "Raymond Pekowski",
             "emails": ["raymond_pekowski@dell.com", "pekowski@gmail.com"]
+        },
+        {
+            "github_id": "pendoragon",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pengcheng Tang",
+            "emails": ["tupachydralisk@gmail.com", "pctang@caicloud.io"]
         },
         {
             "launchpad_id": "pengwenwu2008",
@@ -24511,6 +24562,10 @@
         {
             "domains": ["cable.comcast.com"],
             "company_name": "Comcast"
+        },
+        {
+            "domains": ["caicloud.io"],
+            "company_name": "Caicloud"
         },
         {
             "domains": ["calsoftinc.com"],
