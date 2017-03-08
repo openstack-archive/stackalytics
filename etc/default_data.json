@@ -24030,6 +24030,18 @@
             "emails": ["zinoviev.ii@gmail.com"]
         },
         {
+            "launchpad_id": "zongzhewang",
+            "gerrit_id": "zongzhewang",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zongzhewang",
+            "emails": ["649826038@qq.com"]
+        },
+        {
             "launchpad_id": "zoukeke",
             "gerrit_id": "zoukeke",
             "companies": [
