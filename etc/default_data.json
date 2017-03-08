@@ -1967,7 +1967,7 @@
             "emails": ["arifali1@gmail.com", "mail@arif-ali.co.uk", "aali@ocf.co.uk"]
         },
         {
-            "launchpad_id": "arkady",
+            "launchpad_id": "arkady-kanevsky",
             "gerrit_id": "arkady",
             "companies": [
                 {
@@ -1980,7 +1980,7 @@
                 }
             ],
             "user_name": "Arkady Kanevsky",
-            "emails": ["arkady.kanevsky@dell.com"]
+            "emails": ["arkady.kanevsky@dell.com", "arkady_kanevsky@dell.com"]
         },
         {
             "launchpad_id": "armando-migliaccio",
