@@ -7712,11 +7712,17 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-17"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
+
+
             ],
             "user_name": "Graham Hayes",
-            "emails": ["graham@hayes.ie", "graham.hayes@hp.com", "graham@managedit.ie", "graham.hayes@hpe.com"]
+            "emails": ["graham@hayes.ie", "graham.hayes@hp.com", "graham@managedit.ie", "graham.hayes@hpe.com", "graham.hayes@suse.com", "ghayes@suse.com", "gr@ham.ie"]
         },
         {
             "launchpad_id": "gregfaust",
