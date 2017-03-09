@@ -8361,6 +8361,17 @@
             "emails": ["henar.munozfrutos@telefonica.com"]
         },
         {
+            "launchpad_id": "hnyang",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yanghuanan",
+            "emails": ["hnyang@fiberhome.com", "yhn2nl.2008@163.com"]
+        },
+        {
             "launchpad_id": "hodosmb",
             "companies": [
                 {
