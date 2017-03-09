@@ -22660,6 +22660,18 @@
             "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "xiaohonghui@huawei.com"]
         },
         {
+            "launchpad_id": "xiaoran.li",
+            "gerrit_id": "xiaoran.li",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xiaoran.li",
+            "emails": ["15901119122@163.com"]
+        },
+        {
             "launchpad_id": "xing-yang",
             "gerrit_id": "xing-yang",
             "companies": [
