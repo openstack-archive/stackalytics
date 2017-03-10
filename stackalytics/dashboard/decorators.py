@@ -122,14 +122,15 @@ def record_filter(ignore=None):
         def _filter_records_by_days(start_date, end_date, memory_storage_inst):
             if start_date:
                 start_date = utils.date_to_timestamp_ext(start_date[0])
+                start_day = utils.timestamp_to_day(start_date)
             else:
-                start_date = memory_storage_inst.get_first_record_day()
+                start_day = memory_storage_inst.get_first_record_day()
+
             if end_date:
                 end_date = utils.date_to_timestamp_ext(end_date[0])
             else:
                 end_date = utils.date_to_timestamp_ext('now')
 
-            start_day = utils.timestamp_to_day(start_date)
             end_day = utils.timestamp_to_day(end_date)
 
             return memory_storage_inst.get_record_ids_by_days(
