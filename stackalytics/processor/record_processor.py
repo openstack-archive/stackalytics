@@ -654,7 +654,8 @@ class RecordProcessor(object):
         LOG.info('Update records with releases')
 
         def record_handler(record):
-            if record['primary_key'] in release_index:
+            if (record['record_type'] == 'commit'
+                    and record['primary_key'] in release_index):
                 release = release_index[record['primary_key']]
             else:
                 release = self._get_release(record['date'])
