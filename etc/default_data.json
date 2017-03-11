@@ -14492,6 +14492,10 @@
             "companies": [
                 {
                     "company_name": "IBM",
+                    "end_date": "2017-Mar-10"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
