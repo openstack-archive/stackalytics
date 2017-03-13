@@ -3614,17 +3614,6 @@
             "emails": ["chendy_0598@163.com", "chendy@certusnet.com.cn"]
         },
         {
-            "launchpad_id": "cheng",
-            "companies": [
-                {
-                    "company_name": "Eayun",
-                    "end_date": null
-                }
-            ],
-            "user_name": "tangch318",
-            "emails": ["tangch318@gmail.com"]
-        },
-        {
             "github_id": "chengweiv5",
             "companies": [
                 {
@@ -20474,6 +20463,17 @@
                 "tan.lin.good@gmail.com",
                 "lin.tan@intel.com"
             ]
+        },
+        {
+            "launchpad_id": "tangch318",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "tangch318",
+            "emails": ["tangch318@gmail.com"]
         },
         {
             "launchpad_id": "tangchen",
