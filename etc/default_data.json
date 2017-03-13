@@ -24172,6 +24172,17 @@
             "emails": ["zhu.xuanlong@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhuangzejian",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "smartu3",
+            "emails": ["zzj123389602@gmail.com"]
+        },
+        {
             "launchpad_id": "zhubingbing",
             "gerrit_id": "zhubingbing",
             "companies": [
