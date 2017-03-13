@@ -36,6 +36,7 @@ from stackalytics.processor import utils
 from stackalytics.processor import vcs
 from stackalytics.processor import zanata
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
@@ -107,7 +108,7 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     runtime_storage_inst.set_by_key(
         'bug_modified_since-%s' % repo['module'], current_date)
 
-    vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
+    vcs_inst = vcs.get_vcs(repo, CONF.sources_root)
     vcs_inst.fetch()
 
     branches = {repo.get('default_branch', 'master')}
@@ -186,7 +187,7 @@ def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
 
 def _process_translation_stats(runtime_storage_inst, record_processor_inst):
     translation_iterator = zanata.log(runtime_storage_inst,
-                                      cfg.CONF.translation_team_uri)
+                                      CONF.translation_team_uri)
     translation_iterator_typed = _record_typer(translation_iterator, 'i18n')
     processed_translation_iterator = record_processor_inst.process(
         translation_iterator_typed)
@@ -195,8 +196,8 @@ def _process_translation_stats(runtime_storage_inst, record_processor_inst):
 
 def _process_member_list(uri, runtime_storage_inst, record_processor_inst):
     member_iterator = mps.log(uri, runtime_storage_inst,
-                              cfg.CONF.days_to_update_members,
-                              cfg.CONF.members_look_ahead)
+                              CONF.days_to_update_members,
+                              CONF.members_look_ahead)
     member_iterator_typed = _record_typer(member_iterator, 'member')
     processed_member_iterator = record_processor_inst.process(
         member_iterator_typed)
@@ -214,7 +215,7 @@ def _post_process_records(record_processor_inst, repos):
     LOG.debug('Build release index')
     release_index = {}
     for repo in repos:
-        vcs_inst = vcs.get_vcs(repo, cfg.CONF.sources_root)
+        vcs_inst = vcs.get_vcs(repo, CONF.sources_root)
         release_index.update(vcs_inst.fetch())
 
     LOG.debug('Post-process all records')
@@ -224,10 +225,10 @@ def _post_process_records(record_processor_inst, repos):
 def process(runtime_storage_inst, record_processor_inst):
     repos = utils.load_repos(runtime_storage_inst)
 
-    rcs_inst = rcs.get_rcs(cfg.CONF.review_uri)
-    rcs_inst.setup(key_filename=cfg.CONF.ssh_key_filename,
-                   username=cfg.CONF.ssh_username,
-                   gerrit_retry=cfg.CONF.gerrit_retry)
+    rcs_inst = rcs.get_rcs(CONF.review_uri)
+    rcs_inst.setup(key_filename=CONF.ssh_key_filename,
+                   username=CONF.ssh_username,
+                   gerrit_retry=CONF.gerrit_retry)
 
     for repo in repos:
         _process_repo(repo, runtime_storage_inst, record_processor_inst,
@@ -310,19 +311,19 @@ def main():
                                   config.PROCESSOR_OPTS)
 
     runtime_storage_inst = runtime_storage.get_runtime_storage(
-        cfg.CONF.runtime_storage_uri)
+        CONF.runtime_storage_uri)
 
-    if cfg.CONF.default_data_file:
-        default_data = utils.read_json_from_file(cfg.CONF.default_data_file)
+    if CONF.default_data_file:
+        default_data = utils.read_json_from_file(CONF.default_data_file)
     else:
-        default_data = utils.read_json_from_uri(cfg.CONF.default_data_uri)
+        default_data = utils.read_json_from_uri(CONF.default_data_uri)
     if not default_data:
         LOG.critical('Unable to load default data')
         return not 0
 
     default_data_processor.process(runtime_storage_inst,
                                    default_data,
-                                   cfg.CONF.driverlog_data_uri)
+                                   CONF.driverlog_data_uri)
 
     process_project_list(runtime_storage_inst)
 
@@ -333,7 +334,7 @@ def main():
 
     process(runtime_storage_inst, record_processor_inst)
 
-    apply_corrections(cfg.CONF.corrections_uri, runtime_storage_inst)
+    apply_corrections(CONF.corrections_uri, runtime_storage_inst)
 
     # long operation should be the last
     update_members(runtime_storage_inst, record_processor_inst)

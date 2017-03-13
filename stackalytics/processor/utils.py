@@ -31,21 +31,21 @@ import six
 import yaml
 
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
 def init_config_and_logging(opts):
-    conf = cfg.CONF
-    conf.register_cli_opts(opts)
-    conf.register_opts(opts)
-    logging.register_options(conf)
+    CONF.register_cli_opts(opts)
+    CONF.register_opts(opts)
+    logging.register_options(CONF)
     logging.set_defaults()
 
-    conf(project='stackalytics')
+    CONF(project='stackalytics')
 
-    logging.setup(conf, 'stackalytics')
+    logging.setup(CONF, 'stackalytics')
     LOG.info('Logging enabled')
-    conf.log_opt_values(LOG, logging.DEBUG)
+    CONF.log_opt_values(LOG, logging.DEBUG)
 
 
 def date_to_timestamp(d):

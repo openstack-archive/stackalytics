@@ -28,6 +28,7 @@ from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
@@ -79,7 +80,7 @@ def get_vault():
         try:
             vault = {}
             runtime_storage_inst = runtime_storage.get_runtime_storage(
-                cfg.CONF.runtime_storage_uri)
+                CONF.runtime_storage_uri)
             vault['runtime_storage'] = runtime_storage_inst
             vault['memory_storage'] = memory_storage.get_memory_storage(
                 memory_storage.MEMORY_STORAGE_CACHED)
@@ -97,7 +98,7 @@ def get_vault():
             flask.request.stackalytics_updated = True
             vault['vault_update_time'] = time_now
             vault['vault_next_update_time'] = (
-                time_now + cfg.CONF.dashboard_update_interval)
+                time_now + CONF.dashboard_update_interval)
             memory_storage_inst = vault['memory_storage']
             have_updates = memory_storage_inst.update(compact_records(
                 vault['runtime_storage'].get_update(os.getpid())))

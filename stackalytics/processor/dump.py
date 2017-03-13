@@ -26,6 +26,7 @@ from stackalytics.processor import config
 from stackalytics.processor import utils
 
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 OPTS = [
@@ -61,7 +62,7 @@ def read_records_from_fd(fd):
 def store_bucket(memcached_inst, bucket):
     LOG.debug('Store bucket of records into memcached')
     res = memcached_inst.set_multi(bucket,
-                                   min_compress_len=cfg.CONF.min_compress_len)
+                                   min_compress_len=CONF.min_compress_len)
     if res:
         LOG.critical('Failed to set values in memcached: %s', res)
         raise Exception('memcached set_multi operation is failed')
@@ -158,11 +159,11 @@ def _connect_to_memcached(uri):
 def main():
     utils.init_config_and_logging(config.CONNECTION_OPTS + OPTS)
 
-    memcached_inst = _connect_to_memcached(cfg.CONF.runtime_storage_uri)
+    memcached_inst = _connect_to_memcached(CONF.runtime_storage_uri)
 
-    filename = cfg.CONF.file
+    filename = CONF.file
 
-    if cfg.CONF.restore:
+    if CONF.restore:
         if filename:
             fd = open(filename, 'r')
         else:
