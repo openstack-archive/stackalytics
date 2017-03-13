@@ -18399,6 +18399,17 @@
             "emails": ["satya.patibandla@tcs.com", "satya.patibandla@gmail.com", "satya.patibandla@imaginea.com"]
         },
         {
+            "launchpad_id": "satya1304",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Satyajeet Shahane",
+            "emails": ["satyajeet.shahane@intel.com"]
+        },
+        {
             "launchpad_id": "sauloaislan",
             "gerrit_id": "SauloAislan",
             "companies": [
