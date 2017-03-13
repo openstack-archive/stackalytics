@@ -23062,6 +23062,18 @@
             "emails": ["yikunkero@gmail.com"]
         },
         {
+            "launchpad_id": "yixiaolong",
+            "gerrit_id": "yixiaolong",
+            "companies": [
+                {
+                    "company_name": "SG.Cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yixiaolong",
+            "emails": ["yixiaolong@sgitg.sgcc.com.cn", "yixiaolong_2011@163.com"]
+        },
+        {
             "launchpad_id": "yizhihui",
             "companies": [
                 {
