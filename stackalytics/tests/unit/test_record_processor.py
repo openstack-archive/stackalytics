@@ -16,14 +16,18 @@
 import time
 
 import mock
+from oslo_config import cfg
 import six
 import testtools
 
+from stackalytics.processor import config
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
+
+CONF = cfg.CONF
 
 RELEASES = [
     {
@@ -67,6 +71,7 @@ class TestRecordProcessor(testtools.TestCase):
         self.lp_profile_by_email = (
             self.lp_profile_by_email_patch.start())
         self.lp_profile_by_email.return_value = None
+        CONF.register_opts(config.CONNECTION_OPTS + config.PROCESSOR_OPTS)
 
     def tearDown(self):
         super(TestRecordProcessor, self).tearDown()
