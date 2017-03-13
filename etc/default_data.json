@@ -8839,11 +8839,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Masayuki Igawa",
-            "emails": ["masayuki.igawa@gmail.com", "igawa@mxs.nes.nec.co.jp", "mas-igawa@ut.jp.nec.com", "masayuki.igawa@hpe.com", "masayuki@igawa.me"]
+            "emails": ["masayuki.igawa@gmail.com", "igawa@mxs.nes.nec.co.jp", "mas-igawa@ut.jp.nec.com", "masayuki.igawa@hpe.com", "masayuki@igawa.me", "masayuki@igawa.io", "masayuki.igawa@suse.com"]
         },
         {
             "launchpad_id": "igor-ataide",
