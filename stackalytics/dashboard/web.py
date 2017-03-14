@@ -42,8 +42,8 @@ app.register_blueprint(kpi.blueprint)
 
 LOG = logging.getLogger(__name__)
 
-conf = cfg.CONF
-conf.register_opts(config.CONNECTION_OPTS + config.DASHBOARD_OPTS)
+CONF = cfg.CONF
+CONF.register_opts(config.CONNECTION_OPTS + config.DASHBOARD_OPTS)
 
 
 # Handlers ---------
@@ -680,20 +680,20 @@ def too_old(timestamp):
 
 
 def main():
-    logging.register_options(conf)
+    logging.register_options(CONF)
     logging.set_defaults()
 
     conf_file = os.getenv('STACKALYTICS_CONF')
     if conf_file and os.path.isfile(conf_file):
-        conf(default_config_files=[conf_file])
-        app.config['DEBUG'] = cfg.CONF.debug
+        CONF(default_config_files=[conf_file])
+        app.config['DEBUG'] = CONF.debug
         LOG.info('Stackalytics.dashboard is configured via "%s"', conf_file)
     else:
-        conf(project='stackalytics')
+        CONF(project='stackalytics')
 
-    logging.setup(conf, 'stackalytics.dashboard')
+    logging.setup(CONF, 'stackalytics.dashboard')
 
-    app.run(cfg.CONF.listen_host, cfg.CONF.listen_port)
+    app.run(CONF.listen_host, CONF.listen_port)
 
 if __name__ == '__main__':
     main()

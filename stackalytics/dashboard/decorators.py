@@ -32,6 +32,7 @@ from stackalytics.processor import utils
 from stackalytics import version as stackalytics_version
 
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
@@ -498,7 +499,7 @@ def profiler_decorator(func):
     @functools.wraps(func)
     def profiler_decorated_function(*args, **kwargs):
         profiler = None
-        profile_filename = cfg.CONF.collect_profiler_stats
+        profile_filename = CONF.collect_profiler_stats
 
         if profile_filename:
             LOG.debug('Profiler is enabled')

@@ -21,6 +21,8 @@ import time
 from stackalytics.dashboard import vault
 
 
+CONF = cfg.CONF
+
 DEFAULTS = {
     'review_nth': 5,
 }
@@ -66,7 +68,7 @@ DEFAULT_STATIC_ACTIVITY_SIZE = 100
 
 def get_default(param_name):
     if 'release' not in DEFAULTS:
-        release = cfg.CONF.default_release
+        release = CONF.default_release
         if not release:
             runtime_storage_inst = vault.get_runtime_storage()
             releases = runtime_storage_inst.get_by_key('releases')
@@ -80,8 +82,8 @@ def get_default(param_name):
             else:
                 release = 'all'
         DEFAULTS['release'] = release.lower()
-        DEFAULTS['metric'] = cfg.CONF.default_metric.lower()
-        DEFAULTS['project_type'] = cfg.CONF.default_project_type.lower()
+        DEFAULTS['metric'] = CONF.default_metric.lower()
+        DEFAULTS['project_type'] = CONF.default_project_type.lower()
 
     if param_name in DEFAULTS:
         return DEFAULTS[param_name]

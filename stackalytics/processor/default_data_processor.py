@@ -28,6 +28,7 @@ from stackalytics.processor import rcs
 from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 GITHUB_URI_PREFIX = r'^github:\/\/'
@@ -50,7 +51,7 @@ def _check_default_data_change(runtime_storage_inst, default_data):
 
 def _retrieve_project_list_from_sources(project_sources):
     for project_source in project_sources:
-        uri = project_source.get('uri') or cfg.CONF.review_uri
+        uri = project_source.get('uri') or CONF.review_uri
         repo_iterator = []
         if re.search(rcs.GERRIT_URI_PREFIX, uri):
             repo_iterator = _retrieve_project_list_from_gerrit(project_source)
@@ -66,11 +67,11 @@ def _retrieve_project_list_from_sources(project_sources):
 def _retrieve_project_list_from_gerrit(project_source):
     LOG.info('Retrieving project list from Gerrit')
     try:
-        uri = project_source.get('uri') or cfg.CONF.review_uri
+        uri = project_source.get('uri') or CONF.review_uri
         gerrit_inst = rcs.Gerrit(uri)
         key_filename = (project_source.get('ssh_key_filename') or
-                        cfg.CONF.ssh_key_filename)
-        username = project_source.get('ssh_username') or cfg.CONF.ssh_username
+                        CONF.ssh_key_filename)
+        username = project_source.get('ssh_username') or CONF.ssh_username
         gerrit_inst.setup(key_filename=key_filename, username=username)
 
         project_list = gerrit_inst.get_project_list()
@@ -83,7 +84,7 @@ def _retrieve_project_list_from_gerrit(project_source):
     LOG.debug('Get list of projects for organization %s', organization)
     git_repos = [f for f in project_list if f.startswith(organization + "/")]
 
-    git_base_uri = project_source.get('git_base_uri') or cfg.CONF.git_base_uri
+    git_base_uri = project_source.get('git_base_uri') or CONF.git_base_uri
 
     for repo in git_repos:
         (org, name) = repo.split('/')
