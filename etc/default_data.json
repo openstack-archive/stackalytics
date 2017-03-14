@@ -11898,6 +11898,23 @@
             "emails": ["kylin7.sg@gmail.com"]
         },
         {
+            "launchpad_id": "kzaitsev",
+            "gerrit_id": "kzaitsev",
+            "companies": [
+
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Mar-13"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kirill Zaitsev",
+            "emails": ["k.zaitsev@me.com"]
+        },
+        {
             "launchpad_id": "kzqdnsw4i20a5pz-peter",
             "companies": [
                 {
