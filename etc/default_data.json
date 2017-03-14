@@ -22284,15 +22284,16 @@
             "emails": ["wanlong.gao@gmail.com", "wanlong.gao@easystack.cn"]
         },
         {
-            "launchpad_id": "waynechan76",
+            "launchpad_id": "wayne.chan",
+            "gerrit_id": "wayne.chan",
             "companies": [
                 {
                     "company_name": "Fiberhome",
                     "end_date": null
                 }
             ],
-            "user_name": "WayneChan",
-            "emails": ["chenlx@fiberhome.com", "waynechan76@gmail.com"]
+            "user_name": "Wayne Chan",
+            "emails": ["waynechan76@gmail.com", "chenlx@fiberhome.com"]
         },
         {
             "launchpad_id": "wchrisjohnson",
