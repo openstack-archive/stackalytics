@@ -11562,6 +11562,18 @@
             "emails": ["kimura.tatsuro@lab.ntt.co.jp", "ktatsuro1024@gmail.com"]
         },
         {
+            "launchpad_id": "kiseok7",
+            "gerrit_id": "Kiseok",
+            "companies": [
+                {
+                    "company_name": "Netmarble",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kiseok Kim",
+            "emails": ["kskim@netmarble.com", "kiseok7@gmail.com"]
+        },
+        {
             "launchpad_id": "kiwik-chenrui",
             "companies": [
                 {
@@ -25473,6 +25485,10 @@
         {
             "domains": ["netease.com"],
             "company_name": "NetEase"
+        },
+        {
+            "domains": ["netmarble.com"],
+            "company_name": "Netmarble"
         },
         {
             "domains": ["netone.co.jp"],
