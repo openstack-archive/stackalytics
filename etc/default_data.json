@@ -2696,6 +2696,27 @@
             "emails": ["blp@nicira.com", "blp@ovn.org"]
         },
         {
+            "launchpad_id": "bluejay-ahn",
+            "gerrit_id": "blujeay.kr",
+            "github_id": "bluejayKR",
+            "companies": [
+                {
+                    "company_name": "KT Corporation",
+                    "end_date": "2014-Feb-28"
+                },
+                {
+                    "company_name": "OpenStack Korea User Group",
+                    "end_date": "2016-Dec-31"
+                },
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaesuk Ahn",
+            "emails": ["jay.ahn@sk.com", "bluejay.ahn@gmail.com"]
+        },
+        {
             "launchpad_id": "bmathews-l",
             "companies": [
                 {
