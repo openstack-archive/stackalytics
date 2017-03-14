@@ -194,7 +194,7 @@
         var options = {};
         options['release'] = 'all';
         options['metric'] = 'members';
-        options['project_type'] = 'all';
+        options['project_type'] = '{{ project_type }}';
 
         options['company'] = $('#company_selector').val();
         options['days'] = $('#days_selector').val();
@@ -211,7 +211,7 @@
     function show_page() {
 
         var start_date = get_start_date();
-        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+        var base_options = { metric: 'members', project_type: '{{ project_type }}', release: 'all', start_date: start_date };
         renderTimeline(base_options);
 
         show_engineers_table(base_options);
@@ -230,7 +230,7 @@
     $(document).ready(function () {
 
         var start_date = get_start_date();
-        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+        var base_options = { metric: 'members', project_type: '{{ project_type }}', release: 'all', start_date: start_date };
 
         initSingleSelector("company", makeURI("/api/1.0/companies", base_options), {allowClear: true});
 
