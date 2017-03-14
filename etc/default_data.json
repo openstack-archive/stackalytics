@@ -26348,9 +26348,15 @@
                     "tag_from": "8.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/ocata",
                     "tag_to": "HEAD",
                     "release_name": "Ocata",
                     "tag_from": "9.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Pike",
+                    "tag_from": "10.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/cinder.git",
@@ -27760,9 +27766,15 @@
                     "tag_from": "2.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/ocata",
                     "tag_to": "HEAD",
                     "release_name": "Ocata",
                     "tag_from": "3.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Pike",
+                    "tag_from": "4.0.0.0rc1"
                 }
             ]
         },
