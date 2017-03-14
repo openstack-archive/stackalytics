@@ -11121,6 +11121,17 @@
             "emails": ["k3vinmcdonald@gmail.com"]
         },
         {
+            "launchpad_id": "kaifeng",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "KaiFeng Wang",
+            "emails": ["kaifeng.w@gmail.com", "wang.kaifeng2@zte.com.cn"]
+        },
+        {
             "launchpad_id": "kaiyan-sheng",
             "gerrit_id": "kaiyan-sheng",
             "companies": [
