@@ -18776,14 +18776,25 @@
         },
         {
             "launchpad_id": "seungkyua",
+            "gerrit_id": "seungkyu",
+            "zanata_id": "seungkyu",
+            "github_id": "seungkyua",
             "companies": [
                 {
+                    "company_name": "Samsung SDS",
+                    "end_date": "2015-Feb-28"
+                },
+                {
                     "company_name": "OpenStack Korea User Group",
+                    "end_date": "2016-Dec-31"
+                },
+                {
+                    "company_name": "SK telecom",
                     "end_date": null
                 }
             ],
             "user_name": "Seungkyu Ahn",
-            "emails": ["seungkyua@gmail.com"]
+            "emails": ["ahnsk@sk.com", "seungkyua@gmail.com"]
         },
         {
             "launchpad_id": "shakhova-margarita",
@@ -25797,6 +25808,11 @@
         {
             "domains": ["siu.edu"],
             "company_name": "Southern Illinois University"
+        },
+        {
+            "domains": ["sktelecom.com"],
+            "company_name": "SK telecom",
+            "aliases": ["SKT", "SKTelecom"]
         },
         {
             "domains": ["snabb.co"],
