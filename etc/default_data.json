@@ -23975,6 +23975,17 @@
             "emails": ["zhaorenming@inspur.com"]
         },
         {
+            "launchpad_id": "zhaowei7146",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "weizhao",
+            "emails": ["zhaowei7146@fiberhome.com", "juwei006@163.com"]
+        },
+        {
             "launchpad_id": "zhaoxinyu",
             "companies": [
                 {
