@@ -4959,6 +4959,10 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2017-Feb-24"
+                },
+                {
+                    "company_name": "CollabNet, Inc",
                     "end_date": null
                 }
             ],
