@@ -26275,9 +26275,15 @@
                     "tag_from": "13.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/ocata",
                     "tag_to": "HEAD",
                     "release_name": "Ocata",
                     "tag_from": "14.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Pike",
+                    "tag_from": "15.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/nova.git",
