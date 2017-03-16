@@ -125,7 +125,7 @@ def _session_request(session, uri, method):
 
     headers = {'User-Agent': user_agent, 'Accept': 'application/json'}
     return session.request(method, uri, headers=headers,
-                           timeout=cfg.CONF.read_timeout)
+                           timeout=CONF.read_timeout)
 
 
 def do_request(uri, method='get', session=None):

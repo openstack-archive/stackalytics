@@ -674,7 +674,7 @@ def timeline(records, **kwargs):
 
 @app.template_test()
 def too_old(timestamp):
-    age = cfg.CONF.age_warn
+    age = CONF.age_warn
     now = time.time()
     return timestamp + age < now
 
