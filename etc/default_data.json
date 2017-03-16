@@ -7282,6 +7282,18 @@
             "emails": ["gaoqian1983@outlook.com"]
         },
         {
+            "launchpad_id": "gaozx",
+            "gerrit_id": "gaozx",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gao Zexu",
+            "emails": ["zxgao@fiberhome.com"]
+        },
+        {
             "launchpad_id": "gary-w-smith",
             "companies": [
                 {
