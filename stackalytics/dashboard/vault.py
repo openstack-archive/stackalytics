@@ -129,7 +129,7 @@ def get_runtime_storage():
 def _init_releases(vault):
     runtime_storage_inst = vault['runtime_storage']
     releases = runtime_storage_inst.get_by_key('releases')
-    releases_map = {}
+    releases_map = collections.OrderedDict()
 
     if releases:
         first_day = vault['memory_storage'].get_first_record_day()
@@ -187,15 +187,6 @@ def _init_user_index(vault):
 
 def get_project_types():
     return get_vault()['project_types']
-
-
-def get_release_options():
-    runtime_storage_inst = get_runtime_storage()
-    releases = runtime_storage_inst.get_by_key('releases') or []
-    releases = [r for r in releases if r['release_name'] != 'prehistory']
-    releases.append({'release_name': 'all'})
-    releases.reverse()
-    return releases
 
 
 def is_project_type_valid(project_type):
