@@ -24856,6 +24856,10 @@
             "company_name": "Coho Data"
         },
         {
+            "domains": ["collab.net"],
+            "company_name": "CollabNet, Inc"
+        },
+        {
             "domains": ["colt.net"],
             "company_name": "Colt",
             "aliases": ["Colt Technology Services", "KVH", "KVH Co., Ltd."]
