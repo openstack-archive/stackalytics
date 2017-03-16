@@ -167,8 +167,8 @@ def external_ci(module, days):
 @decorators.templated()
 def members():
     days = int(flask.request.args.get('days') or DEFAULT_DAYS_COUNT)
-    all_days = int(time.time() - utils.date_to_timestamp_ext(
-        FIRST_MEMBER_DATE)) / (24 * 60 * 60) + 1
+    all_days = int((time.time() - utils.date_to_timestamp_ext(
+        FIRST_MEMBER_DATE)) / (24 * 60 * 60)) + 1
 
     return {
         'days': days,
