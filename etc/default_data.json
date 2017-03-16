@@ -22891,6 +22891,17 @@
             "emails": ["soulxu@gmail.com", "hejie.xu@intel.com", "xuhj@cn.ibm.com", "xuhj@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "xuqiankun",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xuqiankun",
+            "emails": ["qkxu@fiberhome.com"]
+        },
+        {
             "launchpad_id": "xuxinkun",
             "companies": [
                 {
