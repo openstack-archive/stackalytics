@@ -4734,6 +4734,17 @@
             "emails": ["daniel.pawlik@corp.ovh.com"]
         },
         {
+           "launchpad_id": "danila3",
+           "companies": [
+               {
+                   "company_name": "Sberbank",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Danila Troshchinskiy",
+           "emails": ["troschinsky@gmail.com"]
+        },
+        {
             "launchpad_id": "danms",
             "companies": [
                 {
