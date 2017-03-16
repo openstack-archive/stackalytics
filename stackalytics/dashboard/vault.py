@@ -194,8 +194,6 @@ def is_project_type_valid(project_type):
     if not project_type:
         return False
     project_type = project_type.lower()
-    if project_type == 'all':
-        return True
     project_types = get_vault().get('project_types_index', [])
     return project_type in project_types
 

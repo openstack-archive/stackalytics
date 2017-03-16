@@ -320,7 +320,9 @@ def make_page_title(project_type_inst, release, module_inst, company,
     pt_class = project_type_inst['id']
     if project_type_inst.get('parent'):
         pt_class = project_type_inst['parent']['id']
-    is_openstack = pt_class == 'all' or pt_class[:9] == 'openstack'
+    pt_title = project_type_inst['title']
+    is_openstack = (pt_title.lower() == 'openstack' or
+                    pt_class[:9] == 'openstack')
 
     if company or user_inst:
         if user_inst:
@@ -333,7 +335,7 @@ def make_page_title(project_type_inst, release, module_inst, company,
         if is_openstack:
             s = 'OpenStack community'
         else:
-            s = project_type_inst['title'] + ' community'
+            s = pt_title + ' community'
     s += ' contribution'
     if module_inst:
         s += ' to %s' % module_inst['module_group_name']
