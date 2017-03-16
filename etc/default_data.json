@@ -2910,11 +2910,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-10"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Brian Haley",
-            "emails": ["brianphaley@gmail.com", "brian.haley@hp.com", "brian.haley@hpe.com"]
+            "emails": ["brianphaley@gmail.com", "brian.haley@hp.com", "brian.haley@hpe.com", "haleyb.dev@gmail.com", "bhaley@redhat.com"]
         },
         {
             "launchpad_id": "brian-jf-fletcher",
