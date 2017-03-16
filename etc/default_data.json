@@ -12928,6 +12928,17 @@
             "emails": ["yippeetry@gmail.com", "yang.liu@eayun.com"]
         },
         {
+            "launchpad_id": "lyqgenius",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "D G Lee",
+            "emails": ["lyqgenius@vip.qq.com", "yqli2016@fiberhome.com"]
+        },
+        {
             "launchpad_id": "lyz",
             "companies": [
                 {
