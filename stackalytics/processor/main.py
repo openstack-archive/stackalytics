@@ -313,10 +313,7 @@ def main():
     runtime_storage_inst = runtime_storage.get_runtime_storage(
         CONF.runtime_storage_uri)
 
-    if CONF.default_data_file:
-        default_data = utils.read_json_from_file(CONF.default_data_file)
-    else:
-        default_data = utils.read_json_from_uri(CONF.default_data_uri)
+    default_data = utils.read_json_from_uri(CONF.default_data_uri)
     if not default_data:
         LOG.critical('Unable to load default data')
         return not 0

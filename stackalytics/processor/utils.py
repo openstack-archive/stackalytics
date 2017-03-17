@@ -22,7 +22,6 @@ import re
 import time
 
 import iso8601
-import json
 from oslo_config import cfg
 from oslo_log import log as logging
 import requests
@@ -150,12 +149,6 @@ def read_json_from_uri(uri, session=None):
     except Exception as e:
         LOG.warning('Error "%(error)s" parsing json from uri %(uri)s',
                     {'error': e, 'uri': uri})
-
-
-def read_json_from_file(filename):
-    with open(filename) as json_data:
-        data = json.load(json_data)
-    return data
 
 
 def read_yaml_from_uri(uri):
