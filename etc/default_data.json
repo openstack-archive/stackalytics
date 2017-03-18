@@ -148,6 +148,18 @@
             "user_name": "Morgan Jones",
             "emails": ["morgan@parelastic.com", "morgan@tesora.com"]
         },
+        {
+            "launchpad_id": "61755280-l",
+            "gerrit_id": "sak0",
+            "companies": [
+                {
+                    "company_name": "Wise2c",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sak0",
+            "emails": ["cuihz@wise2c.com"]
+        },
         {   "launchpad_id": "9-me-9",
             "gerrit_id": "vmtyler",
             "companies": [
@@ -26358,6 +26370,10 @@
             "domains": ["wipro.com"],
             "company_name": "Wipro",
             "aliases": ["Wipro Infotech", "Wipro Technologies", "Wipro Arabia Ltd", "Wipro Technoligies"]
+        },
+        {
+            "domains": ["wise2c.com"],
+            "company_name": "Wise2c"
         },
         {
             "domains": ["workday.com"],
