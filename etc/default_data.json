@@ -21062,6 +21062,18 @@
             "emails": ["tina.tang@emc.com"]
         },
         {
+            "launchpad_id": "tjohns",
+            "gerrit_id": "tjohns",
+            "companies": [
+                {
+                    "company_name": "State Farm Insurance",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Troy Johns",
+            "emails": ["troy.johns.plde@statefarm.com"]
+        },
+        {
             "launchpad_id": "tkak",
             "gerrit_id": "tkakfrkw",
             "companies": [
@@ -26097,6 +26109,10 @@
         {
             "domains": ["stackstorm.com"],
             "company_name": "StackStorm"
+        },
+        {
+            "domains": ["statefarm.com"],
+            "company_name": "State Farm Insurance"
         },
         {
             "domains": ["stratoscale.com"],
