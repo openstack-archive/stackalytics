@@ -8834,6 +8834,23 @@
             "emails": ["hyakuhei@gmail.com", "robert.clark@hp.com", "robert.clark@hpe.com"]
         },
         {
+            "launchpad_id": "hyangii",
+            "gerrit_id": "jaesanglee",
+            "github_id": "hyangii",
+            "companies": [
+                {
+                    "company_name": "Samsung SDS",
+                    "end_date": "2015-Aug-21"
+                },
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaesang Lee",
+            "emails": ["jaesang_lee@sk.com", "hyangii@gmail.com"]
+        },
+        {
             "launchpad_id": "i-kumagai",
             "gerrit_id": "kumagai19o",
             "companies": [
