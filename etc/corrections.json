@@ -3306,6 +3306,22 @@
             "user_name": "Yujun Zhang",
             "company_name": "ZTE Corporation",
             "correction_comment": "Related-Bug: #1634020"
+        },
+        {
+            "correction_comment": "Ignore copy manager.py",
+            "loc": 13,
+            "change_id": ["Iaa06df6ab75fb8f79cbcd3f6b21e68622e7799c1"],
+            "primary_key": "881e5ad9dbfdea881d20de22fd8ce0c4ad1552bc",
+            "module": "ironic",
+            "subject": "Include copy of tempest.scenario.manager"
+        },
+        {
+            "correction_comment": "Ignore pruning of manager.py",
+            "loc": 0,
+            "change_id": ["I3ca7cf3af42e0e55431d5affa36e567f147aa850"],
+            "primary_key": "352aacfd45e66a57dc1461b85ed9c3e85f3935a2",
+            "module": "ironic",
+            "subject": "Prune local copy of tempest.scenario.manager.py"
         }
     ],
     "user_corrections": [
