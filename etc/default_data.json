@@ -16904,6 +16904,26 @@
             "emails": ["ramon@linux-labs.net", "racedo@redhat.com"]
         },
         {
+            "launchpad_id": "ramy-asselin",
+            "gerrit_id": "asselin",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ramy Asselin",
+            "emails": ["ramy.asselin@hp.com", "ramy.asselin@hpe.com", "asselin@hpe.com", "asselinr@suse.com", "ramy.asselin@suse.com", "ramyasselin@yahoo.com"]
+        },
+        {
             "launchpad_id": "ranler",
             "gerrit_id": "ranler",
             "companies": [
