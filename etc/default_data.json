@@ -19702,6 +19702,17 @@
             "emails": ["smelikyan@mirantis.com", "serg.melikyan@gmail.com"]
         },
         {
+            "launchpad_id": "smokony",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XieYingYun",
+            "emails": ["smokony@sina.com"]
+        },
+        {
             "launchpad_id": "smoser",
             "companies": [
                 {
