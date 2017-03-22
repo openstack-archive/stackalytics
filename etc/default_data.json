@@ -812,6 +812,18 @@
             "emails": ["aju@iraw.net"]
         },
         {
+            "launchpad_id": "akamyshnikova",
+            "gerrit_id": "AKamyshnikova",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ann Taraday",
+            "emails": ["akamyshnikova@mirantis.com", "ataraday@mirantis.com", "ankamyshnikova@gmail.com"]
+        },
+        {
             "launchpad_id": "akash",
             "companies": [
                 {
