@@ -10483,11 +10483,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2016-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Joseph Davis",
-            "emails": ["joseph.a.davis@hp.com", "joseph.a.davis@hpe.com"]
+            "emails": ["joseph.a.davis@hp.com", "joseph.a.davis@hpe.com", "josephd@hpe.com", "joseph.davis@suse.com", "jodavis@suse.com"]
         },
         {
             "launchpad_id": "joe-arnold",
