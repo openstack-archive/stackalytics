@@ -14,6 +14,7 @@
 # limitations under the License.
 
 import collections
+from datetime import timedelta
 import os
 import sys
 
@@ -132,14 +133,21 @@ def _init_releases(vault):
     releases_map = {}
 
     if releases:
+        first_day = vault['memory_storage'].get_first_record_day()
+        releases[0]['start_date'] = int(
+            timedelta(days=first_day).total_seconds())
+
         vault['start_date'] = releases[0]['end_date']
         vault['end_date'] = releases[-1]['end_date']
         start_date = releases[0]['end_date']
         for r in releases[1:]:
             r['start_date'] = start_date
             start_date = r['end_date']
-        releases_map = dict((r['release_name'].lower(), r)
-                            for r in releases[1:])
+
+        releases_map.update((r['release_name'].lower(), r) for r in releases)
+
+        if releases_map.pop('prehistory', None):
+            LOG.debug("Ignore 'prehistory' release")
 
     vault['releases'] = releases_map
 
@@ -184,7 +192,8 @@ def get_project_types():
 
 def get_release_options():
     runtime_storage_inst = get_runtime_storage()
-    releases = (runtime_storage_inst.get_by_key('releases') or [None])[1:]
+    releases = runtime_storage_inst.get_by_key('releases') or []
+    releases = [r for r in releases if r['release_name'] != 'prehistory']
     releases.append({'release_name': 'all'})
     releases.reverse()
     return releases
