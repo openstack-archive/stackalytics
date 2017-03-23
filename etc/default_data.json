@@ -21401,6 +21401,21 @@
             "emails": ["mtreinish@kortar.org", "treinish@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "trinath-somanchi-m",
+            "companies": [
+                {
+                    "company_name": "Freescale",
+                    "end_date": "2016-Nov-01"
+                },
+                {
+                    "company_name": "NXP",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Trinath Somanchi",
+            "emails": ["trinath.somachi@freescale.com", "trinath.somanchi@nxp.com", "trinath.somanchi@gmail.com"]
+        },
+        {
             "launchpad_id": "tristanc",
             "companies": [
                 {
@@ -25884,6 +25899,11 @@
         {
             "domains": ["nust.edu.pk"],
             "company_name": "NUST"
+        },
+        {
+            "domains": ["nxp.com"],
+            "company_name": "NXP",
+            "aliases": ["NXP (I) Pvt Ltd", "NXP"]
         },
         {
             "domains": ["objectif-libre.com"],
