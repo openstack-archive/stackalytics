@@ -39,7 +39,9 @@ optional arguments:
   --debug, -d           If set to true, the logging level will be set to DEBUG
                         instead of the default INFO level.
   --default-data-uri DEFAULT_DATA_URI
-                        URI for default data
+                        URI for default data. A local file can be used with
+                        the prefix "file://". For example, default_data_uri =
+                        file:///path/to/default_data.json
   --driverlog-data-uri DRIVERLOG_DATA_URI
                         URI for default data
   --gerrit-retry GERRIT_RETRY
