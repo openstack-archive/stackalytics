@@ -11510,6 +11510,22 @@
             "emails": ["zhao.kaia@h3c.com"]
         },
         {
+            "launchpad_id": "keith-berger",
+            "gerrit_id": "kberger",
+            "companies": [
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Keith Berger",
+            "emails": ["keith.berger@hpe.com","keith.berger@suse.com"]
+        },
+        {
             "launchpad_id": "keith-newstadt",
             "companies": [
                 {
