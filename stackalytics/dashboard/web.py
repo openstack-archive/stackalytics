@@ -23,13 +23,14 @@ from oslo_config import cfg
 from oslo_log import log as logging
 import six
 
+from stackalytics.dashboard import config
 from stackalytics.dashboard import decorators
 from stackalytics.dashboard import helpers
 from stackalytics.dashboard import kpi
 from stackalytics.dashboard import parameters
 from stackalytics.dashboard import reports
 from stackalytics.dashboard import vault
-from stackalytics.processor import config
+from stackalytics.processor import config as processor_cfg
 from stackalytics.processor import utils
 
 # Application objects ---------
@@ -43,7 +44,7 @@ app.register_blueprint(kpi.blueprint)
 LOG = logging.getLogger(__name__)
 
 CONF = cfg.CONF
-CONF.register_opts(config.CONNECTION_OPTS + config.DASHBOARD_OPTS)
+CONF.register_opts(processor_cfg.CONNECTION_OPTS + config.DASHBOARD_OPTS)
 
 
 # Handlers ---------
