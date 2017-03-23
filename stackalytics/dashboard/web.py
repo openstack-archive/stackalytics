@@ -488,9 +488,12 @@ def get_user(user_id):
 @decorators.cached(ignore=parameters.FILTER_PARAMETERS)
 @decorators.jsonify(root=('data', 'default'))
 def get_releases_json(**kwargs):
-    return ([{'id': r['release_name'], 'text': r['release_name'].capitalize()}
-            for r in vault.get_release_options()],
-            parameters.get_default('release'))
+    releases = [{'id': release['release_name'],
+                 'text': release['release_name'].capitalize()}
+                for release in vault.get_vault()['releases'].values()]
+    releases.append({'id': 'all', 'text': 'All'})
+    releases.reverse()
+    return (releases, parameters.get_default('release'))
 
 
 @app.route('/api/1.0/metrics')
