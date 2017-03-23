@@ -7670,6 +7670,17 @@
             "emails": ["graham.binns@gmail.com", "graham@grahambinns.com", "graham.binns@canonical.com", "graham@canonical.com", "gmb@canonical.com", "gmb@grahambinns.com"]
         },
         {
+            "launchpad_id": "gn-zh",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "gnzhang",
+            "emails": ["gnzhang@fiberhome.com", "gn_zh@163.com"]
+        },
+        {
             "launchpad_id": "go-chiba",
             "gerrit_id": "go_chiba",
             "companies": [
