@@ -2,12 +2,10 @@ usage: stackalytics-dashboard [-h] [--config-dir DIR] [--config-file PATH]
                               [--debug] [--log-config-append PATH]
                               [--log-date-format DATE_FORMAT]
                               [--log-dir LOG_DIR] [--log-file PATH]
-                              [--log-format FORMAT] [--nodebug]
-                              [--nouse-syslog] [--nouse-syslog-rfc-format]
-                              [--noverbose] [--nowatch-log-file]
+                              [--nodebug] [--nouse-syslog] [--noverbose]
+                              [--nowatch-log-file]
                               [--syslog-log-facility SYSLOG_LOG_FACILITY]
-                              [--use-syslog] [--use-syslog-rfc-format]
-                              [--verbose] [--version] [--watch-log-file]
+                              [--use-syslog] [--verbose] [--watch-log-file]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -27,10 +25,10 @@ optional arguments:
                         appended to any existing logging configuration files.
                         For details about logging configuration files, see the
                         Python logging module documentation. Note that when
-                        logging configuration files are used all logging
-                        configuration is defined in the configuration file and
+                        logging configuration files are used then all logging
+                        configuration is set in the configuration file and
                         other logging configuration options are ignored (for
-                        example, log_format).
+                        example, logging_context_format_string).
   --log-date-format DATE_FORMAT
                         Defines the format string for %(asctime)s in log
                         records. Default: None . This option is ignored if
@@ -44,16 +42,8 @@ optional arguments:
                         If no default is set, logging will go to stderr as
                         defined by use_stderr. This option is ignored if
                         log_config_append is set.
-  --log-format FORMAT   DEPRECATED. A logging.Formatter log message format
-                        string which may use any of the available
-                        logging.LogRecord attributes. This option is
-                        deprecated. Please use logging_context_format_string
-                        and logging_default_format_string instead. This option
-                        is ignored if log_config_append is set.
   --nodebug             The inverse of --debug
   --nouse-syslog        The inverse of --use-syslog
-  --nouse-syslog-rfc-format
-                        The inverse of --use-syslog-rfc-format
   --noverbose           The inverse of --verbose
   --nowatch-log-file    The inverse of --watch-log-file
   --syslog-log-facility SYSLOG_LOG_FACILITY
@@ -62,14 +52,8 @@ optional arguments:
   --use-syslog          Use syslog for logging. Existing syslog format is
                         DEPRECATED and will be changed later to honor RFC5424.
                         This option is ignored if log_config_append is set.
-  --use-syslog-rfc-format
-                        Enables or disables syslog rfc5424 format for logging.
-                        If enabled, prefixes the MSG part of the syslog
-                        message with APP-NAME (RFC5424). This option is
-                        ignored if log_config_append is set.
   --verbose, -v         If set to false, the logging level will be set to
                         WARNING instead of the default INFO level.
-  --version             show program's version number and exit
   --watch-log-file      Uses logging handler designed to watch file system.
                         When log file is moved or removed this handler will
                         open a new log file with specified path
