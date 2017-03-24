@@ -622,11 +622,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Adolfo Duarte",
-            "emails": ["adolfo.duarte@hp.com", "adolfo.duarte@hpe.com"]
+            "emails": ["adolfo.duarte@suse.com", "adolfod@hpe.com"]
         },
         {
             "launchpad_id": "adrianmo",
