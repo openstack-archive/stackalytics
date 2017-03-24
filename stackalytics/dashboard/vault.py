@@ -16,7 +16,6 @@
 import collections
 from datetime import timedelta
 import os
-import sys
 
 import flask
 from oslo_config import cfg
@@ -42,23 +41,16 @@ RECORD_FIELDS_FOR_AGGREGATE = ['record_id', 'primary_key', 'record_type',
 CompactRecord = collections.namedtuple('CompactRecord',
                                        RECORD_FIELDS_FOR_AGGREGATE)
 
+_unihash = {}
 
-if six.PY2:
-    _unihash = {}
 
-    def uniintern(o):
-        if not isinstance(o, basestring):
-            return o
-        if isinstance(o, str):
-            return intern(o)
-        if isinstance(o, unicode):
-            return _unihash.setdefault(o, o)
-else:
-    def uniintern(o):
-        if isinstance(o, str):
-            return sys.intern(o)
-        else:
-            return o
+def uniintern(o):
+    if isinstance(o, str):
+        return six.moves.intern(o)
+    if not isinstance(o, six.string_types[0]):
+        return o
+    if isinstance(o, six.text_type):
+        return _unihash.setdefault(o, o)
 
 
 def compact_records(records):
