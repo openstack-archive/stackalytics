@@ -901,12 +901,29 @@ class RecordProcessor(object):
 
         yield record_handler
 
+    def _update_commits_with_module_alias(self):
+        LOG.info('Update record with aliases')
+
+        modules, alias_module_map = self._get_modules()
+
+        def record_handler(record):
+            if record['record_type'] != 'commit':
+                return
+
+            rec_module = record.get('module', None)
+            if rec_module and rec_module in alias_module_map:
+                record['module'] = alias_module_map[rec_module]
+                yield record
+
+        yield record_handler
+
     def post_processing(self, release_index):
         processors = [
             self._update_records_with_user_info,
             self._update_commits_with_merge_date,
             functools.partial(self._update_records_with_releases,
                               release_index),
+            self._update_commits_with_module_alias,
             self._update_blueprints_with_mention_info,
             self._determine_core_contributors,
             self._update_members_company_name,

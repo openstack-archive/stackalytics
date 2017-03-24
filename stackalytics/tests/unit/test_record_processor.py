@@ -1326,6 +1326,7 @@ class TestRecordProcessor(testtools.TestCase):
              'date': 1234567890,
              'lines_added': 25,
              'lines_deleted': 9,
+             'module': u'stackalytics',
              'release_name': 'havana'},
             {'record_type': 'review',
              'id': 'I104573',
@@ -1342,6 +1343,39 @@ class TestRecordProcessor(testtools.TestCase):
 
         commit = runtime_storage_inst.get_by_primary_key('de7e8f2')
         self.assertEqual(1385490000, commit['date'])
+
+    def test_commit_module_alias(self):
+        record_processor_inst = self.make_record_processor()
+        runtime_storage_inst = record_processor_inst.runtime_storage_inst
+
+        with mock.patch('stackalytics.processor.utils.load_repos') as patch:
+            patch.return_value = [{'module': 'sahara', 'aliases': ['savanna']}]
+            runtime_storage_inst.set_records(record_processor_inst.process([
+                {'record_type': 'commit',
+                 'commit_id': 'de7e8f2',
+                 'change_id': ['I104573'],
+                 'author_name': 'John Doe',
+                 'author_email': 'john_doe@gmail.com',
+                 'date': 1234567890,
+                 'lines_added': 25,
+                 'lines_deleted': 9,
+                 'module': u'savanna',
+                 'release_name': 'havana'},
+                {'record_type': 'review',
+                 'id': 'I104573',
+                 'subject': 'Fix AttributeError in Keypair._add_details()',
+                 'owner': {'name': 'John Doe',
+                           'email': 'john_doe@gmail.com',
+                           'username': 'john_doe'},
+                 'createdOn': 1385478465,
+                 'lastUpdated': 1385490000,
+                 'status': 'MERGED',
+                 'module': 'nova', 'branch': 'master'},
+            ]))
+            record_processor_inst.post_processing({})
+
+        commit = runtime_storage_inst.get_by_primary_key('de7e8f2')
+        self.assertEqual('sahara', commit['module'])
 
     # update records
 
