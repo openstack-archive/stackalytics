@@ -22828,6 +22828,7 @@
         },
         {
             "launchpad_id": "whyliyi",
+            "gerrit_id": "liyi8611",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -22835,7 +22836,7 @@
                 }
             ],
             "user_name": "liyi",
-            "emails": ["liyi8611@gmail.com", "liyi7155@fiberhome.com"]
+            "emails": ["liyi8611@gmail.com", "liyi7155@fiberhome.com", "liyi@liyidemacbook-pro.local"]
         },
         {
             "github_id": "windfarer",
