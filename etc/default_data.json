@@ -20623,11 +20623,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Swaminathan Vasudevan",
-            "emails": ["souminathan@yahoo.com", "swaminathan.vasudevan@hp.com", "swaminathan.vasudevan@hpe.com"]
+            "emails": ["souminathan@yahoo.com", "swaminathan.vasudevan@hp.com", "swaminathan.vasudevan@hpe.com", "swaminathan.vasudevan@suse.com"]
         },
         {
             "launchpad_id": "swamireddy",
