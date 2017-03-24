@@ -24181,6 +24181,17 @@
             "emails": ["zerodivisible@gmail.com"]
         },
         {
+            "launchpad_id": "zeyu",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zeyu Zhu",
+            "emails": ["zhu.zeyu@zte.com.cn", "zhuzeyu0409@gmail.com"]
+        },
+        {
           "launchpad_id": "zhang-haixia",
             "companies": [
                 {
