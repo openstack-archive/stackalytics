@@ -24271,6 +24271,18 @@
             "emails": ["zhang.wenyan3@zte.com.cn"]
         },
         {
+
+            "launchpad_id": "zhangdaolong",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangdaolong",
+            "emails": ["zhangdaolong@fiberhome.com"]
+        },
+        {
             "launchpad_id": "zhanghj",
             "gerrit_id":"HaiJieZhang",
             "companies": [
