@@ -7350,16 +7350,20 @@
             "emails": ["gaoqian1983@outlook.com"]
         },
         {
-            "launchpad_id": "gaozx",
+            "launchpad_id": "gaozx-fnst",
             "gerrit_id": "gaozx",
             "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2017-Feb-17"
+                },
                 {
                     "company_name": "Fiberhome",
                     "end_date": null
                 }
             ],
             "user_name": "Gao Zexu",
-            "emails": ["zxgao@fiberhome.com"]
+            "emails": ["zxgao@fiberhome.com", "gaozx.fnst@cn.fujitsu.com"]
         },
         {
             "launchpad_id": "gary-w-smith",
