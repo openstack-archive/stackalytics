@@ -11792,6 +11792,18 @@
             "emails": ["lakshman@aptira.com", "vit.lakshman@gmail.com"]
         },
         {
+            "launchpad_id": "klyang",
+            "gerrit_id": "klyang",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yangkl",
+            "emails": ["klyang@fiberhome.com"]
+        },
+        {
             "launchpad_id": "kn-matsumoto",
             "gerrit_id": "kn-matsumoto",
             "companies": [
