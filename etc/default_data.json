@@ -28209,6 +28209,11 @@
             "uri": "https://github.com/kubernetes-incubator/cri-tools.git"
         },
         {
+            "module": "kube-state-metrics",
+            "organization": "kubernetes",
+            "uri": "https://github.com/kubernetes/kube-state-metrics.git"
+        },
+        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
