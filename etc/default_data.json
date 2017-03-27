@@ -3762,6 +3762,17 @@
             "emails": ["chenyingnan@inspur.com"]
         },
         {
+            "launchpad_id": "chenyuan314",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chenyuan",
+            "emails": ["chenyuan@awcloud.com"]
+        },
+        {
             "launchpad_id": "chestack",
             "gerrit_id": "wangbo",
             "companies": [
@@ -8691,6 +8702,17 @@
             "emails": ["huanghe@fiberhome.com", "12293363@qq.com"]
         },
         {
+            "launchpad_id": "huanght",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "huanght",
+            "emails": ["huanght@awcloud.com"]
+        },
+        {
             "launchpad_id": "huangshan",
             "companies": [
                 {
@@ -12554,6 +12576,17 @@
             ],
             "user_name":  "lijunbo",
             "emails": ["lijunbo@fiberhome.com", "89322125@qq.com"]
+        },
+        {
+            "launchpad_id": "limeng",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "limeng",
+            "emails": ["limeng@awcloud.com"]
         },
         {
             "launchpad_id": "liminliu",
@@ -22658,6 +22691,17 @@
             "emails": ["wangxiyuan@huawei.com", "wangxiyuan1007@gmail.com", "491745146@qq.com"]
         },
         {
+            "launchpad_id": "wangye-s",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangye",
+            "emails": ["wangye@awcloud.com"]
+        },
+        {
             "launchpad_id": "wangyuwei",
             "gerrit_id": "wangyuwei",
             "github_id": "AndiaQ",
@@ -24695,6 +24739,17 @@
             ],
             "user_name": "smartu3",
             "emails": ["zzj123389602@gmail.com"]
+        },
+        {
+            "launchpad_id": "zhuangzouhui",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhuangzh",
+            "emails": ["zhuangzh@awcloud.com"]
         },
         {
             "launchpad_id": "zhubingbing",
