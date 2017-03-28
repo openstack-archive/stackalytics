@@ -338,6 +338,7 @@ def main():
 
     runtime_storage_inst.set_by_key('runtime_storage_update_time',
                                     utils.date_to_timestamp('now'))
+    LOG.info('stackalytics-processor succeeded.')
 
 
 if __name__ == '__main__':
