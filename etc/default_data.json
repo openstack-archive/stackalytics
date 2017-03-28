@@ -19469,6 +19469,18 @@
             "emails": ["shunde@aptira.com", "shunde.p.zhang@gmail.com"]
         },
         {
+            "launchpad_id": "shunliz",
+            "gerrit_id": "ShunliZhou",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shunli Zhou",
+            "emails": ["slzhou@fiberhome.com", "zsl6658@126.com"]
+        },
+        {
             "launchpad_id": "shuo-yang",
             "gerrit_id": "syang",
             "companies": [
