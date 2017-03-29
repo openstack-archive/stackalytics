@@ -74,6 +74,9 @@ class Gerrit(Rcs):
         self.request_count = 0
         self.error_count = 0
 
+    def __del__(self):
+        self.close()
+
     def setup(self, **kwargs):
         self.key_filename = kwargs.get('key_filename')
         self.username = kwargs.get('username')
