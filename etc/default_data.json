@@ -8394,6 +8394,18 @@
             "emails": ["hbjmstone@163.com", "liulei@awcloud.com"]
         },
         {
+            "launchpad_id": "hcpedh",
+            "gerrit_id": "huangcheng",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Huang Cheng",
+            "emails": ["huang.cheng@h3c.com", "hcn518@gmail.com", "hcn518@aliyun.com"]
+        },
+        {
             "launchpad_id": "heckj",
             "companies": [
                 {
