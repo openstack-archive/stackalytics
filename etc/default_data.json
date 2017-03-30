@@ -2215,11 +2215,15 @@
                },
                {
                    "company_name": "HPE",
+                   "end_date": "2017-Mar-08"
+               },
+               {
+                   "company_name": "SUSE",
                    "end_date": null
                }
            ],
            "user_name": "Ashwin Agate",
-           "emails": ["ashwin.agate@hp.com","ashwin.agate@hpe.com"]
+           "emails": ["ashwin.agate@hp.com","ashwin.agate@hpe.com","agate@hpe.com","ashwin.agate@suse.com","aagate@suse.com"]
         },
         {
             "launchpad_id": "asmita",
