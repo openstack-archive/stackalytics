@@ -9188,6 +9188,10 @@
                 },
                 {
                     "company_name": "CloudDC",
+                    "end_date": "2017-Mar-14"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
