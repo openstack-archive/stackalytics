@@ -14358,11 +14358,15 @@
                 },
                 {
                     "company_name": "Charter",
+                    "end_date": "2017-Apr-07"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Matt Fischer",
-            "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com", "matt.fischer@twcable.com", "matthew.fischer@twcable.com"]
+            "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com" ]
         },
         {
             "launchpad_id": "mgagne",
