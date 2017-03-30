@@ -41,13 +41,11 @@ LOG = logging.getLogger(__name__)
 
 
 def get_pids():
-    # needs to be compatible with psutil >= 1.1.1 since it's a global req.
-    PSUTIL2 = psutil.version_info >= (2, 0)
     result = set([])
-    for pid in psutil.get_pid_list():
+    for pid in psutil.pids():
         try:
             p = psutil.Process(pid)
-            name = p.name() if PSUTIL2 else p.name
+            name = p.name()
             if name == 'uwsgi':
                 LOG.debug('Found uwsgi process, pid: %s', pid)
                 result.add(pid)
