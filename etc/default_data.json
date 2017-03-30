@@ -23605,11 +23605,15 @@
             "companies": [
                 {
                     "company_name": "99cloud",
+                    "end_date": "2017-Mar-10"
+                },
+                {
+                    "company_name": "Tencent",
                     "end_date": null
                 }
             ],
             "user_name": "Ice Yao",
-            "emails": ["yao3690093@gmail.com", "yao.xiabing@99cloud.net"]
+            "emails": ["xiabingyao@tencent.com", "yao3690093@gmail.com", "yao.xiabing@99cloud.net"]
         },
         {
             "launchpad_id": "yaoyuan",
@@ -26512,6 +26516,10 @@
         {
             "domains": ["telekom.de"],
             "company_name": "Deutsche Telekom"
+        },
+        {
+            "domains": ["tencent.com"],
+            "company_name": "Tencent"
         },
         {
             "domains": ["teradata.com"],
