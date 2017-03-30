@@ -3746,6 +3746,17 @@
             "emails": ["chenkang@awcloud.com"]
         },
         {
+            "launchpad_id": "chenn2",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chenn2",
+            "emails": ["dstbtgagt@foxmail.com"]
+        },
+        {
             "launchpad_id": "chenyb4",
             "companies": [
                 {
