@@ -24473,6 +24473,17 @@
             "emails": ["zhang.yongqian@99cloud.net" ]
         },
         {
+            "launchpad_id": "zhangyoulin",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangyoulin",
+            "emails": ["zhangly@awcloud.com"]
+        },
+        {
             "launchpad_id": "zhangyujun",
             "gerrit_id": "zhangyujun",
             "companies": [
