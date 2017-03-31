@@ -16185,6 +16185,17 @@
             "user_name": "Pawel Palucki",
             "emails": ["pawel.palucki@intel.com"]
         },
+        {   "launchpad_id": "pawnesh.kumar",
+            "gerrit_id": "pawnesh.kumar",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "pawnesh kumar",
+            "emails": ["pawnesh.kumar@nectechnologies.in"]
+        },
         {
             "launchpad_id": "pblaho",
             "companies": [
