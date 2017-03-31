@@ -19,6 +19,7 @@ import copy
 import functools
 import time
 
+from oslo_config import cfg
 from oslo_log import log as logging
 import six
 
@@ -27,6 +28,7 @@ from stackalytics.processor import user_processor
 from stackalytics.processor import utils
 
 
+CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
 
 
@@ -232,6 +234,9 @@ class RecordProcessor(object):
                         self.runtime_storage_inst, u)
         return merged_user
 
+    def _need_to_fetch_launchpad(self):
+        return CONF.fetching_user_source == 'launchpad'
+
     def update_user(self, record):
         email = record.get('author_email')
         user_e = user_processor.load_user(
@@ -239,8 +244,8 @@ class RecordProcessor(object):
 
         user_name = record.get('author_name')
         launchpad_id = record.get('launchpad_id')
-        if (email and (not user_e) and (not launchpad_id) and
-                (not user_e.get('launchpad_id'))):
+        if (self._need_to_fetch_launchpad() and email and (not user_e) and
+                (not launchpad_id) and (not user_e.get('launchpad_id'))):
             # query LP
             launchpad_id, lp_user_name = self._get_lp_info(email)
             if lp_user_name:
@@ -250,8 +255,8 @@ class RecordProcessor(object):
         if gerrit_id:
             user_g = user_processor.load_user(
                 self.runtime_storage_inst, gerrit_id=gerrit_id) or {}
-            if ((not user_g) and (not launchpad_id) and
-                    (not user_e.get('launchpad_id'))):
+            if (self._need_to_fetch_launchpad() and (not user_g) and
+                    (not launchpad_id) and (not user_e.get('launchpad_id'))):
                 # query LP
                 guessed_lp_id = gerrit_id
                 lp_user_name = self._get_lp_user_name(guessed_lp_id)
@@ -264,8 +269,8 @@ class RecordProcessor(object):
         if zanata_id:
             user_z = user_processor.load_user(
                 self.runtime_storage_inst, zanata_id=zanata_id) or {}
-            if ((not user_z) and (not launchpad_id) and
-                    (not user_e.get('launchpad_id'))):
+            if (self._need_to_fetch_launchpad() and (not user_z) and
+                    (not launchpad_id) and (not user_e.get('launchpad_id'))):
                 # query LP
                 guessed_lp_id = zanata_id
                 user_name = self._get_lp_user_name(guessed_lp_id)
@@ -290,7 +295,7 @@ class RecordProcessor(object):
                     [user_e, user_l, user_g, user_z, user])
             else:
                 # create new
-                if not user_name:
+                if (self._need_to_fetch_launchpad() and not user_name):
                     user_name = self._get_lp_user_name(launchpad_id)
                     if user_name:
                         user['user_name'] = user_name
