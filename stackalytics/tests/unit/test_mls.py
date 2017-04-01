@@ -41,8 +41,6 @@ test works :)
 
 
 class TestMls(testtools.TestCase):
-    def setUp(self):
-        super(TestMls, self).setUp()
 
     def test_mail_parse_regex(self):
 

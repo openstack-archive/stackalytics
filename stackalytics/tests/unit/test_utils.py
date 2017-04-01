@@ -20,8 +20,6 @@ from stackalytics.processor import utils
 
 
 class TestUtils(testtools.TestCase):
-    def setUp(self):
-        super(TestUtils, self).setUp()
 
     def _test_one_range(self, start, end, step):
         elements = set()

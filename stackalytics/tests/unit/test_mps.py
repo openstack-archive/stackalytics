@@ -21,8 +21,6 @@ from stackalytics.processor import mps
 
 
 class TestMps(testtools.TestCase):
-    def setUp(self):
-        super(TestMps, self).setUp()
 
     def test_member_parse_regex(self):
 

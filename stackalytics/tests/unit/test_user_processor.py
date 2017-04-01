@@ -19,8 +19,6 @@ from stackalytics.processor import user_processor
 
 
 class TestUserProcessor(testtools.TestCase):
-    def setUp(self):
-        super(TestUserProcessor, self).setUp()
 
     def test_update_user(self):
         user = {

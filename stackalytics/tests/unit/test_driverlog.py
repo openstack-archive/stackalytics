@@ -67,8 +67,6 @@ DRIVER_NON_EXISTENT = {
 
 
 class TestDriverlog(testtools.TestCase):
-    def setUp(self):
-        super(TestDriverlog, self).setUp()
 
     def test_find_ci_result_success(self):
         drivers = [DRIVER]
