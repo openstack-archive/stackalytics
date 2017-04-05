@@ -5262,6 +5262,17 @@
             "emails": ["deena@hastexo.com", "deena.cooper@hastexo.com", "contact@deenacooper.com"]
         },
         {
+            "launchpad_id": "deepak-kumar-9",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Deepak Jon",
+            "emails": ["deepak.kumar@nectechnologies.in", "deepak.os31@yahoo.com"]
+        },
+        {
             "launchpad_id": "deepak.garg",
             "companies": [
                 {
