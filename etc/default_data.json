@@ -2446,6 +2446,21 @@
             "emails": ["battu.amulya@gmail.com", "akt827@my.utsa.edu"]
         },
         {
+            "launchpad_id": "bbobrov",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Feb-10"
+                },
+                {
+                    "company_name": "Mail.Ru",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Boris Bobrov",
+            "emails": ["breton@cynicmansion.ru", "bbobrov@mirantis.com", "b.bobrov@corp.mail.ru"]
+        },
+        {
             "launchpad_id": "bbwang5827",
             "companies": [
                 {
@@ -25498,6 +25513,10 @@
         {
             "domains": ["coreos.com"],
             "company_name": "CoreOS"
+        },
+        {
+            "domains": ["corp.mail.ru"],
+            "company_name": "Mail.Ru"
         },
         {
             "domains": ["corvisa.com"],
