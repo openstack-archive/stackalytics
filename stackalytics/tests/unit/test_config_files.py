@@ -51,8 +51,6 @@ def dict_raise_on_duplicates(ordered_pairs):
 
 
 class TestConfigFiles(testtools.TestCase):
-    def setUp(self):
-        super(TestConfigFiles, self).setUp()
 
     def _read_raw_file(self, file_name):
         if six.PY3:

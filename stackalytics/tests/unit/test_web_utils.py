@@ -21,8 +21,6 @@ from stackalytics.dashboard import parameters
 
 
 class TestWebUtils(testtools.TestCase):
-    def setUp(self):
-        super(TestWebUtils, self).setUp()
 
     def test_make_commit_message(self):
         message = '''
