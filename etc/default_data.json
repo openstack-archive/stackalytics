@@ -9842,6 +9842,22 @@
             "emails": ["zhangmei.li@easystack.cn", "javaloveme@gmail.com"]
         },
         {
+            "launchpad_id": "jawon.choo",
+            "gerrit_id": "JawonChoo",
+            "companies": [
+                {
+                    "company_name": "Samsung SDS",
+                    "end_date": "2016-Jul-31"
+                },
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jawon Choo",
+            "emails": ["jawon.choo@sk.com", "jawon.choo@gmail.com"]
+        },
+        {
             "launchpad_id": "jay-clark",
             "companies": [
                 {
