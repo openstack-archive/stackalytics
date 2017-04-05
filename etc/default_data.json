@@ -22938,6 +22938,18 @@
             "emails": ["wzj334965317@outlook.com", "wei.zhijun@99cloud.net"]
         },
         {
+            "launchpad_id": "weichuancheng",
+            "gerrit_id": "weichuancheng",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "weichuancheng",
+            "emails": ["weichuancheng@inspur.com", "weichuancheng@hotmail.com"]
+        },
+        {
             "launchpad_id": "weike",
             "companies": [
                 {
