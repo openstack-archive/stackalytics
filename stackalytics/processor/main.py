@@ -15,6 +15,7 @@
 
 import itertools
 
+import jsonschema
 from oslo_config import cfg
 from oslo_log import log as logging
 import psutil
@@ -32,6 +33,7 @@ from stackalytics.processor import mps
 from stackalytics.processor import rcs
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
+from stackalytics.processor import schema
 from stackalytics.processor import utils
 from stackalytics.processor import vcs
 from stackalytics.processor import zanata
@@ -314,6 +316,12 @@ def main():
     default_data = utils.read_json_from_uri(CONF.default_data_uri)
     if not default_data:
         LOG.critical('Unable to load default data')
+        return not 0
+
+    try:
+        jsonschema.validate(default_data, schema.default_data)
+    except jsonschema.ValidationError as e:
+        LOG.critical('The default data is invalid: %s' % e)
         return not 0
 
     default_data_processor.process(runtime_storage_inst,
