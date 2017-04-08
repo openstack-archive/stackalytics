@@ -12352,6 +12352,17 @@
             "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
         },
         {
+            "launchpad_id": "leetpy",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yuan liang",
+            "emails": ["leetpy2@gmail.com", "yuan.liang@zte.com.cn"]
+        },
+        {
             "launchpad_id": "lefremova",
             "companies": [
                 {
