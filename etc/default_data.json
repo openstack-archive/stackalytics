@@ -925,6 +925,17 @@
             "emails": ["ales.komarek@tcpcloud.eu", "ales.komarek@newt.cz", "mail@newt.cz", "a.komarek@tcpcloud.eu"]
         },
         {
+            "launchpad_id": "akremenetsky",
+            "companies": [
+                {
+                    "company_name": "Kontron",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anton Kremenetsky",
+            "emails": ["akremenetsky@dev.rtsoft.ru"]
+        },
+        {
 
             "launchpad_id": "akscram",
             "companies": [
@@ -26098,6 +26109,11 @@
             "domains": ["kionetworks.com"],
             "company_name": "KIO Networks",
             "aliases": ["Kionetworks", "KIO", "Kio operaciones", "KIO-Networks"]
+        },
+        {
+            "domains": ["kontron.com"],
+            "company_name": "Kontron",
+            "aliases": ["Kontron Inc"]
         },
         {
             "domains": ["kt.com"],
