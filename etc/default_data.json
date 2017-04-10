@@ -24075,6 +24075,17 @@
             "emails": ["yu-kasuya@kddilabs.jp"]
         },
         {
+            "launchpad_id": "yuan.han",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael-ZTE",
+            "emails": ["yuan.han@zte.com.cn"]
+        },
+        {
             "launchpad_id": "yueyuquan",
             "companies": [
                 {
