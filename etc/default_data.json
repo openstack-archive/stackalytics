@@ -24504,6 +24504,18 @@
             "emails": ["zhangdaolong@fiberhome.com"]
         },
         {
+            "launchpad_id": "zhangdebo1987",
+            "gerrit_id": "zhangdebo1987",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangdebo1987",
+            "emails": ["zhangdebo@inspur.com"]
+        },
+        {
             "launchpad_id": "zhanghj",
             "gerrit_id":"HaiJieZhang",
             "companies": [
