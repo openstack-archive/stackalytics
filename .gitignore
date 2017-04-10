@@ -17,3 +17,4 @@ doc/source/api/
 .coverage
 .testrepository/
 .tox/
+.idea
