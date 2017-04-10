@@ -3,7 +3,7 @@ Stackalytics JSON API v1.0
 
 .. note::
 
-    JSON API v1.0 corresponds to Stackalytics v0.3.X
+    JSON API v1.0 corresponds to Stackalytics v0.X
 
 1 General API information
 =========================
@@ -20,13 +20,13 @@ requests limitations.
 
 Example:
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/companies
 
 or
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/companies?callback=myCallback
     Accept: application/javascript
@@ -102,7 +102,7 @@ Modules which metric is 0 are omitted.
 
 **Example Request**
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/modules?release=havana&metric=commits&project_type=openstack&user_id=zulcss
 
@@ -149,7 +149,7 @@ Companies which metric is 0 are omitted.
 
 **Example Request**
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/companies?release=havana&metric=commits&project_type=openstack&module=neutron
 
@@ -206,7 +206,7 @@ Engineers who has metric 0 are omitted. For reviews also added column with revie
 
 **Example Request: Commits**
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/engineers?release=havana&metric=commits&project_type=openstack&module=pbr
 
@@ -241,7 +241,7 @@ Engineers who has metric 0 are omitted. For reviews also added column with revie
 
 **Example Request: Reviews**
 
-.. sourcecode:: http
+.. sourcecode:: none
 
     GET /api/1.0/stats/engineers?release=havana&metric=marks&project_type=openstack&module=pbr
 
