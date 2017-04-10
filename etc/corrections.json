@@ -3652,12 +3652,5 @@
             "module": "ironic",
             "subject": "Prune local copy of tempest.scenario.manager.py"
         }
-    ],
-    "user_corrections": [
-        {
-            "correction_comment": "Reset emails (Related-Bug: #1634020)",
-            "user_id": "zhangyujun",
-            "emails": ["yujun.zhang@easystack.cn","284517620@qq.com"]
-        }
     ]
 }

@@ -91,19 +91,13 @@ def delete_user(runtime_storage_inst, user):
     runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
 
 
-def update_user_profile(stored_user, user, is_correction=False):
+def update_user_profile(stored_user, user):
     # update stored_user with user and return it
     if stored_user:
         updated_user = copy.deepcopy(stored_user)
         updated_user.update(user)
-        if is_correction:
-            updated_user['emails'] = user.get('emails',
-                                              stored_user.get('emails', []))
-            updated_user['corrections'] = stored_user.get('corrections', [])\
-                + [user.get('correction_comment', '')]
-        else:
-            updated_user['emails'] = list(set(stored_user.get('emails', [])) |
-                                          set(user.get('emails', [])))
+        updated_user['emails'] = list(set(stored_user.get('emails', [])) |
+                                      set(user.get('emails', [])))
     else:
         updated_user = copy.deepcopy(user)
     updated_user['static'] = True

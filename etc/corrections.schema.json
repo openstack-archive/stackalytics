@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
-    "required": ["corrections", "user_corrections"],
+    "required": ["corrections"],
     "properties": {
         "corrections": {
             "type": "array",
@@ -40,28 +40,6 @@
                     }
                 },
                 "required": ["primary_key", "correction_comment"]
-            }
-        },
-        "user_corrections": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "user_id": {
-                        "type": "string",
-                        "pattern": "^[\\S]+$"
-                    },
-                    "emails": {
-                        "type": "array",
-                        "items": {
-                            "type": "string",
-                            "pattern": "^[a-z\\d_\\.-]+@([a-z\\d\\.-]+\\.)+[a-z]+$"
-                        }
-                    },
-                    "correction_comment": {
-                        "type": "string"
-                    }
-                }
             }
         }
     }
