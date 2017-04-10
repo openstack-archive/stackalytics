@@ -262,14 +262,6 @@ def apply_corrections(uri, runtime_storage_inst):
             LOG.warning('Correction misses primary key: %s', c)
     runtime_storage_inst.apply_corrections(valid_corrections)
 
-    valid_user_corrections = []
-    for u in corrections['user_corrections']:
-        if 'user_id' in u:
-            valid_user_corrections.append(c)
-        else:
-            LOG.warning('User correction misses user_id: %s', u)
-    runtime_storage_inst.apply_user_corrections(valid_user_corrections)
-
 
 def process_project_list(runtime_storage_inst):
     module_groups = runtime_storage_inst.get_by_key('module_groups') or {}

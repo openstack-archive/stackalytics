@@ -66,44 +66,6 @@ class TestUserProcessor(testtools.TestCase):
         # static flag must present
         self.assertTrue(updated_user.get('static'))
 
-    def test_update_user_with_correction(self):
-        user_correction = {
-            "user_id": "user",
-            "correction_comment": "Reset emails",
-            "emails": ["updated@smith.com"]
-        }
-
-        stored_user = {
-            "launchpad_id": "user",
-            "companies": [
-                {
-                    "company_name": "Rackspace",
-                    "end_date": "2011-Nov-20"
-                },
-                {
-                    "company_name": "IBM",
-                    "end_date": None
-                }
-            ],
-            "user_name": "Johnny",
-            "emails": ["obsoleted@smith.com"],
-            "corrections": ["Old correction"],
-            "static": True
-        }
-
-        updated_user = user_processor.update_user_profile(stored_user,
-                                                          user_correction,
-                                                          is_correction=True)
-
-        # reset emails from correction
-        self.assertEqual(set(user_correction['emails']),
-                         set(updated_user['emails']))
-        # save correction history
-        self.assertEqual(updated_user['corrections'],
-                         ["Old correction", "Reset emails"])
-        # static flag must present
-        self.assertTrue(updated_user.get('static'))
-
     def test_update_user_unknown_user(self):
         user = {
             "launchpad_id": "user",
