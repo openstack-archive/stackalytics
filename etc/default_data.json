@@ -7441,11 +7441,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Gary W. Smith",
-            "emails": ["gary.w.smith@hp.com", "gary.w.smith@hpe.com", "garysmith123@gmail.com"]
+            "emails": ["gary.w.smith@hp.com", "gary.w.smith@hpe.com", "garysmith123@gmail.com", "gary.smith@suse.com", "gsmith@suse.com"]
         },
         {
             "launchpad_id": "garyk",
