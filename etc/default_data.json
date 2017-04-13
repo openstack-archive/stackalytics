@@ -1002,6 +1002,18 @@
             "emails": ["alopgeek@gmail.com", "abelopez@cisco.com", "al592b@att.com"]
         },
         {
+            "launchpad_id": "alanmeadows",
+            "gerrit_id": "alanmeadows",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alan Meadows",
+            "emails": ["am240k@att.com", "alan.meadows@gmail.com"]
+        },
+        {
             "launchpad_id": "alaski",
             "gerrit_id": "alaski",
             "companies": [
