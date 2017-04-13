@@ -1,4 +1,19 @@
-{
+# Copyright (c) 2013 Mirantis Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+# implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+default_data = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "required": ["users", "releases", "companies", "repos", "project_types"],
@@ -31,7 +46,8 @@
                         "type": "array",
                         "items": {
                             "type": "string",
-                            "pattern": "^[a-z\\d_\\.\\+-]+@([a-z\\d\\.-]+\\.)*(([a-z]+)|\\(none\\))$"
+                            "pattern": ("^[a-z\\d_\\.\\+-]+@([a-z\\d\\.-]+\\.)"
+                                        "*(([a-z]+)|\\(none\\))$")
                         },
                         "minItems": 1
                     },
@@ -48,13 +64,13 @@
                                 }
                             },
                             "required": ["company_name", "end_date"],
-                            "additionalProperties": false
+                            "additionalProperties": False
                         },
                         "minItems": 1
                     }
                 },
                 "required": ["user_name", "emails"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "releases": {
@@ -73,7 +89,7 @@
                     }
                 },
                 "required": ["release_name", "end_date"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "repos": {
@@ -122,7 +138,7 @@
                     }
                 },
                 "required": ["uri", "module", "organization"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "companies": {
@@ -148,7 +164,7 @@
                     }
                 },
                 "required": ["company_name", "domains"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "project_sources": {
@@ -185,7 +201,7 @@
                     }
                 },
                 "required": ["organization"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "module_groups": {
@@ -205,7 +221,7 @@
                     }
                 },
                 "required": ["module_group_name", "modules"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         },
         "mail_lists": {
@@ -244,14 +260,15 @@
                     }
                 },
                 "required": ["id", "title", "modules"],
-                "additionalProperties": false
+                "additionalProperties": False
             }
         }
     },
     "definitions": {
         "date_format": {
             "type": ["string", "null"],
-            "pattern": "^20\\d{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-[0-3]\\d$"
+            "pattern": ("^20\\d{2}-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|"
+                        "Nov|Dec)-[0-3]\\d$")
         }
     }
 }

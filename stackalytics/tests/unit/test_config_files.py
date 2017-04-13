@@ -23,6 +23,7 @@ import six
 import testtools
 
 from stackalytics.processor import normalizer
+from stackalytics.processor import schema as coded_schema
 
 
 IGNORED_COMPANIES = ['*robots', 'April', 'Chelsio Communications',
@@ -97,9 +98,8 @@ class TestConfigFiles(testtools.TestCase):
 
     def _verify_default_data_by_schema(self, file_name):
         default_data = self._read_file(file_name)
-        schema = self._read_file('etc/default_data.schema.json')
         try:
-            jsonschema.validate(default_data, schema)
+            jsonschema.validate(default_data, coded_schema.default_data)
         except jsonschema.ValidationError as e:
             self.fail(e)
 
