@@ -12330,6 +12330,18 @@
             "emails": ["winterma.dong@gmail.com", "dong.ma@hp.com", "dong.ma@hpe.com"]
         },
         {
+            "launchpad_id": "laun-zhangdebo",
+            "gerrit_id": "zhangdebo",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Debo Zhang",
+            "emails": ["zhangdebo@inspur.com"]
+        },
+        {
             "launchpad_id": "lawrencesu",
             "gerrit_id": "lawrencesu",
             "zanata_id": "lawrence",
@@ -24540,18 +24552,6 @@
             ],
             "user_name": "zhangdaolong",
             "emails": ["zhangdaolong@fiberhome.com"]
-        },
-        {
-            "launchpad_id": "zhangdebo1987",
-            "gerrit_id": "zhangdebo1987",
-            "companies": [
-                {
-                    "company_name": "Inspur",
-                    "end_date": null
-                }
-            ],
-            "user_name": "zhangdebo1987",
-            "emails": ["zhangdebo@inspur.com"]
         },
         {
             "launchpad_id": "zhanghj",
