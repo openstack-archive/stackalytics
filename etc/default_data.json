@@ -2913,10 +2913,14 @@
             "companies": [
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2017-Jan-31"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
-            "emails": ["bogdando@mail.ru", "bdobrelia@mirantis.com"]
+            "emails": ["bogdando@mail.ru", "bdobrelia@mirantis.com", "bdobreli@redhat.com"]
         },
         {
             "launchpad_id": "bohai",
