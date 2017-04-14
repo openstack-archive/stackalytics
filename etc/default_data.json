@@ -2758,6 +2758,18 @@
             "emails": ["mishra@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "bjozsa",
+            "gerrit_id": "v1k0d3n",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brandon B. Jozsa",
+            "emails": ["bj916b@att.com", "bjozsa@att.com", "bjozsa@jinkit.com", "bjozsa@gmail.com"]
+        },
+        {
             "launchpad_id": "blkart",
             "gerrit_id": "blkart",
             "companies": [
