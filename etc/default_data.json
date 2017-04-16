@@ -16633,6 +16633,23 @@
             "emails": ["pnkmtt@gmail.com"]
         },
         {
+            "launchpad_id": "powerds0111",
+            "gerrit_id": "powerds0111",
+            "github_id": "powerds0111",
+            "companies": [
+                {
+                    "company_name": "OpenStack Korea User Group",
+                    "end_date": "2016-Dec-31"
+                },
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dae Seong Kim",
+            "emails": ["daeseong.kim@sk.com", "powerds0111@gmail.com"]
+        },
+        {
             "launchpad_id": "ppawan",
             "companies": [
                 {
