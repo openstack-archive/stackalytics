@@ -8867,6 +8867,17 @@
             "emails": ["mbasnigh@rackspace.com", "mbasnight@gmail.com"]
         },
         {
+            "launchpad_id": "hudayou",
+            "companies": [
+                {
+                    "company_name": "Walmart",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jacky Hu",
+            "emails": ["hudayou@hotmail.com", "jacky.hu@walmart.com"]
+        },
+        {
             "launchpad_id": "hughhalf",
             "companies": [
                 {
