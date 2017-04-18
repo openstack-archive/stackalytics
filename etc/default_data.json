@@ -10236,6 +10236,27 @@
             "emails": ["pskamruk@mirantis.com", "piotr.skamruk@gmail.com", "jell@jell.pl"]
         },
         {
+            "launchpad_id": "jeremy-moffitt",
+            "gerrit_id": "jmoffitt",
+            "github_id": "jeremy-moffitt",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jeremy Moffitt",
+            "emails": ["jeremy.moffitt@hp.com", "jeremy.moffitt@hpe.com", "jeremy.moffitt@suse.com", "jmoffitt@suse.com"]
+        },
+        {
             "launchpad_id": "jeremy.zhang",
             "companies": [
                 {
