@@ -46,6 +46,18 @@
             "emails": ["a@lexholden.com","ajonasho@cisco.com","alex@alexjonasholden.com"]
         },
         {
+            "launchpad_id": "2-silvan",
+            "gerrit_id": "kaisers",
+            "companies": [
+                {
+                    "company_name": "Quobyte Inc.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Silvan Kaiser",
+            "emails": ["silvan@quobyte.com"]
+        },
+        {
             "launchpad_id": "2001xxj",
             "gerrit_id": "duhu",
             "companies": [
@@ -26513,6 +26525,11 @@
         {
             "domains": ["qrclab.com"],
             "company_name": "Quanta Research Cambridge"
+        },
+        {
+            "domains": ["quobyte.com"],
+            "company_name": "Quobyte Inc.",
+            "aliases": ["Quobyte", "quobyte", "Quobyte GmbH"]
         },
         {
             "domains": ["rackspace.co.uk", "rackspace.com", "slicehost.com", "mailtrust.com"],
