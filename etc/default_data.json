@@ -23945,6 +23945,21 @@
             "emails": ["yarkot1@gmail.com", "yarko.tymciurak@intel.com"]
         },
         {
+            "launchpad_id": "yatinkarel",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2017-Apr-07"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yatin",
+            "emails": ["yatinkarel@gmail.com", "ykarel@redhat.com", "yatin.karel@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "yatinkumbhare-c",
             "companies": [
                 {
