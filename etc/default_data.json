@@ -1385,6 +1385,22 @@
             "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith@amrith.org", "amrith.kumar@gmail.com"]
         },
         {
+            "launchpad_id": "amy-marrich",
+            "gerrit_id": "amarrich",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2017-Jan-13"
+                },
+                {
+                    "company_name": "Linux Academy",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Amy Marrich",
+            "emails": ["amy@demarco.com", "amy@linuxacademy.com", "amy.marrich@rackspace.com"]
+        },
+        {
             "launchpad_id": "anand1712",
             "companies": [
                 {
@@ -26226,6 +26242,11 @@
         {
             "domains": ["linaro.org"],
             "company_name": "Linaro"
+        },
+        {
+            "domains": ["linuxacademy.com"],
+            "company_name": "Linux Academy",
+            "aliases": ["linuxacademy.com"]
         },
         {
             "domains": ["lithium.com"],
