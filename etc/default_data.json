@@ -10421,25 +10421,6 @@
             "emails": ["jeremyfreudberg@gmail.com", "jfreud@bu.edu"]
         },
         {
-            "launchpad_id": "jgravel",
-            "companies": [
-                {
-                    "company_name": "HP",
-                    "end_date": "2015-Oct-31"
-                },
-                {
-                    "company_name": "HPE",
-                    "end_date": "2017-Mar-08"
-                },
-                {
-                    "company_name": "SUSE",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Julie Gravel",
-            "emails": ["julie.gravel@hp.com", "julie.gravel@hpe.com", "julie.gravel@suse.com", "jgravel@suse.com"]
-        },
-        {
             "launchpad_id": "jhalterman",
             "companies": [
                 {
@@ -11331,6 +11312,26 @@
             ],
             "user_name": "Julia Kreger",
             "emails": ["juliaashleykreger@gmail.com", "julia.ash.kreger@hp.com", "julia.ash.kreger@hpe.com"]
+        },
+        {
+            "launchpad_id": "julie-gravel",
+            "gerrit_id": "jgravel",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julie Gravel",
+            "emails": ["julie.gravel@hp.com", "julie.gravel@hpe.com", "julie.gravel@suse.com", "jgravel@suse.com"]
         },
         {
             "launchpad_id": "julien-marinfrisonroche",
