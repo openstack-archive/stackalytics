@@ -19317,11 +19317,21 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Apr-07"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
             "user_name": "Sean McGinnis",
-            "emails": ["sean_mcginnis@dell.com", "sean.mcginnis@dell.com", "sean.mcginnis@gmail.com", "sean.mcginnis@gmx.com"]
+            "emails": [
+                "sean_mcginnis@dell.com",
+                "sean.mcginnis@dell.com",
+                "sean.mcginnis@gmail.com",
+                "sean.mcginnis@gmx.com",
+                "sean.mcginnis@huawei.com"
+            ]
         },
         {
             "launchpad_id": "sean-perry-a",
