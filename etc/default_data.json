@@ -7374,6 +7374,18 @@
             "emails": ["furlongm@unimelb.edu.au", "marcus@aptira.com", "furlongm@gmail.com"]
         },
         {
+            "launchpad_id": "fuzhaokun",
+            "gerrit_id": "fuzk",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhaokun Fu",
+            "emails": ["fuzk@inspur.com"]
+        },
+        {
             "launchpad_id": "gabor.antal",
             "gerrit_id": "antal",
             "companies": [
