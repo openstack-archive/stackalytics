@@ -29622,7 +29622,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29632,7 +29632,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29642,7 +29642,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29652,7 +29652,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29662,7 +29662,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29672,7 +29672,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29682,7 +29682,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29692,7 +29692,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29702,7 +29702,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29712,7 +29712,7 @@
             "refs": {
                 "governance": {
                     "type": "legacy",
-                    "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
             }
         },
@@ -29785,7 +29785,7 @@
         "http://lists.openstack.org/pipermail/openstack-operators/",
         "http://lists.openstack.org/pipermail/openstack/"
     ],
-    "member_lists": ["http://www.openstack.org/community/members/profile/"],
+    "member_lists": ["https://www.openstack.org/community/members/profile/"],
     "project_types": [
         {
             "id": "all",
