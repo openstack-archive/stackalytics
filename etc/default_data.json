@@ -5236,6 +5236,22 @@
             "emails": ["david_paterson@dell.com", "david.paterson@dell.com", "davpat2112@yahoo.com"]
         },
         {
+            "launchpad_id": "daxtens",
+            "gerrit_id": "dja",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2017-Apr-07"
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Axtens",
+            "emails": ["dja@axtens.net", "daniel.axtens@canonical.com"]
+        },
+        {
             "launchpad_id": "daz",
             "companies": [
                 {
