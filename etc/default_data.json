@@ -21887,6 +21887,22 @@
             "emails": ["mtreinish@kortar.org", "treinish@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "trilliams",
+            "gerrit_id": "trilliams",
+            "companies": [
+                {
+                    "company_name": "Rackspace",
+                    "end_date": "2016-Nov-25"
+                },
+                {
+                    "company_name": "Linux Academy",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Treva Williams",
+            "emails": ["tribecca@tribecc.us", "treva@linuxacademy.com", "ogtrilliams@gmail.com"]
+        },
+        {
             "launchpad_id": "trinath-somanchi-m",
             "companies": [
                 {
