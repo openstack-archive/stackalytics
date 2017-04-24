@@ -23051,6 +23051,22 @@
             "emails": ["wanlong.gao@gmail.com", "wanlong.gao@easystack.cn"]
         },
         {
+            "launchpad_id": "watanabe.isao",
+            "gerrit_id": "watanabe.isao",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "KDDI",
+                    "end_date": null
+                }
+            ],
+            "user_name": "watanabe isao",
+            "emails": ["watanabe.isao.openstack@gmail.com", "is-watanabe@kddi.com"]
+        },
+        {
             "launchpad_id": "wayne.chan",
             "gerrit_id": "wayne.chan",
             "companies": [
