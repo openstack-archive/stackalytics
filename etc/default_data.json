@@ -11510,6 +11510,18 @@
             "emails": ["jxxiaohou331500@yeah.net"]
         },
         {
+            "launchpad_id": "k.makebe",
+            "zanata_id": "k_makabe007",
+            "companies": [
+                {
+                    "company_name": "ADOC International",
+                    "end_date": null
+                }
+                ],
+                "user_name": "Kazuhisa Makabe",
+                "emails": ["kazuhisa_makabe@adoc.co.jp"]
+        },
+        {
             "launchpad_id": "k3vinmcdonald",
             "companies": [
                 {
