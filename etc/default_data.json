@@ -25080,11 +25080,15 @@
             "companies": [
                 {
                     "company_name": "IBM",
+                    "end_date": "2014-Nov-03"
+                },
+                {
+                    "company_name": "Chinac",
                     "end_date": null
                 }
             ],
-            "user_name": "Zhi Kun Liu",
-            "emails": ["liuzhikun@gmail.com", "zhikunli@cn.ibm.com"]
+            "user_name": "Zhikun Liu",
+            "emails": ["liuzhikun@gmail.com", "liuzhikun@chinac.com"]
         },
         {
             "launchpad_id": "zhiteng-huang",
