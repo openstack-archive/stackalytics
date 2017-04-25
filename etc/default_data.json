@@ -26222,6 +26222,11 @@
             "aliases": ["IGBMC biological research lab"]
         },
         {
+            "domains": ["iii.org.tw"],
+            "company_name": "Institute for Information Industry",
+            "aliases": ["III", "III IDEAS"]
+        },
+        {
             "domains": ["imaginea.com"],
             "company_name": "Imaginea Technologies Inc."
         },
