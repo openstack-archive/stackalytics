@@ -23910,6 +23910,18 @@
             "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
         },
         {
+            "launchpad_id": "yangangang",
+            "user_name": "yangangang",
+            "gerrit_id": "yangangang",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "emails": ["wangy@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "yangwanli",
             "gerrit_id": "yangawnli",
             "companies": [
@@ -26228,6 +26240,11 @@
         {
             "domains": ["inaugust.com"],
             "company_name": "In August"
+        },
+        {
+            "domains": ["inesa.com"],
+            "company_name": "inesa",
+            "aliases": ["INESA, 上海仪电"]
         },
         {
             "domains": ["infinite.com"],
