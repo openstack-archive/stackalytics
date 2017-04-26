@@ -26261,6 +26261,10 @@
             "company_name": "Infoblox"
         },
         {
+            "domains": ["infracloud.io"],
+            "company_name": "Infracloud"
+        },
+        {
             "domains": ["inktank.com"],
             "company_name": "Inktank"
         },
