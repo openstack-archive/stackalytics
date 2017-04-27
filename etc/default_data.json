@@ -11411,6 +11411,17 @@
             "emails": ["jiang.junbo@99cloud.net", "junbo4242@gmail.com"]
         },
         {
+            "launchpad_id":"junboli",
+            "companies": [
+                {
+                     "company_name": "Fiberhome",
+                     "end_date": null
+                }
+            ],
+            "user_name":  "Junbo Li",
+            "emails": ["lijunbo@fiberhome.com", "89322125@qq.com"]
+        },
+        {
             "launchpad_id": "junqing",
             "companies": [
                 {
@@ -12875,17 +12886,6 @@
             ],
             "user_name":  "lijinghong",
             "emails": ["jh1229965510@163.com", "lijinghong@hnu.edu.cn"]
-        },
-        {
-            "launchpad_id":"lijunbo",
-            "companies": [
-                {
-                     "company_name": "Fiberhome",
-                     "end_date": null
-                }
-            ],
-            "user_name":  "lijunbo",
-            "emails": ["lijunbo@fiberhome.com", "89322125@qq.com"]
         },
         {
             "launchpad_id": "limeng",
