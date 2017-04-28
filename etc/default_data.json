@@ -11143,11 +11143,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Joshua Hesketh",
-            "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org"]
+            "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org", "joshua.hesketh@gmail.com"]
         },
         {
             "launchpad_id": "joshuatrivette",
