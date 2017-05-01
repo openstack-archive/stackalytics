@@ -13671,11 +13671,15 @@
            "companies": [
                {
                    "company_name": "Rackspace",
-                   "end_date": null
+                   "end_date": "2017-Apr-28"
+               },
+               {
+                  "company_name": "CoreOS",
+                  "end_date": null
                }
            ],
            "user_name": "Matt Dorn",
-           "emails": ["madorn@gmail.com", "matt.dorn@rackspace.com"]
+           "emails": ["madorn@gmail.com", "matt.dorn@rackspace.com", "matt.dorn@coreos.com"]
         },
         {
            "launchpad_id": "maestropandy",
