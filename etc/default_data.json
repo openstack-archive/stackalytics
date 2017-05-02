@@ -12294,6 +12294,18 @@
             "emails": ["kszab@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "kubernetes",
+            "companies": [
+                {
+                    "company_name": "*robots",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kubernetes Robot",
+            "emails": ["k8s-publish-robot@users.noreply.github.com",
+                       "k8s-merge-robot@users.noreply.github.com"]
+        },
+        {
             "launchpad_id": "kunliu",
             "companies": [
                 {
@@ -29530,7 +29542,7 @@
                 "deb-python-xstatic-term.js", "deb-python-xvfbwrapper", "deb-python-yaql", "deb-python-zaqarclient", "deb-rally",
                 "deb-ryu", "deb-sahara", "deb-sahara-dashboard", "deb-senlin", "deb-senlin-dashboard", "deb-spice-html5",
                 "deb-stevedore", "deb-subunit", "deb-swift", "deb-tempest", "deb-testresources", "deb-trove", "deb-trove-dashboard",
-                "deb-watcher", "deb-websockify", "deb-zaqar"
+                "deb-watcher", "deb-websockify", "deb-zaqar", "kubernetes"
             ]
         },
         {
