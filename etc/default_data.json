@@ -15541,11 +15541,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "Ingenious Software Pty Ltd",
                     "end_date": null
                 }
             ],
             "user_name": "Neill Cox",
-            "emails": ["neill.cox@rackspace.com", "neill@ingenious.com.au"]
+            "emails": ["neill@ingenious.com.au"]
         },
          {
             "launchpad_id": "nejc-saje",
@@ -26275,6 +26279,10 @@
         {
             "domains": ["infracloud.io"],
             "company_name": "Infracloud"
+        },
+        {
+            "domains": ["ingenious.com.au"],
+            "company_name": "Ingenious Software Pty Ltd"
         },
         {
             "domains": ["inktank.com"],
