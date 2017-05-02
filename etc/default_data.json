@@ -4711,6 +4711,17 @@
             "emails": ["d.gollub@telekom.de"]
         },
         {
+            "launchpad_id": "d.golov",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Danil Golov",
+            "emails": ["d.golov@partner.samsung.com"]
+        },
+        {
             "launchpad_id": "dachary",
             "companies": [
                 {
