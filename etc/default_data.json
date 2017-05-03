@@ -5439,6 +5439,18 @@
             "emails": ["koichi.yoshigoe@gmail.com", "yoshigoe@d-red.jp", "koichi.yoshigoe@mail.rakuten.com"]
         },
         {
+            "launchpad_id": "demoyuw",
+            "gerrit_id": "yuweichou",
+            "companies": [
+                {
+                    "company_name": "Institute for Information Industry",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuwei Chou",
+            "emails": ["yuweichou@iii.org.tw", "demoyuw@gmail.com"]
+        },
+        {
             "launchpad_id": "denis-cavalcante",
             "companies": [
                 {
