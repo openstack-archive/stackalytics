@@ -6355,14 +6355,15 @@
         },
         {
             "launchpad_id": "eaglezpf",
+            "gerrit_id": "eaglezpf",
             "companies": [
                 {
-                    "company_name": "Cisco Systems",
+                    "company_name": "inesa",
                     "end_date": null
                 }
             ],
             "user_name": "Pengfei Zhang",
-            "emails": ["lalasjtu@gmail.com", "penfzhan@cisco.com"]
+            "emails": ["zhangpf@rc.inesa.com", "lalasjtu@gmail.com"]
         },
         {
             "launchpad_id": "eantyshev",
