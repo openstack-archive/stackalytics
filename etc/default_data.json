@@ -20474,6 +20474,17 @@
             "emails": ["neutron@zte.com.cn"]
         },
         {
+            "launchpad_id": "songpy",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "hydraspy",
+            "emails": ["hydraspy@gmail.com"]
+        },
+        {
              "launchpad_id": "sonia-ghanekar",
             "companies": [
                 {
