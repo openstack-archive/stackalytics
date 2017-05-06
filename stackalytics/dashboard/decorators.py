@@ -201,12 +201,12 @@ def record_filter(ignore=None):
 
             metric = params['metric']
             if 'all' not in metric:
-                for metric in metric:
-                    if metric in parameters.METRIC_TO_RECORD_TYPE:
+                for m in metric:
+                    if m in parameters.METRIC_TO_RECORD_TYPE:
                         record_ids = _intersect(
                             record_ids,
                             memory_storage_inst.get_record_ids_by_types(
-                                parameters.METRIC_TO_RECORD_TYPE[metric]))
+                                parameters.METRIC_TO_RECORD_TYPE[m]))
 
             blueprint_id = params['blueprint_id']
             if blueprint_id:
