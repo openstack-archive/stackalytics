@@ -105,7 +105,7 @@ def round_timestamp_to_day(timestamp):
 
 def check_email_validity(email):
     if email:
-        return re.match(r'[\w\d_\.-]+@([\w\d_\.-]+\.)+[\w]+', email)
+        return re.match(r'[\w\d_\.-\\+]+@([\w\d_\.-]+\.)+[\w]+', email)
     return False
 
 
