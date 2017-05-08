@@ -286,7 +286,7 @@ def process_project_list(runtime_storage_inst):
     # register modules as module groups
     repos = runtime_storage_inst.get_by_key('repos') or []
     for repo in repos:
-        module = repo['module']
+        module = repo['module'].lower()
         module_groups[module] = utils.make_module_group(module, tag='module')
 
         if 'drivers' in repo:
