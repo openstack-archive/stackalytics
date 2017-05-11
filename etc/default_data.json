@@ -25427,6 +25427,17 @@
             "emails": ["zinoviev.ii@gmail.com"]
         },
         {
+            "github_id": "zjj2wry",
+            "user_name": "Jiajin Zheng",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "emails": ["393926893@qq.com", "zhengjiajin@caicloud.io", "zhengjiajin2016@gmail.com"]
+        },
+        {
             "launchpad_id": "zongzhewang",
             "gerrit_id": "zongzhewang",
             "companies": [
