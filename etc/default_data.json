@@ -30048,7 +30048,19 @@
         "http://lists.openstack.org/pipermail/openstack-i18n/",
         "http://lists.openstack.org/pipermail/openstack-infra/",
         "http://lists.openstack.org/pipermail/openstack-operators/",
-        "http://lists.openstack.org/pipermail/openstack/"
+        "http://lists.openstack.org/pipermail/openstack/",
+        "https://lists.opnfv.org/pipermail/fds-dev/",
+        "https://lists.opnfv.org/pipermail/infra-wg/",
+        "https://lists.opnfv.org/pipermail/mano-wg/",
+        "https://lists.opnfv.org/pipermail/odl-wg/",
+        "https://lists.opnfv.org/pipermail/openstack-dev/",
+        "https://lists.opnfv.org/pipermail/opnfv-enduser-advisory-group/",
+        "https://lists.opnfv.org/pipermail/opnfv-project-leads/",
+        "https://lists.opnfv.org/pipermail/opnfv-security/",
+        "https://lists.opnfv.org/pipermail/opnfv-tech-discuss/",
+        "https://lists.opnfv.org/pipermail/opnfv-tsc/",
+        "https://lists.opnfv.org/pipermail/opnfv-users/",
+        "https://lists.opnfv.org/pipermail/test-wg/"
     ],
     "member_lists": ["https://www.openstack.org/community/members/profile/"],
     "project_types": [
