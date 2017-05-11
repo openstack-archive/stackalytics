@@ -202,6 +202,10 @@ class Git(Vcs):
                 commit[param[0]] = rec.group(i)
                 i += 1
 
+            # ignore machine/script produced submodule auto updates
+            if commit['subject'] == u'Update git submodules':
+                continue
+
             if not commit['author_email']:
                 # ignore commits with empty email (there are some < Essex)
                 continue
