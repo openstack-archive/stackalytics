@@ -68,9 +68,11 @@ show_twitter=False) -%}
                 $(".expand-button").click(function () {
                     $("#content-" + this.id).slideToggle('fast');
                 });
+                {% if show_twitter %}
                 if (window.twttr.widgets) {
                   window.twttr.widgets.load();
                 }
+                {% endif %}
             }
         });
     }
