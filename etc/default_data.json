@@ -5989,6 +5989,17 @@
            "emails": ["dong.wenshuai@zte.com.cn"]
         },
         {
+            "launchpad_id": "dongj",
+            "companies": [
+                {
+                    "company_name": "Dt Dream",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dong Jun",
+            "emails": ["dongjun1014@gmail.com", "dongj@dtdream.com"]
+        },
+        {
            "launchpad_id": "donovan-4",
            "gerrit_id": "donovan-4",
            "companies": [
