@@ -24853,6 +24853,17 @@
             "emails": ["zhang.jinnan@99cloud.net", "zhangjinnan87@gmail.com"]
         },
         {
+            "launchpad_id": "zhang-jun3g",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Julien",
+            "emails": ["zhang.jun3g@zte.com.cn", "julienjut@gmail.com", "julienjut+zte@gmail.com"]
+        },
+        {
             "launchpad_id": "zhang-ke106",
             "companies": [
                 {
