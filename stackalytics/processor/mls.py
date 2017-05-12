@@ -54,6 +54,10 @@ TRAILING_RECORD = ('From ishakhat at mirantis.com  Tue Sep 17 07:30:43 2013\n'
 
 def _get_mail_archive_links(uri):
     content = utils.read_uri(uri)
+    if not content:
+        LOG.warning('Mail archive list is not found at %s', uri)
+        return []
+
     links = set(re.findall(r'\shref\s*=\s*[\'"]([^\'"]*\.txt\.gz)', content,
                            flags=re.IGNORECASE))
     return [parse.urljoin(uri, link) for link in links]
