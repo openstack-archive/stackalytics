@@ -25736,6 +25736,10 @@
             "company_name": "Arista Networks"
         },
         {
+            "domains": ["arm.com"],
+            "company_name": "ARM"
+        },
+        {
             "domains": ["arubanetworks.com"],
             "company_name": "Aruba Networks"
         },
