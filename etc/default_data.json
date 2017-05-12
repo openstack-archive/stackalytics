@@ -11956,11 +11956,15 @@
             "companies": [
                 {
                     "company_name": "Linaro",
+                    "end_date": "2017-May-12"
+                },
+                {
+                    "company_name": "ARM",
                     "end_date": null
                 }
             ],
             "user_name": "Kevin Zhao",
-            "emails": ["kevin.zhao@linaro.org"]
+            "emails": ["kevin.zhao@linaro.org", "kevin.zhao@arm.com"]
         },
         {
             "launchpad_id": "kevinbenton",
