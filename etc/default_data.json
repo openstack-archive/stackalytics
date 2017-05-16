@@ -8650,11 +8650,15 @@
                 },
                 {
                     "company_name": "UMCloud",
+                    "end_date": "2016-Dec-30"
+                },
+                {
+                    "company_name": "Lenovo",
                     "end_date": null
                 }
             ],
             "user_name": "Yaguang Tang",
-            "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com", "yaguang@umcloud.com"]
+            "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com", "yaguang@umcloud.com", "tangyg2@lenovo.com"]
         },
         {
             "launchpad_id": "hferenc",
