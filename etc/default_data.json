@@ -1265,11 +1265,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Feb-17"
+                },
+                {
+                    "company_name": "SwiftStack",
                     "end_date": null
                 }
             ],
             "user_name": "Alistair Coles",
-            "emails": ["alistair.coles@hp.com", "alistair.coles@hpe.com"]
+            "emails": ["alistairncoles@gmail.com", "alistair.coles@hp.com", "alistair.coles@hpe.com"]
         },
         {
             "github_id": "allencloud",
