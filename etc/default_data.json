@@ -15020,6 +15020,10 @@
             "companies": [
                 {
                     "company_name": "Hitachi",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
