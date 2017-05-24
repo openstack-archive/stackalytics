@@ -6393,6 +6393,18 @@
             "emails": ["zhangpf@rc.inesa.com", "lalasjtu@gmail.com"]
         },
         {
+            "launchpad_id": "eandersson",
+            "gerrit_id": "eoandersson",
+            "companies": [
+                {
+                    "company_name": "Blizzard Entertainment",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Erik Olof Gunnar Andersson",
+            "emails": ["eandersson@blizzard.com", "me@eandersson.net"]
+        },
+        {
             "launchpad_id": "eantyshev",
             "gerrit_id": "eantyshev",
             "companies": [
