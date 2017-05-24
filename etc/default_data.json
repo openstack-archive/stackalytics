@@ -25839,6 +25839,10 @@
             "company_name": "Bitergia"
         },
         {
+            "domains": ["blizzard.com"],
+            "company_name": "Blizzard Entertainment"
+        },
+        {
             "domains": ["bluebox.net"],
             "company_name": "Blue Box",
             "aliases": ["Blue Box Group"]
