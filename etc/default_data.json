@@ -28760,6 +28760,11 @@
             "uri": "https://github.com/kubernetes/kube-state-metrics.git"
         },
         {
+            "module": "kargo",
+            "organization": "kubernetes",
+            "uri": "https://github.com/kubernetes-incubator/kargo.git"
+        },
+        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
