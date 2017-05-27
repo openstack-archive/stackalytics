@@ -24264,6 +24264,21 @@
             "emails": ["yikunkero@gmail.com"]
         },
         {
+            "launchpad_id": "yin-zheng",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": "2017-Apr-24"
+                },
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zheng yin",
+            "emails": ["yin__zheng@163.com", "zhengyin@chinac.com", "yin.zheng@easystack.cn"]
+        },
+        {
             "launchpad_id": "yixiaolong",
             "gerrit_id": "yixiaolong",
             "companies": [
