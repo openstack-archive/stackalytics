@@ -14,9 +14,12 @@
 # limitations under the License.
 
 import cProfile
+from datetime import datetime as datetime
 import functools
 import json
+import math
 import operator
+import re
 import time
 
 import flask
@@ -30,7 +33,6 @@ from stackalytics.dashboard import parameters
 from stackalytics.dashboard import vault
 from stackalytics.processor import utils
 from stackalytics import version as stackalytics_version
-
 
 CONF = cfg.CONF
 LOG = logging.getLogger(__name__)
@@ -65,6 +67,28 @@ def _get_single(params):
     return None
 
 
+def _get_from_human_readable_time(date):
+    # format likes 20170401, 2017-04-01 can be supported, only years
+    # after 2000 is supported.
+    # format likes 2017-Apr-01 is not supported, for it is transferred to
+    # lower case, ie. 2017-arp-01, which can not be directly used.
+    regexs = [r'^20\d{2}(0[1-9]|1[0-2])([0-2]\d|3[0-1])$',
+              r'^20\d{2}-(0[1-9]|1[0-2])-([0-2]\d|3[0-1])$']
+    time_formats = ["%Y%m%d", "%Y-%m-%d"]
+    for i in range(len(regexs)):
+        try:
+            if re.compile(regexs[i]).search(date):
+                utctime = datetime.strptime(date, time_formats[i])
+                epoch_second = int(time.mktime(utctime.timetuple()))
+                offset = int(math.ceil((datetime.now()
+                                        - datetime.utcnow()).total_seconds()))
+                epoch_second += offset
+                return epoch_second
+        except Exception as e:
+            LOG.info("%s", e)
+    return date
+
+
 def _prepare_params(kwargs, ignore):
     params = kwargs.get('_params')
 
@@ -75,10 +99,10 @@ def _prepare_params(kwargs, ignore):
 
         if params['start_date']:
             params['start_date'] = [utils.round_timestamp_to_day(
-                params['start_date'][0])]
+                _get_from_human_readable_time(params['start_date'][0]))]
         if params['end_date']:
             params['end_date'] = [utils.round_timestamp_to_day(
-                params['end_date'][0])]
+                _get_from_human_readable_time(params['end_date'][0]))]
 
         _validate_params(params)
         kwargs['_params'] = params
