@@ -19698,6 +19698,21 @@
             "emails": ["ahnsk@sk.com", "seungkyua@gmail.com"]
         },
         {
+            "launchpad_id": "shakhat",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-May-31"
+                },
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Shakhat",
+            "emails": ["ishakhat@mirantis.com", "shakhat@gmail.com"]
+        },
+        {
             "launchpad_id": "shakhova-margarita",
             "gerrit_id": "MargaritaShakhova",
             "github_id": "MargaritaShakhova",
