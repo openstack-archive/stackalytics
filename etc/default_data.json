@@ -3312,6 +3312,17 @@
             "emails": ["carl@ecbaldwin.net", "carl.baldwin@hp.com", "carl.baldwin@hpe.com"]
         },
         {
+            "github_id": "carlory",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Baofa Fan",
+            "emails": ["fanbaofa@gmail.com", "baofa.fan@daocloud.io"]
+        },
+        {
             "launchpad_id": "carone1",
             "gerrit_id": "carone1",
             "companies": [
