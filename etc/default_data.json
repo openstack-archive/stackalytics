@@ -23856,11 +23856,15 @@
                 },
                 {
                     "company_name": "Huawei",
+                    "end_date": "2017-Apr-30"
+                },
+                {
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
             "user_name": "Hong Hui Xiao",
-            "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "xiaohonghui@huawei.com"]
+            "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "honghuix@vmware.com"]
         },
         {
             "launchpad_id": "xiaoran.li",
