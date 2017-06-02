@@ -10616,11 +10616,15 @@
             "companies": [
                 {
                     "company_name": "GohighSec",
+                    "end_date": "2017-Apr-15"
+                },
+                {
+                    "company_name": "NAVER",
                     "end_date": null
                 }
             ],
             "user_name": "Raja",
-            "emails": ["jiangpch@gohighsec.com"]
+            "emails": ["jiangpch@gohighsec.com", "jiangpengcheng@navercorp.com"]
         },
         {
             "launchpad_id": "jiangwt100",
