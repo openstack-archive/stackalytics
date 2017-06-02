@@ -17678,12 +17678,12 @@
              "zanata_id": "raymon_ha",
              "companies": [
                  {
-                     "company_name": "OpenStack Korea User Group",
+                     "company_name": "NAVER",
                      "end_date": null
                  }
              ],
              "user_name": "Ha Hyun",
-             "emails": ["hfamily15@gmail.com", "raymon.ha@kakaocorp.com"]
+             "emails": ["hfamily15@gmail.com", "hyun.ha@navercorp.com"]
          },
         {
             "launchpad_id": "raymond-angelone",
