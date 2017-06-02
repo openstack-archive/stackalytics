@@ -27000,6 +27000,11 @@
             "company_name": "Pivotal"
         },
         {
+            "domains": ["platform9.com", "platform9.net"],
+            "company_name": "Platform9",
+            "aliases": ["Platform9 Systems", "Platform9 Systems, Inc."]
+        },
+        {
             "domains": ["playhaven.com"],
             "company_name": "PlayHaven"
         },
