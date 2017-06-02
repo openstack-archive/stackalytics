@@ -3450,11 +3450,15 @@
             "companies": [
                 {
                     "company_name": "Comcast",
+                    "end_date": "2016-Oct-17"
+                },
+                {
+                    "company_name": "Walmart",
                     "end_date": null
                 }
             ],
             "user_name": "Chuck Burkett",
-            "emails": ["chuck_burkett@cable.comcast.com", "chuck@burkett.org"]
+            "emails": ["charles.burkett@walmart.com", "chuck_burkett@cable.comcast.com", "chuck@burkett.org"]
         },
         {
             "launchpad_id": "ccarlino",
