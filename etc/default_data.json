@@ -13784,6 +13784,17 @@
             "emails": ["maciej.jozefczyk@corp.ovh.com"]
         },
         {
+            "launchpad_id": "maciejkucia",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maciej Kucia",
+            "emails": ["maciej@kucia.net", "m.kucia@partner.samsung.com"]
+        },
+        {
             "launchpad_id": "madhuri-rai07",
             "companies": [
                 {
