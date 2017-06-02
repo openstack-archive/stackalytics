@@ -2219,6 +2219,22 @@
             "emails": ["ashishsingh2k8@gmail.com"]
         },
         {
+            "launchpad_id": "ashish.billore",
+            "gerrit_id": "ashish.billore",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2015-Jun-20"
+                },
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ashish Billore",
+            "emails": ["ashish.billore@gmail.com", "ashish.billore@outlook.com", "ash.billore@samsung.com", "ashish.billore1@in.ibm.com"]
+        },
+        {
             "launchpad_id": "ashlee-i",
             "companies": [
                 {
@@ -27067,7 +27083,7 @@
         {
             "domains": ["samsung.com"],
             "company_name": "Samsung",
-            "aliases": ["Samsung SDS", "Samsung India Software Operations"]
+            "aliases": ["Samsung SDS", "Samsung Electronics", "Samsung India Software Operations"]
         },
         {
             "domains": ["sandisk.com"],
