@@ -23417,6 +23417,18 @@
             "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com", "wchrisjohnson@hpe.com"]
         },
         {
+            "launchpad_id": "wdhwang",
+            "gerrit_id": "wdhwang",
+            "companies": [
+                {
+                    "company_name": "Institute for Information Industry",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wen-Dwo Hwang",
+            "emails": ["wendwo.hwang@gmail.com", "wdhwang@iii.org.tw"]
+        },
+        {
             "launchpad_id": "wei-d-chen",
             "companies": [
                 {
