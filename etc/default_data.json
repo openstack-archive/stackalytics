@@ -9041,7 +9041,7 @@
             "launchpad_id": "huayue",
             "companies": [
                 {
-                    "company_name": "XiangCloud",
+                    "company_name": "China Railway ITC",
                     "end_date": null
                 }
             ],
@@ -26215,6 +26215,11 @@
         {
             "domains": ["create-net.org"],
             "company_name": "CREATE-NET"
+        },
+        {
+            "domains": ["critc.cn"],
+            "company_name": "China Railway ITC",
+            "aliases": ["中国铁路信息技术中心"]
         },
         {
             "domains": ["crs4.it"],
