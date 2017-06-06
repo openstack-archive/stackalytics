@@ -12550,6 +12550,15 @@
             "emails": ["peter@balland.net", "pballand@vmware.com", "peter@congress-dev.localdomain"]
         },
         {
+            "launchpad_id": "l-xiaoqiang",
+            "companies": [{
+                "company_name": "H3C",
+                "end_date": null
+            }],
+            "user_name":"erenliu",
+            "emails":["liu.xiaoqiang@h3c.com","l.xiaoqiang@qq.com"]
+        },
+        {
             "launchpad_id": "lachlan-evenson",
             "gerrit_id": "lachlan.evenson",
             "companies": [
