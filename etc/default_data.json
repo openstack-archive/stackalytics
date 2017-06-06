@@ -16192,10 +16192,14 @@
                 {
                     "company_name": "Rackspace",
                     "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2017-Jun-05"
                 }
             ],
             "user_name": "Tony Breeds",
-            "emails": ["tony@bakeyournoodle.com", "tony.breeds@rackspace.com"]
+            "emails": ["tony@bakeyournoodle.com", "tony.breeds@rackspace.com", "tony.breeds@redhat.com"]
         },
         {
             "launchpad_id": "octopuszhang",
