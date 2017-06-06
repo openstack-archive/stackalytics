@@ -6017,6 +6017,22 @@
             "emails": ["dolph.mathews@gmail.com", "dolph.mathews@rackspace.com"]
         },
         {
+            "launchpad_id": "dommgifer",
+            "gerrit_id": "dommgifer",
+            "companies": [
+                {
+                    "company_name": "inwinSTACK",
+                    "end_date": "2017-Feb-10"
+                },
+                {
+                    "company_name": "Institute for Information Industry",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chiawei Xie",
+            "emails": ["jeffxie@iii.org.tw","dommgifer@gmail.com"]
+        },
+        {
             "launchpad_id": "dong-juan1",
             "companies": [
                 {
