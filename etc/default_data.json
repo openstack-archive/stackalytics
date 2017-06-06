@@ -12695,6 +12695,17 @@
             "emails": ["leandro.i.costantino@intel.com", "lcostantino@gmail.com"]
         },
         {
+            "launchpad_id": "leeshow",
+            "companies": [
+                {
+                    "company_name": "China Railway ITC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xiaoli",
+            "emails": ["xiaoli@sinorail.com", "xiakewudixl@163.com"]
+        },
+        {
             "launchpad_id": "leetpy",
             "companies": [
                 {
