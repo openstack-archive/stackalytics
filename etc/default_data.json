@@ -7311,7 +7311,7 @@
              "launchpad_id": "fmliu",
              "companies": [
                  {
-                     "company_name": "HUST",
+                     "company_name": "CDGCC, HUST",
                      "end_date": null
                  }
              ],
@@ -15766,7 +15766,7 @@
              "launchpad_id": "newypei",
              "companies": [
                  {
-                     "company_name": "HUST",
+                     "company_name": "CDGCC, HUST",
                      "end_date": null
                  }
              ],
@@ -20688,7 +20688,7 @@
              "gerrit_id": "southeast02",
              "companies": [
                  {
-                     "company_name": "HUST",
+                     "company_name": "CDGCC, HUST",
                      "end_date": null
                  }
              ],
@@ -26481,9 +26481,10 @@
               "huawei storage system", "华为技术有限公司", "华为", "Huawei Technolgies"]
         },
         {
-            "domains": ["hust.edu.cn"],
-            "company_name": "HUST",
-            "aliases": ["Huazhong University of Science and Technology", "华中科技大学"]
+            "domains": ["hust.edu.cn", "grid.hust.edu.cn"],
+            "company_name": "CDGCC, HUST",
+            "aliases": ["Cloud Datacenter & Green Computing/Communications Reserach Group, Huazhong University of Science and Technology",
+              "华中科技大学云数据中心与绿色计算/通信小组"]
         },
         {
             "domains": ["hyper.sh"],
