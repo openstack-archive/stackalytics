@@ -1,8 +1,8 @@
 Code Reviews with Gerrit
 ========================
 
-Stackalytics uses the `Gerrit`_ tool to review proposed code changes. The review site
-is http://review.openstack.org.
+Stackalytics uses the `Gerrit`_ tool to review proposed code changes.
+The review site is https://review.openstack.org.
 
 Gerrit is a complete replacement for Github pull requests. `All Github pull
 requests to the Stackalytics repository will be ignored`.
@@ -12,5 +12,5 @@ started using Gerrit. See `Development Workflow`_ for more detailed
 documentation on how to work with Gerrit.
 
 .. _Gerrit: http://code.google.com/p/gerrit
-.. _Development Workflow: http://docs.openstack.org/infra/manual/developers.html#development-workflow
-.. _Gerrit Workflow Quick Reference: http://docs.openstack.org/infra/manual/developers.html#development-workflow
+.. _Development Workflow: https://docs.openstack.org/infra/manual/developers.html#development-workflow
+.. _Gerrit Workflow Quick Reference: https://docs.openstack.org/infra/manual/developers.html#development-workflow
