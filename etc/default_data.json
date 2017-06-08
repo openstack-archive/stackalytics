@@ -17077,6 +17077,18 @@
             "emails": ["pradeepkumar.ks@ericsson.com", "pk5294@att.com", "pradeep.sreenivas@gmail.com"]
         },
         {
+            "launchpad_id": "pradeepkumar.v",
+            "gerrit_id": "pradeepkumar",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pradeep Kumar Velusamy",
+            "emails": ["pradeepkumar.v@cognizant.com"]
+        },
+        {
             "launchpad_id": "prameswar",
             "gerrit_id": "prameswar",
             "companies": [
