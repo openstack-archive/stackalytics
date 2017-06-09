@@ -4975,6 +4975,17 @@
             "emails": ["daniel.pawlik@corp.ovh.com"]
         },
         {
+            "launchpad_id": "danielr-2",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Russell",
+            "emails": ["danielr@hostworks.com.au"]
+        },
+        {
            "launchpad_id": "danila3",
            "companies": [
                {
