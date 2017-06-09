@@ -3548,6 +3548,18 @@
             "emails": ["chdent@redhat.com", "cdent@anticdent.org", "cdent@mirantis.com", "chris.dent@gmail.com"]
         },
         {
+            "launchpad_id": "cdyangzhenyu",
+            "gerrit_id": "yangzhenyu",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhenyu Yang",
+            "emails": ["cdyangzhenyu@gmail.com"]
+        },
+        {
             "launchpad_id": "cedric-zhuang",
             "gerrit_id": "CedricZhuang",
             "companies": [
