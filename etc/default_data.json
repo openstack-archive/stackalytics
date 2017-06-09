@@ -19796,6 +19796,18 @@
             "emails": ["itzshamail@gmail.com"]
         },
         {
+            "launchpad_id": "shanjj",
+            "gerrit_id": "shanker",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shanker",
+            "emails": ["shanker.jj@cognizant.com","shanker.j.j@gmail.com"]
+        },
+        {
             "launchpad_id": "shaohef",
             "companies": [
                 {
