@@ -39,11 +39,7 @@ def _normalize_user(user):
                                           end_date=0))
     user['user_id'] = user_processor.make_user_id(
         launchpad_id=user.get('launchpad_id'),
-        emails=user.get('emails'),
-        gerrit_id=user.get('gerrit_id'),
-        github_id=user.get('github_id'),
-        zanata_id=user.get('zanata_id'),
-        ldap_id=user.get('ldap_id')) or user.get('user_id')
+        emails=user.get('emails'))
 
 
 def _normalize_users(users):
