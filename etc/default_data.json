@@ -1399,10 +1399,18 @@
                 {
                     "company_name": "Tesora",
                     "end_date": "2017-Jan-30"
+                },
+                {
+                    "company_name": "Independent",
+                    "end_date": "2017-Apr-23"
+                },
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
                 }
             ],
             "user_name": "Amrith Kumar",
-            "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith@amrith.org", "amrith.kumar@gmail.com"]
+            "emails": ["amrith@parelastic.com", "amrith@tesora.com", "amrith@amrith.org", "amrith.kumar@gmail.com", "amrith.kumar@vzw.com"]
         },
         {
             "launchpad_id": "amy-marrich",
@@ -27528,6 +27536,10 @@
         {
             "domains": ["veritas.com"],
             "company_name": "Veritas"
+        },
+        {
+            "domains": ["verizonwireless.com", "vzw.com"],
+            "company_name": "Verizon Wireless"
         },
         {
             "domains": ["versa-networks.com"],
