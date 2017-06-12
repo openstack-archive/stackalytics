@@ -237,7 +237,7 @@ class RecordProcessor(object):
     def _need_to_fetch_launchpad(self):
         return CONF.fetching_user_source == 'launchpad'
 
-    def update_user(self, record):
+    def _update_user(self, record):
         email = record.get('author_email')
         user_e = user_processor.load_user(
             self.runtime_storage_inst, email=email) or {}
@@ -307,7 +307,7 @@ class RecordProcessor(object):
         return user
 
     def _update_record_and_user(self, record):
-        user = self.update_user(record)
+        user = self._update_user(record)
 
         record['user_id'] = user['user_id']
         if user.get('user_name'):
