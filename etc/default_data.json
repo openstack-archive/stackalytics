@@ -17544,11 +17544,15 @@
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": "2017-Mar-12"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Raildo Mascena de Sousa Filho",
-            "emails": ["raildo@lsd.ufcg.edu.br"]
+            "emails": ["raildo@lsd.ufcg.edu.br", "raildom@gmail.com", "rmascena@redhat.com"]
         },
         {
             "launchpad_id": "rajasi-kulkarni",
