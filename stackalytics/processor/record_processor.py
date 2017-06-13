@@ -188,8 +188,7 @@ class RecordProcessor(object):
 
         # collect ordinary fields
         for key in ['seq', 'user_name', 'user_id', 'gerrit_id', 'github_id',
-                    'launchpad_id', 'companies', 'static', 'ldap_id',
-                    'zanata_id']:
+                    'launchpad_id', 'companies', 'static', 'zanata_id']:
             value = next((v.get(key) for v in user_profiles if v.get(key)),
                          None)
             if value:

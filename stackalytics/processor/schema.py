@@ -33,9 +33,6 @@ default_data = {
                     "gerrit_id": {
                         "type": "string"
                     },
-                    "ldap_id": {
-                        "type": "string"
-                    },
                     "zanata_id": {
                         "type": "string"
                     },
