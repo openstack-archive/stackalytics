@@ -22685,6 +22685,22 @@
             "emails": ["vey.julien@gmail.com", "julien.vey@numergy.com"]
         },
         {
+            "launchpad_id": "vgridnev",
+            "gerrit_id": "vgridnev",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Jun-13"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vitaly Gridnev",
+            "emails": ["vgridnev@mirantis.com", "gridnevvvit@gmail.com"]
+        },
+        {
             "launchpad_id": "victor-feitosa",
             "gerrit_id": "victorfeitosa",
             "companies": [
