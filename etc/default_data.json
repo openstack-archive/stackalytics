@@ -16450,7 +16450,7 @@
                 }
             ],
             "user_name": "Paul Belanger",
-            "emails": ["pabelanger@redhat.com"]
+            "emails": ["paul.belanger@polybeacon.com", "pabelanger@redhat.com"]
         },
         {
             "launchpad_id": "pablo-a-fuente",
