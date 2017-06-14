@@ -18445,6 +18445,22 @@
             "emails": ["robert.simai@suse.com"]
         },
         {
+            "launchpad_id": "robert.choi",
+            "github_id": "robertchoi80",
+            "companies": [
+                {
+                    "company_name": "KT Corporation",
+                    "end_date": "2014-Nov-29"
+                },
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robert Choi",
+            "emails": ["taeilchoi1@gmail.com"]
+        },
+        {
             "launchpad_id": "roberto-moral",
             "companies": [
                 {
