@@ -35,6 +35,7 @@ def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
         return 'zanata:%s' % zanata_id
     if ci_id:
         return 'ci:%s' % re.sub(r'[^\w]', '_', ci_id.lower())
+    return None
 
 
 def store_user(runtime_storage_inst, user):
@@ -63,15 +64,10 @@ def store_user(runtime_storage_inst, user):
 def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
               launchpad_id=None, gerrit_id=None, member_id=None,
               github_id=None, zanata_id=None):
-    if gerrit_id:
-        key = 'gerrit:%s' % gerrit_id
-    elif member_id:
-        key = 'member:%s' % member_id
-    elif github_id:
-        key = 'github:%s' % github_id
-    elif zanata_id:
-        key = 'zanata:%s' % zanata_id
-    else:
+
+    key = make_user_id(gerrit_id=gerrit_id, member_id=member_id,
+                       github_id=github_id, zanata_id=zanata_id)
+    if not key:
         key = seq or user_id or launchpad_id or email
     if key:
         return runtime_storage_inst.get_by_key('user:%s' % key)
