@@ -25724,6 +25724,17 @@
             "emails": ["zhu.shangzhong@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhuxuanpeng",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhuxuanpeng",
+            "emails": ["zhu.xuanpeng@zte.com.cn"]
+        },
+        {
             "launchpad_id": "ziad-sawalha",
             "companies": [
                 {
