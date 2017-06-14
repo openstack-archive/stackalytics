@@ -22,8 +22,7 @@ LOG = logging.getLogger(__name__)
 
 
 def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
-                 member_id=None, github_id=None, ldap_id=None, ci_id=None,
-                 zanata_id=None):
+                 member_id=None, github_id=None, ci_id=None, zanata_id=None):
     if launchpad_id or emails:
         return launchpad_id or emails[0]
     if gerrit_id:
@@ -32,8 +31,6 @@ def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
         return 'member:%s' % member_id
     if github_id:
         return 'github:%s' % github_id
-    if ldap_id:
-        return 'ldap:%s' % ldap_id
     if zanata_id:
         return 'zanata:%s' % zanata_id
     if ci_id:
@@ -56,9 +53,6 @@ def store_user(runtime_storage_inst, user):
     if user.get('github_id'):
         runtime_storage_inst.set_by_key('user:github:%s' % user['github_id'],
                                         user)
-    if user.get('ldap_id'):
-        runtime_storage_inst.set_by_key('user:ldap:%s' % user['ldap_id'],
-                                        user)
     if user.get('zanata_id'):
         runtime_storage_inst.set_by_key('user:zanata:%s' % user['zanata_id'],
                                         user)
@@ -68,15 +62,13 @@ def store_user(runtime_storage_inst, user):
 
 def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
               launchpad_id=None, gerrit_id=None, member_id=None,
-              github_id=None, ldap_id=None, zanata_id=None):
+              github_id=None, zanata_id=None):
     if gerrit_id:
         key = 'gerrit:%s' % gerrit_id
     elif member_id:
         key = 'member:%s' % member_id
     elif github_id:
         key = 'github:%s' % github_id
-    elif ldap_id:
-        key = 'ldap:%s' % ldap_id
     elif zanata_id:
         key = 'zanata:%s' % zanata_id
     else:
