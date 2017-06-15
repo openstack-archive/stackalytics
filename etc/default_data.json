@@ -3741,11 +3741,15 @@
             "companies": [
                 {
                     "company_name": "UnitedStack",
+                    "end_date": "2017-Jun-12"
+                },
+                {
+                    "company_name": "Lenovo",
                     "end_date": null
                 }
             ],
             "user_name": "Zhi Chang",
-            "emails": ["changzhi@unitedstack.com", "changzhi1990@gmail.com"]
+            "emails": ["changzhi2@lenovo.com", "changzhi@unitedstack.com", "changzhi1990@gmail.com"]
         },
         {
             "github_id": "chanwit",
