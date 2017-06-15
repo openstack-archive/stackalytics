@@ -587,7 +587,8 @@ class RecordProcessor(object):
         # _update_record_and_user function will create new user if needed
         self._update_record_and_user(record)
         record['company_name'] = company_name
-        user = user_processor.load_user(self.runtime_storage_inst, user_id)
+        user = user_processor.load_user(self.runtime_storage_inst,
+                                        user_id=user_id)
 
         user['user_name'] = record['author_name']
         user['companies'] = [{
@@ -894,7 +895,7 @@ class RecordProcessor(object):
             yield record
 
             user = user_processor.load_user(self.runtime_storage_inst,
-                                            record['user_id'])
+                                            user_id=record['user_id'])
             LOG.debug('Update user %s, company name changed to %s',
                       user, company_name)
             user['companies'] = [{
