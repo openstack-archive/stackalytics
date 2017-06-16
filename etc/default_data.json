@@ -1835,6 +1835,18 @@
             "emails": ["anthony.washington@intel.com", "awashington251@gmail.com"]
         },
         {
+            "launchpad_id": "anticw",
+            "gerrit_id": "anticw",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chris Wedgwood",
+            "emails": ["cw@f00f.org"]
+        },
+        {
             "launchpad_id": "antoinecabot",
             "gerrit_id": "antoinecabot",
             "companies": [
