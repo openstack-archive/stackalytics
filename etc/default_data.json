@@ -13523,6 +13523,22 @@
             "emails": ["lixing3@sgitg.sgcc.com.cn", "lixing0405@sina.com"]
         },
         {
+            "launchpad_id": "lixipeng",
+            "gerrit_id": "hahaps",
+            "companies": [
+                {
+                    "company_name": "Huron",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "Prophetech",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Li Xipeng",
+            "emails": ["lixipeng@hihuron.com", "lixipeng@prophetech.cn"]
+        },
+        {
             "launchpad_id": "liyanhang",
             "gerrit_id":"liyanhang",
             "companies": [
@@ -24118,6 +24134,22 @@
             "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "honghuix@vmware.com"]
         },
         {
+            "launchpad_id": "xiaoquqi",
+            "gerrit_id": "xiaoquqi",
+            "companies": [
+                {
+                    "company_name": "Huron",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "Prophetech",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ray Sun",
+            "emails": ["xiaoquqi@gmail.com", "sunqi@hihuron.com", "sunqi@prophetech.cn"]
+        },
+        {
             "launchpad_id": "xiaoran.li",
             "gerrit_id": "xiaoran.li",
             "companies": [
@@ -25561,6 +25593,22 @@
             ],
             "user_name": "zlyqqq",
             "emails": ["hfzhengliuyang@163.com"]
+        },
+        {
+            "launchpad_id": "zhengyue-5",
+            "gerrit_id": "zhengyue",
+            "companies": [
+                {
+                    "company_name": "Huron",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "Prophetech",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zheng Yue",
+            "emails": ["zhengyue@hihuron.com", "zhengyue@prophetech.cn"]
         },
         {
             "launchpad_id": "zhengzhenyu",
@@ -27306,6 +27354,11 @@
             "domains": ["projectcalico.org"],
             "company_name": "Project Calico",
             "aliases": ["Calico"]
+        },
+        {
+            "domains": ["prophetech.cn"],
+            "company_name": "Prophet Technology",
+            "aliases": ["Prophetech"]
         },
         {
             "domains": ["pubyun.com"],
