@@ -8329,6 +8329,17 @@
             "emails": ["guilhem.lettron@optiflows.com", "guilhem.lettron@gmail.com", "guilhem@lettron.fr"]
         },
         {
+            "launchpad_id": "gujun1989",
+            "companies": [
+                {
+                    "company_name": "H3C",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jun923.gu",
+            "emails": ["gujun1989@126.com", "gu.jun@h3c.com"]
+        },
+        {
             "launchpad_id": "guolei",
             "companies": [
                 {
