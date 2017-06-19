@@ -13528,10 +13528,10 @@
             "companies": [
                 {
                     "company_name": "Huron",
-                    "end_date": "2017-Mar-31"
+                    "end_date": "2014-Mar-31"
                 },
                 {
-                    "company_name": "Prophetech",
+                    "company_name": "PropheTech.cn",
                     "end_date": null
                 }
             ],
@@ -24150,10 +24150,10 @@
             "companies": [
                 {
                     "company_name": "Huron",
-                    "end_date": "2017-Mar-31"
+                    "end_date": "2014-Mar-31"
                 },
                 {
-                    "company_name": "Prophetech",
+                    "company_name": "PropheTech.cn",
                     "end_date": null
                 }
             ],
@@ -25611,10 +25611,10 @@
             "companies": [
                 {
                     "company_name": "Huron",
-                    "end_date": "2017-Mar-31"
+                    "end_date": "2014-Mar-31"
                 },
                 {
-                    "company_name": "Prophetech",
+                    "company_name": "PropheTech.cn",
                     "end_date": null
                 }
             ],
@@ -27369,7 +27369,7 @@
         {
             "domains": ["prophetech.cn"],
             "company_name": "Prophet Technology",
-            "aliases": ["Prophetech"]
+            "aliases": ["PropheTech.cn"]
         },
         {
             "domains": ["pubyun.com"],
