@@ -28,6 +28,8 @@ LOG = logging.getLogger(__name__)
 
 
 class Vcs(object):
+    """Base object for Version Control System"""
+
     def __init__(self, repo, sources_root):
         self.repo = repo
         self.sources_root = sources_root
