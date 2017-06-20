@@ -13624,6 +13624,17 @@
             "emails": ["yippeetry@gmail.com", "yang.liu@eayun.com"]
         },
         {
+             "launchpad_id": "lyman-xu",
+             "companies": [
+                 {
+                     "company_name": "HUST",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Zhuang Xu",
+             "emails": ["xu_lyman@163.com"]
+        },
+        {
             "launchpad_id": "lyqgenius",
             "companies": [
                 {
