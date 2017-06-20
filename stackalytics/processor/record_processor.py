@@ -283,25 +283,25 @@ class RecordProcessor(object):
 
         if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq') ==
              user_z.get('seq')) and user_e.get('seq')):
-            # sequence numbers are set and the same, merge is not needed
-            user = user_e
+            # If sequence numbers are set and the same, merge is not needed
+            return user_e
+
+        user = self._create_user(launchpad_id, email, gerrit_id, zanata_id,
+                                 user_name)
+
+        if user_e or user_l or user_g or user_z:
+            user = self._merge_user_profiles(
+                [user_e, user_l, user_g, user_z, user])
         else:
-            user = self._create_user(launchpad_id, email, gerrit_id, zanata_id,
-                                     user_name)
+            # create new
+            if (self._need_to_fetch_launchpad() and not user_name):
+                user_name = self._get_lp_user_name(launchpad_id)
+                if user_name:
+                    user['user_name'] = user_name
+            LOG.debug('Created new user: %s', user)
 
-            if user_e or user_l or user_g or user_z:
-                user = self._merge_user_profiles(
-                    [user_e, user_l, user_g, user_z, user])
-            else:
-                # create new
-                if (self._need_to_fetch_launchpad() and not user_name):
-                    user_name = self._get_lp_user_name(launchpad_id)
-                    if user_name:
-                        user['user_name'] = user_name
-                LOG.debug('Created new user: %s', user)
-
-            user_processor.store_user(self.runtime_storage_inst, user)
-            LOG.debug('Stored user: %s', user)
+        user_processor.store_user(self.runtime_storage_inst, user)
+        LOG.debug('Stored user: %s', user)
 
         return user
 
