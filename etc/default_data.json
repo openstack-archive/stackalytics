@@ -12349,6 +12349,17 @@
             "emails": ["anlin.kong@gmail.com", "lingxian.kong@qq.com"]
         },
         {
+            "launchpad_id": "kongxiangyun",
+            "companies": [
+                {
+                    "company_name": "China Railway ITC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "kongxiangyun",
+            "emails": ["kongxyxian2010@163.com"]
+        },
+        {
             "launchpad_id": "koti-kelam",
             "companies": [
                 {
