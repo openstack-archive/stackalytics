@@ -165,21 +165,22 @@ class Gerrit(Rcs):
             for line in stdout:
                 review = json.loads(line)
 
-                if 'number' in review:  # choose reviews not summary
+                if 'number' not in review:
+                    continue  # Skip summary reviews
 
-                    if review['number'] in processed:
-                        continue  # already seen that
+                if review['number'] in processed:
+                    continue  # already seen that
 
-                    last_updated = int(review['lastUpdated'])
-                    if last_updated < last_retrieval_time:  # too old
-                        proceed = False
-                        break
+                last_updated = int(review['lastUpdated'])
+                if last_updated < last_retrieval_time:  # too old
+                    proceed = False
+                    break
 
-                    proceed = True  # have at least one review, can dig deeper
-                    age = max(age, int(time.time()) - last_updated)
-                    processed.add(review['number'])
-                    review['module'] = module
-                    yield review
+                proceed = True  # have at least one review, can dig deeper
+                age = max(age, int(time.time()) - last_updated)
+                processed.add(review['number'])
+                review['module'] = module
+                yield review
 
     def get_project_list(self):
         exec_result = self._exec_command_with_retrial('gerrit ls-projects')
