@@ -10884,6 +10884,21 @@
             "emails": ["ji.wei3@zte.com.cn"]
         },
         {
+            "launchpad_id": "jjmartinez",
+            "companies": [
+                {
+                    "company_name": "Memset",
+                    "end_date": "2017-Jan-06"
+                },
+                {
+                    "company_name": "Cray",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Juan J. Martinez",
+            "emails": ["jjm@usebox.net", "juan@memset.com", "jmartinez@cray.com"]
+        },
+        {
             "launchpad_id": "jjohnsonkoilraj",
             "companies": [
                 {
