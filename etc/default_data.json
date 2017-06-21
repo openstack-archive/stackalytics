@@ -9841,6 +9841,23 @@
             "emails": ["ivoks@ubuntu.com", "ante.karamatic@canonical.com"]
         },
         {
+            "launchpad_id": "iyozhikov",
+            "gerrit_id": "iyozhikov",
+            "companies": [
+
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Jun-21"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Igor Yozhikov",
+            "emails": ["medput@gmail.com", "iyozhikov@mirantis.com"]
+        },
+        {
             "launchpad_id": "iz-brandon",
             "gerrit_id": "izbrandon",
             "companies": [
