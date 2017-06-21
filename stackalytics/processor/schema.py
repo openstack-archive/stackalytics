@@ -30,9 +30,6 @@ default_data = {
                     "github_id": {
                         "type": "string"
                     },
-                    "gerrit_id": {
-                        "type": "string"
-                    },
                     "zanata_id": {
                         "type": "string"
                     },

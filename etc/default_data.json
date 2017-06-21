@@ -2,7 +2,6 @@
     "users": [
         {
             "launchpad_id": "0-doug",
-            "gerrit_id": "dougshelley",
             "companies": [
                 {
                     "company_name": "Tesora",
@@ -47,7 +46,6 @@
         },
         {
             "launchpad_id": "2-silvan",
-            "gerrit_id": "kaisers",
             "companies": [
                 {
                     "company_name": "Quobyte Inc.",
@@ -59,7 +57,6 @@
         },
         {
             "launchpad_id": "2001xxj",
-            "gerrit_id": "duhu",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -71,7 +68,6 @@
         },
         {
             "launchpad_id": "295988511-t",
-            "gerrit_id": "Bob-OpenStack",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -83,7 +79,6 @@
         },
         {
             "launchpad_id": "3-andrew",
-            "gerrit_id": "AndrewSpiers",
             "companies": [
                 {
                     "company_name": "University of Melbourne",
@@ -95,7 +90,6 @@
         },
         {
             "launchpad_id": "307419146-q",
-            "gerrit_id": "liyf",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -173,7 +167,6 @@
         },
         {
             "launchpad_id": "61755280-l",
-            "gerrit_id": "sak0",
             "companies": [
                 {
                     "company_name": "Wise2c",
@@ -184,7 +177,6 @@
             "emails": ["cuihz@wise2c.com"]
         },
         {   "launchpad_id": "9-me-9",
-            "gerrit_id": "vmtyler",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -215,7 +207,6 @@
         },
         {
             "launchpad_id": "a-gorodnev",
-            "gerrit_id": "agorodnev",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -260,7 +251,6 @@
         },
         {
             "launchpad_id": "aalekseenko",
-            "gerrit_id": "aalekseenko",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -320,7 +310,6 @@
         },
         {
             "launchpad_id": "abashmak",
-            "gerrit_id": "abashmak",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -332,7 +321,6 @@
         },
         {
             "launchpad_id": "abdul-azhar",
-            "gerrit_id": "abdul-azhar",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -344,7 +332,6 @@
         },
         {
             "launchpad_id": "abe-music",
-            "gerrit_id": "abemusic",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -367,7 +354,6 @@
         },
         {
             "launchpad_id": "abhijeet-jain",
-            "gerrit_id": "Abhijeet.Jain",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -383,7 +369,6 @@
         },
         {
             "launchpad_id": "abhijeet-malawade",
-            "gerrit_id": "abhijeet",
             "companies": [
                 {
                     "company_name": "NTT",
@@ -399,7 +384,6 @@
         },
         {
             "launchpad_id": "abhishek-g-m",
-            "gerrit_id": "abhishek60014726",
             "companies": [
                 {
                     "company_name": "HP",
@@ -415,7 +399,6 @@
         },
         {
             "launchpad_id": "abhishek-i",
-            "gerrit_id": "abhishek",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -432,7 +415,6 @@
         {
             "launchpad_id": "abhishek-srivastav",
             "github_id": "srivastav-abhishek",
-            "gerrit_id": "Abhishek",
             "companies": [
                 {
                     "company_name": "Maplelabs",
@@ -526,7 +508,6 @@
         },
         {
             "launchpad_id": "adam-coldrick",
-            "gerrit_id": "SotK",
             "companies": [
                 {
                     "company_name": "Codethink",
@@ -570,7 +551,6 @@
         },
         {
             "launchpad_id": "adam-tengler",
-            "gerrit_id": "Tux",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -657,7 +637,6 @@
         },
         {
             "launchpad_id": "adrianmo",
-            "gerrit_id": "adrianmo",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -688,7 +667,6 @@
         },
         {
             "launchpad_id": "afaranha",
-            "gerrit_id": "afaranha",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -700,7 +678,6 @@
         },
         {
              "launchpad_id": "agalkin",
-             "gerrit_id": "agalkin",
              "companies": [
                  {
                      "company_name": "Mirantis",
@@ -712,7 +689,6 @@
         },
         {
             "launchpad_id": "agarwalnisha1980",
-            "gerrit_id": "Nisha",
             "companies": [
                 {
                     "company_name": "HP",
@@ -728,7 +704,6 @@
         },
         {
            "launchpad_id": "ahmed-nooras-saba",
-           "gerrit_id": "ansaba",
            "companies": [
                {
                    "company_name": "*independent",
@@ -747,7 +722,6 @@
         },
         {
            "launchpad_id": "ahsanmohsin04",
-           "gerrit_id": "ahsan518",
            "companies": [
                {
                    "company_name": "Intel",
@@ -852,7 +826,6 @@
         },
         {
             "launchpad_id": "akamyshnikova",
-            "gerrit_id": "AKamyshnikova",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -901,7 +874,6 @@
         },
         {
              "launchpad_id": "akhila-kishore",
-             "gerrit_id": "kishoreakhila",
              "companies": [
                  {
                      "company_name": "Intel",
@@ -913,7 +885,6 @@
         },
         {
              "launchpad_id": "akhivin",
-             "gerrit_id": "akhivin",
              "companies": [
                  {
                      "company_name": "Mirantis",
@@ -925,7 +896,6 @@
         },
         {
              "launchpad_id": "akilan-pughazhendi",
-             "gerrit_id": "AkilP",
              "companies": [
                  {
                      "company_name": "Intel",
@@ -937,7 +907,6 @@
         },
         {
             "launchpad_id": "akomarek",
-            "gerrit_id": "cznewt",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -972,7 +941,6 @@
         },
         {
             "launchpad_id": "al-foo",
-            "gerrit_id": "al_indigo",
             "companies": [
                 {
                     "company_name": "ISP RAS",
@@ -999,7 +967,6 @@
         },
         {
             "launchpad_id": "al592b",
-            "gerrit_id": "alopgeek",
             "companies": [
                 {
                     "company_name": "AT&T",
@@ -1015,7 +982,6 @@
         },
         {
             "launchpad_id": "alanmeadows",
-            "gerrit_id": "alanmeadows",
             "companies": [
                 {
                     "company_name": "AT&T",
@@ -1027,7 +993,6 @@
         },
         {
             "launchpad_id": "alaski",
-            "gerrit_id": "alaski",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -1058,7 +1023,6 @@
         },
         {
             "launchpad_id": "alejandro-e-paredes",
-            "gerrit_id": "aeparede",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -1070,7 +1034,6 @@
         },
         {
             "launchpad_id": "alejandro.esc",
-            "gerrit_id": "alejandroEsc",
             "companies": [
                 {
                     "company_name": "Samsung SDS",
@@ -1082,7 +1045,6 @@
         },
         {
             "launchpad_id": "aleksiyantsa",
-            "gerrit_id": "yappo",
             "companies": [
                 {
                     "company_name": "ISP RAS",
@@ -1150,7 +1112,6 @@
         },
         {
             "launchpad_id": "alex-schultz",
-            "gerrit_id": "mwhahaha",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -1170,7 +1131,6 @@
         },
         {
             "launchpad_id": "alex.pecoraro",
-            "gerrit_id": "alexpec",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -1234,7 +1194,6 @@
         },
         {
             "launchpad_id": "alfnak",
-            "gerrit_id": "bargool",
             "github_id": "bargool",
             "companies": [
                 {
@@ -1288,7 +1247,6 @@
         },
         {
             "launchpad_id": "allison",
-            "gerrit_id": "wendar",
             "companies": [
                 {
                     "company_name": "HP",
@@ -1341,7 +1299,6 @@
         },
         {
             "launchpad_id": "amank",
-            "gerrit_id": "amank",
             "companies": [
                 {
                     "company_name": "HP",
@@ -1368,7 +1325,6 @@
         },
         {
             "launchpad_id": "amerzlyakov",
-            "gerrit_id": "antonio_96",
             "companies": [
                 {
                     "company_name": "Sberbank",
@@ -1414,7 +1370,6 @@
         },
         {
             "launchpad_id": "amy-marrich",
-            "gerrit_id": "amarrich",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -1478,7 +1433,6 @@
         },
         {
             "launchpad_id": "andre-keedy",
-            "gerrit_id": "keedya",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -1528,7 +1482,6 @@
         },
         {
             "launchpad_id": "andrew-lhj",
-            "gerrit_id": "andrewliu",
             "companies": [
                 {
                     "company_name": "NAVER",
@@ -1620,7 +1573,6 @@
         },
         {
             "launchpad_id": "andybotting",
-            "gerrit_id": "andybotting",
             "companies": [
                 {
                     "company_name": "University of Melbourne",
@@ -1643,7 +1595,6 @@
         },
         {
             "launchpad_id": "anikitenkov",
-            "gerrit_id": "anikitenkov",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -1655,7 +1606,6 @@
         },
         {
             "launchpad_id": "anindita-das",
-            "gerrit_id": "anudas",
             "companies": [
                 {
                     "company_name":"Intel",
@@ -1733,7 +1683,6 @@
         },
         {
             "launchpad_id": "annie-lezil",
-            "gerrit_id": "alezil",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -1760,7 +1709,6 @@
         },
         {
             "launchpad_id": "ansreas",
-            "gerrit_id": "florath",
             "companies": [
                 {
                     "company_name": "flonatel",
@@ -1836,7 +1784,6 @@
         },
         {
             "launchpad_id": "anticw",
-            "gerrit_id": "anticw",
             "companies": [
                 {
                     "company_name": "AT&T",
@@ -1848,7 +1795,6 @@
         },
         {
             "launchpad_id": "antoinecabot",
-            "gerrit_id": "antoinecabot",
             "companies": [
                 {
                     "company_name": "B<>COM",
@@ -1897,7 +1843,6 @@
         },
         {
             "launchpad_id": "anusha-iiitm",
-            "gerrit_id": "anusha08",
             "companies": [
                 {
                     "company_name": "HP",
@@ -1912,7 +1857,6 @@
             "emails": ["anusha.iiitm@gmail.com", "anusha.ramineni@nectechnologies.in"]
         },
         {   "launchpad_id": "anusha-unnam",
-            "gerrit_id": "aunnam",
             "companies":[
                 {
                    "company_name": "Intel",
@@ -1961,7 +1905,6 @@
         },
         {
             "launchpad_id": "apapsujko",
-            "gerrit_id": "apapsujko",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -1973,7 +1916,6 @@
         },
         {
             "launchpad_id": "aparnavtce",
-            "gerrit_id": "Aparna",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -2007,7 +1949,6 @@
         },
         {
            "launchpad_id": "aqsa-fatima2011",
-           "gerrit_id": "Aqsaxvv092",
            "companies": [
                {
                    "company_name": "Intel",
@@ -2019,7 +1960,6 @@
         },
         {
             "launchpad_id": "aqsamm",
-            "gerrit_id": "Aqsa",
             "companies": [
                 {
                     "company_name": "NUST",
@@ -2035,7 +1975,6 @@
         },
         {
             "launchpad_id": "aradhana1-singh",
-            "gerrit_id": "asingh",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -2062,7 +2001,6 @@
         },
         {
             "launchpad_id": "areial",
-            "gerrit_id": "zwhe",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -2074,7 +2012,6 @@
         },
         {
             "launchpad_id": "arif-ali",
-            "gerrit_id": "arif-ali",
             "companies": [
                 {
                     "company_name": "OCF plc",
@@ -2086,7 +2023,6 @@
         },
         {
             "launchpad_id": "arkady-kanevsky",
-            "gerrit_id": "arkady",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -2102,7 +2038,6 @@
         },
         {
             "launchpad_id": "armando-migliaccio",
-            "gerrit_id": "armando-migliaccio",
             "companies": [
                 {
                     "company_name": "VMware",
@@ -2159,7 +2094,6 @@
         },
         {
             "launchpad_id": "arun-mithil",
-            "gerrit_id": "arun-mithil",
             "companies": [
                 {
                     "company_name": "Pluribus Networks",
@@ -2171,7 +2105,6 @@
         },
         {
             "launchpad_id": "arundhiman86",
-            "gerrit_id": "arundhiman",
             "companies": [
                 {
                     "company_name": "Imaginea Technologies Inc.",
@@ -2240,7 +2173,6 @@
         },
         {
             "launchpad_id": "ashish.billore",
-            "gerrit_id": "ashish.billore",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -2312,7 +2244,6 @@
         },
         {
            "launchpad_id": "ashu",
-           "gerrit_id": "ashu",
            "companies": [
                {
                    "company_name": "*independent",
@@ -2324,7 +2255,6 @@
         },
         {
            "launchpad_id": "ashwin-agate",
-           "gerrit_id": "agateaaa",
            "companies": [
                {
                    "company_name": "HP",
@@ -2507,7 +2437,6 @@
         },
         {
             "launchpad_id": "bardia-keyoumarsi",
-            "gerrit_id": "bkeyoumarsi",
             "companies": [
                 {
                     "company_name": "Coho Data",
@@ -2541,7 +2470,6 @@
         },
         {
             "launchpad_id": "basilbaby",
-            "gerrit_id": "basilbaby",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -2678,7 +2606,6 @@
         },
         {
             "launchpad_id": "bertiefulton",
-            "gerrit_id": "bertie.fultonsap.com",
             "companies": [
                 {
                     "company_name": "SAP",
@@ -2761,7 +2688,6 @@
         },
         {
             "launchpad_id": "bharath-kumar3",
-            "gerrit_id": "bharathshetty4",
             "github_id": "bharathshetty4",
             "companies": [
                 {
@@ -2789,7 +2715,6 @@
         },
         {
             "launchpad_id": "bharathkrishna",
-            "gerrit_id": "bharathkrishna",
             "companies": [
                 {
                     "company_name": "Walmart",
@@ -2842,7 +2767,6 @@
         },
         {
             "launchpad_id": "bjozsa",
-            "gerrit_id": "v1k0d3n",
             "companies": [
                 {
                     "company_name": "AT&T",
@@ -2854,7 +2778,6 @@
         },
         {
             "launchpad_id": "blkart",
-            "gerrit_id": "blkart",
             "companies": [
                 {
                     "company_name": "Eayun",
@@ -2877,7 +2800,6 @@
         },
         {
             "launchpad_id": "bluejay-ahn",
-            "gerrit_id": "blujeay.kr",
             "github_id": "bluejayKR",
             "companies": [
                 {
@@ -2961,7 +2883,6 @@
         },
         {
             "launchpad_id": "bob-haddleton",
-            "gerrit_id": "bobh",
             "companies": [
                 {
                     "company_name": "Alcatel-Lucent",
@@ -3138,7 +3059,6 @@
         },
         {
             "launchpad_id": "brian-rosmaita",
-            "gerrit_id": "brian-rosmaita",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -3224,7 +3144,6 @@
         },
         {
             "launchpad_id": "bulat.gaifullin",
-            "gerrit_id": "bgaifullin",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -3240,7 +3159,6 @@
         },
         {
             "launchpad_id": "bureaufrancois",
-            "gerrit_id": "Fdot",
             "companies": [
                 {
                     "company_name": "Cloudwatt",
@@ -3267,7 +3185,6 @@
         },
         {
             "launchpad_id": "bx-wang",
-            "gerrit_id": "binean",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -3279,7 +3196,6 @@
         },
         {
             "launchpad_id": "byron-g-mccollum",
-            "gerrit_id": "joe-dirt",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -3313,7 +3229,6 @@
         },
         {
             "launchpad_id": "caowei-e",
-            "gerrit_id": "caowei",
             "companies": [
                 {
                     "company_name": "99cloud",
@@ -3325,7 +3240,6 @@
         },
         {
             "launchpad_id": "career-thnam",
-            "gerrit_id": "career-thnam",
             "zanata_id": "thnam",
             "companies": [
                 {
@@ -3364,7 +3278,6 @@
         },
         {
             "launchpad_id": "carlpuga",
-            "gerrit_id": "carlpuga",
             "companies": [
                 {
                     "company_name": "Walmart",
@@ -3376,7 +3289,6 @@
         },
         {
             "launchpad_id": "carone1",
-            "gerrit_id": "carone1",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -3392,7 +3304,6 @@
         },
         {
             "launchpad_id": "cassandraburnias",
-            "gerrit_id": "cassandraburnias",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -3404,7 +3315,6 @@
         },
         {
             "launchpad_id": "castulo-martinez",
-            "gerrit_id": "cas",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -3427,7 +3337,6 @@
         },
         {
             "launchpad_id": "cbelu",
-            "gerrit_id": "claudiub",
             "companies": [
                 {
                     "company_name": "Cloudbase Solutions",
@@ -3525,7 +3434,6 @@
         },
         {
             "launchpad_id": "ccesario",
-            "gerrit_id": "ccesario",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -3537,7 +3445,6 @@
         },
         {
             "launchpad_id": "cdearbor",
-            "gerrit_id": "cdearbor",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -3553,7 +3460,6 @@
         },
         {
             "launchpad_id": "cdent",
-            "gerrit_id": "chdent",
             "companies": [
                 {
                     "company_name": "Red Hat",
@@ -3569,7 +3475,6 @@
         },
         {
             "launchpad_id": "cdyangzhenyu",
-            "gerrit_id": "yangzhenyu",
             "companies": [
                 {
                     "company_name": "Eayun",
@@ -3581,7 +3486,6 @@
         },
         {
             "launchpad_id": "cedric-zhuang",
-            "gerrit_id": "CedricZhuang",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -3597,7 +3501,6 @@
         },
         {
             "launchpad_id": "celebdor",
-            "gerrit_id": "toni",
             "companies": [
                 {
                     "company_name": "Midokura",
@@ -3617,7 +3520,6 @@
         },
         {
             "launchpad_id": "celik-esra",
-            "gerrit_id": "esracelik",
             "companies": [
                 {
                     "company_name": "TUBITAK",
@@ -3799,7 +3701,6 @@
         },
         {
             "launchpad_id": "chelsea-winfree",
-            "gerrit_id": "chellygel",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -3844,7 +3745,6 @@
         },
         {
             "launchpad_id": "chen-zheng",
-            "gerrit_id": "jackychen",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -3893,7 +3793,6 @@
         },
         {
             "launchpad_id": "chenh1987",
-            "gerrit_id": "Chenhao",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -3964,7 +3863,6 @@
         },
         {
             "launchpad_id": "chenyingnan",
-            "gerrit_id": "chenyingnan",
             "zanata_id": "chenyingnan",
             "companies": [
                 {
@@ -3988,7 +3886,6 @@
         },
         {
             "launchpad_id": "chestack",
-            "gerrit_id": "wangbo",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -4041,7 +3938,6 @@
         },
         {
             "launchpad_id": "chingsun",
-            "gerrit_id": "chingsun",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -4130,7 +4026,6 @@
         },
         {
             "launchpad_id": "chris-buccella",
-            "gerrit_id": "hdd",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -4176,7 +4071,6 @@
         },
         {
             "launchpad_id": "christopher-m-spencer",
-            "gerrit_id": "chrisspencer",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -4188,7 +4082,6 @@
         },
         {
             "launchpad_id": "chuanbo",
-            "gerrit_id": "chuanbo",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -4245,7 +4138,6 @@
         },
         {
             "launchpad_id": "ck-khullar",
-            "gerrit_id": "chetna",
             "companies": [
                 {
                     "company_name":"Intel",
@@ -4436,7 +4328,6 @@
         },
         {
            "launchpad_id": "coolsvap",
-           "gerrit_id": "coolsvap",
            "companies": [
                {
                    "company_name": "*independent",
@@ -4532,7 +4423,6 @@
         },
         {
            "launchpad_id": "cpallares",
-           "gerrit_id": "cpallares",
            "companies": [
                {
                    "company_name": "OpenStack Foundation",
@@ -4570,7 +4460,6 @@
         },
         {
             "launchpad_id": "craig-bryant",
-            "gerrit_id": "craig-bryant",
             "companies": [
                 {
                     "company_name": "HP",
@@ -4586,7 +4475,6 @@
         },
         {
             "launchpad_id": "craig-sterrett",
-            "gerrit_id": "CraigSterrett",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -4643,7 +4531,6 @@
         },
         {
             "launchpad_id": "cristian-a-sanchez",
-            "gerrit_id": "casanch1",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -4749,7 +4636,6 @@
         },
         {
             "launchpad_id": "cuixiaoyu-8",
-            "gerrit_id": "cuixiaoyu",
             "zanata_id": "cuixiaoyu",
             "companies": [
                 {
@@ -4840,7 +4726,6 @@
         },
         {
             "launchpad_id": "dag-stenstad",
-            "gerrit_id": "stenstad",
             "companies": [
                 {
                     "company_name": "Zetta.IO Technology AS",
@@ -4941,7 +4826,6 @@
         },
         {
             "launchpad_id": "dane-fichter",
-            "gerrit_id": "dane-fichter",
             "companies": [
                 {
                     "company_name": "Johns Hopkins University Applied Physics Laboratory",
@@ -4953,7 +4837,6 @@
         },
         {
             "launchpad_id": "daneel23",
-            "gerrit_id": "daneel",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -5109,7 +4992,6 @@
         },
         {
             "launchpad_id": "darland-maik",
-            "gerrit_id": "darland",
             "github_id": "darland",
             "companies": [
                 {
@@ -5122,7 +5004,6 @@
         },
         {
             "launchpad_id": "darragh-oreilly",
-            "gerrit_id": "darragh-oreilly",
             "user_name": "Darragh O'Reilly",
             "companies": [
                 {
@@ -5149,7 +5030,6 @@
         },
         {
             "launchpad_id": "daschab",
-            "gerrit_id": "DaSchab",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -5161,7 +5041,6 @@
         },
         {
             "launchpad_id": "dasp",
-            "gerrit_id": "daniel",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -5251,7 +5130,6 @@
         },
         {
             "launchpad_id": "david-pursehouse-k",
-            "gerrit_id": "david.pursehouse",
             "companies": [
                 {
                     "company_name": "Sony Mobile Communications",
@@ -5271,7 +5149,6 @@
         },
         {
             "launchpad_id": "david-schroeder",
-            "gerrit_id": "",
             "companies": [
                 {
                     "company_name": "HP",
@@ -5291,7 +5168,6 @@
         },
         {
             "launchpad_id": "david-scott-h",
-            "gerrit_id": "dscott",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -5307,7 +5183,6 @@
         },
         {
             "launchpad_id": "david-tardivel",
-            "gerrit_id": "David.T",
             "companies": [
                 {
                     "company_name": "B<>COM",
@@ -5345,7 +5220,6 @@
         },
         {
             "launchpad_id": "davpat2112",
-            "gerrit_id": "dpaterson",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -5361,7 +5235,6 @@
         },
         {
             "launchpad_id": "daxtens",
-            "gerrit_id": "dja",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -5399,7 +5272,6 @@
         },
         {
             "launchpad_id": "dbailey-k",
-            "gerrit_id": "dbailey-k",
             "user_name": "Darragh Bailey",
             "companies": [
                 {
@@ -5533,7 +5405,6 @@
         },
         {
             "launchpad_id": "degdoo",
-            "gerrit_id": "degdoo",
             "companies": [
                 {
                     "company_name": "Rakuten",
@@ -5549,7 +5420,6 @@
         },
         {
             "launchpad_id": "demoyuw",
-            "gerrit_id": "yuweichou",
             "companies": [
                 {
                     "company_name": "Institute for Information Industry",
@@ -5572,7 +5442,6 @@
         },
         {
            "launchpad_id": "denise-d-gregg",
-           "gerrit_id": "denise.gregg",
            "companies": [
                {
                    "company_name": "Intel",
@@ -5584,7 +5453,6 @@
         },
         {
             "launchpad_id": "dennis-kusidlo",
-            "gerrit_id": "dkusidlo",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -5795,7 +5663,6 @@
         },
         {
             "launchpad_id": "dharini-chandrasekar",
-            "gerrit_id": "dharinic",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -5837,7 +5704,6 @@
         },
         {
             "launchpad_id": "dileep-ranganathan",
-            "gerrit_id": "DileepRanganathan",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -5849,7 +5715,6 @@
         },
         {
             "launchpad_id": "dimakuz",
-            "gerrit_id": "dimak",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -5902,7 +5767,6 @@
         },
         {
             "launchpad_id": "dkennedy-p",
-            "gerrit_id": "darfed",
             "companies": [
                 {
                     "company_name": "HP",
@@ -5971,7 +5835,6 @@
         },
         {
             "launchpad_id": "dlundquist",
-            "gerrit_id": "dlundquist",
             "companies": [
                 {
                     "company_name": "Blue Box",
@@ -5987,7 +5850,6 @@
         },
         {
             "launchpad_id": "dmakarov",
-            "gerrit_id": "dmakarov",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -6077,7 +5939,6 @@
         },
         {
             "launchpad_id": "dommgifer",
-            "gerrit_id": "dommgifer",
             "companies": [
                 {
                     "company_name": "inwinSTACK",
@@ -6126,7 +5987,6 @@
         },
         {
             "launchpad_id": "dongjx",
-            "gerrit_id": "dongjx",
             "companies": [
                 {
                     "company_name": "inesa",
@@ -6138,7 +5998,6 @@
         },
         {
            "launchpad_id": "donovan-4",
-           "gerrit_id": "donovan-4",
            "companies": [
                {
                    "company_name": "Catalyst IT",
@@ -6162,7 +6021,6 @@
         },
         {
            "launchpad_id": "doug-chivers",
-           "gerrit_id": "dg",
            "companies": [
                {
                    "company_name": "HP",
@@ -6242,7 +6100,6 @@
         },
         {
             "launchpad_id": "drewboik",
-            "gerrit_id": "dboik",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -6515,7 +6372,6 @@
         },
         {
             "launchpad_id": "eaglezpf",
-            "gerrit_id": "eaglezpf",
             "companies": [
                 {
                     "company_name": "inesa",
@@ -6527,7 +6383,6 @@
         },
         {
             "launchpad_id": "eandersson",
-            "gerrit_id": "eoandersson",
             "companies": [
                 {
                     "company_name": "Blizzard Entertainment",
@@ -6539,7 +6394,6 @@
         },
         {
             "launchpad_id": "eantyshev",
-            "gerrit_id": "eantyshev",
             "companies": [
                 {
                     "company_name": "Virtuozzo",
@@ -6551,7 +6405,6 @@
         },
         {
            "launchpad_id": "earthdragon77",
-           "gerrit_id": "Mahito",
            "companies": [
                {
                    "company_name": "NTT",
@@ -6593,7 +6446,6 @@
         },
         {
             "launchpad_id": "ediardo",
-            "gerrit_id": "ediardo",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -6605,7 +6457,6 @@
         },
         {
             "launchpad_id": "edigleisonb",
-            "gerrit_id": "edigleison.barbosa",
             "companies": [
                 {
                     "company_name": "Hitachi",
@@ -6691,7 +6542,6 @@
         },
         {
             "launchpad_id": "egonzalez90",
-            "gerrit_id": "egonzalez90",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -6729,7 +6579,6 @@
         },
         {
             "launchpad_id": "eikke",
-            "gerrit_id": "nicolast",
             "companies": [
                 {
                     "company_name": "Scality",
@@ -6779,7 +6628,6 @@
         },
         {
             "launchpad_id": "eladzucker",
-            "gerrit_id": "elad-zucker",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -6795,7 +6643,6 @@
         },
         {
             "launchpad_id": "eldar-nugaev",
-            "gerrit_id": "eldar",
             "companies": [
                 {
                     "company_name": "HP",
@@ -6815,7 +6662,6 @@
         },
         {
             "launchpad_id": "electrocucaracha",
-            "gerrit_id": "electrocucaracha",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -6879,7 +6725,6 @@
         },
         {
             "launchpad_id": "endre-karlson",
-            "gerrit_id": "endre-karlson",
             "companies": [
                 {
                     "company_name": "HP",
@@ -6895,7 +6740,6 @@
         },
         {
            "launchpad_id": "endresara",
-           "gerrit_id": "endresara",
            "companies": [
                {
                    "company_name": "*independent",
@@ -6914,7 +6758,6 @@
         },
         {
             "launchpad_id": "engapa",
-            "gerrit_id": "engapa",
             "companies": [
                 {
                     "company_name": "BBVA",
@@ -6929,7 +6772,6 @@
         },
         {
             "launchpad_id": "epcim",
-            "gerrit_id": "epcim",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -6949,7 +6791,6 @@
         },
         {
             "launchpad_id": "erezak",
-            "gerrit_id": "erez",
             "companies": [
                 {
                     "company_name": "AT&T",
@@ -6983,7 +6824,6 @@
         },
         {
             "launchpad_id": "eric-xie",
-            "gerrit_id": "ericxie",
             "companies": [
                 {
                     "company_name": "Inspur",
@@ -7053,7 +6893,6 @@
         },
         {
             "launchpad_id": "ettore-simone",
-            "gerrit_id": "esimone",
             "companies": [
                 {
                     "company_name": "Alchemy Solutions Group",
@@ -7124,7 +6963,6 @@
         },
         {
             "launchpad_id": "f-kloeker",
-            "gerrit_id": "eumel8",
             "zanata_id": "eumel8",
             "companies": [
                 {
@@ -7152,7 +6990,6 @@
         },
         {
             "launchpad_id": "faizan-barmawer",
-            "gerrit_id": "barmawer",
             "companies": [
                 {
                     "company_name": "HP",
@@ -7209,7 +7046,6 @@
         },
         {
             "launchpad_id": "fausto-marzi",
-            "gerrit_id": "fausto.marzi",
             "companies": [
                 {
                     "company_name": "HP",
@@ -7229,7 +7065,6 @@
         },
         {
             "launchpad_id": "fellypefca",
-            "gerrit_id": "fellypefca",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -7378,7 +7213,6 @@
         },
         {
            "launchpad_id": "flwang",
-           "gerrit_id": "flwang",
            "companies": [
                {
                    "company_name": "IBM",
@@ -7407,7 +7241,6 @@
         },
         {
             "launchpad_id": "fnordahl",
-            "gerrit_id": "fnordahl",
             "companies": [
                 {
                     "company_name": "PowerTech Information Systems AS",
@@ -7434,7 +7267,6 @@
         },
         {
             "launchpad_id": "fpytloun",
-            "gerrit_id": "fpytloun",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -7446,7 +7278,6 @@
         },
         {
             "launchpad_id": "freyadyu",
-            "gerrit_id": "dianyu",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -7460,7 +7291,6 @@
         },
         {
             "launchpad_id": "freyes",
-            "gerrit_id": "freyes",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -7482,7 +7312,6 @@
         },
         {
            "launchpad_id": "friendgct",
-           "gerrit_id": "friendgct",
            "zanata_id": "guochunting",
            "companies": [
                {
@@ -7506,7 +7335,6 @@
         },
         {
             "launchpad_id": "fsbiz",
-            "gerrit_id": "fsunaval",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -7540,7 +7368,6 @@
         },
         {
             "launchpad_id": "fujioka-yuuichi-d",
-            "gerrit_id": "fujiokayuuichi",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -7567,7 +7394,6 @@
         },
         {
             "launchpad_id": "furlongm",
-            "gerrit_id": "furlongm",
             "companies": [
                 {
                     "company_name": "University of Melbourne",
@@ -7583,7 +7409,6 @@
         },
         {
             "launchpad_id": "fuzhaokun",
-            "gerrit_id": "fuzk",
             "companies": [
                 {
                     "company_name": "Inspur",
@@ -7595,7 +7420,6 @@
         },
         {
             "launchpad_id": "gabor.antal",
-            "gerrit_id": "antal",
             "companies": [
                 {
                     "company_name": "Ericsson",
@@ -7671,7 +7495,6 @@
         },
         {
             "launchpad_id": "gans-developer",
-            "gerrit_id": "gans",
             "companies": [
                 {
                     "company_name": "Walmart",
@@ -7705,7 +7528,6 @@
         },
         {
             "launchpad_id": "gaozx-fnst",
-            "gerrit_id": "gaozx",
             "companies": [
                 {
                     "company_name": "Fujitsu",
@@ -7886,7 +7708,6 @@
         },
         {
             "launchpad_id": "gh965852614",
-            "gerrit_id": "HangGeng",
             "companies": [
                 {
                     "company_name": "XiangCloud",
@@ -7968,7 +7789,6 @@
         },
         {
             "launchpad_id": "giuseppecossu",
-            "gerrit_id": "gcossu",
             "companies": [
                 {
                     "company_name": "CREATE-NET",
@@ -7995,7 +7815,6 @@
         },
         {
             "launchpad_id": "glongwave",
-            "gerrit_id": "gcb",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -8056,7 +7875,6 @@
         },
         {
             "launchpad_id": "go-chiba",
-            "gerrit_id": "go_chiba",
             "companies": [
                 {
                     "company_name": "NetOne Systems",
@@ -8139,7 +7957,6 @@
         },
         {
             "launchpad_id": "gonzalo-delatorre",
-            "gerrit_id": "gonzalo2kx",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -8231,7 +8048,6 @@
         },
         {
             "launchpad_id": "gregoryhooksjr",
-            "gerrit_id": "ghooks",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -8431,7 +8247,6 @@
         },
         {
             "launchpad_id": "h-aramaki",
-            "gerrit_id": "haramaki",
             "companies": [
                 {
                     "company_name": "NetOne Systems",
@@ -8455,7 +8270,6 @@
         },
         {
             "launchpad_id": "haishi",
-            "gerrit_id": "haishi",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -8467,7 +8281,6 @@
         },
         {
             "launchpad_id": "hallur-p-t",
-            "gerrit_id": "parash-hallur",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -8520,7 +8333,6 @@
         },
         {
             "launchpad_id": "hantim.lin",
-            "gerrit_id": "hantim.lin",
             "companies": [
                 {
                     "company_name": "t2cloud",
@@ -8577,7 +8389,6 @@
         },
         {
             "launchpad_id": "hardik-italia",
-            "gerrit_id": "hitalia",
             "companies": [
                 {
                     "company_name": "HP",
@@ -8593,7 +8404,6 @@
         },
         {
             "launchpad_id": "hardik-parekh047",
-            "gerrit_id": "hparekh",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -8661,7 +8471,6 @@
         },
         {
             "launchpad_id": "harshada-kakad",
-            "gerrit_id": "harshada.kakad",
             "companies": [
                 {
                     "company_name": "Izel Technologies",
@@ -8688,7 +8497,6 @@
         },
         {
             "launchpad_id": "hartsock",
-            "gerrit_id": "hartsocks",
             "companies": [
                 {
                     "company_name": "VMware",
@@ -8722,7 +8530,6 @@
         },
         {
             "launchpad_id": "hayderimran7",
-            "gerrit_id": "hayderimran7",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -8749,7 +8556,6 @@
         },
         {
             "launchpad_id": "hcpedh",
-            "gerrit_id": "huangcheng",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -8794,7 +8600,6 @@
         },
         {
             "launchpad_id": "henrique-4",
-            "gerrit_id": "henriquetruta",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -8851,7 +8656,6 @@
         },
         {
             "launchpad_id": "hhktony",
-            "gerrit_id": "xutao",
             "companies": [
                 {
                     "company_name": "t2cloud",
@@ -8907,7 +8711,6 @@
         },
         {
             "launchpad_id": "holanova-al",
-            "gerrit_id": "sfinga",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -8941,7 +8744,6 @@
         },
         {
             "launchpad_id": "hong-wong",
-            "gerrit_id": "hwong",
             "companies": [
                 {
                     "company_name": "HP",
@@ -8968,7 +8770,6 @@
         },
         {
             "launchpad_id": "houwch",
-            "gerrit_id":"houweichao",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -8991,7 +8792,6 @@
         },
         {
             "launchpad_id": "howardlee",
-            "gerrit_id": "howardlee",
             "zanata_id": "lihongweibj",
             "companies": [
                 {
@@ -9026,7 +8826,6 @@
         },
         {
             "launchpad_id": "hrasiq",
-            "gerrit_id": "halves",
             "companies": [
                 {
                     "company_name": "Hitachi",
@@ -9038,7 +8837,6 @@
         },
         {
             "launchpad_id": "htpeng",
-            "gerrit_id": "htpeng",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -9187,7 +8985,6 @@
         },
         {
             "launchpad_id": "hugonicodemos",
-            "gerrit_id": "nicodemos",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -9199,7 +8996,6 @@
         },
         {
             "launchpad_id": "huiweics",
-            "gerrit_id": "huiweics",
             "companies": [
                 {
                     "company_name": "CertusNet",
@@ -9211,7 +9007,6 @@
         },
         {
             "launchpad_id": "humble00",
-            "gerrit_id": "humble00",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -9223,7 +9018,6 @@
         },
         {
             "launchpad_id": "huntxu",
-            "gerrit_id": "huntxu",
             "companies": [
                 {
                     "company_name": "Eayun",
@@ -9287,7 +9081,6 @@
         },
         {
             "launchpad_id": "hyakuhei",
-            "gerrit_id": "hyakuhei",
             "companies": [
                 {
                     "company_name": "HP",
@@ -9307,7 +9100,6 @@
         },
         {
             "launchpad_id": "hyangii",
-            "gerrit_id": "jaesanglee",
             "github_id": "hyangii",
             "companies": [
                 {
@@ -9324,7 +9116,6 @@
         },
         {
             "launchpad_id": "i-kumagai",
-            "gerrit_id": "kumagai19o",
             "companies": [
                 {
                     "company_name": "Bit-isle Inc.",
@@ -9358,7 +9149,6 @@
         },
         {
            "launchpad_id": "ichihara-hirofumi",
-           "gerrit_id": "Hirofumi-Ichihara",
            "companies": [
                {
                    "company_name": "NTT",
@@ -9370,7 +9160,6 @@
         },
         {
            "launchpad_id": "idegtiarov",
-           "gerrit_id": "tovstun",
            "companies": [
                {
                    "company_name": "Mirantis",
@@ -9446,7 +9235,6 @@
         },
         {
             "launchpad_id": "igor-ataide",
-            "gerrit_id": "igorn",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -9477,7 +9265,6 @@
         },
         {
             "launchpad_id": "igormilovanovic",
-            "gerrit_id": "igor",
             "companies": [
                 {
                     "company_name": "Ammeon",
@@ -9512,7 +9299,6 @@
         },
         {
             "launchpad_id": "ikutukov",
-            "gerrit_id": "ikutukov",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -9528,7 +9314,6 @@
         },
         {
             "launchpad_id": "ildiko-vancsa",
-            "gerrit_id": "ildikov",
             "github_id": "ildikov",
             "companies": [
                 {
@@ -9556,7 +9341,6 @@
         },
         {
             "launchpad_id": "ilya-p",
-            "gerrit_id": "IPO",
             "companies": [
                 {
                     "company_name": "Sberbank",
@@ -9614,7 +9398,6 @@
         },
         {
             "launchpad_id": "inesa-liuchao",
-            "gerrit_id": "chao",
             "companies": [
                 {
                     "company_name": "inesa",
@@ -9626,7 +9409,6 @@
         },
         {
             "launchpad_id": "int32bit",
-            "gerrit_id": "int32bit",
             "github_id": "int32bit",
             "companies": [
                 {
@@ -9723,7 +9505,6 @@
         },
         {
             "launchpad_id": "ishashero",
-            "gerrit_id": "ishashero",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -9758,7 +9539,6 @@
         },
         {
             "launchpad_id": "istartsev",
-            "gerrit_id": "istartsev",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -9807,7 +9587,6 @@
         },
         {
             "launchpad_id": "itsvaishnavi",
-            "gerrit_id": "Vaishnavi",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -9819,7 +9598,6 @@
         },
         {
             "launchpad_id": "iurygregory",
-            "gerrit_id": "iurygregory",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -9842,7 +9620,6 @@
         },
         {
             "launchpad_id": "iyozhikov",
-            "gerrit_id": "iyozhikov",
             "companies": [
 
                 {
@@ -9859,7 +9636,6 @@
         },
         {
             "launchpad_id": "iz-brandon",
-            "gerrit_id": "izbrandon",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -9915,7 +9691,6 @@
         },
         {
             "launchpad_id": "jaiveek-shah",
-            "gerrit_id": "JaiveekShah",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -9942,7 +9717,6 @@
         },
         {
             "launchpad_id": "james-arendt-7",
-            "gerrit_id": "jwarendt",
             "companies": [
                 {
                     "company_name": "HP",
@@ -10003,7 +9777,6 @@
         },
         {
            "launchpad_id": "jamespd",
-           "gerrit_id": "jdempsey",
            "companies": [
                {
                    "company_name": "Catalyst IT",
@@ -10017,7 +9790,6 @@
         },
         {
            "launchpad_id": "jamiefinnigan",
-           "gerrit_id": "jamiefinnigan",
            "companies": [
                {
                    "company_name": "HP",
@@ -10033,7 +9805,6 @@
         },
         {
            "launchpad_id": "jamielennox",
-           "gerrit_id": "jamielennox",
            "companies": [
                {
                    "company_name": "Red Hat",
@@ -10064,7 +9835,6 @@
         },
         {
             "launchpad_id": "jan-provaznik",
-            "gerrit_id": "jprovazn",
             "companies": [
                 {
                     "company_name": "Red Hat",
@@ -10091,7 +9861,6 @@
         },
         {
             "launchpad_id": "janonymous",
-            "gerrit_id": "Janonymous",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -10103,7 +9872,6 @@
         },
         {
             "launchpad_id": "jaosorior",
-            "gerrit_id": "ejuaoso",
             "github_id": "JAORMX",
             "companies": [
                 {
@@ -10120,7 +9888,6 @@
         },
         {
             "launchpad_id": "jarrad-battaglia",
-            "gerrit_id": "jarrad-battaglia",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -10132,7 +9899,6 @@
         },
         {
             "launchpad_id": "jarred-deeley",
-            "gerrit_id": "Jarred-Deeley",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -10155,7 +9921,6 @@
         },
         {
             "launchpad_id": "jason-jasonamyers",
-            "gerrit_id": "jasonamyers",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -10237,7 +10002,6 @@
         },
         {
             "launchpad_id": "jawon.choo",
-            "gerrit_id": "JawonChoo",
             "companies": [
                 {
                     "company_name": "Samsung SDS",
@@ -10279,7 +10043,6 @@
         },
         {
             "launchpad_id": "jay-xu",
-            "gerrit_id": "jay.xu",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -10295,7 +10058,6 @@
         },
         {
             "launchpad_id": "jaycen-v-grant",
-            "gerrit_id": "jvgrant",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -10307,7 +10069,6 @@
         },
         {
             "launchpad_id": "jayconroy",
-            "gerrit_id": "jayconroy",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -10424,7 +10185,6 @@
         },
         {
            "launchpad_id": "jeckxie",
-           "gerrit_id": "jeckxie",
            "companies": [
                {
                    "company_name": "Inspur",
@@ -10447,7 +10207,6 @@
         },
         {
             "launchpad_id": "jeegn-chen",
-            "gerrit_id": "jeegn-chen",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -10474,7 +10233,6 @@
         },
         {
             "launchpad_id": "jeff-seiler",
-            "gerrit_id": "jseiler",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -10490,7 +10248,6 @@
         },
         {
             "launchpad_id": "jeffrey-olsen",
-            "gerrit_id": "jeffrey.olsen",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -10506,7 +10263,6 @@
         },
         {
             "launchpad_id": "jeffrey4l",
-            "gerrit_id": "Jeffrey4l",
             "companies": [
                 {
                     "company_name": "99cloud",
@@ -10563,7 +10319,6 @@
         },
         {
             "launchpad_id": "jeremy-moffitt",
-            "gerrit_id": "jmoffitt",
             "github_id": "jeremy-moffitt",
             "companies": [
                 {
@@ -10673,7 +10428,6 @@
         },
         {
             "launchpad_id": "jexbow",
-            "gerrit_id": "Rayman",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -10685,7 +10439,6 @@
         },
         {
             "launchpad_id": "jfreud",
-            "gerrit_id": "jeremyfreudberg",
             "companies": [
                 {
                     "company_name": "Boston University",
@@ -10712,7 +10465,6 @@
         },
         {
             "launchpad_id": "jhamhader",
-            "gerrit_id": "yuvalbr",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -10746,7 +10498,6 @@
         },
         {
             "launchpad_id": "jiahao.liang",
-            "gerrit_id": "Jiahao.liang",
             "companies": [
                 {
                     "company_name": "One Convergence",
@@ -10758,7 +10509,6 @@
         },
         {
             "launchpad_id": "jiangpch",
-            "gerrit_id":"jiangpch",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -10785,7 +10535,6 @@
         },
         {
             "launchpad_id": "jianhuiz",
-            "gerrit_id": "jianhuiz",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -10801,7 +10550,6 @@
         },
        {
             "launchpad_id": "jianyi",
-            "gerrit_id": "jianyi",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -10824,7 +10572,6 @@
         },
         {
             "launchpad_id": "jikyll",
-            "gerrit_id": "jikyll",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -10943,7 +10690,6 @@
         },
         {
             "launchpad_id": "jkeen",
-            "gerrit_id": "jkeen",
             "companies": [
                 {
                     "company_name": "HP",
@@ -10959,7 +10705,6 @@
         },
         {
             "launchpad_id": "jmckind",
-            "gerrit_id": "jmckind",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -10982,7 +10727,6 @@
         },
         {
             "launchpad_id": "jnimish77",
-            "gerrit_id": "Nimish_Joshi",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -11047,7 +10791,6 @@
         },
         {
             "launchpad_id": "joe-nellipuzha",
-            "gerrit_id": "joseph_george",
             "companies": [
                 {
                     "company_name": "Pluribus Networks",
@@ -11249,7 +10992,6 @@
         },
         {
             "launchpad_id": "jokke",
-            "gerrit_id": "jokke",
             "companies": [
                 {
                     "company_name": "HP",
@@ -11273,7 +11015,6 @@
         },
         {
             "launchpad_id": "jonas-pfannschmidt",
-            "gerrit_id": "jonaspf",
             "companies": [
                 {
                     "company_name": "HP",
@@ -11315,7 +11056,6 @@
         },
         {
             "launchpad_id": "joon-myung-kang",
-            "gerrit_id": "joonmyung",
             "companies": [
                 {
                     "company_name": "HP",
@@ -11428,7 +11168,6 @@
         },
         {
             "launchpad_id": "joshuatrivette",
-            "gerrit_id": "trivette",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -11440,7 +11179,6 @@
         },
         {
             "launchpad_id": "jpena-c",
-            "gerrit_id": "jpena",
             "companies": [
                 {
                     "company_name": "Red Hat",
@@ -11496,7 +11234,6 @@
         },
         {
             "launchpad_id": "jprovost-sh",
-            "gerrit_id": "jprovost",
             "companies": [
                 {
                     "company_name": "iWeb",
@@ -11523,7 +11260,6 @@
         },
         {
             "launchpad_id": "jrod-d",
-            "gerrit_id": "jrod",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -11624,7 +11360,6 @@
         },
         {
             "launchpad_id": "julie-gravel",
-            "gerrit_id": "jgravel",
             "companies": [
                 {
                     "company_name": "HP",
@@ -11677,7 +11412,6 @@
         },
         {
             "launchpad_id": "junbo",
-            "gerrit_id": "junbo",
             "companies": [
                  {
                      "company_name": "99cloud",
@@ -11711,7 +11445,6 @@
         },
         {
             "launchpad_id": "justin-a-scott",
-            "gerrit_id": "jascott1",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -11745,7 +11478,6 @@
         },
         {
             "launchpad_id": "justin-wilson",
-            "gerrit_id": "waj334",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -11780,7 +11512,6 @@
         },
         {
            "launchpad_id": "jxstanford",
-           "gerrit_id": "jxstanford",
            "companies": [
                {
                    "company_name": "Solinea",
@@ -11837,7 +11568,6 @@
         },
         {
             "launchpad_id": "kaiyan-sheng",
-            "gerrit_id": "kaiyan-sheng",
             "companies": [
                 {
                     "company_name": "HP",
@@ -11875,7 +11605,6 @@
         },
         {
             "launchpad_id": "kalyani030592",
-            "gerrit_id": "kalyani",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -11887,7 +11616,6 @@
         },
         {
             "launchpad_id": "kanaderohan",
-            "gerrit_id": "kanaderohan",
             "companies": [
                 {
                     "company_name": "Izel Technologies",
@@ -11907,7 +11635,6 @@
         },
         {
             "launchpad_id": "kanagaraj-manickam",
-            "gerrit_id": "kanagarajm",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -11953,7 +11680,6 @@
         },
         {
            "launchpad_id": "karthik-prabhu-vinod",
-           "gerrit_id": "kprabhuv",
            "companies": [
                {
                    "company_name": "Intel",
@@ -11976,7 +11702,6 @@
         },
         {
             "launchpad_id": "kato-tomoyuki",
-            "gerrit_id": "to222",
             "zanata_id": "to222",
             "companies": [
                 {
@@ -12015,7 +11740,6 @@
         },
         {
             "launchpad_id": "kbaikov",
-            "gerrit_id": "kbaikov",
             "companies": [
                 {
                     "company_name": "SUSE",
@@ -12042,7 +11766,6 @@
         },
         {
             "launchpad_id": "kc-wang",
-            "gerrit_id": "kcwang",
             "companies": [
                 {
                     "company_name": "Big Switch Networks",
@@ -12054,7 +11777,6 @@
         },
         {
             "launchpad_id": "kdemina",
-            "gerrit_id": "kdemina",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -12088,7 +11810,6 @@
         },
         {
             "launchpad_id": "keith-berger",
-            "gerrit_id": "kberger",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -12174,7 +11895,6 @@
         },
         {
             "launchpad_id": "kevin-zhao",
-            "gerrit_id": "KevinZhao",
             "companies": [
                 {
                     "company_name": "Linaro",
@@ -12298,7 +12018,6 @@
         },
         {
             "launchpad_id": "kiseok7",
-            "gerrit_id": "Kiseok",
             "companies": [
                 {
                     "company_name": "Netmarble",
@@ -12343,7 +12062,6 @@
         },
         {
             "launchpad_id": "klyang",
-            "gerrit_id": "klyang",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -12355,7 +12073,6 @@
         },
         {
             "launchpad_id": "kn-matsumoto",
-            "gerrit_id": "kn-matsumoto",
             "companies": [
                 {
                     "company_name": "KDDI",
@@ -12378,7 +12095,6 @@
         },
         {
             "launchpad_id": "kong",
-            "gerrit_id": "kong",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -12621,7 +12337,6 @@
         },
         {
             "launchpad_id": "kvcobb",
-            "gerrit_id": "kvcobb",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -12666,7 +12381,6 @@
         },
         {
             "launchpad_id": "kzaitsev",
-            "gerrit_id": "kzaitsev",
             "companies": [
 
                 {
@@ -12707,7 +12421,6 @@
         },
         {
             "launchpad_id": "lachlan-evenson",
-            "gerrit_id": "lachlan.evenson",
             "companies": [
                 {
                     "company_name": "Lithium Technologies",
@@ -12719,7 +12432,6 @@
         },
         {
             "launchpad_id": "laetitiae",
-            "gerrit_id": "laetitiae",
             "companies": [
                 {
                     "company_name": "BBVA",
@@ -12756,7 +12468,6 @@
         },
         {
             "launchpad_id": "lakshmi-sampath",
-            "gerrit_id": "lakshmi",
             "companies": [
                 {
                     "company_name": "HP",
@@ -12772,7 +12483,6 @@
         },
         {
             "launchpad_id": "larainema",
-            "gerrit_id": "larainema",
             "companies": [
                 {
                     "company_name": "HP",
@@ -12792,7 +12502,6 @@
         },
         {
             "launchpad_id": "laun-zhangdebo",
-            "gerrit_id": "zhangdebo",
             "companies": [
                 {
                     "company_name": "Inspur",
@@ -12804,7 +12513,6 @@
         },
         {
             "launchpad_id": "lawrencesu",
-            "gerrit_id": "lawrencesu",
             "zanata_id": "lawrence",
             "companies": [
                 {
@@ -12817,7 +12525,6 @@
         },
         {
             "launchpad_id": "lcsong",
-            "gerrit_id": "lcsong",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -12844,7 +12551,6 @@
         },
         {
             "launchpad_id": "leandro-i-costantino",
-            "gerrit_id": "lcostantino",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -12900,7 +12606,6 @@
         },
         {
             "launchpad_id": "leiyashuai",
-            "gerrit_id": "leiyashuai",
             "zanata_id": "leiyahsuai",
             "companies": [
                 {
@@ -12913,7 +12618,6 @@
         },
         {
             "launchpad_id": "leledashenqi",
-            "gerrit_id": "yangle",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -12925,7 +12629,6 @@
         },
         {
             "launchpad_id": "lenka-husakova",
-            "gerrit_id": "lenkahusakova",
             "zanata_id": "lenkahusakova",
             "companies": [
                 {
@@ -12938,7 +12641,6 @@
         },
         {
             "launchpad_id": "leogenyhptioson",
-            "gerrit_id": "lijingadeveloper",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -12950,7 +12652,6 @@
         },
         {
             "launchpad_id": "leoliluo",
-            "gerrit_id": "gaoshilian",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -13044,7 +12745,6 @@
         },
         {
             "launchpad_id": "liaoishere",
-            "gerrit_id": "LiaoPenghui",
             "companies": [
                 {
                     "company_name": "UnitedStack",
@@ -13060,7 +12760,6 @@
         },
         {
             "launchpad_id": "liaozd",
-            "gerrit_id": "liaozd",
             "companies": [
                 {
                     "company_name": "t2cloud",
@@ -13105,7 +12804,6 @@
         },
         {
             "launchpad_id": "lichunhan",
-            "gerrit_id": "lichunhan",
             "zanata_id": "lichunhan",
             "companies": [
                 {
@@ -13170,7 +12868,6 @@
         },
         {
             "launchpad_id": "lihiwish",
-            "gerrit_id": "lihiwish",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -13182,7 +12879,6 @@
         },
         {
             "launchpad_id": "lihong",
-            "gerrit_id": "lihong",
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
@@ -13194,7 +12890,6 @@
         },
         {
             "launchpad_id": "lijing",
-            "gerrit_id":"lijing",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -13280,7 +12975,6 @@
         },
         {
             "launchpad_id": "linlin",
-            "gerrit_id": "linlin",
             "zanata_id": "linlin",
             "companies": [
                 {
@@ -13308,7 +13002,6 @@
         },
         {
             "launchpad_id": "lioplhp",
-            "gerrit_id": "lioplhp",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -13331,7 +13024,6 @@
         },
         {
             "launchpad_id": "liquid",
-            "gerrit_id": "jkauf",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -13365,7 +13057,6 @@
         },
         {
             "launchpad_id": "liteng",
-            "gerrit_id":"liteng",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -13458,7 +13149,6 @@
         },
         {
             "launchpad_id": "liuhaijie",
-            "gerrit_id":"liuhaijie",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -13481,7 +13171,6 @@
         },
         {
             "launchpad_id": "liujiong",
-            "gerrit_id":"liujiong",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -13493,7 +13182,6 @@
         },
         {
             "launchpad_id": "liujunpeng",
-            "gerrit_id":"liujunpeng",
             "zanata_id":"liujunpeng",
             "companies": [
                 {
@@ -13517,7 +13205,6 @@
         },
         {
             "launchpad_id": "liuqing123",
-            "gerrit_id": "liuqing123",
             "zanata_id": "liuqing",
             "companies": [
                 {
@@ -13557,7 +13244,6 @@
         },
         {
             "launchpad_id": "liuyamin",
-            "gerrit_id": "liuyamin",
             "companies": [{
                 "company_name": "Fiberhome",
                 "end_date": null
@@ -13567,7 +13253,6 @@
         },
         {
             "launchpad_id": "lixing",
-            "gerrit_id": "lixing",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -13579,7 +13264,6 @@
         },
         {
             "launchpad_id": "lixipeng",
-            "gerrit_id": "hahaps",
             "companies": [
                 {
                     "company_name": "Huron",
@@ -13595,7 +13279,6 @@
         },
         {
             "launchpad_id": "liyanhang",
-            "gerrit_id":"liyanhang",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -13684,7 +13367,6 @@
         },
         {
             "launchpad_id": "lokesh-s",
-            "gerrit_id": "loki",
             "companies": [
                 {
                     "company_name": "HP",
@@ -13862,7 +13544,6 @@
         },
         {
             "launchpad_id": "luz-cazares",
-            "gerrit_id": "luzcazares",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -13874,7 +13555,6 @@
         },
         {
             "launchpad_id": "lvjiangzhao",
-            "gerrit_id": "lvjiangzhao",
             "companies": [
                 {
                     "company_name": "JD.COM",
@@ -13960,7 +13640,6 @@
         },
         {
             "launchpad_id": "m-koderer",
-            "gerrit_id": "mkoderer",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -14040,7 +13719,6 @@
         },
         {
            "launchpad_id": "madorn",
-           "gerrit_id": "madorn",
            "companies": [
                {
                    "company_name": "Rackspace",
@@ -14056,7 +13734,6 @@
         },
         {
            "launchpad_id": "maestropandy",
-           "gerrit_id": "maestropandy",
            "companies": [
                {
                    "company_name": "Reliance",
@@ -14068,7 +13745,6 @@
         },
         {
             "launchpad_id": "magdy-salem",
-            "gerrit_id": "msalem",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -14129,7 +13805,6 @@
         },
         {
             "launchpad_id": "majklkcz",
-            "gerrit_id": "majklkcz",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -14201,7 +13876,6 @@
         },
         {
             "launchpad_id": "manjunath-ranganathaiah",
-            "gerrit_id": "mrangana",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -14224,7 +13898,6 @@
         },
         {
             "launchpad_id": "maoshuai",
-            "gerrit_id": "shuaimao",
             "zanata_id": "maoshuai",
             "companies": [
                 {
@@ -14237,7 +13910,6 @@
         },
         {
            "launchpad_id": "marcus-g-williams",
-           "gerrit_id": "mgkwill",
            "companies": [
                {
                    "company_name": "Intel",
@@ -14260,7 +13932,6 @@
         },
         {
             "launchpad_id": "marek-celoud",
-            "gerrit_id": "marco",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -14391,7 +14062,6 @@
         },
         {
             "launchpad_id": "markus-groben",
-            "gerrit_id": "markus-groben",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -14414,7 +14084,6 @@
         },
         {
             "launchpad_id": "mars0618",
-            "gerrit_id": "Mars",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -14449,7 +14118,6 @@
         },
         {
             "launchpad_id": "marutik",
-            "gerrit_id": "marutik",
             "companies": [
                 {
                     "company_name": "HP",
@@ -14506,7 +14174,6 @@
         },
         {
             "launchpad_id": "matan-sabag",
-            "gerrit_id": "sabagm",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -14574,7 +14241,6 @@
         },
         {
             "launchpad_id": "matt-0",
-            "gerrit_id": "mattoliverau",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -14586,7 +14252,6 @@
         },
         {
            "launchpad_id": "matt-jarvis",
-           "gerrit_id": "dc_mattj",
            "companies": [
                 {
                     "company_name": "DataCentred",
@@ -14646,7 +14311,6 @@
         },
         {
             "launchpad_id": "matthew-taylor-f",
-            "gerrit_id": "mtaylor22",
             "companies": [
                 {
                     "company_name": "Digital Pacific",
@@ -14658,7 +14322,6 @@
         },
         {
             "launchpad_id": "mattmont",
-            "gerrit_id": "signed8bit",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -14692,7 +14355,6 @@
         },
         {
             "launchpad_id": "maty-grosz",
-            "gerrit_id": "matyg",
             "companies": [
                 {
                     "company_name": "Alcatel-Lucent",
@@ -14737,7 +14399,6 @@
         },
         {
             "launchpad_id": "maxime-leroy",
-            "gerrit_id": "mleroy",
             "companies": [
                 {
                     "company_name": "6WIND",
@@ -14780,7 +14441,6 @@
         },
         {
             "launchpad_id": "mbonell",
-            "gerrit_id": "mbonell",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -14792,7 +14452,6 @@
         },
         {
             "launchpad_id": "mbozhenko",
-            "gerrit_id": "mbozhenko",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -14804,7 +14463,6 @@
         },
         {
             "launchpad_id": "mca-ashu4",
-            "gerrit_id": "ashu_mishra",
             "companies": [
                 {
                     "company_name": "One Convergence",
@@ -14816,7 +14474,6 @@
         },
         {
             "launchpad_id": "mdieder",
-            "gerrit_id": "marcelodieder",
             "zanata_id": "marcelodieder",
             "companies": [
                 {
@@ -14886,7 +14543,6 @@
         },
         {
             "launchpad_id": "mei-zhifang97",
-            "gerrit_id": "meizhifang",
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
@@ -14898,7 +14554,6 @@
         },
         {
             "launchpad_id": "meir-kriheli",
-            "gerrit_id": "mkriheli",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -14914,7 +14569,6 @@
         },
         {
             "launchpad_id": "mekala-sarath",
-            "gerrit_id": "SarathMekala",
             "companies": [
                 {
                     "company_name": "Juniper",
@@ -14971,7 +14625,6 @@
         },
         {
             "launchpad_id": "mf6510",
-            "gerrit_id": "ciello89",
             "zanata_id": "ciello89",
             "companies": [
                 {
@@ -14984,7 +14637,6 @@
         },
         {
             "launchpad_id": "mfedosin",
-            "gerrit_id": "fedosinme",
             "github_id": "Fedosin",
             "companies": [
                 {
@@ -15005,7 +14657,6 @@
         },
         {
             "launchpad_id": "mfeoktistov",
-            "gerrit_id": "mfeoktistov",
             "companies": [
                 {
                     "company_name": "Virtuozzo",
@@ -15133,7 +14784,6 @@
         },
         {
             "launchpad_id": "michael-hoppal",
-            "gerrit_id": "michael-hoppal",
             "companies": [
                 {
                     "company_name": "HP",
@@ -15264,7 +14914,6 @@
         },
               {
            "launchpad_id": "mikecincotamayo",
-           "gerrit_id": "mtamayo",
            "companies": [
                 {
                     "company_name": "Intel",
@@ -15276,7 +14925,6 @@
         },
         {
             "launchpad_id": "mikemason010",
-            "gerrit_id" : "mac4",
             "companies": [
                 {
                     "company_name": "HP",
@@ -15303,7 +14951,6 @@
         },
         {
            "launchpad_id": "milan.potdar",
-           "gerrit_id": "milanpotdar",
            "companies": [
                 {
                     "company_name": "Intel",
@@ -15382,7 +15029,6 @@
         },
         {
             "launchpad_id": "mmalik4",
-            "gerrit_id": "mmalik4",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -15416,7 +15062,6 @@
         },
         {
             "launchpad_id": "mmohan-9",
-            "gerrit_id": "snmohan83",
             "github_id": "snmohan83",
             "companies": [
                 {
@@ -15448,7 +15093,6 @@
         },
         {
            "launchpad_id": "mmuppidi",
-           "gerrit_id": "mohan.muppidi",
            "github_id": "mmuppidi",
            "companies": [
                {
@@ -15461,7 +15105,6 @@
         },
         {
             "launchpad_id": "mnestratov",
-            "gerrit_id": "mnestratov",
             "companies": [
                 {
                     "company_name": "Virtuozzo",
@@ -15473,7 +15116,6 @@
         },
         {
             "launchpad_id": "mohankumar-n",
-            "gerrit_id": "mohankumar_n",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -15485,7 +15127,6 @@
         },
         {
            "launchpad_id": "mohit-motiani",
-           "gerrit_id": "mohit.motiani",
            "companies": [
                {
                    "company_name": "Intel",
@@ -15770,7 +15411,6 @@
         },
         {
             "launchpad_id": "nakul-dahiwade",
-            "gerrit_id": "nakul.dahiwade",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -15793,7 +15433,6 @@
         },
         {
             "launchpad_id": "nanaboat",
-            "gerrit_id": "nanaboat",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -15805,7 +15444,6 @@
         },
         {
             "launchpad_id": "nandini-tata",
-            "gerrit_id": "ntata",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -15817,7 +15455,6 @@
         },
         {
             "launchpad_id": "narender-soorineeda",
-            "gerrit_id": "Narender",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -15829,7 +15466,6 @@
         },
         {
             "launchpad_id": "nate-graf",
-            "gerrit_id": "nategraf",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -16000,7 +15636,6 @@
         },
         {
              "launchpad_id": "nexusz99",
-             "gerrit_id": "seongsoo.cho",
              "zanata_id": "nexusz99",
              "companies": [
                  {
@@ -16176,7 +15811,6 @@
         },
         {
             "launchpad_id": "nishpatwa",
-            "gerrit_id": "npatwa",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -16349,7 +15983,6 @@
         },
         {
             "launchpad_id": "nssven",
-            "gerrit_id": "nssven",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -16372,7 +16005,6 @@
         },
       {
             "launchpad_id": "nugguviswanathcse",
-            "gerrit_id": "nuggu",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -16384,7 +16016,6 @@
         },
         {
             "launchpad_id": "o-lemasle",
-            "gerrit_id": "olivierlemasle",
             "github_id": "olivierlemasle",
             "companies": [
                 {
@@ -16468,7 +16099,6 @@
         },
         {
             "launchpad_id": "omer-anson",
-            "gerrit_id": "oanson",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -16480,7 +16110,6 @@
         },
         {
             "launchpad_id": "ondrej-smola-2",
-            "gerrit_id": "smolaon",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -16492,7 +16121,6 @@
         },
         {
             "launchpad_id": "oneilcin",
-            "gerrit_id": "oneilcin",
             "companies": [
                 {
                     "company_name": "HP",
@@ -16583,7 +16211,6 @@
         },
         {
             "launchpad_id": "otsuka-f",
-            "gerrit_id": "otsuka",
             "zanata_id": "otsuka",
             "companies": [
                 {
@@ -16618,7 +16245,6 @@
         },
         {
             "launchpad_id": "pablo-a-fuente",
-            "gerrit_id": "pafuent",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -16641,7 +16267,6 @@
         },
         {
             "launchpad_id": "palecrow",
-            "gerrit_id": "mborland",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -16653,7 +16278,6 @@
         },
         {
             "launchpad_id": "palvarez89",
-            "gerrit_id": "pedroalvarez",
             "github_id": "palvarez89",
             "companies": [
                 {
@@ -16710,7 +16334,6 @@
         },
         {
             "launchpad_id": "partha.b",
-            "gerrit_id": "pbera",
             "companies": [
                 {
                     "company_name": "AFour Technologies",
@@ -16733,7 +16356,6 @@
         },
         {
             "launchpad_id": "patrick-butlermonterde",
-            "gerrit_id": "patrickbm",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -16763,7 +16385,6 @@
         },
         {
             "launchpad_id": "paul-carlton2",
-            "gerrit_id": "paul-carlton2",
             "companies": [
                 {
                     "company_name": "HP",
@@ -16827,7 +16448,6 @@
         },
         {
             "launchpad_id": "pavel-cizinsky",
-            "gerrit_id": "LotharKAtt",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -16839,7 +16459,6 @@
         },
         {
             "launchpad_id": "pavlk-jakub",
-            "gerrit_id": "pupapaik",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -16851,7 +16470,6 @@
         },
         {
             "launchpad_id": "pawel-palucki",
-            "gerrit_id": "pawel.palucki",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -16862,7 +16480,6 @@
             "emails": ["pawel.palucki@intel.com"]
         },
         {   "launchpad_id": "pawnesh.kumar",
-            "gerrit_id": "pawnesh.kumar",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -16896,7 +16513,6 @@
         },
         {
             "launchpad_id": "pckruith",
-            "gerrit_id": "pkruithofjr",
             "companies": [
                 {
                     "company_name": "HPE",
@@ -16997,7 +16613,6 @@
         },
         {
             "launchpad_id": "peter.wang",
-            "gerrit_id": "peter_wang",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -17061,7 +16676,6 @@
         },
         {
             "launchpad_id": "pierre-padrixe",
-            "gerrit_id": "stannie",
             "companies": [
                 {
                     "company_name": "Numergy",
@@ -17073,7 +16687,6 @@
         },
         {
             "launchpad_id": "pierre-rambaud",
-            "gerrit_id": "GoT",
             "companies": [
                 {
                     "company_name": "Numergy",
@@ -17096,7 +16709,6 @@
         },
         {
             "launchpad_id": "pjoomen",
-            "gerrit_id": "pjoomen",
             "companies": [
                 {
                     "company_name": "Redpill Linpro",
@@ -17108,7 +16720,6 @@
         },
         {
             "launchpad_id": "pkholkin",
-            "gerrit_id": "pkholkin",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -17183,7 +16794,6 @@
         },
         {
             "launchpad_id": "powerds0111",
-            "gerrit_id": "powerds0111",
             "github_id": "powerds0111",
             "companies": [
                 {
@@ -17271,7 +16881,6 @@
         },
         {
             "launchpad_id": "pradeepkumar.ks",
-            "gerrit_id": "pradeepkumarks",
             "companies": [
                 {
                     "company_name": "Ericsson",
@@ -17287,7 +16896,6 @@
         },
         {
             "launchpad_id": "pradeepkumar.v",
-            "gerrit_id": "pradeepkumar",
             "companies": [
                 {
                     "company_name": "Cognizant",
@@ -17299,7 +16907,6 @@
         },
         {
             "launchpad_id": "prameswar",
-            "gerrit_id": "prameswar",
             "companies": [
                 {
                     "company_name": "Imaginea Technologies Inc.",
@@ -17311,7 +16918,6 @@
         },
         {
             "launchpad_id": "praneshpg",
-            "gerrit_id": "pran1990",
             "companies": [
                 {
                     "company_name": "Yahoo!",
@@ -17323,7 +16929,6 @@
         },
         {
             "launchpad_id": "prashanth-prahal",
-            "gerrit_id": "prashanth-prahal",
             "companies": [
                 {
                     "company_name": "Pluribus Networks",
@@ -17335,7 +16940,6 @@
         },
         {
             "launchpad_id": "prasoontelang",
-            "gerrit_id": "prasoon",
             "companies": [
                 {
                     "company_name": "Pluribus Networks",
@@ -17410,7 +17014,6 @@
         },
         {
             "launchpad_id": "priyaboopalan",
-            "gerrit_id": "PriyaBoopalan",
             "companies": [
                 {
                     "company_name": "Cognizant",
@@ -17422,7 +17025,6 @@
         },
         {
            "launchpad_id": "prudhvi-rao-shedimbi",
-           "gerrit_id": "pshedimb",
            "companies": [
                {
                    "company_name": "Intel",
@@ -17456,7 +17058,6 @@
         },
         {
             "launchpad_id": "psp0808",
-            "gerrit_id": "Pradhan",
             "companies": [
                 {
                     "company_name": "HP",
@@ -17468,7 +17069,6 @@
         },
         {
             "launchpad_id": "purp",
-            "gerrit_id": "jim.meyer",
             "companies": [
                 {
                     "company_name": "HP",
@@ -17484,7 +17084,6 @@
         },
         {
             "launchpad_id": "pushkar-umaranikar",
-            "gerrit_id": "pushkarumaranikar",
              "companies": [
                 {
                     "company_name": "Intel",
@@ -17529,7 +17128,6 @@
         },
         {
             "launchpad_id": "qiankun.zhang",
-            "gerrit_id": "qiankun.zhang",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -17541,7 +17139,6 @@
         },
         {
              "launchpad_id": "qiky",
-             "gerrit_id": "qiky",
              "zanata_id": "qiaiyuan",
              "companies": [
                  {
@@ -17554,7 +17151,6 @@
         },
         {
             "launchpad_id": "qitianbiao",
-            "gerrit_id": "trisq",
             "companies": [
                 {
                     "company_name": "t2cloud",
@@ -17595,7 +17191,6 @@
                 }
             ],
             "user_name": "Qu Zhaoyang",
-            "gerrit_id": "quzhaoyang",
             "emails": ["qzyjy666@163.com","qu.zhaoyang@h3c.com"]
         },
         {
@@ -17607,7 +17202,6 @@
                 }
             ],
             "user_name": "Qin Wang",
-            "gerrit_id": "qwang",
             "emails": ["qin.wang@intel.com"]
         },
         {
@@ -17623,7 +17217,6 @@
         },
         {
             "launchpad_id": "r-uone",
-            "gerrit_id": "rtrezeciak",
             "companies": [
                 {
                     "company_name": "Deutsche Telekom",
@@ -17683,7 +17276,6 @@
         },
         {
             "launchpad_id": "rahuldantuluri",
-            "gerrit_id": "RahulDV",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -17695,7 +17287,6 @@
         },
         {
             "launchpad_id": "rahulunair",
-            "gerrit_id": "rahulunair",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -17707,7 +17298,6 @@
         },
         {
             "launchpad_id": "raiesmh08",
-            "gerrit_id": "raiesmh08",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -17727,7 +17317,6 @@
         },
         {
             "launchpad_id": "raildo",
-            "gerrit_id": "raildo",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -17743,7 +17332,6 @@
         },
         {
             "launchpad_id": "rajasi-kulkarni",
-            "gerrit_id": "RajasiKulkarni",
             "companies": [
                 {
                     "company_name": "Persistent Systems",
@@ -17785,7 +17373,6 @@
         },
         {
             "launchpad_id": "ramamani-yeleswarapu",
-            "gerrit_id": "Rama_Y",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -17797,7 +17384,6 @@
         },
         {
             "launchpad_id": "ramanjieee",
-            "gerrit_id": "Ramanjaneya",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -17846,7 +17432,6 @@
         },
         {
             "launchpad_id": "ramy-asselin",
-            "gerrit_id": "asselin",
             "companies": [
                 {
                     "company_name": "HP",
@@ -17866,7 +17451,6 @@
         },
         {
             "launchpad_id": "ranler",
-            "gerrit_id": "ranler",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -17900,7 +17484,6 @@
         },
         {
             "launchpad_id": "ravishekar-jethani",
-            "gerrit_id": "rsjethani",
             "companies": [
                 {
                     "company_name": "NTT",
@@ -17988,7 +17571,6 @@
         },
         {
             "launchpad_id": "rboyapat",
-            "gerrit_id": "rboyapat",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -18000,7 +17582,6 @@
         },
         {
             "launchpad_id": "rcarrillocruz",
-            "gerrit_id" : "rcc",
             "companies": [
                 {
                     "company_name": "HP",
@@ -18257,7 +17838,6 @@
         },
         {
             "launchpad_id": "richwellum",
-            "gerrit_id": "rwellum",
             "companies": [
                 {
                     "company_name": "Lenovo",
@@ -18295,7 +17875,6 @@
         },
         {
             "launchpad_id": "rico-lin",
-            "gerrit_id": "rico.lin",
             "companies": [
                 {
                     "company_name": "inwinSTACK",
@@ -18345,7 +17924,6 @@
         },
         {
             "launchpad_id": "ritu-sood",
-            "gerrit_id": "rsood",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -18384,7 +17962,6 @@
         {
             "launchpad_id": "rkiran",
             "github_id": "kiran-r",
-            "gerrit_id": "Kiran",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -18493,7 +18070,6 @@
         },
         {
             "launchpad_id": "rmevans88",
-            "gerrit_id": "rmevans",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -18553,7 +18129,6 @@
         },
         {
             "launchpad_id": "robcresswell",
-            "gerrit_id": "rob-cresswell",
             "github_id": "robcresswell",
             "companies": [
                 {
@@ -18566,7 +18141,6 @@
         },
         {
             "launchpad_id": "robert-myers",
-            "gerrit_id": "rmyers",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -18578,7 +18152,6 @@
         },
         {
             "launchpad_id": "robert-simai",
-            "gerrit_id": "rsimai",
             "zanata_id": "rsimai",
             "companies": [
                 {
@@ -18613,7 +18186,6 @@
         },
         {
             "launchpad_id": "rocha-porto",
-            "gerrit_id": "rocha",
             "companies": [
                 {
                     "company_name": "Catalyst IT",
@@ -18640,7 +18212,6 @@
         },
         {
             "launchpad_id": "rodrigo-barbieri2010",
-            "gerrit_id": "ganso",
             "companies": [
                 {
                     "company_name": "Hitachi",
@@ -18656,7 +18227,6 @@
         },
         {
             "launchpad_id": "rodrigodsousa",
-            "gerrit_id": "rodrigods",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -18698,7 +18268,6 @@
         },
         {
             "launchpad_id": "roland-hochmuth",
-            "gerrit_id": "roland-hochmuth-s",
             "companies": [
                 {
                     "company_name": "HP",
@@ -18714,7 +18283,6 @@
         },
         {
             "launchpad_id": "romain-hardouin",
-            "gerrit_id": "romainh",
             "companies": [
                 {
                     "company_name": "Cloudwatt",
@@ -18763,7 +18331,6 @@
         },
         {
             "launchpad_id": "romcheg",
-            "gerrit_id": "prykhodchenko",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -18775,7 +18342,6 @@
         },
         {
             "launchpad_id": "romilg",
-            "gerrit_id": "romilgupta19",
             "companies": [
                 {
                     "company_name": "HP",
@@ -18807,7 +18373,6 @@
         },
         {
             "launchpad_id": "ronald-de-rose",
-            "gerrit_id": "derosenet",
             "companies": [
                 {
                    "company_name": "Intel",
@@ -18819,7 +18384,6 @@
         },
         {
             "launchpad_id": "ronaldbradford",
-            "gerrit_id": "ronaldbradford",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -18969,7 +18533,6 @@
         },
         {
             "launchpad_id": "ruchiparmar143",
-            "gerrit_id": "Ruchi143",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19048,7 +18611,6 @@
         },
         {
             "launchpad_id": "russellhaering",
-            "gerrit_id": "russell_h",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -19060,7 +18622,6 @@
         },
         {
             "launchpad_id": "rustinpeace",
-            "gerrit_id": "Rustinpeace",
             "companies": [
                 {
                     "company_name": "UnitedStack",
@@ -19072,7 +18633,6 @@
         },
         {
             "launchpad_id": "rusty-lynch-intel",
-            "gerrit_id": "rusty",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19099,7 +18659,6 @@
         },
         {
             "launchpad_id": "ryan-brandt",
-            "gerrit_id": "ryan-brandt",
             "companies": [
                 {
                     "company_name": "HP",
@@ -19115,7 +18674,6 @@
         },
         {
             "launchpad_id": "ryan-liang",
-            "gerrit_id": "RyanLiang",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -19131,7 +18689,6 @@
         },
         {
             "launchpad_id": "ryan-petrello",
-            "gerrit_id": "ryanpetrello",
             "companies": [
                 {
                     "company_name": "DreamHost",
@@ -19143,7 +18700,6 @@
         },
         {
             "launchpad_id": "rydou",
-            "gerrit_id": "rydou",
             "user_name": "Dou Rui Yuan",
             "companies": [
                 {
@@ -19170,7 +18726,6 @@
         },
         {
             "launchpad_id": "ryutaroy",
-            "gerrit_id": "ryutaroy",
             "companies": [
                 {
                     "company_name": "Rakuten",
@@ -19182,7 +18737,6 @@
         },
         {
            "launchpad_id": "s-haub",
-           "gerrit_id": "shaub",
            "companies": [
                {
                    "company_name": "Deutsche Telekom",
@@ -19205,7 +18759,6 @@
         },
         {
             "launchpad_id": "s8m",
-            "gerrit_id": "SamYaple",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -19255,7 +18808,6 @@
         },
         {
             "launchpad_id": "saigandham467",
-            "gerrit_id": "sai",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19325,7 +18877,6 @@
         },
         {
             "launchpad_id": "sam-wan",
-            "gerrit_id": "samwan",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -19363,7 +18914,6 @@
         },
         {
             "launchpad_id": "sammiestoel",
-            "gerrit_id": "sammiestoel",
             "companies": [
                 {
                    "company_name": "*independent",
@@ -19379,7 +18929,6 @@
         },
         {
             "launchpad_id": "samueldmq",
-            "gerrit_id": "samueldmq",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -19414,7 +18963,6 @@
         },
         {
             "launchpad_id": "sanket-lawangare-d",
-            "gerrit_id": "sanket.lawangare",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19426,7 +18974,6 @@
         },
         {
            "launchpad_id": "santhosh-fernandes",
-           "gerrit_id": "santhosh-fernandes",
            "companies": [
                {
                    "company_name": "Walmart",
@@ -19475,7 +19022,6 @@
         },
         {
             "launchpad_id": "sarafraj-singh",
-            "gerrit_id": "sarafrajsingh",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19517,7 +19063,6 @@
         },
         {
             "launchpad_id": "satish-venkatasubramanian-7",
-            "gerrit_id": "satish-venkatasubramanian-7",
             "companies": [
                 {
                     "company_name": "Reliance",
@@ -19562,7 +19107,6 @@
         },
         {
             "launchpad_id": "sauloaislan",
-            "gerrit_id": "SauloAislan",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -19574,7 +19118,6 @@
         },
         {
             "launchpad_id": "sayantani.goswami",
-            "gerrit_id": "sayantani.goswami",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -19601,7 +19144,6 @@
         },
         {
             "launchpad_id": "sbalukoff",
-            "gerrit_id": "sbalukoff",
             "companies": [
                 {
                     "company_name": "Blue Box",
@@ -19617,7 +19159,6 @@
         },
         {
             "launchpad_id": "sbelous",
-            "gerrit_id": "sbelous",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -19798,7 +19339,6 @@
         },
         {
             "launchpad_id": "sean-handley",
-            "gerrit_id": "seanhandley",
             "companies": [
                 {
                     "company_name": "DataCentred",
@@ -19821,7 +19361,6 @@
         },
         {
             "launchpad_id": "sean-mcginnis",
-            "gerrit_id": "SeanM",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -19922,7 +19461,6 @@
         },
         {
             "launchpad_id": "seungkyua",
-            "gerrit_id": "seungkyu",
             "zanata_id": "seungkyu",
             "github_id": "seungkyua",
             "companies": [
@@ -19959,7 +19497,6 @@
         },
         {
             "launchpad_id": "shakhova-margarita",
-            "gerrit_id": "MargaritaShakhova",
             "github_id": "MargaritaShakhova",
             "companies": [
                 {
@@ -19972,7 +19509,6 @@
         },
         {
             "launchpad_id": "shamail-tahir",
-            "gerrit_id": "shamail",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -19988,7 +19524,6 @@
         },
         {
             "launchpad_id": "shanjj",
-            "gerrit_id": "shanker",
             "companies": [
                 {
                     "company_name": "Cognizant",
@@ -20022,7 +19557,6 @@
         },
         {
             "launchpad_id": "shapeliang",
-            "gerrit_id": "shapeliang",
             "companies": [
                 {
                     "company_name": "JD.COM",
@@ -20034,7 +19568,6 @@
         },
         {
             "launchpad_id": "shasha.tavil",
-            "gerrit_id": "shasha.tavil",
             "companies": [
                 {
                    "company_name": "Intel",
@@ -20046,7 +19579,6 @@
         },
         {
             "launchpad_id": "shashank-kumar-shankar",
-            "gerrit_id": "skshankar",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -20058,7 +19590,6 @@
         },
         {
             "launchpad_id": "shashirekha-j-gundur",
-            "gerrit_id": "shashirekha.j.gundur",
             "companies": [
                 {
                    "company_name": "Intel",
@@ -20070,7 +19601,6 @@
         },
         {
             "launchpad_id": "shaun-edwards",
-            "gerrit_id": "sedwards",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -20134,7 +19664,6 @@
         },
         {
             "launchpad_id": "shay-halsband",
-            "gerrit_id": "shyh",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -20151,7 +19680,6 @@
         {
             "launchpad_id": "sheshananda",
             "github_id": "sheshanand",
-            "gerrit_id": "sheshananda",
             "companies": [
                 {
                    "company_name": "Maplelabs",
@@ -20226,7 +19754,6 @@
         },
         {
             "launchpad_id": "shizhihui",
-            "gerrit_id": "shizhihui",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -20238,7 +19765,6 @@
         },
         {
             "launchpad_id": "shravya-g90",
-            "gerrit_id": "ShravyaGaddam",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -20250,7 +19776,6 @@
         },
         {
             "launchpad_id": "shrirangphadke",
-            "gerrit_id": "shrirangphadke",
             "companies": [
                 {
                     "company_name": "Izel Technologies",
@@ -20262,7 +19787,6 @@
         },
         {
             "launchpad_id": "shu-mutou",
-            "gerrit_id": "shu.mutow",
             "zanata_id": "shu",
             "companies": [
                 {
@@ -20275,7 +19799,6 @@
         },
         {
             "launchpad_id": "shu-shen",
-            "gerrit_id": "shushen",
             "companies": [
                 {
                     "company_name": "Siaras",
@@ -20287,7 +19810,6 @@
         },
         {
             "launchpad_id": "shuichiro-makigaki",
-            "gerrit_id": "shuichiro-makigaki",
             "companies": [
                 {
                     "company_name": "Rakuten",
@@ -20299,7 +19821,6 @@
         },
         {
             "launchpad_id": "shunde-zhang",
-            "gerrit_id": "shundezhang",
             "companies": [
                 {
                     "company_name": "Aptira",
@@ -20311,7 +19832,6 @@
         },
         {
             "launchpad_id": "shunliz",
-            "gerrit_id": "ShunliZhou",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -20323,7 +19843,6 @@
         },
         {
             "launchpad_id": "shuo-yang",
-            "gerrit_id": "syang",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -20409,7 +19928,6 @@
         },
         {
             "launchpad_id": "simak-jan",
-            "gerrit_id": "honzas",
             "companies": [
                 {
                     "company_name": "Seznam.cz",
@@ -20469,7 +19987,6 @@
         },
         {
             "launchpad_id": "sinvalneto01",
-            "gerrit_id": "sinvalvieira",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -20492,7 +20009,6 @@
         },
         {
             "launchpad_id": "sirmemogarcia",
-            "gerrit_id": "memogarcia",
             "companies": [
                 {
                     "company_name": "HP",
@@ -20508,7 +20024,6 @@
         },
         {
             "launchpad_id": "sirushtim",
-            "gerrit_id": "sirushtim",
             "companies": [
                 {
                     "company_name": "HP",
@@ -20524,7 +20039,6 @@
         },
         {
            "launchpad_id": "siva-radhakrishnan",
-           "gerrit_id": "sivakrishnan",
            "companies": [
                {
                    "company_name": "Intel",
@@ -20666,7 +20180,6 @@
         },
         {
             "launchpad_id": "sliim",
-            "gerrit_id": "Sliim",
             "companies": [
                 {
                     "company_name": "Numergy",
@@ -20811,7 +20324,6 @@
         },
         {
             "launchpad_id": "som-mishra",
-            "gerrit_id": "smishra",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -20893,7 +20405,6 @@
         },
         {
             "launchpad_id": "sonu-sudhakaran",
-            "gerrit_id": "sonu",
             "companies": [
                 {
                     "company_name": "HP",
@@ -20942,7 +20453,6 @@
         },
         {
              "launchpad_id": "southeast02",
-             "gerrit_id": "southeast02",
              "companies": [
                  {
                      "company_name": "HUST",
@@ -20954,7 +20464,6 @@
         },
         {
             "launchpad_id": "sputnik13",
-            "gerrit_id": "sputnik13",
             "companies": [
                 {
                     "company_name": "HP",
@@ -21044,7 +20553,6 @@
         },
         {
             "launchpad_id": "ssarabia",
-            "gerrit_id": "ssarabia",
             "github_id": "soliosg",
             "companies": [
                 {
@@ -21057,7 +20565,6 @@
         },
         {
             "launchpad_id": "stanicke",
-            "gerrit_id": "stanislavulrych",
             "zanata_id": "stanislavulrych",
             "companies": [
                 {
@@ -21070,7 +20577,6 @@
         },
         {
             "launchpad_id": "stanislaw-pitucha",
-            "gerrit_id": "stanislaw-pitucha",
             "companies": [
                 {
                     "company_name": "HP",
@@ -21127,7 +20633,6 @@
         },
         {
             "launchpad_id": "stephaneeee",
-            "gerrit_id": "cinerama",
             "companies": [
                 {
                     "company_name": "HP",
@@ -21147,7 +20652,6 @@
         },
         {
             "launchpad_id": "stephen-watson",
-            "gerrit_id": "swatson",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -21159,7 +20663,6 @@
         },
         {
             "launchpad_id": "stephenfinucane",
-            "gerrit_id": "sfinucan",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -21194,7 +20697,6 @@
         },
         {
             "launchpad_id": "steve-lewis",
-            "gerrit_id": "stevelle",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -21292,7 +20794,6 @@
         },
         {
             "launchpad_id": "stremovsky",
-            "gerrit_id": "yuli",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -21315,7 +20816,6 @@
         },
         {
             "launchpad_id": "stuart-mclaren",
-            "gerrit_id": "stuart-mclaren",
             "companies": [
                 {
                     "company_name": "HP",
@@ -21353,7 +20853,6 @@
         },
         {
             "launchpad_id": "sujitha-neti",
-            "gerrit_id": "Sujitha",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -21387,7 +20886,6 @@
         },
         {
             "launchpad_id": "sumant-murke",
-            "gerrit_id": "sumantmurke",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -21399,7 +20897,6 @@
         },
         {
             "launchpad_id": "sumitjami",
-            "gerrit_id": "nthforloop",
             "companies": [
                 {
                     "company_name": "SUSE",
@@ -21422,7 +20919,6 @@
         },
         {
             "launchpad_id": "sunanchen",
-            "gerrit_id": "SunAnChen",
             "zanata_id": "sunanchen",
             "companies": [
                 {
@@ -21435,7 +20931,6 @@
         },
         {
             "launchpad_id": "sungjin",
-            "gerrit_id": "sungjin",
             "zanata_id": "ujuc",
             "companies": [
                 {
@@ -21448,7 +20943,6 @@
         },
         {
             "launchpad_id": "sunjh1999",
-            "gerrit_id": "HenryS",
             "companies": [
                 {
                     "company_name": "Awcloud",
@@ -21460,7 +20954,6 @@
         },
         {
             "launchpad_id": "sunku-ranganath",
-            "gerrit_id": "sunkuranganath",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -21565,7 +21058,6 @@
         },
         {
            "launchpad_id": "swan1991",
-           "gerrit_id": "Swan",
            "companies": [
                {
                    "company_name": "*independent",
@@ -21607,7 +21099,6 @@
         },
         {
             "launchpad_id": "sylvain-bauza",
-            "gerrit_id": "sbauza",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -21649,7 +21140,6 @@
         },
         {
             "launchpad_id": "szhsong",
-            "gerrit_id": "ZhihaiSong",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -21665,7 +21155,6 @@
         },
         {
             "launchpad_id": "taget-9",
-            "gerrit_id": "Eli",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -21681,7 +21170,6 @@
         },
         {
             "launchpad_id": "takeaki-matsumoto",
-            "gerrit_id": "takmatsu",
             "companies": [
                {
                    "company_name": "NTT",
@@ -21696,7 +21184,6 @@
         },
         {
             "launchpad_id": "tamara-k",
-            "gerrit_id": "tamara-k",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -21748,7 +21235,6 @@
         },
         {
             "launchpad_id": "tangchen",
-            "gerrit_id": "tangchen",
             "companies": [
                 {
                     "company_name": "Fujitsu",
@@ -21801,7 +21287,6 @@
         },
         {
             "launchpad_id": "tchaypo",
-            "gerrit_id": "tchaypo",
             "companies": [
                 {
                     "company_name": "HP",
@@ -21828,7 +21313,6 @@
         },
         {
             "launchpad_id": "tellesmvn",
-            "gerrit_id": "tellesnobrega",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -21896,7 +21380,6 @@
         },
         {
            "launchpad_id": "theizaakk",
-           "gerrit_id": "izaakk",
            "companies": [
                {
                    "company_name": "Intel",
@@ -22035,7 +21518,6 @@
         },
         {
             "launchpad_id": "tiago.pasqualini",
-            "gerrit_id": "tiago.pasqualini",
             "github_id": "tpsilva",
             "companies": [
                 {
@@ -22081,7 +21563,6 @@
         },
         {
             "launchpad_id": "tim-kelsey",
-            "gerrit_id": "tkelsey",
             "companies": [
                 {
                     "company_name": "HP",
@@ -22130,7 +21611,6 @@
         },
         {
             "launchpad_id": "tina-tang",
-            "gerrit_id": "Tina",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -22146,7 +21626,6 @@
         },
         {
             "launchpad_id": "tjohns",
-            "gerrit_id": "tjohns",
             "companies": [
                 {
                     "company_name": "State Farm Insurance",
@@ -22158,7 +21637,6 @@
         },
         {
             "launchpad_id": "tkak",
-            "gerrit_id": "tkakfrkw",
             "companies": [
                 {
                     "company_name": "Rakuten",
@@ -22170,7 +21648,6 @@
         },
         {
             "launchpad_id": "tkyk-mitsui",
-            "gerrit_id": "takayuki-mitsui",
             "companies": [
                {
                    "company_name": "NTT",
@@ -22274,7 +21751,6 @@
         },
         {
             "launchpad_id": "tom-pollard",
-            "gerrit_id": "CTtpollard",
             "companies": [
                 {
                     "company_name": "Codethink",
@@ -22309,7 +21785,6 @@
         },
         {
             "launchpad_id": "tomswanson",
-            "gerrit_id": "tom-swanson",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -22407,7 +21882,6 @@
         },
         {
             "launchpad_id": "travis-truman",
-            "gerrit_id": "trumant",
             "companies": [
                 {
                     "company_name": "Comcast",
@@ -22442,7 +21916,6 @@
         },
         {
             "launchpad_id": "trilliams",
-            "gerrit_id": "trilliams",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -22499,7 +21972,6 @@
         },
         {
             "launchpad_id": "trygve-vea-gmail",
-            "gerrit_id": "trygve.vea",
             "companies": [
                 {
                     "company_name": "Redpill Linpro",
@@ -22586,7 +22058,6 @@
         },
         {
             "launchpad_id": "uckey-1067",
-            "gerrit_id": "ukinau",
             "companies": [
                 {
                     "company_name": "NTT",
@@ -22658,7 +22129,6 @@
         },
         {
             "launchpad_id": "uwe-schreiber",
-            "gerrit_id": "uschreiber",
             "companies": [
                 {
                     "company_name": "SVA System Vertrieb Alexander GmbH",
@@ -22681,7 +22151,6 @@
         },
         {
             "launchpad_id": "v-mikes-z",
-            "gerrit_id": "vmikes",
             "companies": [
                 {
                     "company_name": "tcp cloud",
@@ -22719,7 +22188,6 @@
         },
         {
             "launchpad_id": "valw",
-            "gerrit_id": "valw",
             "companies": [
                 {
                     "company_name": "Rackspace",
@@ -22779,7 +22247,6 @@
         },
         {
             "launchpad_id": "varun-gadiraju",
-            "gerrit_id": "gadirajv",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -22791,7 +22258,6 @@
         },
         {
             "launchpad_id": "varun-vr850",
-            "gerrit_id": "Varunkvn",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -22825,7 +22291,6 @@
         },
         {
             "launchpad_id": "vedlad",
-            "gerrit_id": "vedlad",
             "companies": [
                 {
                     "company_name": "Symantec",
@@ -22849,7 +22314,6 @@
         },
         {
             "launchpad_id": "venkataharshitha",
-            "gerrit_id": "venkataharshitha",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -22861,7 +22325,6 @@
         },
         {
             "launchpad_id": "venkatamaheshkotha",
-            "gerrit_id": "venkatamahesh",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -22877,7 +22340,6 @@
         },
         {
             "launchpad_id": "vey-julien",
-            "gerrit_id": "julienvey",
             "companies": [
                 {
                     "company_name": "Numergy",
@@ -22889,7 +22351,6 @@
         },
         {
             "launchpad_id": "vgridnev",
-            "gerrit_id": "vgridnev",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -22905,7 +22366,6 @@
         },
         {
             "launchpad_id": "victor-feitosa",
-            "gerrit_id": "victorfeitosa",
             "companies": [
                 {
                     "company_name": "Hitachi",
@@ -22917,7 +22377,6 @@
         },
         {
             "launchpad_id": "victor-lowther",
-            "gerrit_id": "victor-lowther",
             "companies": [
                 {
                     "company_name": "Dell",
@@ -22960,7 +22419,6 @@
 
         {
             "launchpad_id": "victsou",
-            "gerrit_id": "victsou",
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
@@ -23005,7 +22463,6 @@
         },
         {
             "launchpad_id": "vijendra-soni",
-            "gerrit_id": "iamvijendra",
             "companies": [
                 {
                     "company_name": "Cognizant",
@@ -23043,7 +22500,6 @@
         },
         {
            "launchpad_id": "vinay-potluri",
-           "gerrit_id": "vinaypotluri",
            "companies": [
                {
                    "company_name": "Intel",
@@ -23066,7 +22522,6 @@
         },
         {
             "launchpad_id": "vinita",
-            "gerrit_id": "vinita",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -23097,7 +22552,6 @@
         },
         {
             "launchpad_id": "vishalcdac07",
-            "gerrit_id": "vishalcdac",
             "companies": [
                 {
                     "company_name": "NEC",
@@ -23153,7 +22607,6 @@
         },
         {
            "launchpad_id": "vivek-nandavanam",
-           "gerrit_id": "vivek.nandavanam",
            "companies": [
                {
                    "company_name": "*independent",
@@ -23194,7 +22647,6 @@
         },
         {
             "launchpad_id": "vkmc",
-            "gerrit_id": "vkmc",
             "companies": [
                 {
                     "company_name": "Red Hat",
@@ -23291,7 +22743,6 @@
         },
         {
             "launchpad_id": "vnaboychenko",
-            "gerrit_id": "vnaboichenko",
             "companies": [
                 {
                     "company_name": "Mirantis",
@@ -23325,7 +22776,6 @@
         },
         {
             "launchpad_id": "vstepurova",
-            "gerrit_id": "vstepurova",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -23355,12 +22805,10 @@
                 }
             ],
             "user_name": "Wajdi Al-Hawari",
-            "gerrit_id": "wajdi",
             "emails": ["w.hawari@gmail.com", "walhawari@internap.com"]
         },
         {
             "launchpad_id": "w-miller",
-            "gerrit_id": "w-miller",
             "companies": [
                 {
                     "company_name": "Cray",
@@ -23387,7 +22835,6 @@
         },
         {
             "launchpad_id": "waipengyip",
-            "gerrit_id": "jake",
             "companies": [
                 {
                     "company_name": "University of Melbourne",
@@ -23399,7 +22846,6 @@
         },
         {
             "launchpad_id": "walshh2",
-            "gerrit_id": "walshh2",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -23449,7 +22895,6 @@
         },
         {
             "launchpad_id": "wang-junjie",
-            "gerrit_id": "wang-junjie",
             "zanata_id": "petro",
             "companies": [
                 {
@@ -23484,7 +22929,6 @@
         },
         {
             "launchpad_id": "wangfang",
-            "gerrit_id": "wangfang",
             "zanata_id": "wangfang",
             "companies": [
                 {
@@ -23612,7 +23056,6 @@
         },
         {
             "launchpad_id": "wangyuwei",
-            "gerrit_id": "wangyuwei",
             "github_id": "AndiaQ",
             "companies": [
                 {
@@ -23647,7 +23090,6 @@
         },
         {
             "launchpad_id": "wanlong-gao",
-            "gerrit_id": "allen",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -23659,7 +23101,6 @@
         },
         {
             "launchpad_id": "watanabe.isao",
-            "gerrit_id": "watanabe.isao",
             "companies": [
                 {
                     "company_name": "Fujitsu",
@@ -23675,7 +23116,6 @@
         },
         {
             "launchpad_id": "wayne.chan",
-            "gerrit_id": "wayne.chan",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -23713,7 +23153,6 @@
         },
         {
             "launchpad_id": "wdhwang",
-            "gerrit_id": "wdhwang",
             "companies": [
                 {
                     "company_name": "Institute for Information Industry",
@@ -23736,7 +23175,6 @@
         },
         {
             "launchpad_id": "wei-li",
-            "gerrit_id": "liwei1",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -23759,7 +23197,6 @@
         },
         {
             "launchpad_id": "weichuancheng",
-            "gerrit_id": "weichuancheng",
             "companies": [
                 {
                     "company_name": "Inspur",
@@ -23820,7 +23257,6 @@
         },
         {
             "launchpad_id": "wh-ubuntuone",
-            "gerrit_id": "bowtie",
             "companies": [
                 {
                     "company_name": "Cisco Systems",
@@ -23832,7 +23268,6 @@
         },
         {
             "launchpad_id": "whyliyi",
-            "gerrit_id": "liyi8611",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -23970,7 +23405,6 @@
         },
         {
             "launchpad_id": "wuhan9087",
-            "gerrit_id": "wuhan",
             "zanata_id": "h3c_wuhan",
             "companies": [
                 {
@@ -24006,7 +23440,6 @@
         {
             "launchpad_id": "wuyongpeng163",
             "zanata_id": "wuyongpeng",
-            "gerrit_id": "wuyongpeng",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -24040,7 +23473,6 @@
         },
         {
            "launchpad_id": "xavpaice",
-           "gerrit_id": "xavpaice",
            "companies": [
                {
                    "company_name": "Catalyst IT",
@@ -24081,7 +23513,6 @@
         {
             "launchpad_id": "xhkjoe",
             "zanata_id": "xhkjoe",
-            "gerrit_id": "xhkjoe",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -24108,7 +23539,6 @@
         },
         {
             "launchpad_id": "xiang-edison",
-            "gerrit_id": "edisonxiang",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -24131,7 +23561,6 @@
         },
         {
             "launchpad_id": "xiangbinbin",
-            "gerrit_id": "xiangbinbin",
             "zanata_id": "xiangbinbin",
             "companies": [
                 {
@@ -24181,7 +23610,6 @@
         },
         {
             "launchpad_id": "xiaohhui",
-            "gerrit_id": "HongHuiXiao",
             "companies": [
                 {
                     "company_name": "IBM",
@@ -24201,7 +23629,6 @@
         },
         {
             "launchpad_id": "xiaoquqi",
-            "gerrit_id": "xiaoquqi",
             "companies": [
                 {
                     "company_name": "Huron",
@@ -24217,7 +23644,6 @@
         },
         {
             "launchpad_id": "xiaoran.li",
-            "gerrit_id": "xiaoran.li",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -24229,7 +23655,6 @@
         },
         {
             "launchpad_id": "xing-yang",
-            "gerrit_id": "xing-yang",
             "companies": [
                 {
                     "company_name": "EMC",
@@ -24256,7 +23681,6 @@
         },
         {
             "launchpad_id": "xqh",
-            "gerrit_id": "xqh",
             "companies": [
                 {
                     "company_name": "Fiberhome",
@@ -24279,7 +23703,6 @@
         },
         {
             "launchpad_id": "xu.hongzhi",
-            "gerrit_id": "xu.hongzhi",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -24420,7 +23843,6 @@
         },
         {
             "launchpad_id": "yab277",
-            "gerrit_id": "arundasan91",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -24474,7 +23896,6 @@
         {
             "launchpad_id": "yangangang",
             "user_name": "yangangang",
-            "gerrit_id": "yangangang",
             "companies": [
                 {
                     "company_name": "inesa",
@@ -24485,7 +23906,6 @@
         },
         {
             "launchpad_id": "yangwanli",
-            "gerrit_id": "yangawnli",
             "companies": [
                 {
                     "company_name": "JD.COM",
@@ -24497,7 +23917,6 @@
         },
         {
             "launchpad_id": "yangyang",
-            "gerrit_id": "yangyang",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -24694,7 +24113,6 @@
         },
         {
             "launchpad_id": "yihleong",
-            "gerrit_id": "yihleongsun",
             "companies": [
                 {
                     "company_name": "Intel",
@@ -24732,7 +24150,6 @@
         },
         {
             "launchpad_id": "yixiaolong",
-            "gerrit_id": "yixiaolong",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -24755,7 +24172,6 @@
         },
         {
             "launchpad_id": "yj2311",
-            "gerrit_id": "JackieYuan",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -24908,7 +24324,6 @@
         },
                 {
             "launchpad_id": "yryndenkova",
-            "gerrit_id": "yryndenkova",
             "companies": [
                 {
                     "company_name": "Hystax",
@@ -24986,7 +24401,6 @@
         },
         {
             "launchpad_id": "yujunz",
-            "gerrit_id": "yujunz",
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
@@ -25042,7 +24456,6 @@
         },
         {
             "launchpad_id": "yushb",
-            "gerrit_id":"yushangbin",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -25066,7 +24479,6 @@
         },
         {
             "launchpad_id": "yuxcer",
-            "gerrit_id": "yuxcer",
             "companies": [
                 {
                     "company_name": "UnitedStack",
@@ -25093,7 +24505,6 @@
         },
         {
             "launchpad_id": "yuyangwang1985",
-            "gerrit_id": "YuYangWang",
             "companies": [
                 {
                     "company_name": "winhong",
@@ -25161,7 +24572,6 @@
         },
         {
             "launchpad_id": "zara-zaimeche",
-            "gerrit_id": "Zara",
             "companies": [
                 {
                     "company_name": "Codethink",
@@ -25192,7 +24602,6 @@
         },
         {
             "launchpad_id": "zealot0630",
-            "gerrit_id": "zealot",
             "companies": [
                 {
                     "company_name": "NetEase",
@@ -25204,7 +24613,6 @@
         },
         {
             "launchpad_id": "zealoussnow",
-            "gerrit_id": "LeoZhang",
             "companies": [
                 {
                     "company_name": "t2cloud",
@@ -25262,7 +24670,6 @@
         {
             "launchpad_id": "zengluul",
             "zanata_id": "zenglulu",
-            "gerrit_id": "zenglulu",
             "companies": [
                 {
                     "company_name": "H3C",
@@ -25415,7 +24822,6 @@
         },
         {
             "launchpad_id": "zhanghj",
-            "gerrit_id":"HaiJieZhang",
             "companies": [
                 {
                     "company_name": "GohighSec",
@@ -25493,7 +24899,6 @@
         },
         {
             "launchpad_id": "zhangyongqian",
-            "gerrit_id": "zhangyongqian",
             "companies": [
                 {
                     "company_name": "99cloud",
@@ -25516,7 +24921,6 @@
         },
         {
             "launchpad_id": "zhangyujun",
-            "gerrit_id": "zhangyujun",
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
@@ -25532,7 +24936,6 @@
         },
         {
             "launchpad_id": "zhaochao1984",
-            "gerrit_id": "zhaochao",
             "companies": [
                 {
                     "company_name": "Eayun",
@@ -25544,7 +24947,6 @@
         },
         {
             "launchpad_id": "zhaohua-zhao",
-            "gerrit_id": "zhaohua",
             "companies": [
                 {
                     "company_name": "Huawei",
@@ -25578,7 +24980,6 @@
         },
         {
             "launchpad_id": "zhaorenming",
-            "gerrit_id": "zhaorenming",
             "zanata_id": "zhaorenming",
             "companies": [
                 {
@@ -25628,7 +25029,6 @@
         },
         {
             "launchpad_id": "zhen-fang",
-            "gerrit_id": "fangzhen",
             "companies": [
                 {
                     "company_name": "EasyStack",
@@ -25673,7 +25073,6 @@
         },
         {
             "launchpad_id": "zhengyue-5",
-            "gerrit_id": "zhengyue",
             "companies": [
                 {
                     "company_name": "Huron",
@@ -25822,7 +25221,6 @@
         },
         {
             "launchpad_id": "zhouyunfeng",
-            "gerrit_id": "zhouyunfeng",
             "companies": [
                 {
                     "company_name": "Inspur",
@@ -25893,7 +25291,6 @@
         },
         {
             "launchpad_id": "zhubingbing",
-            "gerrit_id": "zhubingbing",
             "companies": [
                  {
                      "company_name": "99cloud",
@@ -25982,7 +25379,6 @@
         },
         {
             "launchpad_id": "zongzhewang",
-            "gerrit_id": "zongzhewang",
             "companies": [
                 {
                     "company_name": "SG.Cloud",
@@ -25994,7 +25390,6 @@
         },
         {
             "launchpad_id": "zoukeke",
-            "gerrit_id": "zoukeke",
             "companies": [
                 {
                     "company_name": "China Mobile",
@@ -26006,7 +25401,6 @@
         },
         {
             "launchpad_id": "zrzhit",
-            "gerrit_id": "zrzhit",
             "companies": [
                 {
                     "company_name": "SINA",
@@ -26118,7 +25512,6 @@
         },
         {
             "launchpad_id": "zzxwill",
-            "gerrit_id": "zzxwill",
             "zanata_id": "zzxwill",
             "companies": [
                 {
