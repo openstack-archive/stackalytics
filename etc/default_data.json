@@ -24268,6 +24268,17 @@
             "emails": ["xuchao@chinacloud.com.cn"]
         },
         {
+            "launchpad_id": "xugang2017",
+            "companies": [
+                {
+                    "company_name": "China Railway ITC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gang Xu",
+            "emails": ["xugangit@126.com", "xugang@sinorail.com"]
+        },
+        {
             "launchpad_id": "xuhj",
             "companies": [
                 {
