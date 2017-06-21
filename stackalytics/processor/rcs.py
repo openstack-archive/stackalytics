@@ -34,6 +34,8 @@ class RcsException(Exception):
 
 
 class Rcs(object):
+    """Base object for Review Control System"""
+
     def __init__(self):
         pass
 
