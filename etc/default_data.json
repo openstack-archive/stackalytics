@@ -8132,6 +8132,17 @@
             "emails": ["guang.yee@hpe.com", "guang.yee@hp.com"]
         },
         {
+            "launchpad_id": "guans",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guans",
+            "emails": ["guans@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "guanzuoyu",
             "companies": [
                 {
