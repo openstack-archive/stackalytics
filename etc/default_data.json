@@ -1022,6 +1022,17 @@
             "emails": ["aldavud@crimson.ch", "dgurtner@redhat.com", "david@nine.ch", "david.gurtner1@swisscom.com"]
         },
         {
+            "launchpad_id": "alecuyer",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexandre Lecuyer",
+            "emails": ["alexandre.lecuyer@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "alejandro-e-paredes",
             "companies": [
                 {
@@ -2466,7 +2477,7 @@
             "companies": [
                 {
                     "company_name": "OVH",
-                    "end_date": null
+                    "end_date": "2016-Dec-22"
                 }
             ],
             "user_name": "Bartek Zurawski",
@@ -17092,6 +17103,17 @@
             ],
             "user_name": "Pradhan",
             "emails": ["psp0808@gmail.com"]
+        },
+        {
+            "launchpad_id": "psuder",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pawel Suder",
+            "emails": ["pawel.suder@corp.ovh.com"]
         },
         {
             "launchpad_id": "purp",
