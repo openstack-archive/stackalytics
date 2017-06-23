@@ -2295,6 +2295,21 @@
             "emails": ["asomya@cisco.com"]
         },
         {
+            "launchpad_id": "astaroverov",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-May-31"
+                }
+            ],
+            "user_name": "Anton Staroverov",
+            "emails": ["avstaroverov@gmail.com","astaroverov@mirantis.com"]
+        },
+        {
             "launchpad_id": "aswad-r",
             "companies": [
                 {
