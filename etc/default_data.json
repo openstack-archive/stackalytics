@@ -6642,6 +6642,17 @@
             "emails": ["ekotowski@gmail.com", "ekotowski@hp.com", "ekotowski@hpe.com"]
         },
         {
+            "launchpad_id": "ekremenetsky",
+            "companies": [
+                {
+                    "company_name": "Kontron",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evgeny Kremenetsky",
+            "emails": ["ekremenetsky@dev.rtsoft.ru"]
+        },
+        {
             "launchpad_id": "eladzucker",
             "companies": [
                 {
