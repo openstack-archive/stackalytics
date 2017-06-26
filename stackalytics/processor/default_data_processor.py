@@ -158,8 +158,9 @@ def _update_project_list(default_data):
     repos = _retrieve_project_list_from_sources(
         default_data['project_sources'])
     if repos:
-        # update pre-configured
-        repos_dict = dict((r['uri'], r) for r in repos)
+        # update pre-configured and exclude all projects start with 'deb-'
+        repos_dict = dict((r['uri'], r) for r in repos
+                          if not r['module'].startswith('deb-'))
         for r in default_data['repos']:
             if r['uri'] in repos_dict:
                 for k, v in repos_dict[r['uri']].items():
