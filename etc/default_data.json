@@ -22845,6 +22845,17 @@
             "emails": ["vstepurova@hystax.com", "nikentiy8@gmail.com"]
         },
         {
+            "launchpad_id": "vvargaszte",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Viktor Varga",
+            "emails": ["vvarga@inf.u-szeged.hu"]
+        },
+        {
             "launchpad_id": "vvutharkar",
             "companies": [
                 {
