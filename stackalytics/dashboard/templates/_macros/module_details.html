@@ -6,10 +6,17 @@
             url: makeURI("/api/1.0/modules/{{ module }}", extra_options),
             dataType: "json",
             success: function (data) {
+                var obj = {};
+                var unique_array = [];
                 var module = data["module"];
                 for (var i=0; i < module.modules.length; i++) {
-                    module.modules[i].uri = makeURI('/', {module: module.modules[i].module_name});
+                    if(!obj.hasOwnProperty(module.modules[i].module_name)){
+                        module.modules[i].uri = makeURI('/', {module: module.modules[i].module_name});
+                        unique_array.push(module.modules[i]);
+                    }
+                    obj[module.modules[i].module_name] = module.modules[i];
                 }
+                module.modules=unique_array;
                 $("#module_details_template").tmpl(data["module"]).appendTo("#module_details_container");
             }
         });
