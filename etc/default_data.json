@@ -24749,6 +24749,17 @@
             "emails": ["zeke@sikelianos.com"]
         },
         {
+            "launchpad_id": "zengjia87",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zengjia87",
+            "emails": ["zengjia@awcloud.com"]
+        },
+        {
             "launchpad_id": "zengjianfang",
             "companies": [
                 {
