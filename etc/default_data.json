@@ -7082,6 +7082,17 @@
             "emails": ["fangfei@awcloud.com"]
         },
         {
+             "launchpad_id": "fangming-liu",
+             "companies": [
+                 {
+                     "company_name": "HUST",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Fangming Liu",
+             "emails": ["frank_openstack@163.com"]
+        },
+        {
             "launchpad_id": "fausto-marzi",
             "companies": [
                 {
