@@ -8640,6 +8640,18 @@
             "emails": ["heckj@mac.com"]
         },
         {
+            "launchpad_id": "heetae82-ahn",
+            "zanata_id": "heetaeahn",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Heetae Ahn",
+            "emails": ["heetae82.ahn@samsung.com", "irisis@gmail.com"]
+        },
+        {
             "launchpad_id": "hellochosen",
             "companies": [
                 {
