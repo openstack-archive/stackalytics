@@ -3651,6 +3651,173 @@
             "primary_key": "352aacfd45e66a57dc1461b85ed9c3e85f3935a2",
             "module": "ironic",
             "subject": "Prune local copy of tempest.scenario.manager.py"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ia8e852e38440df18836253cb5e26df85b1311362"
+            ],
+            "primary_key": "46d5d5f55ce6aae42e504d210f8622a3e7956a7f",
+            "module": "sahara",
+            "subject": "Removing the cdh 5.0,5.3 and 5.4."
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I9a4245e764e268327466bc0fbe8b5383303ad07f"
+            ],
+            "primary_key": "15071bdd5f68e3da6853ae83403912bf257ae265",
+            "module": "charm-nova-cloud-controller",
+            "subject": "Remove charm-helpers from tests dir and use venv instead"
+        },
+        {
+            "correction_comment": "Reset LOC to 200",
+            "loc": 200,
+            "change_id": [
+                "Ib88f373190e2a4fbf14186418852d971b33dca85"
+            ],
+            "primary_key": "c7bfdbb44f15ec481f256ba57724ff47f16b3e43",
+            "module": "openstack-manuals",
+            "subject": "split install guide into separate files by OS"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I5817a55956787ed7a5b8dc8823bf61ad451ffbd4"
+            ],
+            "primary_key": "6f9fc171800e8a435011f38cd4558e900884ce86",
+            "module": "openstack-manuals",
+            "subject": "[www] update sitemap.xml for Ocata"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I65023fe63163c9804a3aec9dcdbf23c69bedb604"
+            ],
+            "primary_key": "dccce1d5cc06985a58f0ecba4fd0d977388592b2",
+            "module": "openstack-ansible-security",
+            "subject": "Handle RHEL 7 STIG renumbering"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ibcedc9389dbea4a5810f2cecf890f6ba9887a07b"
+            ],
+            "primary_key": "2553f2b1313654278bb71e79fd80174bac176fc0",
+            "module": "neutron",
+            "subject": "import the networking guide content from openstack-manuals"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ic0bdf57bd5f2b1af8e7954c70225921c2501060e"
+            ],
+            "primary_key": "f6d9fbadb23a5dcd7aea026895b38e11f1d3ec2a",
+            "module": "cinder",
+            "subject": "VMAX driver - Base functionality, replacing SMI-S with REST"
+        },
+        {
+            "loc": 0,
+            "correction_comment": "Reset LOC to 0",
+            "change_id": [
+                "Ia6ecbf025f1a2de19db896d3d72412461603093b"
+            ],
+            "primary_key": "564f5330c36cf970a9e0407533027bd07831830b",
+            "module": "openstack-manuals",
+            "subject": "[config-ref]: update nova config options for stable/ocata"
+        },
+        {
+            "correction_comment": "Reset LOC to 200",
+            "loc": 200,
+            "change_id": [
+                "I3026ca6287a65ab5287bf3843f2a9d756ce15139"
+            ],
+            "primary_key": "4b8026714fc538e8a9e8d6dfe6a13b5e8851119e",
+            "module": "glance",
+            "subject": "Glare-ectomy"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I7a7bc3deeadd094d7a42b47b16cde2e8a8805a24"
+            ],
+            "primary_key": "9f720ecdd7eea15e69b781e44d861623460090e6",
+            "module": "gnocchi",
+            "subject": "Revert \"Revert \"Retire project\"\""
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I381323562fe8233c088c04128742b3c237c3dca1"
+            ],
+            "primary_key": "bc81f1c699923e44931398eb7e6c873a16dfcb6b",
+            "module": "gnocchi",
+            "subject": "Revert \"Retire project\""
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ic8651e5bdef3468d02e05f7d196cc09cd2c0de8d"
+            ],
+            "primary_key": "35c7613e65584f4dfa8330d05aafa3d73174915b",
+            "module": "gnocchi",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ifa8cc0e4abb798c63c9d4ac9297e3e32443125e4"
+            ],
+            "primary_key": "b95dd6a3806aca57b936ec01aa77cc75daa48b0f",
+            "module": "stackube",
+            "subject": "Add framework of auth-controller"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I25bd3edf05652c1215eba4d98a965bee310c99f8"
+            ],
+            "primary_key": "f3545f50a4c4c715c800705f15f94279d74f9f3c",
+            "module": "stackube",
+            "subject": "Update vendor and makefile"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ia1e2d52c73539a45d294b7403c9290882c5d42d0"
+            ],
+            "primary_key": "69c1e4013cd5811b866b71855c37b49e01f6609c",
+            "module": "stackube",
+            "subject": "Add initial network and tenant spec"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "16508c32eec11a96e011b6eff66081484d65ffdf",
+            "module": "openstack-helm",
+            "subject": "Nova Configuration Override (#319)"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I5f33cd2c0e06cf45e092e74e664809475904c047"
+            ],
+            "primary_key": "02a94fb7223fc7c6b8095dff2354eac25dc572c8",
+            "module": "group-based-policy",
+            "subject": "Remove APIC mapping policy driver"
         }
     ]
 }
