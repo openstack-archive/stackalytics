@@ -4621,6 +4621,10 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
