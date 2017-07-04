@@ -3818,6 +3818,273 @@
             "primary_key": "02a94fb7223fc7c6b8095dff2354eac25dc572c8",
             "module": "group-based-policy",
             "subject": "Remove APIC mapping policy driver"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I0b48ee38280e25ba6294ca3d5b7a0673cb368ed4"
+            ],
+            "primary_key": "180f68eac81c512e287f5a087c66d8c6fb3bfea7",
+            "module": "trio2o",
+            "subject": "Remove networking related code from the Trio2o"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ie5f1cc69830fcaacc3db05d6e77a775c9634f6db"
+            ],
+            "primary_key": "04e7da6f4764a717649def49b2cb07449682d30f",
+            "module": "ironic-webclient",
+            "subject": "Retire ironic-webclient repository contents"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I8c0ce5550f2287f77fb31c790c3923d3d1b80481"
+            ],
+            "primary_key": "e4c972b80314286c8b8ce5c2e0e033cd038f7080",
+            "module": "boartty",
+            "subject": "Initial fork from gertty -> boartty"
+        },
+        {
+            "correction_comment": "Reset LOC to 800",
+            "loc": 800,
+            "change_id": [
+                "I6c2aee2d84a4cd2fb69c864f84d99227d9318ffb"
+            ],
+            "primary_key": "a395f912d39b1d029f8a7dffdd4761f9c8491aef",
+            "module": "networking-calico",
+            "subject": "Update networking-calico docs"
+        },
+        {
+            "correction_comment": "Reset LOC to 230",
+            "loc": 230,
+            "change_id": [
+                "Ib66f555aa7380fb1390f00b5235979516afdd34f"
+            ],
+            "primary_key": "4f06f118b735a2bd3a164e9603a9506bcff6cfcd",
+            "module": "networking-calico",
+            "subject": "Document Calico semantics and floating IP support"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I0157b48690d5f746423560ae764514461d1d0e45"
+            ],
+            "primary_key": "bc0773b73d4bbacfa1bcc6492ce9e18b28c04c36",
+            "module": "fuel-octane",
+            "subject": "Recorded demos for the upgrade 7.0 -> 9.1"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I152bab9c0a7a114f0361a69a3ab2d7037731434f"
+            ],
+            "primary_key": "467f8fcb4726ff92ebd47c8066c56972e9ca6557",
+            "module": "tricircle",
+            "subject": "Remove API-GW related code from the Tricricle"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I5e2bf5842af7a67949186ab41814e55ce03deb5f"
+            ],
+            "primary_key": "649ab1fb3fcde2613af5a71fdc7a696a04989fde",
+            "module": "anvil",
+            "subject": "Retire anvil"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I23990664ec430b33db26a82cd0fa669c166e1cca"
+            ],
+            "primary_key": "955a3b8d5a5550d38d0f2bc32e623e1d52ebb521",
+            "module": "salt-formula-opencontrail",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I23388dfd3b4eb11e1cae3f284d1e9926648177ad"
+            ],
+            "primary_key": "90c21025dac93cb61bd5fb01129a48cdba271bac",
+            "module": "salt-formula-nova",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I9471d2c2cda98fd13940c4c6f3e4bf482ce6aa6f"
+            ],
+            "primary_key": "d8b1acadc8019783e59027563512e038d4f59917",
+            "module": "salt-formula-keystone",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ie9ef42f56ecfcb918550165b9afa6e60c7601da3"
+            ],
+            "primary_key": "cd8f1e82b4fc530a32cc2377ee46fe7cc4e37918",
+            "module": "fairy-slipper",
+            "subject": "Retire fairy-slipper API doc tools project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "primary_key": "15ef33170e88eb021bfcd60323a9ec649ee53d65",
+            "module": "fuel-plugin-dynatrace",
+            "subject": "removed unnecessary libraries"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I56340a185c1c3527d53a2050c997a235d7ddf5a7"
+            ],
+            "primary_key": "0c0a634f161cdecc6fc3ed96422a19c3733ebe6c",
+            "module": "salt-formula-neutron",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I2b9bf92a5942247444a83068cb5968d32a914b68"
+            ],
+            "primary_key": "863e81d24ebe3d68be2e93531060a428373f2997",
+            "module": "openstack-manuals",
+            "subject": "Regenerate sitemap.xml"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ic00f9d9751e25f8dfb8bb6aaee9f0154ab14487a"
+            ],
+            "primary_key": "81fabd6f30f77525ddd2f0eb15d649ae952076f4",
+            "module": "openstack-manuals",
+            "subject": "[www] Update sitemap for newton"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I19db748aaf0279fa74c49d2ceade605f2177184b"
+            ],
+            "primary_key": "f83a2400b6fc66a5f9b175e7fed14d2341ea3cb7",
+            "module": "python-redfish",
+            "subject": "Updates to DMTF docs"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Ia360ba29583bfe1f7f471190d4de14d7569ca2ea"
+            ],
+            "primary_key": "4085bebbde653432c34f73e087e898b277df2c51",
+            "module": "api-site",
+            "subject": "Remove common translations"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I6daa321c97511fa0e432edd86981bb5b8e819568"
+            ],
+            "primary_key": "8effe73e3119d186442ad3b5931addd23977f32e",
+            "module": "groups",
+            "subject": "Remove forked commons modules"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I5396e4b9927d3e65b6aa4185238a43a4765a996b"
+            ],
+            "primary_key": "3fcef82946f7053affcfb0b1b3ef4292beb9fa95",
+            "module": "kolla",
+            "subject": "Remove Ansible from Kolla"
+        },
+        {
+            "correction_comment": "Reset LOC to 332",
+            "loc": 332,
+            "change_id": [
+                "If76ebc612bd232cc06fe6919d9cbbe6eb13c5078"
+            ],
+            "primary_key": "324149914cce63fdeb2ec88b84ce740288ce11f5",
+            "module": "performance-docs",
+            "subject": "Base line tests on fuel-ccp"
+        },
+        {
+            "correction_comment": "Reset LOC to 3000",
+            "loc": 3000,
+            "change_id": [
+                "I66ea0711dd0319c1153a13b159dc5be6f7a7016c"
+            ],
+            "primary_key": "013d072f2b90bc42eb647b82770a511cd435b07b",
+            "module": "performance-docs",
+            "subject": "Containerized Openstack Monitoring Solution"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I010ae8dbec3d17c409804516103cc9cf0abd9f47"
+            ],
+            "primary_key": "adb6f520ae432fac2e850ea09b78e2dbd81caac9",
+            "module": "salt-formula-glance",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I8f25504be9b09b347f4f0df3245bcadfea59fbb7"
+            ],
+            "primary_key": "34af7eadf419a19ebc07a6ef3d3ca5cc46af142c",
+            "module": "dash-stack",
+            "subject": "Missing contrib/AdminLTE/dist Directory Fix"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "Id28e3cf1dafbed7dd647b1020376bae893f5c3a2"
+            ],
+            "primary_key": "3db5fc2f12720aacb6d7b8f6753a374a97dc724a",
+            "module": "dash-stack",
+            "subject": "Moving to Django"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I8d994673dd838c4f08c3e8bc87566fd8bd1ef259"
+            ],
+            "primary_key": "850d76cbf1212dd2ca9012eb9b3fecd2da252c8d",
+            "module": "salt-formula-cinder",
+            "subject": "Retire project"
+        },
+        {
+            "correction_comment": "Reset LOC to 0",
+            "loc": 0,
+            "change_id": [
+                "I716ffe9f651dc48eb513efbb653aadf8f33f604a"
+            ],
+            "primary_key": "cdfb121cf4eef96b917b0e3d7e86616b965e3506",
+            "module": "congress",
+            "subject": "Remove antlr3 files except Python runtime"
         }
     ]
 }

@@ -21,7 +21,7 @@
                     },
                     "module": {
                         "type": "string",
-                        "pattern": "^[a-z-\\.]+$"
+                        "pattern": "^[a-z0-9-\\.]+$"
                     },
                     "subject": {
                         "type": "string"
