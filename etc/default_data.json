@@ -12346,6 +12346,17 @@
             "emails": ["kszab@inf.u-szeged.hu"]
         },
         {
+            "launchpad_id": "kthguru",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Taeha Kim",
+            "emails": ["kthguru@gmail.com", "thlab.kim@samsung.com"]
+        },
+        {
             "launchpad_id": "kubernetes",
             "companies": [
                 {
