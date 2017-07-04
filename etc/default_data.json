@@ -27508,6 +27508,10 @@
             "company_name": "Yandex"
         },
         {
+            "domains": ["yovole.com"],
+            "company_name": "Yovole"
+        },
+        {
             "domains": ["ysance.com"],
             "company_name": "Ysance"
         },
