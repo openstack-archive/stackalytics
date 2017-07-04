@@ -24039,6 +24039,21 @@
             "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
         },
         {
+            "launchpad_id": "yang-shengming",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": "2017-Feb-10"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shengming Yang",
+            "emails": ["rory.yang@elits.com", "smyang92@qq.com"]
+        },
+        {
             "launchpad_id": "yangangang",
             "user_name": "yangangang",
             "companies": [
