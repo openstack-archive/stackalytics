@@ -7285,6 +7285,17 @@
            ]
         },
         {
+            "launchpad_id": "fm577c",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "felipe.monteiro",
+            "emails": ["felipe.monteiro@att.com", "felipe.carneiro.monteiro@gmail.com"]
+        },
+        {
              "launchpad_id": "fmliu",
              "companies": [
                  {
