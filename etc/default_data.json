@@ -23851,6 +23851,17 @@
             "emails": ["xing.yang@emc.com", "xing.yang@dell.com"]
         },
         {
+            "launchpad_id": "xinran",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xinran WANG",
+            "emails": ["xin-ran.wang@intel.com", "wxr930217@gmail.com"]
+        },
+        {
             "launchpad_id": "xinze",
             "companies": [
                 {
