@@ -23683,6 +23683,17 @@
             "emails": ["xi.yang@emc.com", "phenoxim@gmail.com", "yang.xi@99cloud.net"]
         },
         {
+            "launchpad_id": "xianbin",
+            "companies": [
+                {
+                    "company_name": "Yovole",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xianbin xie",
+            "emails": ["xiexianbin@yovole.com","me@xiexianbin.cn"]
+        },
+        {
             "launchpad_id": "xiang-edison",
             "companies": [
                 {
