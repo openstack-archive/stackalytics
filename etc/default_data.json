@@ -10136,6 +10136,17 @@
             "emails": ["jay.xu@emc.com"]
         },
         {
+            "launchpad_id": "jayaprakash",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jayaprakash",
+            "emails": ["jayaprakash.rangaswamy@cognizant.com","mail2jayaprakashr@gmail.com"]
+        },
+        {
             "launchpad_id": "jaycen-v-grant",
             "companies": [
                 {
