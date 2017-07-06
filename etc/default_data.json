@@ -6627,6 +6627,17 @@
             "emails": ["ikke@nicolast.be", "nicolas.trangez@scality.com"]
         },
         {
+            "launchpad_id": "ej218-baek",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eunjin Baek",
+            "emails": ["ejbaek218@gmail.com", "ej218.baek@samsung.com"]
+        },
+        {
             "launchpad_id": "ekaterian",
             "github_id": "kale-male",
             "user_name": "Khripunova Ekaterina",
