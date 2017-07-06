@@ -3497,11 +3497,15 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2017-Jun-16"
+                },
+                {
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
             "user_name": "Chris Dent",
-            "emails": ["chdent@redhat.com", "cdent@anticdent.org", "cdent@mirantis.com", "chris.dent@gmail.com"]
+            "emails": ["chdent@redhat.com", "cdent@anticdent.org", "cdent@mirantis.com", "chris.dent@gmail.com", "cdent+os@anticdent.org"]
         },
         {
             "launchpad_id": "cdyangzhenyu",
