@@ -14873,6 +14873,17 @@
             "emails": ["matthieu.huin@enovance.com", "mhuin@redhat.com"]
         },
         {
+            "launchpad_id": "miao-hongbao",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "miaohb",
+            "emails": ["miao.hongbao@zte.com.cn"]
+        },
+        {
             "launchpad_id": "miao-yanqiang",
             "companies": [
                 {
@@ -14882,17 +14893,6 @@
             ],
             "user_name": "Yanqiang Miao",
             "emails": ["miao.yanqiang@zte.com.cn"]
-        },
-        {
-            "launchpad_id": "miaohb",
-            "companies": [
-                {
-                    "company_name": "ZTE Corporation",
-                    "end_date": null
-                }
-            ],
-            "user_name": "miaohb",
-            "emails": ["miao.hongbao@zte.com.cn"]
         },
         {
             "launchpad_id": "miarmak",
