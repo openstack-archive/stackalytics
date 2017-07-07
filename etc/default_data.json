@@ -11160,6 +11160,17 @@
             "emails": ["j3p0uk@hotmail.com", "jonpsull@cisco.com", "jonpaul.sullivan@hp.com"]
         },
         {
+            "launchpad_id": "joo-oh",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ohjoohyun",
+            "emails": ["oh011798@gmail.com", "joo.oh@samsung.com"]
+        },
+        {
             "launchpad_id": "joon-myung-kang",
             "companies": [
                 {
