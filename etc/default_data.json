@@ -3804,6 +3804,17 @@
             "emails": ["chendy_0598@163.com", "chendy@certusnet.com.cn"]
         },
         {
+            "launchpad_id": "cheneydc",
+            "companies": [
+                {
+                    "company_name": "Neunn",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cheney Dong",
+            "emails": ["cheneydc@gmail.com", "dongc@neunn.com", "kkkodc@126.com"]
+        },
+        {
             "github_id": "chengweiv5",
             "companies": [
                 {
@@ -26903,6 +26914,10 @@
         {
             "domains": ["netronome.com"],
             "company_name": "Netronome"
+        },
+        {
+            "domains": ["neunn.com"],
+            "company_name": "Neunn"
         },
         {
             "domains": ["nexenta.com"],
