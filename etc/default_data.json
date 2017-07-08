@@ -27560,6 +27560,10 @@
             "company_name": "Veritas"
         },
         {
+            "domains": ["verizondigitalmedia.com", "vdms.io"],
+            "company_name": "Verizon Digital Media"
+        },
+        {
             "domains": ["verizonwireless.com", "vzw.com"],
             "company_name": "Verizon Wireless"
         },
