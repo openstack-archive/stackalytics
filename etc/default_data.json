@@ -5880,6 +5880,10 @@
                 },
                 {
                     "company_name": "IBM",
+                    "end_date": "2017-Jul-03"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
