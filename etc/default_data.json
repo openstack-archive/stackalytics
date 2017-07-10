@@ -16210,11 +16210,15 @@
             "companies": [
                 {
                     "company_name": "99cloud",
+                    "end_date": "2017-Apr-24"
+                },
+                {
+                    "company_name": "inesa",
                     "end_date": null
                 }
             ],
             "user_name": "OctopusZhang",
-            "emails": ["zhang.yufei@99cloud.net", "1004988384@qq.com"]
+            "emails": ["zhangyf@rc.inesa.com", "zhang.yufei@99cloud.net", "1004988384@qq.com"]
         },
         {
             "launchpad_id": "ogazitt",
