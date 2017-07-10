@@ -8310,6 +8310,17 @@
             "emails": ["guoshan@awcloud.com"]
         },
         {
+            "launchpad_id": "guoshuaijie",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guo shuaijie",
+            "emails": ["guo.shuaijie@zte.com.cn"]
+        },
+        {
             "launchpad_id": "guoyongxhzhf",
             "companies": [
                 {
