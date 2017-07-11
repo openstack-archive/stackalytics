@@ -20265,6 +20265,18 @@
            "emails": ["siva.radhakrishnan@intel.com"]
         },
         {
+            "launchpad_id": "sj-bark",
+            "zanata_id": "sj.bark",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "seokjae",
+            "emails": ["bong4235@gmail.com", "sj.bark@samsung.com"]
+        },
+        {
             "launchpad_id": "sjayanthi",
             "companies": [
                 {
