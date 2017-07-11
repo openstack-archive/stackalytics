@@ -136,8 +136,8 @@ class TestConfigFiles(testtools.TestCase):
         self._verify_users_in_alphabetical_order('etc/test_default_data.json')
 
     def _check_collision(self, storage, user, field, field_name):
-        self.assertFalse(
-            field in storage,
+        self.assertNotIn(
+            field, storage,
             'Duplicate %s %s, collision between: %s and %s'
             % (field_name, field, storage[field], user))
         storage[field] = user
@@ -148,23 +148,23 @@ class TestConfigFiles(testtools.TestCase):
         for user in users:
             if user.get('launchpad_id'):
                 field = user['launchpad_id']
-                self.assertFalse(
-                    field in storage,
+                self.assertNotIn(
+                    field, storage,
                     'Duplicate launchpad_id %s, collision between: %s and %s'
                     % (field, storage.get(field), user))
                 storage[field] = user
 
             if user.get('gerrit_id'):
                 field = user['gerrit_id']
-                self.assertFalse(
-                    ('gerrit:%s' % field) in storage,
+                self.assertNotIn(
+                    ('gerrit:%s' % field), storage,
                     'Duplicate gerrit_id %s, collision between: %s and %s'
                     % (field, storage.get(field), user))
                 storage['gerrit:%s' % field] = user
 
             for email in user['emails']:
-                self.assertFalse(
-                    email in storage,
+                self.assertNotIn(
+                    email, storage,
                     'Duplicate email %s, collision between: %s and %s'
                     % (email, storage.get(email), user))
                 storage[email] = user
@@ -180,7 +180,8 @@ class TestConfigFiles(testtools.TestCase):
         line_n = 1
         for line in data.split('\n'):
             msg = 'Whitespace issue in "%s", line %s: ' % (line, line_n)
-            self.assertTrue(line.find('\t') == -1, msg=msg + 'tab character')
+            self.assertEqual(-1, line.find('\t'),
+                             message=msg + 'tab character')
             self.assertEqual(line.rstrip(), line,
                              message=msg + 'trailing spaces')
             line_n += 1
@@ -218,8 +219,8 @@ class TestConfigFiles(testtools.TestCase):
                     error_msg = ('Company "%s" is unknown. Please add it into'
                                  ' the list of companies in default_data.json '
                                  'file' % company['company_name'])
-                    self.assertTrue(company['company_name'] in company_names,
-                                    error_msg)
+                    self.assertIn(company['company_name'], company_names,
+                                  error_msg)
 
     def test_default_data_user_companies(self):
         self._validate_user_companies('etc/default_data.json')
@@ -243,9 +244,10 @@ class TestConfigFiles(testtools.TestCase):
                 if not c['end_date']:
                     ops.add(c['company_name'])
 
-            self.assertTrue(len(ops) <= 1,
-                            msg='More than 1 company is specified as current: '
-                                '%s. Please keep only one' % ', '.join(ops))
+            self.assertLessEqual(
+                len(ops), 1, msg='More than 1 company is specified '
+                                 'as current: %s. Please keep '
+                                 'only one' % ', '.join(ops))
 
     def test_default_data_users_one_open_interval(self):
         self._verify_users_one_open_interval('etc/default_data.json')

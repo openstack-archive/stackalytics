@@ -25,10 +25,10 @@ class TestUtils(testtools.TestCase):
         elements = set()
         for chunk in utils.make_range(start, end, step):
             for item in chunk:
-                self.assertFalse(item in elements)
+                self.assertNotIn(item, elements)
                 elements.add(item)
 
-        self.assertTrue(set(range(start, end)) == elements)
+        self.assertSetEqual(set(range(start, end)), elements)
 
     def test_make_range_0_10_1(self):
         self._test_one_range(0, 10, 1)
