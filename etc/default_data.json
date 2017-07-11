@@ -17863,6 +17863,17 @@
             "emails": ["reddfoxx@gmail.com", "giles_fox@comcast.com"]
         },
         {
+            "launchpad_id": "reedip-banerjee",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Reedip Banerjee",
+            "emails": ["reedip.banerjee@nectechnologies.in", "reedip14@gmail.com", "reedip.banerjee@gmail.com"]
+        },
+        {
             "launchpad_id": "reldan",
             "companies": [
                 {
