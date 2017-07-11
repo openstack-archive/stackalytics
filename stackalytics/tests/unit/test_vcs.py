@@ -167,12 +167,12 @@ diff_stat:
         self.assertEqual(0, commits[3]['lines_deleted'])
         self.assertEqual(set(['dummy:fix-me']),
                          set(commits[3]['blueprint_id']))
-        self.assertFalse('coauthor' in commits[3])
+        self.assertNotIn('coauthor', commits[3])
 
         self.assertEqual(0, commits[4]['files_changed'])
         self.assertEqual(0, commits[4]['lines_added'])
         self.assertEqual(0, commits[4]['lines_deleted'])
-        self.assertFalse('coauthor' in commits[4])
+        self.assertNotIn('coauthor', commits[4])
 
         self.assertEqual('jeblair@openstack.org', commits[5]['author_email'])
         self.assertEqual(0, commits[5]['files_changed'])
