@@ -14660,6 +14660,21 @@
             "emails": ["marcelodieder@gmail.com"]
         },
         {
+            "launchpad_id": "mdorman-m",
+            "companies": [
+                {
+                    "company_name": "GoDaddy",
+                    "end_date": "2017-Jul-13"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Dorman",
+            "emails": ["mdorman@godaddy.com", "dorm@dorm.org"]
+        },
+        {
             "launchpad_id": "mdrnstm",
             "companies": [
                 {
