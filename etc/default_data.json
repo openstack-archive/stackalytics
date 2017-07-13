@@ -16235,8 +16235,12 @@
                     "end_date": "2017-Apr-28"
                 },
                 {
-                    "company_name": "Red Hat",
+                    "company_name": "*independent",
                     "end_date": "2017-Jun-05"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
                 }
             ],
             "user_name": "Tony Breeds",
