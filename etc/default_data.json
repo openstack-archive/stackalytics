@@ -16998,6 +16998,22 @@
             "emails": ["pnkmtt@gmail.com"]
         },
         {
+            "launchpad_id": "portdirect",
+            "github_id": "intlabs",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2017-Mar-13"
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "portdirect",
+            "emails": ["pete@port.direct", "pete.birley@att.com"]
+        },
+        {
             "launchpad_id": "powerds0111",
             "github_id": "powerds0111",
             "companies": [
