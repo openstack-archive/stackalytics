@@ -22151,6 +22151,25 @@
             "emails": ["travis_mcpeak@symantec.com", "travis.mcpeak@hp.com", "travis.mcpeak@hpe.com", "tmcpeak@us.ibm.com"]
         },
         {
+            "launchpad_id": "travis-tripp",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Jul-28"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Travis Tripp",
+            "emails": ["os.travis.tripp@gmail.com", "travis.tripp@hpe.com", "travis.tripp@hp.com"]
+        },
+        {
             "launchpad_id": "travis-truman",
             "companies": [
                 {
