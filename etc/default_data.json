@@ -20722,6 +20722,17 @@
              "emails": ["yingfeicaozhang100527@gmail.com"]
         },
         {
+            "launchpad_id": "splork",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Markus Sommer",
+            "emails": ["markus@splork.de", "markus.alexander.sommer@cern.ch"]
+        },
+        {
             "launchpad_id": "sputnik13",
             "companies": [
                 {
