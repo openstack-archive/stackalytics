@@ -2988,11 +2988,16 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2017-Jul-01"
+                },
+                {
+                    "company_name": "GoDaddy",
                     "end_date": null
                 }
             ],
             "user_name": "Boris Pavlovic",
-            "emails": ["boris@pavlovic.me", "bpavlovic@mirantis.com"]
+            "emails": ["boris@pavlovic.me", "bpavlovic@mirantis.com",
+                       "bpavlovic@godaddy.com"]
         },
         {
             "launchpad_id": "brad-klein",
