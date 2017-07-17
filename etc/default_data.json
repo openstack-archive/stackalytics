@@ -6299,6 +6299,17 @@
             "emails": ["dt-github@xr7.org", "dtroyer@gmail.com"]
         },
         {
+            "launchpad_id": "duanyue",
+            "companies": [
+                {
+                    "company_name": "Ghostcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "duan yue",
+            "emails": ["duanyue@ghostcloud.cn"]
+        },
+        {
             "launchpad_id": "duanzw",
             "companies": [
                 {
@@ -26545,6 +26556,11 @@
         {
             "domains": ["getchef.com", "opscode.com"],
             "company_name": "Chef"
+        },
+        {
+            "domains": ["ghostcloud.cn"],
+            "company_name": "Ghostcloud",
+            "aliases": ["Ghostcloud", "精灵云科技有限公司"]
         },
         {
             "domains": ["gigaspaces.com"],
