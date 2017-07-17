@@ -16933,6 +16933,17 @@
             "emails": ["piyush.srivastava@workday.com"]
         },
         {
+            "launchpad_id": "pj-jiao",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jiaopengju",
+            "emails": ["jiaopengju@cmss.chinamobile.com", "pj.jiao@139.com"]
+        },
+        {
             "launchpad_id": "pjoomen",
             "companies": [
                 {
