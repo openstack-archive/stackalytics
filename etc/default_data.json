@@ -12734,11 +12734,19 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "Huawei",
                     "end_date": null
                 }
             ],
             "user_name": "Lance Bragstad",
-            "emails": ["lbragstad@gmail.com", "ldbragst@us.ibm.com", "lance.bragstad@rackspace.com"]
+            "emails": [
+                "lbragstad@gmail.com",
+                "ldbragst@us.ibm.com",
+                "lance.bragstad@rackspace.com"
+            ]
         },
         {
             "launchpad_id": "leandro-i-costantino",
