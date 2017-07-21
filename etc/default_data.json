@@ -20074,6 +20074,17 @@
             "emails": ["zhihui.shi@easystack.cn"]
         },
         {
+            "launchpad_id": "shpark91",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sunghyun Park",
+            "emails": ["shpark91@samsung.com", "unino1@korea.com"]
+        },
+        {
             "launchpad_id": "shravya-g90",
             "companies": [
                 {
