@@ -24712,6 +24712,17 @@
             "emails": ["a-yoshiyama@bu.jp.nec.com", "akirayoshiyama@gmail.com"]
         },
         {
+            "launchpad_id":"youngilkim",
+            "companies": [
+                {
+                    "company_name":"Netmarble",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Youngil, Kim",
+            "emails": ["youngilkim@netmarble.com"]
+        },
+        {
             "launchpad_id": "ypbao",
             "companies": [
                 {
