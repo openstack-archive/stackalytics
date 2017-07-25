@@ -12116,6 +12116,17 @@
             "emails": ["kevinjacobconway@gmail.com"]
         },
         {
+            "launchpad_id": "kevinson",
+            "companies": [
+                {
+                    "company_name": "Netmarble",
+                    "end_date": null
+                }
+            ],
+            "user_name": "kevinson",
+            "emails": ["harry2853@naver.com", "harry2853@netmarble.com"]
+        },
+        {
             "launchpad_id": "khussein",
             "companies": [
                 {
