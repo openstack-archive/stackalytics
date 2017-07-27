@@ -7148,6 +7148,17 @@
              "emails": ["frank_openstack@163.com"]
         },
         {
+            "launchpad_id": "fanzhang",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fan Zhang",
+            "emails": ["zh.f@outlook.com"]
+        },
+        {
             "launchpad_id": "fausto-marzi",
             "companies": [
                 {
