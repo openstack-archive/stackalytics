@@ -24076,6 +24076,18 @@
             "emails": ["xing.yang@emc.com", "xing.yang@dell.com"]
         },
         {
+            "launchpad_id": "xingzhang",
+            "github_id": "angeiv",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xing Zhang",
+            "emails": ["zhangxing@unitedstack.com", "angeiv.zhang@gmail.com"]
+        },
+        {
             "launchpad_id": "xinran",
             "companies": [
                 {
