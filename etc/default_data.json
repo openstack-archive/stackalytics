@@ -13393,6 +13393,17 @@
             "emails": ["liujunpeng@inspur.com"]
         },
         {
+            "launchpad_id": "liumk",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "liumk",
+            "emails": ["liumk@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "liuqing",
             "companies": [
                 {
