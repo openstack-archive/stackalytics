@@ -8092,6 +8092,17 @@
             "emails": [ "gonzalo_delatorre@live.com", "ejl334@my.utsa.edu"]
         },
         {
+            "launchpad_id": "goodtuninger",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaolei Han",
+            "emails": [ "goodtuninger@gmail.com", "hanxl2@lenovo.com"]
+        },
+        {
             "launchpad_id": "gouthamr",
             "companies": [
                 {
