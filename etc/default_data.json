@@ -23532,12 +23532,16 @@
             "launchpad_id": "wangzhh",
             "companies": [
                 {
+                    "company_name": "Awcloud",
+                    "end_date": "2016-Jun-12"
+                },
+                {
                     "company_name": "Lenovo",
                     "end_date": null
                 }
             ],
             "user_name": "wangzhh",
-            "emails": ["wangzh21@lenovo.com", "wzh_1993@126.com"]
+            "emails": ["wangzh21@lenovo.com", "wangzhh@awcloud.com",  "wzh_1993@126.com"]
         },
         {
             "launchpad_id": "wangzy-u",
