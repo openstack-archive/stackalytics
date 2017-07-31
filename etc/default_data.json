@@ -20475,6 +20475,17 @@
             "emails": ["skuicloud@gmail.com", "kui.shi@huawei.com"]
         },
         {
+            "launchpad_id": "slamdunkbk",
+            "companies": [
+                {
+                    "company_name": "Netmarble",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JaeMin Kim",
+            "emails": ["slamdunkbk@gmail.com"]
+        },
+        {
             "launchpad_id": "slaweq",
             "companies": [
                 {
