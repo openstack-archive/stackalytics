@@ -17388,6 +17388,17 @@
             "emails": ["paul@openstack.org", "paul@substation9.com", "pvoccio@castor.local", "paul.voccio@rackspace.com"]
         },
         {
+            "launchpad_id": "pxy",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pan Xingyu",
+            "emails": ["panxy@fiberhome.com", "igis_pxy@fiberhome.com", "pxy24680@sina.com"]
+        },
+        {
             "github_id": "qar",
             "companies": [
                 {
