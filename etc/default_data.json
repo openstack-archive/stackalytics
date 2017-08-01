@@ -4352,6 +4352,18 @@
             "emails": ["cody.somerville@hp.com", "cody.somerville@hpe.com", "cody-somerville@ubuntu.com", "cody.somerville@gmail.com"]
         },
         {
+            "launchpad_id": "cofyc",
+            "github_id": "cofyc",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yecheng Fu",
+            "emails": ["cofyc.jackson@gmail.com", "fuyecheng@qiniu.com"]
+        },
+        {
             "launchpad_id": "colettealexander",
             "companies": [
                 {
@@ -27420,6 +27432,11 @@
         {
             "domains": ["purestorage.com"],
             "company_name": "Pure Storage"
+        },
+        {
+            "domains": ["qiniu.com"],
+            "company_name": "Qiniu",
+            "aliases": ["Qiniu Limited", "Shanghai Qiniu Information Technology Co., Ltd.", "Qiniu Storage", "上海七牛信息技术有限公司"]
         },
         {
             "domains": ["qiyi.com"],
