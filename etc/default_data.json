@@ -14500,10 +14500,14 @@
                 {
                     "company_name": "Rackspace",
                     "end_date": "2017-Apr-28"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
                 }
             ],
             "user_name": "Matthew Oliver",
-            "emails": ["matt@oliver.net.au"]
+            "emails": ["matt@oliver.net.au", "moliver@suse.com", "matthew.oliver@suse.com"]
         },
         {
            "launchpad_id": "matt-jarvis",
