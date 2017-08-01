@@ -7386,6 +7386,17 @@
             "emails": [ "frode.nordahl@gmail.com", "frode@powertech.no", "frode@nimbleengineering.io", "frode.nordahl@canonical.com" ]
         },
         {
+            "launchpad_id": "forhim-park",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonghan Park",
+            "emails": [ "forhim.park@gmail.com", "jhan12.park@samsung.com" ]
+        },
+        {
             "launchpad_id": "fpxie",
             "companies": [
                 {
