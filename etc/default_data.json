@@ -3102,11 +3102,17 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2017-Jul-30"
+                },
+                {
+                    "company_name": "Verizon Wireless",
                     "end_date": null
                 }
             ],
             "user_name": "Brian Rosmaita",
-            "emails": ["brian.rosmaita@rackspace.com", "rosmaita.fossdev@gmail.com"]
+            "emails": ["brian.rosmaita@rackspace.com",
+                       "rosmaita.fossdev@gmail.com",
+                       "brian.rosmaita@verizonwireless.com"]
         },
         {
             "launchpad_id": "brian-shang-dev",
