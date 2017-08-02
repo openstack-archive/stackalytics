@@ -15626,11 +15626,11 @@
             "companies": [
                 {
                     "company_name": "Letv Cloud Computing",
-                    "end_date": null
+                    "end_date": "2017-Jul-10"
                 }
             ],
             "user_name": "Zhengwei Gao",
-            "emails": ["gaozhengwei1@letv.com", "multi_task@163.com"]
+            "emails": ["multi_task@163.com"]
         },
         {
             "launchpad_id": "munnangi2010",
