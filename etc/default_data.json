@@ -11392,11 +11392,15 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2017-Jul-31"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Joshua Hesketh",
-            "emails": ["joshua.hesketh@rackspace.com", "josh@nitrotech.org", "joshua.hesketh@gmail.com"]
+            "emails": ["josh@nitrotech.org", "joshua.hesketh@gmail.com", "jhesketh@suse.com", "joshua.hesketh@rackspace.com"]
         },
         {
             "launchpad_id": "joshuatrivette",
