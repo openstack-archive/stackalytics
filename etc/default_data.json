@@ -25690,6 +25690,17 @@
             "emails": ["zhengwei6082@fiberhome.com"]
         },
         {
+            "launchpad_id": "zhengy23",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhengyong",
+            "emails": ["zhengy23@163.com"]
+        },
+        {
             "launchpad_id": "zhengyue-5",
             "companies": [
                 {
