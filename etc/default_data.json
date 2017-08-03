@@ -1258,6 +1258,7 @@
         },
         {
             "launchpad_id": "allison",
+            "github_id": "allisonrandal",
             "companies": [
                 {
                     "company_name": "HP",
@@ -1265,11 +1266,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date":"2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Allison Randal",
-            "emails": ["allison@lohutok.net", "allison@ubuntu.com", "allison.randal@hp.com", "allison.randal@hpe.com"]
+            "emails": ["allison@lohutok.net", "allison@ubuntu.com"]
         },
         {
             "launchpad_id": "alok-kumar-maurya",
