@@ -23554,6 +23554,17 @@
             "emails": ["wangxiyuan@huawei.com", "wangxiyuan1007@gmail.com", "491745146@qq.com"]
         },
         {
+            "launchpad_id": "wangxu2017",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangxu",
+            "emails": ["wangxu17@lenovo.com", "wx6899923@163.com"]
+        },
+        {
             "launchpad_id": "wangye-s",
             "companies": [
                 {
