@@ -8814,6 +8814,17 @@
             "emails": ["hellochosen@gmail.com", "yedongcan@awcloud.com"]
         },
         {
+            "launchpad_id": "hellosuncshine",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sun cheng",
+            "emails": ["sunc@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "henrique-4",
             "companies": [
                 {
