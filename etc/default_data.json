@@ -8069,6 +8069,17 @@
             "emails": ["goneri.lebouder@enovance.com", "gleboude@redhat.com"]
         },
         {
+            "launchpad_id": "gongguilan",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "gongguilan",
+            "emails": ["gongguilan@gohighsec.com"]
+        },
+        {
             "launchpad_id": "gongxiao",
             "companies": [
                 {
@@ -11412,6 +11423,17 @@
             ],
             "user_name": "Joshua Trivette",
             "emails": ["joshuatrivette@gmail.com"]
+        },
+        {
+            "launchpad_id": "josie.zhang.long",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Long Zhang",
+            "emails": ["zhanglong@gohighsec.com"]
         },
         {
             "launchpad_id": "jpena-c",
@@ -16916,6 +16938,17 @@
             "emails": ["tupachydralisk@gmail.com", "pctang@caicloud.io"]
         },
         {
+            "launchpad_id": "penghuan",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Huan Peng",
+            "emails": ["penghuan@gohighsec.com"]
+        },
+        {
             "launchpad_id": "pengwenwu2008",
             "companies": [
                 {
@@ -20818,6 +20851,17 @@
             "emails": ["song.ruixia@zte.com.cn"]
         },
         {
+            "launchpad_id": "songhao-devops",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "SongHao",
+            "emails": ["songhao@gohighsec.com"]
+        },
+        {
             "launchpad_id": "songmingyan",
             "companies": [
                 {
@@ -24529,6 +24573,17 @@
             ],
             "user_name": "Nick Jones",
             "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com"]
+        },
+        {
+            "launchpad_id": "yanpeifei",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yanpeifei",
+            "emails": ["yanpeifei@gohighsec.com"]
         },
         {
             "launchpad_id": "yanwei",
