@@ -24097,6 +24097,17 @@
             "emails": ["andrey@xdel.ru", "akorolev@mirantis.com"]
         },
         {
+            "launchpad_id": "xgw1989",
+            "companies": [
+                {
+                    "company_name": "TiCOMM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "guanwenxue",
+            "emails": ["xgw1989@sina.com","gw.xue@ticomm.cn"]
+        },
+        {
             "launchpad_id": "xhkjoe",
             "zanata_id": "xhkjoe",
             "companies": [
@@ -27859,6 +27870,10 @@
         {
             "domains": ["thoughtworks.com"],
             "company_name": "ThoughtWorks"
+        },
+        {
+            "domains": ["ticomm.cn"],
+            "company_name": "TiCOMM"
         },
         {
             "domains": ["tieto.com"],
