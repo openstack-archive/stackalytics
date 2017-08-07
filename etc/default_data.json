@@ -3739,6 +3739,17 @@
             "emails": ["chanwit@gmail.com"]
         },
         {
+            "launchpad_id": "charcol",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Charelle Collett",
+            "emails": ["charcol@redhat.com", "charelle.collett@gmail.com"]
+        },
+        {
             "launchpad_id": "charlie-j-llewellyn",
             "github_id": "charliejllewellyn",
             "companies": [
