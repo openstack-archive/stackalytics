@@ -2461,6 +2461,17 @@
             "emails": ["mkislins@yahoo-inc.com", "mkislinska@griddynamics.com"]
         },
         {
+            "launchpad_id": "azuercici",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ruoxi SUN",
+            "emails": ["sunrx@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "bailin-zhang",
             "companies": [
                 {
