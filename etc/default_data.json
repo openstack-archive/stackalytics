@@ -12576,6 +12576,17 @@
             "emails": ["kshileev@cisco.com", "kshileev@griddynamics.com", "kshileev@gmail.com"]
         },
         {
+           "launchpad_id": "ksnhr",
+           "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Kazunori Shinohara",
+           "emails": ["kazunori.shinohara@ntt.com", "ksnhr.tech@gmail.com"]
+        },
+        {
             "launchpad_id": "kspear",
             "companies": [
                 {
