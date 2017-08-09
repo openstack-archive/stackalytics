@@ -1552,6 +1552,10 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2017-Jul-31"
+                },
+                {
+                    "company_name": "GoDaddy",
                     "end_date": null
                 }
             ],
