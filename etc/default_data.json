@@ -24449,6 +24449,17 @@
             "emails": ["soulxu@gmail.com", "hejie.xu@intel.com", "xuhj@cn.ibm.com", "xuhj@linux.vnet.ibm.com"]
         },
         {
+            "launchpad_id": "xulei56",
+            "companies": [
+                {
+                    "company_name": "China Unicom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Leoxu",
+            "emails": ["xulei56@chinaunicom.cn", "thunder.xu@outlook.com"]
+        },
+        {
             "launchpad_id": "xuqiankun",
             "companies": [
                 {
@@ -26658,7 +26669,7 @@
         {
             "domains": ["chinaunicom.cn"],
             "company_name": "China Unicom",
-            "aliases": ["China Unicom Cloud Data Co. Ltd.", "联通云数据有限公司"]
+            "aliases": ["China Unicom Cloud Data Co. Ltd.", "联通云数据有限公司","China Unicom"]
         },
         {
             "domains": ["cienet.com.cn"],
