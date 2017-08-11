@@ -23743,6 +23743,22 @@
             "emails": ["wanlong.gao@gmail.com", "wanlong.gao@easystack.cn"]
         },
         {
+            "launchpad_id": "warmchang",
+            "github_id": "warmchang",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": "2010-Mar-08"
+                },
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "warmchang",
+            "emails": ["zhang.wanmin@zte.com.cn", "warmchang@outlook.com", "warmchang@163.com"]
+        },
+        {
             "launchpad_id": "watanabe.isao",
             "companies": [
                 {
