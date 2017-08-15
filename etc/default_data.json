@@ -3973,6 +3973,17 @@
             "emails": ["chenyuan@awcloud.com"]
         },
         {
+            "launchpad_id": "chenzhiwei",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chen Zhiwei",
+            "emails": ["zhiweik@gmail.com", "zhiwchen@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "chestack",
             "companies": [
                 {
