@@ -32452,6 +32452,51 @@
             "uri": "https://github.com/docker/docker.github.io.git"
         },
         {
+            "module": "istio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/istio.git"
+        },
+        {
+            "module": "proxy@istio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/proxy.git"
+        },
+        {
+            "module": "istio.github.io",
+            "organization": "istio",
+            "uri": "https://github.com/istio/istio.github.io.git"
+        },
+        {
+            "module": "test-infra@istio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/test-infra.git"
+        },
+        {
+            "module": "api@istio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/api.git"
+        },
+        {
+            "module": "community@istio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/community.git"
+        },
+        {
+            "module": "mixerclient",
+            "organization": "istio",
+            "uri": "https://github.com/istio/mixerclient.git"
+        },
+        {
+            "module": "admin-sites",
+            "organization": "istio",
+            "uri": "https://github.com/istio/admin-sites.git"
+        },
+        {
+            "module": "fortio",
+            "organization": "istio",
+            "uri": "https://github.com/istio/fortio.git"
+        },
+        {
             "module": "cri-o",
             "organization": "kubernetes",
             "uri": "https://github.com/kubernetes-incubator/cri-o.git"
@@ -33568,6 +33613,11 @@
             "modules": ["csit", "vpp", "ci-management", "govpp", "cicn", "hc2vpp",
               "deb_dpdk", "honeycomb", "odp4vpp", "nsh_sfc", "puppet-fdio", "tldk",
               "one", "rpm_dpdk", "trex"]
+        },
+        {
+            "module_group_name": "istio-group",
+            "modules": ["istio", "proxy@istio", "istio.github.io", "test-infra@istio",
+              "api@istio", "community@istio", "mixerclient", "admin-sites", "fortio"]
         }
     ],
     "releases": [
@@ -33793,7 +33843,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "fdio-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group"]
         },
         {
             "id": "ansible-group",
@@ -33824,6 +33874,12 @@
             "title": "Kubernetes",
             "child": true,
             "modules": ["kubernetes-group"]
+        },
+        {
+            "id": "istio-group",
+            "title": "istio",
+            "child": true,
+            "modules": ["istio-group"]
         },
         {
             "id": "opnfv-group",
