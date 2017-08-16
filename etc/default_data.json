@@ -7008,6 +7008,21 @@
             "emails": ["evelyn.xu@daocloud.io", "evelynhsu21@gmail.com"]
         },
         {
+            "launchpad_id": "ethanlynn",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2017-Jan-06"
+                },
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ethan Lynn",
+            "emails": ["ethanlynnl@vmware.com", "xuanlangjian@gmail.com"]
+        },
+        {
             "launchpad_id": "ethuleau",
             "companies": [
                 {
