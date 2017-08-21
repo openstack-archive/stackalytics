@@ -1567,11 +1567,15 @@
             "companies": [
                 {
                     "company_name": "Tesora",
+                    "end_date": "2017-Aug-11"
+                },
+                {
+                    "company_name": "Verizon Wireless",
                     "end_date": null
                 }
             ],
             "user_name": "Andrew Bramley",
-            "emails": ["andrew@parelastic.com", "andrew@tesora.com", "abramley@bram-mac.local"]
+            "emails": ["andrew@parelastic.com", "andrew@tesora.com", "abramley@bram-mac.local", "andrew.bramley@verizonwireless.com", "andrew.bramley@vzw.com"]
         },
         {
             "launchpad_id": "andrw-wng",
