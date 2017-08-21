@@ -29755,6 +29755,11 @@
             "uri": "https://github.com/kubernetes-incubator/cri-tools.git"
         },
         {
+            "module": "service-catalog",
+            "organization": "kubernetes",
+            "uri": "https://github.com/kubernetes-incubator/service-catalog.git"
+        },
+        {
             "module": "kube-state-metrics",
             "organization": "kubernetes",
             "uri": "https://github.com/kubernetes/kube-state-metrics.git"
