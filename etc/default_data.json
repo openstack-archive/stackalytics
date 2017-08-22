@@ -6560,6 +6560,17 @@
            "emails": ["m.ogura@ntt.com", "eathdragon77@gmail.com"]
         },
         {
+            "launchpad_id": "eastmde",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wizardre",
+            "emails": ["dennis.eastman@verizonwireless.com", "dreastman@gmail.com"]
+        },
+        {
             "launchpad_id": "ed--cranford",
             "companies": [
                 {
