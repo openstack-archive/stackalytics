@@ -3943,6 +3943,17 @@
             "emails": ["dstbtgagt@foxmail.com"]
         },
         {
+            "launchpad_id": "chensh",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "SiHeng Chen",
+            "emails": ["chensh@rc.inesa.com"]
+        },
+        {
             "launchpad_id": "chenyb4",
             "companies": [
                 {
