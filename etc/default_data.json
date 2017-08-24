@@ -24060,6 +24060,17 @@
             "emails": ["wkqwu@cn.ibm.com", "wkq5325@gmail.com"]
         },
         {
+            "launchpad_id": "wonil22",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wonil Choi",
+            "emails": ["wonil22.choi@samsung.com", "wonil0522@gmail.com"]
+        },
+        {
             "launchpad_id": "woodburn",
             "companies": [
                 {
