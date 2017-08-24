@@ -799,60 +799,6 @@ class TestRecordProcessor(testtools.TestCase):
             record_processor_inst.runtime_storage_inst,
             email='john_doe@gmail.com'))
 
-    def test_create_member(self):
-        member_record = {'member_id': '123456789',
-                         'member_name': 'John Doe',
-                         'member_uri': 'http://www.openstack.org/community'
-                                       '/members/profile/123456789',
-                         'date_joined': 'August 01, 2012 ',
-                         'company_draft': 'Mirantis'}
-
-        record_processor_inst = self.make_record_processor()
-        result_member = next(record_processor_inst._process_member(
-            member_record))
-
-        self.assertEqual(result_member['primary_key'], 'member:123456789')
-        self.assertEqual(result_member['date'], utils.member_date_to_timestamp(
-            'August 01, 2012 '))
-        self.assertEqual(result_member['author_name'], 'John Doe')
-        self.assertEqual(result_member['company_name'], 'Mirantis')
-
-        result_user = user_processor.load_user(
-            record_processor_inst.runtime_storage_inst,
-            member_id='123456789')
-
-        self.assertEqual(result_user['user_name'], 'John Doe')
-        self.assertEqual(result_user['company_name'], 'Mirantis')
-        self.assertEqual(result_user['companies'],
-                         [{'company_name': 'Mirantis', 'end_date': 0}])
-
-    def test_update_member(self):
-        member_record = {'member_id': '123456789',
-                         'member_name': 'John Doe',
-                         'member_uri': 'http://www.openstack.org/community'
-                                       '/members/profile/123456789',
-                         'date_joined': 'August 01, 2012 ',
-                         'company_draft': 'Mirantis'}
-
-        record_processor_inst = self.make_record_processor()
-
-        updated_member_record = member_record
-        updated_member_record['member_name'] = 'Bill Smith'
-        updated_member_record['company_draft'] = 'Rackspace'
-
-        result_member = next(record_processor_inst._process_member(
-            updated_member_record))
-        self.assertEqual(result_member['author_name'], 'Bill Smith')
-        self.assertEqual(result_member['company_name'], 'Rackspace')
-
-        result_user = user_processor.load_user(
-            record_processor_inst.runtime_storage_inst,
-            member_id='123456789')
-
-        self.assertEqual(result_user['user_name'], 'Bill Smith')
-        self.assertEqual(result_user['companies'],
-                         [{'company_name': 'Rackspace', 'end_date': 0}])
-
     def test_process_email_then_review(self):
         # it is expected that the user profile will contain email and
         # gerrit id, while LP id will be None

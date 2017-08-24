@@ -365,7 +365,6 @@ def aggregate_filter():
                 'bpc': (incremental_filter, None),
                 'filed-bugs': (incremental_filter, None),
                 'resolved-bugs': (incremental_filter, None),
-                'members': (incremental_filter, None),
                 'person-day': (person_day_filter, None),
                 'patches': (None, None),
                 'translations': (loc_filter, None),

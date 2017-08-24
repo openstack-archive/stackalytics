@@ -22,13 +22,11 @@ ROBOTS = '*robots'
 
 
 def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
-                 member_id=None, github_id=None, zanata_id=None):
+                 github_id=None, zanata_id=None):
     if launchpad_id or emails:
         return launchpad_id or emails[0]
     if gerrit_id:
         return 'gerrit:%s' % gerrit_id
-    if member_id:
-        return 'member:%s' % member_id
     if github_id:
         return 'github:%s' % github_id
     if zanata_id:
@@ -60,11 +58,11 @@ def store_user(runtime_storage_inst, user):
 
 
 def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
-              launchpad_id=None, gerrit_id=None, member_id=None,
-              github_id=None, zanata_id=None):
+              launchpad_id=None, gerrit_id=None, github_id=None,
+              zanata_id=None):
 
-    key = make_user_id(gerrit_id=gerrit_id, member_id=member_id,
-                       github_id=github_id, zanata_id=zanata_id)
+    key = make_user_id(gerrit_id=gerrit_id, github_id=github_id,
+                       zanata_id=zanata_id)
     if not key:
         key = seq or user_id or launchpad_id or email
     if key:

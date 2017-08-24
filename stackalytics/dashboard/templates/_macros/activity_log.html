@@ -192,8 +192,6 @@ show_twitter=False) -%}
             <div class="header">Bug &ldquo;${title}&rdquo; (<a href="${web_link}" class="ext_link">${number}</a>)</div>
             <div>Status: <span class="status${status_class}">${status}</span></div>
             <div>Importance: <span class="importance${importance}">${importance}</span></div>
-        {%elif record_type == "member" %}
-            <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
         {%elif record_type == "tr" %}
             <div class="header">Translated ${loc} words into ${language}</div>
         {%/if%}

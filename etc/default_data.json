@@ -30958,7 +30958,6 @@
         "https://lists.opnfv.org/pipermail/opnfv-users/",
         "https://lists.opnfv.org/pipermail/test-wg/"
     ],
-    "member_lists": ["https://www.openstack.org/community/members/profile/"],
     "project_types": [
         {
             "id": "all",

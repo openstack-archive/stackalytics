@@ -350,27 +350,6 @@ def get_module(module_id, **kwargs):
     return module
 
 
-@app.route('/api/1.0/members')
-@decorators.exception_handler()
-@decorators.response()
-@decorators.cached(ignore=['release', 'project_type', 'module'])
-@decorators.jsonify('members')
-@decorators.record_filter(ignore=['release', 'project_type', 'module'])
-def get_members(records, **kwargs):
-    response = []
-    for record in records:
-        record = vault.extend_record(record)
-        nr = dict([(k, record[k]) for k in
-                   ['author_name', 'date', 'company_name', 'member_uri']])
-        nr['date_str'] = helpers.format_date(nr['date'])
-        response.append(nr)
-
-    response.sort(key=lambda x: x['date'], reverse=True)
-    utils.add_index(response)
-
-    return response
-
-
 @app.route('/api/1.0/stats/bp')
 @decorators.exception_handler()
 @decorators.response()
@@ -585,8 +564,6 @@ def _get_week(kwargs, param_name):
 def timeline(records, **kwargs):
     # find start and end dates
     metric = parameters.get_parameter(kwargs, 'metric')
-    start_date = int(parameters.get_single_parameter(kwargs, 'start_date')
-                     or 0)
     release_name = parameters.get_single_parameter(kwargs, 'release') or 'all'
     releases = vault.get_vault()['releases']
 
@@ -650,14 +627,10 @@ def timeline(records, **kwargs):
             if start_week <= week < end_week:
                 week_stat_loc[week] += loc_handler(record)
                 week_stat_commits[week] += commits_handler(record)
-                if 'members' in metric:
-                    if record.date >= start_date:
-                        week_stat_commits_hl[week] += 1
-                else:
-                    if record.release == release_name:
-                        week_stat_commits_hl[week] += commits_handler(record)
+                if record.release == release_name:
+                    week_stat_commits_hl[week] += commits_handler(record)
 
-    if 'all' == release_name and 'members' not in metric:
+    if 'all' == release_name:
         week_stat_commits_hl = week_stat_commits
 
     # form arrays in format acceptable to timeline plugin

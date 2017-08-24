@@ -32,8 +32,6 @@ PROCESSOR_OPTS = [
                     'default_data_uri = file:///path/to/default_data.json'),
     cfg.StrOpt('sources-root', default='/var/local/stackalytics',
                help='The folder that holds all project sources to analyze'),
-    cfg.IntOpt('days_to_update_members', default=30,
-               help='Number of days to update members'),
     cfg.StrOpt('corrections-uri',
                default=('https://git.openstack.org/cgit/'
                         'openstack/stackalytics/plain/etc/corrections.json'),
@@ -53,8 +51,6 @@ PROCESSOR_OPTS = [
     cfg.StrOpt("fetching-user-source", default='launchpad',
                choices=['launchpad', '<None>'],
                help="Source for fetching user profiles"),
-    cfg.IntOpt('members-look-ahead', default=250,
-               help='How many member profiles to look ahead after the last'),
     cfg.IntOpt('read-timeout', default=120,
                help='Number of seconds to wait for remote response'),
     cfg.IntOpt('gerrit-retry', default=10,
