@@ -96,7 +96,6 @@ def get_repo_keys(memcached_inst):
         for branch in branches:
             yield 'vcs:%s:%s' % (quoted_uri, branch)
             yield 'rcs:%s:%s' % (quoted_uri, branch)
-            yield 'ci:%s:%s' % (quoted_uri, branch)
 
 
 def export_data(memcached_inst, fd):
