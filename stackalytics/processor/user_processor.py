@@ -1,5 +1,3 @@
-# Copyright (c) 2014 Mirantis Inc.
-#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -19,6 +17,9 @@ import re
 from oslo_log import log as logging
 
 LOG = logging.getLogger(__name__)
+
+INDEPENDENT = '*independent'
+ROBOTS = '*robots'
 
 
 def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
@@ -74,9 +75,10 @@ def load_user(runtime_storage_inst, seq=None, user_id=None, email=None,
     return None
 
 
-def delete_user(runtime_storage_inst, user):
-    LOG.debug('Delete user: %s', user)
-    runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
+def delete_users(runtime_storage_inst, users):
+    for user in users:
+        LOG.debug('Delete user: %s', user)
+        runtime_storage_inst.delete_by_key('user:%s' % user['seq'])
 
 
 def update_user_profile(stored_user, user):
@@ -90,3 +92,161 @@ def update_user_profile(stored_user, user):
         updated_user = copy.deepcopy(user)
     updated_user['static'] = True
     return updated_user
+
+
+def get_company_for_date(companies, date):
+    for r in companies:
+        if date < r['end_date']:
+            return r['company_name'], 'strict'
+    return companies[-1]['company_name'], 'open'  # may be overridden
+
+
+def get_company_by_email(domains_index, email):
+    """Get company based on email domain
+
+    Automatically maps email domain into company name. Prefers
+    subdomains to root domains.
+
+    :param domains_index: dict {domain -> company name}
+    :param email: valid email. may be empty
+    :return: company name or None if nothing matches
+    """
+    if not email:
+        return None
+
+    name, at, domain = email.partition('@')
+    if domain:
+        parts = domain.split('.')
+        for i in range(len(parts), 1, -1):
+            m = '.'.join(parts[len(parts) - i:])
+            if m in domains_index:
+                return domains_index[m]
+    return None
+
+
+def create_user(domains_index, launchpad_id, email, gerrit_id, zanata_id,
+                user_name):
+    company = get_company_by_email(domains_index, email) or INDEPENDENT
+    emails = [email] if email else []
+
+    user = {
+        'user_id': make_user_id(
+            emails=emails, launchpad_id=launchpad_id, gerrit_id=gerrit_id,
+            zanata_id=zanata_id),
+        'launchpad_id': launchpad_id,
+        'user_name': user_name or '',
+        'companies': [{
+            'company_name': company,
+            'end_date': 0,
+        }],
+        'emails': emails,
+    }
+
+    if gerrit_id:
+        user['gerrit_id'] = gerrit_id
+    if zanata_id:
+        user['zanata_id'] = zanata_id
+
+    return user
+
+
+def update_user_affiliation(domains_index, user):
+    """Update user affiliation
+
+    Affiliation is updated only if user is currently independent
+    but makes contribution from company domain.
+
+    :param domains_index: dict {domain -> company name}
+    :param user: user profile
+    """
+    for email in user.get('emails'):
+        company_name = get_company_by_email(domains_index, email)
+
+        uc = user['companies']
+        if (company_name and (len(uc) == 1) and
+                (uc[0]['company_name'] == INDEPENDENT)):
+            LOG.debug('Updating affiliation of user %s to %s',
+                      user['user_id'], company_name)
+            uc[0]['company_name'] = company_name
+            break
+
+
+def merge_user_profiles(domains_index, user_profiles):
+    """Merge user profiles into one
+
+    The function merges list of user profiles into one figures out which
+    profiles can be deleted.
+
+    :param domains_index: dict {domain -> company name}
+    :param user_profiles: user profiles to merge
+    :return: tuple (merged user profile, [user profiles to delete])
+    """
+    LOG.debug('Merge profiles: %s', user_profiles)
+
+    # check of there are more than 1 launchpad_id nor gerrit_id
+    lp_ids = set(u.get('launchpad_id') for u in user_profiles
+                 if u.get('launchpad_id'))
+    if len(lp_ids) > 1:
+        LOG.debug('Ambiguous launchpad ids: %s on profiles: %s',
+                  lp_ids, user_profiles)
+    g_ids = set(u.get('gerrit_id') for u in user_profiles
+                if u.get('gerrit_id'))
+    if len(g_ids) > 1:
+        LOG.debug('Ambiguous gerrit ids: %s on profiles: %s',
+                  g_ids, user_profiles)
+
+    merged_user = {}  # merged user profile
+
+    # collect ordinary fields
+    for key in ['seq', 'user_name', 'user_id', 'gerrit_id', 'github_id',
+                'launchpad_id', 'companies', 'static', 'zanata_id']:
+        value = next((v.get(key) for v in user_profiles if v.get(key)),
+                     None)
+        if value:
+            merged_user[key] = value
+
+    # update user_id, prefer it to be equal to launchpad_id
+    merged_user['user_id'] = (merged_user.get('launchpad_id') or
+                              merged_user.get('user_id'))
+
+    # merge emails
+    emails = set([])
+    core_in = set([])
+    for u in user_profiles:
+        emails |= set(u.get('emails', []))
+        core_in |= set(u.get('core', []))
+    merged_user['emails'] = list(emails)
+    if core_in:
+        merged_user['core'] = list(core_in)
+
+    # merge companies
+    merged_companies = merged_user['companies']
+    for u in user_profiles:
+        companies = u.get('companies')
+        if companies:
+            if (companies[0]['company_name'] != INDEPENDENT or
+                    len(companies) > 1):
+                merged_companies = companies
+                break
+    merged_user['companies'] = merged_companies
+
+    update_user_affiliation(domains_index, merged_user)
+
+    users_to_delete = []
+    seqs = set(u.get('seq') for u in user_profiles if u.get('seq'))
+
+    if len(seqs) > 1:
+        # profiles are merged, keep only one, remove others
+        seqs.remove(merged_user['seq'])
+
+        for u in user_profiles:
+            if u.get('seq') in seqs:
+                users_to_delete.append(u)
+
+    return merged_user, users_to_delete
+
+
+def are_users_same(users):
+    """True if all users are the same and not Nones"""
+    x = set(u.get('seq') for u in users)
+    return len(x) == 1 and None not in x

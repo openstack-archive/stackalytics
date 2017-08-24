@@ -24,6 +24,7 @@ from stackalytics.processor import config
 from stackalytics.processor import record_processor
 from stackalytics.processor import runtime_storage
 from stackalytics.processor import user_processor
+from stackalytics.processor.user_processor import get_company_by_email
 from stackalytics.processor import utils
 
 
@@ -62,12 +63,12 @@ class TestRecordProcessor(testtools.TestCase):
         self.read_launchpad = self.read_json_from_uri_patch.start()
         self.lp_profile_by_launchpad_id_patch = mock.patch(
             'stackalytics.processor.launchpad_utils.'
-            'lp_profile_by_launchpad_id')
+            '_lp_profile_by_launchpad_id')
         self.lp_profile_by_launchpad_id = (
             self.lp_profile_by_launchpad_id_patch.start())
         self.lp_profile_by_launchpad_id.return_value = None
         self.lp_profile_by_email_patch = mock.patch(
-            'stackalytics.processor.launchpad_utils.lp_profile_by_email')
+            'stackalytics.processor.launchpad_utils._lp_profile_by_email')
         self.lp_profile_by_email = (
             self.lp_profile_by_email_patch.start())
         self.lp_profile_by_email.return_value = None
@@ -86,7 +87,7 @@ class TestRecordProcessor(testtools.TestCase):
             companies=[{'company_name': 'IBM', 'domains': ['ibm.com']}]
         )
         email = 'jdoe@ibm.com'
-        res = record_processor_inst._get_company_by_email(email)
+        res = get_company_by_email(record_processor_inst.domains_index, email)
         self.assertEqual('IBM', res)
 
     def test_get_company_by_email_with_long_suffix_mapped(self):
@@ -94,7 +95,7 @@ class TestRecordProcessor(testtools.TestCase):
             companies=[{'company_name': 'NEC', 'domains': ['nec.co.jp']}]
         )
         email = 'man@mxw.nes.nec.co.jp'
-        res = record_processor_inst._get_company_by_email(email)
+        res = get_company_by_email(record_processor_inst.domains_index, email)
         self.assertEqual('NEC', res)
 
     def test_get_company_by_email_with_long_suffix_mapped_2(self):
@@ -103,22 +104,14 @@ class TestRecordProcessor(testtools.TestCase):
                         'domains': ['nec.co.jp', 'nec.com']}]
         )
         email = 'man@mxw.nes.nec.com'
-        res = record_processor_inst._get_company_by_email(email)
+        res = get_company_by_email(record_processor_inst.domains_index, email)
         self.assertEqual('NEC', res)
 
     def test_get_company_by_email_not_mapped(self):
         record_processor_inst = self.make_record_processor()
         email = 'foo@boo.com'
-        res = record_processor_inst._get_company_by_email(email)
+        res = get_company_by_email(record_processor_inst.domains_index, email)
         self.assertIsNone(res)
-
-    # get_lp_info
-
-    def test_get_lp_info_invalid_email(self):
-        self.read_launchpad.return_value = None
-        record_processor_inst = self.make_record_processor(users=[])
-        self.assertEqual((None, None),
-                         record_processor_inst._get_lp_info('error.root'))
 
     # commit processing
 

@@ -37,7 +37,7 @@ def link_to_launchpad_id(link):
     return link[link.find('~') + 1:]
 
 
-def lp_profile_by_launchpad_id(launchpad_id):
+def _lp_profile_by_launchpad_id(launchpad_id):
     LOG.debug('Lookup user id %s at Launchpad', launchpad_id)
     uri = LP_URI_V1 % ('~' + launchpad_id)
     lp_profile = utils.read_json_from_uri(uri, session=launchpad_session)
@@ -45,12 +45,51 @@ def lp_profile_by_launchpad_id(launchpad_id):
     return lp_profile
 
 
-def lp_profile_by_email(email):
+def query_lp_user_name(launchpad_id):
+    """Query user name by Launchpad ID
+
+    :param launchpad_id: user's launchpad id
+    :return: user name
+    """
+    if not launchpad_id:
+        return None
+
+    lp_profile = _lp_profile_by_launchpad_id(launchpad_id)
+
+    if not lp_profile:
+        LOG.debug('User with id %s not found', launchpad_id)
+        return launchpad_id
+
+    return lp_profile['display_name']
+
+
+def _lp_profile_by_email(email):
     LOG.debug('Lookup user email %s at Launchpad', email)
     uri = LP_URI_V1 % ('people/?ws.op=getByEmail&email=' + email)
     lp_profile = utils.read_json_from_uri(uri, session=launchpad_session)
     utils.validate_lp_display_name(lp_profile)
     return lp_profile
+
+
+def query_lp_info(email):
+    """Query Launchpad ID and user name by email
+
+    :param email: user email
+    :return: tuple (launchpad id, name)
+    """
+    lp_profile = None
+    if not utils.check_email_validity(email):
+        LOG.debug('User email is not valid %s', email)
+    else:
+        lp_profile = _lp_profile_by_email(email)
+
+    if not lp_profile:
+        LOG.debug('User with email %s not found', email)
+        return None, None
+
+    LOG.debug('Email %(email)s is mapped to launchpad user %(lp)s',
+              {'email': email, 'lp': lp_profile['name']})
+    return lp_profile['name'], lp_profile['display_name']
 
 
 def lp_module_exists(module):

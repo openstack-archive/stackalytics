@@ -85,3 +85,34 @@ class TestUserProcessor(testtools.TestCase):
 
         updated_user = user_processor.update_user_profile(stored_user, user)
         self.assertTrue(updated_user.get('static'))
+
+    def test_are_users_same(self):
+        users = [
+            dict(seq=1),
+            dict(seq=1),
+            dict(seq=1),
+        ]
+        self.assertTrue(user_processor.are_users_same(users))
+
+    def test_are_users_same_none(self):
+        users = [
+            {},
+            {},
+        ]
+        self.assertFalse(user_processor.are_users_same(users))
+
+    def test_are_users_not_same(self):
+        users = [
+            dict(seq=1),
+            dict(seq=2),
+            dict(seq=1),
+        ]
+        self.assertFalse(user_processor.are_users_same(users))
+
+    def test_are_users_not_same_2(self):
+        users = [
+            dict(seq=1),
+            dict(seq=1),
+            {}
+        ]
+        self.assertFalse(user_processor.are_users_same(users))

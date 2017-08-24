@@ -79,160 +79,6 @@ class RecordProcessor(object):
 
         return self.modules, self.alias_module_map
 
-    def _find_company(self, companies, date):
-        for r in companies:
-            if date < r['end_date']:
-                return r['company_name'], 'strict'
-        return companies[-1]['company_name'], 'open'  # may be overridden
-
-    def _get_company_by_email(self, email):
-        if not email:
-            return None
-
-        name, at, domain = email.partition('@')
-        if domain:
-            parts = domain.split('.')
-            for i in range(len(parts), 1, -1):
-                m = '.'.join(parts[len(parts) - i:])
-                if m in self.domains_index:
-                    return self.domains_index[m]
-        return None
-
-    def _create_user(self, launchpad_id, email, gerrit_id, zanata_id,
-                     user_name):
-        company = (self._get_company_by_email(email) or
-                   self._get_independent())
-        emails = []
-        if email:
-            emails = [email]
-        user = {
-            'user_id': user_processor.make_user_id(
-                emails=emails, launchpad_id=launchpad_id, gerrit_id=gerrit_id,
-                zanata_id=zanata_id),
-            'launchpad_id': launchpad_id,
-            'user_name': user_name or '',
-            'companies': [{
-                'company_name': company,
-                'end_date': 0,
-            }],
-            'emails': emails,
-        }
-        if gerrit_id:
-            user['gerrit_id'] = gerrit_id
-        if zanata_id:
-            user['zanata_id'] = zanata_id
-        return user
-
-    def _get_lp_info(self, email):
-        lp_profile = None
-        if not utils.check_email_validity(email):
-            LOG.debug('User email is not valid %s', email)
-        else:
-            lp_profile = launchpad_utils.lp_profile_by_email(email)
-
-        if not lp_profile:
-            LOG.debug('User with email %s not found', email)
-            return None, None
-
-        LOG.debug('Email %(email)s is mapped to launchpad user %(lp)s',
-                  {'email': email, 'lp': lp_profile['name']})
-        return lp_profile['name'], lp_profile['display_name']
-
-    def _get_lp_user_name(self, launchpad_id):
-        if not launchpad_id:
-            return None
-
-        lp_profile = launchpad_utils.lp_profile_by_launchpad_id(launchpad_id)
-
-        if not lp_profile:
-            LOG.debug('User with id %s not found', launchpad_id)
-            return launchpad_id
-
-        return lp_profile['display_name']
-
-    def _get_independent(self):
-        return '*independent'
-
-    def _update_user_affiliation(self, user):
-        for email in user.get('emails'):
-            company_name = self._get_company_by_email(email)
-            uc = user['companies']
-            if (company_name and (len(uc) == 1) and
-                    (uc[0]['company_name'] == self._get_independent())):
-                LOG.debug('Updating affiliation of user %s to %s',
-                          user['user_id'], company_name)
-                uc[0]['company_name'] = company_name
-                break
-
-    def _get_user_exact_company(self, user):
-        if len(user.get('companies', [])) == 1:
-            return user['companies'][0]['company_name']
-        return None
-
-    def _merge_user_profiles(self, user_profiles):
-        LOG.debug('Merge profiles: %s', user_profiles)
-
-        # check of there are more than 1 launchpad_id nor gerrit_id
-        lp_ids = set(u.get('launchpad_id') for u in user_profiles
-                     if u.get('launchpad_id'))
-        if len(lp_ids) > 1:
-            LOG.debug('Ambiguous launchpad ids: %s on profiles: %s',
-                      lp_ids, user_profiles)
-        g_ids = set(u.get('gerrit_id') for u in user_profiles
-                    if u.get('gerrit_id'))
-        if len(g_ids) > 1:
-            LOG.debug('Ambiguous gerrit ids: %s on profiles: %s',
-                      g_ids, user_profiles)
-
-        merged_user = {}  # merged user profile
-
-        # collect ordinary fields
-        for key in ['seq', 'user_name', 'user_id', 'gerrit_id', 'github_id',
-                    'launchpad_id', 'companies', 'static', 'zanata_id']:
-            value = next((v.get(key) for v in user_profiles if v.get(key)),
-                         None)
-            if value:
-                merged_user[key] = value
-
-        # update user_id, prefer it to be equal to launchpad_id
-        merged_user['user_id'] = (merged_user.get('launchpad_id') or
-                                  merged_user.get('user_id'))
-
-        # merge emails
-        emails = set([])
-        core_in = set([])
-        for u in user_profiles:
-            emails |= set(u.get('emails', []))
-            core_in |= set(u.get('core', []))
-        merged_user['emails'] = list(emails)
-        if core_in:
-            merged_user['core'] = list(core_in)
-
-        # merge companies
-        merged_companies = merged_user['companies']
-        for u in user_profiles:
-            companies = u.get('companies')
-            if companies:
-                if (companies[0]['company_name'] != self._get_independent() or
-                        len(companies) > 1):
-                    merged_companies = companies
-                    break
-        merged_user['companies'] = merged_companies
-
-        self._update_user_affiliation(merged_user)
-
-        seqs = set(u.get('seq') for u in user_profiles if u.get('seq'))
-        if len(seqs) > 1:
-            # profiles are merged, keep only one, remove others
-            seqs.remove(merged_user['seq'])
-
-            for u in user_profiles:
-                if u.get('seq') in seqs:
-                    LOG.debug('Delete user: %s', u)
-                    user_processor.delete_user(
-                        self.runtime_storage_inst, u)
-        return merged_user
-
     def _need_to_fetch_launchpad(self):
         return CONF.fetching_user_source == 'launchpad'
 
@@ -246,7 +92,7 @@ class RecordProcessor(object):
         if (self._need_to_fetch_launchpad() and email and (not user_e) and
                 (not launchpad_id) and (not user_e.get('launchpad_id'))):
             # query LP
-            launchpad_id, lp_user_name = self._get_lp_info(email)
+            launchpad_id, lp_user_name = launchpad_utils.query_lp_info(email)
             if lp_user_name:
                 user_name = lp_user_name
 
@@ -258,7 +104,8 @@ class RecordProcessor(object):
                     (not launchpad_id) and (not user_e.get('launchpad_id'))):
                 # query LP
                 guessed_lp_id = gerrit_id
-                lp_user_name = self._get_lp_user_name(guessed_lp_id)
+                lp_user_name = launchpad_utils.query_lp_user_name(
+                    guessed_lp_id)
                 if lp_user_name == user_name:
                     launchpad_id = guessed_lp_id
         else:
@@ -272,7 +119,7 @@ class RecordProcessor(object):
                     (not launchpad_id) and (not user_e.get('launchpad_id'))):
                 # query LP
                 guessed_lp_id = zanata_id
-                user_name = self._get_lp_user_name(guessed_lp_id)
+                user_name = launchpad_utils.query_lp_user_name(guessed_lp_id)
                 if user_name != guessed_lp_id:
                     launchpad_id = guessed_lp_id
         else:
@@ -281,21 +128,26 @@ class RecordProcessor(object):
         user_l = user_processor.load_user(
             self.runtime_storage_inst, launchpad_id=launchpad_id) or {}
 
-        if ((user_e.get('seq') == user_l.get('seq') == user_g.get('seq') ==
-             user_z.get('seq')) and user_e.get('seq')):
+        if user_processor.are_users_same([user_e, user_l, user_g, user_z]):
             # If sequence numbers are set and the same, merge is not needed
             return user_e
 
-        user = self._create_user(launchpad_id, email, gerrit_id, zanata_id,
-                                 user_name)
+        user = user_processor.create_user(
+            self.domains_index, launchpad_id, email, gerrit_id, zanata_id,
+            user_name)
 
         if user_e or user_l or user_g or user_z:
-            user = self._merge_user_profiles(
-                [user_e, user_l, user_g, user_z, user])
+            # merge between existing profiles and a new one
+            user, users_to_delete = user_processor.merge_user_profiles(
+                self.domains_index, [user_e, user_l, user_g, user_z, user])
+
+            # delete all unneeded profiles
+            user_processor.delete_users(
+                self.runtime_storage_inst, users_to_delete)
         else:
-            # create new
+            # create new profile
             if (self._need_to_fetch_launchpad() and not user_name):
-                user_name = self._get_lp_user_name(launchpad_id)
+                user_name = launchpad_utils.query_lp_user_name(launchpad_id)
                 if user_name:
                     user['user_name'] = user_name
             LOG.debug('Created new user: %s', user)
@@ -312,12 +164,15 @@ class RecordProcessor(object):
         if user.get('user_name'):
             record['author_name'] = user['user_name']
 
-        company, policy = self._find_company(user['companies'], record['date'])
+        company, policy = user_processor.get_company_for_date(
+            user['companies'], record['date'])
+
         if not user.get('static'):
             # for auto-generated profiles affiliation may be overridden
             if company != '*robots' and policy == 'open':
-                company = (self._get_company_by_email(
-                    record.get('author_email')) or company)
+                company = (user_processor.get_company_by_email(
+                    self.domains_index, record.get('author_email')) or company)
+
         record['company_name'] = company
 
     def _process_commit(self, record):
