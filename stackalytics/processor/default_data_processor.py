@@ -175,36 +175,6 @@ def _update_project_list(default_data):
         default_data['project_sources'], default_data['repos'])
 
 
-def _update_with_driverlog_data(default_data, driverlog_data_uri):
-    LOG.info('Reading DriverLog data from uri: %s', driverlog_data_uri)
-    driverlog_data = utils.read_json_from_uri(driverlog_data_uri)
-
-    if not driverlog_data:
-        LOG.warning('DriverLog data is not available')
-        return
-
-    module_cis = collections.defaultdict(list)
-    for driver in driverlog_data['drivers']:
-        if 'ci' not in driver:
-            continue
-
-        module = (driver.get('repo') or driver['project_id']).split('/')[1]
-
-        module_cis[module].append(driver)
-
-        default_data['users'].append({
-            'user_id': user_processor.make_user_id(ci_id=driver['name']),
-            'user_name': driver['name'],
-            'static': True,
-            'companies': [
-                {'company_name': driver['vendor'], 'end_date': None}],
-        })
-
-    for repo in default_data['repos']:
-        if repo['module'] in module_cis:
-            repo['drivers'] = module_cis[repo['module']]
-
-
 def _store_users(runtime_storage_inst, users):
     for user in users:
         stored_user = user_processor.load_user(runtime_storage_inst,
@@ -259,12 +229,10 @@ def _store_default_data(runtime_storage_inst, default_data):
             runtime_storage_inst.set_by_key(key, value)
 
 
-def process(runtime_storage_inst, default_data, driverlog_data_uri):
+def process(runtime_storage_inst, default_data):
     LOG.debug('Process default data')
 
     if 'project_sources' in default_data:
         _update_project_list(default_data)
-
-    _update_with_driverlog_data(default_data, driverlog_data_uri)
 
     _store_default_data(runtime_storage_inst, default_data)

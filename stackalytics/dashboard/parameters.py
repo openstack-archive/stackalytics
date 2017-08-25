@@ -37,7 +37,6 @@ METRIC_LABELS = {
     'filed-bugs': 'Filed Bugs',
     'resolved-bugs': 'Resolved Bugs',
     'person-day': "Person-day effort",
-    'ci': 'CI votes',
     'patches': 'Patch Sets',
     'translations': 'Translations',
 }
@@ -53,7 +52,6 @@ METRIC_TO_RECORD_TYPE = {
     'resolved-bugs': ['bugr'],
     'members': ['member'],
     'person-day': ['mark', 'patch', 'email', 'bpd', 'bugf'],
-    'ci': ['ci'],
     'patches': ['patch'],
     'translations': ['tr'],
 }

@@ -109,7 +109,7 @@ show_twitter=False) -%}
             <div class="header">{%html author_link %} ({%html company_link %})</div>
         {%/if%}
         <div class="header">${date_str} in {%html module_link%}
-            {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "ci" || record_type == "tr" %}
+            {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "tr" %}
                 {%if branch != "master" %}(${branch}){%/if%}
             {%/if%}
             {%if record_type == "commit" %}
@@ -192,13 +192,6 @@ show_twitter=False) -%}
             <div class="header">Bug &ldquo;${title}&rdquo; (<a href="${web_link}" class="ext_link">${number}</a>)</div>
             <div>Status: <span class="status${status_class}">${status}</span></div>
             <div>Importance: <span class="importance${importance}">${importance}</span></div>
-        {%elif record_type == "ci" %}
-            <div class="header">CI vote in merged change request
-               <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_number}</a>
-             </div>
-            <div>{%if value == true %}<span style="color: green">Success</span>{%else%}<span style="color: red">Failure</span>{%/if%}</div>
-            <div class="message">${message}</div>
-            <div>Change Id: <a href="https://review.openstack.org/#/c/${review_number}" target="_blank">${review_id}</a></div>
         {%elif record_type == "member" %}
             <div class="header"><a href="${member_uri}" target="_blank">Registered</a> in OpenStack Foundation</div>
         {%elif record_type == "tr" %}

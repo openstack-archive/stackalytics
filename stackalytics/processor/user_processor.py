@@ -12,7 +12,6 @@
 # limitations under the License.
 
 import copy
-import re
 
 from oslo_log import log as logging
 
@@ -23,7 +22,7 @@ ROBOTS = '*robots'
 
 
 def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
-                 member_id=None, github_id=None, ci_id=None, zanata_id=None):
+                 member_id=None, github_id=None, zanata_id=None):
     if launchpad_id or emails:
         return launchpad_id or emails[0]
     if gerrit_id:
@@ -34,8 +33,6 @@ def make_user_id(emails=None, launchpad_id=None, gerrit_id=None,
         return 'github:%s' % github_id
     if zanata_id:
         return 'zanata:%s' % zanata_id
-    if ci_id:
-        return 'ci:%s' % re.sub(r'[^\w]', '_', ci_id.lower())
     return None
 
 

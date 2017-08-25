@@ -24,7 +24,6 @@ import six
 from stackalytics.processor import bps
 from stackalytics.processor import config
 from stackalytics.processor import default_data_processor
-from stackalytics.processor import driverlog
 from stackalytics.processor import governance
 from stackalytics.processor import lp
 from stackalytics.processor import mls
@@ -139,29 +138,6 @@ def _process_repo_reviews(repo, runtime_storage_inst, record_processor_inst,
         runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
 
 
-def _process_repo_ci_votes(repo, runtime_storage_inst, record_processor_inst,
-                           rcs_inst):
-    for branch in _get_repo_branches(repo):
-        LOG.info('Processing CI votes for repo: %s, branch: %s',
-                 repo['uri'], branch)
-
-        quoted_uri = six.moves.urllib.parse.quote_plus(repo['uri'])
-        rcs_key = 'ci:%s:%s' % (quoted_uri, branch)
-        last_retrieval_time = runtime_storage_inst.get_by_key(rcs_key)
-        current_retrieval_time = utils.date_to_timestamp('now')
-
-        review_iterator = rcs_inst.log(repo, branch, last_retrieval_time,
-                                       status='merged', grab_comments=True)
-        review_iterator = driverlog.log(review_iterator, repo['drivers'])
-        review_iterator_typed = _record_typer(review_iterator, 'ci')
-        processed_review_iterator = record_processor_inst.process(
-            review_iterator_typed)
-
-        runtime_storage_inst.set_records(processed_review_iterator,
-                                         utils.merge_records)
-        runtime_storage_inst.set_by_key(rcs_key, current_retrieval_time)
-
-
 def _process_repo_vcs(repo, runtime_storage_inst, record_processor_inst):
     vcs_inst = vcs.get_vcs(repo, CONF.sources_root)
     vcs_inst.fetch()
@@ -198,10 +174,6 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst,
     if 'has_gerrit' in repo:
         _process_repo_reviews(repo, runtime_storage_inst,
                               record_processor_inst, rcs_inst)
-
-        if 'drivers' in repo:
-            _process_repo_ci_votes(repo, runtime_storage_inst,
-                                   record_processor_inst, rcs_inst)
 
 
 def _process_mail_list(uri, runtime_storage_inst, record_processor_inst):
@@ -316,9 +288,6 @@ def process_project_list(runtime_storage_inst):
         module = repo['module'].lower()
         module_groups[module] = utils.make_module_group(module, tag='module')
 
-        if 'drivers' in repo:
-            module_groups[module]['has_drivers'] = True
-
     # register module 'unknown' - used for emails not mapped to any module
     module_groups['unknown'] = utils.make_module_group('unknown', tag='module')
 
@@ -344,8 +313,7 @@ def main():
         return not 0
 
     default_data_processor.process(runtime_storage_inst,
-                                   default_data,
-                                   CONF.driverlog_data_uri)
+                                   default_data)
 
     process_project_list(runtime_storage_inst)
 

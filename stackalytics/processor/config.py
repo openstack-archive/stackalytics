@@ -46,10 +46,6 @@ PROCESSOR_OPTS = [
                help='SSH key for gerrit review system access'),
     cfg.StrOpt('ssh-username', default='user',
                help='SSH username for gerrit review system access'),
-    cfg.StrOpt('driverlog-data-uri',
-               default='https://git.openstack.org/cgit/'
-                       'openstack/driverlog/plain/etc/default_data.json',
-               help='URI for default data'),
     cfg.StrOpt('translation-team-uri',
                default='https://git.openstack.org/cgit/openstack/i18n/'
                        'plain/tools/zanata/translation_team.yaml',
