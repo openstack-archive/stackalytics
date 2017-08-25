@@ -15,6 +15,8 @@ import copy
 
 from oslo_log import log as logging
 
+from stackalytics.processor import utils
+
 LOG = logging.getLogger(__name__)
 
 INDEPENDENT = '*independent'
@@ -245,3 +247,23 @@ def are_users_same(users):
     """True if all users are the same and not Nones"""
     x = set(u.get('seq') for u in users)
     return len(x) == 1 and None not in x
+
+
+def resolve_companies_aliases(domains_index, companies):
+    norm_companies = []
+
+    prev_company_name = None
+    for c in reversed(companies):
+        company_name = c['company_name']
+        company_name = (domains_index.get(
+            utils.normalize_company_name(company_name))
+            or (utils.normalize_company_draft(company_name)))
+
+        if company_name != prev_company_name:
+            r = copy.deepcopy(c)
+            r['company_name'] = company_name
+            norm_companies.append(r)
+
+        prev_company_name = company_name
+
+    return list(reversed(norm_companies))

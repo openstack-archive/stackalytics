@@ -16,6 +16,7 @@
 import testtools
 
 from stackalytics.processor import user_processor
+from stackalytics.processor import utils
 
 
 class TestUserProcessor(testtools.TestCase):
@@ -116,3 +117,23 @@ class TestUserProcessor(testtools.TestCase):
             {}
         ]
         self.assertFalse(user_processor.are_users_same(users))
+
+    def test_resolve_companies_aliases(self):
+        domains_index = {
+            utils.normalize_company_name('IBM India'): 'IBM',
+            utils.normalize_company_name('IBM Japan'): 'IBM',
+        }
+        user = [
+            dict(company_name='IBM India', end_date=1234567890),
+            dict(company_name='IBM Japan', end_date=2234567890),
+            dict(company_name='Intel', end_date=0),
+        ]
+
+        observed = user_processor.resolve_companies_aliases(
+            domains_index, user)
+
+        expected = [
+            dict(company_name='IBM', end_date=2234567890),
+            dict(company_name='Intel', end_date=0),
+        ]
+        self.assertEqual(expected, observed)
