@@ -5560,6 +5560,17 @@
             "emails": ["yuweichou@iii.org.tw", "demoyuw@gmail.com"]
         },
         {
+            "github_id": "dengyi1996",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yi Deng",
+            "emails": ["yi.deng@daocloud.io", "dengyi0215@gmail.com"]
+        },
+        {
             "launchpad_id": "denis-cavalcante",
             "companies": [
                 {
@@ -9209,6 +9220,17 @@
             ],
             "user_name": "huanght",
             "emails": ["huanght@awcloud.com"]
+        },
+        {
+            "github_id": "huangjiuyuan",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiuyuan Huang",
+            "emails": ["jiuyuan.huang@daocloud.io", "huangjiuyuan@163.com"]
         },
         {
             "launchpad_id": "huangshan",
