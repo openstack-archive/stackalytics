@@ -46,6 +46,27 @@ def _openstack_profile_by_email(email):
 Interval = collections.namedtuple('Interval', ['start', 'end', 'value'])
 
 
+def _cut_open_ended_intervals(intervals):
+    """Keep only one open interval
+
+    If there are multiple open intervals keep only the latest open;
+    cut others so they no longer intersect each other.
+
+    :param intervals: [Interval]
+    :return: processed intervals: [Interval]
+    """
+    filtered_intervals = []
+    cut = 0
+    for interval in reversed(intervals):
+        if not interval.end:
+            new_interval = Interval(interval.start, cut, interval.value)
+            filtered_intervals.append(new_interval)
+            cut = interval.start
+        else:
+            filtered_intervals.append(interval)
+    return list(reversed(filtered_intervals))
+
+
 def _iterate_intervals(intervals, threshold=INTERVAL_GAP_THRESHOLD):
     """Iterate intervals and fill gaps around of them
 
@@ -56,6 +77,7 @@ def _iterate_intervals(intervals, threshold=INTERVAL_GAP_THRESHOLD):
         yield Interval(0, 0, None)
     else:
         intervals.sort(key=lambda x: x.start)
+        intervals = _cut_open_ended_intervals(intervals)
 
         prev_start = 0
 
