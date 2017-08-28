@@ -20863,6 +20863,17 @@
             "emails": ["smaffulli@gmail.com"]
         },
         {
+            "launchpad_id" : "smcclymont",
+            "companies": [
+                {
+                   "company_name": "Verizon Wireless",
+                   "end_date" : null
+                }
+            ],
+            "user_name": "Scott McClymont",
+            "emails":["scott.mcclymont@verizonwireless.com"]
+        },
+        {
             "launchpad_id": "smekel",
             "companies": [
                 {
