@@ -13032,6 +13032,17 @@
             "emails": ["lefremova@mirantis.com"]
         },
         {
+            "launchpad_id": "leilei",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lei Lei",
+            "emails": ["leilei4@lenovo.com", "finixlei@gmail.com"]
+        },
+        {
             "launchpad_id": "leixin",
             "companies": [
                 {
