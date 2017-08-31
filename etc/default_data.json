@@ -17683,6 +17683,17 @@
             "emails": ["qiaoanran@gmail.com", "anran.qiao@daocloud.io"]
         },
         {
+             "launchpad_id": "qearl",
+             "companies": [
+               {
+                     "company_name": "Yunrong Technology",
+                     "end_date": null
+               }
+             ],
+             "user_name": "Tingting Yu",
+             "emails": ["yu_qearl@163.com", "yutingting@yunrongtech.com"]
+        },
+        {
             "launchpad_id": "qianh",
             "companies": [
                 {
@@ -28311,6 +28322,10 @@
         {
             "domains": ["ysance.com"],
             "company_name": "Ysance"
+        },
+        {
+            "domains": ["yunrongtech.com"],
+            "company_name": "Yunrong Technology"
         },
         {
             "domains": ["zadarastorage.com"],
