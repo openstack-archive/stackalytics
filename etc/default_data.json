@@ -20782,6 +20782,17 @@
             "emails": ["skuicloud@gmail.com", "kui.shi@huawei.com"]
         },
         {
+            "launchpad_id": "skumar1601",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "skumar1601",
+            "emails": ["shantanu.kumar@cognizant.com","kumarshantanu16@gmail.com"]
+        },
+        {
             "launchpad_id": "slamdunkbk",
             "companies": [
                 {
