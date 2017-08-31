@@ -7682,6 +7682,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -8963,6 +8967,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -9144,6 +9152,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -12695,6 +12707,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2016-May-31"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -22916,6 +22932,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -23504,6 +23524,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -24271,6 +24295,10 @@
             "companies": [
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "University of Szeged",
                     "end_date": null
                 }
             ],
@@ -28131,6 +28159,11 @@
         {
             "domains": ["tunnelvisionlabs.com"],
             "company_name": "Tunnel Vision Laboratories"
+        },
+        {
+            "domains": ["u-szeged.hu"],
+            "company_name": "University of Szeged",
+            "aliases": ["SZTE"]
         },
         {
             "domains": ["ubisoft.com"],
