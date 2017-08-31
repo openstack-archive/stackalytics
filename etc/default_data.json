@@ -24920,6 +24920,17 @@
             "emails": ["yarkot1@gmail.com", "yarko.tymciurak@intel.com"]
         },
         {
+            "launchpad_id": "yaroslavmt",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yaroslav Telishevskiy",
+            "emails": ["yaroslavmt@gmail.com"]
+        },
+        {
             "launchpad_id": "yatinkarel",
             "companies": [
                 {
