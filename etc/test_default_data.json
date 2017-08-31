@@ -282,7 +282,17 @@
         },
         {
             "release_name": "Pike",
-            "end_date": "2017-Aug-31",
+            "end_date": "2017-Aug-30",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=aug-2017-elections"
+                }
+            }
+        },
+        {
+            "release_name": "Queens",
+            "end_date": "2018-Mar-01",
             "refs": {
                 "governance": {
                     "type": "big_tent",
