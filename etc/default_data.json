@@ -26348,6 +26348,17 @@
             "emails": ["zoukeke@cmss.chinamobile.com"]
         },
         {
+            "launchpad_id": "zqinit",
+            "companies": [
+                {
+                "company_name": "Cisco Systems",
+                "end_date": null
+                }
+            ],
+            "user_name": "Zhen Qin",
+            "emails": ["zqinit@gmail.com", "zhenqin@cisco.com"]
+        },
+        {
             "launchpad_id": "zrzhit",
             "companies": [
                 {
