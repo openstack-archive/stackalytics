@@ -8650,6 +8650,17 @@
             "emails": ["hantim.lin@gmail.com", "linhanchen@t2cloud.net"]
         },
         {
+            "launchpad_id": "hanxi-liu",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hanxi_Liu",
+            "emails": ["hanxi.liu@easystack.cn", "apolloliuhx@gmail.com", "root@lhx-ceph-1.novalocal"]
+        },
+        {
             "launchpad_id": "haobing1",
             "companies": [
                 {
