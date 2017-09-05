@@ -15421,11 +15421,15 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-Sep-01"
+                },
+                {
+                    "company_name": "Aptira",
                     "end_date": null
                 }
             ],
             "user_name": "Michael Still",
-            "emails": ["michael.still@canonical.com", "mikal@stillhq.com", "michael.still@rackspace.com"]
+            "emails": ["mikal@stillhq.com", "michael.still@canonical.com", "michael.still@rackspace.com", "michael@aptira.com"]
         },
   {
             "launchpad_id": "mike-carden",
