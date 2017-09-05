@@ -11350,11 +11350,15 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2017-May-12"
+                },
+                {
+                    "company_name": "StackHPC",
                     "end_date": null
                 }
             ],
             "user_name": "John Garbutt",
-            "emails": ["john@johngarbutt.com", "john.garbutt@rackspace.com", "john.garbutt@citrix.com"]
+            "emails": ["john@johngarbutt.com", "john.garbutt@rackspace.com", "john.garbutt@citrix.com", "john.garbutt@stackhpc.com"]
         },
         {
             "launchpad_id": "johnsom",
