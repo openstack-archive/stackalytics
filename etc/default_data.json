@@ -10710,6 +10710,17 @@
             "emails": ["jeremy.moffitt@hp.com", "jeremy.moffitt@hpe.com", "jeremy.moffitt@suse.com", "jmoffitt@suse.com"]
         },
         {
+            "launchpad_id": "jeremy.jia",
+            "companies": [
+                {
+                    "company_name": "Lenovo",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jia Pei",
+            "emails": ["jiapei2@lenovo.com", "jiapeish@gmail.com"]
+        },
+        {
             "launchpad_id": "jeremy.zhang",
             "companies": [
                 {
