@@ -25401,6 +25401,17 @@
             "emails": ["yugsuo@gmail.com", "guangyu@unitedstack.com"]
         },
         {
+            "launchpad_id": "yuhengwang",
+            "companies": [
+                {
+                    "company_name": "China Railway ITC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "YuhengWang",
+            "emails": ["wangyuheng@sinorail.com", "ascendjohan@163.com"]
+        },
+        {
             "launchpad_id": "yujunz",
             "companies": [
                 {
