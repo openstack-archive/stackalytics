@@ -9488,6 +9488,17 @@
             "emails": ["i-kumagai@bit-isle.co.jp"]
         },
         {
+            "launchpad_id": "i.dyukov",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ivan Dyukov",
+            "emails": ["i.dyukov@samsung.com"]
+        },
+        {
             "launchpad_id": "i159",
             "user_name": "Ilya Pekelny",
             "companies": [
