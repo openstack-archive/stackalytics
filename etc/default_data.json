@@ -4465,6 +4465,10 @@
                },
                {
                    "company_name": "*independent",
+                   "end_date": "2017-Sep-03"
+               },
+               {
+                   "company_name": "Opcito Technologies",
                    "end_date": null
                }
            ],
@@ -27863,6 +27867,10 @@
             "domains": ["oneconvergence.com"],
             "company_name": "One Convergence",
             "aliases": ["One Convergence Devices Pvt. Ltd", "Oneconvergence Devices Pvt Ltd", "One Convergence Devices"]
+        },
+        {
+            "domains": ["opcito.com"],
+            "company_name": "Opcito Technologies"
         },
         {
             "domains": ["optiflows.com"],
