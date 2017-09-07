@@ -43,7 +43,8 @@ OPTS = [
 
 
 SINGLE_KEYS = ['module_groups', 'project_types', 'repos', 'releases',
-               'companies', 'runtime_storage_update_time']
+               'companies', 'last_update_members_date', 'last_member_index',
+               'runtime_storage_update_time']
 ARRAY_KEYS = ['record', 'user']
 BULK_READ_SIZE = 64
 MEMCACHED_URI_PREFIX = r'^memcached:\/\/'
@@ -139,6 +140,8 @@ def export_data(memcached_inst, fd):
                 pickle.dump(('user:%s' % user['launchpad_id'], user), fd)
             if user.get('gerrit_id'):
                 pickle.dump(('user:gerrit:%s' % user['gerrit_id'], user), fd)
+            if user.get('member_id'):
+                pickle.dump(('user:member:%s' % user['member_id'], user), fd)
             for email in user.get('emails') or []:
                 pickle.dump((('user:%s' % email).encode('utf8'), user), fd)
 
