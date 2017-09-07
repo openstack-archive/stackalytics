@@ -2690,6 +2690,18 @@
             "emails": ["bertrand.lallau@gmail.com", "bertrand.lallau@thalesgroup.com"]
         },
         {
+            "launchpad_id": "bertyuan",
+            "github_id": "bertyuan",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaopei Yuan",
+            "emails": ["bertyuan@gmail.com", "yuanxiaopei@qiniu.com"]
+        },
+        {
             "launchpad_id": "bethelwell",
             "companies": [
                 {
@@ -6461,6 +6473,17 @@
             "emails": ["duncan.thomas@hp.com", "duncan.thomas@gmail.com", "duncan.thomas@hpe.com"]
         },
         {
+            "github_id": "dunjut",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hongwei Du",
+            "emails": ["duhongwei@qiniu.com", "du@njut.edu.cn"]
+        },
+        {
             "launchpad_id": "dustin",
             "companies": [
                 {
@@ -7282,6 +7305,17 @@
             "emails": ["zh.f@outlook.com"]
         },
         {
+            "github_id": "fatsheep9146",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ziqi Zhao",
+            "emails": ["zhaoziqi@qiniu.com", "zhaoziqi9146@gmail.com"]
+        },
+        {
             "launchpad_id": "fausto-marzi",
             "companies": [
                 {
@@ -7464,6 +7498,17 @@
            "emails": [
                "flwang@catalyst.net.nz", "feilong@catalyst.net.nz", "flwang@qq.com"
            ]
+        },
+        {
+            "github_id": "flyer103",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yifei Zhang",
+            "emails": ["zhangyifei@qiniu.com", "flyer103@gmail.com"]
         },
         {
             "launchpad_id": "fm577c",
@@ -13028,6 +13073,17 @@
             ]
         },
         {
+            "github_id": "ldnvnbl",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yushen Lin",
+            "emails": ["linyushen@qiniu.com", "ldnvnbl@gmail.com"]
+        },
+        {
             "launchpad_id": "leandro-i-costantino",
             "companies": [
                 {
@@ -14039,6 +14095,17 @@
             ],
             "user_name": "luke.li",
             "emails": ["lilu7189@fiberhome.com"]
+        },
+        {
+            "github_id": "lutaoact",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tao Lu",
+            "emails": ["lutao@qiniu.com", "lutaoact@hotmail.com"]
         },
         {
             "launchpad_id": "luwei",
@@ -18081,6 +18148,17 @@
             ],
             "user_name": "Ramy Asselin",
             "emails": ["ramy.asselin@hp.com", "ramy.asselin@hpe.com", "asselin@hpe.com", "asselinr@suse.com", "ramy.asselin@suse.com", "ramyasselin@yahoo.com"]
+        },
+        {
+            "github_id": "randmonkey",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tao Yi",
+            "emails": ["yitao@qiniu.com", "richardyi0110@hotmail.com"]
         },
         {
             "launchpad_id": "ranler",
@@ -22845,6 +22923,17 @@
             "emails": ["matt@cloudscaling.com"]
         },
         {
+            "github_id": "u2takey",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lei Wang",
+            "emails": ["wanglei2@qiniu.com", "u2takey@gmail.com"]
+        },
+        {
             "launchpad_id": "uckey-1067",
             "companies": [
                 {
@@ -24067,6 +24156,17 @@
             "emails": ["weike@awcloud.com", "weike.cs@gmail.com"]
         },
         {
+            "github_id": "weiwei04",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Wei",
+            "emails": ["weiwei@qiniu.com", "weiwei.inf@gmail.com"]
+        },
+        {
             "launchpad_id": "wengjiangang",
             "companies": [
                 {
@@ -24125,6 +24225,17 @@
             ],
             "user_name": "liyi",
             "emails": ["liyi8611@gmail.com", "liyi7155@fiberhome.com", "liyi@liyidemacbook-pro.local"]
+        },
+        {
+            "github_id": "whypro",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Haoyu Wang",
+            "emails": ["wanghaoyu@qiniu.com", "whypro@live.cn"]
         },
         {
             "github_id": "windfarer",
@@ -25611,6 +25722,17 @@
             ],
             "user_name": "Khai Do",
             "emails": ["zaro0508@gmail.com"]
+        },
+        {
+            "github_id": "zdq0394",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dongqi Zhang",
+            "emails": ["zhangdongqi@qiniu.com", "zdq123.hn@163.com"]
         },
         {
             "launchpad_id": "zealot0630",
