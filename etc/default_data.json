@@ -8976,6 +8976,17 @@
             "emails": ["yaguang.tang@canonical.com", "heut2008@gmail.com", "ytang@mirantis.com", "yaguang@umcloud.com", "tangyg2@lenovo.com"]
         },
         {
+            "launchpad_id": "hex2dec",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "William Huang",
+            "emails": ["pyhex2dec@gmail.com"]
+        },
+        {
             "launchpad_id": "hferenc",
             "companies": [
                 {
