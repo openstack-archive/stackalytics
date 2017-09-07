@@ -16802,6 +16802,17 @@
             "emails": ["oss_xzdong@163.com"]
         },
         {
+            "launchpad_id": "otleimat",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Omar Tleimat",
+            "emails": ["otleimat@ucla.edu"]
+        },
+        {
             "launchpad_id": "otsuka-f",
             "zanata_id": "otsuka",
             "companies": [
