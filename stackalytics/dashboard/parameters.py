@@ -50,6 +50,7 @@ METRIC_TO_RECORD_TYPE = {
     'bpc': ['bpc'],
     'filed-bugs': ['bugf'],
     'resolved-bugs': ['bugr'],
+    'members': ['member'],
     'person-day': ['mark', 'patch', 'email', 'bpd', 'bugf'],
     'patches': ['patch'],
     'translations': ['tr'],

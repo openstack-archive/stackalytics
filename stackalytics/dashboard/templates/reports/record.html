@@ -197,6 +197,12 @@
               href="https://review.openstack.org/#/c/{{ record.review_number }}"
               target="_blank">{{ record.review_id }}</a></div>
 
+        {% elif record_type == "member" %}
+          <div class="header"><a href="{{ record.member_uri }}"
+                                 target="_blank">Registered</a> in OpenStack
+            Foundation
+          </div>
+
         {% elif record_type == "tr" %}
           <div class="header">Translated {{ record.loc }} words
             into {{ record.language }}</div>

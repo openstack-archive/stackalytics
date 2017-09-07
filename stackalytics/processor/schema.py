@@ -225,6 +225,12 @@ default_data = {
                 "type": "string"
             }
         },
+        "member_lists": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
         "project_types": {
             "type": "array",
             "items": {

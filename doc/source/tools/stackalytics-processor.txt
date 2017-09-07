@@ -1,12 +1,14 @@
 usage: stackalytics-processor [-h] [--config-dir DIR] [--config-file PATH]
-                              [--corrections-uri CORRECTIONS_URI] [--debug]
-                              [--default-data-uri DEFAULT_DATA_URI]
+                              [--corrections-uri CORRECTIONS_URI]
+                              [--days_to_update_members DAYS_TO_UPDATE_MEMBERS]
+                              [--debug] [--default-data-uri DEFAULT_DATA_URI]
                               [--fetching-user-source FETCHING_USER_SOURCE]
                               [--gerrit-retry GERRIT_RETRY]
                               [--git-base-uri GIT_BASE_URI]
                               [--log-config-append PATH]
                               [--log-date-format DATE_FORMAT]
                               [--log-dir LOG_DIR] [--log-file PATH]
+                              [--members-look-ahead MEMBERS_LOOK_AHEAD]
                               [--nodebug] [--nouse-journal] [--nouse-syslog]
                               [--nowatch-log-file]
                               [--read-timeout READ_TIMEOUT]
@@ -33,6 +35,8 @@ optional arguments:
                         precedence. Defaults to None.
   --corrections-uri CORRECTIONS_URI
                         The address of file with corrections data
+  --days_to_update_members DAYS_TO_UPDATE_MEMBERS
+                        Number of days to update members
   --debug, -d           If set to true, the logging level will be set to DEBUG
                         instead of the default INFO level.
   --default-data-uri DEFAULT_DATA_URI
@@ -67,6 +71,8 @@ optional arguments:
                         If no default is set, logging will go to stderr as
                         defined by use_stderr. This option is ignored if
                         log_config_append is set.
+  --members-look-ahead MEMBERS_LOOK_AHEAD
+                        How many member profiles to look ahead after the last
   --nodebug             The inverse of --debug
   --nouse-journal       The inverse of --use-journal
   --nouse-syslog        The inverse of --use-syslog

@@ -425,6 +425,39 @@ class RecordProcessor(object):
 
             yield bug_fixed
 
+    def _process_member(self, record):
+        user_id = user_processor.make_user_id(member_id=record['member_id'])
+        record['primary_key'] = user_id
+        record['date'] = utils.member_date_to_timestamp(record['date_joined'])
+        record['author_name'] = record['member_name']
+        record['module'] = 'unknown'
+        company_draft = record['company_draft']
+
+        company_name = self.domains_index.get(utils.normalize_company_name(
+            company_draft)) or (utils.normalize_company_draft(company_draft))
+
+        # author_email is a key to create new user
+        record['author_email'] = user_id
+        record['company_name'] = company_name
+        # _update_record_and_user function will create new user if needed
+        self._update_record_and_user(record)
+        record['company_name'] = company_name
+        user = user_processor.load_user(self.runtime_storage_inst,
+                                        user_id=user_id)
+
+        user['user_name'] = record['author_name']
+        user['companies'] = [{
+            'company_name': company_name,
+            'end_date': 0,
+        }]
+        user['company_name'] = company_name
+
+        user_processor.store_user(self.runtime_storage_inst, user)
+
+        record['company_name'] = company_name
+
+        yield record
+
     def _process_translation(self, record):
         # todo split translation and approval
         translation = record.copy()
@@ -455,6 +488,7 @@ class RecordProcessor(object):
             'email': self._process_email,
             'bp': self._process_blueprint,
             'bug': self._process_bug,
+            'member': self._process_member,
             'i18n': self._process_translation,
         }
 
@@ -681,6 +715,39 @@ class RecordProcessor(object):
             self.runtime_storage_inst.set_records(
                 self._close_patch(cores, marks_patch['marks']))
 
+    def _update_members_company_name(self):
+        LOG.info('Update members with company names')
+
+        def record_handler(record):
+            if record['record_type'] != 'member':
+                return
+
+            company_draft = record['company_draft']
+            company_name = self.domains_index.get(
+                utils.normalize_company_name(company_draft)) or (
+                    utils.normalize_company_draft(company_draft))
+
+            if company_name == record['company_name']:
+                return
+
+            LOG.debug('Update record %s, company name changed to %s',
+                      record, company_name)
+            record['company_name'] = company_name
+
+            yield record
+
+            user = user_processor.load_user(self.runtime_storage_inst,
+                                            user_id=record['user_id'])
+            LOG.debug('Update user %s, company name changed to %s',
+                      user, company_name)
+            user['companies'] = [{
+                'company_name': company_name,
+                'end_date': 0,
+            }]
+            user_processor.store_user(self.runtime_storage_inst, user)
+
+        yield record_handler
+
     def _update_commits_with_module_alias(self):
         LOG.info('Update record with aliases')
 
@@ -706,6 +773,7 @@ class RecordProcessor(object):
             self._update_commits_with_module_alias,
             self._update_blueprints_with_mention_info,
             self._determine_core_contributors,
+            self._update_members_company_name,
             self._update_marks_with_disagreement,
         ]
 
