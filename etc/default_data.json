@@ -22414,6 +22414,10 @@
             "companies": [
                 {
                     "company_name": "Hitachi",
+                    "end_date": "2016-Dec-31"
+                },
+                {
+                    "company_name": "NetApp",
                     "end_date": null
                 }
             ],
