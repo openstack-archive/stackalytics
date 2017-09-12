@@ -1366,6 +1366,17 @@
             "emails": ["andrew.mitry@walmart.com", "andrew_mitry@cable.comcast.com", "amitry@gmail.com"]
         },
         {
+            "launchpad_id": "amofakhar",
+            "companies": [
+                {
+                    "company_name": "OP5",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Amir Mofakhar",
+            "emails": ["amofakhar@op5.com", "pangan@gmail.com"]
+        },
+        {
             "launchpad_id": "amrith",
             "companies": [
                 {
