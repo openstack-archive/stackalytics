@@ -23324,6 +23324,10 @@
                 },
                 {
                     "company_name": "Charter",
+                    "end_date": "2017-Mar-15"
+                },
+                {
+                    "company_name": "Tesla",
                     "end_date": null
                 }
             ],
@@ -29685,6 +29689,10 @@
         {
             "domains": ["teradata.com"],
             "company_name": "Teradata"
+        },
+        {
+            "domains": ["tesla.com"],
+            "company_name": "Tesla"
         },
         {
             "domains": ["tesora.com", "parelastic.com"],
