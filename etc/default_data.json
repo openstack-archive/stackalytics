@@ -12,6 +12,17 @@
             "emails": ["doug@parelastic.com", "doug@tesora.com", "dougshelley66@gmail.com"]
         },
         {
+            "github_id": "01deyishu",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shen Yan",
+            "emails": ["yanshen@qiniu.com"]
+        },
+        {
             "launchpad_id": "0x44",
             "companies": [
                 {
@@ -14443,6 +14454,17 @@
             "emails": ["6du1ro.n@gmail.com", "mail@majklk.cz", "michael.kuty@tcpcloud.eu", "m.kuty@tcpcloud.eu"]
         },
         {
+            "github_id": "make-bin",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kebin Ma",
+            "emails": ["makebin@qiniu.com"]
+        },
+        {
             "launchpad_id": "maksimov",
             "companies": [
                 {
@@ -15660,6 +15682,17 @@
             "emails": ["mishra.rakesh510@gmail.com", "rakesh.ku.mishra@ril.com"]
         },
         {
+            "github_id": "mixj93",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xueli Li",
+            "emails": ["lixueli@qiniu.com"]
+        },
+        {
             "launchpad_id": "mjblack",
             "companies": [
                 {
@@ -16630,6 +16663,17 @@
             ],
             "user_name": "Novel Kumar",
             "emails": ["novel.kumar@gmail.com"]
+        },
+        {
+            "github_id": "nowenL",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Longwen Lu",
+            "emails": ["lulongwen@qiniu.com"]
         },
         {
             "launchpad_id": "npustchi",
@@ -20006,6 +20050,17 @@
             ],
             "user_name": "Samuel Cassiba",
             "emails": ["sam@cassiba.com", "samuel.cassiba@workday.com"]
+        },
+        {
+            "github_id": "scenbuffalo",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rui Xu",
+            "emails": ["xurui@qiniu.com"]
         },
         {
             "github_id": "schneems",
@@ -24298,6 +24353,17 @@
             "emails": ["wanghaoyu@qiniu.com", "whypro@live.cn"]
         },
         {
+            "github_id": "willstudy",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chang Liu",
+            "emails": ["liuchang@qiniu.com", "studywiller@gmail.com"]
+        },
+        {
             "github_id": "windfarer",
             "companies": [
                 {
@@ -24720,6 +24786,17 @@
             ],
             "user_name": "xiaoran.li",
             "emails": ["15901119122@163.com"]
+        },
+        {
+            "github_id": "xiaqunfeng",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Qunfeng Xia",
+            "emails": ["xiaqunfeng@qiniu.com"]
         },
         {
             "launchpad_id": "xing-yang",
