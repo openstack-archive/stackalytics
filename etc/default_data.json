@@ -9285,6 +9285,17 @@
             "emails": ["mao.huachao@99cloud.net", "huachaomao@gmail.com"]
         },
         {
+            "launchpad_id": "huan.xiong",
+            "companies": [
+                {
+                    "company_name": "HXT Semiconductor",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Huan Xiong",
+            "emails": ["huan.xiong@hxt-semitech.com"]
+        },
+        {
             "launchpad_id": "huang-huayong2",
             "companies": [
                 {
@@ -27550,6 +27561,11 @@
             "domains": ["hust.edu.cn"],
             "company_name": "HUST",
             "aliases": ["Huazhong University of Science and Technology", "华中科技大学"]
+        },
+        {
+            "domains": ["hxt-semitech.com"],
+            "company_name": "HXT Semiconductor",
+            "aliases": ["Guizhou HXT Semiconductor Technology Co., Ltd.", "贵州华芯通半导体技术有限公司", "华芯通半导体"]
         },
         {
             "domains": ["hyper.sh"],
