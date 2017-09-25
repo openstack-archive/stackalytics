@@ -1261,6 +1261,10 @@
             "companies":[
                 {
                     "company_name": "DaoCloud",
+                    "end_date": "2017-Aug-28"
+                },
+                {
+                    "company_name": "Alibaba",
                     "end_date": null
                 }
             ],
@@ -3230,6 +3234,17 @@
             ],
             "user_name": "Bruno Semperlotti",
             "emails": ["bruno.semperlotti@gmail.com"]
+        },
+        {
+            "github_id": "bswang",
+            "companies":[
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bingshen Wang",
+            "emails": ["wbs9399@sina.com"]
         },
         {
             "launchpad_id": "btorch",
@@ -5655,6 +5670,17 @@
             ],
             "user_name": "Denny Zhang",
             "emails": ["denny@unitedstack.com", "filebat.mark@gmail.com"]
+        },
+        {
+            "github_id": "denverdino",
+            "companies":[
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Li Yi",
+            "emails": ["denverdino@gmail.com"]
         },
         {
             "launchpad_id": "deray",
@@ -11097,6 +11123,17 @@
             "emails": ["jimmy.mccrory@gmail.com", "jmccrory@walmartlabs.com"]
         },
         {
+            "github_id": "jimmycmh",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jimmy Chen",
+            "emails": ["jimmycmh@gmail.com"]
+        },
+        {
             "launchpad_id": "jing",
             "companies": [
                 {
@@ -11712,6 +11749,17 @@
             "emails": ["zhanglong@gohighsec.com"]
         },
         {
+            "github_id": "jovizhangwei",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xian Wei",
+            "emails": ["xianwei.zw@alibaba-inc.com"]
+        },
+        {
             "launchpad_id": "jpena-c",
             "companies": [
                 {
@@ -12065,6 +12113,17 @@
             ],
             "user_name": "ningwei",
             "emails": ["jxxiaohou331500@yeah.net"]
+        },
+        {
+            "github_id": "jzwlqx",
+            "companies":[
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jizhong Jiang",
+            "emails": ["jiangjizhong@gmail.com"]
         },
         {
             "launchpad_id": "k.makebe",
@@ -24759,6 +24818,17 @@
             "emails": ["zeng.xianghui@zte.com.cn"]
         },
         {
+            "github_id": "xianlubird",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xianlu Chen",
+            "emails": ["xianlubird@gmail.com"]
+        },
+        {
            "launchpad_id": "xiaobo-2",
             "companies": [
                 {
@@ -26972,6 +27042,11 @@
             "domains": ["alchemy.solutions"],
             "company_name": "Alchemy Solutions Group",
             "aliases": ["Alchemy Solutions", "Alchemy Lab"]
+        },
+        {
+            "domains": ["alibaba.com", "alibabacloud.com", "aliyun.com", "taobao.com"],
+            "company_name": "Alibaba",
+            "aliases": ["Alibaba", "Alibaba Group", "Alibaba Group Holding Limited", "Alibaba.com Limited", "Alibaba.com Inc.", "Alibaba Cloud", "阿里云计算有限公司", "阿里云"]
         },
         {
             "domains": ["allegrogroup.com", "allegro.pl"],
