@@ -13378,6 +13378,17 @@
             "emails": ["libing863@fiberhome.com", "libing871202@163.com", "libnwlh@gmail.com"]
         },
         {
+            "launchpad_id": "libosvar",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jakub Libosvar",
+            "emails": ["jlibosva@redhat.com", "libosvar@redhat.com", "jlibosva-redhat@email.cz"]
+        },
+        {
             "launchpad_id": "licayun",
             "companies": [
                 {
