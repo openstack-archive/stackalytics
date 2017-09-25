@@ -27808,6 +27808,10 @@
             "aliases": ["INESA, 上海仪电"]
         },
         {
+            "domains": ["infinidat.com"],
+            "company_name": "INFINIDAT"
+        },
+        {
             "domains": ["infinite.com"],
             "company_name": "Infinite",
             "aliases": ["Infinite Computer Solutions India Ltd"]
