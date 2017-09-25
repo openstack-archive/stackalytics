@@ -12258,6 +12258,17 @@
             "emails": ["kaushik.chand@gmail.com", "kaushik.chandrashekar@rackspace.com"]
         },
         {
+           "launchpad_id": "kazsh",
+           "companies": [
+               {
+                   "company_name": "NTT",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Kazunori Shinohara",
+           "emails": ["kazunori.shinohara@ntt.com", "ksnhr.tech@gmail.com"]
+        },
+        {
             "launchpad_id": "kb-sankethi",
             "companies": [
                 {
@@ -12800,17 +12811,6 @@
             ],
             "user_name": "Kirill Shileev",
             "emails": ["kshileev@cisco.com", "kshileev@griddynamics.com", "kshileev@gmail.com"]
-        },
-        {
-           "launchpad_id": "ksnhr",
-           "companies": [
-               {
-                   "company_name": "NTT",
-                   "end_date": null
-               }
-           ],
-           "user_name": "Kazunori Shinohara",
-           "emails": ["kazunori.shinohara@ntt.com", "ksnhr.tech@gmail.com"]
         },
         {
             "launchpad_id": "kspear",
