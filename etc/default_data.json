@@ -30319,7 +30319,7 @@
         {
             "module": "containerd",
             "organization": "docker",
-            "uri": "https://github.com/docker/containerd.git"
+            "uri": "https://github.com/containerd/containerd.git"
         },
         {
             "module": "docker",
