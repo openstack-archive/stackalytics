@@ -4078,6 +4078,17 @@
             "emails": ["chetan.p@hp.com", "chetan6033@gmail.com", "chetan.p@hpe.com"]
         },
         {
+            "github_id": "cheyang",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "cheyang",
+            "emails": ["cheyang@163.com"]
+        },
+        {
             "github_id": "chhabaramesh",
             "companies": [
                 {
@@ -8798,6 +8809,17 @@
             "emails": ["haoning@awcloud.com"]
         },
         {
+            "github_id": "haoshuwei",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shuwei Hao",
+            "emails": ["haoshuwei24@gmail.com"]
+        },
+        {
             "launchpad_id": "happycamp",
             "companies": [
                 {
@@ -9598,6 +9620,17 @@
             ],
             "user_name": "Jaesang Lee",
             "emails": ["jaesang_lee@sk.com", "hyangii@gmail.com"]
+        },
+        {
+            "github_id": "hyzhou",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Misaka Mikoto",
+            "emails": ["1187766782@qq.com"]
         },
         {
             "launchpad_id": "i-kumagai",
@@ -15348,6 +15381,17 @@
             "emails": ["melwitt@yahoo-inc.com", "melwittt@gmail.com", "melwitt@redhat.com"]
         },
         {
+            "github_id": "menglingwei",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "menglingwei",
+            "emails": ["1741651@qq.com"]
+        },
+        {
             "launchpad_id": "mestery",
             "companies": [
                 {
@@ -18815,6 +18859,17 @@
             "emails": ["riku_kobane@adoc.co.jp"]
         },
         {
+            "github_id": "ringtail",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mo Yuan",
+            "emails": ["zhongwei.lzw@alibaba-inc.com"]
+        },
+        {
             "launchpad_id": "ripal-nathuji",
             "companies": [
                 {
@@ -20461,6 +20516,17 @@
             "emails": ["itzshamail@gmail.com"]
         },
         {
+            "github_id": "shan-yu",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shan Yu",
+            "emails": ["yushan0624@gmail.com"]
+        },
+        {
             "launchpad_id": "shanjj",
             "companies": [
                 {
@@ -21100,6 +21166,17 @@
             "emails": ["sitakanta.hotta@workday.com"]
         },
         {
+            "github_id": "skoo87",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "skoo",
+            "emails": ["marckywu@gmail.com"]
+        },
+        {
             "launchpad_id": "skuicloud",
             "companies": [
                 {
@@ -21482,6 +21559,17 @@
              ],
              "user_name": "Dongfeng Huang",
              "emails": ["yingfeicaozhang100527@gmail.com"]
+        },
+        {
+            "github_id": "spacexnice",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XIE YAOYAO",
+            "emails": ["445436286@qq.com"]
         },
         {
             "launchpad_id": "splork",
@@ -22867,6 +22955,17 @@
             ],
             "user_name": "Tom Swanson",
             "emails": ["tom.swanson@dell.com"]
+        },
+        {
+            "github_id": "toolchainX",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Linhua Tan",
+            "emails": ["toolchainX@gmail.com"]
         },
         {
             "launchpad_id": "toreanderson",
@@ -24502,6 +24601,14 @@
             "companies": [
                 {
                     "company_name": "Zhejiang University",
+                    "end_date": "2016-Mar-30"
+                },
+                {
+                    "company_name": "Qiniu",
+                    "end_date": "2017-Sep-08"
+                },
+                {
+                    "company_name": "Alibaba",
                     "end_date": null
                 }
             ],
@@ -24596,6 +24703,17 @@
             ],
             "user_name": "wrongfan",
             "emails": ["rongfan.wang@gmail.com", "rongfan.wang@plcloud.com"]
+        },
+        {
+            "github_id": "wsxiaozhang",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kai Zhang",
+            "emails": ["wsxiaozhang@gmail.com"]
         },
         {
             "launchpad_id": "wu-yucheng",
@@ -24740,6 +24858,17 @@
             ],
             "user_name": "guanwenxue",
             "emails": ["xgw1989@sina.com","gw.xue@ticomm.cn"]
+        },
+        {
+            "github_id": "xh4n3",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shane Xie",
+            "emails": ["xyn1016@gmail.com"]
         },
         {
             "launchpad_id": "xhkjoe",
@@ -24905,6 +25034,17 @@
             ],
             "user_name": "xiaoran.li",
             "emails": ["15901119122@163.com"]
+        },
+        {
+            "github_id": "xiaozhu36",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "He Guimin",
+            "emails": ["guimin.hgm@alibaba-inc.com"]
         },
         {
             "github_id": "xiaqunfeng",
@@ -25190,6 +25330,17 @@
                 }
             ],
             "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
+        },
+        {
+            "github_id": "yanchanghai",
+            "user_name": "yanchanghai",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "emails": ["danielyanch@hotmail.com"]
         },
         {
             "launchpad_id": "yang-shengming",
@@ -25917,6 +26068,17 @@
             "emails": ["yukky37@gmail.com"]
         },
         {
+            "github_id": "yyb196",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "frankyang",
+            "emails": ["yyb196@gmail.com"]
+        },
+        {
             "launchpad_id": "yyuanyuee",
             "companies": [
               {
@@ -26275,6 +26437,17 @@
             ],
             "user_name": "Zhang Huan",
             "emails": ["zhanghuan@chinac.com"]
+        },
+        {
+            "github_id": "zhanghuanzhong",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "anselm",
+            "emails": ["zhanghuanzhong90@gmail.com"]
         },
         {
             "launchpad_id": "zhangjialong",
