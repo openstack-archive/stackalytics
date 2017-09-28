@@ -5882,6 +5882,17 @@
             "emails": ["dharini.chandrasekar@intel.com", "dhar41092@gmail.com"]
         },
         {
+            "launchpad_id" : "dhillyard",
+            "companies": [
+                {
+                   "company_name": "Verizon Wireless",
+                   "end_date" : null
+                }
+            ],
+            "user_name": "Dave Hillyard",
+            "emails":["david.hillyard@verizonwireless.com"]
+        },
+        {
             "launchpad_id": "diana-clarke",
             "companies": [
                 {
