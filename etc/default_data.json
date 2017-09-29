@@ -12413,6 +12413,17 @@
             "emails": ["ke.wu@nebula.com", "ke.wu@ibeca.me"]
         },
         {
+            "launchpad_id": "ke.king",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "jinke",
+            "emails": ["jin.ke@99cloud.net","1534057243@qq.com"]
+        },
+        {
             "launchpad_id": "kedy",
             "companies": [
                 {
