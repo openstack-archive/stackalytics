@@ -3612,6 +3612,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -4805,6 +4809,17 @@
             ],
             "user_name": "Richard Avelar",
             "emails": ["csravelar@gmail.com"]
+        },
+        {
+            "launchpad_id": "cstacke",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ciara Stacke",
+            "emails": ["Ciara.stacke@emc.com"]
         },
         {
             "launchpad_id": "cthiel-suse",
@@ -14509,6 +14524,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -14949,6 +14968,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -15348,6 +15371,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -17217,6 +17244,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -20612,6 +20643,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -22345,6 +22380,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -23297,6 +23336,17 @@
             "emails": ["ukeshkumar@gmail.com","ukeshkumar.v@hcl.com","ukesh.vasudevan@infinite.com"]
         },
         {
+            "launchpad_id": "unana-okpoyo",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Unana Okpoyo",
+            "emails": ["Unana.Okpoyo@emc.com"]
+        },
+        {
             "launchpad_id": "unmesh-gurjar",
             "companies": [
                 {
@@ -23732,6 +23782,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -25066,6 +25120,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -25733,6 +25791,17 @@
                 "yolanda.robla-mota@hp.com",
                 "yolanda.robla-mota@hpe.com"
             ]
+        },
+        {
+            "launchpad_id": "yonghuang",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yong Huang",
+            "emails": ["yong.huang@emc.com"]
         },
         {
             "launchpad_id": "yongiman",
