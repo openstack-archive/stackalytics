@@ -3878,6 +3878,21 @@
             "emails": ["chen.qiaomin@99cloud.net", "qiaomin032@sina.com", "chenqiaomin@99cloud.net"]
         },
         {
+            "launchpad_id": "chen-xing",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": "2017-Sep-22"
+                },
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chason Chan",
+            "emails": ["chason.chan@foxmail.com"]
+        },
+        {
             "launchpad_id": "chen-xueying1",
             "companies": [
                 {
