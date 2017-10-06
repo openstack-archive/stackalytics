@@ -9964,17 +9964,6 @@
             "emails": ["indicoliteplus@gmail.com", "ccyu@fiberhome.com"]
         },
         {
-            "launchpad_id": "inesa-liuchao",
-            "companies": [
-                {
-                    "company_name": "inesa",
-                    "end_date": null
-                }
-            ],
-            "user_name": "chao liu",
-            "emails": ["liuc@rc.inesa.com"]
-        },
-        {
             "launchpad_id": "int32bit",
             "github_id": "int32bit",
             "companies": [
@@ -13883,6 +13872,17 @@
             ],
             "user_name": "LiuYong",
             "emails": ["liu.yong8@zte.com.cn"]
+        },
+        {
+            "launchpad_id": "liuchao",
+            "companies": [
+                {
+                    "company_name": "inesa",
+                    "end_date": null
+                }
+            ],
+            "user_name": "chao liu",
+            "emails": ["liuc@rc.inesa.com"]
         },
         {
             "launchpad_id": "liudong78",
