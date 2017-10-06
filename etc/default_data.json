@@ -22134,6 +22134,18 @@
             "emails": ["sunanchen0122@gmail.com", "kf.sunanchen@h3c.com", "506067684@qq.com"]
         },
         {
+            "launchpad_id": "sungil",
+            "github_id": "intelliguy",
+            "companies": [
+                {
+                    "company_name": "SK telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sungil Im",
+            "emails": ["usnexp@gmail.com", "si.im@sk.com"]
+        },
+        {
             "launchpad_id": "sungjin",
             "zanata_id": "ujuc",
             "companies": [
