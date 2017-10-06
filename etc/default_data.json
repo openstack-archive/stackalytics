@@ -14101,6 +14101,18 @@
             "emails": ["logan@bacoosta.com"]
         },
         {
+            "launchpad_id": "loic-nicolle",
+            "zanata_id": "lnic",
+            "companies": [
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Loic Nicolle",
+            "emails": ["loic.nicolle@orange.com"]
+        },
+        {
             "launchpad_id": "lokesh-s",
             "companies": [
                 {
