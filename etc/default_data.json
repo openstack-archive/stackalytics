@@ -11726,6 +11726,17 @@
             "emails": ["jordan.pittier-ext@cloudwatt.com", "jordan.pittier@gmail.com", "jordan.pittier@cloudwatt.com", "jordan.pittier@scality.com"]
         },
         {
+            "launchpad_id": "jordan.dao",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jordan Dao",
+            "emails": ["jordan.dao@verizonwireless.com"]
+        },
+        {
             "launchpad_id": "jose-eduardo-jr",
             "zanata_id": "josemello",
             "companies": [
