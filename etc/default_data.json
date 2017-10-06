@@ -22525,6 +22525,17 @@
             "emails": ["tangmeiyan77@gmail.com", "xichao.liu@kylin-cloud.com"]
         },
         {
+            "launchpad_id": "tankanen",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+             ],
+             "user_name": "tankanen",
+             "emails": ["enoch.nkansah@verizonwireless.com", "etannor@gmail.com"]
+        },
+        {
             "launchpad_id": "tara-y",
             "companies": [
                 {
