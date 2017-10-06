@@ -1658,6 +1658,17 @@
             "user_name": "Alexander Nikitenkov",
             "emails": ["ainikitenkov@gmail.com", "anikitenkov@hystax.com"]
         },
+{
+            "launchpad_id": "anilkumarthovi",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "anilkumarthovi",
+            "emails": ["anilkumar.thovi@cognizant.com"]
+        },
         {
             "launchpad_id": "anindita-das",
             "companies": [
