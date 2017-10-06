@@ -12230,6 +12230,17 @@
             "emails": ["kaifeng.w@gmail.com", "wang.kaifeng2@zte.com.cn"]
         },
         {
+            "github_id": "kaijun",
+            "companies": [
+                {
+                    "company_name": "Qiniu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kaijun Chen",
+            "emails": ["chenkaijun@qiniu.com", "Demonbane.cn@gmail.com"]
+        },
+        {
             "launchpad_id": "kaiyan-sheng",
             "companies": [
                 {
