@@ -8861,6 +8861,18 @@
             "emails": ["haoning@awcloud.com"]
         },
         {
+            "launchpad_id": "haoqingchuan-28",
+            "github_id": "mainred",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Qingchuan Hao",
+            "emails": ["haoqingchuan@hotmail.com", "haoqingchuan@caicloud.io"]
+        },
+        {
             "github_id": "haoshuwei",
             "companies": [
                 {
