@@ -3677,6 +3677,19 @@
             "emails": ["matt.dietz@rackspace.com", "matthew.dietz@gmail.com", "matthewdietz@matthew-dietzs-macbook-pro.local"]
         },
         {
+            "launchpad_id": "cerny01",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craig Cerny",
+            "emails": [
+                "craig.cerny@verizonwireless.com"
+            ]
+        },
+        {
             "launchpad_id": "cgoncalves",
             "companies": [
                 {
