@@ -25231,6 +25231,17 @@
             "emails": ["15901119122@163.com"]
         },
         {
+            "launchpad_id": "xiaoxu790",
+            "companies": [
+                {
+                    "company_name": "timanetworks",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xiaoxu790",
+            "emails": ["chao.xu@timanetworks.com"]
+        },
+        {
             "github_id": "xiaozhu36",
             "companies": [
                 {
@@ -29035,6 +29046,11 @@
         {
             "domains": ["tigera.io"],
             "company_name": "Tigera"
+        },
+        {
+            "domains": ["timanetworks.com"],
+            "company_name": "timanetworks",
+            "aliases": ["钛马信息网络技术有限公司"]
         },
         {
             "domains": ["timewarnercable.com"],
