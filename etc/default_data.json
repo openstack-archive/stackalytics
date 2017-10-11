@@ -9235,6 +9235,18 @@
             "emails": ["h452577895@126.com", "hejiawei@hnu.edu.cn"]
         },
         {
+            "launchpad_id": "hkotak",
+            "github_id": "harsh-kotak",
+            "companies": [
+                {
+                    "company_name": "Charter",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Harsh Kotak",
+            "emails": ["c-harsh.kotak@charter.com", "harsh.kotak9@gmail.com", "harsh.kotak@charter.com"]
+        },
+        {
             "launchpad_id": "hmunfru",
             "companies": [
                 {
