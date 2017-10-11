@@ -14304,6 +14304,22 @@
             "emails": ["lorin@isi.edu", "lorin@nimbisservices.com"]
         },
         {
+            "launchpad_id": "lr699s",
+            "github_id": "larryrensing",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": "2017-Aug-22"
+                },
+                {
+                    "company_name": "Charter",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Larry Rensing",
+            "emails": ["larry.rensing@charter.com", "lr699s@att.com"]
+        },
+        {
             "launchpad_id": "lseki",
             "companies": [
                 {
