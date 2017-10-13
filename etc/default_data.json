@@ -13737,6 +13737,17 @@
             "emails": ["jh1229965510@163.com", "lijinghong@hnu.edu.cn"]
         },
         {
+            "launchpad_id": "lijinhui",
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lijinhui",
+            "emails": ["jinhui23.li@gmail.com"]
+        },
+        {
             "launchpad_id": "limeng",
             "companies": [
                 {
