@@ -26726,6 +26726,17 @@
             "emails": ["zhangyanying@inspur.com" ]
         },
         {
+            "launchpad_id": "zhangyifan",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangyifan",
+            "emails": ["zhangyifan@fiberhome.com" ]
+        },
+        {
             "launchpad_id": "zhangyongqian",
             "companies": [
                 {
