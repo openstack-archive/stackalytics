@@ -14401,6 +14401,18 @@
             "emails": ["lilu7189@fiberhome.com"]
         },
         {
+            "launchpad_id": "lukepatrick",
+            "github_id": "lukepatrick",
+            "companies": [
+                {
+                    "company_name": "Charter",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Luke Philips",
+            "emails": ["lukephilips@gmail.com"]
+        },
+        {
             "github_id": "lutaoact",
             "companies": [
                 {
