@@ -21929,6 +21929,17 @@
             "emails": ["stendulker@gmail.com"]
         },
         {
+            "launchpad_id": "stenioaraujo",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Stenio Araujo",
+            "emails": ["stenioaraujo@lsd.ufcg.edu.br", "stenio.araujo@ccc.ufcg.edu.br", "contato@stenioelson.com.br"]
+        },
+        {
             "launchpad_id": "stephaneeee",
             "companies": [
                 {
