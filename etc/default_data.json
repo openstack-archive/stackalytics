@@ -17030,6 +17030,17 @@
             "emails": ["zhangyf@rc.inesa.com", "zhang.yufei@99cloud.net", "1004988384@qq.com"]
         },
         {
+            "launchpad_id": "oddzeng",
+            "companies": [
+                {
+                    "company_name": "SZZT electronics",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yoyang Zeng",
+            "emails": ["yo.zed@qq.com"]
+        },
+        {
             "launchpad_id": "ogazitt",
             "companies": [
                 {
@@ -21070,6 +21081,17 @@
             "emails": ["solomon@docker.com"]
         },
         {
+            "launchpad_id": "shzhzichen",
+            "companies": [
+                {
+                    "company_name": "SZZT electronics",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chen Yaguang",
+            "emails": ["chenyaguang@szzt.com.cn"]
+        },
+        {
             "launchpad_id": "sibaoli",
             "companies": [
                 {
@@ -21609,6 +21631,17 @@
             ],
             "user_name": "SongRuixia",
             "emails": ["song.ruixia@zte.com.cn"]
+        },
+        {
+            "launchpad_id": "song1",
+            "companies": [
+                {
+                    "company_name": "SZZT electronics",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Song Baisen",
+            "emails": ["songbaisen@szzt.com.cn"]
         },
         {
             "launchpad_id": "songhao-devops",
@@ -26713,6 +26746,17 @@
             ],
             "user_name": "Trump.Zhang",
             "emails": ["zhangleiqiang@gmail.com", "zhangleiqiang@huawei.com"]
+        },
+        {
+            "launchpad_id": "zhangxh502",
+            "companies": [
+                {
+                    "company_name": "SZZT electronics",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangxiaohan",
+            "emails": ["zmj1981123@163.com"]
         },
         {
             "launchpad_id": "zhangyanying",
