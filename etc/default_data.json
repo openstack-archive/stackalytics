@@ -8710,6 +8710,17 @@
             "emails": ["guslees@gmail.com", "angus.lees@rackspace.com"]
         },
         {
+            "launchpad_id": "gustavomonteiro",
+            "companies": [
+                {
+                    "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gustavo Diniz Monteiro",
+            "emails": ["gustavomonteiro@lsd.ufcg.edu.br", "dinizmonteirogustavo@gmail.com", "gustavo.monteiro@ccc.ufcg.edu.br"]
+        },
+        {
             "launchpad_id": "guy-kim088",
             "companies": [
                 {
