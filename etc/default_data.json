@@ -23645,6 +23645,18 @@
             "emails": ["v.mikes@tcpcloud.eu", "vlastimil.mikes@tcpcloud.eu"]
         },
         {
+            "launchpad_id": "vabada",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "vabada",
+            "github_id": "vabada",
+            "emails": ["d.abad@cern.ch"]
+        },
+        {
             "launchpad_id": "vaidyanath-m",
             "companies": [
                 {
