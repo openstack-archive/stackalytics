@@ -23470,6 +23470,17 @@
             "emails": ["t.trifonov@gmail.com"]
         },
         {
+            "launchpad_id": "ttsiouts",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Theodoros Tsioutsias",
+            "emails": ["t.tsioutsias@gmail.com", "theodoros.tsioutsias@cern.ch"]
+        },
+        {
             "launchpad_id": "ttx",
             "companies": [
                 {
