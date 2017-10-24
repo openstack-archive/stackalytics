@@ -23444,6 +23444,19 @@
             "emails": [ "trygve.vea@gmail.com" ]
         },
         {
+            "launchpad_id": "tssurya",
+            "companies": [
+                {
+                    "company_name": "CERN",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Surya Seetharaman",
+            "emails": [
+                "suryaseetharaman.9@gmail.com", "surya.seetharaman@cern.ch"
+            ]
+        },
+        {
             "launchpad_id": "tteggel",
             "companies": [
                 {
