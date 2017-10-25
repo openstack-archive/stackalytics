@@ -27154,6 +27154,17 @@
             "emails": ["zhiteng.huang@intel.com", "zhithuang@ebaysf.com", "winston.d@gmail.com"]
         },
         {
+        "launchpad_id": "zhk-mjx",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhanghuaikai",
+            "emails": ["zhanghuaikai@fiberhome.com"]
+        },
+        {
             "launchpad_id": "zhouhan",
             "companies": [
                 {
