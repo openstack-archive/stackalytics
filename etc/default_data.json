@@ -4365,6 +4365,17 @@
             "emails": ["ck.khullar@gmail.com"]
         },
         {
+            "launchpad_id": "ckonstanski",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Carlos Konstanski",
+            "emails": ["ckonstanski@pippiandcarlos.com", "carlos.konstanski@verizonwireless.com"]
+        },
+        {
             "launchpad_id": "claire921",
             "companies": [
                 {
