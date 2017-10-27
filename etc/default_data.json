@@ -17342,6 +17342,10 @@
             "companies": [
                 {
                     "company_name": "EasyStack",
+                    "end_date": "2017-Oct-27"
+                },
+                {
+                    "company_name": "Chinac",
                     "end_date": null
                 }
             ],
