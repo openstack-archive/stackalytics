@@ -19605,6 +19605,17 @@
             "emails": ["ronald.bradford@gmail.com", "me@ronaldbradford.com"]
         },
         {
+            "launchpad_id": "rony.sun",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sunluning",
+            "emails": ["sunluning@t2cloud.net"]
+        },
+        {
             "launchpad_id": "rossella-o",
             "companies": [
                 {
