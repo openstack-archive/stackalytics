@@ -15392,6 +15392,17 @@
             "emails": ["mayank.kumar@hp.com", "mayank0107@yahoo.co.in", "mayank.kumar@hpe.com"]
         },
         {
+            "launchpad_id": "mazengxie",
+            "companies": [
+                {
+                    "company_name": "China Telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zachary Ma",
+            "emails": ["mazengx@chinatelecom.cn", "mazengxie@126.com"]
+        },
+        {
             "launchpad_id": "mbonell",
             "companies": [
                 {
@@ -27892,6 +27903,10 @@
             "domains": ["chinanetcenter.com"],
             "company_name": "ChinaNetCenter",
             "aliases": ["ChinaNetCenter Cloud", "ChinaNetCenter CDN", "ChinaNetCenter IDC", "China Cache", "ChinaNetCenter USA"]
+        },
+        {
+            "domains": ["chinatelecom.cn"],
+            "company_name": "China Telecom"
         },
         {
             "domains": ["chinaunicom.cn"],
