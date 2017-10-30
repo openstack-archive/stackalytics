@@ -24259,6 +24259,17 @@
             "emails": ["vladik.romanovsky@enovance.com", "vromanso@redhat.com"]
         },
         {
+            "launchpad_id": "vladimare",
+            "companies": [
+                {
+                    "company_name": "Samsung",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vladimir Kuramshin",
+            "emails": ["v.kuramshin@samsung.com"]
+        },
+        {
             "launchpad_id": "vmbrasseur",
             "companies": [
                 {
