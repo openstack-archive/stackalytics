@@ -14748,6 +14748,21 @@
             "emails": ["maheshkumar.pandurangan@hp.com", "maheshkumar.pandurangan@hpe.com"]
         },
         {
+            "launchpad_id": "mail2nadeem92",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2017-Oct-28"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "mail2nadeem92",
+            "emails": ["mail2nadeem92@gmail.com", "mnadeem@redhat.com", "md.nadeem@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "majklkcz",
             "companies": [
                 {
