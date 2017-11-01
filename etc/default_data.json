@@ -8626,11 +8626,15 @@
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
-                    "end_date": null
+                    "end_date": "2016-Dec-30"
+                },
+                {
+                     "company_name": "Cloudin",
+                     "end_date": null
                 }
             ],
             "user_name": "guanzy2016",
-            "emails": ["guan.zuoyu@zte.com.cn"]
+            "emails": ["guanzuoyu@cloudin.kmail.com", "guanzuoyudev@gmail.com"]
         },
         {
             "launchpad_id": "guduru-sirisha",
