@@ -3969,11 +3969,15 @@
             "companies": [
                 {
                     "company_name": "Awcloud",
+                    "end_date": "2017-Apr-01"
+                },
+                {
+                    "company_name": "Cloudin",
                     "end_date": null
                 }
             ],
             "user_name": "chengyang",
-            "emails": ["chengyang@awcloud.com"]
+            "emails": ["374519141@qq.com"]
         },
         {
             "launchpad_id": "chenh1987",
