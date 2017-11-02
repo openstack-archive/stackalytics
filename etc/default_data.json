@@ -24106,6 +24106,17 @@
             "emails": ["vincent.casse@ovh.net", "vincent@casse.me"]
         },
         {
+            "launchpad_id": "vincent.jia",
+            "companies": [
+                {
+                    "company_name": "HFBank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yongpeng",
+            "emails": ["jiayongpeng@gmail.com"]
+        },
+        {
             "launchpad_id": "vinita",
             "companies": [
                 {
