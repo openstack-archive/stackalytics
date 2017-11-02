@@ -308,7 +308,7 @@ def make_commit_message(record):
                r'\1<a href="https://bugs.launchpad.net/bugs/\2" '
                r'class="ext_link">\2</a>', s)
     s = re.sub(r'\s+(I[0-9a-f]{40})',
-               r' <a href="https://review.openstack.org/#q,\1,n,z" '
+               r' <a href="https://review.openstack.org/#/q/\1" '
                r'class="ext_link">\1</a>', s)
 
     s = utils.unwrap_text(s)
