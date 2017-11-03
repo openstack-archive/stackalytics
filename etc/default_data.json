@@ -21163,6 +21163,17 @@
             "emails": ["sshen@siaras.com", "shu.shen@gmail.com"]
         },
         {
+            "launchpad_id": "shuangyang.qian",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shuangyang.qian",
+            "emails": ["shuangyang.qian@easystack.cn"]
+        },
+        {
             "launchpad_id": "shuichiro-makigaki",
             "companies": [
                 {
