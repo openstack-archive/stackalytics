@@ -16689,6 +16689,17 @@
             "emails": ["nerminamiller@gmail.com"]
         },
         {
+            "launchpad_id": "neteric",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangchao",
+            "emails": ["net.eric.zhang@gmail.com", "zhang.chao@99cloud.net"]
+        },
+        {
             "launchpad_id": "newgoliath",
             "companies": [
                 {
