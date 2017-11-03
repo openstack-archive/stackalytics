@@ -2882,6 +2882,7 @@
         },
         {
             "launchpad_id": "blkart",
+            "zanata_id": "blkart",
             "companies": [
                 {
                     "company_name": "Eayun",
