@@ -7797,12 +7797,24 @@
             "github_id": "frodenas",
             "companies": [
                 {
+                    "company_name": "VMware",
+                    "end_date": "2013-May-31"
+                },
+                {
                     "company_name": "Pivotal",
+                    "end_date": "2016-Jul-22"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2017-Oct-29"
+                },
+                {
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
             "user_name": "Ferran Rodenas",
-            "emails": ["frodenas@gmail.com"]
+            "emails": ["frodenas@gmail.com", "rodenasf@vmware.com", "frodenas@pivotal.io"]
         },
         {
             "launchpad_id": "fsbiz",
