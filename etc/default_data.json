@@ -13904,6 +13904,17 @@
             "emails": ["andrew@linuxjedi.co.uk"]
         },
         {
+            "launchpad_id": "lioncruise",
+            "companies": [
+                {
+                    "company_name": "ISCAS",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shijun Qin",
+            "emails": ["272700767@qq.com", "qinshijun16@otcaix.iscas.ac.cn", "qinshijun16@mails.ucas.ac.cn"]
+        },
+        {
             "launchpad_id": "lioplhp",
             "companies": [
                 {
@@ -28635,7 +28646,7 @@
         {
             "domains": ["iscas.ac.cn"],
             "company_name": "ISCAS",
-            "aliases": ["Institute of Software Chinese Academy of Sciences", "中国科学院软件研究所", "中科院软件所"]
+            "aliases": ["Institute of Software, Chinese Academy of Sciences", "中国科学院软件研究所", "中科院软件所"]
         },
         {
             "domains": ["isi.edu"],
