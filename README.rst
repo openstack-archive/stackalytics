@@ -55,5 +55,5 @@ Project Info
  * Launchpad: https://launchpad.net/stackalytics
  * Blueprints: https://blueprints.launchpad.net/stackalytics
  * Bugs: https://bugs.launchpad.net/stackalytics
- * Code Reviews: https://review.openstack.org/#q,status:open+project:openstack/stackalytics,n,z
+ * Code Reviews: https://review.openstack.org/#/q/status:open+project:openstack/stackalytics,n,z
  * IRC: #openstack-stackalytics at freenode
