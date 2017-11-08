@@ -13684,6 +13684,17 @@
             "emails": ["licayun@hotmail.com"]
         },
         {
+            "launchpad_id": "lichaolei",
+            "companies": [
+                {
+                    "company_name": "Cloudin",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chaolei Li",
+            "emails": ["chaoleili2@gmail.com", "lichaolei@cloudin.kmail.com"]
+        },
+        {
             "launchpad_id": "lichl",
             "companies": [
                 {
