@@ -10094,6 +10094,10 @@
             "companies": [
                 {
                     "company_name": "PoleX",
+                    "end_date": "2017-Oct-10"
+                },
+                {
+                    "company_name": "CMBC",
                     "end_date": null
                 }
             ],
@@ -28153,6 +28157,11 @@
         {
             "domains": ["cloudwatt.com"],
             "company_name": "Cloudwatt"
+        },
+        {
+            "domains": ["cmbc.com.cn"],
+            "company_name": "CMBC",
+            "aliases": ["China Minsheng Bank"]
         },
         {
             "domains": ["codethink.co.uk"],
