@@ -24793,6 +24793,17 @@
             "emails": ["wangxu17@lenovo.com", "wx6899923@163.com"]
         },
         {
+            "launchpad_id": "wangyao",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yao Wang",
+            "emails": ["wangyao@cmss.chinamobile.com"]
+        },
+        {
             "launchpad_id": "wangye-s",
             "companies": [
                 {
