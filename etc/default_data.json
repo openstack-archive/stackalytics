@@ -25882,6 +25882,17 @@
             "emails": ["wangy@rc.inesa.com"]
         },
         {
+            "launchpad_id": "yangling",
+            "user_name": "yangling",
+            "companies": [
+                {
+                    "company_name": "HFBank",
+                    "end_date": null
+                }
+            ],
+            "emails": ["1594282932@qq.com"]
+        },
+        {
             "launchpad_id": "yangwanli",
             "companies": [
                 {
