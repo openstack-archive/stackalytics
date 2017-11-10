@@ -3699,11 +3699,15 @@
                 },
                 {
                     "company_name": "NEC",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Carlos Goncalves",
-            "emails": ["mail@cgoncalves.pt", "carlos.goncalves@neclab.eu", "cgoncalves@av.it.pt"]
+            "emails": ["mail@cgoncalves.pt", "cgoncalves@redhat.com", "carlos.goncalves@neclab.eu", "cgoncalves@av.it.pt"]
         },
         {
             "launchpad_id": "chad-lung",
