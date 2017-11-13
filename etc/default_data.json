@@ -21209,6 +21209,17 @@
             "emails": ["sshen@siaras.com", "shu.shen@gmail.com"]
         },
         {
+            "launchpad_id": "shuaili.wang",
+            "companies": [
+                {
+                    "company_name": "EasyStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shuaili.wang",
+            "emails": ["shuaili.wang@easystack.cn"]
+        },
+        {
             "launchpad_id": "shuangyang.qian",
             "companies": [
                 {
