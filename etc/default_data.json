@@ -7287,16 +7287,17 @@
                     "end_date": "2016-Feb-29"
                 },
                 {
-                    "company_name": "Juniper Networks",
+                    "company_name": "Juniper",
                     "end_date": null
                 }
             ],
             "user_name": "\u00c9douard Thuleau",
             "emails": [
-                "edouard.thuleau@orange.com",
                 "thuleau@gmail.com",
-                "edouard.thuleau@cloudwatt.com",
+                "edouard.thuleau@gmail.com",
+                "edouard.thuleau@orange.com",
                 "edouard1.thuleau@orange.com",
+                "edouard.thuleau@cloudwatt.com",
                 "ethuleau@juniper.net"
             ]
         },
