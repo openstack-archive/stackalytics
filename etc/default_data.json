@@ -17247,7 +17247,7 @@
             "launchpad_id": "oddzeng",
             "companies": [
                 {
-                    "company_name": "SZZT electronics",
+                    "company_name": "SZZT Electronics.",
                     "end_date": null
                 }
             ],
@@ -21335,7 +21335,7 @@
             "launchpad_id": "shzhzichen",
             "companies": [
                 {
-                    "company_name": "SZZT electronics",
+                    "company_name": "SZZT Electronics.",
                     "end_date": null
                 }
             ],
@@ -21895,7 +21895,7 @@
             "launchpad_id": "song1",
             "companies": [
                 {
-                    "company_name": "SZZT electronics",
+                    "company_name": "SZZT Electronics.",
                     "end_date": null
                 }
             ],
@@ -22884,6 +22884,17 @@
             ],
             "user_name": "tinytmy",
             "emails": ["tangmeiyan77@gmail.com", "xichao.liu@kylin-cloud.com"]
+        },
+        {
+            "launchpad_id": "tangzhuo",
+            "companies": [
+                {
+                    "company_name": "SZZT Electronics.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "tangzhuo",
+            "emails": ["tangzhuo@szzt.com.cn"]
         },
         {
             "launchpad_id": "tankanen",
@@ -27105,7 +27116,7 @@
             "launchpad_id": "zhangxh502",
             "companies": [
                 {
-                    "company_name": "SZZT electronics",
+                    "company_name": "SZZT Electronics.",
                     "end_date": null
                 }
             ],
@@ -29421,7 +29432,7 @@
         },
         {
             "domains": ["szzt.com.cn"],
-            "company_name": "SZZT electronics",
+            "company_name": "SZZT Electronics.",
             "aliases": ["SZZT", "深圳市证通电子股份有限公司"]
         },
         {
