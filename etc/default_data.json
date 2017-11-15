@@ -27905,7 +27905,8 @@
         },
         {
             "domains": ["alauda.io"],
-            "company_name": "Alauda"
+            "company_name": "Alauda",
+            "aliases": ["灵雀云", "Alauda, Inc.", "Alauda.io"]
         },
         {
             "domains": ["alcatel-lucent.com"],
