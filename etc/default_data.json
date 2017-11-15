@@ -4360,6 +4360,18 @@
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
         },
         {
+            "launchpad_id": "cimomo",
+            "github_id": "cimomo",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kai Chen",
+            "emails": ["kaichen@outlook.com", "kaichen@alauda.io"]
+        },
+        {
             "launchpad_id": "cissy.liu",
             "companies": [
                 {
@@ -27890,6 +27902,10 @@
         {
             "domains": ["akanda.io"],
             "company_name": "Akanda"
+        },
+        {
+            "domains": ["alauda.io"],
+            "company_name": "Alauda"
         },
         {
             "domains": ["alcatel-lucent.com"],
