@@ -11270,6 +11270,15 @@
             "emails": ["jiangpch@gohighsec.com", "jiangpengcheng@navercorp.com"]
         },
         {
+            "launchpad_id": "jiangpf",
+            "companies": [{
+                "company_name": "H3C",
+                "end_date": null
+            }],
+            "user_name":"Jiang Pengfei",
+            "emails":["jiang.pengfei@h3c.com","jiangpf1992@outlook.com"]
+        },
+        {
             "launchpad_id": "jiangwt100",
             "companies": [
                 {
