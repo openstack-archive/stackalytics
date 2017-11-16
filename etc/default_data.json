@@ -19615,11 +19615,11 @@
                 },
                 {
                     "company_name": "Red Hat",
-                    "end_date": null
+                    "end_date": "2017-Jun-15"
                 }
             ],
             "user_name": "Rodrigo Duarte",
-            "emails": ["rodrigods@lsd.ufcg.edu.br", "rodrigodsousa@gmail.com", "rduartes@redhat.com"]
+            "emails": ["rodrigods@lsd.ufcg.edu.br", "rodrigodsousa@gmail.com", "rduartes@redhat.com", "rodrigo@waltznetworks.com"]
         },
         {
             "launchpad_id": "roeyc",
