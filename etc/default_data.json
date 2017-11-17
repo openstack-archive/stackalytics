@@ -17295,6 +17295,17 @@
             "emails": ["ogazitt@gmail.com", "omri.gazitt@hp.com", "omri.gazitt@hpe.com"]
         },
         {
+            "github_id": "oilbeater",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mengxin Liu",
+            "emails": ["liumengxinfly@gmail.com", "mengxin@alauda.io"]
+        },
+        {
             "launchpad_id": "oleksandr-minakov",
             "companies": [
                 {
