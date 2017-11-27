@@ -23434,6 +23434,17 @@
             "emails": ["tbechtold@suse.com", "t.bechtold@telekom.de", "thomasbechtold@jpberlin.de"]
         },
         {
+            "launchpad_id": "tobixen",
+            "companies": [
+                {
+                    "company_name": "Redpill Linpro",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tobias Brox",
+            "emails": [ "tobixen@gmail.com", "tobias@redpill-linpro.com" ]
+        },
+        {
             "launchpad_id": "toddmorey",
             "companies": [
                 {
