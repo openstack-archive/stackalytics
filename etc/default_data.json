@@ -7501,6 +7501,17 @@
              "emails": ["frank_openstack@163.com"]
         },
         {
+            "launchpad_id": "fanyujie",
+            "companies": [
+                {
+                    "company_name": "HFBank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yunxiaoxi",
+            "emails": ["582930393@qq.com"]
+        },
+        {
             "launchpad_id": "fanzhang",
             "companies": [
                 {
