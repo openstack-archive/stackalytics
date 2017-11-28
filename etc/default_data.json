@@ -12950,6 +12950,21 @@
             "emails": ["chenrui.momo@gmail.com", "kiwik.chenrui@huawei.com"]
         },
         {
+            "launchpad_id": "kjnelson",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2016-Aug-19"
+                },
+                {
+                    "company_name": "OpenStack Foundation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kendall Nelson",
+            "emails": ["knelson@openstack.org", "kennelson11@gmail.com"]
+        },
+        {
             "launchpad_id": "kkalynovskyi",
             "companies": [
                 {
