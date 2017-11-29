@@ -24902,6 +24902,17 @@
             "emails": ["wangxf@awcloud.com", "xiaofeix.wang@gmail.com"]
         },
         {
+            "launchpad_id": "wangxiaocong",
+            "companies": [
+                {
+                    "company_name": "HFBank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangxiaocong",
+            "emails": ["wangcong202@163.com"]
+        },
+        {
             "launchpad_id": "wangxiyuan",
             "companies": [
                 {
