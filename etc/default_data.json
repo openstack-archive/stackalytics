@@ -4916,6 +4916,17 @@
             "emails": ["Ciara.stacke@emc.com"]
         },
         {
+            "launchpad_id": "cstone-0",
+            "companies": [
+                {
+                    "company_name": "Blizzard Entertainment",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Christopher Stone",
+            "emails": ["cstone@blizzard.com", "cstone2101@gmail.com"]
+        },
+        {
             "launchpad_id": "cthiel-suse",
             "companies": [
                 {
