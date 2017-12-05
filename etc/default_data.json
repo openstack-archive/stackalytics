@@ -15846,11 +15846,15 @@
                 },
                 {
                     "company_name": "Nokia",
+                    "end_date": "2017-Nov-30"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Mike Fedosin",
-            "emails": ["mfedosin@gmail.com", "mikhail.fedosin.ext@nokia.com", "mfedosin@mirantis.com"]
+            "emails": ["mfedosin@gmail.com", "mfedosin@redhat.com", "mikhail.fedosin.ext@nokia.com", "mfedosin@mirantis.com"]
         },
         {
             "launchpad_id": "mfeoktistov",
