@@ -22513,6 +22513,17 @@
             "emails": ["subramanian.neelakantan@gmail.com"]
         },
         {
+            "launchpad_id": "sue.sam",
+            "companies": [
+                {
+                    "company_name": "Chinac",
+                    "end_date": null
+                }
+            ],
+            "user_name": "suzhengwei",
+            "emails": ["sugar-2008@163.com", "suzhengwei@chinac.com"]
+        },
+        {
             "launchpad_id": "sujitha-neti",
             "companies": [
                 {
@@ -22687,17 +22698,6 @@
             ],
             "user_name": "Sushil Kumar",
             "emails": ["skm.net@gmail.com", "sushil.kumar3@hp.com", "sushil.kumar3@hpe.com"]
-        },
-        {
-            "launchpad_id": "suzhengwei",
-            "companies": [
-                {
-                    "company_name": "Chinac",
-                    "end_date": null
-                }
-            ],
-            "user_name": "suzhengwei",
-            "emails": ["sugar-2008@163.com", "suzhengwei@chinac.com"]
         },
         {
             "launchpad_id": "svendowideit",
