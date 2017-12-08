@@ -925,6 +925,21 @@
             "emails": ["akhivin@mirantis.com", "akhivin@gmail.com"]
         },
         {
+            "launchpad_id": "akholkin",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Dec-08"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aleksandr Kholkin",
+            "emails": ["akholkin@mirantis.com", "alexmangt540@gmail.com"]
+        },
+        {
              "launchpad_id": "akilan-pughazhendi",
              "companies": [
                  {
