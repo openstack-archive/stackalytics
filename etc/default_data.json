@@ -11497,6 +11497,17 @@
             "emails": ["joe.keen@hp.com", "joe.keen@hpe.com"]
         },
         {
+            "launchpad_id": "jlwhittyos",
+            "companies": [
+                {
+                    "company_name": "Verizon Wireless",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jennifer Whitty",
+            "emails": ["jlwhittyos@gmail.com"]
+        },
+        {
             "launchpad_id": "jmckind",
             "companies": [
                 {
