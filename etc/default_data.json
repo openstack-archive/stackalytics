@@ -18342,11 +18342,15 @@
             "companies": [
                 {
                     "company_name": "Infinite",
+                    "end_date": "2017-Nov-03"
+                },
+                {
+                    "company_name": "Dell EMC",
                     "end_date": null
                 }
             ],
             "user_name": "praveen",
-            "emails": ["npraveen35@gmail.com", "praveen.nagegowda@infinite.com"]
+            "emails": ["npraveen35@gmail.com", "Nagegowda.Praveen@emc.com"]
         },
         {
             "launchpad_id": "prdsilva",
