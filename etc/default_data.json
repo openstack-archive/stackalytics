@@ -7352,6 +7352,20 @@
             ]
         },
         {
+            "launchpad_id": "etingof",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ilya Etingof",
+            "emails": [
+                "etingof@gmail.com",
+                "ietingof@redhat.com"
+            ]
+        },
+        {
             "launchpad_id": "ettore-simone",
             "companies": [
                 {
