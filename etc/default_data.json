@@ -22898,6 +22898,17 @@
             "emails": ["zhihai.song@easystack.cn", "szhsong@cn.ibm.com", "zhhsng@gmail.com"]
         },
         {
+            "launchpad_id": "tadas-u",
+            "companies": [
+                {
+                    "company_name": "Vilnius University",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tadas Ustinavičius",
+            "emails": ["tadas@ring.lt"]
+        },
+        {
             "launchpad_id": "taget-9",
             "companies": [
                 {
@@ -29804,6 +29815,10 @@
             "company_name": "VMware",
             "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture",
               "VMware Software"]
+        },
+        {
+            "domains": ["vu.lt"],
+            "company_name": "Vilnius University"
         },
         {
             "domains": ["walmart.com", "walmartlabs.com"],
