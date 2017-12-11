@@ -6597,11 +6597,15 @@
             "companies": [
                 {
                     "company_name": "Cray",
+                    "end_date": "2017-Sep-15"
+                },
+                {
+                    "company_name": "StackHPC",
                     "end_date": null
                 }
             ],
             "user_name": "Doug Szumski",
-            "emails": ["dszumski@cray.com"]
+            "emails": ["dszumski@cray.com", "doug@stackhpc.com", "d.s.szumski@gmail.com"]
         },
         {
             "launchpad_id": "dtroyer",
