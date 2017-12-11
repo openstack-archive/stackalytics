@@ -20940,6 +20940,21 @@
             "emails": ["ahnsk@sk.com", "seungkyua@gmail.com"]
         },
         {
+            "launchpad_id": "sgolovatiuk",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Oct-13"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergii Golovatiuk",
+            "emails": ["sgolovatiuk@mirantis.com", "holser@gmail.com", "sgolovat@redhat.com"]
+        },
+        {
             "launchpad_id": "shakhat",
             "companies": [
                 {
