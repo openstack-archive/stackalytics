@@ -18578,6 +18578,17 @@
             "emails": ["qitianbiao@gmail.com", "qitianbiao@t2cloud.net"]
         },
         {
+            "launchpad_id": "qiu.jibao",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "QiuJibao",
+            "emails": ["qiujibao@outlook.com", "qiu.jibao@99cloud.net"]
+        },
+        {
             "launchpad_id": "qtlu",
             "companies": [
                 {
