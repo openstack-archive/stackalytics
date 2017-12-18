@@ -26228,11 +26228,15 @@
             "companies": [
                 {
                     "company_name": "GohighSec",
+                    "end_date": "2017-Dec-18"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "yanpeifei",
-            "emails": ["yanpeifei@gohighsec.com"]
+            "emails": ["yanpeifei@gohighsec.com", "zongyimin600@gmail.com"]
         },
         {
             "launchpad_id": "yanshi-403",
