@@ -25791,6 +25791,17 @@
             "emails": ["honghui_xiao@yeah.net", "xiaohhui123@gmail.com", "honghuix@vmware.com"]
         },
         {
+            "launchpad_id": "xiaojueguan",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XiaojueGuan",
+            "emails": ["guanalbertjone@gmail.com"]
+        },
+        {
             "launchpad_id": "xiaoquqi",
             "companies": [
                 {
