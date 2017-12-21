@@ -1011,6 +1011,17 @@
             "emails": ["alopgeek@gmail.com", "abelopez@cisco.com", "al592b@att.com"]
         },
         {
+            "launchpad_id": "aladroc",
+            "companies": [
+                {
+                    "company_name": "B3IT Management AB",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jose Rafael Romero Miret",
+            "emails": ["jose.romero@b3it.se", "jose.romero@core-developers.com","jose.romero.miret@gmail.com"]
+        },
+        {
             "launchpad_id": "alanmeadows",
             "companies": [
                 {
@@ -28251,6 +28262,10 @@
         {
             "domains": ["b1-systems.de"],
             "company_name": "B1 Systems GmbH"
+        },
+        {
+            "domains": ["b3it.se"],
+            "company_name": "B3IT Management AB"
         },
         {
             "domains": ["bacoosta.com"],
