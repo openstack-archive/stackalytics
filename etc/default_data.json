@@ -16295,6 +16295,26 @@
             "emails": ["mjblack@gmail.com", "matthew_black@cable.comcast.com", "matt.black@ellucian.com"]
         },
         {
+            "launchpad_id": "mmalchuk",
+            "github_id": "mmalchuk",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-26"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2017-Dec-19"
+                },
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Maksim Malchuk",
+            "emails": ["maksim.malchuk@gmail.com", "mmalchuk@mirantis.com", "malchuk.m.a@sberbank.ru"]
+        },
+        {
             "launchpad_id": "mmaleckk",
             "companies": [
                 {
