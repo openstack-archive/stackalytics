@@ -6252,6 +6252,18 @@
             "emails": ["derek@mcgstyle.net"]
         },
         {
+            "launchpad_id": "dmitri.plakhov",
+            "github_id": "dplakhov",
+            "companies": [
+                {
+                    "company_name": "Sberbank",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dmitri Plakhov",
+            "emails": ["info@openstack.school", "dnplakhov.sbt@sberbank.ru"]
+        },
+        {
             "launchpad_id": "dmllr",
             "companies": [
                 {
