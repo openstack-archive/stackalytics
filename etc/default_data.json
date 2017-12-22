@@ -13102,6 +13102,17 @@
             "emails": ["anlin.kong@gmail.com", "lingxian.kong@qq.com"]
         },
         {
+            "launchpad_id": "kongpp",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "kongpp",
+            "emails": ["kongpp@inspur.com"]
+        },
+        {
             "launchpad_id": "kongxiangyun",
             "companies": [
                 {
