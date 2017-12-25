@@ -23556,11 +23556,15 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2017-Dec-17"
+                },
+                {
+                    "company_name": "Selectel",
                     "end_date": null
                 }
             ],
-            "user_name": "Tetiana Lashchova",
-            "emails": ["tlashchova@mirantis.com", "tlashchova@gmail.com"]
+            "user_name": "Tatiana Kholkina",
+            "emails": ["tlashchova@mirantis.com", "tlashchova@gmail.com", "holkina@selectel.ru"]
         },
         {
             "launchpad_id": "tmazur",
