@@ -24421,6 +24421,18 @@
             "emails": ["vefimova@mirantis.com"]
         },
         {
+            "launchpad_id": "velizarx",
+            "github_id": "velp",
+            "companies": [
+                {
+                    "company_name": "Selectel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vadim Ponomarev",
+            "emails": ["velizarx@gmail.com", "ponomarev@selectel.ru"]
+        },
+        {
             "launchpad_id": "venkataharshitha",
             "companies": [
                 {
