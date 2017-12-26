@@ -14226,6 +14226,17 @@
             "emails": ["liu.yong8@zte.com.cn"]
         },
         {
+            "github_id": "liubin",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bin Liu",
+            "emails": ["liubin0329@gmail.com", "binliu@alauda.io"]
+        },
+        {
             "launchpad_id": "liuchao",
             "companies": [
                 {
