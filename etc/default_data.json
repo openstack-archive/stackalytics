@@ -2874,6 +2874,17 @@
             "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com", "bharath.m@hpe.com"]
         },
         {
+            "launchpad_id": "binoy.v",
+            "companies": [
+                {
+                    "company_name": "Cognizant",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Binoy M V",
+            "emails": ["binoy.v@cognizant.com"]
+        },
+        {
             "launchpad_id": "binzhou",
             "companies": [
                 {
