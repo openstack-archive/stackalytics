@@ -4093,11 +4093,15 @@
             "companies": [
                 {
                     "company_name": "Eayun",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "Awcloud",
                     "end_date": null
                 }
             ],
             "user_name": "Yuanbin Chen",
-            "emails": ["cybing4@gmail.com", "yuanbin.chen@eayun.com"]
+            "emails": ["cybing4@gmail.com"]
         },
         {
             "launchpad_id": "chenyingnan",
