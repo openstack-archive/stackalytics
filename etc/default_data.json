@@ -16593,7 +16593,7 @@
         },
         {
             "launchpad_id": "mrostecki",
-            "github_id": "nhlfr",
+            "github_id": "mrostecki",
             "companies": [
                 {
                     "company_name": "Allegro",
@@ -16609,11 +16609,15 @@
                 },
                 {
                     "company_name": "Kinvolk",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Michal Rostecki",
-            "emails": ["michal@kinvolk.io", "mrostecki@mirantis.com", "michal.rostecki@gmail.com", "michal.rostecki@allegrogroup.com"]
+            "emails": ["mrostecki@suse.com", "michal@kinvolk.io", "mrostecki@mirantis.com", "michal.rostecki@gmail.com", "michal.rostecki@allegrogroup.com"]
         },
         {
             "launchpad_id": "mshuler",
