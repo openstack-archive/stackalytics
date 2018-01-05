@@ -32,7 +32,7 @@ change them as you like.
 
 #. Install and run memcached DB::
 
-    $ sudo apt-get install -y memcached
+    $ sudo apt-get install memcached
     $ memcached -u memcache -d
 
 #. Analyze data which are specifed on default_data.json and store the data into memcached DB::
