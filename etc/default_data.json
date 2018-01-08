@@ -9812,6 +9812,10 @@
             "companies": [
                 {
                     "company_name": "Eayun",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "Awcloud",
                     "end_date": null
                 }
             ],
