@@ -45,6 +45,17 @@
             "emails": ["tim@swiftstack.com", "tim.burke@gmail.com"]
         },
         {
+            "launchpad_id": "19921207pq",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "pengdake",
+            "emails": ["19921207pq@gmail.com"]
+        },
+        {
             "launchpad_id": "1lex",
             "companies": [
                 {
