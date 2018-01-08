@@ -11596,6 +11596,10 @@
                 },
                 {
                     "company_name": "Cray",
+                    "end_date": "2018-Jan-26"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
