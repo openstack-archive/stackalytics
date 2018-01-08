@@ -9009,11 +9009,15 @@
             "companies": [
                 {
                     "company_name": "ZTE Corporation",
+                    "end_date": "2017-Jul-21"
+                },
+                {
+                    "company_name": "EasyStack",
                     "end_date": null
                 }
             ],
             "user_name": "haobing",
-            "emails": ["hao.bing1@zte.com.cn"]
+            "emails": ["bing.hao@easystack.cn", "binghao0602@gmail.com"]
         },
         {
             "launchpad_id": "haomai",
