@@ -32062,6 +32062,26 @@
             "uri": "git://git.opnfv.org/releng.git"
         },
         {
+            "module": "releng-testresults",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/releng-testresults.git"
+        },
+        {
+            "module": "releng-anteater",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/releng-anteater.git"
+        },
+        {
+            "module": "releng-utils",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/releng-utils.git"
+        },
+        {
+            "module": "releng-xci",
+            "organization": "opnfv",
+            "uri": "git://git.opnfv.org/releng-xci.git"
+        },
+        {
             "module": "compass4nfv",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/compass4nfv.git"
