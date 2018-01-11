@@ -9033,11 +9033,15 @@
                 },
                 {
                     "company_name": "ISCAS",
+                    "end_date": "2017-Dec-22"
+                },
+                {
+                    "company_name": "Lenovo",
                     "end_date": null
                 }
             ],
             "user_name": "Han Chao",
-            "emails": ["hanchao@iscas.ac.cn"]
+            "emails": ["hanchao7@lenovo.com"]
         },
         {
             "launchpad_id": "hanjiabao",
