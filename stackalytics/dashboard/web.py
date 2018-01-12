@@ -453,7 +453,7 @@ def get_users_json(record_ids, **kwargs):
     result = []
     for user_id in user_ids:
         user = vault.get_user_from_runtime_storage(user_id)
-        r = {'id': user_id, 'text': user['user_name']}
+        r = {'id': user_id, 'text': user.get('user_name') or user['user_id']}
 
         add_flag = not core_in
         if core_in and user.get('core'):
