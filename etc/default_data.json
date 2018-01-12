@@ -18126,6 +18126,17 @@
             "emails": ["pengww@certusnet.com.cn", "pengwenwu2008@163.com"]
         },
         {
+            "github_id": "pengx17",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peng Xiao",
+            "emails": ["pengxiao@outlook.com", "pengxiao@alauda.io"]
+        },
+        {
             "launchpad_id": "peter-a-portante",
             "companies": [
                 {
