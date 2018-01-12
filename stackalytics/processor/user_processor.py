@@ -208,6 +208,10 @@ def merge_user_profiles(domains_index, user_profiles):
     merged_user['user_id'] = (merged_user.get('launchpad_id') or
                               merged_user.get('user_id'))
 
+    # always preserve `user_name` since its required field
+    if 'user_name' not in merged_user:
+        merged_user['user_name'] = merged_user['user_id']
+
     # merge emails
     emails = set([])
     core_in = set([])
