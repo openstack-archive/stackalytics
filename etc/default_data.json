@@ -18285,6 +18285,21 @@
             "emails": ["pierre.rambaud@numergy.com", "pierre.rambaud86@gmail.com"]
         },
         {
+            "launchpad_id": "pierreblanc75",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2017-Dec-01"
+                },
+                {
+                    "company_name": "Ormuco",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pierre Blanc",
+            "emails": ["pierreblanc75@gmail.com", "pblanc@redhat.com", "pierre.blanc@ormuco.com"]
+        },
+        {
             "launchpad_id": "piyush0101",
             "companies": [
                 {
