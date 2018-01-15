@@ -29558,6 +29558,10 @@
             "aliases": ["Orange Labs", "Orange Polska S.A."]
         },
         {
+            "domains": ["ormuco.com"],
+            "company_name": "Ormuco"
+        },
+        {
             "domains": ["osones.com", "osones.io", "osones.fr"],
             "company_name": "Osones"
         },
