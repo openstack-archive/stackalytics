@@ -16919,6 +16919,17 @@
             "emails": ["narender.soorineeda@gmail.com"]
         },
         {
+            "github_id": "nashasha1",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaodong Zhang",
+            "emails": ["a4012017@sina.com", "xdzhang@alauda.io"]
+        },
+        {
             "launchpad_id": "nate-graf",
             "companies": [
                 {
