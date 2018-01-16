@@ -14512,10 +14512,16 @@
         },
         {
             "launchpad_id": "liuzhuangzhuang",
-            "companies": [{
-                "company_name": "Eayun",
-                "end_date": null
-            }],
+            "companies": [
+                {
+                    "company_name": "Eayun",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "China Telecom",
+                    "end_date": null
+                }
+            ],
             "user_name":"Liu Zhuangzhuang",
             "emails":["vpbvmw651078@gmail.com"]
         },
