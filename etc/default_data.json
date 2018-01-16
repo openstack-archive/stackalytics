@@ -8844,11 +8844,15 @@
                 },
                 {
                      "company_name": "Cloudin",
+                     "end_date": "2017-Dec-30"
+                },
+                {
+                     "company_name": "QIYI",
                      "end_date": null
                 }
             ],
             "user_name": "guanzy2016",
-            "emails": ["guanzuoyu@cloudin.kmail.com", "guanzuoyudev@gmail.com"]
+            "emails": ["guanzuoyu@qiyi.com", "guanzuoyudev@gmail.com"]
         },
         {
             "launchpad_id": "guduru-sirisha",
