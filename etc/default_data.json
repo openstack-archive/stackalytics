@@ -10458,11 +10458,15 @@
             "companies": [
                 {
                     "company_name": "Midokura",
+                    "end_date": "2017-Oct-01"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Antonio Ojea",
-            "emails": ["itsuugo@gmail.com", "aojea@midokura.com"]
+            "emails": ["itsuugo@gmail.com", "aojeagarcia@suse.com"]
         },
         {
             "launchpad_id": "itsvaishnavi",
