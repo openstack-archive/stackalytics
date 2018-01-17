@@ -8569,6 +8569,25 @@
             "emails": ["godp1301@gmail.com", "pgodin@iweb.com", "pgodin@internap.com"]
         },
         {
+            "launchpad_id": "goldyfruit",
+            "companies": [
+                {
+                    "company_name": "eNovance",
+                    "end_date": "2014-Jul-08"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2016-Oct-07"
+                },
+                {
+                    "company_name": "Ormuco",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gaëtan Trellu",
+            "emails": ["gaetan.trellu@enovance.com", "gtrellu@redhat.com", "gaetan.trellu@incloudus.com", "gaetan.trellu@ormuco.com"]
+        },
+        {
             "launchpad_id": "goneri",
             "companies": [
                 {
