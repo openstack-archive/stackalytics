@@ -12996,6 +12996,10 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2017-Sep-25"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
