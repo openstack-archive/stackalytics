@@ -26528,11 +26528,15 @@
             "companies": [
                 {
                     "company_name": "DataCentred",
+                    "end_date": "2017-Oct-31"
+                },
+                {
+                    "company_name": "StackHPC",
                     "end_date": null
                 }
             ],
             "user_name": "Nick Jones",
-            "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com"]
+            "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com", "nick@stackhpc.com"]
         },
         {
             "launchpad_id": "yanpeifei",
