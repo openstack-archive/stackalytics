@@ -9176,6 +9176,10 @@
             "companies": [
                 {
                     "company_name": "Intel",
+                    "end_date": "2018-Jan-16"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
