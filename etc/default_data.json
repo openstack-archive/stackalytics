@@ -26177,6 +26177,18 @@
             "emails": ["zhangxing@unitedstack.com", "angeiv.zhang@gmail.com"]
         },
         {
+            "launchpad_id": "xinni-ge",
+            "github_id": "irisayame",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xinni Ge",
+            "emails": ["xinni.ge@ntt.com", "xinni.ge1990@gmail.com"]
+        },
+        {
             "launchpad_id": "xinran",
             "companies": [
                 {
