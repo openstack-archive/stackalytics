@@ -27246,11 +27246,15 @@
             "companies": [
                 {
                     "company_name": "Codethink",
+                    "end_date": "2017-Aug-14"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Zara",
-            "emails": ["zara.zaimeche@codethink.co.uk"]
+            "emails": ["zara.zaimeche@codethink.co.uk", "thezarazia@gmail.com"]
         },
         {
             "launchpad_id": "zaro0508",
