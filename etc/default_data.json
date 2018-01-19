@@ -14233,11 +14233,15 @@
             "companies": [
                 {
                     "company_name": "ISCAS",
+                    "end_date": "2018-Jan-01"
+                },
+                {
+                    "company_name": "BoCloud",
                     "end_date": null
                 }
             ],
             "user_name": "Shijun Qin",
-            "emails": ["272700767@qq.com", "qinshijun16@otcaix.iscas.ac.cn", "qinshijun16@mails.ucas.ac.cn"]
+            "emails": ["272700767@qq.com", "qinshijun16@otcaix.iscas.ac.cn", "qinshijun16@mails.ucas.ac.cn", "qinshijun@beyondcent.com"]
         },
         {
             "launchpad_id": "lioplhp",
@@ -28591,6 +28595,11 @@
         {
             "domains": ["bluehost.com"],
             "company_name": "Bluehost"
+        },
+        {
+            "domains": ["bocloud.com.cn"],
+            "company_name": "BoCloud",
+            "aliases": ["beyondcent", "博云", "苏州博纳讯动软件有限公司", "博纳讯动"]
         },
         {
             "domains": ["boeing.com"],
