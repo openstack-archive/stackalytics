@@ -25194,6 +25194,17 @@
             "emails": ["wang.zengzhi@zte.com.cn"]
         },
         {
+            "launchpad_id": "wangchangyu",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "WangChangyu",
+            "emails": ["wang.changyu@zte.com.cn", "wangchangyu315@126.com"]
+        },
+        {
             "launchpad_id": "wangfang",
             "zanata_id": "wangfang",
             "companies": [
