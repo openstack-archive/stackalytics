@@ -4085,6 +4085,50 @@
             "primary_key": "cdfb121cf4eef96b917b0e3d7e86616b965e3506",
             "module": "congress",
             "subject": "Remove antlr3 files except Python runtime"
+        },
+        {
+            "correction_comment": "Closes-Bug: #1744557",
+            "primary_key": "e78b42237bf56d10d35f99d01ed41775a50d7e8czhaochao1984@gmail.com",
+            "module": "trove",
+            "company_name": "Awcloud",
+            "coauthor": [
+                {
+                    "author_email": "zhaochao1984@gmail.com",
+                    "author_name": "Zhao Chao",
+                    "company_name": "Awcloud",
+                    "date": 1516486003,
+                    "user_id": "zhaochao1984"
+                },
+                {
+                    "author_email": "lbragstad@gmail.com",
+                    "author_name": "Lance Bragstad",
+                    "company_name": "Huawei",
+                    "date": 1507214060,
+                    "user_id": "ldbragst"
+                }
+            ],
+            "user_id": "zhaochao1984"
+        },
+        {
+            "correction_comment": "Closes-Bug: #1744557",
+            "primary_key": "e78b42237bf56d10d35f99d01ed41775a50d7e8clbragstad@gmail.com",
+            "module": "trove",
+            "coauthor": [
+                {
+                    "author_email": "zhaochao1984@gmail.com",
+                    "author_name": "Zhao Chao",
+                    "company_name": "Awcloud",
+                    "date": 1516486003,
+                    "user_id": "zhaochao1984"
+                },
+                {
+                    "author_email": "lbragstad@gmail.com",
+                    "author_name": "Lance Bragstad",
+                    "company_name": "Huawei",
+                    "date": 1507214060,
+                    "user_id": "ldbragst"
+                }
+            ]
         }
     ]
 }
