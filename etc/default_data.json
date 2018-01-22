@@ -10933,6 +10933,17 @@
             "emails": ["jason@smithss.org", "jason.smith@rackspace.com"]
         },
         {
+            "launchpad_id": "jasoncyzh",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "caoyu",
+            "emails": ["cyzh1202@163.com"]
+        },
+        {
             "launchpad_id": "jasondunsmore",
             "companies": [
                 {
