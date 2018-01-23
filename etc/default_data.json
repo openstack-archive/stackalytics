@@ -14224,6 +14224,17 @@
             "emails": ["jinhui23.li@gmail.com"]
         },
         {
+            "launchpad_id": "liliueecg",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Li Liu",
+            "emails": ["liliueecg@gmail.com", "liliu1@huawei.com"]
+        },
+        {
             "launchpad_id": "limeng",
             "companies": [
                 {
@@ -26874,6 +26885,17 @@
             ],
             "user_name": "Yuriy Babenko",
             "emails": ["ybabenko3@gmail.com"]
+        },
+        {
+            "launchpad_id": "yefeng.wen",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ye Feng Wen",
+            "emails": ["earnest.yefeng.wen@gmail.com", "ye.feng.wen@huawei.com"]
         },
         {
             "launchpad_id": "yevgen-runts",
