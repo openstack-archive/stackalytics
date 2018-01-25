@@ -32727,6 +32727,96 @@
             ],
             "uri": "git://git.openstack.org/openstack/python-moganclient.git",
             "organization": "openstack"
+        },
+        {
+            "module": "csit",
+            "uri": "git://github.com/FDio/csit.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "vpp",
+            "uri": "git://github.com/FDio/vpp.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "ci-management",
+            "uri": "git://github.com/FDio/ci-management.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "govpp",
+            "uri": "git://github.com/FDio/govpp.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "cicn",
+            "uri": "git://github.com/FDio/cicn.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "hc2vpp",
+            "uri": "git://github.com/FDio/hc2vpp.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "deb_dpdk",
+            "uri": "git://github.com/FDio/deb_dpdk.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "honeycomb",
+            "uri": "git://github.com/FDio/honeycomb.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "odp4vpp",
+            "uri": "git://github.com/FDio/odp4vpp.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "nsh_sfc",
+            "uri": "git://github.com/FDio/nsh_sfc.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "puppet-fdio",
+            "uri": "git://github.com/FDio/puppet-fdio.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "tldk",
+            "uri": "git://github.com/FDio/tldk.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "one",
+            "uri": "git://github.com/FDio/one.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "rpm_dpdk",
+            "uri": "git://github.com/FDio/rpm_dpdk.git",
+            "organization": "FDio"
+
+        },
+        {
+            "module": "trex",
+            "uri": "git://github.com/FDio/trex.git",
+            "organization": "FDio"
+
         }
     ],
     "project_sources": [
@@ -33295,7 +33385,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "FDio"]
         },
         {
             "id": "ansible-group",
@@ -33350,6 +33440,12 @@
             "title": "Python Packaging",
             "child": true,
             "modules": ["pypa-group"]
+        },
+        {
+            "id": "FDio-group",
+            "title": "FDio",
+            "child": true,
+            "modules": ["FDio"]
         }
     ]
 }
