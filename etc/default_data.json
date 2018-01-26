@@ -22194,6 +22194,19 @@
             "emails": ["shantanu.kumar@cognizant.com","kumarshantanu16@gmail.com"]
         },
         {
+            "launchpad_id": "skylightcoder",
+            "companies": [
+                {
+                    "company_name": "TUBITAK",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gokhan Isik",
+            "emails": [
+                "gokhan.isik@tubitak.gov.tr"
+            ]
+        },
+        {
             "launchpad_id": "slamdunkbk",
             "companies": [
                 {
