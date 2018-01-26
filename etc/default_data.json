@@ -32730,91 +32730,91 @@
         },
         {
             "module": "csit",
-            "uri": "git://github.com/FDio/csit.git",
+            "uri": "https://github.com/FDio/csit.git",
             "organization": "FDio"
 
         },
         {
             "module": "vpp",
-            "uri": "git://github.com/FDio/vpp.git",
+            "uri": "https://github.com/FDio/vpp.git",
             "organization": "FDio"
 
         },
         {
             "module": "ci-management",
-            "uri": "git://github.com/FDio/ci-management.git",
+            "uri": "https://github.com/FDio/ci-management.git",
             "organization": "FDio"
 
         },
         {
             "module": "govpp",
-            "uri": "git://github.com/FDio/govpp.git",
+            "uri": "https://github.com/FDio/govpp.git",
             "organization": "FDio"
 
         },
         {
             "module": "cicn",
-            "uri": "git://github.com/FDio/cicn.git",
+            "uri": "https://github.com/FDio/cicn.git",
             "organization": "FDio"
 
         },
         {
             "module": "hc2vpp",
-            "uri": "git://github.com/FDio/hc2vpp.git",
+            "uri": "https://github.com/FDio/hc2vpp.git",
             "organization": "FDio"
 
         },
         {
             "module": "deb_dpdk",
-            "uri": "git://github.com/FDio/deb_dpdk.git",
+            "uri": "https://github.com/FDio/deb_dpdk.git",
             "organization": "FDio"
 
         },
         {
             "module": "honeycomb",
-            "uri": "git://github.com/FDio/honeycomb.git",
+            "uri": "https://github.com/FDio/honeycomb.git",
             "organization": "FDio"
 
         },
         {
             "module": "odp4vpp",
-            "uri": "git://github.com/FDio/odp4vpp.git",
+            "uri": "https://github.com/FDio/odp4vpp.git",
             "organization": "FDio"
 
         },
         {
             "module": "nsh_sfc",
-            "uri": "git://github.com/FDio/nsh_sfc.git",
+            "uri": "https://github.com/FDio/nsh_sfc.git",
             "organization": "FDio"
 
         },
         {
             "module": "puppet-fdio",
-            "uri": "git://github.com/FDio/puppet-fdio.git",
+            "uri": "https://github.com/FDio/puppet-fdio.git",
             "organization": "FDio"
 
         },
         {
             "module": "tldk",
-            "uri": "git://github.com/FDio/tldk.git",
+            "uri": "https://github.com/FDio/tldk.git",
             "organization": "FDio"
 
         },
         {
             "module": "one",
-            "uri": "git://github.com/FDio/one.git",
+            "uri": "https://github.com/FDio/one.git",
             "organization": "FDio"
 
         },
         {
             "module": "rpm_dpdk",
-            "uri": "git://github.com/FDio/rpm_dpdk.git",
+            "uri": "https://github.com/FDio/rpm_dpdk.git",
             "organization": "FDio"
 
         },
         {
             "module": "trex",
-            "uri": "git://github.com/FDio/trex.git",
+            "uri": "https://github.com/FDio/trex.git",
             "organization": "FDio"
 
         }
