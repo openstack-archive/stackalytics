@@ -203,11 +203,15 @@
             "companies": [
                 {
                     "company_name": "Wise2c",
+                    "end_date": "2017-Apr-30"
+                },
+                {
+                    "company_name": "China Cloud",
                     "end_date": null
                 }
             ],
             "user_name": "sak0",
-            "emails": ["cuihz@wise2c.com"]
+            "emails": ["cuihz@wise2c.com", "cuihaozhi@chinacloud.com.cn"]
         },
         {   "launchpad_id": "9-me-9",
             "companies": [
