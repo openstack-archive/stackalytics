@@ -14896,6 +14896,10 @@
                 },
                 {
                     "company_name": "*independent",
+                    "end_date": "2018-Jan-17"
+                },
+                {
+                    "company_name": "NetApp",
                     "end_date": null
                 }
             ],
