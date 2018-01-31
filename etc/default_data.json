@@ -710,6 +710,17 @@
             "emails": ["adolfo.duarte@suse.com", "adolfod@hpe.com"]
         },
         {
+            "launchpad_id": "adolphlwq",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wenquan Lu",
+            "emails": ["wqlu@alauda.io", "kenan3015@gmail.com"]
+        },
+        {
             "launchpad_id": "adrianmo",
             "companies": [
                 {
