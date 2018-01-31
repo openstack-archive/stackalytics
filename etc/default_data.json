@@ -30190,6 +30190,11 @@
             "company_name": "Taobao"
         },
         {
+            "domains": ["tatacommunications.com"],
+            "company_name": "Tata Communications",
+            "aliases": ["Tata Communications Limited"]
+        },
+        {
             "domains": ["tcpcloud.eu"],
             "company_name": "tcp cloud",
             "aliases": ["tcp cloud a.s."]
