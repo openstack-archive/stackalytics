@@ -17850,6 +17850,18 @@
             ]
         },
         {
+            "launchpad_id": "openstack-dev-s",
+            "github_id": "ppenchev-storpool",
+            "companies": [
+                {
+                    "company_name": "StorPool",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Peter Penchev",
+            "emails": ["pp@storpool.com", "openstack-dev-s@storpool.com"]
+        },
+        {
             "launchpad_id": "opilotte",
             "companies": [
                 {
@@ -30139,6 +30151,10 @@
         {
             "domains": ["statefarm.com"],
             "company_name": "State Farm Insurance"
+        },
+        {
+            "domains": ["storpool.com"],
+            "company_name": "StorPool"
         },
         {
             "domains": ["stratoscale.com"],
