@@ -9077,6 +9077,18 @@
             "emails": ["shihai1992@gmail.com"]
         },
         {
+            "launchpad_id": "halfcrazy",
+            "github_id": "halfcrazy",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yan Zhu",
+            "emails": ["hackzhuyan@gmail.com", "yanzhu@alauda.io"]
+        },
+        {
             "launchpad_id": "hallur-p-t",
             "companies": [
                 {
