@@ -111,6 +111,17 @@
             "emails": ["295988511@qq.com","liuxinguo@huawei.com"]
         },
         {
+            "github_id": "2eron",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wei Li",
+            "emails": ["lewiiwel@gmail.com", "weili@alauda.io"]
+        },
+        {
             "launchpad_id": "3-andrew",
             "companies": [
                 {
@@ -243,6 +254,28 @@
             "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com", "alex.barclay@hpe.com"]
         },
         {
+            "github_id": "CoderAway28th",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lingming Xia",
+            "emails": ["344905745@qq.com", "lmxia@alauda.io"]
+        },
+        {
+            "github_id": "Jhhong1",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Honghui Jin",
+            "emails": ["354068083@qq.com", "hhjin@alauda.io"]
+        },
+        {
             "github_id": "JoshuaAndrew",
             "companies": [
                 {
@@ -252,6 +285,28 @@
             ],
             "user_name": "Wei Wei",
             "emails": ["chweiweich@163.com", "weiwei@tenxcloud.com"]
+        },
+        {
+            "github_id": "JounQin",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jiaren Liu",
+            "emails": ["admin@1stg.me", "jrliu@alauda.io"]
+        },
+        {
+            "github_id": "Lihua93",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Lihua Tang",
+            "emails": ["413281174@qq.com", "lhtang@alauda.io"]
         },
         {
             "github_id": "TinySong",
@@ -4519,6 +4574,17 @@
             ],
             "user_name": "Cristovao Cordeiro",
             "emails": ["cjdcordeiro@gmail.com", "cristovao.cordeiro@cern.ch"]
+        },
+        {
+            "github_id": "cjhomour",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jianhua Chen",
+            "emails": ["jhchen@alauda.io"]
         },
         {
             "launchpad_id": "ck-khullar",
@@ -9846,6 +9912,17 @@
             "emails": ["huanght@awcloud.com"]
         },
         {
+            "github_id": "huanghuangzym",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Li Huang",
+            "emails": ["huanghuangzym@126.com", "lihuang@alauda.io"]
+        },
+        {
             "github_id": "huangjiuyuan",
             "companies": [
                 {
@@ -13768,6 +13845,17 @@
             ],
             "user_name": "Lakshmi N Sampath",
             "emails": ["lakshmi.sampath@hp.com", "lakshmi.sampath@hpe.com"]
+        },
+        {
+            "github_id": "langyxxl",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sheng Zhang",
+            "emails": ["1150283637@qq.com", "shengzhang@alauda.io"]
         },
         {
             "launchpad_id": "larainema",
@@ -20785,6 +20873,17 @@
             "emails": ["saigandham467@gmail.com"]
         },
         {
+            "github_id": "sailingwithoutwind",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fan Yang",
+            "emails": ["fanyang@alauda.io"]
+        },
+        {
             "launchpad_id": "sajuptpm",
             "companies": [
                 {
@@ -21771,6 +21870,17 @@
             ],
             "user_name":  "Yangkai Shi",
             "emails": ["shiyangkai333@126.com", "shiyangkai@hnu.edu.cn"]
+        },
+        {
+            "github_id": "shiyuan1992",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuan Shi",
+            "emails": ["yuanshi@alauda.io"]
         },
         {
             "launchpad_id": "shizhihui",
@@ -27054,8 +27164,8 @@
                     "end_date": null
                 }
             ],
-            "user_name": "yinshuxun",
-            "emails": ["18052012746@163.com", "sxyin@alauda.io"]
+            "user_name": "Shuxun Yin",
+            "emails": ["18052012746@163.com", "shuxun.yin@gmail.com", "sxyin@alauda.io"]
         },
         {
             "launchpad_id": "yixiaolong",
