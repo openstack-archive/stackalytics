@@ -27018,6 +27018,18 @@
             "emails": ["yin__zheng@163.com", "zhengyin@chinac.com", "yin.zheng@easystack.cn"]
         },
         {
+            "launchpad_id": "yinshuxun",
+            "github_id": "yinshuxun",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "yinshuxun",
+            "emails": ["18052012746@163.com", "sxyin@alauda.io"]
+        },
+        {
             "launchpad_id": "yixiaolong",
             "companies": [
                 {
