@@ -7783,6 +7783,17 @@
             "emails": ["fengzhr@awcloud.com"]
         },
         {
+            "launchpad_id": "fernando-c-pimenta",
+            "companies": [
+                {
+                    "company_name": "DBLink Consult",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Fernando Pimenta",
+            "emails": ["fernando.c.pimenta@gmail.com", "fernandopimenta@dblinkconsult.com.br"]
+        },
+        {
             "launchpad_id": "ffernand",
             "companies": [
                 {
@@ -29080,6 +29091,10 @@
         {
             "domains": ["datacentred.co.uk", "datacentred.io"],
             "company_name": "DataCentred"
+        },
+        {
+            "domains": ["dblinkconsult.com.br"],
+            "company_name": "DBLink Consult"
         },
         {
             "domains": ["debian.org"],
