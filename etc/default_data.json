@@ -25970,6 +25970,17 @@
             "emails": ["wu.yucheng@21viacloud.com"]
         },
         {
+            "launchpad_id": "wu.chunyang",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Wu Chunyang",
+            "emails": ["wu.chunyang@99cloud.net"]
+        },
+        {
             "launchpad_id": "wudx05",
             "companies": [
                 {
