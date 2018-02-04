@@ -33285,6 +33285,12 @@
         {
             "module_group_name": "pypa-group",
             "modules": ["pip", "warehouse", "twine", "virtualenv"]
+        },
+        {
+            "module_group_name": "fdio-group",
+            "modules": ["csit", "vpp", "ci-management", "govpp", "cicn", "hc2vpp",
+              "deb_dpdk", "honeycomb", "odp4vpp", "nsh_sfc", "puppet-fdio", "tldk",
+              "one", "rpm_dpdk", "trex"]
         }
     ],
     "releases": [
@@ -33510,7 +33516,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "FDio"]
+            "modules": ["ansible-group", "ceph", "docker-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "fdio-group"]
         },
         {
             "id": "ansible-group",
@@ -33567,10 +33573,10 @@
             "modules": ["pypa-group"]
         },
         {
-            "id": "FDio-group",
+            "id": "fdio-group",
             "title": "FDio",
             "child": true,
-            "modules": ["FDio"]
+            "modules": ["fdio-group"]
         }
     ]
 }
