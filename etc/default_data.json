@@ -6327,11 +6327,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Jan-03"
+                },
+                {
+                    "company_name": "ARM",
                     "end_date": null
                 }
             ],
             "user_name": "Dexter Fryar",
-            "emails": ["dexter.fryar@outlook.com", "dexter.fryar@hpe.com", "dexter.fryar@hp.com", "dexter.fryar@gmail.com", "dexter.fryar@ymail.com"]
+            "emails": ["dexter.fryar@protonmail.com", "dexter.fryar@arm.com", "dexter.fryar@outlook.com", "dexter.fryar@hpe.com", "dexter.fryar@hp.com", "dexter.fryar@gmail.com", "dexter.fryar@ymail.com"]
         },
         {
             "launchpad_id": "dlundquist",
