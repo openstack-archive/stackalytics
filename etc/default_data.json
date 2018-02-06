@@ -28523,6 +28523,17 @@
             "emails": ["hqzhu918@163.com","zhuhq@certusnet.com.cn"]
         },
         {
+            "launchpad_id": "zhulingjie",
+            "companies": [
+                 {
+                     "company_name": "99cloud",
+                     "end_date": null
+                 }
+            ],
+            "user_name": "zhulingjie",
+            "emails": ["easyzlj@gmail.com"]
+        },
+        {
             "launchpad_id": "zhusz",
             "companies": [
                 {
