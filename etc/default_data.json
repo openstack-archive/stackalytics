@@ -17894,6 +17894,29 @@
             "emails": ["aminakov@mirantis.com", "oleksandr.minakov@gmail.com", "alexander_minakov@symantec.com"]
         },
         {
+            "launchpad_id": "olivierbourdon38",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2007-Dec-01"
+                },
+                {
+                    "company_name": "UShareSoft",
+                    "end_date": "2015-Nov-30"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Oct-23"
+                },
+                {
+                    "company_name": "OpenNext",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Olivier Bourdon",
+            "emails": ["olivierbourdon38@gmail.com", "olivier.bourdon@usharesoft.com", "obourdon@mirantis.com", "obourdon@opennext.io"]
+        },
+        {
             "launchpad_id": "olkonami",
             "companies": [
                 {
@@ -30051,6 +30074,10 @@
             "company_name": "Opcito Technologies"
         },
         {
+            "domains": ["opennext.io"],
+            "company_name": "OpenNext"
+        },
+        {
             "domains": ["optiflows.com"],
             "company_name": "Optiflows"
         },
@@ -30566,6 +30593,10 @@
         {
             "domains": ["upv.es"],
             "company_name": "UPV"
+        },
+        {
+            "domains": ["usharesoft.com"],
+            "company_name": "UShareSoft"
         },
         {
             "domains": ["ustack.com", "unitedstack.com"],
