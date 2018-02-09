@@ -1177,6 +1177,17 @@
             "emails": ["andrew.laski@rackspace.com", "andrew@lascii.com", "alaski@mirantis.com", "alaski@gmail.com"]
         },
         {
+            "github_id": "alaudazs",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "alaudazs",
+            "emails": ["35983778+alaudazs@users.noreply.github.com"]
+        },
+        {
             "launchpad_id": "aldavud",
             "companies": [
                 {
@@ -9206,6 +9217,17 @@
             ],
             "user_name": "Han Chao",
             "emails": ["hanchao7@lenovo.com"]
+        },
+        {
+            "github_id": "hangyan",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hang Yan",
+            "emails": ["hang.yan@hotmail.com", "hangyan@alauda.io"]
         },
         {
             "launchpad_id": "hanjiabao",
@@ -21918,7 +21940,7 @@
                 }
             ],
             "user_name": "Yuan Shi",
-            "emails": ["yuanshi@alauda.io"]
+            "emails": ["35836235+shiyuan1992@users.noreply.github.com", "yuanshi@alauda.io"]
         },
         {
             "launchpad_id": "shizhihui",
