@@ -10966,6 +10966,21 @@
             "emails": ["jprovazn@redhat.com", "jan.provaznik@gmail.com"]
         },
         {
+            "launchpad_id": "jan-zerebecki",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-Jan-15"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jan Zerebecki",
+            "emails": ["jan.openstack@zerebecki.de", "jzerebecki@suse.com"]
+        },
+        {
             "launchpad_id": "jangseon-ryu",
             "companies": [
                 {
