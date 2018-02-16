@@ -15324,6 +15324,21 @@
             "emails": ["marc.koderer@sap.com", "m.koderer@telekom.de", "marc@koderer.com"]
         },
         {
+            "launchpad_id": "m-nitesh",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": "2018-Jan-25"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "mvpnitesh",
+            "emails": ["parimalanitesh@gmail.com","m.nitesh@nectechnologies.in"]
+        },
+        {
             "launchpad_id": "maciej-iai",
             "github_id": "nebril",
             "companies": [
