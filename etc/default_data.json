@@ -5451,6 +5451,17 @@
             "emails": ["daniel.pawlik@corp.ovh.com"]
         },
         {
+            "github_id": "danielfbm",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Daniel Morinigo",
+            "emails": ["danielfbm@gmail.com", "daniel@alauda.io"]
+        },
+        {
             "launchpad_id": "danielr-2",
             "companies": [
                 {
