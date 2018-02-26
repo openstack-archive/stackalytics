@@ -33831,7 +33831,17 @@
         },
         {
             "release_name": "Queens",
-            "end_date": "2018-Mar-01",
+            "end_date": "2018-Feb-28",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
+        },
+        {
+            "release_name": "Rocky",
+            "end_date": "2018-Aug-31",
             "refs": {
                 "governance": {
                     "type": "big_tent",
