@@ -8293,6 +8293,17 @@
             "emails": ["gabriel@strikeawe.com"]
         },
         {
+            "launchpad_id": "gagehugo",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Gage Hugo",
+            "emails": ["gagehugo@gmail.com"]
+        },
+        {
             "launchpad_id": "gagupta",
             "companies": [
                 {
