@@ -28663,6 +28663,17 @@
             "emails": ["zhugaoxiao@gmail.com", "zhu.gaoxiao@h3c.com"]
         },
         {
+            "launchpad_id": "zhuguihua",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Guihua Zhu",
+            "emails": ["zhuguihua@cmss.chinamobile.com", "z.zhuguihua@gmail.com"]
+        },
+        {
             "launchpad_id": "zhuhq",
             "companies": [
                 {
