@@ -26989,6 +26989,17 @@
             "emails": ["yamamoto@midokura.com", "yamamoto@valinux.co.jp", "imuwoto@gmail.com"]
         },
         {
+            "launchpad_id": "yan97ao",
+            "companies": [
+                {
+                    "company_name": "China Telecom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tao Yang",
+            "emails": ["magictao@gmail.com", "yangt.yun@chinatelecom.cn"]
+        },
+        {
             "github_id": "yanchanghai",
             "user_name": "yanchanghai",
             "companies": [
