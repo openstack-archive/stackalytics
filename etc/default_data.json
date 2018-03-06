@@ -18649,6 +18649,17 @@
             "emails": ["pengxiao@outlook.com", "pengxiao@alauda.io"]
         },
         {
+            "launchpad_id": "pengyuesheng",
+            "companies": [
+                {
+                    "company_name": "GohighSec",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yuesheng Peng",
+            "emails": ["pengyuesheng@gohighsec.com"]
+        },
+        {
             "launchpad_id": "peter-a-portante",
             "companies": [
                 {
