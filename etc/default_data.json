@@ -27815,6 +27815,17 @@
             "emails": ["z8715000@126.com", "muj@chinanetcenter.com"]
         },
         {
+            "launchpad_id": "zackchen",
+            "companies": [
+                {
+                    "company_name": "t2cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zack chen",
+            "emails": ["zackchen517@gmail.com", "chenze@t2cloud.net"]
+        },
+        {
             "launchpad_id": "zaitcev",
             "companies": [
                 {
