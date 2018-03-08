@@ -13787,6 +13787,17 @@
             "emails": ["kthguru@gmail.com", "thlab.kim@samsung.com"]
         },
         {
+            "launchpad_id": "ktibi",
+            "companies": [
+                {
+                    "company_name": "Devoteam",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kevin Tibi",
+            "emails": ["kevintibi@hotmail.com", "kodokuu@gmail.com", "kevin.tibi@devoteam.com"]
+        },
+        {
             "launchpad_id": "kubernetes",
             "companies": [
                 {
@@ -29523,6 +29534,10 @@
         {
             "domains": ["denali-systems.com"],
             "company_name": "Denali Systems"
+        },
+        {
+            "domains": ["devoteam.com"],
+            "company_name": "Devoteam"
         },
         {
             "domains": ["digitalpacific.com.au"],
