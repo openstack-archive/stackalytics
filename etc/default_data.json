@@ -21858,6 +21858,17 @@
             "emails": ["shapeliang@gmail.com", "liangxiaoping@jd.com"]
         },
         {
+            "launchpad_id": "sharyhua",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "LiHua Shen",
+            "emails": ["shen.lihua@zte.com.cn"]
+        },
+        {
             "launchpad_id": "shasha.tavil",
             "companies": [
                 {
