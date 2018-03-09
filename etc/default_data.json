@@ -6640,6 +6640,10 @@
             "companies": [
                 {
                     "company_name": "Dt Dream",
+                    "end_date": "2018-Mar-07"
+                },
+                {
+                    "company_name": "Bytedance",
                     "end_date": null
                 }
             ],
@@ -29264,6 +29268,11 @@
             "domains": ["bull.net"],
             "company_name": "Bull",
             "aliases": ["Bull SAS"]
+        },
+        {
+            "domains": ["bytedance.com"],
+            "company_name": "Bytedance",
+            "aliases": ["Toutiao", "北京字节跳动科技有限公司", "今日头条"]
         },
         {
             "domains": ["cable.comcast.com"],
