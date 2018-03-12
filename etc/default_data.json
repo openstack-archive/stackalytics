@@ -19391,6 +19391,10 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2018-Mar-09"
+                },
+                {
+                    "company_name": "Unaffiliated",
                     "end_date": null
                 }
             ],
