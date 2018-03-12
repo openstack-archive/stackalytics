@@ -16970,6 +16970,17 @@
             "emails": ["matthewm@boedicker.org"]
         },
         {
+            "launchpad_id": "mmcaleer",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Mcaleer",
+            "emails": ["michael.mcaleer@dell.com"]
+        },
+        {
             "launchpad_id": "mmohan-9",
             "github_id": "snmohan83",
             "companies": [
@@ -19064,6 +19075,17 @@
             ],
             "user_name": "Prashanth Prahalad",
             "emails": ["prashanth.prahal@gmail.com", "prashanth.prahalad@pluribusnetworks.com"]
+        },
+        {
+            "launchpad_id": "prashk",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kumar Prashant",
+            "emails": ["kumar.prashant@dell.com"]
         },
         {
             "launchpad_id": "prasoontelang",
@@ -24845,6 +24867,10 @@
             "companies": [
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2016-Feb-23"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
