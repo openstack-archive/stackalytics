@@ -7273,6 +7273,17 @@
             "emails": ["dabarren@gmail.com", "eduardo.gonzalez.gutierrez@ibm.com"]
         },
         {
+            "launchpad_id": "egrh3",
+            "companies": [
+                {
+                    "company_name": "Awnix",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric M Gonzalez",
+            "emails": ["eric@awnix.com"]
+        },
+        {
             "launchpad_id": "eharney",
             "companies": [
                 {
@@ -29197,6 +29208,11 @@
         {
             "domains": ["awcloud.com"],
             "company_name": "Awcloud"
+        },
+        {
+            "domains": ["awnix.com"],
+            "company_name": "Awnix",
+            "aliases": ["Awnix, Inc."]
         },
         {
             "domains": ["axway.com"],
