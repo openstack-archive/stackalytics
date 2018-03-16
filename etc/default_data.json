@@ -9757,6 +9757,21 @@
             "emails": ["hhktony@gmail.com", "xutao@t2cloud.net"]
         },
         {
+            "launchpad_id": "hieulq",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2018-Jan-30"
+                },
+                {
+                    "company_name": "Viettel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hieu LE",
+            "emails": ["hieulq2@viettel.com.vn", "sudo@rm-rf.cloud", "hieulq19@gmail.com"]
+        },
+        {
             "launchpad_id": "hjw",
             "companies": [
                 {
@@ -30922,6 +30937,11 @@
         {
             "domains": ["vexxhost.com"],
             "company_name": "VexxHost"
+        },
+        {
+            "domains": ["viettel.com.vn", "vietteltelecom.vn", "viettelidc.com.vn"],
+            "company_name": "Viettel",
+            "aliases": ["Viettel Group"]
         },
         {
             "domains": ["virtualtech.jp"],
