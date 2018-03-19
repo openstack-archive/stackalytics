@@ -9720,6 +9720,17 @@
             "emails": ["pyhex2dec@gmail.com"]
         },
         {
+            "launchpad_id": "hexiaoxi",
+            "companies": [
+                {
+                    "company_name": "Alauda",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaoxi He",
+            "emails": ["xxhe@alauda.io", "tossmilestone@gmail.com"]
+        },
+        {
             "launchpad_id": "hferenc",
             "companies": [
                 {
