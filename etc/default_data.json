@@ -19469,11 +19469,15 @@
                 },
                 {
                     "company_name": "Unaffiliated",
+                    "end_date": "2018-Mar-18"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Major Hayden",
-            "emails": ["major.hayden@rackspace.com", "major@mhtx.net"]
+            "emails": ["major.hayden@rackspace.com", "major@mhtx.net", "major@redhat.com"]
         },
      {
            "launchpad_id": "raddaoui-ala",
