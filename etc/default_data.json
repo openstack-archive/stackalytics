@@ -28113,6 +28113,17 @@
             "emails": ["zengluul@gmail.com", "zeng.lulu@h3c.com"]
         },
         {
+            "launchpad_id": "zengly",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zengly",
+            "emails": ["zengly@awcloud.com"]
+        },
+        {
             "launchpad_id": "zengyunling",
             "companies": [
                 {
