@@ -21072,6 +21072,17 @@
            "emails": ["s.haub@telekom.de"]
         },
         {
+            "launchpad_id": "s1061123",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tomofumi Hayashi",
+            "emails": ["s1061123@gmail.com", "tohayash@redhat.com"]
+        },
+        {
             "launchpad_id": "s1syphuswxg",
             "companies": [
                 {
