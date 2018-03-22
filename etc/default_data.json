@@ -1484,6 +1484,17 @@
             "emails": ["alokjani.web@gmail.com", "alok.jani@ril.com"]
         },
         {
+            "launchpad_id": "alvenliang",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhenyang.liang",
+            "emails": ["liangzy@awcloud.com", "liangzhenyang@yeah.net"]
+        },
+        {
             "launchpad_id": "alyson-rodrigues-rosa",
             "companies": [
                 {
