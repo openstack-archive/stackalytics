@@ -24288,6 +24288,17 @@
             "emails": ["tian.mingming@h3c.com", "tianming20052004@163.com"]
         },
         {
+            "launchpad_id": "tianliang",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "tianliang",
+            "emails": ["tianliang@awcloud.com"]
+        },
+        {
             "launchpad_id": "tianliang9999",
             "companies": [
                 {
