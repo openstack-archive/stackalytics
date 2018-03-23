@@ -12955,6 +12955,18 @@
             "emails": ["jwcroppe@us.ibm.com", "cropper.joe@gmail.com"]
         },
         {
+            "launchpad_id": "jwoh",
+            "zanata_id": "jaewook_oh",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jaewook Oh",
+            "emails": ["kyle.oh95@gmail.com", "jaewook_oh@naver.com", "jwoh95@dcn.ssu.ac.kr"]
+        },
+        {
             "launchpad_id": "jwy",
             "companies": [
                 {
