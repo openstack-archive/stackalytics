@@ -14723,6 +14723,17 @@
             "emails": ["liquid@kt.com"]
         },
         {
+            "launchpad_id": "lishaoyang",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lishaoyang",
+            "emails": ["lisy_email@163.com"]
+        },
+        {
             "launchpad_id": "listomin",
             "companies": [
                 {
