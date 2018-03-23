@@ -33003,9 +33003,15 @@
                     "tag_from": "4.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "5.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "6.0.0.0rc1"
                 }
             ]
         },
