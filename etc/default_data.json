@@ -20007,6 +20007,17 @@
             "emails": ["rhwlyw@163.com", "ren.huanwen@zte.com.cn"]
         },
         {
+            "launchpad_id": "renlixing",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "renlixing",
+            "emails": ["renlixing@gmail.com"]
+        },
+        {
             "launchpad_id": "renyuquan",
             "companies": [
                 {
