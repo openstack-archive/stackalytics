@@ -3438,6 +3438,18 @@
             "emails": ["broskos@internap.com"]
         },
         {
+            "launchpad_id": "brtknr",
+            "github_id": "brtknr",
+            "companies": [
+                {
+                    "company_name": "StackHPC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bharat Kunwar",
+            "emails": ["b.kunwar@gmail.com", "bharat@stackhpc.com"]
+        },
+        {
             "launchpad_id": "bruno-semperlotti",
             "companies": [
                 {
