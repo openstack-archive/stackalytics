@@ -31289,9 +31289,15 @@
                     "tag_from": "15.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "16.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "17.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/nova.git",
@@ -31367,9 +31373,15 @@
                     "tag_from": "11.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "12.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "13.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/keystone.git",
@@ -31440,9 +31452,15 @@
                     "tag_from": "10.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "11.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "12.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/cinder.git",
@@ -31531,9 +31549,15 @@
                     "tag_from": "14.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "15.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "16.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/glance.git",
@@ -31789,9 +31813,15 @@
                     "tag_from": "2.11.0"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "2.15.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "2.17.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/swift.git",
@@ -32215,9 +32245,15 @@
                     "tag_from": "8.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "9.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "10.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/heat.git",
@@ -32335,9 +32371,15 @@
                     "tag_from": "8.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "9.0.1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "10.0.0"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/ceilometer.git",
@@ -32571,9 +32613,15 @@
                     "tag_from": "6.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "7.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "8.0.0.0rc1"
                 }
             ]
         },
@@ -33090,9 +33138,15 @@
                     "tag_from": "4.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/queens",
                     "tag_to": "HEAD",
                     "release_name": "Queens",
                     "tag_from": "5.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Rocky",
+                    "tag_from": "6.0.0.0rc1"
                 }
             ]
         },
