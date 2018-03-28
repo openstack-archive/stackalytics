@@ -20382,11 +20382,15 @@
                 },
                 {
                     "company_name": "Intel",
+                    "end_date": "2018-Mar-26"
+                },
+                {
+                    "company_name": "Oath",
                     "end_date": null
                 }
             ],
             "user_name": "Ruby Loo",
-            "emails": ["ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
+            "emails": ["rloo@oath.com", "ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
         },
         {
             "launchpad_id": "rltaylo",
