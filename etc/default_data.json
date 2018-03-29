@@ -2773,11 +2773,15 @@
                 },
                 {
                     "company_name": "Mail.Ru",
+                    "end_date": "2017-Aug-18"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Boris Bobrov",
-            "emails": ["breton@cynicmansion.ru", "bbobrov@mirantis.com", "b.bobrov@corp.mail.ru"]
+            "emails": ["breton@cynicmansion.ru", "bbobrov@mirantis.com", "b.bobrov@corp.mail.ru", "bbobrov@suse.com"]
         },
         {
             "launchpad_id": "bbwang5827",
