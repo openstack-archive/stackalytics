@@ -8939,11 +8939,15 @@
             "companies": [
                 {
                     "company_name": "NetApp",
+                    "end_date": "2018-Mar-28"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Goutham Pacha Ravi",
-            "emails": [ "gouthamr@netapp.com", "gouthampravi@gmail.com", "goutham.pacharavi@netapp.com"]
+            "emails": [ "gouthamr@netapp.com", "gouthampravi@gmail.com", "goutham.pacharavi@netapp.com", "gpachara@redhat.com"]
         },
         {
             "launchpad_id": "gpocentek",
