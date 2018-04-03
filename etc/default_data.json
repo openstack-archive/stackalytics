@@ -20196,11 +20196,15 @@
             "companies": [
                 {
                     "company_name": "Lenovo",
+                    "end_date": "2015-Mar-16"
+                },
+                {
+                    "company_name": "Nokia",
                     "end_date": null
                 }
             ],
             "user_name": "Rich Wellum",
-            "emails": ["rwellum@lenovo.com", "richwellum@gmail.com"]
+            "emails": ["rwellum@nokia.com", "richwellum@gmail.com"]
         },
         {
             "launchpad_id": "rick-aulino",
