@@ -18527,6 +18527,25 @@
             "emails": ["gleebix@gmail.com"]
         },
         {
+            "launchpad_id": "patrick-michel-petit",
+            "companies": [
+                {
+                    "company_name": "Bull",
+                    "end_date": "2014-Mar-01"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Jul-15"
+                },
+                {
+                    "company_name": "OpenNext",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Patrick Petit",
+            "emails": ["patrick.michel.petit@gmail.com", "ppetit@mirantis.com", "ppetit@opennext.io"]
+        },
+        {
             "launchpad_id": "paul-carlton2",
             "companies": [
                 {
