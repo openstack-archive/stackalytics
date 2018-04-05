@@ -12811,6 +12811,17 @@
             "emails": ["juan.pablo.lopez.gutierrez@intel.com"]
         },
         {
+            "launchpad_id": "jui-chandwaskar",
+            "companies": [
+                {
+                    "company_name": "OP5",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jui Chandwaskar",
+            "emails": ["jchandwaskar@op5.com", "jui.136@gmail.com"]
+        },
+        {
             "launchpad_id": "juliaashleykreger",
             "companies": [
                 {
