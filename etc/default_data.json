@@ -21027,11 +21027,15 @@
                 },
                 {
                     "company_name": "Lenovo",
+                    "end_date": "2018-Mar-23"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Rushil Chugh",
-            "emails": ["rchugh1@lenovo.com", "rushil.chugh@gmail.com"]
+            "emails": ["rushil.chugh@gmail.com"]
         },
         {
             "launchpad_id": "russell-sim",
