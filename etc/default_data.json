@@ -22825,11 +22825,15 @@
             "companies": [
                 {
                     "company_name": "OVH",
+                    "end_date": "2018-Apr-06"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Slawek Kaplonski",
-            "emails": ["slawomir.kaplonski@ovh.net", "slawek@kaplonski.pl"]
+            "emails": ["skaplons@redhat.com", "slawomir.kaplonski@ovh.net", "slawek@kaplonski.pl"]
         },
         {
             "launchpad_id": "sleepsonthefloor",
