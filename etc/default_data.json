@@ -20691,6 +20691,21 @@
             "emails": ["roeyc@vmware.com", "chen.roey@gmail.com"]
         },
         {
+            "launchpad_id": "roger-yu",
+            "companies": [
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": "2018-Apr-10"
+                },
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Roger Yu",
+            "emails": ["yu.qian@99cloud.net", "rogeryuqian@gmail.com"]
+        },
+        {
             "launchpad_id": "rohitagarwalla",
             "companies": [
                 {
