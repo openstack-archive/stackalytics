@@ -13530,6 +13530,21 @@
             "emails": ["kienha9922@gmail.com"]
         },
         {
+            "launchpad_id": "kiennt2609",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2018-Apr-13"
+                },
+                {
+                    "company_name": "Viettel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kien Nguyen",
+            "emails": ["kiennt65@viettel.com.vn", "kiennt2609@gmail.com"]
+        },
+        {
             "launchpad_id": "kieran-forde",
             "companies": [
                 {
