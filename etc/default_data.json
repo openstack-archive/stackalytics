@@ -33305,6 +33305,30 @@
             ]
         },
         {
+            "module": "kayobe",
+            "organization": "openstack",
+            "uri": "git://git.openstack.org/openstack/kayobe/git",
+            "releases": [
+                {
+                    "branch": "stable/ocata",
+                    "tag_to": "HEAD",
+                    "release_name": "Ocata",
+                    "tag_from": "945adf2cc1ea146dde597da7f4b2e4735c48efc5"
+                },
+                {
+                    "branch": "stable/pike",
+                    "tag_to": "HEAD",
+                    "release_name": "Pike",
+                    "tag_from": "2.0.0"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Queens",
+                    "tag_from": "3.1.0"
+                }
+            ]
+        },
+        {
             "module": "releng",
             "organization": "opnfv",
             "uri": "git://git.opnfv.org/releng.git"
