@@ -33910,6 +33910,11 @@
             "organization": "kubernetes",
             "module_group_id": "kubernetes-group",
             "uri": "github://"
+        },
+        {
+            "organization": "spinnaker",
+            "module_group_id": "spinnaker-group",
+            "uri": "github://"
         }
     ],
     "module_groups": [
@@ -34394,7 +34399,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "spinnaker"]
         },
         {
             "id": "ansible-group",
@@ -34461,6 +34466,12 @@
             "title": "FDio",
             "child": true,
             "modules": ["fdio-group"]
+        },
+        {
+            "id": "spinnaker-group",
+            "title": "Spinnaker",
+            "child": true,
+            "modules": ["spinnaker-group"]
         }
     ]
 }
