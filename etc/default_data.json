@@ -13928,6 +13928,9 @@
             ],
             "user_name": "Kubernetes Robot",
             "emails": ["k8s-publish-robot@users.noreply.github.com",
+                       "k8s-publishing-bot@users.noreply.github.com",
+                       "minikube-bot@google.com",
+                       "containers-bot@bitnami.com",
                        "k8s-merge-robot@users.noreply.github.com"]
         },
         {
@@ -20618,6 +20621,31 @@
             ],
             "user_name": "Roberto Moral",
             "emails": ["roberto_moral@cable.comcast.com"]
+        },
+        {
+            "launchpad_id": "robots",
+            "companies": [
+                {
+                    "company_name": "*robots",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Robots",
+            "emails": ["cf-buildpacks-eng@pivotal.io",
+                       "cf-mega@pivotal.io",
+                       "cf-syslog@pivotal.io",
+                       "cf-bosh-eng@pivotal.io",
+                       "cf-capi-eng+ci@pivotal.io",
+                       "cf-loggregator@pivotal.io",
+                       "cf-routing-eng@pivotal.io",
+                       "cf-infrastructure@pivotal.io",
+                       "cf-release-integration@pivotal.io",
+                       "ci-pool@localhost",
+                       "ci@localhost",
+                       "submoduleupdate@localhost",
+                       "istio.testing@gmail.com",
+                       "github-bot@pyup.io"
+            ]
         },
         {
             "launchpad_id": "robsparker",
