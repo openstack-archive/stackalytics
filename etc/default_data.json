@@ -33335,7 +33335,7 @@
         {
             "module": "kayobe",
             "organization": "openstack",
-            "uri": "git://git.openstack.org/openstack/kayobe/git",
+            "uri": "git://git.openstack.org/openstack/kayobe.git",
             "releases": [
                 {
                     "branch": "stable/ocata",
