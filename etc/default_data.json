@@ -24679,6 +24679,18 @@
             "emails": ["tbechtold@suse.com", "t.bechtold@telekom.de", "thomasbechtold@jpberlin.de"]
         },
         {
+            "launchpad_id": "tobias-urdin",
+            "github_id": "tobias-urdin",
+            "companies": [
+                {
+                    "company_name": "Binero",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tobias Urdin",
+            "emails": [ "tobias@busybox.se", "tobias.urdin@binero.se" ]
+        },
+        {
             "launchpad_id": "tobixen",
             "companies": [
                 {
@@ -29577,6 +29589,10 @@
             "domains": ["bigswitch.com"],
             "company_name": "Big Switch Networks",
             "aliases": ["Big Switch"]
+        },
+        {
+            "domains": ["binero.se"],
+            "company_name": "Binero"
         },
         {
             "domains": ["bit-isle.co.jp"],
