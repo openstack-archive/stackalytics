@@ -27109,6 +27109,17 @@
             "emails": ["xmdxcxz@gmail.com", "xinze@xsky.com"]
         },
         {
+            "github_id": "xlgao-zju",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xianglin Gao",
+            "emails": ["xlgao@zju.edu.cn","xianglin.gxl@alibaba-inc.com"]
+        },
+        {
             "launchpad_id": "xqh",
             "companies": [
                 {
