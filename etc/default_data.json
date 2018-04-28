@@ -9389,10 +9389,14 @@
             "companies": [
                 {
                     "company_name": "EasyStack",
+                    "end_date": "2018-Apr-28"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
-            "user_name": "Hanxi_Liu",
+            "user_name": "Hanxi Liu",
             "emails": ["hanxi.liu@easystack.cn", "apolloliuhx@gmail.com", "root@lhx-ceph-1.novalocal"]
         },
         {
