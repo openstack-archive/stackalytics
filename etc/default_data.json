@@ -11502,8 +11502,17 @@
                 },
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2018-Apr-25"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-May-02"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
+
             ],
             "user_name": "Jean-Philippe Evrard",
             "emails": ["jean-philippe.evrard@rackspace.co.uk", "jean-philippe.evrard@belnet.be", "jean-philippe@evrard.me"]
