@@ -12754,6 +12754,18 @@
             "emails": ["jrod@rackspace.com"]
         },
         {
+            "launchpad_id": "jrosser",
+            "github_id": "jrosser",
+            "companies" : [
+                {
+                    "company_name": "BBC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jonathan Rosser",
+            "emails": ["jonathan.rosser@rd.bbc.co.uk", "jrosser@rd.bbc.co.uk"]
+        },
+        {
             "launchpad_id": "jsavak",
             "companies": [
                 {
@@ -29599,6 +29611,10 @@
         {
             "domains": ["bacoosta.com"],
             "company_name": "Bacoosta IT Services"
+        },
+        {
+            "domains": ["bbc.co.uk", "rd.bbc.co.uk"],
+            "company_name": "BBC"
         },
         {
             "domains": ["bbva.com"],
