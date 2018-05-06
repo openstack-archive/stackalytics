@@ -9284,6 +9284,18 @@
             "emails": ["409007319@qq.com", "han.chaob@h3c.com"]
         },
         {
+            "launchpad_id": "ha-miyamoto",
+            "zanata_id": "ha_miyamoto",
+            "companies": [
+                {
+                    "company_name": "KDDI",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hajime Miyamoto",
+            "emails": ["ha-miyamoto@kddi.com", "radedance@gmail.com"]
+        },
+        {
             "launchpad_id": "haishi",
             "companies": [
                 {
