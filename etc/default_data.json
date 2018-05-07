@@ -15532,6 +15532,17 @@
              "emails": ["xu_lyman@163.com"]
         },
         {
+            "launchpad_id": "lyq-0617",
+            "companies": [
+                {
+                    "company_name": "JD.COM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lovejoy",
+            "emails": ["lyq.0617@gmail.com", "liangyongqing1@jd.com"]
+        },
+        {
             "launchpad_id": "lyqgenius",
             "companies": [
                 {
