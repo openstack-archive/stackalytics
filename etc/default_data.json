@@ -12421,11 +12421,15 @@
             "companies": [
                 {
                     "company_name": "Servionica",
+                    "end_date": "2018-Apr-02"
+                },
+                {
+                    "company_name": "SBCloud",
                     "end_date": null
                 }
             ],
             "user_name": "Alexander Chadin",
-            "emails": ["a.chadin@servionica.ru"]
+            "emails": ["a.chadin@servionica.ru", "aschadin@sbcloud.ru"]
         },
         {
             "launchpad_id": "jokke",
@@ -30926,6 +30930,11 @@
             "domains": ["sap.com"],
             "company_name": "SAP",
             "aliases": ["SAP SE"]
+        },
+        {
+            "domains": ["sbcloud.ru"],
+            "company_name": "SBCloud",
+            "aliases": ["SberCloud"]
         },
         {
             "domains": ["sberbank.ru"],
