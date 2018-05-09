@@ -17207,6 +17207,21 @@
             "emails": ["mkumar2301@gmail.com"]
         },
         {
+            "launchpad_id": "mnasiadka",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2018-Mar-31"
+                },
+                {
+                    "company_name": "Nokia",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michal Nasiadka",
+            "emails": ["mnasiadka@gmail.com", "michal.nasiadka@pl.ibm.com", "michal.nasiadka@nokia.com"]
+        },
+        {
             "launchpad_id": "mnestratov",
             "companies": [
                 {
