@@ -30772,6 +30772,11 @@
             "company_name": "Ormuco"
         },
         {
+            "domains": ["oschina.cn"],
+            "company_name": "ForeverOSS",
+            "aliases": ["恒拓开源", "OSChina"]
+        },
+        {
             "domains": ["osones.com", "osones.io", "osones.fr"],
             "company_name": "Osones"
         },
@@ -31217,6 +31222,11 @@
         {
             "domains": ["tunnelvisionlabs.com"],
             "company_name": "Tunnel Vision Laboratories"
+        },
+        {
+            "domains": ["tuscloud.io"],
+            "company_name": "NationSky",
+            "aliases": ["启迪国信"]
         },
         {
             "domains": ["u-szeged.hu"],
