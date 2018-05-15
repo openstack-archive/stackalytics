@@ -14073,6 +14073,10 @@
                 },
                 {
                     "company_name": "Samsung",
+                    "end_date": "2017-Aug-25"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
