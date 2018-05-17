@@ -100,5 +100,16 @@
         </tr>
     </table>
 
+    <div style="font-size: 10px; color: grey;">
+        Stackalytics displays information collected from open sources, including
+        <a href="https://git.openstack.org/cgit" style="color: grey;">git.openstack.org</a>,
+        <a href="https://review.openstack.org/" style="color: grey;">review.openstack.org</a>,
+        <a href="https://launchpad.net/" style="color: grey;">Launchpad</a>,
+        <a href="https://github.com/" style="color: grey;">GitHub</a>,
+        <a href="https://www.openstack.org/" style="color: grey;">OpenStack.org</a>,
+        <a href="http://lists.openstack.org/cgi-bin/mailman/listinfo" style="color: grey;">OpenStack mailing lists</a>.
+        {% if update_time_title %}{{ update_time_title }}{% endif %}
+    </div>
+
 </div>
 {% endblock %}
