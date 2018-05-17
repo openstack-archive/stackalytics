@@ -29612,6 +29612,10 @@
             "company_name": "Askbot"
         },
         {
+            "domains": ["atlassian.com"],
+            "company_name": "Atlassian"
+        },
+        {
             "domains": ["atomia.com"],
             "company_name": "Atomia"
         },
@@ -30071,6 +30075,10 @@
         {
             "domains": ["endurancewindpower.com"],
             "company_name": "Endurance Wind Power"
+        },
+        {
+            "domains": ["enea.com"],
+            "company_name": "Enea"
         },
         {
             "domains": ["entpnt.com"],
@@ -30652,6 +30660,14 @@
         {
             "domains": ["netease.com"],
             "company_name": "NetEase"
+        },
+        {
+            "domains": ["netflix.com"],
+            "company_name": "Netflix"
+        },
+        {
+            "domains": ["netgate.com"],
+            "company_name": "Netgate"
         },
         {
             "domains": ["netmarble.com"],
