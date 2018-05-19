@@ -5334,6 +5334,25 @@
             "emails": ["dahukuang@126.com"]
         },
         {
+            "launchpad_id": "daidv",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2016-Jun-15"
+                },
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2018-Apr-30"
+                },
+                {
+                    "company_name": "Viettel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dai Dang Van",
+            "emails": ["daidv3@viettel.com.vn", "daikk115@gmail.com"]
+        },
+        {
             "launchpad_id": "daijing",
             "companies": [
                 {
