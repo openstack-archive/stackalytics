@@ -29843,6 +29843,10 @@
             "company_name": "Citrix"
         },
         {
+            "domains": ["citynetwork.se", "citynetwork.eu", "citycloud.com"],
+            "company_name": "City Network"
+        },
+        {
             "domains": ["cloud.com"],
             "company_name": "Citrix Systems"
         },
