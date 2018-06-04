@@ -750,6 +750,17 @@
             "emails": ["scott.adkins@walmart.com", "scott_adkins@cable.comcast.com", "adkinss@gmail.com"]
         },
         {
+            "github_id": "adohe",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "TonyAdo",
+            "emails": ["coolhzb@163.com"]
+        },
+        {
             "launchpad_id": "adolfo-duarte",
             "companies": [
                 {
@@ -9988,6 +9999,17 @@
             ],
             "user_name": "hongbin",
             "emails": ["hongbin034@gmail.com"]
+        },
+        {
+            "github_id": "hongchaodeng",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Hongchao Deng",
+            "emails": ["hongchaodeng1@gmail.com"]
         },
         {
             "launchpad_id": "houshengbo",
@@ -21886,6 +21908,17 @@
             "emails": ["sean@coreitpro.com", "scollins@mirantis.com", "sean_collins2@cable.comcast.com"]
         },
         {
+            "github_id": "scorpiocph",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Penghao Cen",
+            "emails": ["scorpiocph@gmail.com"]
+        },
+        {
             "launchpad_id": "scott-dangelo",
             "companies": [
                 {
@@ -26993,6 +27026,10 @@
             "companies": [
                 {
                     "company_name": "CoreOS",
+                    "end_date": "2014-Jun-30"
+                },
+                {
+                    "company_name": "Alibaba",
                     "end_date": null
                 }
             ],
@@ -29559,7 +29596,7 @@
             "aliases": ["Alchemy Solutions", "Alchemy Lab"]
         },
         {
-            "domains": ["alibaba.com", "alibabacloud.com", "aliyun.com", "taobao.com"],
+            "domains": ["alibaba.com", "alibabacloud.com", "aliyun.com", "taobao.com", "alibaba-inc.com"],
             "company_name": "Alibaba",
             "aliases": ["Alibaba", "Alibaba Group", "Alibaba Group Holding Limited", "Alibaba.com Limited", "Alibaba.com Inc.", "Alibaba Cloud", "阿里云计算有限公司", "阿里云"]
         },
