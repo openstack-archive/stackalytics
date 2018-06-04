@@ -7882,6 +7882,17 @@
              "emails": ["frank_openstack@163.com"]
         },
         {
+            "launchpad_id": "fanguiju",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "fan_guiju",
+            "emails": ["fanguiju1992@163.com", "fan.guiju@99cloud.net"]
+        },
+        {
             "launchpad_id": "fanyujie",
             "companies": [
                 {
