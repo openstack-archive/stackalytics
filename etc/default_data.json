@@ -11884,6 +11884,10 @@
             "companies": [
                 {
                     "company_name": "Boston University",
+                    "end_date": "2018-May-31"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
