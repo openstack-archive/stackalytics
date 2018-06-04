@@ -25189,6 +25189,18 @@
             "emails": ["thierry@openstack.org", "thierry.carrez@ubuntu.com"]
         },
         {
+            "launchpad_id": "tungdoan",
+            "companies": [
+                {
+                    "company_name": "5G Lab Germany",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tung Doan",
+            "emails": ["doantungbk.203@gmail.com", "tung.doan_van@tu-dresden.de"]
+        },
+
+        {
             "launchpad_id": "tyr-6",
             "companies": [
                 {
@@ -29539,6 +29551,10 @@
             "domains": ["4loops.com"],
             "company_name": "Four Loops Solutions",
             "aliases": ["4Loops Solutions pvt ltd"]
+        },
+        {
+            "domains": ["5glab.de"],
+            "company_name": "5G Lab Germany"
         },
         {
             "domains": ["6wind.com"],
