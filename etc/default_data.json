@@ -4596,6 +4596,17 @@
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
         },
         {
+            "launchpad_id": "chzhang8",
+            "companies": [
+                {
+                    "company_name": "SZZT Electronics.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhang Chi",
+            "emails": ["zhangchi@szzt.com.cn"]
+        },
+        {
             "launchpad_id": "cimomo",
             "github_id": "cimomo",
             "companies": [
