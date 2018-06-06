@@ -10242,6 +10242,17 @@
             "emails": ["huangtianhua@huawei.com", "tiantian223@163.com"]
         },
         {
+            "github_id": "huangyuqi",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "frank-huangyuqi",
+            "emails": ["frank.ch@foxmail.com"]
+        },
+        {
             "launchpad_id": "huayue",
             "companies": [
                 {
