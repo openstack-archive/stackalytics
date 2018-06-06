@@ -13698,17 +13698,6 @@
             "emails": ["kimura.tatsuro@lab.ntt.co.jp", "ktatsuro1024@gmail.com"]
         },
         {
-            "launchpad_id": "kimuraya",
-            "companies": [
-                {
-                    "company_name": "NTT",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Yasuhiro Kimura",
-            "emails": ["kimura.yasuhiro@nttcom.co.jp", "kimura50@gmail.com"]
-        },
-        {
             "launchpad_id": "kiseok7",
             "companies": [
                 {
@@ -27767,6 +27756,17 @@
             ],
             "user_name": "Yaroslav Telishevskiy",
             "emails": ["yaroslavmt@gmail.com"]
+        },
+        {
+            "launchpad_id": "yasukimura",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yasuhiro Kimura",
+            "emails": ["kimura.yasuhiro@nttcom.co.jp"]
         },
         {
             "launchpad_id": "yatinkarel",
