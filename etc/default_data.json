@@ -375,6 +375,17 @@
             "emails": ["aalekseenko@hystax.com", "9118250541@mail.ru"]
         },
         {
+            "launchpad_id": "aarents",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexandre Arents",
+            "emails": ["alexandre.arents@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "aaron-lee",
             "companies": [
                 {
@@ -19063,6 +19074,17 @@
             "emails": ["pi3rra@root.gg", "pierre-arthur.mathieu@hp.com", "pierre-arthur.mathieu@hpe.com"]
         },
         {
+            "launchpad_id": "pierre-gaxatte",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pierre Gaxatte",
+            "emails": ["pierre.gaxatte@corp.ovh.com"]
+        },
+        {
             "launchpad_id": "pierre-padrixe",
             "companies": [
                 {
@@ -19098,6 +19120,17 @@
             ],
             "user_name": "Pierre Blanc",
             "emails": ["pierreblanc75@gmail.com", "pblanc@redhat.com", "pierre.blanc@ormuco.com"]
+        },
+        {
+            "launchpad_id": "piotrbielak",
+            "companies": [
+                {
+                    "company_name": "OVH",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Piotr Bielak",
+            "emails": ["piotr.bielak@corp.ovh.com"]
         },
         {
             "launchpad_id": "piyush0101",
