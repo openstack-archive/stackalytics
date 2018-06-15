@@ -25865,6 +25865,21 @@
             "emails": ["vipuls@gmail.com", "vipul.sabhaya@hp.com", "vipul.sabhaya@hpe.com"]
         },
         {
+          "launchpad_id": "vishakha.agarwal",
+          "companies": [
+              {
+                  "company_name": "*independent",
+                  "end_date": "2018-Mar-01"
+              },
+              {
+                  "company_name": "NEC",
+                  "end_date": null
+              }
+          ],
+          "user_name": "Vishakha Agarwal",
+          "emails": ["agarwalvishakha18@gmail.com"]
+        },
+        {
             "launchpad_id": "vishalcdac07",
             "companies": [
                 {
