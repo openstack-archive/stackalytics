@@ -18908,6 +18908,17 @@
             "emails": ["dino.p@inwinstack.com", "pcp33307@gmail.com"]
         },
         {
+            "launchpad_id": "pdk300",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JackPeng",
+            "emails": ["2432183391@qq.com"]
+        },
+        {
             "launchpad_id": "pe-ettori",
             "companies": [
                 {
