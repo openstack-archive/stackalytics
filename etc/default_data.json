@@ -15951,6 +15951,21 @@
             "emails": ["manikantha.tadi@gmail.com", "srinivas.tadi@imaginea.com"]
         },
         {
+            "launchpad_id": "manikbindlish19",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-Mar-01"
+                },
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Manik Bindlish",
+            "emails": ["manikbindlish19@gmail.com"]
+        },
+        {
             "launchpad_id": "manjunath-ranganathaiah",
             "companies": [
                 {
