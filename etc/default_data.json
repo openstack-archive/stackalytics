@@ -29904,6 +29904,10 @@
             "company_name": "Bluehost"
         },
         {
+            "domains": ["bmw.de", "bmw-carit.de"],
+            "company_name": "BMW"
+        },
+        {
             "domains": ["bocloud.com.cn"],
             "company_name": "BoCloud",
             "aliases": ["beyondcent", "博云", "苏州博纳讯动软件有限公司", "博纳讯动"]
