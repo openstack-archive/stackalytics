@@ -16549,6 +16549,17 @@
             "emails": ["mazengx@chinatelecom.cn", "mazengxie@126.com"]
         },
         {
+            "launchpad_id": "mbeierl",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mark Beierl",
+            "emails": ["mark.beierl@dell.com", "mark.beierl@emc.com", "mark@jemms.net"]
+        },
+        {
             "launchpad_id": "mbonell",
             "companies": [
                 {
