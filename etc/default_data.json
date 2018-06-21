@@ -24692,6 +24692,17 @@
             "emails": ["tian.mingming@h3c.com", "tianming20052004@163.com"]
         },
         {
+            "launchpad_id": "tianhui",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "tianhui",
+            "emails": ["tianhui@awcloud.com"]
+        },
+        {
             "launchpad_id": "tianliang",
             "companies": [
                 {
