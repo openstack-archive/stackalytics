@@ -2415,6 +2415,18 @@
                        "asalkeld@redhat.com", "angus.salkeld@rackspace.com"]
         },
         {
+            "launchpad_id": "aserdean",
+            "github_id": "aserdean",
+            "companies": [
+                {
+                    "company_name": "Cloudbase Solutions",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alin Gabriel Serdean",
+            "emails": ["aserdean@cloudbasesolutions.com", "aserdean@ovn.org"]
+        },
+        {
             "launchpad_id": "ashish-kumar-gupta",
             "companies": [
                 {
