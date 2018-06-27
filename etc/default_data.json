@@ -6417,11 +6417,15 @@
                },
                {
                    "company_name": "Calsoft",
+                   "end_date": "2018-May-30"
+               },
+               {
+                   "company_name": "Dell EMC",
                    "end_date": null
                }
            ],
            "user_name": "Digambar",
-           "emails": ["digambarpatil15@yahoo.co.in", "digambarpat@gmail.com", "digambar.patil@calsoftinc.com"]
+           "emails": ["digambarpatil15@yahoo.co.in", "digambarpat@gmail.com", "digambar.patil@calsoftinc.com", "digmabar_patil@dellteam.com"]
         },
         {
             "launchpad_id": "dileep-ranganathan",
