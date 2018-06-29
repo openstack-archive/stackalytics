@@ -6834,10 +6834,18 @@
                 {
                     "company_name": "Letv Cloud Computing",
                     "end_date": "2017-Feb-28"
+                },
+                {
+                   "company_name": "*independent",
+                   "end_date": "2018-May-18"
+                },
+                {
+                    "company_name": "China Telecom",
+                    "end_date": null
                 }
             ],
             "user_name": "LIU Yulong",
-            "emails": ["liuyulong@letv.com", "yulong@cloudcraft.cn", "dragon889@163.com", "liuyulong@le.com", "i@liuyulong.me"]
+            "emails": ["liuyulong@letv.com", "yulong@cloudcraft.cn", "dragon889@163.com", "liuyulong@le.com", "i@liuyulong.me", "liuyul@chinatelecom.cn"]
         },
         {
             "launchpad_id": "dreidellhasa",
