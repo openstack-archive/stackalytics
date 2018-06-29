@@ -15922,6 +15922,17 @@
             "emails": ["stanislav_m@dell.com"]
         },
         {
+            "launchpad_id": "malmqvis",
+            "companies": [
+                {
+                    "company_name": "Nokia",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Markus Malmqvist",
+            "emails": ["markus.malmqvist@nokia.com"]
+        },
+        {
             "launchpad_id": "mandarvaze",
             "companies": [
                 {
