@@ -27933,6 +27933,17 @@
             "emails": ["ybabenko3@gmail.com"]
         },
         {
+            "launchpad_id": "ycx",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ycx",
+            "emails": ["yanpq@awcloud.com"]
+        },
+        {
             "launchpad_id": "yefeng.wen",
             "companies": [
                 {
