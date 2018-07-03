@@ -33517,6 +33517,31 @@
             "organization": "openvswitch",
             "uri": "https://github.com/openvswitch/ovs.git"
         },
+          {
+               "module": "openlab-github-io",
+               "organization": "openlab",
+               "uri": "https://github.com/theopenlab/theopenlab.github.io.git"
+          },
+          {
+               "module": "openlab-project-config",
+               "organization": "openlab",
+               "uri": "https://github.com/theopenlab/project-config-source.git"
+          },
+          {
+               "module": "openlab-terraform-jobs",
+               "organization": "openlab",
+               "uri": "https://github.com/theopenlab/terraform-jobs.git"
+          },
+          {
+               "module": "openlab-gophercloud-jobs",
+               "organization": "openlab",
+               "uri": "https://github.com/theopenlab/gophercloud-jobs.git"
+          },
+          {
+               "module": "openlab-zuul-jobs",
+               "organization": "openlab",
+               "uri": "https://github.com/theopenlab/openlab-zuul-jobs.git"
+          },
         {
             "module": "origin",
             "organization": "openshift",
@@ -34843,7 +34868,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openshift", "ovs", "pypa-group", "spinnaker"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
         },
         {
             "id": "ansible-group",
@@ -34887,6 +34912,12 @@
             "child": true,
             "modules": ["opnfv"]
         },
+          {
+               "id": "openlab-group",
+               "title": "OpenLab",
+               "child": true,
+               "modules": ["openlab"]
+          },
         {
             "id": "openshift-group",
             "title": "OpenShift",
