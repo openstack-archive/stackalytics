@@ -6462,6 +6462,7 @@
         },
         {
             "launchpad_id": "dims-v",
+            "github_id": "dims",
             "companies": [
                 {
                     "company_name": "IBM",
