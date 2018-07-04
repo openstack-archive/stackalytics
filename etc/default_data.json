@@ -26237,11 +26237,15 @@
             "companies": [
                 {
                     "company_name": "Cray",
+                    "end_date": "2017-Aug-31"
+                },
+                {
+                    "company_name": "StackHPC",
                     "end_date": null
                 }
             ],
             "user_name": "Will Miller",
-            "emails": ["wmiller@cray.com"]
+            "emails": ["willm@stackhpc.com", "wmiller@cray.com"]
         },
         {
             "launchpad_id": "w-wanghong",
