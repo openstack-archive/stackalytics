@@ -26328,11 +26328,15 @@
                 },
                 {
                     "company_name": "IBM",
+                    "end_date": "2017-Jul-01"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Walter A. Boring IV",
-            "emails": ["waboring@hemna.com", "walter.a.boring@ibm.com", "walter.boring@hp.com", "walter.boring@hpe.com"]
+            "emails": ["waboring@hemna.com", "walter.a.boring@ibm.com", "walter.boring@hp.com", "walter.boring@hpe.com", "wboring@suse.com"]
         },
         {
             "launchpad_id": "wan-yen-hsu",
