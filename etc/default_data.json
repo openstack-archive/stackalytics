@@ -9187,11 +9187,15 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
             "user_name": "Guang Yee",
-            "emails": ["guang.yee@hpe.com", "guang.yee@hp.com"]
+            "emails": ["guang.yee@suse.com", "guang.yee@hpe.com", "guang.yee@hp.com"]
         },
         {
             "launchpad_id": "guans",
