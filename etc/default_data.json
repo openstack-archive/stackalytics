@@ -16880,6 +16880,18 @@
             "emails": ["matt@mattfischer.com", "mfisch@ubuntu.com" ]
         },
         {
+            "launchpad_id": "mfo",
+            "github_id": "mfoliveira",
+            "companies": [
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mauricio Faria de Oliveira",
+            "emails": ["mauricio.foliveira@gmail.com", "mauricio.oliveira@canonical.com", "mfo@canonical.com"]
+        },
+        {
             "launchpad_id": "mgagne",
             "companies": [
                 {
