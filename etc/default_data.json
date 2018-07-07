@@ -30212,6 +30212,10 @@
             "aliases": ["China Minsheng Bank"]
         },
         {
+            "domains": ["cmos.chinamobile.com"],
+            "company_name": "China Mobile Online Services"
+        },
+        {
             "domains": ["codethink.co.uk"],
             "company_name": "Codethink"
         },
