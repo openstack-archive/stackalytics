@@ -29654,6 +29654,10 @@
                 },
                 {
                     "company_name": "Ericsson",
+                    "end_date": "2018-Jun-25"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
