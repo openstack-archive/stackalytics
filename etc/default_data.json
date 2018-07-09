@@ -19576,6 +19576,21 @@
             "emails": ["preethi.dsilva@hp.com", "preethidsilva@gmail.com", "preethi.dsilva@hpe.com"]
         },
         {
+            "launchpad_id": "priteau",
+            "companies": [
+                {
+                    "company_name": "University of Chicago",
+                    "end_date": "2018-Jun-29"
+                },
+                {
+                    "company_name": "StackHPC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Pierre Riteau",
+            "emails": ["priteau@uchicago.edu", "pierre@stackhpc.com"]
+        },
+        {
             "launchpad_id": "priti-desai",
             "companies": [
                 {
@@ -31583,6 +31598,10 @@
             "domains": ["ubisoft.com"],
             "company_name": "Ubisoft",
             "aliases": ["Ubisoft Entertainment"]
+        },
+        {
+            "domains": ["uchicago.edu"],
+            "company_name": "University of Chicago"
         },
         {
             "domains": ["ucr.edu"],
