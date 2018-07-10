@@ -18759,14 +18759,19 @@
         },
         {
             "launchpad_id": "partha.b",
+            "github_id": "beevatsyu",
             "companies": [
                 {
                     "company_name": "AFour Technologies",
+                    "end_date": "2017-Jun-22"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
             "user_name": "Partha Bera",
-            "emails": ["partha.bera@afourtech.com", "beevatsyu@gmail.com"]
+            "emails": ["beevatsyu@gmail.com"]
         },
         {
             "launchpad_id": "patanella",
