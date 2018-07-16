@@ -1006,6 +1006,10 @@
             "companies": [
                 {
                     "company_name": "VMware",
+                    "end_date": "2018-Jun-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -1352,6 +1356,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -1685,6 +1693,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -5845,6 +5857,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -9442,6 +9458,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -11734,6 +11754,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date":  "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -11749,6 +11773,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date":  "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -16335,10 +16363,6 @@
                 },
                 {
                     "company_name": "Dell EMC",
-                    "end_date": "2017-Oct-01"
-                },
-                {
-                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -21049,6 +21073,10 @@
                 },
                 {
                     "company_name": "VMware",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -25115,6 +25143,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2018-Jul-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -27366,6 +27398,10 @@
                 },
                 {
                     "company_name": "VMware",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
