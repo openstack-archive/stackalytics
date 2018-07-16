@@ -6368,6 +6368,17 @@
             "emails": ["dharini.chandrasekar@intel.com", "dhar41092@gmail.com"]
         },
         {
+            "launchpad_id": "dharmendra",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dharmendra Kushwaha",
+            "emails": ["dharmendra.kushwaha@india.nec.com", "dharmendra.kushwaha@nectechnologies.in", "dharmendra.kushwaha@gmail.com"]
+        },
+        {
             "launchpad_id" : "dhillyard",
             "companies": [
                 {
