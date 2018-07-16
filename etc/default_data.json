@@ -26843,6 +26843,21 @@
             "emails": ["wh-openstack@wirewd.com", "wh-ubuntuone@wirewd.com"]
         },
         {
+            "launchpad_id": "whoami-rajat",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-Mar-29"
+                },
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rajat Dhasmana",
+            "emails": ["rajatdhasmana@gmail.com"]
+        },
+        {
             "launchpad_id": "whyliyi",
             "companies": [
                 {
