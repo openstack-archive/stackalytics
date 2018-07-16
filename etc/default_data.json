@@ -3499,6 +3499,18 @@
             "emails": ["bruno.semperlotti@gmail.com"]
         },
         {
+            "launchpad_id": "bryan-strassner",
+            "github_id": "bryan-strassner",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bryan Strassner",
+            "emails": ["bryan.strassner@gmail.com", "bs4939@att.com"]
+        },
+        {
             "github_id": "bswang",
             "companies":[
                 {
