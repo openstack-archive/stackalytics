@@ -27828,6 +27828,17 @@
             "emails": ["wangy@rc.inesa.com"]
         },
         {
+            "launchpad_id": "yangjianfeng",
+            "user_name": "Yang JianFeng",
+            "companies": [
+                {
+                    "company_name": "China Telecom",
+                    "end_date": null
+                }
+            ],
+            "emails": ["yangjf@chinatelecom.cn", "yjf1970231893@gmail.com"]
+        },
+        {
             "launchpad_id": "yangling",
             "user_name": "yangling",
             "companies": [
