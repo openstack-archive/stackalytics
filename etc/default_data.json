@@ -14912,6 +14912,21 @@
             "emails": ["lyxu@fiberhome.com"]
         },
         {
+            "launchpad_id": "linkid",
+            "companies": [
+                {
+                    "company_name": "Objectif Libre",
+                    "end_date": "2014-Aug-08"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "François Magimel",
+            "emails": ["francois.magimel@alumni.enseeiht.fr", "francois.magimel@objectif-libre.com"]
+        },
+        {
             "launchpad_id": "linlin",
             "zanata_id": "linlin",
             "companies": [
