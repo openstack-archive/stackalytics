@@ -22255,6 +22255,26 @@
             "emails": ["sean.handley@datacentred.co.uk", "sean@datacentred.co.uk", "sean.handley@gmail.com"]
         },
         {
+            "launchpad_id": "sean-k-mooney",
+            "github_id": "SeanMooney",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": "2018-Jul-13"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Mooney",
+            "emails": [
+                "sean.k.mooney@intel.com",
+                "smooney@redhat.com",
+                "work@seanmooney.info"
+            ]
+        },
+        {
             "launchpad_id": "sean-mccully",
             "companies": [
                 {
