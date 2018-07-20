@@ -6520,6 +6520,22 @@
             "emails": ["dsrinivas@mirantis.com", "dims@linux.vnet.ibm.com", "davanum@gmail.com"]
         },
         {
+            "launchpad_id": "dinesh-bhor",
+            "github_id": "dineshbhor",
+            "companies": [
+                {
+                    "company_name": "NTT",
+                    "end_date": "2018-Jun-29"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "dineshbhor",
+            "emails": ["bhordinesh07@gmail.com", "dinesh.bhor@nttdata.com"]
+        },
+        {
             "launchpad_id": "divius",
             "companies": [
                 {
