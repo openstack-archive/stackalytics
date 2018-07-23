@@ -12056,6 +12056,17 @@
             "emails": ["gzliangjiahao@gmail.com", "jiahao.liang@oneconvergence.com"]
         },
         {
+            "launchpad_id": "jiangguocai",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "JiangGuocai",
+            "emails": ["jiang.guocai@zte.com.cn"]
+        },
+        {
             "launchpad_id": "jiangpch",
             "companies": [
                 {
