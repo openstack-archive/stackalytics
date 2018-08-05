@@ -34485,6 +34485,16 @@
             "uri": "https://github.com/FDio/trex.git",
             "organization": "FDio"
 
+        },
+        {
+            "module": "edge-computing",
+            "uri": "https://github.com/OpenStackweb/openstack-org.git",
+            "organization": "openstack"
+        },
+        {
+            "module": "leveraging-containers-openstack",
+            "uri": "https://github.com/OpenStackweb/openstack-org.git",
+            "organization": "openstack"
         }
     ],
     "project_sources": [
@@ -35062,7 +35072,8 @@
             "id": "openstack",
             "title": "Official",
             "child": true,
-            "modules": ["openstack-official", "governance", "api-wg", "openstack-user-stories"]
+            "modules": ["openstack-official", "governance", "api-wg", "openstack-user-stories",
+              "edge-computing", "leveraging-containers-openstack"]
         },
         {
             "id": "tc:approved-release",
