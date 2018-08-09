@@ -26248,6 +26248,18 @@
             "emails": ["vkuklin@mirantis.com", "aglar@aglar.ru"]
         },
         {
+            "launchpad_id": "vlad-esten",
+            "github_id": "s10",
+            "companies": [
+                {
+                    "company_name": "Selectel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vlad Gusev",
+            "emails": ["vlad.esten@gmail.com", "gusev@selectel.ru"]
+        },
+        {
             "launchpad_id": "vladik-romanovsky",
             "companies": [
                 {
