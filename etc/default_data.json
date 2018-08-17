@@ -20501,11 +20501,15 @@
             "companies": [
                 {
                     "company_name": "NEC",
+                    "end_date": "2018-Jul-25"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Reedip Banerjee",
-            "emails": ["reedip.banerjee@nectechnologies.in", "reedip14@gmail.com", "reedip.banerjee@gmail.com"]
+            "emails": ["reedip.banerjee@nectechnologies.in", "reedip14@gmail.com", "reedip.banerjee@gmail.com", "rbanerje@redhat.com"]
         },
         {
             "launchpad_id": "reldan",
