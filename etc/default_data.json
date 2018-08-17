@@ -15116,6 +15116,17 @@
             "user_name": "Andrew Clay Shafer",
             "emails": ["andrew@cloudscaling.com", "acs@parvuscaptus.com"]
         },
+       {
+            "launchpad_id": "littlejiumi",
+            "companies": [
+                {
+                    "company_name": "Huawei",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xiaohan Zhang",
+            "emails": [ "15809181826@qq.com"]
+        },
         {
             "launchpad_id": "liu-jie3",
             "companies": [
