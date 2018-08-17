@@ -11645,6 +11645,10 @@
                 },
                 {
                     "company_name": "Verizon Wireless",
+                    "end_date": "2018-Jun-10"
+                },
+                {
+                    "company_name": "Oath",
                     "end_date": null
                 }
             ],
