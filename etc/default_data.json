@@ -8021,6 +8021,17 @@
             "emails": ["fanguiju1992@163.com", "fan.guiju@99cloud.net"]
         },
         {
+            "launchpad_id": "fanrongxue",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "June Xue",
+            "emails": ["junex@vmware.com"]
+        },
+        {
             "launchpad_id": "fanyujie",
             "companies": [
                 {
@@ -12718,6 +12729,17 @@
             "emails": ["j3p0uk@hotmail.com", "jonpsull@cisco.com", "jonpaul.sullivan@hp.com"]
         },
         {
+            "launchpad_id": "jonrhass",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jon Hass",
+            "emails": ["jon_hass@dell.com"]
+        },
+        {
             "launchpad_id": "joo-oh",
             "companies": [
                 {
@@ -17371,6 +17393,17 @@
             "emails": ["mjblack@gmail.com", "matthew_black@cable.comcast.com", "matt.black@ellucian.com"]
         },
         {
+            "github_id": "mkelnermishal",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michal Kelner Michail",
+            "emails": ["mkelnermishal@vmware.com"]
+        },
+        {
             "launchpad_id": "mmalchuk",
             "github_id": "mmalchuk",
             "companies": [
@@ -17640,6 +17673,17 @@
             "emails": ["rosario.disomma@dreamhost.com"]
         },
         {
+            "launchpad_id": "mraineri",
+            "companies": [
+                {
+                    "company_name": "DellEMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mike Raineri",
+            "emails": ["mraineri@gmail.com"]
+        },
+        {
             "launchpad_id": "mrda",
             "companies": [
                 {
@@ -17684,6 +17728,17 @@
                 "mriedem.os@gmail.com",
                 "mriedemos@gmail.com"
             ]
+        },
+        {
+            "launchpad_id": "mrmullap",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mohana Mullapudi",
+            "emails": ["mohana_mullapudi@dell.com"]
         },
         {
             "launchpad_id": "mrostecki",
@@ -17956,6 +18011,17 @@
             ],
             "user_name": "Nachi Ueno",
             "emails": ["nachi@nttmcl.com", "nachi@ntti3.com", "openstack@lab.ntt.co.jp", "nati.ueno@gmail.com", "ueno.nachi@lab.ntt.co.jp"]
+        },
+        {
+            "launchpad_id": "nbeard",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Neal Beard",
+            "emails": ["neal_beard@dell.com"]
         },
         {
             "launchpad_id": "ndonegan",
@@ -18439,6 +18505,17 @@
             ],
             "user_name": "Longwen Lu",
             "emails": ["lulongwen@qiniu.com"]
+        },
+        {
+            "github_id": "npeternel",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nicole Peternel",
+            "emails": ["npeternel@vmware.com"]
         },
         {
             "launchpad_id": "npustchi",
@@ -19877,6 +19954,17 @@
              "emails": ["yu_qearl@163.com", "yutingting@yunrongtech.com"]
         },
         {
+             "launchpad_id": "qi1210",
+             "companies": [
+               {
+                     "company_name": "VMware",
+                     "end_date": null
+               }
+             ],
+             "user_name": "Qi Wang",
+             "emails": ["wangqi@vmware.com"]
+        },
+        {
             "launchpad_id": "qianh",
             "companies": [
                 {
@@ -20632,7 +20720,17 @@
             ],
             "user_name": "Ricardo Araújo Santos",
             "emails": ["ricardo@lsd.ufcg.edu.br", "ricoaraujosantos@gmail.com"]
-
+        },
+        {
+            "launchpad_id": "richard-boswell",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Richard Boswell",
+            "emails": ["rboswell@vmware.com"]
         },
         {
             "launchpad_id": "richard-hagarty",
@@ -28316,6 +28414,17 @@
           ],
           "user_name": "chenying",
           "emails": ["chenyingko@gmail.com", "ying.chen@huawei.com"]
+        },
+        {
+          "launchpad_id": "yingjisun",
+          "companies": [
+            {
+              "company_name": "VMware",
+              "end_date": null
+            }
+          ],
+          "user_name": "Yingji Sun",
+          "emails": ["yingjisun@vmware.com"]
         },
         {
             "launchpad_id": "yinshuxun",
