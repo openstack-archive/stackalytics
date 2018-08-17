@@ -10746,6 +10746,17 @@
             "emails": ["igor.milovanovic@ammeon.com"]
         },
         {
+            "launchpad_id": "ijsnellf",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Isaiah Snell-Feikema",
+            "emails": ["ijsnellf@us.ibm.com","isaiahsf@gmail.com"]
+        },
+        {
             "github_id": "ijumps",
             "companies": [
                 {
