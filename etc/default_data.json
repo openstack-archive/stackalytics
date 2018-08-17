@@ -22420,6 +22420,17 @@
             "emails": ["sergey.vilgelm@gmail.com", "svilgelm@mirantis.com", "sergey@vilgelm.info"]
         },
         {
+            "launchpad_id": "sergeyfilatov",
+            "companies": [
+                {
+                    "company_name": "Mail.Ru",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sergey Filatov",
+            "emails": ["s.s.filatov94@gmail.com", "s.filatov@corp.mail.ru"]
+        },
+        {
             "launchpad_id": "seungkyua",
             "zanata_id": "seungkyu",
             "github_id": "seungkyua",
