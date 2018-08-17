@@ -22954,6 +22954,17 @@
             "emails": ["shuo.yang.2006@gmail.com", "shuo.yang@huawei.com"]
         },
         {
+          "launchpad_id": "shupeng",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "shupeng",
+            "emails": ["15050873171@163.com"]
+        },
+        {
             "launchpad_id": "shweta-ap05",
             "companies": [
                 {
