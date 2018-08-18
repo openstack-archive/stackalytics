@@ -17345,6 +17345,26 @@
             "emails": ["marga.sfo@gmail.com", "millet@cisco.com"]
         },
         {
+            "launchpad_id": "mimic1983",
+            "github_id": "kwu83tw",
+            "companies": [
+                {
+                    "company_name": "HP",
+                    "end_date": "2015-Oct-31"
+                },
+                {
+                    "company_name": "HPE",
+                    "end_date": "2017-Mar-08"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Kent Wu",
+            "emails": ["kent.wu@hpe.com", "kwu@suse.com"]
+        },
+        {
             "launchpad_id": "miriamyumi",
             "companies": [
                 {
