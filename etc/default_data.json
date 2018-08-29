@@ -14353,6 +14353,15 @@
             "emails":["liu.xiaoqiang@h3c.com","l.xiaoqiang@qq.com"]
         },
         {
+            "launchpad_id": "l.butorina",
+            "companies": [{
+                "company_name": "Samsung",
+                "end_date": null
+            }],
+            "user_name":"Liliia Butorina",
+            "emails":["lilybox@yandex.ru"]
+        },
+        {
             "launchpad_id": "lachlan-evenson",
             "companies": [
                 {
