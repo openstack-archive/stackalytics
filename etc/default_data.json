@@ -35287,7 +35287,17 @@
         },
         {
             "release_name": "Rocky",
-            "end_date": "2018-Aug-31",
+            "end_date": "2018-Aug-30",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            }
+        },
+        {
+            "release_name": "Stein",
+            "end_date": "2019-Feb-28",
             "refs": {
                 "governance": {
                     "type": "big_tent",
