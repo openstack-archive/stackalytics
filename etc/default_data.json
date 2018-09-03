@@ -254,17 +254,6 @@
             "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com", "alex.barclay@hpe.com"]
         },
         {
-            "github_id": "Coder009",
-            "companies": [
-                {
-                    "company_name": "TenxCloud",
-                    "end_date": null
-                }
-            ],
-            "user_name": "mooncake",
-            "emails": ["xcoder@tenxcloud.com"]
-        },
-        {
             "github_id": "CoderAway28th",
             "companies": [
                 {
@@ -17687,6 +17676,17 @@
            ],
            "user_name": "Mohit Motiani",
            "emails": ["mohit.motiani@intel.com"]
+        },
+        {
+            "github_id": "mooncak",
+            "companies": [
+                {
+                    "company_name": "TenxCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "mooncake",
+            "emails": ["xcoder@tenxcloud.com"]
         },
         {
             "launchpad_id": "mordred",
