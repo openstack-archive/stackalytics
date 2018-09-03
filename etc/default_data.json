@@ -11241,6 +11241,17 @@
             "emails": ["jaimegildesagredo@gmail.com"]
         },
         {
+            "launchpad_id": "jainprasuk1996",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Prasuk Jain",
+            "emails": ["jainprasuk1996@gmail.com", "prasuk_jain@dellteam.com", "prasuk.jain@calsoftinc.com"]
+        },
+        {
             "launchpad_id": "jaiveek-shah",
             "companies": [
                 {
