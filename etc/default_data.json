@@ -3656,6 +3656,17 @@
             "emails": ["caishan1993@foxmail.com"]
         },
         {
+            "launchpad_id": "caixiaoyu",
+            "companies": [
+                {
+                    "company_name": "China Mobile",
+                    "end_date": null
+                }
+            ],
+            "user_name": "caixiaoyu",
+            "emails": ["caixiaoyu@cmss.chinamobile.com", "1261736141@qq.com"]
+        },
+        {
             "launchpad_id": "calebgroom",
             "companies": [
                 {
