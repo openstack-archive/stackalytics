@@ -254,6 +254,17 @@
             "emails": ["alex@planet-barclay.com", "alex.barclay@hp.com", "alex.barclay@hpe.com"]
         },
         {
+            "github_id": "Coder009",
+            "companies": [
+                {
+                    "company_name": "TenxCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "mooncake",
+            "emails": ["xcoder@tenxcloud.com"]
+        },
+        {
             "github_id": "CoderAway28th",
             "companies": [
                 {
@@ -9131,6 +9142,17 @@
             "emails": [ "gouthamr@netapp.com", "gouthampravi@gmail.com", "goutham.pacharavi@netapp.com", "gpachara@redhat.com"]
         },
         {
+            "launchpad_id": "gowalking",
+            "companies": [
+                {
+                    "company_name": "TenxCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhenhai Gao",
+            "emails": ["gaozh1988@live.com", "gaozhenhai@tenxcloud.com"]
+        },
+        {
             "launchpad_id": "gpocentek",
             "companies": [
                 {
@@ -17342,6 +17364,17 @@
             ],
             "user_name": "Mike Mason",
             "emails": ["mikemason010@gmail.com", "mmason@hp.com"]
+        },
+        {
+            "launchpad_id": "mikeweiwei",
+            "companies": [
+                {
+                    "company_name": "TenxCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yawei Gao",
+            "emails": ["466462983@qq.com", "gaoyawei@tenxcloud.com"]
         },
         {
             "launchpad_id": "mikeyp-3",
