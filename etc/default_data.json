@@ -30109,6 +30109,17 @@
             "emails": ["zrzhit@gmail.com", "rongze@ustack.com", "rongze@unitedstack.com", "rzhu@mirantis.com"]
         },
         {
+            "launchpad_id": "zswang",
+            "companies": [
+                {
+                      "company_name": "BJTU",
+                      "end_date": null
+                }
+            ],
+            "user_name": "wangzengsen",
+            "emails": ["17125168@bjtu.edu.cn"]
+        },
+        {
             "launchpad_id": "ztang",
             "companies": [
                 {
@@ -30490,6 +30501,11 @@
         {
             "domains": ["bitergia.com"],
             "company_name": "Bitergia"
+        },
+        {
+            "domains": ["bjtu.edu.cn"],
+            "company_name": "Beijing JiaoTong University",
+            "aliases": ["BJTU","北京交通大学信息科学研究所"]
         },
         {
             "domains": ["blizzard.com"],
