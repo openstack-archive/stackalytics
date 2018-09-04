@@ -2921,6 +2921,20 @@
             "emails": ["brian.elliott@rackspace.com", "bdelliott@gmail.com"]
         },
         {
+            "launchpad_id": "benjenwong",
+            "github_id": "benjenwong",
+            "companies": [
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Benjen Wong",
+            "emails": [
+                "gfengwong@qq.com","gfengwong@gmail.com","v_gfengwong@tencent.com"
+            ]
+        },
+        {
             "launchpad_id": "berendt",
             "companies": [
                 {
