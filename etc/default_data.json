@@ -11577,6 +11577,17 @@
             "emails": ["jason.straw@rackspace.com"]
         },
         {
+            "launchpad_id": "jasonyan",
+            "companies": [
+                {
+                  "company_name": "Yovole",
+                  "end_date": null
+                }
+            ],
+            "user_name": "Jason Yan",
+            "emails": ["jason.y.yan@gmail.com","yanyu@yovole.com"]
+        },
+        {
             "launchpad_id": "jassica66",
             "companies": [
                 {
