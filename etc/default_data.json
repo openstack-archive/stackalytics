@@ -30083,6 +30083,21 @@
             "emails": ["ziad.sawalha@rackspace.com", "github@highbridgellc.com", "gihub@highbridgellc.com", "ziad@sawalha.com", "gerrit@highbridgellc.com"]
         },
         {
+            "launchpad_id": "zijianguo",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": "2018-May-09"
+                },
+                {
+                    "company_name": "UnitedStack",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ZijianGuo",
+            "emails": ["guozijn@gmail.com", "guozijian@unitedstack.com"]
+        },
+        {
             "launchpad_id": "zinoviev.ii",
             "companies": [
                 {
