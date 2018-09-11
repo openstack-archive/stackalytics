@@ -17303,6 +17303,10 @@
                 },
                 {
                     "company_name": "Aptira",
+                    "end_date": "2015-Oct-01"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
