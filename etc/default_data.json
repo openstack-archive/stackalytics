@@ -3648,6 +3648,17 @@
             "emails": ["c.kassen@telekom.de"]
         },
         {
+            "launchpad_id": "caihui",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "caihui",
+            "emails": ["cai.hui@zte.com.cn"]
+        },
+        {
             "launchpad_id": "caishan2018",
             "companies": [
                 {
