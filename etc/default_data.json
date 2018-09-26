@@ -15511,6 +15511,17 @@
             "emails": ["lixipeng@hihuron.com", "lixipeng@prophetech.cn"]
         },
         {
+            "launchpad_id": "lixuehai",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "lixuehai",
+            "emails": ["li.xuehai@99cloud.net"]
+        },
+        {
             "launchpad_id": "liyanhang",
             "companies": [
                 {
