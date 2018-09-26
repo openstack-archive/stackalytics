@@ -15991,6 +15991,17 @@
             "emails": ["parimalanitesh@gmail.com","m.nitesh@nectechnologies.in"]
         },
         {
+            "launchpad_id": "m.col",
+            "companies": [
+                {
+                    "company_name": "Orange",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Cédric Ollivier",
+            "emails": ["cedric.ollivier@orange.com","ollivier.cedric@gmail.com"]
+        },
+        {
             "launchpad_id": "maciej-iai",
             "github_id": "nebril",
             "companies": [
