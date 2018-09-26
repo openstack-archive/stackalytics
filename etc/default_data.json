@@ -3460,13 +3460,19 @@
                 },
                 {
                     "company_name": "Verizon Wireless",
+                    "end_date": "2018-Sep-22"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Brian Rosmaita",
             "emails": ["brian.rosmaita@rackspace.com",
                        "rosmaita.fossdev@gmail.com",
-                       "brian.rosmaita@verizonwireless.com"]
+                       "brian.rosmaita@verizonwireless.com",
+                       "brosmait@redhat.com",
+                       "brian.rosmaita@redhat.com"]
         },
         {
             "launchpad_id": "brian-shang-dev",
