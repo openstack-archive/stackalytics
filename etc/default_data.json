@@ -3094,6 +3094,17 @@
             "emails": ["bharath.stacker@gmail.com", "bharath.m@hp.com", "bharath.m@hpe.com"]
         },
         {
+            "github_id": "binblee",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bin Li",
+            "emails": ["binblee@gmail.com"]
+        },
+        {
             "launchpad_id": "binoy.v",
             "companies": [
                 {
@@ -10654,6 +10665,17 @@
             ],
             "user_name": "Jaesang Lee",
             "emails": ["jaesang_lee@sk.com", "hyangii@gmail.com"]
+        },
+        {
+            "github_id": "hymian",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "HYmian",
+            "emails": ["gopher.mian@outlook.com"]
         },
         {
             "github_id": "hyzhou",
@@ -19043,6 +19065,17 @@
             ],
             "user_name": "Xuanzhou Perry Dong",
             "emails": ["oss_xzdong@163.com"]
+        },
+        {
+            "github_id": "osswangxining",
+            "companies": [
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Xi Ning Wang",
+            "emails": ["osswangxining@163.com"]
         },
         {
             "launchpad_id": "otleimat",
