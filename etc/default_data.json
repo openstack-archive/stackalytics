@@ -24149,6 +24149,19 @@
             "emails": ["solio.sarabia@intel.com", "soliosg@gmail.com"]
         },
         {
+            "launchpad_id": "ssbarnea",
+            "github_id": "ssbarnea",
+            "zanata_id": "ssbarnea",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sorin Sbarnea",
+            "emails": ["sorin.sbarnea@gmail.com", "ssbarnea@redhat.com", "ssbarnea@users.noreply.github.com"]
+        },
+        {
             "launchpad_id": "stanicke",
             "zanata_id": "stanislavulrych",
             "companies": [
