@@ -3200,6 +3200,18 @@
             "emails": ["jay.ahn@sk.com", "bluejay.ahn@gmail.com"]
         },
         {
+            "launchpad_id": "bluelight-2018",
+            "github_id": "SataQiu",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Shida Qiu",
+            "emails": ["1527062125@qq.com", "qiushida@beyondcent.com"]
+        },
+        {
             "launchpad_id": "bmathews-l",
             "companies": [
                 {
