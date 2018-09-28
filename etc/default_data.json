@@ -8577,6 +8577,17 @@
             "emails": ["fuzk@inspur.com"]
         },
         {
+            "launchpad_id": "gaasmann",
+            "companies": [
+                {
+                    "company_name": "Ormuco",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nicolas Haller",
+            "emails": ["nicolas@boiteameuh.org", "nicolas.haller@ormuco.com"]
+        },
+        {
             "launchpad_id": "gabor.antal",
             "companies": [
                 {
