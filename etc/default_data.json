@@ -18154,6 +18154,21 @@
             "emails": ["namei.unix@gmail.com"]
         },
         {
+            "launchpad_id": "namnh",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "FPT Software",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nam Nguyen Hoai",
+            "emails": ["namnh68@fsoft.com.vn"]
+        },
+        {
             "launchpad_id": "nanaboat",
             "companies": [
                 {
@@ -31144,6 +31159,11 @@
             "domains": ["fortinet.com"],
             "company_name": "Fortinet",
             "aliases": ["Fortinet Inc"]
+        },
+        {
+            "domains": ["fpt-software.com"],
+            "company_name": "FPT Software",
+            "aliases": ["FPT Group"]
         },
         {
             "domains": ["freescale.com"],
