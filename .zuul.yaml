@@ -1,0 +1,14 @@
+- project:
+    templates:
+      - docs-on-readthedocs
+      - openstack-python-jobs
+      - openstack-python35-jobs
+    vars:
+      rtd_webhook_id: '47123'
+    check:
+      jobs:
+        - openstack-tox-docs
+    gate:
+      jobs:
+        - openstack-tox-docs
+
