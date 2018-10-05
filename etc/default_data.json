@@ -12407,11 +12407,15 @@
             "companies": [
                 {
                     "company_name": "Walmart",
+                    "end_date": "2018-Jul-20"
+                },
+                {
+                    "company_name": "Box",
                     "end_date": null
                 }
             ],
             "user_name": "Jimmy McCrory",
-            "emails": ["jimmy.mccrory@gmail.com", "jmccrory@walmartlabs.com"]
+            "emails": ["jimmy.mccrory@gmail.com", "jmccrory@walmartlabs.com", "jmccrory@box.com"]
         },
         {
             "github_id": "jimmycmh",
@@ -30814,6 +30818,10 @@
         {
             "domains": ["boeing.com"],
             "company_name": "Boeing"
+        },
+        {
+            "domains": ["box.com"],
+            "company_name": "Box"
         },
         {
             "domains": ["brightcomputing.com"],
