@@ -11228,11 +11228,19 @@
             "companies": [
                 {
                     "company_name": "Universidade Federal de Campina Grande",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-Oct-02"
+                },
+                {
+                    "company_name": "Red Hat",
                     "end_date": null
                 }
             ],
             "user_name": "Iury Gregory",
-            "emails": ["iurygregory@gmail.com", "iurygregory@lsd.ufcg.edu.br"]
+            "emails": ["iurygregory@gmail.com", "imelofer@redhat.com"]
         },
         {
             "launchpad_id": "ivoks",
