@@ -2178,6 +2178,17 @@
             "emails": ["aostapenko@mirantis.com", "andrey_ostapenko@symantec.com"]
         },
         {
+            "github_id": "aoxn",
+            "companies":[
+                {
+                    "company_name": "Alibaba",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XIE YAOYAO",
+            "emails": ["yaoyao.aoxn@hotmail.com"]
+        },
+        {
             "launchpad_id": "apalkina",
             "companies": [
                 {
