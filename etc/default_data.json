@@ -16353,6 +16353,17 @@
             "emails": ["martin.andre@gmail.com", "m.andre@redhat.com", "martin.andre@kvhasia.com"]
         },
         {
+            "launchpad_id": "manik019",
+            "companies": [
+                {
+                    "company_name": "VoerEir AB",
+                    "end_date": null
+                }
+            ],
+            "user_name": "maniksidana019",
+            "emails": ["manik@voereir.com", "maniksidana019@gmail.com"]
+        },
+        {
             "launchpad_id": "manikantha-tadi",
             "companies": [
                 {
@@ -32460,6 +32471,11 @@
             "company_name": "VMware",
             "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture",
               "VMware Software"]
+        },
+        {
+            "domains": ["voereir.com"],
+            "company_name": "VoerEir AB",
+            "aliases": ["VoerEir", "VoerEir India Pvt Ltd"]
         },
         {
             "domains": ["vu.lt"],
