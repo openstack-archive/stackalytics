@@ -32796,9 +32796,15 @@
                     "tag_from": "12.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "13.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "14.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/keystone.git",
