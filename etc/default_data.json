@@ -21539,6 +21539,21 @@
             "emails": ["rockstubborn@hotmail.com", "chengs@certusnet.com.cn"]
         },
         {
+            "launchpad_id": "rodolfo-alonso-hernandez",
+            "companies": [
+                {
+                    "company_name": "Intel",
+                    "end_date": "2018-Sep-14"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Rodolfo Alonso Hernandez",
+            "emails": ["ralonsoh@redhat.com", "rodolfo.ah@gmail.com"]
+        },
+        {
             "launchpad_id": "rodrigo-barbieri2010",
             "companies": [
                 {
