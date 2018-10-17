@@ -34314,6 +34314,11 @@
             "uri": "https://github.com/kubernetes-incubator/kargo.git"
         },
         {
+            "module": "virtual-kubelet",
+            "organization": "kubernetes",
+            "uri": "https://github.com/virtual-kubelet/virtual-kubelet.git"
+        },
+        {
             "module": "jcloud",
             "organization": "jcloud",
             "uri": "https://github.com/jclouds/jclouds.git"
