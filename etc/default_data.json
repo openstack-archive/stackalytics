@@ -29660,6 +29660,17 @@
             "emails": ["zhangyanxianmail@163.com", "zhang.yanxian@zte.com.cn"]
         },
         {
+            "launchpad_id": "zhangbailin",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhangbailin",
+            "emails": ["zhangbailin@inspur.com"]
+        },
+        {
 
             "launchpad_id": "zhangdaolong",
             "companies": [
