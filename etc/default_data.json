@@ -2771,6 +2771,17 @@
             "emails": ["bailin.zhang@hotmail.com","zhang.bailin@zte.com.cn"]
         },
         {
+            "launchpad_id":"baiyj",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yongjun Bai",
+            "emails": ["byj994@163.com", "bai.yongjun@99cloud.net", "baiyj666@gmail.com"]
+        },
+        {
             "launchpad_id": "bardia-keyoumarsi",
             "companies": [
                 {
