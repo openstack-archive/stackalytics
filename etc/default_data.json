@@ -24036,6 +24036,17 @@
             "emails": ["tasogabe@yahoo-corp.jp", "takashi.sogabe@gmail.com"]
         },
         {
+            "launchpad_id": "sogof",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "suguangfeng",
+            "emails": ["suguangfeng@inspur.com"]
+        },
+        {
             "launchpad_id": "som-mishra",
             "companies": [
                 {
