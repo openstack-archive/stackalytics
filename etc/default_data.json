@@ -27311,6 +27311,17 @@
             "emails": ["wangyao@cmss.chinamobile.com"]
         },
         {
+            "launchpad_id": "wangyayan",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "wangyayan",
+            "emails": ["wangyayan@inspur.com"]
+        },
+        {
             "launchpad_id": "wangye-s",
             "companies": [
                 {
