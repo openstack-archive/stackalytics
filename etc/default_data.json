@@ -32765,9 +32765,15 @@
                     "tag_from": "16.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "17.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "18.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/nova.git",
@@ -32934,9 +32940,15 @@
                     "tag_from": "11.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "12.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "13.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/cinder.git",
@@ -33031,9 +33043,15 @@
                     "tag_from": "15.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "16.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "17.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/glance.git",
@@ -33115,9 +33133,15 @@
                     "tag_from": "11.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "12.0.0.0rc2"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "13.0.0.0rc2"
                 },
                 {
                     "branch": "feature/pecan",
@@ -33211,9 +33235,15 @@
                     "tag_from": "12.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "13.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "14.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/horizon.git",
@@ -33295,7 +33325,7 @@
                     "tag_from": "2.15.1"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "2.19.0",
                     "release_name": "Rocky",
                     "tag_from": "2.17.0"
                 }
@@ -33727,9 +33757,15 @@
                     "tag_from": "9.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "10.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "11.0.0.0rc1"
                 }
             ],
             "uri": "git://git.openstack.org/openstack/heat.git",
@@ -33853,7 +33889,7 @@
                     "tag_from": "9.0.1"
                 },
                 {
-                    "tag_to": "HEAD",
+                    "tag_to": "11.0.0",
                     "release_name": "Rocky",
                     "tag_from": "10.0.0"
                 }
@@ -34095,9 +34131,15 @@
                     "tag_from": "7.0.0.0rc1"
                 },
                 {
+                    "branch": "stable/rocky",
                     "tag_to": "HEAD",
                     "release_name": "Rocky",
                     "tag_from": "8.0.0.0rc1"
+                },
+                {
+                    "tag_to": "HEAD",
+                    "release_name": "Stein",
+                    "tag_from": "9.0.0.0rc1"
                 }
             ]
         },
