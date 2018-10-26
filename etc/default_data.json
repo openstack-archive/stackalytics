@@ -14840,6 +14840,17 @@
             "emails": ["543950568@qq.com"]
         },
         {
+            "launchpad_id": "leopardma",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "LeopardMa",
+            "emails": ["mabao@inspur.com"]
+        },
+        {
             "launchpad_id": "leseb",
             "companies": [
                 {
