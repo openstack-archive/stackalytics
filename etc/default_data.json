@@ -24796,6 +24796,17 @@
             "emails": ["2994859298@qq.com"]
         },
         {
+            "launchpad_id": "sunjiazz",
+            "companies": [
+                {
+                    "company_name": "Inspur",
+                    "end_date": null
+                }
+            ],
+            "user_name": "sunjia",
+            "emails": ["sunjia@inspur.com"]
+        },
+        {
             "launchpad_id": "sunku-ranganath",
             "companies": [
                 {
