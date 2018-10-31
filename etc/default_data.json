@@ -35387,27 +35387,27 @@
         },
         {
             "organization": "kubernetes",
-            "module_group_id": "kubernetes-group",
+            "module_group_id": "kubernetes-main-group",
             "uri": "github://"
         },
         {
             "organization": "kubernetes-sigs",
-            "module_group_id": "kubernetes-group",
+            "module_group_id": "kubernetes-sigs-group",
             "uri": "github://"
         },
         {
             "organization": "kubernetes-incubator",
-            "module_group_id": "kubernetes-group",
+            "module_group_id": "kubernetes-incubator-group",
             "uri": "github://"
         },
         {
             "organization": "kubernetes-client",
-            "module_group_id": "kubernetes-group",
+            "module_group_id": "kubernetes-client-group",
             "uri": "github://"
         },
         {
             "organization": "kubernetes-csi",
-            "module_group_id": "kubernetes-group",
+            "module_group_id": "kubernetes-csi-group",
             "uri": "github://"
         },
         {
@@ -35908,7 +35908,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
         },
         {
             "id": "ansible-group",
@@ -35938,7 +35938,7 @@
             "id": "kubernetes-group",
             "title": "Kubernetes",
             "child": true,
-            "modules": ["kubernetes-group"]
+            "modules": ["kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group"]
         },
         {
             "id": "istio-group",
