@@ -976,7 +976,7 @@
             "change_id": ["I1d030ffc2b3ed18c7a194693f1cd2a382b961c1c"],
             "primary_key": "499d63fe966577c4870d70c44704b554630d8bff",
             "module": "fuel-ostf",
-            "subject": "Add base directories for tets. Add tests with simple verification of status code for next cases: * List services by admin in keystone * List users by admin * List instances * List volumes * List snapshots * list flavors * list rate limits * List networks * List ports"
+            "subject": "Add base directories for tests. Add tests with simple verification of status code for next cases: * List services by admin in keystone * List users by admin * List instances * List volumes * List snapshots * list flavors * list rate limits * List networks * List ports"
         },
         {
             "correction_comment": "Reset LOC to 0",
