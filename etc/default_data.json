@@ -20466,6 +20466,17 @@
             "emails": ["r1chardj0n3s@gmail.com"]
         },
         {
+           "launchpad_id": "rachit7194",
+           "companies": [
+               {
+                   "company_name": "Dell EMC",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Rachit Kapadia",
+           "emails": ["kapadiarachit007@gmail.com", "rachit.kapadia@calsoftinc.com", "rachit_kapadia@dellteam.com"]
+        },
+        {
             "launchpad_id": "rackerhacker",
             "companies": [
                 {
