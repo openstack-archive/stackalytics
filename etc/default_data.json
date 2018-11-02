@@ -18951,6 +18951,17 @@
             "emails": ["tony@bakeyournoodle.com", "tony.breeds@rackspace.com", "tony.breeds@redhat.com"]
         },
         {
+            "launchpad_id": "o.chaze",
+            "companies": [
+                {
+                    "company_name": "Infomaniak",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Olivier Chaze",
+            "emails": ["o.chaze@gmail.com"]
+        },
+        {
             "launchpad_id": "octopuszhang",
             "companies": [
                 {
@@ -25433,6 +25444,10 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2016-Sep-01"
+                },
+                {
+                    "company_name": "Infomaniak",
                     "end_date": null
                 }
             ],
@@ -31570,6 +31585,11 @@
         {
             "domains": ["infoblox.com"],
             "company_name": "Infoblox"
+        },
+        {
+            "domains": ["infomaniak.com"],
+            "company_name": "Infomaniak",
+            "aliases": ["Infomaniak Networks"]
         },
         {
             "domains": ["infracloud.io"],
