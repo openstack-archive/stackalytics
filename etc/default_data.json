@@ -26069,6 +26069,18 @@
             "emails": ["ttcl@mac.com", "troy.toman@rackspace.com"]
         },
         {
+            "launchpad_id": "truongnh92",
+            "github_id": "truongnh1992",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nguyen Hai Truong",
+            "emails": ["nguyenhaitruonghp@gmail.com", "truongnh@vn.fujitsu.com"]
+        },
+        {
             "launchpad_id": "trygve-vea-gmail",
             "companies": [
                 {
