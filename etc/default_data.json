@@ -30821,6 +30821,10 @@
             "company_name": "Amadeus"
         },
         {
+            "domains": ["amazon.com", "amazon.de", "amazon.co.uk", "amazon.co.jp"],
+            "company_name": "Amazon"
+        },
+        {
           "domains": ["ammeon.com"],
           "company_name": "Ammeon",
           "aliases": ["Ammeon Ltd."]
