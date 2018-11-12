@@ -4935,6 +4935,17 @@
             "emails": ["cloudhollyb@gmail.com"]
         },
         {
+            "launchpad_id": "clyang82",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Chunlin Yang",
+            "emails": ["clyang.lucky@gmail.com", "clyang@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "cmluciano",
             "companies": [
                 {
