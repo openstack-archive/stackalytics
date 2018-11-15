@@ -403,12 +403,26 @@ def get_bpd(records, **kwargs):
     return result
 
 
+@app.route('/api/1.0/languages')
+@decorators.exception_handler()
+@decorators.response()
+@decorators.cached(ignore=['language'])
+@decorators.jsonify()
+@decorators.record_filter(ignore=['language'])
+def get_languages_json(record_ids, **kwargs):
+    memory_storage = vault.get_memory_storage()
+    languages = set(r.value for r in memory_storage.get_records(record_ids))
+
+    return [{'id': c.lower().replace('&', ''), 'text': c}
+            for c in sorted(languages)]
+
+
 @app.route('/api/1.0/stats/languages')
 @decorators.exception_handler()
 @decorators.response()
 @decorators.cached()
 @decorators.jsonify('stats')
-@decorators.record_filter()
+@decorators.record_filter(ignore=['language'])
 def get_languages(records, **kwargs):
     result = []
     languages = collections.defaultdict(int)
