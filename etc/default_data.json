@@ -20392,6 +20392,17 @@
             "emails": ["zhangqiankun@sgitg.sgcc.com.cn", "zhqk1234567@126.com"]
         },
         {
+            "launchpad_id": "qianyuqiao",
+            "companies": [
+                {
+                    "company_name": "Student",
+                    "end_date": null
+                }
+            ],
+            "user_name": "qianyuqiao",
+            "emails": ["qianyuqiao1@outlook.com"]
+        },
+        {
              "launchpad_id": "qiky",
              "zanata_id": "qiaiyuan",
              "companies": [
