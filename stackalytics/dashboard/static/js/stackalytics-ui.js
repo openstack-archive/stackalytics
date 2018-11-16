@@ -22,7 +22,7 @@ String.prototype.trunc =
     };
 
 function _createTimeline(data) {
-    var plot = $.jqplot('timeline', data, {
+    var plot_attrs = {
         gridPadding: {
             right: 35
         },
@@ -47,10 +47,6 @@ function _createTimeline(data) {
             yaxis: {
                 min: 0,
                 label: ''
-            },
-            y2axis: {
-                min: 0,
-                label: ''
             }
         },
         series: [
@@ -65,16 +61,30 @@ function _createTimeline(data) {
                 fill: true,
                 color: '#4bb2c5',
                 fillColor: '#4bb2c5'
-            },
-            {
+            }
+        ]
+    }
+    /* add the secondary line only if it is has positive values */
+    var has_2 = false;
+    for (var i=0; i<data[2].length; i++) {
+        if (data[2][i][1] > 0) {
+            has_2 = true;
+            break;
+        }
+    }
+    if (has_2) {
+        plot_attrs.axes.y2axis = {min: 0, label: ''};
+        plot_attrs.series.push({
                 shadow: false,
                 lineWidth: 1.5,
                 showMarker: true,
                 markerOptions: { size: 5 },
                 yaxis: 'y2axis'
-            }
-        ]
-    });
+        });
+    } else {
+        data.pop();
+    }
+    $.jqplot('timeline', data, plot_attrs);
 }
 
 function renderTimeline(options) {
