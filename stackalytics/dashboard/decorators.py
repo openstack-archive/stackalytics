@@ -247,6 +247,13 @@ def record_filter(ignore=None):
                     record_ids, _filter_records_by_days(start_date, end_date,
                                                         memory_storage_inst))
 
+            # filtering by non-indexed attributes goes last
+            language = params['language']
+            if language:
+                record_ids = (
+                    set(memory_storage_inst.get_record_ids_by_languages(
+                        record_ids, language)))
+
             kwargs['record_ids'] = record_ids
             kwargs['records'] = memory_storage_inst.get_records(record_ids)
 
@@ -453,6 +460,9 @@ def templated(template=None, return_code=200):
             if ctx['user_id']:
                 ctx['user_inst'] = vault.get_user_from_runtime_storage(
                     ctx['user_id'])
+
+            ctx['language'] = parameters.get_single_parameter(
+                kwargs, 'language')
 
             ctx['page_title'] = helpers.make_page_title(
                 ctx['project_type_inst'],
