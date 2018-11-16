@@ -14645,6 +14645,21 @@
             "emails": ["lakshmi.sampath@hp.com", "lakshmi.sampath@hpe.com"]
         },
         {
+            "launchpad_id": "lamt",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": "2018-Nov-16"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Tin Lam",
+            "emails": ["tin@irrational.io", "tinlam@gmail.com"]
+        },
+        {
             "github_id": "langyxxl",
             "companies": [
                 {
