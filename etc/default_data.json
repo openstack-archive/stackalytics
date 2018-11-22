@@ -5453,6 +5453,17 @@
             "emails": ["cyril.roelandt@enovance.com", "croeland@redhat.com"]
         },
         {
+            "launchpad_id": "czl389",
+            "companies": [
+                {
+                    "company_name": "ZTE Corporation",
+                    "end_date": null
+                }
+            ],
+            "user_name": "cuizhenlong",
+            "emails": ["cui.zhenlong@zte.com.cn", "czl389@163.com"]
+        },
+        {
             "launchpad_id": "d-gollub",
             "companies": [
                 {
