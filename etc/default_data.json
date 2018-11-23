@@ -27535,6 +27535,18 @@
             "emails": ["wanlong.gao@gmail.com", "wanlong.gao@easystack.cn"]
         },
         {
+            "launchpad_id": "waret",
+            "github_id": "Waret",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Waret",
+            "emails": ["waret87@gmail.com", "waret87@163.com", "lishouchao@beyondcent.com"]
+        },
+        {
             "launchpad_id": "warmchang",
             "github_id": "warmchang",
             "companies": [
