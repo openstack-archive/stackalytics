@@ -12279,6 +12279,27 @@
             "emails": ["jeremyfreudberg@gmail.com", "jfreud@bu.edu"]
         },
         {
+            "launchpad_id": "jgr-launchpad",
+            "companies": [
+                {
+                    "company_name": "SysEleven",
+                    "end_date": "2016-Jan-31"
+                },
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Johannes Grassler",
+            "emails":
+            [
+                "jgr-launchpad@btw23.de",
+                "johannes.grassler@suse.com",
+                "johannes@btw23.de",
+                "johannes.grassler@syseleven.de"
+            ]
+        },
+        {
             "launchpad_id": "jhalterman",
             "companies": [
                 {
@@ -32485,6 +32506,11 @@
             "domains": ["symantec.com"],
             "company_name": "Symantec",
             "aliases": ["Symantec Software and Services"]
+        },
+        {
+            "domains": ["syseleven.de", "syseleven.com", "syseleven.net"],
+            "company_name": "SysEleven",
+            "aliases": ["SysEleven GmbH"]
         },
         {
             "domains": ["szzt.com.cn"],
