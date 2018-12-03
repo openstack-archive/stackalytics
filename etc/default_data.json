@@ -22001,6 +22001,28 @@
             "emails": ["roy01cheng@hotmail.com"]
         },
         {
+            "launchpad_id": "rpittau",
+            "github_id": "elfosardo",
+            "companies": [
+                {
+                    "company_name": "Blizzard Entertainment",
+                    "end_date": "2018-Oct-25"
+                },
+                {
+                    "company_name": "*independent",
+                    "end_date": "2018-Nov-18"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Riccardo Pittau",
+            "emails": [
+                "elfosardo@gmail.com", "rpittau@redhat.com", "rpittau@blizzard.com"
+            ]
+        },
+        {
             "launchpad_id": "rromans",
             "companies": [
                 {
