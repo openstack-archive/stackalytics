@@ -8785,6 +8785,17 @@
             "emails": ["gaoqian1983@outlook.com"]
         },
         {
+            "launchpad_id": "gaozhenhai",
+            "companies": [
+                {
+                    "company_name": "TenxCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhenhai Gao",
+            "emails": ["gaozh1988@live.com", "gaozhenhai@tenxcloud.com"]
+        },
+        {
             "launchpad_id": "gaozx-fnst",
             "companies": [
                 {
@@ -9279,17 +9290,6 @@
             ],
             "user_name": "Goutham Pacha Ravi",
             "emails": [ "gouthamr@netapp.com", "gouthampravi@gmail.com", "goutham.pacharavi@netapp.com", "gpachara@redhat.com"]
-        },
-        {
-            "launchpad_id": "gowalking",
-            "companies": [
-                {
-                    "company_name": "TenxCloud",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Zhenhai Gao",
-            "emails": ["gaozh1988@live.com", "gaozhenhai@tenxcloud.com"]
         },
         {
             "launchpad_id": "gpocentek",
