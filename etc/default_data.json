@@ -27607,11 +27607,15 @@
             "github_id": "Waret",
             "companies": [
                 {
+                    "company_name": "*independent",
+                    "end_date": "2016-May-01"
+                },
+                {
                     "company_name": "BoCloud",
                     "end_date": null
                 }
             ],
-            "user_name": "Waret",
+            "user_name": "Waret Li",
             "emails": ["waret87@gmail.com", "waret87@163.com", "lishouchao@beyondcent.com"]
         },
         {
