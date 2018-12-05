@@ -698,11 +698,15 @@
                 },
                 {
                     "company_name": "GoDaddy",
+                    "end_date": "2018-Nov-23"
+                },
+                {
+                    "company_name": "Oath",
                     "end_date": null
                 }
             ],
             "user_name": "Adam Harwell",
-            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com", "aharwell@godaddy.com"]
+            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com", "aharwell@godaddy.com", "adam.harwell@oath.com"]
         },
         {
             "launchpad_id": "adam-kijak",
