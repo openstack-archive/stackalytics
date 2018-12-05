@@ -9407,6 +9407,17 @@
             "emails": ["gaoshilin@163.com", "gaoming10132825@zte.com.cn"]
         },
         {
+            "launchpad_id": "gtema",
+            "companies": [
+                {
+                    "company_name": "OpenTelekomCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Artem Goncharov",
+            "emails": ["artem.goncharov@gmail.com", "artem.goncharov@t-systems.com"]
+        },
+        {
             "launchpad_id": "gtt116",
             "companies": [
                 {
@@ -32589,8 +32600,9 @@
             "company_name": "Telefonica I+D"
         },
         {
-            "domains": ["telekom.de"],
-            "company_name": "Deutsche Telekom"
+            "domains": ["telekom.de", "t-systems.com"],
+            "company_name": "Deutsche Telekom",
+            "aliases": ["OpenTelekomCloud", "T-Systems"]
         },
         {
             "domains": ["tencent.com"],
