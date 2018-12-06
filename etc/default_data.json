@@ -25621,6 +25621,18 @@
             "emails": ["terrylhowe@gmail.com", "thowe@hp.com"]
         },
         {
+            "launchpad_id": "throne82",
+            "github_id": "arthurnsantos",
+            "companies": [
+                {
+                    "company_name": "NetApp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Arthur Nascimento Santos ",
+            "emails": ["throneeight2@gmail.com", "arthur.santos@fit-tecnologia.org.br"]
+        },
+        {
             "launchpad_id": "throughnothing",
             "companies": [
                 {
