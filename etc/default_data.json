@@ -23735,6 +23735,18 @@
             "emails": ["mehdi.abaakouk@enovance.com", "mabaakou@redhat.com", "sileht@redhat.com", "sileht@sileht.net"]
         },
         {
+            "launchpad_id": "silvacarlose",
+            "github_id": "silvacarloss",
+            "companies": [
+                {
+                    "company_name": "NetApp",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Carlos Eduardo da Silva",
+            "emails": ["ces.eduardo98@gmail.com", "carlos.dasilva@fit-tecnologia.org.br", "dcarlos@netapp.com"]
+        },
+        {
             "launchpad_id": "simak-jan",
             "companies": [
                 {
