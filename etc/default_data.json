@@ -34700,6 +34700,61 @@
             "uri": "https://github.com/istio/fortio.git"
         },
         {
+            "module": "serving@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/serving.git"
+        },
+        {
+            "module": "test-infra@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/test-infra.git"
+        },
+        {
+            "module": "build@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/build.git"
+        },
+        {
+            "module": "build-pipeline@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/build-pipeline.git"
+        },
+        {
+            "module": "docs@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/docs.git"
+        },
+        {
+            "module": "client@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/client.git"
+        },
+        {
+            "module": "caching@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/caching.git"
+        },
+        {
+            "module": "eventing@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/eventing.git"
+        },
+        {
+            "module": "pkg@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/pkg.git"
+        },
+        {
+            "module": "eventing-sources@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/eventing-sources.git"
+        },
+        {
+            "module": "build-templates@knative",
+            "organization": "knative",
+            "uri": "https://github.com/knative/build-templates.git"
+        },
+        {
             "module": "cri-o",
             "organization": "kubernetes",
             "uri": "https://github.com/kubernetes-incubator/cri-o.git"
@@ -35927,6 +35982,12 @@
             "module_group_name": "istio-group",
             "modules": ["istio", "proxy@istio", "istio.github.io", "test-infra@istio",
               "api@istio", "community@istio", "mixerclient", "admin-sites", "fortio"]
+        },
+        {
+            "module_group_name": "knative-group",
+            "modules": ["serving@knative", "test-infra@knative", "build@knative", "docs@knative",
+              "build-pipeline@knative", "client@knative", "caching@knative", "eventing@knative",
+              "pkg@knative", "eventing-sources@knative", "build-templates@knative"]
         }
     ],
     "releases": [
@@ -36173,7 +36234,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "knative-group", "kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
         },
         {
             "id": "ansible-group",
@@ -36210,6 +36271,12 @@
             "title": "istio",
             "child": true,
             "modules": ["istio-group"]
+        },
+        {
+            "id": "knative-group",
+            "title": "knative",
+            "child": true,
+            "modules": ["knative-group"]
         },
         {
             "id": "opnfv-group",
