@@ -802,7 +802,7 @@ class TestRecordProcessor(testtools.TestCase):
     def test_create_member(self):
         member_record = {'member_id': '123456789',
                          'member_name': 'John Doe',
-                         'member_uri': 'http://www.openstack.org/community'
+                         'member_uri': 'https://www.openstack.org/community'
                                        '/members/profile/123456789',
                          'date_joined': 'August 01, 2012 ',
                          'company_draft': 'Mirantis'}
@@ -829,7 +829,7 @@ class TestRecordProcessor(testtools.TestCase):
     def test_update_member(self):
         member_record = {'member_id': '123456789',
                          'member_name': 'John Doe',
-                         'member_uri': 'http://www.openstack.org/community'
+                         'member_uri': 'https://www.openstack.org/community'
                                        '/members/profile/123456789',
                          'date_joined': 'August 01, 2012 ',
                          'company_draft': 'Mirantis'}
