@@ -34755,6 +34755,101 @@
             "uri": "https://github.com/knative/build-templates.git"
         },
         {
+            "module": "kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/kubeflow.git"
+        },
+        {
+            "module": "community@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/community.git"
+        },
+        {
+            "module": "website@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/website.git"
+        },
+        {
+            "module": "katib@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/katib.git"
+        },
+        {
+            "module": "pipelines@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/pipelines.git"
+        },
+        {
+            "module": "kubebench@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/kubebench.git"
+        },
+        {
+            "module": "caffe2-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/caffe2-operator.git"
+        },
+        {
+            "module": "examples@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/examples.git"
+        },
+        {
+            "module": "arena@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/arena.git"
+        },
+        {
+            "module": "pytorch-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/pytorch-operator.git"
+        },
+        {
+            "module": "tf-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/tf-operator.git"
+        },
+        {
+            "module": "fairing@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/fairing.git"
+        },
+        {
+            "module": "testing@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/testing.git"
+        },
+        {
+            "module": "crd-validation@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/crd-validation.git"
+        },
+        {
+            "module": "mxnet-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/mxnet-operator.git"
+        },
+        {
+            "module": "batch-predict@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/batch-predict.git"
+        },
+        {
+            "module": "chainer-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/chainer-operator.git"
+        },
+        {
+            "module": "mpi-operator@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/mpi-operator.git"
+        },
+        {
+            "module": "example-seldon@kubeflow",
+            "organization": "kubeflow",
+            "uri": "https://github.com/kubeflow/example-seldon.git"
+        },
+        {
             "module": "cri-o",
             "organization": "kubernetes",
             "uri": "https://github.com/kubernetes-incubator/cri-o.git"
@@ -35988,6 +36083,14 @@
             "modules": ["serving@knative", "test-infra@knative", "build@knative", "docs@knative",
               "build-pipeline@knative", "client@knative", "caching@knative", "eventing@knative",
               "pkg@knative", "eventing-sources@knative", "build-templates@knative"]
+        },
+        {
+            "module_group_name": "kubeflow-group",
+            "modules": ["kubeflow", "community@kubeflow", "website@kubeflow", "katib@kubeflow",
+              "pipelines@kubeflow", "kubebench@kubeflow", "caffe2-operator@kubeflow", "examples@kubeflow",
+              "arena@kubeflow", "pytorch-operator@kubeflow", "tf-operator@kubeflow", "fairing@kubeflow",
+              "testing@kubeflow", "crd-validation@kubeflow", "mxnet-operator@kubeflow", "batch-predict@kubeflow",
+              "chainer-operator@kubeflow", "mpi-operator@kubeflow", "example-seldon@kubeflow"]
         }
     ],
     "releases": [
@@ -36234,7 +36337,7 @@
         {
             "id": "complementary",
             "title": "Complementary",
-            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "knative-group", "kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
+            "modules": ["ansible-group", "ceph", "docker-group", "fdio-group", "istio-group", "knative-group", "kubeflow-group", "kubernetes-main-group", "kubernetes-sigs-group", "kubernetes-incubator-group", "kubernetes-client-group", "kubernetes-csi-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker"]
         },
         {
             "id": "ansible-group",
@@ -36277,6 +36380,12 @@
             "title": "knative",
             "child": true,
             "modules": ["knative-group"]
+        },
+        {
+            "id": "kubeflow-group",
+            "title": "kubeflow",
+            "child": true,
+            "modules": ["kubeflow-group"]
         },
         {
             "id": "opnfv-group",
