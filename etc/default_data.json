@@ -18056,6 +18056,17 @@
             "emails": ["thiago.morello@locaweb.com.br"]
         },
         {
+            "launchpad_id": "morvencao",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Longlong Cao",
+            "emails": ["morvencao@gmail.com", "llcao@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "mpdehaan",
             "github_id": "mpdehaan",
             "companies": [
