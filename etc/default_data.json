@@ -10336,6 +10336,17 @@
             "emails": ["hongchaodeng1@gmail.com"]
         },
         {
+            "launchpad_id": "hougangliu",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "HougangLiu",
+            "emails": ["liuhgxa@gmail.com", "liuhoug@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "houhanyi",
             "companies": [
                 {
