@@ -24905,6 +24905,17 @@
             "emails": ["sugar-2008@163.com", "suzhengwei@chinac.com"]
         },
         {
+            "github_id": "suigh",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "suigh",
+            "emails": ["suigh@cn.ibm.com", "suiguanghan@gmail.com"]
+        },
+        {
             "launchpad_id": "sujitha-neti",
             "companies": [
                 {
