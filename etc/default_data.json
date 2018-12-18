@@ -30820,6 +30820,17 @@
             "emails": ["zuohuasun@gmail.com", "zhsun@fiberhome.com"]
         },
         {
+             "github_id": "zxDiscovery",
+             "companies": [
+                 {
+                     "company_name": "IBM",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Xu Zhao",
+             "emails": ["zxDiscovery@gmail.com", "zxxa@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "zxbob",
             "companies": [
                 {
