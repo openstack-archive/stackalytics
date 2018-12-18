@@ -8767,6 +8767,18 @@
             "emails": ["gans.developer@gmail.com", "ganpat.agarwal@walmart.com"]
         },
         {
+            "launchpad_id": "gaocegege",
+            "github_id": "gaocegege",
+            "companies": [
+                {
+                    "company_name": "Caicloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ce Gao",
+            "emails": ["gaocegege@hotmail.com", "gaoce@caicloud.io", "ce.gao@outlook.com"]
+        },
+        {
             "launchpad_id": "gaojie",
             "companies": [
                 {
