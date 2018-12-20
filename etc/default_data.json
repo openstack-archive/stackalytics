@@ -28619,6 +28619,17 @@
             "emails": ["xulei56@chinaunicom.cn", "thunder.xu@outlook.com"]
         },
         {
+            "github_id": "xunpan",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xunpan",
+            "emails": ["panpxpx@cn.ibm.com", "happur@gmail.com"]
+        },
+        {
             "launchpad_id": "xuqiankun",
             "companies": [
                 {
