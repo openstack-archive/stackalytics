@@ -76,7 +76,7 @@ end_date    When the period ends
 ==========  ===========
 
 Both ``start_date`` and ``end_date`` take as their argument `Unix time
-<http://en.wikipedia.org/wiki/Unix_time>`_
+<https://en.wikipedia.org/wiki/Unix_time>`_
 
 For example to specify ``'Thu Jan  1 00:00:00 UTC 2015'`` the value would be
 ``1420070400``
