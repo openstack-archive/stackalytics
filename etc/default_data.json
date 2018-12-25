@@ -10729,6 +10729,18 @@
             "emails": ["hurgleburgler@gmail.com", "diana.whitten@hpe.com", "diana.whitten@hp.com"]
         },
         {
+            "launchpad_id": "huynq.ubuntu.one",
+            "github_id": "huynq0911",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nguyen Quang Huy",
+            "emails": ["huynq0911@gmail.com", "huynq@vn.fujitsu.com"]
+        },
+        {
             "launchpad_id": "huyujie",
             "companies": [
                 {
