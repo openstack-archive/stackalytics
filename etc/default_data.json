@@ -26316,6 +26316,18 @@
             "emails": ["ttcl@mac.com", "troy.toman@rackspace.com"]
         },
         {
+            "launchpad_id": "trungnv",
+            "github_id": "trungnvfet",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nguyen Van Trung",
+            "emails": ["trungnv@vn.fujitsu.com", "trungnvfet@outlook.com"]
+        },
+        {
             "launchpad_id": "truongnh92",
             "github_id": "truongnh1992",
             "companies": [
