@@ -12565,6 +12565,17 @@
             "emails": ["jimmycmh@gmail.com"]
         },
         {
+             "github_id": "jinchihe",
+             "companies": [
+                 {
+                     "company_name": "IBM",
+                     "end_date": null
+                 }
+             ],
+             "user_name": "Jin Chi He",
+             "emails": ["hejinchi@cn.ibm.com","hejinchi258@163.com"]
+        },
+        {
             "launchpad_id": "jing",
             "companies": [
                 {
