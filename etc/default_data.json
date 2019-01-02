@@ -5561,7 +5561,18 @@
             "emails": ["dahukuang@126.com"]
         },
         {
-            "launchpad_id": "daidv",
+            "launchpad_id": "daijing",
+            "companies": [
+                {
+                    "company_name": "Awcloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "daijing",
+            "emails": ["daijing@awcloud.com"]
+        },
+        {
+            "launchpad_id": "daikk115",
             "companies": [
                 {
                     "company_name": "*independent",
@@ -5578,17 +5589,6 @@
             ],
             "user_name": "Dai Dang Van",
             "emails": ["daidv3@viettel.com.vn", "daikk115@gmail.com"]
-        },
-        {
-            "launchpad_id": "daijing",
-            "companies": [
-                {
-                    "company_name": "Awcloud",
-                    "end_date": null
-                }
-            ],
-            "user_name": "daijing",
-            "emails": ["daijing@awcloud.com"]
         },
         {
             "launchpad_id": "daisy-ycguo",
