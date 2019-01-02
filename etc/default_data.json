@@ -4932,6 +4932,10 @@
                 },
                 {
                     "company_name": "GoDaddy",
+                    "end_date": "2018-Oct-12"
+                },
+                {
+                    "company_name": "Good Money",
                     "end_date": null
                 }
             ],
@@ -31717,6 +31721,10 @@
         {
             "domains": ["gohighsec.com"],
             "company_name": "GohighSec"
+        },
+        {
+            "domains": ["goodmoney.com"],
+            "company_name": "Good Money"
         },
         {
             "domains": ["google.com"],
