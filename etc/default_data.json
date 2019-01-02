@@ -7032,6 +7032,25 @@
             "emails": ["doug.hellmann@gmail.com", "doug.hellmann@dreamhost.com", "doug@doughellmann.com", "dhellmann@redhat.com"]
         },
         {
+            "launchpad_id": "dougwig",
+            "user_name": "Doug Wiegley",
+            "companies": [
+                {
+                    "company_name": "A10 Networks",
+                    "end_date": "2016-Jan-06"
+                },
+                {
+                    "company_name": "IBM",
+                    "end_date": "2018-Nov-23"
+                },
+                {
+                    "company_name": "Salesforce",
+                    "end_date": null
+                }
+            ],
+            "emails": ["dougwig@parkside.io", "dougw@a10networks.com", "dwiegley@salesforce.com"]
+        },
+        {
             "github_id": "dqmihn",
             "companies": [
                 {
