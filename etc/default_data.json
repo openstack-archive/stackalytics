@@ -25806,11 +25806,15 @@
                 },
                 {
                     "company_name": "NetApp",
+                    "end_date": "2018-Dec-31"
+                },
+                {
+                    "company_name": "Canonical",
                     "end_date": null
                 }
             ],
             "user_name": "Tiago Pasqualini",
-            "emails": ["tiago.pasqualini@gmail.com", "tiagop.silva@fit-tecnologia.org.br"]
+            "emails": ["tiago.pasqualini@gmail.com", "tiago.pasqualini@canonical.com"]
         },
         {
             "launchpad_id": "tian-mingming",
