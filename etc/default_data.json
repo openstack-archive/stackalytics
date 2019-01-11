@@ -1069,6 +1069,17 @@
             "emails": ["akbajaj@hp.com", "akbajaj@hpe.com"]
         },
         {
+            "launchpad_id": "akhil.jain",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Akhil Jain",
+            "emails": ["akhil.jain@india.nec.com", "akhiljain32@gmail.com", "akhil.jain@nectechnologies.in"]
+        },
+        {
              "launchpad_id": "akhila-kishore",
              "companies": [
                  {
