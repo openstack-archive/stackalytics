@@ -27864,6 +27864,17 @@
             "emails": ["wchrisjohnson@gmail.com", "wchrisjohnson@hp.com", "wchrisjohnson@hpe.com"]
         },
         {
+            "launchpad_id": "wdgong",
+            "companies": [
+                {
+                    "company_name": "Fiberhome",
+                    "end_date": null
+                }
+            ],
+            "user_name": "weidong gong",
+            "emails": ["wdgong@fiberhome.com"]
+        },
+        {
             "launchpad_id": "wdhwang",
             "companies": [
                 {
