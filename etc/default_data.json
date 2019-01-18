@@ -33217,6 +33217,10 @@
             "company_name": "Zurich University of Applied Sciences"
         },
         {
+            "domains": ["zhongchangcloud.com"],
+            "company_name": "Zhongchang Cloud"
+        },
+        {
             "domains": ["zinux.com"],
             "company_name": "Zinux",
             "aliases": ["ZinuX"]
