@@ -7573,6 +7573,21 @@
             "emails": ["edwardbadboy@gmail.com", "zhengsheng@awcloud.com"]
         },
         {
+            "launchpad_id": "efried",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2019-Jan-04"
+                },
+                {
+                    "company_name": "Intel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Eric Fried",
+            "emails": ["efried@us.ibm.com", "openstack@fried.cc", "eric.fried@intel.com"]
+        },
+        {
             "launchpad_id": "egafford",
             "companies": [
                 {
