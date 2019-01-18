@@ -5074,6 +5074,17 @@
             "emails": ["colette.alexander@hp.com", "colettealexander@gmail.com"]
         },
         {
+            "launchpad_id": "confisurya",
+            "companies": [
+                {
+                    "company_name": "NEC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Surya Prakash Singh",
+            "emails": ["singh.surya64mnnit@gmail.com", "surya.singh@india.nec.com"]
+        },
+        {
             "launchpad_id": "coolias-lj",
             "companies": [
                 {
