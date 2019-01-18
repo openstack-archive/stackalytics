@@ -30237,6 +30237,17 @@
             "emails": ["zhangleiqiang@gmail.com", "zhangleiqiang@huawei.com"]
         },
         {
+            "launchpad_id": "zhangmeng",
+            "companies": [
+                {
+                    "company_name": "99cloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "minguk",
+            "emails": ["zhangmeng9502@gmail.com", "zhang.meng@99cloud.net"]
+        },
+        {
             "launchpad_id": "zhangshj",
             "companies": [
                 {
