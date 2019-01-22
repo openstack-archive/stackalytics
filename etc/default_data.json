@@ -13780,6 +13780,21 @@
             "emails": ["kaiyan.sheng@hpe.com","kaiyan.sheng@hp.com"]
         },
         {
+            "launchpad_id": "kajinamit",
+            "companies": [
+                {
+                    "company_name": "NTT DATA",
+                    "end_date": "2019-Jan-14"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Takashi Kajinami",
+            "emails": ["tkajinam@redhat.com", "kajinamit@nttdata.co.jp"]
+        },
+        {
             "launchpad_id": "kali-karthik",
             "companies": [
                 {
