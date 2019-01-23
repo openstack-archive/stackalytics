@@ -2,12 +2,13 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head profile="http://gmpg.org/xfn/11">
 
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 
     <title>Stackalytics {% if page_title %}| {{ page_title }} {% endif %}</title>
 
     {% if not page_title %}
-    <meta name="description" content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, code reviews, statistics on bugs, blueprints and emails"/>
+    <meta name="description"
+          content="OpenStack contribution dashboard collects and processes development activity data such as commits, lines of code changed, code reviews, statistics on bugs, blueprints and emails"/>
     {% else %}
     <meta name="description" content="{{ page_title }}"/>
     {% endif %}
@@ -17,41 +18,61 @@
     <meta name="runtime_storage_update_time" content="{{ runtime_storage_update_time }}"/>
 
     {% if page_title %}
-        <meta property="og:site_name" content="Stackalytics" />
-        <meta property="og:title" content="Stackalytics | {{ page_title }}" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:description" content="{{ page_title }}" />
-        <meta property="og:image" content="http://stackalytics.com/static/images/stackalytics_logo.png" />
+    <meta property="og:site_name" content="Stackalytics"/>
+    <meta property="og:title" content="Stackalytics | {{ page_title }}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:description" content="{{ page_title }}"/>
+    <meta property="og:image" content="http://stackalytics.com/static/images/stackalytics_logo.png"/>
     {% endif %}
 
-    <link href='//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=PT+Sans+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
-    <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}"
+    ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='images/safari-pinned-tab.svg') }}" color="#14c3de">
+    <meta name="msapplication-TileColor" content="#603cba">
+    <meta name="theme-color" content="#ffffff">
 
-    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery.dataTables.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/jquery-ui/jquery-ui-1.10.4.custom.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/select2.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/moonfonts.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/jquery.jqplot.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static', filename='css/jquery-ui/jquery-ui-1.10.4.custom.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/select2.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/moonfonts.css') }}">
+
+
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.8/c3.min.css">
+
+
 
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-1.9.1.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.jqplot.min.js') }}"></script>
-    <!--[if lt IE 9]><script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/excanvas.min.js') }}"></script><![endif]-->
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.json2.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.pieRenderer.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.barRenderer.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.bubbleRenderer.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.categoryAxisRenderer.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='js/jqplot.categoryAxisRenderer.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.dateAxisRenderer.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisLabelRenderer.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='js/jqplot.canvasTextRenderer.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='js/jqplot.canvasAxisLabelRenderer.min.js') }}"></script>
+    <script type="text/javascript"
+            src="{{ url_for('static', filename='js/jqplot.canvasAxisTickRenderer.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.cursor.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jqplot.highlighter.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
@@ -60,6 +81,19 @@
     <script type="text/javascript" src="{{ url_for('static', filename='js/md5.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.gravatar.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='js/js-yaml.min.js') }}"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-8933515-9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-8933515-9');
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.6.8/c3.min.js"></script>
 
     {% if active_tab == 'driverlog' %}
     <script type="text/javascript" src="{{ url_for('static', filename='js/driverlog-ui.js') }}"></script>
@@ -73,10 +107,8 @@
 </head>
 
 <body>
-<div id="content">
-
-    {% block body %}{% endblock %}
-
-</div>
+    <div id="content">
+        {% block body %}{% endblock %}
+    </div>
 </body>
 </html>

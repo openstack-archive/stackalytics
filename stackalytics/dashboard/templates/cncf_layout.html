@@ -48,8 +48,8 @@
                     <div class="col-lg-8">
                         <div class="stackamenu text-center">
                             <ul id="menu-stackamenu" class="list-inline">
-                                <li class="list-inline-item current-menu-item"><a href="/"><span class="menu-item">OpenStack Foundation</span></a></li>
-                                <li class="list-inline-item"><a href="/cncf"><span class="menu-item">CNCF</span></a></li>
+                                <li class="list-inline-item"><a href="/"><span class="menu-item">OpenStack Foundation</span></a></li>
+                                <li class="list-inline-item current-menu-item"><a href="/cncf"><span class="menu-item">CNCF</span></a></li>
                                 <li class="list-inline-item"><a href="/unaffiliated"><span class="menu-item">Other Projects</span></a></li>
                             </ul>
                         </div>
@@ -64,12 +64,17 @@
 
                 <div class="drops">
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col-md" style="display:none;">
                             <label for="release_selector" title="Official releases of OpenStack">Release</label>
                             <input type="hidden" id="release_selector" style="width: 100%"
                                    data-placeholder="Select release"/>
                         </div>
                         <div class="col-md">
+                            <label for="date_selector" title="Official releases of OpenStack">Date</label>
+                            <input type="hidden" id="date_selector" style="width: 100%"
+                                   data-placeholder="Select date"/>
+                        </div>
+                        <div class="col-md" style="display:none;">
                             <label for="project_type_selector" title="Project type groups modules of the same kind. 'OpenStack' are projects defined in the official governance projects.yaml.
                         'OpenStack Others' are projects not included into any program. 'Complementary' are projects related to OpenStack ecosystem">Project
                                 Type</label>
@@ -78,9 +83,9 @@
                         </div>
                         <div class="col-md">
                             <label for="module_selector"
-                                   title="Module represents a repo (black), official project (violet) or pre-configured group of modules (cyan)">Module</label>
+                                   title="CNCF Projects">Project</label>
                             <input type="hidden" id="module_selector" style="width: 100%"
-                                   data-placeholder="Any module"/>
+                                   data-placeholder="Any project"/>
                         </div>
                         <div class="col-md">
                             <label for="company_selector" title="Company name">Company</label>
@@ -93,7 +98,7 @@
                             <input type="hidden" id="user_id_selector" style="width: 100%"
                                    data-placeholder="Any contributor"/>
                         </div>
-                        <div class="col-md">
+                        <div class="col-md" style="display: none;">
                             <label for="metric_selector" title="One of available metrics">Metric</label>
                             <input type="hidden" id="metric_selector" style="width: 100%"
                                    data-placeholder="Select metric"/>

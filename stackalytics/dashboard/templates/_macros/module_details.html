@@ -11,7 +11,7 @@
                 var module = data["module"];
                 for (var i=0; i < module.modules.length; i++) {
                     if(!obj.hasOwnProperty(module.modules[i].module_name)){
-                        module.modules[i].uri = makeURI('/', {module: module.modules[i].module_name});
+                        module.modules[i].uri = makeURI(document.location.pathname, {module: module.modules[i].module_name});
                         unique_array.push(module.modules[i]);
                     }
                     obj[module.modules[i].module_name] = module.modules[i];

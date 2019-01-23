@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "cncf_layout.html" %}
 {% import '_macros/activity_log.html' as activity_log %}
 {% import '_macros/contribution_summary.html' as contribution_summary %}
 {% import '_macros/user_profile.html' as user_profile %}
@@ -18,21 +18,6 @@
 {% set show_module_details = (module) %}
 {% set show_review_ratio = (metric in ['marks']) %}
 
-{% macro show_report_links(module=None, company=None, user_id=None) -%}
-    {% if module %}
-        <div><b><a href="/report/reviews/{{ module }}/open" target="_blank">Show open reviews for {{ module_inst.module_group_name }}</a></b></div>
-        <div><b><a href="/report/contribution/{{ module }}/30" target="_blank">Contribution for the last 30 days in {{ module_inst.module_group_name }}</a></b></div>
-        <div><b><a href="/report/contribution/{{ module }}/90" target="_blank">Contribution for the last 90 days in {{ module_inst.module_group_name }}</a></b></div>
-        <div><b><a href="/report/activity?module={{ module }}&project_type={{ project_type }}&release={{ release }}" target="_blank">Show activity report for {{ module }}</a></b></div>
-    {% endif %}
-    {% if company %}
-        <div><b><a href="/report/companies/{{ company }}" target="_blank">Show activity report for {{ company_original }}</a></b></div>
-    {% endif %}
-    {% if user_id %}
-        <div><b><a href="/report/users/{{ user_id }}" target="_blank">Show activity report for {{ user_inst.user_name }}</a></b></div>
-    {% endif %}
-{%- endmacro %}
-
 {% block scripts %}
 <script type="text/javascript">
 
@@ -44,16 +29,11 @@
     renderTableAndChart("/api/1.0/stats/companies", "company_container", "company_table", "company_chart", "company");
     {% endif %}
     {% if show_engineer_breakdown %}
-        {% if show_review_ratio %}
-        renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id",
-                ["index", "link", "-2", "-1", "1", "2", "A", "x", "positive_ratio", "metric"]);
-        {% else %}
-        renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id");
-        {% endif %}
+    renderTableAndChart("/api/1.0/stats/engineers", "engineer_container", "engineer_table", "engineer_chart", "user_id");
     {% endif %}
     {% if show_bp_breakdown %}
     renderTableAndChart("/api/1.0/stats/bp", "bp_container", "bp_table", "bp_chart", "name",
-            ["index", "link", "status", "date", "metric"]);
+        ["index", "link", "status", "date", "metric"]);
     {% endif %}
     {% if show_module_breakdown %}
     renderTableAndChart("/api/1.0/stats/modules", "module_container", "module_table", "module_chart", "module");
@@ -72,17 +52,20 @@
         {{ module_details.show_module_details(module=module) }}
     {% endif %}
 
+    {% if show_user_profile %}
+        {{ user_profile.show_user_profile(user_id=user_id) }}
+    {% endif %}
+
     {% if show_company_breakdown %}
 
     <div id="company_container">
 
-        <div class="row">
-            <div class="col-xl-12">
-                <h2>{{ metric_label }} by Company</h2>
-            </div>
-        </div>
             <div class="row">
-
+                <div class="col-xl-12">
+                    <h2>Commits by Company  {% if user_id %} <span style="color: #15c3de;">|</span> {{ user_inst.user_name }}{% endif %}</h2>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-xl-6 order-xl-last">
                     <div id="company_chart"></div>
                 </div>
@@ -93,7 +76,7 @@
                         <tr>
                             <th>#</th>
                             <th>Company</th>
-                            <th>{{ metric_label }}</th>
+                            <th>Commits</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -110,11 +93,10 @@
 
             <div class="row">
                 <div class="col-xl-12">
-                    <h2>{{ metric_label }} by Module</h2>
+                    <h2>Commits by Project {% if company %} <span style="color: #15c3de;">|</span> {{ company_original }}{% endif %} {% if user_id %} <span style="color: #15c3de;">|</span> {{ user_inst.user_name }}{% endif %}</h2>
                 </div>
             </div>
             <div class="row">
-
                 <div class="col-xl-6 order-xl-last">
                     <div id="module_chart"></div>
                 </div>
@@ -124,8 +106,8 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Module</th>
-                            <th>{{ metric_label }}</th>
+                            <th>Project</th>
+                            <th>Commits</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -138,22 +120,15 @@
 
     {% if show_engineer_breakdown %}
         <div id="engineer_container">
-            <h2>{{ metric_label }} by Contributor</h2>
+
+            <h2>Commits by Contributor {% if company %} <span style="color: #15c3de;">|</span> {{ company_original }}{% endif %}  {% if user_id %} <span style="color: #15c3de;">|</span> {{ user_inst.user_name }}{% endif %}</h2>
+
             <table id="engineer_table" class="display">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Contributor</th>
-                    {% if show_review_ratio %}
-                    <th>-2</th>
-                    <th>-1</th>
-                    <th>+1</th>
-                    <th>+2</th>
-                    <th>A</th>
-                    <th>x</th>
-                    <th>+ ratio</th>
-                    {% endif %}
-                    <th>{{ metric_label }}</th>
+                    <th>Commits</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -163,16 +138,28 @@
 
     {% endif %}
 
-    {% if show_user_profile %}
-        {{ user_profile.show_user_profile(user_id=user_id) }}
+    {% if show_contribution_on_left %}
+        {{ contribution_summary.show_contribution_summary(show_all=False) }}
     {% endif %}
+
+    {% if show_contribution_on_right %}
+        {{ contribution_summary.show_contribution_summary(show_all=False) }}
+    {% endif %}
+
     {% if show_user_activity %}
         {{ activity_log.show_activity_log(gravatar_size=32, show_all=False) }}
     {% endif %}
 
+    {% if show_module_activity %}
+        {{ activity_log.show_activity_log(gravatar_size=32, show_all=False) }}
+    {% endif %}
+
     {% if show_contribution_on_left %}
-        {{ contribution_summary.show_contribution_summary(show_all=False) }}
-        {{ show_report_links(module, company, user_id) }}
+
+    {% endif %}
+
+    {% if show_contribution_on_right %}
+
     {% endif %}
 
     {% if show_bp_breakdown %}
@@ -223,14 +210,6 @@
     </div>
     {% endif %}
 
-    {% if show_contribution_on_right %}
-    {{ contribution_summary.show_contribution_summary(show_all=False) }}
-    {{ show_report_links(module, company, user_id) }}
-    {% endif %}
-
-    {% if show_module_activity %}
-    {{ activity_log.show_activity_log(gravatar_size=32, show_all=False) }}
-    {% endif %}
 
 {% endblock %}
 

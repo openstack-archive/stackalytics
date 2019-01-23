@@ -125,7 +125,8 @@ class TestConfigFiles(testtools.TestCase):
     def _verify_users_in_alphabetical_order(self, file_name):
         users = self._read_file(file_name)['users']
         self._verify_ordering(
-            users, key=lambda x: (x.get('launchpad_id') or x.get('github_id')),
+            users,
+            key=lambda x: (x.get('launchpad_id') or x.get('github_id') or ''),
             msg='List of users should be ordered by launchpad id or ldap id '
                 'or github id')
 

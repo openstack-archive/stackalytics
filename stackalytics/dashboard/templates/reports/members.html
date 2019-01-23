@@ -4,7 +4,7 @@
 {% set page_title = 'OpenStack Foundation members' %}
 
 {% block head %}
-    <script type="text/javascript">
+<script type="text/javascript">
 
     function get_start_date() {
         var days = {{ days }};
@@ -39,7 +39,7 @@
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aaSorting": [
-                            [ sort_by_column, "desc" ]
+                            [sort_by_column, "desc"]
                         ],
                         "bFilter": true,
                         "bInfo": true,
@@ -74,7 +74,7 @@
                 }
 
                 for (i = 0; i < tableData.length; i++) {
-                    var company_link = makeURI('/report/members', {company:tableData[i].name});
+                    var company_link = makeURI('/report/members', {company: tableData[i].name});
                     tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
                     tableData[i].date = tableData[i].date_str;
                 }
@@ -82,7 +82,7 @@
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aaSorting": [
-                            [ sort_by_column, "desc" ]
+                            [sort_by_column, "desc"]
                         ],
                         "bFilter": true,
                         "bInfo": true,
@@ -117,7 +117,7 @@
                 }
 
                 for (i = 0; i < tableData.length; i++) {
-                    var company_link = makeURI('/report/members', {company:tableData[i].name});
+                    var company_link = makeURI('/report/members', {company: tableData[i].name});
                     tableData[i].link = "<a href=\"" + company_link + "\">" + tableData[i].name + "</a>";
                     tableData[i].count = tableData[i].metric;
                 }
@@ -125,7 +125,7 @@
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aaSorting": [
-                            [ sort_by_column, "desc" ]
+                            [sort_by_column, "desc"]
                         ],
                         "bFilter": true,
                         "bInfo": true,
@@ -182,7 +182,7 @@
                                     showDataLabels: true
                                 }
                             },
-                            legend: { show: true, location: 'e' }
+                            legend: {show: true, location: 'e'}
                         });
                     }
                 }
@@ -211,7 +211,7 @@
     function show_page() {
 
         var start_date = get_start_date();
-        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date};
         renderTimeline(base_options);
 
         show_engineers_table(base_options);
@@ -221,16 +221,16 @@
             show_new_companies_table(base_options);
             renderChart("/api/1.0/stats/companies", "members_chart", base_options);
         {% else %}
-            $('#companies_block').hide();
-            $('#new_companies_table_header').hide();
-            $('#new_companies_table').hide();
+            $('#companies_container').hide();
+            $('#new_compaines_container').hide();
+            $('#members_container').hide();
         {% endif %}
     }
 
     $(document).ready(function () {
 
         var start_date = get_start_date();
-        var base_options = { metric: 'members', project_type: 'all', release: 'all', start_date: start_date };
+        var base_options = {metric: 'members', project_type: 'all', release: 'all', start_date: start_date};
 
         initSingleSelector("company", makeURI("/api/1.0/companies", base_options), {allowClear: true});
 
@@ -241,95 +241,116 @@
         show_page();
     });
 
-    </script>
+</script>
 
-    <style type="text/css">
-        table.dataTable tr.even {
-            background-color: #EEF1F4;
-        }
+<style type="text/css">
+    table.dataTable tr.even {
+        background-color: #EEF1F4;
+    }
 
-        table.dataTable tr.even:hover, table.dataTable tr.odd:hover {
-            background-color: #F8FFEC;
-        }
+    table.dataTable tr.even:hover, table.dataTable tr.odd:hover {
+        background-color: #F8FFEC;
+    }
 
-        table.dataTable tr.even td.sorting_1 {
-            background-color: #E0E8E8;
-        }
-    </style>
+    table.dataTable tr.even td.sorting_1 {
+        background-color: #E0E8E8;
+    }
+</style>
 
-    <script type='text/javascript'>
-        $(document).ready(function () {
-            $('#days_selector').val({{ days }});
-            $("#days_selector").select2();
-            show_page();
-        });
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#days_selector').val( {{days}} );
+        $("#days_selector").select2();
+        show_page();
+    });
 
-        $(document).on('change', '#days_selector', function (evt) {
-            reload();
-        });
+    $(document).on('change', '#days_selector', function (evt) {
+        reload();
+    });
 
-        $(document).on('change', '#company_selector', function (evt) {
-            reload();
-        });
-    </script>
+    $(document).on('change', '#company_selector', function (evt) {
+        reload();
+    });
+</script>
 
 {% endblock %}
 
 {% block body %}
 
 <div class="page">
-<div class="aheader">
-        <div style="float: right; margin-top: 10px; margin-right: 20px;">
-            <a href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank">About</a>
-        </div>
+    <div class="aheader">
         <div id="analytics_header">
-            <div style="float: left;">
-                <span id="logo"><a href="{{ url_for('overview') }}"><img src="{{ url_for('static', filename='images/stackalytics_logo.png') }}" alt="Stackalytics" style="width: 100%; max-width: 190px;"></a></span>
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div id="logo" class="text-center">
+                        <a href="{{ url_for('overview') }}">
+                            <img
+                                    src="{{ url_for('static', filename='images/stackalytics_logo.png') }}"
+                                    alt="Stackalytics">
+                        </a>
+                    </div>
+
+                    <div class="stackamenu text-center">
+                        <a class="about" href="https://wiki.openstack.org/wiki/Stackalytics" target="_blank"
+                           title="{{ update_time_title }}">
+                            About
+                        </a>
+                        <ul id="menu-stackamenu">
+                            <div class="row">
+                                <div class="col-md text-center">
+                                    <span class="menu-item"><a href="/"><span class="icon-pie"></span>Code Contribution</a></span>
+                                </div>
+                                <div class="col-md text-center">
+                                    <span class="menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers <span
+                                            style="vertical-align: top; font-size: 60%;">&beta;</span></a></span>
+                                </div>
+                                <div class="col-md text-center">
+                                    <span class="menu-item current-menu-item"><a href="/report/members"><span
+                                            class="icon-users"></span>Member Directory</a></span>
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+                    <div class="drops">
+                        <div class="row">
+                            <div class="col-md">
+                                <label for="days_selector">Joined during period</label>
+                                <select id="days_selector" name="days_selector"
+                                        style="width:100%"
+                                        data-placeholder="Select period">
+                                    <option value="7">week</option>
+                                    <option value="14">two weeks</option>
+                                    <option value="31">month</option>
+                                    <option value="93">quarter</option>
+                                    <option value="183">half year</option>
+                                    <option value="365">year</option>
+                                    <option value="{{ all_days }}">all</option>
+                                </select>
+                            </div>
+                            <div class="col-md">
+                                <label for="company_selector">Company</label>
+                                <input id="company_selector" style="width:100%"
+                                       data-placeholder="Any company"/>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="navigation hidden-md-down">
+                        <div id="timeline" style="width: 100%; height: 120px; margin-top: 15px;"></div>
+                    </div>
+
+                </div>
             </div>
-            <div class="stackamenu" style="margin-left: 240px;">
-                <ul id="menu-stackamenu">
-                    <li class="menu-item"><a href="{{ url_for('overview') }}"><span class="icon-pie"></span>Code Contribution</a></li>
-                    <li class="menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers <span style="vertical-align: top; font-size: 60%;">&beta;</span></a></li>
-                    <li class="menu-item current-menu-item"><a href="/report/members"><span class="icon-users"></span>Member Directory</a></li>
-                </ul>
-            </div>
         </div>
 
-    <div class="navigation">
-        <div id="timeline"
-             style="width: 100%; height: 120px; margin-top: 15px;"></div>
-    </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="companies_container">
+                    <h2>OpenStack foundation member companies</h2>
 
-    <div class="drops">
-        <div class="drop" style="margin-top: 1em;">
-            <label for="days_selector">Joined during period</label>
-            <select id="days_selector" name="days_selector"
-                    style="min-width: 140px;"
-                    data-placeholder="Select period">
-                <option value="7">week</option>
-                <option value="14">two weeks</option>
-                <option value="31">month</option>
-                <option value="93">quarter</option>
-                <option value="183">half year</option>
-                <option value="365">year</option>
-                <option value="{{ all_days }}">all</option>
-            </select>
-        </div>
-
-        <div class="drop" style="margin-top: 1em;">
-            <label for="company_selector">Company</label>
-            <input id="company_selector" style="width: 140px"
-                   data-placeholder="Any company"/>
-        </div>
-    </div>
-
-
-    <table style="width: 100%" cellspacing="0" id="companies_block">
-        <tr>
-            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
-                <h2>OpenStack foundation member companies</h2>
-
-                <div class="body" style="margin-right: 1em;">
                     <table id="companies_table">
                         <thead>
                         <tr>
@@ -342,26 +363,20 @@
                         </tbody>
                     </table>
                 </div>
-            </td>
-            <td style="width: 50%; vertical-align: top; padding-left: 3em">
-                <h2>Members by company</h2>
-                <div class="body" style="margin-left: 1em;">
-                    <div id="members_container">
-
-                        <div id="members_chart"
-                             style="width: 100%; height: 350px; margin-bottom: 1em;"></div>
-                    </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="members_container">
+                    <h2>Members by company</h2>
+                    <div id="members_chart"
+                         style="width: 100%; height: 350px; margin-bottom: 1em;"></div>
                 </div>
-            </td>
-        </tr>
-    </table>
+            </div>
+        </div>
 
-    <table style="width: 100%" cellspacing="0">
-        <tr>
-            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
-                <h2>Individual Members</h2>
-
-                <div class="body" style="margin-right: 1em;">
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="individuals_container">
+                    <h2>Individual Members</h2>
                     <table id="members_table">
                         <thead>
                         <tr>
@@ -375,14 +390,10 @@
                         </tbody>
                     </table>
                 </div>
-            </td>
-            <td style="width: 50%; vertical-align: top; padding-right: 3em;">
-                <div id="new_companies_table_header">
+            </div>
+            <div class="col-lg-6">
+                <div id="new_compaines_container">
                     <h2>New Companies</h2>
-                </div>
-
-                <div class="body" style="margin-right: 1em;">
-
                     <table id="new_companies_table">
                         <thead>
                         <tr>
@@ -395,11 +406,9 @@
                         </tbody>
                     </table>
                 </div>
-            </td>
-        </tr>
-    </table>
-
-</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

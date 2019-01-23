@@ -76,6 +76,9 @@ default_data = {
                     "release_name": {
                         "type": "string"
                     },
+                    "project": {
+                        "type": "string"
+                    },
                     "end_date": {
                         "$ref": "#/definitions/date_format"
                     },

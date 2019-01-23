@@ -30,10 +30,10 @@ INFINITY_HTML = '&#x221E;'
 
 def _extend_author_fields(record):
     record['author_link'] = make_link(
-        record['author_name'], '/',
+        record['author_name'], '',
         {'user_id': record['user_id'], 'company': ''})
     record['company_link'] = make_link(
-        record['company_name'], '/',
+        record['company_name'], '',
         {'company': record['company_name'], 'user_id': ''})
 
 
@@ -41,7 +41,7 @@ def _extend_record_common_fields(record):
     _extend_author_fields(record)
     record['date_str'] = format_datetime(record['date'])
     record['module_link'] = make_link(
-        record['module'], '/',
+        record['module'], '',
         {'module': record['module'], 'company': '', 'user_id': ''})
     record['blueprint_id_count'] = len(record.get('blueprint_id', []))
     record['bug_id_count'] = len(record.get('bug_id', []))
@@ -124,7 +124,7 @@ def extend_user(user):
     if user['companies']:
         company_name = get_current_company(user)
         user['company_link'] = make_link(
-            company_name, '/', {'company': company_name, 'user_id': ''})
+            company_name, '', {'company': company_name, 'user_id': ''})
     else:
         user['company_link'] = ''
 
@@ -286,7 +286,7 @@ def make_link(title, uri=None, options=None):
     if param_values:
         uri += '?' + '&'.join(['%s=%s' % (n, utils.safe_encode(v))
                                for n, v in six.iteritems(param_values)])
-    return '<a href="%(uri)s">%(title)s</a>' % {'uri': uri, 'title': title}
+    return {'uri': uri, 'title': title}
 
 
 def make_blueprint_link(module, name):

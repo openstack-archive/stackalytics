@@ -2,6 +2,8 @@
 show_record_type=True, show_user_gravatar=True, gravatar_size=32, show_all=True,
 show_twitter=False) -%}
 
+{% set page_url = request.base_url %}
+
 {% if show_twitter %}
 <script>window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -40,13 +42,14 @@ show_twitter=False) -%}
     {% endif %}
 
     function load_activity(extra_options) {
-        var options = {page_size: page_size, start_record: start_record};
+        var options = {page_size: page_size, start_record: start_record,  };
         $.extend(options, extra_options);
 
         $.ajax({
             url: makeURI("/api/1.0/activity", options),
             dataType: "json",
             success: function (data) {
+
                 if (data["activity"].length < page_size) {
                     $('#activity_more').hide();
                 }
@@ -55,11 +58,12 @@ show_twitter=False) -%}
                 }
                 $.each(data["activity"], function() {
                     extendWithGravatar(this, {{ gravatar_size }});
+                    $.extend(this, {page_url: document.location.pathname});
                     {% if show_twitter %}
                     extendWithTweet(this);
                     {% endif %}
                 });
-                $("#activity_template").tmpl(data["activity"]).appendTo("#activity_container");
+                $("#activity_template").tmpl(data["activity"]).insertBefore('#more_button');
                 $('.ext_link').click(function (event) {
                     event.preventDefault();
                     event.stopPropagation();
@@ -103,12 +107,12 @@ show_twitter=False) -%}
     {% raw %}
         {%if coauthor %}
         <div class="header">
-            {%each(index,value) coauthor %}{%if index>0 %}, {%/if%}{%html value.author_link %} ({%html value.company_link %}){%/each%}
+            {%each(index,value) coauthor %}{%if index>0 %}, {%/if%} <a href="{%html  + value.author_link.uri %}">{%html value.author_link.title%}</a> (<a href="{%html page_url + value.company_link.uri %}">{%html value.company_link.title %}</a>){%/each%}
         </div>
         {%else%}
-            <div class="header">{%html author_link %} ({%html company_link %})</div>
+            <div class="header"><a href="{%html page_url + author_link.uri %}">{%html author_link.title %}</a> (<a href="{%html page_url + company_link.uri %}">{%html company_link.title %}</a>)</div>
         {%/if%}
-        <div class="header">${date_str} in {%html module_link%}
+        <div class="header">${date_str} in {%html module_link.title%}
             {%if record_type == "mark" || record_type == "review" || record_type == "patch" || record_type == "tr" %}
                 {%if branch != "master" %}(${branch}){%/if%}
             {%/if%}
@@ -131,9 +135,9 @@ show_twitter=False) -%}
                 <span style="color: blue">- <span>${lines_deleted}</span></span></div>
         {%elif record_type == "mark" %}
             <div class="header">Review &ldquo;${parent_subject}&rdquo;</div>
-            <div>Change request by: {%html parent_author_link %} ({%html parent_company_link %})</div>
+            <div>Change request by: <a href="{%html page_url + parent_author_link.uri %}">{%html parent_author_link.title %}</a> (<a href="{%html parent_company_link.uri %}">{%html parent_company_link.title %}</a>)</div>
             {%if patch_author_link != parent_author_link %}
-                <div>Patch by: {%html patch_author_link %} ({%html patch_company_link %})</div>
+                <div>Patch by: <a href="{%html patch_author_link.uri %}">{%html patch_author_link.title %}</a> (<a href="{%html patch_company_link.uri %}">{%html patch_company_link.title %}</a>)</div>
             {%/if%}
             <div>Change Id: <a href="${parent_url}" target="_blank">${review_id}</a></div>
             <div style="color: {%if value > 0 %} green {%else%} blue {%/if%}">
@@ -208,13 +212,17 @@ show_twitter=False) -%}
     {% endraw %}
 </script>
 
-    <h2 id="activity_header">Activity Log</h2>
-    <div id="activity_container"></div>
 
-    <div style="height: 44px;">
-        <div class="paging_full_numbers" id="activity_paginate" style="margin-left: {{ gravatar_size * 1.4 }}px;">
-            <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
+    <div id="activity_container">
+        <h2 id="activity_header">Activity Log  {% if company %} | {{ company_original }}{% endif %} </h2>
+
+        <div id="more_button" style="height: 44px;">
+            <div class="paging_full_numbers" id="activity_paginate" style="margin-left: {{ gravatar_size * 1.4 }}px;">
+                <a class="last paginate_button" tabindex="0" id="activity_more">More...</a>
+            </div>
         </div>
     </div>
+
+
 
 {%- endmacro %}

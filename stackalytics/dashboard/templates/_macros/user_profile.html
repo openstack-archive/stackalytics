@@ -25,7 +25,7 @@
         <div style="float: left;"><img src="${gravatar}"></div>
         <div style="margin-left: 90px;">
             <h2>${user_name}</h2>
-            <div>Company: {%html company_link %}
+            <div>Company: <a href="{%html company_link.uri %}">{%html company_link.title %}</a>
                     [<span style="font-style: italic;"><a
                         href="https://wiki.openstack.org/wiki/Stackalytics#Company_affiliation" style="color: grey" target="_blank">how to change</a></span>]
             </div>

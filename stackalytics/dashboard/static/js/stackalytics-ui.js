@@ -15,14 +15,18 @@
  limitations under the License.
  */
 
-String.prototype.trunc =
-    function (n) {
-        if (this.length <= n) return this;
-        return this.substr(0, this.substr(0, n).lastIndexOf(' ')) + "&hellip;";
-    };
+
+function stringTrunc(string, length) {
+
+    if (string.length <= length) {
+        return string;
+    }
+
+    return string.substr(0, string.substr(0, length).lastIndexOf(' ')) + "...";
+}
 
 function _createTimeline(data) {
-    var plot_attrs = {
+    var plot = $.jqplot('timeline', data, {
         gridPadding: {
             right: 35
         },
@@ -47,6 +51,10 @@ function _createTimeline(data) {
             yaxis: {
                 min: 0,
                 label: ''
+            },
+            y2axis: {
+                min: 0,
+                label: ''
             }
         },
         series: [
@@ -61,30 +69,21 @@ function _createTimeline(data) {
                 fill: true,
                 color: '#4bb2c5',
                 fillColor: '#4bb2c5'
-            }
-        ]
-    }
-    /* add the secondary line only if it is has positive values */
-    var has_2 = false;
-    for (var i=0; i<data[2].length; i++) {
-        if (data[2][i][1] > 0) {
-            has_2 = true;
-            break;
-        }
-    }
-    if (has_2) {
-        plot_attrs.axes.y2axis = {min: 0, label: ''};
-        plot_attrs.series.push({
+            },
+            {
                 shadow: false,
                 lineWidth: 1.5,
                 showMarker: true,
-                markerOptions: { size: 5 },
+                markerOptions: {size: 5},
                 yaxis: 'y2axis'
-        });
-    } else {
-        data.pop();
-    }
-    $.jqplot('timeline', data, plot_attrs);
+            }
+        ]
+    });
+
+    $('.navigation').resize(function () {
+        plot.replot({resetAxes: true});
+    })
+
 }
 
 function renderTimeline(options) {
@@ -109,6 +108,8 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
             success: function (data) {
 
                 var tableData = [];
+                //var chartData = [['name', 'metric']];
+
                 var chartData = [];
 
                 const limit = 10;
@@ -124,14 +125,14 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
 
                 for (i = 0; i < data.length; i++) {
                     if (i < limit - 1) {
-                        chartData.push([data[i].name.trunc(36), data[i].metric]);
+                        chartData.push([stringTrunc(data[i].name, 36), data[i].metric]);
                     } else {
                         aggregate += data[i].metric;
                     }
 
                     if (!data[i].link) {
                         if (data[i].id) {
-                            data[i].link = makeLink(data[i].id, data[i].name, link_param);
+                            data[i].link = makeLink(data[i].id, data[i].name, link_param, true);
                         } else {
                             data[i].link = data[i].name
                         }
@@ -147,7 +148,7 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
                 }
 
                 if (i == limit) {
-                    chartData.push([data[i - 1].name.trunc(36), data[i - 1].metric]);
+                    chartData.push([stringTrunc(data[i - 1].name, 36), data[i - 1].metric]);
                 } else if (i > limit) {
                     chartData.push(["others", aggregate]);
                 }
@@ -166,30 +167,131 @@ function renderTableAndChart(url, container_id, table_id, chart_id, link_param, 
 
                 if (table_id) {
                     $("#" + table_id).dataTable({
+                        "oLanguage": {
+                            "sLengthMenu": "Show _MENU_ entries",
+                            "sSearch": "",
+                            //"oPaginate": {
+                            //    "sPrevious": "&lt;",
+                            //    "sNext": "&gt;"
+                            //}
+                        },
                         "aLengthMenu": [
                             [10, 25, 50, -1],
                             [10, 25, 50, "All"]
                         ],
                         "aaSorting": [
-                            [ sort_by_column, "desc" ]
+                            [sort_by_column, "desc"]
                         ],
-                        "sPaginationType": "full_numbers",
-                        "iDisplayLength": 10,
+                        "sPaginationType": "simple",
+                        "iDisplayLength": chart_id == 10,
                         "aaData": tableData,
-                        "aoColumns": tableColumns
+                        "aoColumns": tableColumns,
+                        "autoWidth": false,
+                        //"sDom": '<"H"r><"clear">t<"F"pfl>',
+                        "fnCreatedRow": function (row, data, dataIndex) {
+
+                            var colors = [
+                                "#754998",
+                                "#d32473",
+                                "#0090cd",
+                                "#d12148",
+                                "#f68121",
+                                "#faef01",
+                                "#b7cd44",
+                                "#764a99",
+                                "#d12148",
+                                "#43cd6e"
+                            ]
+
+                            if (dataIndex < 9 && table_id != 'engineer_table') {
+                                var span = $('<span>', {
+                                    class: 'chartColor',
+                                    style: 'background-color: ' + colors[dataIndex]
+                                });
+
+                                $(row).children("td:nth-child(2)").prepend(span);
+                            }
+
+                            if (table_id == 'engineer_table') {
+                                var value = Number($(row).children("td:nth-child(9)").text().replace('%', ''));
+                                var color = 'green';
+                                if (value < 60) {
+                                    color = 'red';
+                                }
+                                $(row).children("td:nth-child(9)").html('<span class="' + color + '">' + $(row).children("td:nth-child(9)").text().replace('%', '') + '</span>');
+                            }
+                        },
+                        "fnDrawCallback": function () {
+                            //$('#' + table_id + ' thead .sorting:first-child, #'+ table_id + ' thead .sorting:nth-child(2)').text('').removeClass('sorting');
+                            //$('#' + table_id).parent().find('div:last-child').prependTo($('#' + table_id).parent().parent().parent().parent().parent().find('.container_footer'));
+                            $(".dataTables_filter input").attr("placeholder", "Search");
+                            if (table_id != 'engineer_table') {
+
+                                $('#' + table_id + ' tbody tr td:nth-child(2) a').hover(function () {
+                                    if (chart.data($(this).text()).length != 0) {
+                                        chart.focus($(this).text());
+                                    }
+                                }, function () {
+                                    if (chart.data($(this).text()).length != 0) {
+                                        chart.focus();
+                                    }
+                                });
+                            }
+                        }
                     });
                 }
 
-                if (chart_id) {
-                    var plot = $.jqplot(chart_id, [chartData], {
-                        seriesDefaults: {
-                            renderer: jQuery.jqplot.PieRenderer,
-                            rendererOptions: {
-                                showDataLabels: true
+                if (chart_id && chart_id != 'engineer_chart') {
+                    var colors = [
+                        "#754998",
+                        "#d32473",
+                        "#0090cd",
+                        "#d12148",
+                        "#f68121",
+                        "#faef01",
+                        "#b7cd44",
+                        "#764a99",
+                        "#d12148",
+                        "#43cd6e"
+                    ];
+                    var chartColors = {};
+                    for (var i = 0; i < chartData.length; i++) {
+                        chartColors[chartData[i][0]] = colors[i];
+                    }
+
+                    var chart = c3.generate({
+                        bindto: d3.select("#" + chart_id),
+                        legend: {
+                            hide: true
+                        },
+                        tooltip: {
+                            format: {
+                                value: function (value, ratio, id, index) {
+                                    return value;
+                                }
                             }
                         },
-                        legend: { show: true, location: 'e' }
+                        pie: {
+                            expand: false
+                        },
+                        data: {
+                            selection: {
+                                enabled: true
+                            },
+                            columns: chartData,
+                            type: "pie",
+                            colors: chartColors,
+                            onclick: function (d, i) {
+                                var link = $('a[data-chart="' + d.name + '"]');
+                                var href = $(link).attr('href');
+
+                                if (link.length > 0 && href !== undefined) {
+                                    window.location.href = href;
+                                }
+                            },
+                        }
                     });
+
                 }
             }
         });
@@ -220,7 +322,7 @@ function renderBarChart(chart_id, chart_data) {
 
 function renderPunchCard(chart_id, chart_data) {
     $.jqplot(chart_id, chart_data, {
-        seriesDefaults:{
+        seriesDefaults: {
             renderer: $.jqplot.BubbleRenderer,
             rendererOptions: {
                 varyBubbleColors: false,
@@ -240,7 +342,9 @@ function renderPunchCard(chart_id, chart_data) {
                 labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                 tickOptions: {
                     formatter: function (format, val) {
-                        if (val < 0 || val > 23) { return "" }
+                        if (val < 0 || val > 23) {
+                            return ""
+                        }
                         return val;
                     }
                 }
@@ -250,7 +354,9 @@ function renderPunchCard(chart_id, chart_data) {
                 labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
                 tickOptions: {
                     formatter: function (format, val) {
-                        if (val < 0 || val > 6) { return "" }
+                        if (val < 0 || val > 6) {
+                            return ""
+                        }
                         var labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].reverse();
                         return labels[val];
                     }
@@ -272,7 +378,7 @@ function extendWithGravatar(record, image_size) {
     record.gravatar = $.gravatarImageURI(gravatar, {
         "image": "wavatar",
         "rating": "g",
-        "size": image_size? image_size: 64
+        "size": image_size ? image_size : 64
     });
 }
 
@@ -292,7 +398,7 @@ function extendWithTweet(record) {
             tweet = record.author_name + " abandoned patch in " + record.module;
         } else {
             var smile = [";(", ":(", "", ":)", ":D"][record.value + 2];
-            tweet = "Got " + ((record.value > 0)? "+": "") + record.value + " from " + record.author_name + " on patch in " + record.module + smile;
+            tweet = "Got " + ((record.value > 0) ? "+" : "") + record.value + " from " + record.author_name + " on patch in " + record.module + smile;
         }
     } else if (record.record_type == "review") {
         tweet = record.status + " change request by " + record.author_name + " in " + record.module;
@@ -326,24 +432,56 @@ function getUrlVars() {
     return vars;
 }
 
-function makeLink(id, title, param_name) {
+function makeLink(id, title, param_name, data_attr) {
     var options = {};
+    var data = "";
+    if (data_attr) {
+        data = ' data-chart="' + title + '" ';
+    }
     options[param_name] = id.toLowerCase();
-    var link = makeURI("/", options);
-    return "<a href=\"" + link + "\">" + title + "</a>"
+    var link = makeURI("/" + window.location.pathname.split('/')[1], options);
+    return "<a " + data + " href=\"" + link + "\">" + title + "</a>"
 }
 
 function makeURI(uri, options) {
     var ops = {};
+
+    if (window.location.pathname.split('/')[1] == 'cncf') {
+        ops = makeDate({project_type: "cncf-group", release: "all", metric: "commits"});
+    }
+
+    if (window.location.pathname.split('/')[1] == 'unaffiliated') {
+        ops = makeDate({project_type: "unaffiliated", release: "all", metric: "commits"});
+    }
+
     $.extend(ops, getUrlVars());
     if (options != null) {
         $.extend(ops, options);
     }
-    var str = $.map(ops,function (val, index) {
+    var str = $.map(ops, function (val, index) {
         return index + "=" + encodeURI(("" + val).replace("&", "")).toLowerCase();
     }).join("&");
 
     return (str == "") ? uri : uri + "?" + str;
+}
+
+function makeDate(ops) {
+    var date = getUrlVars()['date'];
+
+    var result = {};
+
+    if (!date || date == 'all') {
+        return ops;
+    }
+
+    var end_date = new Date();
+    var start_date = new Date().setDate(end_date.getDate() - Number(date));
+    return $.extend(ops, {start_date: toTimestamp(new Date(start_date)), end_date: toTimestamp(new Date())});
+}
+
+function toTimestamp(strDate) {
+    var datum = Date.parse(strDate);
+    return datum / 1000;
 }
 
 function getPageState() {
@@ -353,13 +491,14 @@ function getPageState() {
         module: $('#module').val(),
         company: $('#company').val(),
         user_id: $('#user').val(),
-        metric: $('#metric').val()
+        metric: $('#metric').val(),
+        date: $('#date').val()
     };
 }
 
 function reload(extra) {
     window.location.search = $.map($.extend(getUrlVars(), extra), function (val, index) {
-        return val? (index + "=" + val) : null;
+        return val ? (index + "=" + val) : null;
     }).join("&")
 }
 
@@ -368,44 +507,114 @@ function initSingleSelector(name, api_url, select2_extra_options, change_handler
 
     $(selectorId).val(0).select2({
         data: [
-            {id: 0, text: "Loading..." }
+            {id: 0, text: "Loading..."}
         ],
         formatSelection: function (item) {
             return "<div class=\"select2-loading\">" + item.text + "</div>"
         }
-    }).select2("enable", false);
+    });
 
-    $.ajax({
-        url: api_url,
-        dataType: "json",
-        success: function (data) {
-            var initial_value = getUrlVars()[name];
-            if (initial_value) {
-                initial_value = (initial_value).toLocaleLowerCase();
-            } else if (data["default"]) {
-                initial_value = data["default"];
+    if (name == 'date') {
+        var initial_value = getUrlVars()[name];
+        if (initial_value) {
+            initial_value = (initial_value).toLocaleLowerCase();
+        } else {
+            initial_value = 'all';
+        }
+        $(selectorId).val(initial_value).select2($.extend({
+            data: [{"text": "All", "id": "all"}, {"text": "7 days", "id": "7"}, {
+                "text": "30 days",
+                "id": "30"
+            }, {"text": "60 days", "id": "60"}, {"text": "90 days", "id": "90"}, {
+                "text": "180 days",
+                "id": "180"
+            }]
+        }, select2_extra_options)).on("select2-selecting", function (e) {
+            var options = {};
+            options[name] = e.val;
+            if (change_handler) {
+                change_handler(options);
             }
-            $(selectorId).
-                val(initial_value).
-                select2($.extend({
-                    data: data["data"]
-                }, select2_extra_options)).
-                on("select2-selecting",function (e) { /* don't use 'change' event, because it changes value and only after refreshes the page */
+            reload(options);
+        }).on("select2-removed", function (e) {
+            console.log('select2-removed');
+            var options = {};
+            options[name] = '';
+            reload(options);
+        }).select2("enable", true);
+    } else {
+        $.ajax({
+            url: api_url,
+            dataType: "json",
+            success: function (data) {
+                var initial_value = getUrlVars()[name];
+                if (initial_value) {
+                    initial_value = (initial_value).toLocaleLowerCase();
+                } else if (window.location.pathname.split('/')[1] == 'cncf') {
+
+                    switch (name) {
+                        case "release":
+                            initial_value = "all";
+                            break;
+                        case "metric":
+                            initial_value = "commits";
+                            break;
+                        case "project_type":
+                            initial_value = "cncf-group";
+                            break;
+                        default:
+                            initial_value = data["default"];
+                            break;
+                    }
+                } else if (window.location.pathname.split('/')[1] == 'unaffiliated') {
+                    switch (name) {
+                        case "release":
+                            initial_value = "all";
+                            break;
+                        case "metric":
+                            initial_value = "commits";
+                            break;
+                        case "project_type":
+                            initial_value = "unaffiliated";
+                            break;
+                        default:
+                            initial_value = data["default"];
+                            break;
+                    }
+                } else if (data["default"]) {
+                    initial_value = data["default"];
+                }
+
+
+                var selectData = data["data"];
+
+                if (name == 'project_type') {
+                    selectData = processProjects(data["data"]);
+                }
+
+                if (name == 'release') {
+                    var filter = "openstack";
+                }
+
+
+                $(selectorId).val(initial_value).select2($.extend({
+                    data: selectData
+                }, select2_extra_options)).on("select2-selecting", function (e) {
                     var options = {};
                     options[name] = e.val;
                     if (change_handler) {
                         change_handler(options);
                     }
                     reload(options);
-                }).
-                on("select2-removed",function (e) {
+                }).on("select2-removed", function (e) {
+                    console.log('select2-removed');
                     var options = {};
                     options[name] = '';
                     reload(options);
-                }).
-                select2("enable", true);
-        }
-    });
+                }).select2("enable", true);
+            }
+        });
+    }
 }
 
 function initSelectors(base_url) {
@@ -419,11 +628,40 @@ function initSelectors(base_url) {
     });
     initSingleSelector("module", makeURI(base_url + "/api/1.0/modules", {tags: "module,program,group"}), {
         formatResultCssClass: function (item) {
-            return (item.tag)? ("select_module_" + item.tag): "";
+            return (item.tag) ? ("select_module_" + item.tag) : "";
         },
         allowClear: true
     });
     initSingleSelector("company", makeURI(base_url + "/api/1.0/companies"), {allowClear: true});
     initSingleSelector("user_id", makeURI(base_url + "/api/1.0/users"), {allowClear: true});
     initSingleSelector("metric", makeURI(base_url + "/api/1.0/metrics"));
+    initSingleSelector("date", "", {allowClear: false});
+}
+
+function processProjects(data) {
+
+    var result = {};
+    var parent = "";
+    for (i = 0; i < data.length; i++) {
+        if (!data[i].child) {
+            //create new array
+            parent = data[i].id;
+            result[parent] = [data[i]]
+        } else {
+            result[parent].push(data[i]);
+        }
+    }
+
+    var url = window.location.pathname.split('/')[1];
+
+    var projects = result["all"];
+
+    if (url == "cncf") {
+        projects = result["cncf-group"];
+    }
+    if (url == "unaffiliated") {
+        projects = result["unaffiliated"];
+    }
+
+    return projects;
 }
