@@ -10972,6 +10972,18 @@
             "emails": ["ipekelny@mirantis.com", "ipekelny@griddynamics.com", "pekelny@gmail.com"]
         },
         {
+            "launchpad_id": "ianhowell",
+            "github_id": "ian-howell",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ian Howell",
+            "emails": ["ian.howell0@gmail.com", "ian.howell@att.com"]
+        },
+        {
             "launchpad_id": "ibolotin",
             "companies": [
                 {
