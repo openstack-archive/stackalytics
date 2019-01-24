@@ -12715,6 +12715,17 @@
             "emails": ["johnson.raj@hp.com", "johnson.raj@hpe.com", "jjohnsonkoilraj@yahoo.co.in"]
         },
         {
+            "launchpad_id": "jjolly",
+            "companies": [
+                {
+                    "company_name": "SUSE",
+                    "end_date": null
+                }
+            ],
+            "user_name": "John Jolly",
+            "emails": ["jjolly@suse.com", "john.jolly@gmail.com"]
+        },
+        {
             "launchpad_id": "jk0",
             "companies": [
                 {
