@@ -445,6 +445,18 @@
             "emails": ["344677472@qq.com", "dinghh@awcloud.com"]
         },
         {
+            "launchpad_id": "aaronsheffield",
+            "github_id": "aaronsheffield",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Aaron Sheffield",
+            "emails": ["ajs@sheffieldfamily.net", "aaron.sheffield@att.com"]
+        },
+        {
             "github_id": "abadger",
             "companies": [
                 {
