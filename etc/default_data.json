@@ -9800,6 +9800,21 @@
             "emails": ["parashuram.hallur@emc.com", "hallur.p.t@gmail.com"]
         },
         {
+            "launchpad_id": "halves",
+            "companies": [
+                {
+                    "company_name": "Hitachi",
+                    "end_date": "2017-Mar-31"
+                },
+                {
+                    "company_name": "Canonical",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Heitor R. Alves de Siqueira",
+            "emails": ["hrasiq@gmail.com", "halves@canonical.com"]
+        },
+        {
             "launchpad_id": "hanchao-v",
             "companies": [
                 {
@@ -10528,17 +10543,6 @@
             ],
             "user_name": "Péter Hegedűs",
             "emails": ["hpeter@inf.u-szeged.hu"]
-        },
-        {
-            "launchpad_id": "hrasiq",
-            "companies": [
-                {
-                    "company_name": "Hitachi",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Heitor Ricardo Alves de Siqueira",
-            "emails": ["hrasiq@gmail.com", "heitorricardo.alvesdesiqueira@fit-tecnologia.org.br"]
         },
         {
             "launchpad_id": "htpeng",
