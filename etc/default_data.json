@@ -17728,6 +17728,18 @@
             "emails": ["michael.w.turvey@intel.com"]
         },
         {
+            "launchpad_id": "michaelbeaver",
+            "github_id": "michael-beaver",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Michael Beaver",
+            "emails": ["michaelbeaver64@gmail.com", "mb551n@att.com"]
+        },
+        {
             "launchpad_id": "michaeltchapman",
             "companies": [
                 {
