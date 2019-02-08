@@ -713,12 +713,12 @@
                     "end_date": "2018-Nov-23"
                 },
                 {
-                    "company_name": "Oath",
+                    "company_name": "Verizon Media",
                     "end_date": null
                 }
             ],
             "user_name": "Adam Harwell",
-            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com", "aharwell@godaddy.com", "adam.harwell@oath.com"]
+            "emails": ["flux.adam@gmail.com", "adam.harwell@rackspace.com", "aharwell@godaddy.com", "adam.harwell@oath.com", "adam.harwell@verizonmedia.com"]
         },
         {
             "launchpad_id": "adam-kijak",
@@ -12027,7 +12027,7 @@
                     "end_date": "2018-Jun-10"
                 },
                 {
-                    "company_name": "Oath",
+                    "company_name": "Verizon Media",
                     "end_date": null
                 }
             ],
@@ -12618,12 +12618,12 @@
                     "end_date": "2017-Dec-04"
                 },
                 {
-                    "company_name": "Oath",
+                    "company_name": "Verizon Media",
                     "end_date": null
                 }
             ],
             "user_name": "Jim Rollenhagen",
-            "emails": ["jim.rollenhagen@rackspace.com", "jim@jimrollenhagen.com", "jim.rollenhagen@oath.com"]
+            "emails": ["jim.rollenhagen@rackspace.com", "jim@jimrollenhagen.com", "jim.rollenhagen@oath.com", "jim.rollenhagen@verizonmedia.com"]
         },
         {
             "launchpad_id": "jimingyu",
@@ -21733,12 +21733,12 @@
                     "end_date": "2018-Mar-26"
                 },
                 {
-                    "company_name": "Oath",
+                    "company_name": "Verizon Media",
                     "end_date": null
                 }
             ],
             "user_name": "Ruby Loo",
-            "emails": ["rloo@oath.com", "ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
+            "emails": ["rloo@verizonmedia.com", "rloo@oath.com", "ruby.loo@intel.com", "opensrloo@gmail.com", "rloo@yahoo-inc.com", "rlooyahoo@gmail.com"]
         },
         {
             "launchpad_id": "rltaylo",
@@ -32555,10 +32555,6 @@
             "aliases": ["NXP (I) Pvt Ltd", "NXP"]
         },
         {
-            "domains": ["oath.com"],
-            "company_name": "Oath"
-        },
-        {
             "domains": ["objectif-libre.com"],
             "company_name": "Objectif Libre"
         },
@@ -33170,6 +33166,10 @@
         {
             "domains": ["verizondigitalmedia.com", "vdms.io"],
             "company_name": "Verizon Digital Media"
+        },
+        {
+            "domains": ["verizonmedia.com", "oath.com"],
+            "company_name": "Verizon Media"
         },
         {
             "domains": ["verizonwireless.com", "vzw.com"],
