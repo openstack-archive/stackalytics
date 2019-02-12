@@ -2651,11 +2651,15 @@
             "companies": [
                 {
                     "company_name": "Cisco Systems",
+                    "end_date": "2019-Jan-01"
+                },
+                {
+                    "company_name": "VMware",
                     "end_date": null
                 }
             ],
             "user_name": "Arvind Somya",
-            "emails": ["asomya@cisco.com"]
+            "emails": ["asomya@vmware.com"]
         },
         {
             "launchpad_id": "astaroverov",
@@ -3869,6 +3873,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2019-Jan-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -4172,6 +4180,10 @@
                 },
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2019-Jan-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -5418,6 +5430,10 @@
             "companies": [
                 {
                     "company_name": "Dell EMC",
+                    "end_date": "2019-Jan-01"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
@@ -6731,6 +6747,17 @@
             ],
             "user_name": "dineshbhor",
             "emails": ["bhordinesh07@gmail.com", "dinesh.bhor@nttdata.com"]
+        },
+        {
+            "launchpad_id": "dingdino",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dong Ding",
+            "emails": ["dong.ding@emc.com"]
         },
         {
             "launchpad_id": "divius",
@@ -13396,6 +13423,17 @@
             "emails": ["julie.pichon@gmail.com", "jpichon@redhat.com"]
         },
         {
+            "launchpad_id": "jproque15130",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jean-Pierre Roquesalane",
+            "emails": ["jeanpierre.roquesalane@dell.com"]
+        },
+        {
             "launchpad_id": "jproulx",
             "companies": [
                 {
@@ -19466,6 +19504,17 @@
             ],
             "user_name": "Peter Penchev",
             "emails": ["pp@storpool.com", "openstack-dev-s@storpool.com"]
+        },
+        {
+            "launchpad_id": "ophir.tal",
+            "companies": [
+                {
+                    "company_name": "VMware",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ophir Adiv Tal",
+            "emails": ["oadivtal@vmware.com", "firtzel@gmail.com"]
         },
         {
             "launchpad_id": "opilotte",
@@ -27397,6 +27446,17 @@
             "emails": ["vkuklin@mirantis.com", "aglar@aglar.ru"]
         },
         {
+            "launchpad_id": "vlad-belogrudov",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vladislav Belogrudov",
+            "emails": ["Vladislav.Belogrudov@emc.com"]
+        },
+        {
             "launchpad_id": "vlad-esten",
             "github_id": "s10",
             "companies": [
@@ -29835,6 +29895,17 @@
             ],
             "user_name": "Yuntong Jin",
             "emails": ["yuntongjin@gmail.com", "yuntong.jin@intel.com"]
+        },
+        {
+            "launchpad_id": "yury-kulaz",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Yury Kulazhenkov",
+            "emails": ["Yury.Kulazhenkov@emc.com"]
         },
         {
             "launchpad_id": "yushb",
