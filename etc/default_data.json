@@ -287,6 +287,17 @@
             "emails": ["344905745@qq.com", "lmxia@alauda.io"]
         },
         {
+            "github_id": "FilipB",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Filip Brychta",
+            "emails": ["fbrychta@redhat.com"]
+        },
+        {
             "github_id": "Jhhong1",
             "companies": [
                 {
@@ -1509,6 +1520,17 @@
             ],
             "user_name": "Alistair Coles",
             "emails": ["alistairncoles@gmail.com", "alistair.coles@hp.com", "alistair.coles@hpe.com"]
+        },
+        {
+            "github_id": "aljesusg",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Alberto Jesus Gutierrez Juanes",
+            "emails": ["agutierr@redhat.com"]
         },
         {
             "github_id": "allencloud",
@@ -2955,6 +2977,18 @@
             "emails": ["brian.waldon@rackspace.com", "bcwaldon@gmail.com"]
         },
         {
+            "github_id": "bdecoste",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Bill Decoste",
+            "emails": ["wdecoste@redhat.com", "bdecoste@gmail.com"
+           ]
+        },
+        {
             "launchpad_id": "bdpayne",
             "companies": [
                 {
@@ -3525,6 +3559,17 @@
             "emails": ["joseph.breu@rackspace.com", "breu@breu.org"]
         },
         {
+            "github_id": "brian-avery",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Brian Avery",
+            "emails": ["bavery@redhat.com"]
+        },
+        {
             "launchpad_id": "brian-haley",
             "companies": [
                 {
@@ -3617,6 +3662,34 @@
             ],
             "user_name": "Brian Curtin",
             "emails": ["brian@python.org", "brian.curtin@gmail.com", "brian.curtin@rackspace.com"]
+        },
+        {
+            "launchpad_id": "brianredbeard",
+            "github_id": "brianredbeard",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": "2014-Mar-02"
+                },
+                {
+                    "company_name": "CoreOS",
+                    "end_date": "2018-Jan-30"
+                },
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Brian 'redbeard' Harrington",
+             "emails": [
+                "brian@dead-city.org",
+                "redbeard@dead-city.org",
+                "brian.harrington@coreos.com",
+                "redbeard@coreos.com",
+                "bharring@redhat.com",
+                "bharrington@redhat.com",
+                "redbeard@redhat.com"
+            ]
         },
         {
             "launchpad_id": "broskos",
@@ -4147,6 +4220,17 @@
             "emails": [
                 "craig.cerny@verizonwireless.com"
             ]
+        },
+        {
+            "github_id": "cfcosta",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Caina Costa",
+            "emails": ["cacosta@redhat.com", "me@cfcosta.com"]
         },
         {
             "launchpad_id": "cgoncalves",
@@ -6884,6 +6968,17 @@
             "emails": ["derek@mcgstyle.net"]
         },
         {
+            "github_id": "dmitri-d",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Dmitri Dolguikh",
+            "emails": ["ddolguik@redhat.com", "witlessbird@gmail.com"]
+        },
+        {
             "launchpad_id": "dmitri.plakhov",
             "github_id": "dplakhov",
             "companies": [
@@ -8981,6 +9076,17 @@
             "emails": ["gkotton@vmware.com", "gkotton@redhat.com", "garyk@radware.com"]
          },
          {
+            "github_id": "gbaufake",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Guilherme Baufake Rego",
+            "emails": ["gbaufake@redhat.com"]
+         },
+         {
             "launchpad_id": "gbraad",
             "companies": [
                 {
@@ -9006,10 +9112,6 @@
             "user_name": "Darren Wardlow",
             "emails": ["gdwardlow@gmail.com", "dwardlo@wal-mart.com", "george.wardlow@walmart.com"]
         },
-
-
-
-
         {
             "launchpad_id": "geekinutah",
             "companies": [
@@ -9024,6 +9126,17 @@
             ],
             "user_name": "Michael H Wilson",
             "emails": ["geekinutah@gmail.com"]
+        },
+        {
+            "github_id": "geekspertise",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Elise Hines",
+            "emails": ["ehines@redhat.com"]
         },
         {
             "launchpad_id": "george-peristerakis",
@@ -10323,6 +10436,17 @@
             "emails": ["hhktony@gmail.com", "xutao@t2cloud.net"]
         },
         {
+            "github_id": "hhovsepy",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Hayk Hovsepyan",
+            "emails": ["hhovsepy@redhat.com"]
+        },
+        {
             "launchpad_id": "hieulq",
             "companies": [
                 {
@@ -11414,6 +11538,17 @@
             ],
             "user_name": "Ivan Shvedunov",
             "emails": ["ishvedunov@mirantis.om", "ivan4th@gmail.com"]
+        },
+        {
+            "github_id": "israel-hdez",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Edgar Hernandez Garcia",
+            "emails": ["edgar.hernandez@redhat.com", "ehernand@redhat.com"]
         },
         {
             "launchpad_id": "istartsev",
@@ -12801,6 +12936,17 @@
             "emails": ["josh.kearney@pistoncloud.com", "josh@jk0.org", "josh.kearney@rackspace.com"]
         },
         {
+            "github_id": "jkandasa",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Jeeva Kandasamy",
+            "emails": ["jkandasa@redhat.com", "jkandasa@gmail.com"]
+        },
+        {
             "launchpad_id": "jkeen",
             "companies": [
                 {
@@ -12825,6 +12971,17 @@
             ],
             "user_name": "Jennifer Whitty",
             "emails": ["jlwhittyos@gmail.com"]
+        },
+        {
+            "github_id": "jmazzitelli",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "John Mazzitelli",
+            "emails": ["jmazzite@redhat.com", "mazz@redhat.com"]
         },
         {
             "launchpad_id": "jmckind",
@@ -13368,6 +13525,17 @@
             "emails": ["zhanglong@gohighsec.com"]
         },
         {
+            "github_id": "jotak",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Joel Takvorian",
+            "emails": ["jtakvori@redhat.com"]
+        },
+        {
             "github_id": "jovizhangwei",
             "companies": [
                 {
@@ -13421,6 +13589,17 @@
             ],
             "user_name": "Julie Pichon",
             "emails": ["julie.pichon@gmail.com", "jpichon@redhat.com"]
+        },
+        {
+            "github_id": "jpkrohling",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Juraci Paixão Kröhling",
+            "emails": ["jpkroehling@redhat.com", "jcosta@redhat.com", "juraci.github@kroehling.de"]
         },
         {
             "launchpad_id": "jproque15130",
@@ -13531,6 +13710,17 @@
             "emails": ["jungleboyj@electronicjungle.net", "jsbryant@electronicjungle.net", "jbryant1@lenovo.com", "jsbryant@us.ibm.com", "jungleboyj@gmail.com", "jay.s.bryant@gmail.com"]
         },
         {
+            "github_id": "jshaughn",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Jay Shaughnessy",
+            "emails": ["jshaughn@redhat.com"]
+        },
+        {
             "launchpad_id": "jshepher",
             "companies": [
                 {
@@ -13540,6 +13730,17 @@
             ],
             "user_name": "Justin Shepherd",
             "emails": ["galstrom21@gmail.com", "jshepher@rackspace.com"]
+        },
+        {
+            "github_id": "jstickler",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Julie Stickler",
+            "emails": ["jstickle@redhat.com"]
         },
         {
             "launchpad_id": "jsuh",
@@ -13748,6 +13949,17 @@
             ],
             "user_name": "Joe Cropper",
             "emails": ["jwcroppe@us.ibm.com", "cropper.joe@gmail.com"]
+        },
+        {
+            "github_id": "jwendell",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Jonh Wendell",
+            "emails": ["jonh.wendell@redhat.com", "jsantana@redhat.com"]
         },
         {
             "launchpad_id": "jwoh",
@@ -14463,6 +14675,17 @@
             ],
             "user_name": "Kristi Nikolla",
             "emails": ["knikolla@bu.edu", "kristi@nikolla.me"]
+        },
+        {
+            "github_id": "knrc",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Kevin Conner",
+            "emails": ["kconner@redhat.com"]
         },
         {
             "launchpad_id": "kong",
@@ -16223,6 +16446,17 @@
             "emails": ["lucasagomes@gmail.com"]
         },
         {
+            "github_id": "lucasponce",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Lucas Ponce",
+            "emails": ["lponce@redhat.com"]
+        },
+        {
             "launchpad_id": "luckyvega-g",
             "companies": [
                 {
@@ -17219,6 +17453,17 @@
             ],
             "user_name": "Matthew Taylor",
             "emails": ["matthew.taylor@digitalpacific.com.au", "matt@mty.net.au"]
+        },
+        {
+            "github_id": "mattmahoneyrh",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Matt Mahoney",
+            "emails": ["mmahoney@redhat.com"]
         },
         {
             "launchpad_id": "mattmont",
@@ -18481,6 +18726,17 @@
             "emails": ["msolanas@cisco.com","marc@solanas.cat"]
         },
         {
+            "github_id": "mtho11",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Michael Thompson",
+            "emails": ["mithomps@redhat.com"]
+        },
+        {
             "launchpad_id": "mthompson-n",
             "companies": [
                 {
@@ -18538,6 +18794,17 @@
             ],
             "user_name": "Mark T. Voelker",
             "emails": ["mvoelker@cisco.com", "mvoelker@vmware.com", "markvoelker@gmail.com"]
+        },
+        {
+            "github_id": "mwringe",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Matt Wringe",
+            "emails": ["mwringe@redhat.com"]
         },
         {
             "launchpad_id": "mzawadzki-f",
@@ -19310,6 +19577,18 @@
             "emails": ["o.chaze@gmail.com"]
         },
         {
+            "github_id": "objectiser",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Gary Brown",
+            "emails": ["gbrown@redhat.com", "github@brownuk.com"
+           ]
+        },
+        {
             "launchpad_id": "octopuszhang",
             "companies": [
                 {
@@ -19877,6 +20156,17 @@
             ],
             "user_name": "Jakub Pavlik",
             "emails": ["pavlk.jakub@gmail.com", "jakub.pavlik@tcpcloud.eu", "j.pavlik@tcpcloud.eu"]
+        },
+        {
+            "github_id": "pavolloffay",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Pavol Loffay",
+            "emails": ["ploffay@redhat.com"]
         },
         {
             "launchpad_id": "pawel-palucki",
@@ -24282,6 +24572,17 @@
             "emails": ["sitakanta.hotta@workday.com"]
         },
         {
+            "github_id": "skondkar",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Sunil Kondkar",
+            "emails": ["skondkar@redhat.com"]
+        },
+        {
             "github_id": "skoo87",
             "companies": [
                 {
@@ -26668,7 +26969,17 @@
             "user_name": "Tung Doan",
             "emails": ["doantungbk.203@gmail.com", "tung.doan_van@tu-dresden.de"]
         },
-
+        {
+            "github_id": "tvieira",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Tiago Vieira",
+            "emails": ["tmoreira@redhat.com"]
+        },
         {
             "launchpad_id": "tyr-6",
             "companies": [
@@ -27542,6 +27853,17 @@
             ],
             "user_name": "Vlad Naboichenko",
             "emails": ["vnaboichenko@mirantis.com", "spitekh@gmail.com"]
+        },
+        {
+            "github_id": "vnugent",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Viet Nyguen",
+            "emails": ["vnguyen@redhat.com"]
         },
         {
             "launchpad_id": "vsharshov",
@@ -28551,6 +28873,17 @@
                 }
             ],
             "emails": ["andrey@xdel.ru", "akorolev@mirantis.com"]
+        },
+        {
+            "github_id": "xeviknal",
+            "companies": [
+                {
+                    "company_name": "Red Hat",
+                    "end_date": null
+                }
+           ],
+            "user_name": "Xavier Canal Masjuan",
+            "emails": ["xcanalma@redhat.com"]
         },
         {
             "launchpad_id": "xgw1989",
