@@ -9451,11 +9451,15 @@
                 },
                 {
                     "company_name": "Verizon Wireless",
+                    "end_date": "2019-Feb-08"
+                },
+                {
+                    "company_name": "Microsoft",
                     "end_date": null
                 }
             ],
             "user_name": "Graham Hayes",
-            "emails": ["graham@hayes.ie", "graham.hayes@hp.com", "graham@managedit.ie", "graham.hayes@hpe.com", "graham.hayes@suse.com", "ghayes@suse.com", "gr@ham.ie"]
+            "emails": ["graham@hayes.ie", "graham.hayes@hp.com", "graham@managedit.ie", "graham.hayes@hpe.com", "graham.hayes@suse.com", "ghayes@suse.com", "gr@ham.ie", "graham.hayes@microsoft.com"]
         },
         {
             "launchpad_id": "gregfaust",
