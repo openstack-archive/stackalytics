@@ -5907,10 +5907,14 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2018-Dec-31"
+                },
+                {
+                    "company_name": "SUSE",
                     "end_date": null
                 }
             ],
-            "emails": ["dara2002-openstack@yahoo.com", "darragh.oreilly@hp.com", "darragh.oreilly@hpe.com"]
+            "emails": ["dara2002-openstack@yahoo.com", "darragh.oreilly@hp.com", "darragh.oreilly@hpe.com", "doreilly@suse.com"]
         },
         {
             "launchpad_id": "darren-birkett",
