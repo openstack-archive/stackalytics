@@ -16189,6 +16189,18 @@
             "emails": ["larry.rensing@charter.com", "lr699s@att.com"]
         },
         {
+            "github_id": "lrx0014",
+            "launchpad_id": "lrx0014",
+            "companies": [
+                {
+                    "company_name": "DaoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "renxiang.li",
+            "emails": ["lrx0014@hotmail.com", "renxiang.li@daocloud.io"]
+        },
+        {
             "launchpad_id": "lseki",
             "companies": [
                 {
