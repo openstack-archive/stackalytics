@@ -35456,6 +35456,11 @@
             "uri": "https://github.com/ceph/ceph.git"
         },
         {
+            "module": "ceph-ansible",
+            "organization": "ceph",
+            "uri": "https://github.com/ceph/ceph-ansible.git"
+        },
+        {
             "module": "barbican",
             "organization": "openstack",
             "uri": "git://git.openstack.org/openstack/barbican.git",
