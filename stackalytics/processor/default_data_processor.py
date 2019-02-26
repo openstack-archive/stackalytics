@@ -65,7 +65,11 @@ def _retrieve_project_list_from_sources(project_sources):
 
 
 def _retrieve_project_list_from_gerrit(project_source):
-    LOG.info('Retrieving project list from Gerrit')
+    organization = project_source['organization']
+    LOG.info('Retrieving project list from Gerrit for %s', organization)
+    pattern = project_source.get('pattern')
+    if pattern is None:
+        pattern = "^%s/.*" % organization
     try:
         uri = project_source.get('uri') or CONF.review_uri
         gerrit_inst = rcs.Gerrit(uri)
@@ -74,26 +78,22 @@ def _retrieve_project_list_from_gerrit(project_source):
         username = project_source.get('ssh_username') or CONF.ssh_username
         gerrit_inst.setup(key_filename=key_filename, username=username)
 
-        project_list = gerrit_inst.get_project_list()
+        git_repos = gerrit_inst.get_project_list(pattern)
         gerrit_inst.close()
     except rcs.RcsException:
         LOG.error('Failed to retrieve list of projects')
         raise
 
-    organization = project_source['organization']
-    LOG.debug('Get list of projects for organization %s', organization)
-    git_repos = [f for f in project_list if f.startswith(organization + "/")]
-
     git_base_uri = project_source.get('git_base_uri') or CONF.git_base_uri
 
     for repo in git_repos:
-        (org, name) = repo.split('/')
+        name = repo.split('/')[-1]
         repo_uri = '%(git_base_uri)s/%(repo)s.git' % dict(
             git_base_uri=git_base_uri, repo=repo)
         yield {
             'branches': ['master'],
             'module': name,
-            'organization': org,
+            'organization': organization,
             'uri': repo_uri,
             'releases': [],
             'gerrit_uri': uri,
