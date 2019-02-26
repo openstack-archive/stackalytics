@@ -6411,6 +6411,7 @@
         },
         {
             "launchpad_id": "deray",
+            "github_id": "debayanray",
             "companies": [
                 {
                     "company_name": "HP",
@@ -6418,6 +6419,10 @@
                 },
                 {
                     "company_name": "HPE",
+                    "end_date": "2019-Feb-13"
+                },
+                {
+                    "company_name": "*independent",
                     "end_date": null
                 }
             ],
