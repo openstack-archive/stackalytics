@@ -99,13 +99,13 @@ class Gerrit(Rcs):
                       exc_info=True)
             raise RcsException('Failed to connect to gerrit: %s' % e)
 
-    def _get_cmd(self, project_organization, module, branch, age=0,
-                 status=None, limit=PAGE_LIMIT, grab_comments=False):
+    def _get_cmd(self, repo_name, branch, age=0, status=None,
+                 limit=PAGE_LIMIT, grab_comments=False):
         cmd = ('gerrit query --all-approvals --patch-sets --format JSON '
-               'project:\'%(ogn)s/%(module)s\' branch:%(branch)s '
+               'project:\'%(repo_name)s\' branch:%(branch)s '
                'limit:%(limit)s age:%(age)ss' %
-               {'ogn': project_organization, 'module': module,
-                'branch': branch, 'limit': limit, 'age': age})
+               {'repo_name': repo_name, 'branch': branch, 'limit': limit,
+                'age': age})
         if status:
             cmd += ' status:%s' % status
         if grab_comments:
@@ -139,7 +139,7 @@ class Gerrit(Rcs):
         raise RcsException('Too many SSH errors, aborting. Consider '
                            'increasing "gerrit_retry" value')
 
-    def _poll_reviews(self, project_organization, module, branch,
+    def _poll_reviews(self, repo_name, module, branch,
                       last_retrieval_time, status=None, grab_comments=False):
         age = 0
         proceed = True
@@ -152,8 +152,7 @@ class Gerrit(Rcs):
         processed = set()
 
         while proceed:
-            cmd = self._get_cmd(project_organization, module, branch,
-                                age=age, status=status,
+            cmd = self._get_cmd(repo_name, branch, age=age, status=status,
                                 grab_comments=grab_comments)
             LOG.debug('Executing command: %s', cmd)
             exec_result = self._exec_command_with_retrial(cmd)
@@ -199,7 +198,7 @@ class Gerrit(Rcs):
         # poll reviews down from top between last_r_t and current_r_t
         LOG.debug('Poll reviews for module: %s', repo['module'])
         for review in self._poll_reviews(
-                repo['organization'], repo['module'], branch,
+                repo['repo_name'], repo['module'], branch,
                 last_retrieval_time, status=status,
                 grab_comments=grab_comments):
             yield review
