@@ -29311,11 +29311,15 @@
                 },
                 {
                     "company_name": "StackHPC",
+                    "end_date": "2019-Jan-31"
+                },
+                {
+                    "company_name": "Mesosphere",
                     "end_date": null
                 }
             ],
             "user_name": "Nick Jones",
-            "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com", "nick@stackhpc.com"]
+            "emails": ["nick.jones@datacentred.co.uk", "nick@datacentred.co.uk", "nick@dischord.org", "yankcrime@gmail.com", "nick@stackhpc.com", "njones@mesosphere.io"]
         },
         {
             "launchpad_id": "yanpeifei",
@@ -32532,6 +32536,10 @@
         {
             "domains": ["memset.com"],
             "company_name": "Memset"
+        },
+        {
+            "domains": ["mesosphere.com", "mesosphere.io"],
+            "company_name": "Mesosphere"
         },
         {
             "domains": ["metacloud.com"],
