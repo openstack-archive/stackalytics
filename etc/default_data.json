@@ -20156,6 +20156,18 @@
             "emails": ["phongdly@us.ibm.com"]
         },
         {
+            "launchpad_id": "phuongnh",
+            "github_id": "hnwolf",
+            "companies": [
+                {
+                    "company_name": "Fujitsu",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Nguyen Hung Phuong",
+            "emails": ["nguyenhungphuong@yahoo.com", "phuongnh@vn.fujitsu.com"]
+        },
+        {
             "launchpad_id": "pi3rra",
             "companies": [
                 {
