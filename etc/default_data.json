@@ -1613,6 +1613,17 @@
             "emails": ["aman.kumar3@hpe.com", "amank@hp.com", "amank3107@gmail.com"]
         },
         {
+            "launchpad_id": "ambarish243",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ambarish Deshmukh",
+            "emails": ["ambarish_deshmukh@dellteam.com", "ambarish.deshmukh@calsoftinc.com"]
+        },
+        {
             "launchpad_id": "amcrn",
             "companies": [
                 {
@@ -20445,6 +20456,17 @@
             ],
             "user_name": "Pradeep Kumar Velusamy",
             "emails": ["pradeepkumar.v@cognizant.com"]
+        },
+        {
+            "launchpad_id": "pramchan-5",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Prakash Ramchandran",
+            "emails": ["pramchan@yahoo.com", "prakash_ramchandran@dell.com"]
         },
         {
             "launchpad_id": "prameswar",
