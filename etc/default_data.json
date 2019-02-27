@@ -25916,6 +25916,17 @@
             "emails": ["termie@preciousroy.local", "github@anarkystic.com", "code@term.ie"]
         },
         {
+            "launchpad_id": "thainn2",
+            "companies": [
+                {
+                    "company_name": "VINADATA",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Thai Nguyen Ngoc",
+            "emails": ["thainn2@vng.com.vn", "thainguyenngocnbk@gmail.com"]
+        },
+        {
             "launchpad_id": "thang-pham",
             "companies": [
                 {
@@ -33407,6 +33418,11 @@
             "company_name": "VMware",
             "aliases": ["CYSO VMWARE DHPA", "VMware, Nicira, Telstra, Accenture",
               "VMware Software"]
+        },
+        {
+            "domains": ["vng.com.vn"],
+            "company_name": "VNG Corp",
+            "aliases": ["VNG Corp", "VINADATA"]
         },
         {
             "domains": ["voereir.com"],
