@@ -16173,6 +16173,17 @@
             "emails": ["970717493@qq.com", "liu.qing@h3c.com"]
         },
         {
+            "launchpad_id": "liuruiubu",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "LiuRui",
+            "emails": ["liurui@beyondcent.com", "320734098@qq.com"]
+        },
+        {
             "launchpad_id": "liusheng",
             "companies": [{
                 "company_name": "Huawei",
