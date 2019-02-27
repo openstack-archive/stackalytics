@@ -5250,6 +5250,17 @@
             "emails": ["cpuguy83@gmail.com"]
         },
         {
+            "launchpad_id": "cqy0532",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "zhaodongyin",
+            "emails": ["zhaodongyin@beyondcent.com"]
+        },
+        {
             "github_id": "cr-hui",
             "companies": [
                 {
