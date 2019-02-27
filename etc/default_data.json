@@ -8958,6 +8958,17 @@
             "emails": ["zxgao@fiberhome.com", "gaozx.fnst@cn.fujitsu.com"]
         },
         {
+            "launchpad_id": "gardenshed",
+            "companies": [
+                {
+                    "company_name": "G-Research",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt Smith",
+            "emails": ["math.smith@me.com", "matt.smith@gresearch.co.uk"]
+        },
+        {
             "launchpad_id": "gary-w-smith",
             "companies": [
                 {
@@ -22347,6 +22358,21 @@
             "emails": ["megan.rossetti@walmart.com", "megan_rossetti@cable.comcast.com", "rossetti.megan18@gmail.com"]
         },
         {
+            "launchpad_id": "rossmartyn04",
+            "companies": [
+                {
+                    "company_name": "Memset",
+                    "end_date": "2018-Aug-31"
+                },
+                {
+                    "company_name": "G-Research",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Ross Martyn",
+            "emails": ["rossmartyn04@gmail.com", "ross.martyn@gresearch.co.uk", "ross@memset.com"]
+        },
+        {
             "launchpad_id": "rosso-af",
             "companies": [
                 {
@@ -23257,7 +23283,18 @@
             "user_name": "scottda",
             "emails": ["scott.dangelo@gmail.com", "scott.dangelo@ibm.com", "scott.dangelo@hpe.com" ]
         },
-         {
+        {
+            "launchpad_id": "scott.solkhon",
+            "companies": [
+                {
+                    "company_name": "G-Research",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Scott Solkhon",
+            "emails": ["scottsolkhon@gmail.com", "scott.solkhon@gresearch.co.uk"]
+        },
+        {
             "github_id": "scottfrederick",
             "companies": [
                 {
@@ -32117,6 +32154,10 @@
         {
             "domains": ["gplhost.com"],
             "company_name": "GPLHost"
+        },
+        {
+            "domains": ["gresearch.co.uk"],
+            "company_name": "G-Research"
         },
         {
             "domains": ["gridcentric.ca", "gridcentric.com"],
