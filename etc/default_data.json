@@ -35432,6 +35432,11 @@
             "uri": "https://github.com/kubernetes-incubator/kargo.git"
         },
         {
+            "module": "kubespray",
+            "organization": "kubernetes-sigs",
+            "uri": "https://github.com/kubernetes-sigs/kubespray.git"
+        },
+        {
             "module": "virtual-kubelet",
             "organization": "virtual-kubelet",
             "uri": "https://github.com/virtual-kubelet/virtual-kubelet.git"
