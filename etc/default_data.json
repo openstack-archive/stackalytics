@@ -20356,6 +20356,18 @@
             "emails": ["pednape@gmail.com"]
         },
         {
+            "launchpad_id": "peibin",
+            "github_id": "peibingit",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "peibin",
+            "emails": ["peibin@beyondcent.com","987157985@qq.com"]
+        },
+        {
             "launchpad_id": "peiy",
             "companies": [
                 {
