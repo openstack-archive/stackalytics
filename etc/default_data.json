@@ -28878,11 +28878,15 @@
             "companies": [
                 {
                     "company_name": "HFBank",
+                    "end_date": "2018-Jun-30"
+                },
+                {
+                    "company_name": "China Telecom",
                     "end_date": null
                 }
             ],
             "user_name": "Yang Zhang",
-            "emails": ["wosunoozzy@gmail.com", "wosunoo@qq.com", "zhangyang9@hfbank.com.cn"]
+            "emails": ["wosunoozzy@gmail.com", "wosunoo@qq.com", "zhangyang9@hfbank.com.cn", "zhangyang1@chinatelecom.cn"]
         },
         {
             "launchpad_id": "wrongfan",
