@@ -80,7 +80,7 @@ class Gerrit(Rcs):
         self.close()
 
     def setup(self, **kwargs):
-        self.key_filename = kwargs.get('key_filename')
+        self.key_filename = kwargs.get('key_filename') or None
         self.username = kwargs.get('username')
         self.ssh_errors_limit = kwargs.get('gerrit_retry') or SSH_ERRORS_LIMIT
 
