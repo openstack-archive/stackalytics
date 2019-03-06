@@ -71,10 +71,14 @@ def _merge_commits(original, new):
         return True
 
 
-def _record_typer(record_iterator, record_type):
+def _param_adder(record_iterator, key, value):
     for record in record_iterator:
-        record['record_type'] = record_type
+        record[key] = value
         yield record
+
+
+def _record_typer(record_iterator, record_type):
+    return _param_adder(record_iterator, 'record_type', record_type)
 
 
 def _get_repo_branches(repo):
@@ -147,6 +151,9 @@ def _process_repo_reviews(repo, runtime_storage_inst, record_processor_inst):
 def _process_repo_vcs(repo, runtime_storage_inst, record_processor_inst):
     vcs_inst = vcs.get_vcs(repo, CONF.sources_root)
     vcs_inst.fetch()
+    gerrit_hostname, _ = rcs.get_socket_tuple_from_uri(
+        repo.get('gerrit_uri', CONF.review_uri)
+    )
 
     for branch in _get_repo_branches(repo):
         LOG.info('Processing commits in repo: %s, branch: %s',
@@ -157,7 +164,10 @@ def _process_repo_vcs(repo, runtime_storage_inst, record_processor_inst):
         last_id = runtime_storage_inst.get_by_key(vcs_key)
 
         commit_iterator = vcs_inst.log(branch, last_id)
-        commit_iterator_typed = _record_typer(commit_iterator, 'commit')
+        commit_iterator_review = _param_adder(
+            commit_iterator, 'gerrit_hostname', gerrit_hostname
+        )
+        commit_iterator_typed = _record_typer(commit_iterator_review, 'commit')
         processed_commit_iterator = record_processor_inst.process(
             commit_iterator_typed)
         runtime_storage_inst.set_records(

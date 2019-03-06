@@ -297,6 +297,9 @@ def make_blueprint_link(module, name):
 def make_commit_message(record):
     s = record['message']
     module = record['module']
+    # NOTE(aostapenko) Keeping default value here not to brake links
+    # with existing storage data
+    gerrit_hostname = record.get('gerrit_hostname', 'review.openstack.org')
 
     s = utils.format_text(s)
 
@@ -307,8 +310,10 @@ def make_commit_message(record):
     s = re.sub(re.compile('(bug[\s#:]*)([\d]{5,7})', flags=re.IGNORECASE),
                r'\1<a href="https://bugs.launchpad.net/bugs/\2" '
                r'class="ext_link">\2</a>', s)
+    # NOTE(aostapenko) Setting http here as it's common practice to redirect
+    # http -> https, but not vice versa
     s = re.sub(r'\s+(I[0-9a-f]{40})',
-               r' <a href="https://review.openstack.org/#/q/\1" '
+               r' <a href="http://%s/#/q/\1" ' % gerrit_hostname +
                r'class="ext_link">\1</a>', s)
 
     s = utils.unwrap_text(s)
