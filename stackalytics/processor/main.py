@@ -182,9 +182,12 @@ def _process_repo(repo, runtime_storage_inst, record_processor_inst):
 
     _process_repo_vcs(repo, runtime_storage_inst, record_processor_inst)
 
-    _process_repo_bugs(repo, runtime_storage_inst, record_processor_inst)
-
-    _process_repo_blueprints(repo, runtime_storage_inst, record_processor_inst)
+    if repo['launchpad_name'] or repo.get('aliases'):
+        _process_repo_bugs(repo, runtime_storage_inst, record_processor_inst)
+        _process_repo_blueprints(repo, runtime_storage_inst,
+                                 record_processor_inst)
+    else:
+        LOG.info('Skipping launchpad data for repo: %s', repo['uri'])
 
     if 'gerrit_uri' in repo:
         _process_repo_reviews(repo, runtime_storage_inst,

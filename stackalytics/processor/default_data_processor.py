@@ -85,9 +85,11 @@ def _retrieve_project_list_from_gerrit(project_source):
         raise
 
     git_base_uri = project_source.get('git_base_uri') or CONF.git_base_uri
+    use_launchpad_metrics = project_source.get('launchpad_metrics', True)
 
     for repo in git_repos:
         name = repo.split('/')[-1]
+        launchpad_name = name if use_launchpad_metrics else None
         repo_uri = '%(git_base_uri)s/%(repo)s.git' % dict(
             git_base_uri=git_base_uri, repo=repo)
         yield {
@@ -100,6 +102,7 @@ def _retrieve_project_list_from_gerrit(project_source):
             'gerrit_uri': uri,
             'ssh_username': username,
             'key_filename': key_filename,
+            'launchpad_name': launchpad_name,
         }
 
 
@@ -115,14 +118,18 @@ def _retrieve_project_list_from_github(project_source):
         LOG.error('Failed to retrieve list of projects from GitHub: %s',
                   e, exc_info=True)
         raise
+    use_launchpad_metrics = project_source.get('launchpad_metrics', True)
 
     for repo in github_repos:
+        name = repo.name.lower()
+        launchpad_name = name if use_launchpad_metrics else None
         yield {
             'branches': [project_source.get('default_branch', 'master')],
-            'module': repo.name.lower(),
+            'module': name,
             'organization': organization,
             'uri': repo.git_url,
-            'releases': []
+            'releases': [],
+            'launchpad_name': launchpad_name,
         }
 
 

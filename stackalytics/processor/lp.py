@@ -47,7 +47,9 @@ def _log_module(module, primary_module):
 
 def log(repo):
     repo_module = repo['module']
-    modules = [repo_module] + repo.get('aliases', [])
+    modules = repo.get('aliases', [])
+    if repo['launchpad_name']:
+        modules.append(repo['launchpad_name'])
 
     for module in modules:
         if not launchpad_utils.lp_module_exists(module):
