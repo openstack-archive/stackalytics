@@ -5367,6 +5367,21 @@
             "emails": ["cr_hui@126.com", "caoronghui@hnu.edu.cn"]
         },
         {
+            "launchpad_id": "craig-anderson",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Aug-10"
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Craig Anderson",
+            "emails": ["craig.cigar.anderson@gmail.com", "craig.anderson@att.com", "ca846m@att.com"]
+        },
+        {
             "launchpad_id": "craig-bryant",
             "companies": [
                 {
