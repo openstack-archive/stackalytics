@@ -23769,11 +23769,15 @@
             "companies": [
                 {
                     "company_name": "Rackspace",
+                    "end_date": "2013-Jan-01"
+                },
+                {
+                    "company_name": "AT&T",
                     "end_date": null
                 }
             ],
             "user_name": "Sean McCully",
-            "emails": ["sean.mccully@rackspace.com"]
+            "emails": ["sean.mccully@rackspace.com","sm028h@att.com","sean_mccully@yahoo.com"]
         },
         {
             "launchpad_id": "sean-mcginnis",
