@@ -2258,11 +2258,15 @@
                 },
                 {
                     "company_name": "Mirantis",
+                    "end_date": "2017-Nov-06"
+                },
+                {
+                    "company_name": "AT&T",
                     "end_date": null
                 }
             ],
-            "user_name": "Andrei V. Ostapenko",
-            "emails": ["aostapenko@mirantis.com", "andrey_ostapenko@symantec.com"]
+            "user_name": "Andrii Ostapenko",
+            "emails": ["aostapenko@mirantis.com", "andrey_ostapenko@symantec.com", "ao129q@att.com"]
         },
         {
             "github_id": "aoxn",
