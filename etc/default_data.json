@@ -7559,6 +7559,18 @@
             "emails": ["dustin@v.igoro.us", "dustin@mozilla.com"]
         },
         {
+            "github_id": "dustinspecker",
+            "launchpad_id": "dustinspecker",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dustin Specker",
+            "emails": ["dustin.specker@att.com", "ds7900@att.com"]
+        },
+        {
             "launchpad_id": "dweimer",
             "companies": [
                 {
