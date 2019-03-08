@@ -9777,11 +9777,15 @@
                 },
                 {
                      "company_name": "QIYI",
+                     "end_date": "2018-Jul-30"
+                },
+                {
+                     "company_name": "BoCloud",
                      "end_date": null
                 }
             ],
             "user_name": "guanzy2016",
-            "emails": ["guanzuoyu@qiyi.com", "guanzuoyudev@gmail.com"]
+            "emails": ["guanzuoyudev@gmail.com"]
         },
         {
             "launchpad_id": "guduru-sirisha",
