@@ -20845,6 +20845,17 @@
             "emails": ["pradeepkumar.v@cognizant.com"]
         },
         {
+            "launchpad_id": "pradip.kadam001",
+            "companies": [
+               {
+                   "company_name": "Dell EMC",
+                   "end_date": null
+               }
+           ],
+           "user_name": "Pradip Kadam",
+           "emails": ["pradip.kadam001@gmail.com", "pradip.kadam@calsoftinc.com", "pradip_k@dellteam.com"]
+        },
+        {
             "launchpad_id": "pramchan-5",
             "companies": [
                 {
