@@ -102,7 +102,9 @@ def _retrieve_project_list_from_gerrit(project_source):
 
 def _retrieve_project_list_from_github(project_source):
     LOG.info('Retrieving project list from GitHub')
-    github = MainClass.Github(timeout=60)
+    github = MainClass.Github(timeout=60,
+                              login_or_token=CONF.github_login,
+                              password=CONF.github_password)
 
     organization = project_source['organization']
     LOG.debug('Get list of projects for organization %s', organization)
