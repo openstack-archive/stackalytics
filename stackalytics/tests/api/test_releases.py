@@ -21,9 +21,12 @@ class TestAPIReleases(test_api.TestAPI):
     def test_releases(self):
         with test_api.make_runtime_storage(
                 {'releases': [
-                    {'release_name': 'prehistory', 'end_date': 1365033600},
-                    {'release_name': 'havana', 'end_date': 1381968000},
-                    {'release_name': 'icehouse', 'end_date': 1397692800}],
+                    {'release_name': 'prehistory', 'end_date': 1365033600,
+                     'project': 'nova'},
+                    {'release_name': 'havana', 'end_date': 1381968000,
+                     'project': 'glance'},
+                    {'release_name': 'icehouse', 'end_date': 1397692800,
+                     'project': 'nova-cli'}],
                  'project_types': [
                      {'id': 'all', 'title': 'All',
                       'modules': ['nova', 'glance', 'nova-cli']},
@@ -32,6 +35,9 @@ class TestAPIReleases(test_api.TestAPI):
                 test_api.make_records(record_type=['commit'])):
             response = self.app.get('/api/1.0/releases')
             releases = test_api.load_json(response)['data']
+            print(str(releases))
             self.assertEqual(3, len(releases))
             self.assertIn({'id': 'all', 'text': 'All'}, releases)
-            self.assertIn({'id': 'icehouse', 'text': 'Icehouse'}, releases)
+            self.assertIn(
+                {'project': 'nova-cli', 'id': 'icehouse',
+                 'text': 'Icehouse'}, releases)

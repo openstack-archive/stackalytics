@@ -68,7 +68,7 @@ class TestHelpers(testtools.TestCase):
 
         observed = helpers.extend_user(user)
         self.assertEqual(expected, observed)
-        mock_make_link.assert_called_once_with('TheCompany', '/', mock.ANY)
+        mock_make_link.assert_called_once_with('TheCompany', '', mock.ANY)
 
     @mock.patch('time.time')
     @mock.patch('stackalytics.dashboard.helpers.make_link')
@@ -92,4 +92,4 @@ class TestHelpers(testtools.TestCase):
 
         helpers.extend_user(user)
 
-        mock_make_link.assert_called_once_with('Current', '/', mock.ANY)
+        mock_make_link.assert_called_once_with('Current', '', mock.ANY)

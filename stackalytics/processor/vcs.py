@@ -181,6 +181,7 @@ class Git(Vcs):
         LOG.debug('Parsing git log for repo uri %s', self.repo['uri'])
 
         os.chdir(self.folder)
+
         if not self._checkout(branch):
             return
 
@@ -280,6 +281,9 @@ class Git(Vcs):
 
     def get_last_id(self, branch):
         LOG.debug('Get head commit for repo uri: %s', self.repo['uri'])
+
+        if not os.path.exists(self.folder):
+            return None
 
         os.chdir(self.folder)
         if not self._checkout(branch):

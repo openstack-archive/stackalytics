@@ -3,7 +3,7 @@
 {% set page_title = 'Company Affiliation Changes' %}
 
 {% block scripts %}
-    <script type="text/javascript">
+<script type="text/javascript">
 
     function show_users_table(options) {
         var table_column_names = ["from", "to", "count", "users"];
@@ -63,7 +63,7 @@
                 if (table_id) {
                     $("#" + table_id).dataTable({
                         "aaSorting": [
-                            [ sort_by_column, "desc" ]
+                            [sort_by_column, "desc"]
                         ],
                         "bFilter": true,
                         "bInfo": true,
@@ -90,7 +90,7 @@
     }
 
     function reload() {
-        window.location.search = $.map(make_options(),function (val, index) {
+        window.location.search = $.map(make_options(), function (val, index) {
             return index + "=" + val;
         }).join("&")
     }
@@ -111,16 +111,16 @@
         show_page();
     });
 
-    $(function() {
-        $( "#start_days_selector" ).datepicker({
+    $(function () {
+        $("#start_days_selector").datepicker({
             dateFormat: 'yy-M-d',
             changeMonth: true,
             changeYear: true
         });
     });
 
-    $(function() {
-        $( "#end_days_selector" ).datepicker({
+    $(function () {
+        $("#end_days_selector").datepicker({
             dateFormat: 'yy-M-d',
             changeMonth: true,
             changeYear: true
@@ -133,28 +133,29 @@
         show_page();
     });
 
-    </script>
+</script>
 
 {% endblock %}
 
 {% block content %}
-<h1>Company Affiliation Changes</h1>
+
+<div id="affiliation_container">
+    <h1>Company Affiliation Changes</h1>
 
     <p>Start of the period: <input type="text" id="start_days_selector"/> &nbsp; End of the period: <input type="text" id="end_days_selector"/></p>
 
-    <div class="body" style="margin-right: 1em;">
-        <table id="users_table" style="width: 100%">
-            <thead>
-            <tr>
-                <th>From</th>
-                <th>To</th>
-                <th>Count</th>
-                <th>Users</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </div>
+    <table id="users_table" style="width: 100%">
+        <thead>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Count</th>
+            <th>Users</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

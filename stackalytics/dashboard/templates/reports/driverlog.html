@@ -20,40 +20,52 @@
 <div class="page">
     <div class="banner">Information on drivers is in beta and may contain some inaccuracies. If you see an error, <br/> please help us make the service better by
         <a href="https://wiki.openstack.org/wiki/DriverLog#How_To:_Add_a_new_driver_to_DriverLog" target="_blank">filing a bug or an update request</a></div>
-<div class="aheader">
-        <div style="float: right; margin-top: 10px; margin-right: 20px;">
-            <a href="https://wiki.openstack.org/wiki/DriverLog#How_To:_Add_a_new_driver_to_DriverLog" target="_blank">Add / Edit Driver</a>
-        </div>
-        <div id="analytics_header">
-            <div style="float: left;">
-                <span id="logo"><a href="{{ url_for('overview') }}"><img src="{{ url_for('static', filename='images/stackalytics_logo.png') }}" alt="Stackalytics" style="width: 100%; max-width: 190px;"></a></span>
+<div class="container">
+    <div class="aheader">
+    <div id="analytics_header">
+        <div class="row">
+            <div class="col-lg-3">
+                <div id="logo" class="text-center">
+                    <a href="{{ url_for('overview') }}">
+                        <img
+                                src="{{ url_for('static', filename='images/stackalytics_logo.png') }}"
+                                class="img-fluid" alt="Stackalytics">
+                    </a>
+                </div>
             </div>
-            <div class="stackamenu" style="margin-left: 240px">
-                <ul id="menu-stackamenu">
-                    <li class="menu-item"><a href="/"><span class="icon-pie"></span>Code Contribution</a></li>
-                    <li class="menu-item current-menu-item"><a href="/report/driverlog"><span class="icon-cogs"></span>Vendor Drivers <span style="vertical-align: top; font-size: 60%;">&beta;</span></a></li>
-                    <li class="menu-item"><a href="/report/members"><span class="icon-users"></span>Member Directory</a></li>
-                </ul>
+            <div class="col-lg-8">
+                <div class="stackamenu text-center">
+                    <ul id="menu-stackamenu" class="list-inline">
+                        <li class="list-inline-item current-menu-item"><a href="/"><span class="menu-item">OpenStack Foundation</span></a></li>
+                        <li class="list-inline-item"><a href="/?project_type=cncf-group&amp;release=all&amp;metric=commits"><span class="menu-item">CNCF</span></a></li>
+                        <li class="list-inline-item"><a href="/unaffiliated"><span class="menu-item">Unaffiliated Projects</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <a class="about" href="https://wiki.openstack.org/wiki/DriverLog#How_To:_Add_a_new_driver_to_DriverLog" target="_blank" title="{{ update_time_title }}">
+                    Add / Edit Driver
+                </a>
             </div>
         </div>
+        <div class="drops">
+            <div class="row">
+                <div class="col-md">
+                    <label for="project_id" title="OpenStack Project">Project</label>
+                    <input type="hidden" id="project_id" style="width:240px"  data-placeholder="Any project"/>
+                </div>
+                <div class="col-md">
+                    <label for="vendor" title="Vendor">Vendor</label>
+                    <input type="hidden" id="vendor" style="width:240px"  data-placeholder="Any vendor"/>
+                </div>
+                <div class="col-md">
+                    <label for="release" title="OpenStack Release">Release</label>
+                    <input type="hidden" id="release" style="width:240px" data-placeholder="Any release"/>
+                </div>
 
-    <div class="drops">
+            </div>
 
-        <div class="drop">
-            <label for="project_id" title="OpenStack Project">Project</label>
-            <input type="hidden" id="project_id" style="width:240px"  data-placeholder="Any project"/>
         </div>
-
-        <div class="drop">
-            <label for="vendor" title="Vendor">Vendor</label>
-            <input type="hidden" id="vendor" style="width:240px"  data-placeholder="Any vendor"/>
-        </div>
-
-        <div class="drop">
-            <label for="release" title="OpenStack Release">Release</label>
-            <input type="hidden" id="release" style="width:240px" data-placeholder="Any release"/>
-        </div>
-
     </div>
 
     <div style="margin-top: 2em;">
@@ -143,6 +155,7 @@
     {% endraw %}
     </script>
 
+</div>
 </div>
 </div>
 
