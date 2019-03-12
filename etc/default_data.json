@@ -36607,6 +36607,16 @@
             "uri": "https://github.com/knative/build-templates.git"
         },
         {
+            "module": "pipeline@tekton",
+            "organization": "tekton",
+            "uri": "https://github.com/tektoncd/pipeline.git"
+        },
+        {
+            "module": "website@tekton",
+            "organization": "tekton",
+            "uri": "https://github.com/tektoncd/website.git"
+        },
+        {
             "module": "kubeflow",
             "organization": "kubeflow",
             "uri": "https://github.com/kubeflow/kubeflow.git"
@@ -38003,6 +38013,10 @@
               "arena@kubeflow", "pytorch-operator@kubeflow", "tf-operator@kubeflow", "fairing@kubeflow",
               "testing@kubeflow", "crd-validation@kubeflow", "mxnet-operator@kubeflow", "batch-predict@kubeflow",
               "chainer-operator@kubeflow", "mpi-operator@kubeflow", "example-seldon@kubeflow"]
+            },
+            {
+                "module_group_name": "tekton-group",
+                "modules": ["pipeline@tekton", "website@tekton"]
         }
     ],
     "releases": [
@@ -38360,7 +38374,7 @@
             "id": "unaffiliated",
             "title": "Other Projects",
             "modules": ["ansible-group", "ceph", "concourse", "docker-group", "fdio-group", "istio-group", "knative-group",
-                "kubeflow-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker", "kubernetes-group"]
+                "kubeflow-group", "jclouds", "cloudfoundry", "opnfv", "openlab", "openshift", "ovs", "pypa-group", "spinnaker", "kubernetes-group", "tekton-group"]
         },
         {
             "id": "ansible-group",
@@ -38451,6 +38465,12 @@
             "title": "Spinnaker",
             "child": true,
             "modules": ["spinnaker-group"]
+        },
+        {
+            "id": "tekton-group",
+            "title": "tekton",
+            "child": true,
+            "modules": ["tekton-group"]
         }
     ]
 }
