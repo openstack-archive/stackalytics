@@ -79,7 +79,7 @@ class TestRcs(testtools.TestCase):
 
         gerrit = rcs.Gerrit('uri')
 
-        repo = dict(organization='openstack', module='nova')
+        repo = dict(repo_name='openstack/nova', module='nova')
         branch = 'master'
         last_retrieval_time = 1444000000
         mock_time.return_value = 1444333333
@@ -111,7 +111,7 @@ class TestRcs(testtools.TestCase):
 
         gerrit = rcs.Gerrit('uri')
 
-        repo = dict(organization='openstack', module='nova')
+        repo = dict(repo_name='openstack/nova', module='nova')
         branch = 'master'
         last_retrieval_time = 1445000000
         records = list(gerrit.log(repo, branch, last_retrieval_time,
@@ -142,7 +142,7 @@ class TestRcs(testtools.TestCase):
 
         gerrit = rcs.Gerrit('uri')
 
-        repo = dict(organization='openstack', module='nova')
+        repo = dict(repo_name='openstack/nova', module='nova')
         branch = 'master'
         last_retrieval_time = 1444000000
         mock_time.return_value = 1444333333
@@ -172,7 +172,7 @@ class TestRcs(testtools.TestCase):
 
         gerrit = rcs.Gerrit('uri')
 
-        repo = dict(organization='openstack', module='nova')
+        repo = dict(repo_name='openstack/nova', module='nova')
         branch = 'master'
         last_retrieval_time = 1444000000
         mock_time.return_value = 1444333333
