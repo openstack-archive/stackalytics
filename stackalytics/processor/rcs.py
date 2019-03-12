@@ -29,6 +29,17 @@ REQUEST_COUNT_LIMIT = 20
 SSH_ERRORS_LIMIT = 10
 
 
+def get_socket_tuple_from_uri(uri):
+    stripped = re.sub(GERRIT_URI_PREFIX, '', uri)
+    if stripped:
+        hostname, semicolon, port = stripped.partition(':')
+        if not port:
+            port = DEFAULT_PORT
+    else:
+        raise RcsException('Invalid rcs uri %s' % uri)
+    return hostname, port
+
+
 class RcsException(Exception):
     pass
 
@@ -57,13 +68,7 @@ class Gerrit(Rcs):
     def __init__(self, uri):
         super(Gerrit, self).__init__()
 
-        stripped = re.sub(GERRIT_URI_PREFIX, '', uri)
-        if stripped:
-            self.hostname, semicolon, self.port = stripped.partition(':')
-            if not self.port:
-                self.port = DEFAULT_PORT
-        else:
-            raise RcsException('Invalid rcs uri %s' % uri)
+        self.hostname, self.port = get_socket_tuple_from_uri(uri)
 
         self.key_filename = None
         self.username = None
