@@ -196,6 +196,9 @@ default_data = {
                     },
                     "module_group_id": {
                         "type": "string"
+                    },
+                    "pattern": {
+                        "type": "string"
                     }
                 },
                 "required": ["organization"],
