@@ -8093,6 +8093,17 @@
             "emails": ["duhongwei@qiniu.com", "du@njut.edu.cn"]
         },
         {
+            "launchpad_id": "duongmn",
+            "companies": [
+                {
+                    "company_name": "Viettel",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Mai Ngoc Duong",
+            "emails": ["duongmn89@gmail.com", "duongmn@viettel.com.vn"]
+        },
+        {
             "launchpad_id": "dustin",
             "companies": [
                 {
