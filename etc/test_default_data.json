@@ -171,7 +171,8 @@
     "releases": [
         {
             "release_name": "prehistory",
-            "end_date": "2010-Jan-01"
+            "end_date": "2010-Jan-01",
+            "project": "openstack"
         },
         {
             "release_name": "Austin",
@@ -181,7 +182,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Bexar",
@@ -191,7 +193,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Cactus",
@@ -201,7 +204,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Diablo",
@@ -211,7 +215,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Essex",
@@ -221,7 +226,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Folsom",
@@ -231,7 +237,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Grizzly",
@@ -241,7 +248,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Havana",
@@ -251,7 +259,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Icehouse",
@@ -261,7 +270,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Juno",
@@ -271,7 +281,8 @@
                     "type": "legacy",
                     "source": "http://git.openstack.org/cgit/openstack/governance/plain/reference/programs.yaml?id=sept-2014-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Kilo",
@@ -281,7 +292,8 @@
                     "type": "early_big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=april-2015-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Liberty",
@@ -291,7 +303,8 @@
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=sept-2015-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Mitaka",
@@ -301,27 +314,30 @@
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Newton",
-            "end_date": "2016-Oct-05",
+            "end_date": "2016-Oct-06",
             "refs": {
                 "governance": {
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Ocata",
-            "end_date": "2017-Feb-23",
+            "end_date": "2017-Feb-22",
             "refs": {
                 "governance": {
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Pike",
@@ -331,7 +347,8 @@
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml?id=aug-2017-elections"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Queens",
@@ -341,7 +358,8 @@
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Rocky",
@@ -351,17 +369,30 @@
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
         },
         {
             "release_name": "Stein",
-            "end_date": "2019-Feb-28",
+            "end_date": "2019-Apr-10",
             "refs": {
                 "governance": {
                     "type": "big_tent",
                     "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
                 }
-            }
+            },
+            "project": "openstack"
+        },
+        {
+            "release_name": "Train",
+            "end_date": "2019-Oct-16",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            },
+            "project": "openstack"
         }
     ],
 

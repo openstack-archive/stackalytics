@@ -38156,7 +38156,7 @@
         },
         {
             "release_name": "Newton",
-            "end_date": "2016-Oct-05",
+            "end_date": "2016-Oct-06",
             "refs": {
                 "governance": {
                     "type": "big_tent",
@@ -38167,7 +38167,7 @@
         },
         {
             "release_name": "Ocata",
-            "end_date": "2017-Feb-23",
+            "end_date": "2017-Feb-22",
             "refs": {
                 "governance": {
                     "type": "big_tent",
@@ -38211,7 +38211,18 @@
         },
         {
             "release_name": "Stein",
-            "end_date": "2019-Feb-28",
+            "end_date": "2019-Apr-10",
+            "refs": {
+                "governance": {
+                    "type": "big_tent",
+                    "source": "https://git.openstack.org/cgit/openstack/governance/plain/reference/projects.yaml"
+                }
+            },
+            "project": "openstack"
+        },
+        {
+            "release_name": "Train",
+            "end_date": "2019-Oct-16",
             "refs": {
                 "governance": {
                     "type": "big_tent",
