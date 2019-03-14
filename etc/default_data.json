@@ -17816,6 +17816,16 @@
             "user_name": "Marcus V R Nascimento",
             "emails": ["marcusvrn@gmail.com", "marcus.nascimento@fit-tecnologia.org.br"]
         },
+        {   "launchpad_id": "mardim",
+            "companies": [
+                {
+                    "company_name": "Ericsson",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dimitrios Markou",
+            "emails": ["dimitrios.markou@att.com", "dm844v@att.com"]
+        },
         {
             "launchpad_id": "marek-celoud",
             "companies": [
