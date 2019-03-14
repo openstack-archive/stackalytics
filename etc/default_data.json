@@ -6364,6 +6364,17 @@
             "emails": ["dprince@redhat.com", "dan.prince@rackspace.com"]
         },
         {
+            "launchpad_id": "dancrank",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Dan Crank",
+            "emails": ["dan.no@att.com", "dc6350@att.com", "dc6350@us.att.com", "dan.crank@att.com"]
+        },
+        {
             "launchpad_id": "dane-fichter",
             "companies": [
                 {
