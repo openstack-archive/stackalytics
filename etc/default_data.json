@@ -1957,6 +1957,18 @@
             "emails": ["alex.pecoraro@emc.com"]
         },
         {
+            "launchpad_id": "alexanderhughes",
+            "github_id": "alexanderhughes",
+            "companies": [
+                {
+                    "company_name": "Accenture",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Alexander Hughes",
+            "emails": ["alexander.hughes@pm.me", "ah8742@att.com"]
+        },
+        {
             "launchpad_id": "alexandra-settle",
             "companies": [
                 {
