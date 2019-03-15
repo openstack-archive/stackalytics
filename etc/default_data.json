@@ -22984,6 +22984,21 @@
             "emails": ["rmevans88@gmail.com"]
         },
         {
+            "launchpad_id": "rmm0811",
+            "companies": [
+                {
+                    "company_name": "IBM",
+                    "end_date": "2016-Nov-12"
+                },
+                {
+                     "company_name": "China Unicom",
+                     "end_date": null
+                }
+            ],
+            "user_name": "Minmin Ren",
+            "emails": ["rmm0811@gmail.com", "renmm6@chinaunicom.cn", "rminmin@cn.ibm.com"]
+        },
+        {
             "launchpad_id": "rmoore08",
             "companies": [
                 {
