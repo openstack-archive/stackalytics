@@ -13261,6 +13261,17 @@
             "emails": ["liuxiaoyang@fiberhome.com"]
         },
         {
+            "launchpad_id": "jessegler",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Jess Egler",
+            "emails": ["je808k@att.com", "jessica.egler@att.com", "jess.egler@gmail.com"]
+        },
+        {
             "launchpad_id": "jesseproudman",
             "github_id": "blueboxjesse",
             "companies": [
