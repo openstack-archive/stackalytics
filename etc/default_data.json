@@ -24595,6 +24595,21 @@
             "emails": ["sean.perry@hp.com", "sean.perry@hpe.com"]
         },
         {
+            "launchpad_id": "seaneagan",
+            "github_id": "seaneagan",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Sean Eagan",
+            "emails": [
+                "sean.eagan@att.com",
+                "se136c@att.com"
+            ]
+        },
+        {
             "launchpad_id": "seif",
             "companies": [
                 {
