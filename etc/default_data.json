@@ -998,6 +998,17 @@
             "emails": ["ajs@sheffieldfamily.net", "aaron.sheffield@att.com", "as1452@att.com"]
         },
         {
+            "launchpad_id": "ab2434",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Anthony Bellino",
+            "emails": ["ab2434@att.com", "anthony.bellino@att.com", "anthony.bellino@us.att.com"]
+        },
+        {
             "github_id": "abadger",
             "companies": [
                 {
