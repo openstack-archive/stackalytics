@@ -28346,6 +28346,22 @@
             "emails": ["vefimova@mirantis.com"]
         },
         {
+            "launchpad_id": "vegasq",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": "2019-Jan-08"
+                },
+                {
+                    "company_name": "Mirantis",
+                    "end_date": null
+                }
+
+            ],
+            "user_name": "Mykola Yakovliev",
+            "emails": ["vegasq@gmail.com", "myakovliev@mirantis.com", "my5878@att.com"]
+        },
+        {
             "launchpad_id": "velizarx",
             "github_id": "velp",
             "companies": [
