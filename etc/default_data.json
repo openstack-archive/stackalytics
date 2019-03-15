@@ -23785,6 +23785,21 @@
             "emails": ["rusty.lynch@intel.com"]
         },
         {
+            "launchpad_id": "rustyrobot",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2016-Oct-27"
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Evgeny L",
+            "emails": ["eli@mirantis.com", "el247k@att.com"]
+        },
+        {
             "launchpad_id": "rvasilets",
             "companies": [
                 {
