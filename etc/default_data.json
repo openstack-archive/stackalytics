@@ -23266,11 +23266,15 @@
                 },
                 {
                     "company_name": "NetApp",
+                    "end_date": "2019-Mar-08"
+                },
+                {
+                    "company_name": "Canonical",
                     "end_date": null
                 }
             ],
             "user_name": "Rodrigo Barbieri",
-            "emails": ["rodrigo.barbieri2010@gmail.com", "rodrigo.barbieri@fit-tecnologia.org.br", "rodrigob@netapp.com"]
+            "emails": ["rodrigo.barbieri2010@gmail.com", "rodrigo.barbieri@canonical.com"]
         },
         {
             "launchpad_id": "rodrigodsousa",
