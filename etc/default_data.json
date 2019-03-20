@@ -19426,6 +19426,17 @@
             "emails": ["morvencao@gmail.com", "llcao@cn.ibm.com"]
         },
         {
+            "launchpad_id": "mpardhi",
+            "companies": [
+                {
+                    "company_name": "Dell EMC",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Monica Pardhi",
+            "emails": ["mpardhi1991@gmail.com","monica.pardhi@calsoftinc.com","monica_pardhi@dellteam.com"]
+        },
+        {
             "launchpad_id": "mpdehaan",
             "github_id": "mpdehaan",
             "companies": [
