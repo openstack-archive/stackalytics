@@ -30975,6 +30975,17 @@
             "emails": ["jing.yuan@easystack.cn", "yj2311@126.com"]
         },
         {
+            "launchpad_id": "ymlong",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "ymlong",
+            "emails": ["yuemian@beyondcent.com", "18261193206@163.com"]
+        },
+        {
             "launchpad_id": "ynshenoy",
             "companies": [
                 {
