@@ -36,6 +36,9 @@ DASHBOARD_OPTS = [
                help='Name of file to store python profiler data'),
     cfg.IntOpt('age-warn', default=2 * 24 * 60 * 60,
                help='Warn if the age of data is more than this value, sec'),
+    cfg.IntOpt('report-default-limit', default=5,
+               help='Number of open reviews to present in open changes '
+                    'report'),
 ]
 
 
