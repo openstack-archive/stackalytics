@@ -165,7 +165,8 @@ class TestBps(testtools.TestCase):
     @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
     def test_log(self, lp_bug_generator):
         repo = {
-            'module': 'sahara'
+            'module': 'sahara',
+            'launchpad_name': 'sahara',
         }
         modified_since = 1234567890
         lp_bug_generator.return_value = iter([BUG])
@@ -191,7 +192,8 @@ class TestBps(testtools.TestCase):
     @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
     def test_log_released_not_committed(self, lp_bug_generator):
         repo = {
-            'module': 'sahara'
+            'module': 'sahara',
+            'launchpad_name': 'sahara',
         }
         modified_since = 1234567890
         lp_bug_generator.return_value = iter([RELEASED_NOT_COMMITTED_BUG])
@@ -217,7 +219,8 @@ class TestBps(testtools.TestCase):
     def test_log_additional_module(self, lp_bug_generator):
         # bug linked to another project should not appear
         repo = {
-            'module': 'sahara'
+            'module': 'sahara',
+            'launchpad_name': 'sahara',
         }
         modified_since = 1234567890
         lp_bug_generator.return_value = iter([BUG, LINKED_BUG])
@@ -244,7 +247,8 @@ class TestBps(testtools.TestCase):
     def test_log_additional_milestone(self, lp_bug_generator):
         # bug linked to different milestone should be mapped to the release
         repo = {
-            'module': 'sahara'
+            'module': 'sahara',
+            'launchpad_name': 'sahara',
         }
         modified_since = 1234567890
         lp_bug_generator.return_value = iter([BUG, ANOTHER_MILESTONE_BUG])
@@ -288,11 +292,76 @@ class TestBps(testtools.TestCase):
         # bug linked to another project should not appear
         repo = {
             'module': 'savanna',
+            'launchpad_name': None,
             'aliases': ['sahara']
         }
         modified_since = 1234567890
         lp_bug_generator.return_value = iter([BUG])
-        lp_module_exists.side_effect = iter([False, True])
+        lp_module_exists.side_effect = iter([True])
+
+        expected = [{
+            'assignee': 'slukjanov',
+            'date_created': 1433252154,
+            'date_fix_committed': 1433266265,
+            'date_fix_released': 1433266265,
+            'id': 'savanna/1458945',
+            'importance': 'Medium',
+            'module': 'savanna',  # should be the same as primary module name
+            'owner': 'samueldmq',
+            'status': 'Fix Released',
+            'title': 'Bug #1458945 in Sahara: "Use graduated oslo.policy"',
+            'web_link': 'https://bugs.launchpad.net/sahara/+bug/1458945'
+        }]
+
+        actual = list(bps.log(repo, modified_since))
+
+        self.assertEqual(expected, actual)
+
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_module_exists')
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
+    def test_log_module_launchpad_name_none(self, lp_bug_generator,
+                                            lp_module_exists):
+        repo = {
+            'module': 'savanna',
+            'launchpad_name': None,
+        }
+        modified_since = 1234567890
+        lp_bug_generator.return_value = iter([BUG])
+        lp_module_exists.side_effect = iter([True])
+
+        expected = []
+
+        actual = list(bps.log(repo, modified_since))
+
+        lp_module_exists.assert_not_called()
+        self.assertEqual(expected, actual)
+
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_module_exists')
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
+    def test_log_module_launchpad_name_with_alias(self, lp_bug_generator,
+                                                  lp_module_exists):
+        repo = {
+            'module': 'savanna',
+            'launchpad_name': 'sahara',
+            'aliases': ['someothername'],
+        }
+        modified_since = 1234567890
+        list(bps.log(repo, modified_since))
+
+        assert lp_module_exists.asser_has_calls(
+            [mock.call('sahara'), mock.call('someothername')], any_order=True)
+
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_module_exists')
+    @mock.patch('stackalytics.processor.launchpad_utils.lp_bug_generator')
+    def test_log_module_launchpad_name(self, lp_bug_generator,
+                                       lp_module_exists):
+        repo = {
+            'module': 'savanna',
+            'launchpad_name': 'sahara',
+        }
+        modified_since = 1234567890
+        lp_bug_generator.return_value = iter([BUG])
+        lp_module_exists.side_effect = iter([True])
 
         expected = [{
             'assignee': 'slukjanov',

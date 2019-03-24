@@ -104,6 +104,9 @@ default_data = {
                     "module": {
                         "type": "string"
                     },
+                    "launchpad_name": {
+                        "type": ["string", "null"]
+                    },
                     "releases": {
                         "type": "array",
                         "items": {
@@ -196,6 +199,9 @@ default_data = {
                     },
                     "module_group_id": {
                         "type": "string"
+                    },
+                    "launchpad_metrics": {
+                        "type": "boolean"
                     },
                     "pattern": {
                         "type": "string"
