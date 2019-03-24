@@ -5274,6 +5274,17 @@
             "emails": ["ramesh.chander@sandisk.com"]
         },
         {
+            "launchpad_id": "chi-xu",
+            "companies": [
+                {
+                    "company_name": "BoCloud",
+                    "end_date": null
+                }
+            ],
+            "user_name": "XuChi",
+            "emails": ["xuchi0823@gmail.com", "xuchi0823@163.com", "xuchi@beyondcent.com"]
+        },
+        {
             "launchpad_id": "chinabjalex",
             "companies": [
                 {
