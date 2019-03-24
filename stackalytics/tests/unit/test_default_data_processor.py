@@ -62,22 +62,22 @@ class TestDefaultDataProcessor(testtools.TestCase):
                         '_retrieve_project_list_from_gerrit') as retriever:
             retriever.return_value = [
                 {'module': 'nova',
-                 'uri': 'git://git.openstack.org/openstack/nova',
+                 'uri': 'https://git.openstack.org/openstack/nova',
                  'organization': 'openstack'},
-                {'module': 'qa', 'uri': 'git://git.openstack.org/openstack/qa',
+                {'module': 'qa', 'uri': 'https://git.openstack.org/openstack/qa',
                  'has_gerrit': True,
                  'organization': 'openstack'},
                 {'module': 'deb-nova',
-                 'uri': 'git://git.openstack.org/openstack/deb-nova',
+                 'uri': 'https://git.openstack.org/openstack/deb-nova',
                  'organization': 'openstack'},
             ]
             dd = {
                 'repos': [
                     {'module': 'qa',
-                     'uri': 'git://git.openstack.org/openstack/qa',
+                     'uri': 'https://git.openstack.org/openstack/qa',
                      'organization': 'openstack'},
                     {'module': 'tux',
-                     'uri': 'git://git.openstack.org/stackforge/tux',
+                     'uri': 'https://git.openstack.org/stackforge/tux',
                      'organization': 'stackforge'},
                 ],
                 'project_sources': [{'organization': 'openstack',

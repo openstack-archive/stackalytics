@@ -50,7 +50,7 @@ REPOS = [
         "branches": ["master"],
         "module": "stackalytics",
         "project_type": "stackforge",
-        "uri": "git://git.openstack.org/stackforge/stackalytics.git"
+        "uri": "https://git.openstack.org/stackforge/stackalytics.git"
     }
 ]
 
