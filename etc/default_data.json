@@ -16930,6 +16930,10 @@
             "launchpad_id": "liuruiubu",
             "companies": [
                 {
+                    "company_name": "*independent",
+                    "end_date": "2018-Dec-10"
+                },
+                {
                     "company_name": "BoCloud",
                     "end_date": null
                 }
