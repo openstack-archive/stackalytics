@@ -43,7 +43,7 @@
 <div id="reviewer_latest_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in reviewer_latest_revision.reviews[:5] %}
+{% for item in reviewer_latest_revision.reviews %}
     <li>{{ item.updated_on_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>
@@ -58,7 +58,7 @@
 <div id="reviewer_first_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in reviewer_first_revision.reviews[:5] %}
+{% for item in reviewer_first_revision.reviews %}
     <li>{{ item.date_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>
@@ -79,7 +79,7 @@
 <div id="submitter_latest_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in submitter_latest_revision.reviews[:5] %}
+{% for item in submitter_latest_revision.reviews %}
     <li>{{ item.updated_on_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>
@@ -94,7 +94,7 @@
 <div id="submitter_first_revision_chart" style="width: 100%; height: 350px;"></div>
 
 <ol>
-{% for item in submitter_first_revision.reviews[:5] %}
+{% for item in submitter_first_revision.reviews %}
     <li>{{ item.date_age }} <a href="{{ item.url }}">{{ item.url }}</a> {{ item.subject }} by {{ item.author_link|safe }} ({{ item.company_link|safe }})</li>
 {% endfor %}
 </ol>

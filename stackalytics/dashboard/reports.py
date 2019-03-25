@@ -20,6 +20,7 @@ import operator
 import time
 
 import flask
+from oslo_config import cfg
 
 from stackalytics.dashboard import decorators
 from stackalytics.dashboard import helpers
@@ -27,6 +28,8 @@ from stackalytics.dashboard import parameters
 from stackalytics.dashboard import vault
 from stackalytics.processor import utils
 
+
+CONF = cfg.CONF
 
 DEFAULT_DAYS_COUNT = 7
 FIRST_MEMBER_DATE = "2012-Jul-18"
@@ -59,7 +62,7 @@ def _get_day(timestamp, time_now):
     return int((time_now - timestamp) / 60 / 60 / 24)
 
 
-def _process_stat(data, key, time_now):
+def _process_stat(data, key, time_now, limit=None):
     if not data:
         return None
 
@@ -75,7 +78,7 @@ def _process_stat(data, key, time_now):
         chart_data[_get_day(review[key], time_now)] += 1
 
     return {
-        'reviews': data,
+        'reviews': data[:limit],
         'average': utils.make_age_string(sum_ages / len(data)),
         'max': data[0][key + '_age'],
         'chart_data': json.dumps(chart_data),
@@ -119,6 +122,10 @@ def open_reviews(module):
                 # new requests without votes, waiting for CI
                 pass
 
+    limit = int(flask.request.args.get('limit') or CONF.report_default_limit)
+    if limit < 0:
+        limit = None
+
     return {
         'module': module,
         'total_open': total_open,
@@ -127,13 +134,13 @@ def open_reviews(module):
         'waiting_on_ci': (total_open - len(waiting_on_reviewer) -
                           len(waiting_on_submitter)),
         'reviewer_latest_revision': _process_stat(
-            waiting_on_reviewer, 'updated_on', time_now),
+            waiting_on_reviewer, 'updated_on', time_now, limit),
         'reviewer_first_revision': _process_stat(
-            waiting_on_reviewer, 'date', time_now),
+            waiting_on_reviewer, 'date', time_now, limit),
         'submitter_latest_revision': _process_stat(
-            waiting_on_submitter, 'updated_on', time_now),
+            waiting_on_submitter, 'updated_on', time_now, limit),
         'submitter_first_revision': _process_stat(
-            waiting_on_submitter, 'date', time_now),
+            waiting_on_submitter, 'date', time_now, limit),
     }
 
 
