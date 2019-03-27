@@ -707,17 +707,6 @@
             "emails": ["lu.bin2@zte.com.cn"]
         },
         {
-            "launchpad_id": "411299920-6",
-            "companies": [
-                {
-                    "company_name": "SZZT Electronics.",
-                    "end_date": null
-                }
-            ],
-            "user_name": "Zhang Chi",
-            "emails": ["411299920@qq.com","zhangchi@szzt.com.cn"]
-        },
-        {
             "launchpad_id": "453528434-f",
             "companies": [
                 {
@@ -5476,6 +5465,17 @@
             ],
             "user_name": "Gordon Chung",
             "emails": ["gord@live.ca", "chungg@ca.ibm.com", "gordon.chung@enovance.com", "gchung@redhat.com", "gord.chung@huawei.com"]
+        },
+        {
+            "launchpad_id": "chzhang8",
+            "companies": [
+                {
+                    "company_name": "SZZT Electronics.",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Zhang Chi",
+            "emails": ["411299920@qq.com","chzhang8@qq.com","zhangchi@szzt.com.cn"]
         },
         {
             "launchpad_id": "cimomo",
