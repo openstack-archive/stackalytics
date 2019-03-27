@@ -6346,6 +6346,17 @@
             "emails": ["daisy.ycguo@gmail.com", "guoyingc@cn.ibm.com"]
         },
         {
+            "launchpad_id": "dakele",
+            "companies": [
+                {
+                    "company_name": "China Unicom",
+                    "end_date": null
+                }
+            ],
+            "user_name": "xuye",
+            "emails": ["wmxy123@yeah.net", "xuy91@chinaunicom.cn"]
+        },
+        {
             "launchpad_id": "dalees",
             "companies": [
                 {
