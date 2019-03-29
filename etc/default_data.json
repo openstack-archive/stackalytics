@@ -19230,6 +19230,18 @@
             "emails": ["mkelnermishal@vmware.com"]
         },
         {
+            "launchpad_id": "mm9745",
+            "github_id": "mattmceuen",
+            "companies": [
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Matt McEuen",
+            "emails": ["mm9745@att.com", "matt.mceuen@att.com", "madgin@madgin.net"]
+        },
+        {
             "launchpad_id": "mmalchuk",
             "github_id": "mmalchuk",
             "companies": [
