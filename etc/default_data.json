@@ -7018,6 +7018,26 @@
             "emails": ["deepak.garg@citrix.com", "deepakgarg.iitg@gmail.com"]
         },
         {
+            "launchpad_id": "deepak.tiwari",
+            "github_id": "deepak-dt",
+            "companies": [
+                {
+                    "company_name": "Aricent",
+                    "end_date": "2017-Dec-31"
+                },
+                {
+                    "company_name": "Altran",
+                    "end_date": "2018-Dec-31"
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Deepak Tiwari",
+            "emails": ["deepak.tiwari@altran.com", "deepak.tiwari@aricent.com", "dt967u@att.com", "deepak.dt@gmail.com"]
+        },
+        {
             "launchpad_id": "deepali-verneya",
             "companies": [
                 {
@@ -32837,6 +32857,10 @@
         {
             "domains": ["altiscale.com"],
             "company_name": "Altiscale"
+        },
+        {
+            "domains": ["altran.com"],
+            "company_name": "Altran"
         },
         {
             "domains": ["alyseo.com"],
