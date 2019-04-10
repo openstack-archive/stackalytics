@@ -24,10 +24,10 @@ class TestAPICompanies(test_api.TestAPI):
                     'repos': [
                         {'module': 'nova', 'project_type': 'openstack',
                          'organization': 'openstack',
-                         'uri': 'git://git.openstack.org/openstack/nova.git'},
+                         'uri': 'https://git.openstack.org/openstack/nova.git'},
                         {'module': 'glance', 'project_type': 'openstack',
                          'organization': 'openstack',
-                         'uri': 'git://git.openstack.org/openstack/glance.git'}
+                         'uri': 'https://git.openstack.org/openstack/glance.git'}
                     ],
                     'project_types': [
                         {'id': 'openstack', 'title': 'OpenStack',
@@ -80,10 +80,10 @@ class TestAPICompanies(test_api.TestAPI):
                     'repos': [
                         {'module': 'nova', 'project_type': 'openstack',
                          'organization': 'openstack',
-                         'uri': 'git://git.openstack.org/openstack/nova.git'},
+                         'uri': 'https://git.openstack.org/openstack/nova.git'},
                         {'module': 'glance', 'project_type': 'openstack',
                          'organization': 'openstack',
-                         'uri': 'git://git.openstack.org/openstack/glance.git'}
+                         'uri': 'https://git.openstack.org/openstack/glance.git'}
                     ],
                     'module_groups': {
                         'nova': test_api.make_module('nova'),

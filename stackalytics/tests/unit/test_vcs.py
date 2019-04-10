@@ -25,7 +25,7 @@ class TestVcsProcessor(testtools.TestCase):
 
         self.repo = {
             'module': 'dummy',
-            'uri': 'git://git.openstack.org/dummy.git',
+            'uri': 'https://git.openstack.org/dummy.git',
             'releases': []
         }
         self.git = vcs.Git(self.repo, '/tmp')

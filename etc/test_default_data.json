@@ -138,19 +138,19 @@
                     "tag_from": "17.0.0.0rc1"
                 }
             ],
-            "uri": "git://git.openstack.org/openstack/glance.git",
+            "uri": "https://git.openstack.org/openstack/glance.git",
             "module": "glance",
             "organization": "openstack"
         },
         {
             "module": "python-glanceclient",
             "organization": "openstack",
-            "uri": "git://git.openstack.org/openstack/python-glanceclient.git"
+            "uri": "https://git.openstack.org/openstack/python-glanceclient.git"
         },
         {
             "module": "stackalytics",
             "organization": "openstack",
-            "uri": "git://git.openstack.org/openstack/stackalytics.git"
+            "uri": "https://git.openstack.org/openstack/stackalytics.git"
         }
     ],
 
