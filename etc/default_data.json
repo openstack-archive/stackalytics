@@ -11888,6 +11888,18 @@
             "emails": ["ian.howell0@gmail.com", "ian.howell@att.com"]
         },
         {
+            "launchpad_id": "ianp",
+            "github_id": "ianpittwood",
+            "companies": [
+              {
+                "company_name": "Accenture",
+                "end_date": null
+              }
+            ],
+            "user_name": "Ian Pittwood",
+            "emails": ["pittwoodian@gmail.com", "ip692y@att.com"]
+        },
+        {
             "launchpad_id": "ibolotin",
             "companies": [
                 {
