@@ -58,33 +58,33 @@ class TestDefaultDataProcessor(testtools.TestCase):
                          message='The last company end date should be 0')
 
     def test_update_project_list(self):
+        return_value = [
+            {'module': 'nova',
+             'uri': 'https://git.openstack.org/openstack/nova',
+             'organization': 'openstack'},
+            {'module': 'qa', 'uri': 'https://git.openstack.org/openstack/qa',
+             'has_gerrit': True,
+             'organization': 'openstack'},
+            {'module': 'deb-nova',
+             'uri': 'https://git.openstack.org/openstack/deb-nova',
+             'organization': 'openstack'},
+        ]
+        dd = {
+            'repos': [
+                {'module': 'qa',
+                 'uri': 'https://git.openstack.org/openstack/qa',
+                 'organization': 'openstack'},
+                {'module': 'tux',
+                 'uri': 'https://git.openstack.org/stackforge/tux',
+                 'organization': 'stackforge'},
+            ],
+            'project_sources': [{'organization': 'openstack',
+                                 'uri': 'gerrit://'}],
+            'module_groups': [],
+        }
         with mock.patch('stackalytics.processor.default_data_processor.'
                         '_retrieve_project_list_from_gerrit') as retriever:
-            retriever.return_value = [
-                {'module': 'nova',
-                 'uri': 'https://git.openstack.org/openstack/nova',
-                 'organization': 'openstack'},
-                {'module': 'qa', 'uri': 'https://git.openstack.org/openstack/qa',
-                 'has_gerrit': True,
-                 'organization': 'openstack'},
-                {'module': 'deb-nova',
-                 'uri': 'https://git.openstack.org/openstack/deb-nova',
-                 'organization': 'openstack'},
-            ]
-            dd = {
-                'repos': [
-                    {'module': 'qa',
-                     'uri': 'https://git.openstack.org/openstack/qa',
-                     'organization': 'openstack'},
-                    {'module': 'tux',
-                     'uri': 'https://git.openstack.org/stackforge/tux',
-                     'organization': 'stackforge'},
-                ],
-                'project_sources': [{'organization': 'openstack',
-                                     'uri': 'gerrit://'}],
-                'module_groups': [],
-            }
-
+            retriever.return_value = return_value
             default_data_processor._update_project_list(dd)
 
             self.assertEqual(3, len(dd['repos']))

@@ -19,29 +19,30 @@ from stackalytics.tests.api import test_api
 class TestAPIStats(test_api.TestAPI):
 
     def test_get_modules(self):
+        data = {
+            'repos': [
+                {'module': 'nova', 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/nova.git'},
+                {'module': 'glance', 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/glance.git'}
+            ],
+            'releases': [{'release_name': 'prehistory',
+                          'end_date': 1234567890},
+                         {'release_name': 'icehouse',
+                          'end_date': 1234567890}],
+            'module_groups': {
+                'openstack': {'id': 'openstack',
+                              'module_group_name': 'openstack',
+                              'modules': ['nova', 'glance'],
+                              'tag': 'group'},
+                'nova': test_api.make_module('nova'),
+                'glance': test_api.make_module('glance'),
+            },
+            'project_types': [
+                {'id': 'all', 'title': 'All',
+                 'modules': ['nova', 'glance']}]}
         with test_api.make_runtime_storage(
-                {
-                    'repos': [
-                        {'module': 'nova', 'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/nova.git'},
-                        {'module': 'glance', 'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/glance.git'}
-                    ],
-                    'releases': [{'release_name': 'prehistory',
-                                  'end_date': 1234567890},
-                                 {'release_name': 'icehouse',
-                                  'end_date': 1234567890}],
-                    'module_groups': {
-                        'openstack': {'id': 'openstack',
-                                      'module_group_name': 'openstack',
-                                      'modules': ['nova', 'glance'],
-                                      'tag': 'group'},
-                        'nova': test_api.make_module('nova'),
-                        'glance': test_api.make_module('glance'),
-                    },
-                    'project_types': [
-                        {'id': 'all', 'title': 'All',
-                         'modules': ['nova', 'glance']}]},
+                data,
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['nova']),
@@ -58,40 +59,42 @@ class TestAPIStats(test_api.TestAPI):
             self.assertEqual('nova', stats[1]['id'])
 
     def test_get_engineers(self):
+        data = {
+            'repos': [
+                {'module': 'nova', 'project_type': 'openstack',
+                 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/nova.git'},
+                {'module': 'glance', 'project_type': 'openstack',
+                 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/glance.git'}
+            ],
+            'releases': [{'release_name': 'prehistory',
+                          'end_date': 1234567890},
+                         {'release_name': 'icehouse',
+                          'end_date': 1234567890}],
+            'module_groups': {
+                'openstack': {'id': 'openstack',
+                              'module_group_name': 'openstack',
+                              'modules': ['nova', 'glance'],
+                              'tag': 'group'},
+                'nova': test_api.make_module('nova'),
+                'glance': test_api.make_module('glance'),
+            },
+            'project_types': [
+                {'id': 'all', 'title': 'All',
+                 'modules': ['nova', 'glance']}],
+            'user:john_doe': {
+                'seq': 1, 'user_id': 'john_doe',
+                'user_name': 'John Doe',
+                'companies': [{'company_name': 'NEC', 'end_date': 0}],
+                'emails': ['john_doe@gmail.com'], 'core': []},
+            'user:bill': {
+                'seq': 1, 'user_id': 'bill', 'user_name': 'Bill Smith',
+                'companies': [{'company_name': 'IBM', 'end_date': 0}],
+                'emails': ['bill_smith@gmail.com'], 'core': []}}
+
         with test_api.make_runtime_storage(
-                {
-                    'repos': [
-                        {'module': 'nova', 'project_type': 'openstack',
-                         'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/nova.git'},
-                        {'module': 'glance', 'project_type': 'openstack',
-                         'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/glance.git'}
-                    ],
-                    'releases': [{'release_name': 'prehistory',
-                                  'end_date': 1234567890},
-                                 {'release_name': 'icehouse',
-                                  'end_date': 1234567890}],
-                    'module_groups': {
-                        'openstack': {'id': 'openstack',
-                                      'module_group_name': 'openstack',
-                                      'modules': ['nova', 'glance'],
-                                      'tag': 'group'},
-                        'nova': test_api.make_module('nova'),
-                        'glance': test_api.make_module('glance'),
-                    },
-                    'project_types': [
-                        {'id': 'all', 'title': 'All',
-                         'modules': ['nova', 'glance']}],
-                    'user:john_doe': {
-                        'seq': 1, 'user_id': 'john_doe',
-                        'user_name': 'John Doe',
-                        'companies': [{'company_name': 'NEC', 'end_date': 0}],
-                        'emails': ['john_doe@gmail.com'], 'core': []},
-                    'user:bill': {
-                        'seq': 1, 'user_id': 'bill', 'user_name': 'Bill Smith',
-                        'companies': [{'company_name': 'IBM', 'end_date': 0}],
-                        'emails': ['bill_smith@gmail.com'], 'core': []}},
+                data,
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['nova'],
@@ -114,41 +117,43 @@ class TestAPIStats(test_api.TestAPI):
             self.assertEqual(660, stats[0]['metric'])
 
     def test_get_engineers_extended(self):
+        data = {
+            'repos': [
+                {'module': 'nova', 'project_type': 'openstack',
+                 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/nova.git'},
+                {'module': 'glance', 'project_type': 'openstack',
+                 'organization': 'openstack',
+                 'uri': 'https://git.openstack.org/openstack/glance.git'}
+            ],
+            'releases': [{'release_name': 'prehistory',
+                          'end_date': 1234567890},
+                         {'release_name': 'icehouse',
+                          'end_date': 1234567890}],
+            'module_groups': {
+                'openstack': {'id': 'openstack',
+                              'module_group_name': 'openstack',
+                              'modules': ['nova', 'glance'],
+                              'tag': 'group'},
+                'nova': test_api.make_module('nova'),
+                'glance': test_api.make_module('glance'),
+            },
+            'project_types': [
+                {'id': 'all', 'title': 'All',
+                 'modules': ['nova', 'glance']}],
+            'user:john_doe': {
+                'seq': 1, 'user_id': 'john_doe',
+                'user_name': 'John Doe',
+                'companies': [{'company_name': 'NEC', 'end_date': 0}],
+                'emails': ['john_doe@gmail.com'], 'core': []},
+            'user:smith': {
+                'seq': 1, 'user_id': 'smith',
+                'user_name': 'Bill Smith',
+                'companies': [{'company_name': 'IBM', 'end_date': 0}],
+                'emails': ['bill_smith@gmail.com'], 'core': []}}
+
         with test_api.make_runtime_storage(
-                {
-                    'repos': [
-                        {'module': 'nova', 'project_type': 'openstack',
-                         'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/nova.git'},
-                        {'module': 'glance', 'project_type': 'openstack',
-                         'organization': 'openstack',
-                         'uri': 'https://git.openstack.org/openstack/glance.git'}
-                    ],
-                    'releases': [{'release_name': 'prehistory',
-                                  'end_date': 1234567890},
-                                 {'release_name': 'icehouse',
-                                  'end_date': 1234567890}],
-                    'module_groups': {
-                        'openstack': {'id': 'openstack',
-                                      'module_group_name': 'openstack',
-                                      'modules': ['nova', 'glance'],
-                                      'tag': 'group'},
-                        'nova': test_api.make_module('nova'),
-                        'glance': test_api.make_module('glance'),
-                    },
-                    'project_types': [
-                        {'id': 'all', 'title': 'All',
-                         'modules': ['nova', 'glance']}],
-                    'user:john_doe': {
-                        'seq': 1, 'user_id': 'john_doe',
-                        'user_name': 'John Doe',
-                        'companies': [{'company_name': 'NEC', 'end_date': 0}],
-                        'emails': ['john_doe@gmail.com'], 'core': []},
-                    'user:smith': {
-                        'seq': 1, 'user_id': 'smith',
-                        'user_name': 'Bill Smith',
-                        'companies': [{'company_name': 'IBM', 'end_date': 0}],
-                        'emails': ['bill_smith@gmail.com'], 'core': []}},
+                data,
                 test_api.make_records(record_type=['commit'],
                                       loc=[10, 20, 30],
                                       module=['nova'],
