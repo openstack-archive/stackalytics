@@ -35114,26 +35114,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "12.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "13.0.0.0rc1"
                 },
@@ -35204,26 +35200,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "8.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "9.0.0.0rc1"
                 },
@@ -35289,26 +35281,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "7.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "8.0.0.0rc1"
                 },
@@ -35392,26 +35380,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "11.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "12.0.0.0rc1"
                 },
@@ -35482,26 +35466,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "7.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "8.0.0.0rc1"
                 },
@@ -35584,26 +35564,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "8.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "9.0.0.0rc1"
                 },
@@ -35674,26 +35650,22 @@
                     "tag_from": "1.13.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "2.3.0",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2.2.0"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "2.5.0",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2.3.0"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "2.5.0"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "2.7.0"
                 },
@@ -36106,26 +36078,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc3"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "5.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "6.0.0.0rc1"
                 },
@@ -36238,26 +36206,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "5.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "6.0.0.0rc1"
                 },
@@ -36271,7 +36235,7 @@
                     "branch": "stable/pike",
                     "tag_to": "HEAD",
                     "release_name": "Pike",
-                    "tag_from": "8.0.0.0rc1"
+                    "tag_from": "8.0.0"
                 },
                 {
                     "branch": "stable/queens",
@@ -36480,26 +36444,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2.rc2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "3.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "4.0.0.0rc1"
                 },
@@ -37128,26 +37088,22 @@
                     "tag_from": "2014.1"
                 },
                 {
-                    "branch": "stable/kilo",
-                    "tag_to": "HEAD",
+                    "tag_to": "kilo-eol",
                     "release_name": "Kilo",
                     "tag_from": "2014.2"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "1.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "2.0.0.0rc1"
                 },
@@ -37203,20 +37159,17 @@
                     "tag_from": "2014.2.rc1"
                 },
                 {
-                    "branch": "stable/liberty",
-                    "tag_to": "HEAD",
+                    "tag_to": "liberty-eol",
                     "release_name": "Liberty",
                     "tag_from": "2015.1.0rc1"
                 },
                 {
-                    "branch": "stable/mitaka",
-                    "tag_to": "HEAD",
+                    "tag_to": "mitaka-eol",
                     "release_name": "Mitaka",
                     "tag_from": "1.0.0.0rc1"
                 },
                 {
-                    "branch": "stable/newton",
-                    "tag_to": "HEAD",
+                    "tag_to": "newton-eol",
                     "release_name": "Newton",
                     "tag_from": "2.0.0.0rc1"
                 },
