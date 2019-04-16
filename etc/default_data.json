@@ -28941,6 +28941,21 @@
             "emails": ["v.kuramshin@samsung.com"]
         },
         {
+            "launchpad_id": "vmaliaev",
+            "companies": [
+                {
+                    "company_name": "Mirantis",
+                    "end_date": "2017-Jun-17"
+                },
+                {
+                    "company_name": "AT&T",
+                    "end_date": null
+                }
+            ],
+            "user_name": "Vladimir Maliaev",
+            "emails": ["vmaliaev@mirantis.com", "vm321d@att.com"]
+        },
+        {
             "launchpad_id": "vmbrasseur",
             "companies": [
                 {
